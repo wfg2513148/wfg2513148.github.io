@@ -171,6 +171,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
     
       <category term="Tomcat" scheme="https://wangfanggang.com/tags/Tomcat/"/>
@@ -178,10 +182,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -228,6 +228,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
     
       <category term="Tomcat" scheme="https://wangfanggang.com/tags/Tomcat/"/>
@@ -235,10 +239,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -289,17 +289,15 @@
     <link href="https://wangfanggang.com/Oracle/sqlcl/"/>
     <id>https://wangfanggang.com/Oracle/sqlcl/</id>
     <published>2018-05-25T00:22:08.000Z</published>
-    <updated>2018-05-25T00:23:55.000Z</updated>
+    <updated>2018-06-04T07:18:15.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmnjhiw2yj30ke05adgl.jpg" alt=""></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>对于从事 Oracle 技术开发的同学，肯定都要连接 Oracle 数据库，而 Oracle 自带的 sqlplus 命令行工具功能太弱了，不支持命令联想、数据显示不美观，还要安装什么 Oracle Client，导致很多同学不得不用其他工具（PL/SQL Developer、Oracle SQL Developer）来连接数据库。但 PL/SQL Developer 仅支持 Windows 平台，Oracle SQL Developer 虽然是跨平台的，但显得又太重了。</p><p>有没有更好的命令行工具呢？其实 Oracle 早就提供了另一个用来替代 sqlplus 的命令行工具，它就是今天的主角<strong><code>SQLcl</code></strong>。</p><h2 id="安装-SQLcl"><a href="#安装-SQLcl" class="headerlink" title="安装 SQLcl"></a>安装 SQLcl</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>确保你的机器上安装了 Java 8 或以上版本（JRE 或 JDK 均可），下载地址在<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">这里</a>。</p><h3 id="下载-SQLcl-安装包"><a href="#下载-SQLcl-安装包" class="headerlink" title="下载 SQLcl 安装包"></a>下载 SQLcl 安装包</h3><p>SQLcl 的安装相当简单，首先去 <a href="http://www.oracle.com/technetwork/developer-tools/sqlcl/overview/index.html" target="_blank" rel="noopener">Oracle 网站</a> 下载 SQLcl 的安装包，截止到该文写作时为止，最新的 SQLcl 版本是 <strong>18.1.1</strong>（2018年4月12日发布的）。</p><h3 id="配置-SQLcl"><a href="#配置-SQLcl" class="headerlink" title="配置 SQLcl"></a>配置 SQLcl</h3><p>下载到本地以后是个 zip 压缩包，解压缩后进入 <code>sqlcl/bin</code>，里面的<code>sql</code>是给 Mac 或 Linux 平台准备的，而<code>sql.exe</code>是给 Windows 平台准备的。</p><blockquote><p>钢哥注：由于我用的是 Mac，每次只要进到这个目录，再执行<code>./sql</code>即可启动 SQLcl 了。做得更干脆一点儿，由于我的 SQLcl 目录是<code>/Users/kwang/sqlcl/bin</code>，所以只要把这个目录添加到<code>~/.bash_profile</code>文件的<code>PATH</code>变量里即可，这样以后只要在命令行里输入<code>sql</code>，就自动启动<code>SQLcl</code>了。</p></blockquote><p>以下是我的<strong>~/.bash_profile</strong> 文件内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/Users/kwang/sqlcl/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p><p>想要立刻生效，别忘了<code>source ~/.bash_profile</code>。</p><h2 id="SQLcl-实战"><a href="#SQLcl-实战" class="headerlink" title="SQLcl 实战"></a>SQLcl 实战</h2><p>让我们来看看 SQLcl 到底跟 sqlplus 有什么区别？</p><h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql sys/welcome@localhost:1521:orcl as sysdba</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgvhaet3j30uo0ak75e.jpg" alt=""></p><h3 id="清除屏幕"><a href="#清除屏幕" class="headerlink" title="清除屏幕"></a>清除屏幕</h3><p>使用<code>clear screen</code>命令，整个世界清静了。</p><blockquote><p>钢哥注：命令不需要曲敲全，<code>SQLcl</code>会自动智能提示/补全的，这一点比 sqlplus 好太多了。</p></blockquote><h3 id="help-帮助命令"><a href="#help-帮助命令" class="headerlink" title="help - 帮助命令"></a>help - 帮助命令</h3><p>输入<code>help</code>命令可以展示相关帮助主题。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgxn7r7tj30u80f0415.jpg" alt=""></p><h3 id="show-pdbs-显示命令"><a href="#show-pdbs-显示命令" class="headerlink" title="show pdbs - 显示命令"></a>show pdbs - 显示命令</h3><p>由于我用的是 Oracle Database 12c，可以用如下命令显示目前数据库中已有的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> pdbs</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhadn15nj30pm06wjrz.jpg" alt=""></p><h3 id="alter-session-切换会话"><a href="#alter-session-切换会话" class="headerlink" title="alter session - 切换会话"></a>alter session - 切换会话</h3><p>切换当前 session 到特定的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">session</span> <span class="keyword">set</span> <span class="keyword">container</span>=orclpdb1;</span><br></pre></td></tr></table></figure></p><h3 id="执行-sql-脚本"><a href="#执行-sql-脚本" class="headerlink" title="执行 sql 脚本"></a>执行 sql 脚本</h3><p>执行 sql 脚本，跟 sqlplus 一样用 <code>@</code> 即可，运行以下命令，创建<code>emp</code>和<code>dept</code>表及插入演示数据。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@https://raw.githubusercontent.com/OraOpenSource/OXAR/master/oracle/emp_dept.sql</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhj3he1pj30z40qk78p.jpg" alt=""></p><h3 id="ddl-生成对象定义语句"><a href="#ddl-生成对象定义语句" class="headerlink" title="ddl - 生成对象定义语句"></a>ddl - 生成对象定义语句</h3><p>假如我们想快速生成<code>emp</code>这张表的定义语句，可以用如下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddl emp</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhm8z0uej30sc0nuae4.jpg" alt=""></p><h3 id="键盘左键-编辑已输入的命令"><a href="#键盘左键-编辑已输入的命令" class="headerlink" title="键盘左键 - 编辑已输入的命令"></a>键盘左键 - 编辑已输入的命令</h3><p>使用过 sqlplus 的同学都知道，如果一个 sql 命令很长，需要分多行输入，这都没问题。但有时候再输入了很多行以后，突然想改一下之前输入的命令，这就尴尬了，你会发现根本没办法修改，只能大侠重新来过，WTF。。。</p><p>有了<code>SQLcl</code>就不存在这个问题了，它允许你用<strong>键盘左键</strong>进入快速编辑模式，然后就可以愉快地修改已经输入的命令了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml39kql1j305b01zdfv.jpg" alt=""></p><h3 id="键盘-tab-键-智能提示-补全"><a href="#键盘-tab-键-智能提示-补全" class="headerlink" title="键盘 tab 键 - 智能提示/补全"></a>键盘 tab 键 - 智能提示/补全</h3><p>如果在快速编辑模式下，输入表字段名的前几个字母，<code>SQLcl</code>会自动提示/补全剩余的字符，比<code>sqlplus</code>人性化多了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml59hzt9j30bi04waa6.jpg" alt=""></p><h3 id="键盘上下键-快速切换已输入的命令"><a href="#键盘上下键-快速切换已输入的命令" class="headerlink" title="键盘上下键 - 快速切换已输入的命令"></a>键盘上下键 - 快速切换已输入的命令</h3><p>这个没什么好说的。</p><h3 id="sqlformat-格式化-SQL-执行结果"><a href="#sqlformat-格式化-SQL-执行结果" class="headerlink" title="sqlformat - 格式化 SQL 执行结果"></a>sqlformat - 格式化 SQL 执行结果</h3><p>默认样式下执行<code>select * from emp</code>，显示结果如下图所示：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlc6dx8nj30y80hq41w.jpg" alt=""></p><p>执行<code>show sqlformat</code>可以看到当前格式化样式为：<code>default</code></p><p>set sqlformat ansiconsole<br>让我们修改下显示结果的样式：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat ansiconsole</span><br></pre></td></tr></table></figure></p><p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmleo735bj30sw0ge0vz.jpg" alt=""></p><p>set sqlformat csv - 输出成CSV格式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat csv</span><br></pre></td></tr></table></figure></p><p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlg17gd5j30o40h6q6i.jpg" alt=""></p><p>set sqlformat - 恢复默认样式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat</span><br></pre></td></tr></table></figure></p><p>set head off - 清除 SQL 输出结果头信息行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">head</span> <span class="keyword">off</span></span><br></pre></td></tr></table></figure></p><h3 id="history-访问历史记录"><a href="#history-访问历史记录" class="headerlink" title="history - 访问历史记录"></a>history - 访问历史记录</h3><p>可以用<code>history</code>命令查看已经输入过的历史命令。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmn9egz4uj31540nojvq.jpg" alt=""></p><p>想要再次输入某个历史命令，只需要在<code>history</code>命令后面加上对应的编号，然后再敲<code>/</code>执行即可。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history 15</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmne5qk49j313e0xuwjy.jpg" alt=""></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是关于 Oracle SQLcl 简单的介绍和命令，用来替代 sqlplus 绝对绰绰有余了，希望对喜欢命令行操作的同学有所帮助，谢谢关注！</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmnjhiw2yj30ke05adgl.jpg" alt=""></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>对于从事 Oracle 技术开发的同学，肯定都要连接 Oracle 数据库，而 Oracle 自带的 sqlplus 命令行工具功能太弱了，不支持命令联想、数据显示不美观，还要安装什么 Oracle Client，导致很多同学不得不用其他工具（PL/SQL Developer、Oracle SQL Developer）来连接数据库。但 PL/SQL Developer 仅支持 Windows 平台，Oracle SQL Developer 虽然是跨平台的，但显得又太重了。</p><p>有没有更好的命令行工具呢？其实 Oracle 早就提供了另一个用来替代 sqlplus 的命令行工具，它就是今天的主角<strong><code>SQLcl</code></strong>。</p><a id="more"></a><h2 id="安装-SQLcl"><a href="#安装-SQLcl" class="headerlink" title="安装 SQLcl"></a>安装 SQLcl</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>确保你的机器上安装了 Java 8 或以上版本（JRE 或 JDK 均可），下载地址在<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">这里</a>。</p><h3 id="下载-SQLcl-安装包"><a href="#下载-SQLcl-安装包" class="headerlink" title="下载 SQLcl 安装包"></a>下载 SQLcl 安装包</h3><p>SQLcl 的安装相当简单，首先去 <a href="http://www.oracle.com/technetwork/developer-tools/sqlcl/overview/index.html" target="_blank" rel="noopener">Oracle 网站</a> 下载 SQLcl 的安装包，截止到该文写作时为止，最新的 SQLcl 版本是 <strong>18.1.1</strong>（2018年4月12日发布的）。</p><h3 id="配置-SQLcl"><a href="#配置-SQLcl" class="headerlink" title="配置 SQLcl"></a>配置 SQLcl</h3><p>下载到本地以后是个 zip 压缩包，解压缩后进入 <code>sqlcl/bin</code>，里面的<code>sql</code>是给 Mac 或 Linux 平台准备的，而<code>sql.exe</code>是给 Windows 平台准备的。</p><blockquote><p>钢哥注：由于我用的是 Mac，每次只要进到这个目录，再执行<code>./sql</code>即可启动 SQLcl 了。做得更干脆一点儿，由于我的 SQLcl 目录是<code>/Users/kwang/sqlcl/bin</code>，所以只要把这个目录添加到<code>~/.bash_profile</code>文件的<code>PATH</code>变量里即可，这样以后只要在命令行里输入<code>sql</code>，就自动启动<code>SQLcl</code>了。</p></blockquote><p>以下是我的<strong>~/.bash_profile</strong> 文件内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/Users/kwang/sqlcl/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p><p>想要立刻生效，别忘了<code>source ~/.bash_profile</code>。</p><h2 id="SQLcl-实战"><a href="#SQLcl-实战" class="headerlink" title="SQLcl 实战"></a>SQLcl 实战</h2><p>让我们来看看 SQLcl 到底跟 sqlplus 有什么区别？</p><h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql sys/welcome@localhost:1521:orcl as sysdba</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgvhaet3j30uo0ak75e.jpg" alt=""></p><h3 id="清除屏幕"><a href="#清除屏幕" class="headerlink" title="清除屏幕"></a>清除屏幕</h3><p>使用<code>clear screen</code>命令，整个世界清静了。</p><blockquote><p>钢哥注：命令不需要曲敲全，<code>SQLcl</code>会自动智能提示/补全的，这一点比 sqlplus 好太多了。</p></blockquote><h3 id="help-帮助命令"><a href="#help-帮助命令" class="headerlink" title="help - 帮助命令"></a>help - 帮助命令</h3><p>输入<code>help</code>命令可以展示相关帮助主题。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgxn7r7tj30u80f0415.jpg" alt=""></p><h3 id="show-pdbs-显示命令"><a href="#show-pdbs-显示命令" class="headerlink" title="show pdbs - 显示命令"></a>show pdbs - 显示命令</h3><p>由于我用的是 Oracle Database 12c，可以用如下命令显示目前数据库中已有的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> pdbs</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhadn15nj30pm06wjrz.jpg" alt=""></p><h3 id="alter-session-切换会话"><a href="#alter-session-切换会话" class="headerlink" title="alter session - 切换会话"></a>alter session - 切换会话</h3><p>切换当前 session 到特定的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">session</span> <span class="keyword">set</span> <span class="keyword">container</span>=orclpdb1;</span><br></pre></td></tr></table></figure></p><h3 id="执行-sql-脚本"><a href="#执行-sql-脚本" class="headerlink" title="执行 sql 脚本"></a>执行 sql 脚本</h3><p>执行 sql 脚本，跟 sqlplus 一样用 <code>@</code> 即可，运行以下命令，创建<code>emp</code>和<code>dept</code>表及插入演示数据。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@https://raw.githubusercontent.com/OraOpenSource/OXAR/master/oracle/emp_dept.sql</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhj3he1pj30z40qk78p.jpg" alt=""></p><h3 id="ddl-生成对象定义语句"><a href="#ddl-生成对象定义语句" class="headerlink" title="ddl - 生成对象定义语句"></a>ddl - 生成对象定义语句</h3><p>假如我们想快速生成<code>emp</code>这张表的定义语句，可以用如下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddl emp</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhm8z0uej30sc0nuae4.jpg" alt=""></p><h3 id="键盘左键-编辑已输入的命令"><a href="#键盘左键-编辑已输入的命令" class="headerlink" title="键盘左键 - 编辑已输入的命令"></a>键盘左键 - 编辑已输入的命令</h3><p>使用过 sqlplus 的同学都知道，如果一个 sql 命令很长，需要分多行输入，这都没问题。但有时候再输入了很多行以后，突然想改一下之前输入的命令，这就尴尬了，你会发现根本没办法修改，只能大侠重新来过，WTF。。。</p><p>有了<code>SQLcl</code>就不存在这个问题了，它允许你用<strong>键盘左键</strong>进入快速编辑模式，然后就可以愉快地修改已经输入的命令了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml39kql1j305b01zdfv.jpg" alt=""></p><h3 id="键盘-tab-键-智能提示-补全"><a href="#键盘-tab-键-智能提示-补全" class="headerlink" title="键盘 tab 键 - 智能提示/补全"></a>键盘 tab 键 - 智能提示/补全</h3><p>如果在快速编辑模式下，输入表字段名的前几个字母，<code>SQLcl</code>会自动提示/补全剩余的字符，比<code>sqlplus</code>人性化多了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml59hzt9j30bi04waa6.jpg" alt=""></p><h3 id="键盘上下键-快速切换已输入的命令"><a href="#键盘上下键-快速切换已输入的命令" class="headerlink" title="键盘上下键 - 快速切换已输入的命令"></a>键盘上下键 - 快速切换已输入的命令</h3><p>这个没什么好说的。</p><h3 id="sqlformat-格式化-SQL-执行结果"><a href="#sqlformat-格式化-SQL-执行结果" class="headerlink" title="sqlformat - 格式化 SQL 执行结果"></a>sqlformat - 格式化 SQL 执行结果</h3><p>默认样式下执行<code>select * from emp</code>，显示结果如下图所示：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlc6dx8nj30y80hq41w.jpg" alt=""></p><p>执行<code>show sqlformat</code>可以看到当前格式化样式为：<code>default</code></p><p>set sqlformat ansiconsole<br>让我们修改下显示结果的样式：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat ansiconsole</span><br></pre></td></tr></table></figure></p><p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmleo735bj30sw0ge0vz.jpg" alt=""></p><p>set sqlformat csv - 输出成CSV格式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat csv</span><br></pre></td></tr></table></figure></p><p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlg17gd5j30o40h6q6i.jpg" alt=""></p><p>set sqlformat - 恢复默认样式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat</span><br></pre></td></tr></table></figure></p><p>set head off - 清除 SQL 输出结果头信息行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">head</span> <span class="keyword">off</span></span><br></pre></td></tr></table></figure></p><h3 id="history-访问历史记录"><a href="#history-访问历史记录" class="headerlink" title="history - 访问历史记录"></a>history - 访问历史记录</h3><p>可以用<code>history</code>命令查看已经输入过的历史命令。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmn9egz4uj31540nojvq.jpg" alt=""></p><p>想要再次输入某个历史命令，只需要在<code>history</code>命令后面加上对应的编号，然后再敲<code>/</code>执行即可。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history 15</span><br></pre></td></tr></table></figure></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmne5qk49j313e0xuwjy.jpg" alt=""></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是关于 Oracle SQLcl 简单的介绍和命令，用来替代 sqlplus 绝对绰绰有余了，希望对喜欢命令行操作的同学有所帮助，谢谢关注！</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1frmnjhiw2yj30ke05adgl.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; tit
-      
+      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1frmnjhiw2yj30ke05adgl.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;对于从事 Oracle 技术开发的同学，肯定都要连接 Oracle 数据库，而 Oracle 自带的 sqlplus 命令行工具功能太弱了，不支持命令联想、数据显示不美观，还要安装什么 Oracle Client，导致很多同学不得不用其他工具（PL/SQL Developer、Oracle SQL Developer）来连接数据库。但 PL/SQL Developer 仅支持 Windows 平台，Oracle SQL Developer 虽然是跨平台的，但显得又太重了。&lt;/p&gt;
+&lt;p&gt;有没有更好的命令行工具呢？其实 Oracle 早就提供了另一个用来替代 sqlplus 的命令行工具，它就是今天的主角&lt;strong&gt;&lt;code&gt;SQLcl&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -456,6 +454,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -465,10 +467,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -517,6 +515,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -526,10 +528,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -567,6 +565,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -576,10 +578,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -632,6 +630,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -641,10 +643,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -694,6 +692,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -703,10 +705,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   

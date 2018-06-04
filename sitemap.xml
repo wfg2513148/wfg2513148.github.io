@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
+    
+    <lastmod>2018-06-04T07:18:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Docker/shadowsocks-vpn/</loc>
     
     <lastmod>2018-06-04T04:31:46.000Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/</loc>
     
     <lastmod>2018-05-27T08:18:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
-    
-    <lastmod>2018-05-25T00:23:55.000Z</lastmod>
     
   </url>
   
