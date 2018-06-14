@@ -155,7 +155,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frjcf5rbamj30c202cq31.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkk3zaavrj319y066gn1.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg">
-<meta property="og:updated_time" content="2018-06-04T03:19:34.000Z">
+<meta property="og:updated_time" content="2018-06-14T17:26:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker - 通往新世界的大门">
 <meta name="twitter:description" content="引言相信很多技术同学在开发时都会使用虚拟机，配置好一个开发环境，以后使用时只需要启动虚拟机就好了。但虚拟机动辄几个GB，大一点儿的甚至几百个GB，而且只要其中任意的虚拟机文件损坏，整个虚拟机就没办法启动了。你可能说应该经常备份，这的确是个好主意。但有没有更好的办法呢？今天钢哥就带着大家了解一下Docker（容器），看看它是否比传统的虚拟机更适合我们。 什么是容器?顾名思义，容器就是用来装东西的。">
@@ -447,7 +447,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-04 03:19:34" itemprop="dateModified" datetime="2018-06-04T03:19:34+00:00">2018-06-04</time>
+                <time title="修改时间：2018-06-14 17:26:47" itemprop="dateModified" datetime="2018-06-14T17:26:47+00:00">2018-06-14</time>
               
             
           </span>
@@ -585,14 +585,14 @@ var _hmt = _hmt || [];
 <li><a href="https://docs.docker.com/install/linux/docker-ce/fedora/" target="_blank" rel="noopener">Fedora</a></li>
 <li><a href="https://docs.docker.com/install/linux/docker-ce/binaries/" target="_blank" rel="noopener">其他 Linux 发行版</a></li>
 </ul>
-<h2 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h2><h3 id="查看-Docker-版本"><a href="#查看-Docker-版本" class="headerlink" title="查看 Docker 版本"></a>查看 Docker 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h2 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h2><h3 id="查看-Docker-版本"><a href="#查看-Docker-版本" class="headerlink" title="查看 Docker 版本"></a>查看 Docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1friz972ghgj30j40gg769.jpg" alt=""></p>
 <h3 id="拉取-Docker-镜像"><a href="#拉取-Docker-镜像" class="headerlink" title="拉取 Docker 镜像"></a>拉取 Docker 镜像</h3><p>我们可以去 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> 站点拉取公共的 Docker 镜像。比如：搜索 <code>nginx</code> ，拉取官方的 nginx 镜像。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj3rg1kbdj30w6080wfv.jpg" alt=""></p>
-<h3 id="查看-Docker-镜像"><a href="#查看-Docker-镜像" class="headerlink" title="查看 Docker 镜像"></a>查看 Docker 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<h3 id="查看-Docker-镜像"><a href="#查看-Docker-镜像" class="headerlink" title="查看 Docker 镜像"></a>查看 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj3tv0gyvj31a408y76k.jpg" alt=""></p>
-<h3 id="运行-Docker-镜像"><a href="#运行-Docker-镜像" class="headerlink" title="运行 Docker 镜像"></a>运行 Docker 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v /Users/kwang/docker:/usr/share/nginx/html/hello -p 80:80 -d nginx:latest</span><br></pre></td></tr></table></figure>
+<h3 id="运行-Docker-镜像"><a href="#运行-Docker-镜像" class="headerlink" title="运行 Docker 镜像"></a>运行 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v /Users/kwang/docker:/usr/share/nginx/html/hello -p 80:80 -d nginx:latest</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-i</code>以交互模式运行容器，通常与 -t 同时使用；<br><code>-t</code>为容器重新分配一个伪输入终端，通常与 -i 同时使用；<br><code>-p</code>本机端口:容器端口 映射；<br><code>-d</code>后台运行，并返回容器ID；<br><code>-v</code>可以将本机目录映射到容器内。比如这里我就把我本机的<code>/home/kwang/docker</code>目录映射到<code>/usr/share/nginx/html/hello/</code>目录下；</p>
 </blockquote>
@@ -600,23 +600,23 @@ var _hmt = _hmt || [];
 <p>我在<code>/home/kwang/docker/</code>目录下创建了一个静态页面<code>index.html</code>，内容仅仅输出<code>hello world!</code>。而<code>/usr/share/nginx/html/</code>目录是容器内的 nginx 网页根目录，这样设置的目的是为了演示目录映射。</p>
 </blockquote>
 <p>运行成功后，命令行返回一个 Docker 容器的 ID（这个ID是随机生成的，所以你看到的肯定跟我的不一样）。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj41j2i6sj30pu024aab.jpg" alt=""></p>
-<h3 id="查看运行中的-Docker-容器"><a href="#查看运行中的-Docker-容器" class="headerlink" title="查看运行中的 Docker 容器"></a>查看运行中的 Docker 容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<h3 id="查看运行中的-Docker-容器"><a href="#查看运行中的-Docker-容器" class="headerlink" title="查看运行中的 Docker 容器"></a>查看运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 <p>可以看到我们刚才的镜像已经成功启动起来了，并且本机<code>0.0.0.0:80</code>端口已经成功映射到容器里的<code>80</code>端口了，该容器ID的前几位是<code>7fcac910ad6a</code></p>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj45airtij315w01ijrk.jpg" alt=""></p>
 <p>打开本机浏览器，输入：<code>http://localhost:80</code>，可以看到nginx已经启动好了</p>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj4g3ku5cj30ov09vdh7.jpg" alt=""></p>
 <p>如果更改浏览器地址：<code>http://localhost/hello/</code>，则可以看到我事先准备好的<code>index.html</code>。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frjc3ocniqj30fy06m3yz.jpg" alt=""></p>
-<h3 id="暂停运行中的-Docker-容器"><a href="#暂停运行中的-Docker-容器" class="headerlink" title="暂停运行中的 Docker 容器"></a>暂停运行中的 Docker 容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 7fcac910ad6a</span><br></pre></td></tr></table></figure>
+<h3 id="暂停运行中的-Docker-容器"><a href="#暂停运行中的-Docker-容器" class="headerlink" title="暂停运行中的 Docker 容器"></a>暂停运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 7fcac910ad6a</span><br></pre></td></tr></table></figure>
 <p><code>7fcac910ad6a</code>是要暂停的容器ID，可以看到容器状态已经变成<code>Exited</code>退出状态了。</p>
 <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj4jab8plj326w038dgk.jpg" alt=""></p>
-<h3 id="启动已暂停的-Docker-容器"><a href="#启动已暂停的-Docker-容器" class="headerlink" title="启动已暂停的 Docker 容器"></a>启动已暂停的 Docker 容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 7fcac910ad6a</span><br></pre></td></tr></table></figure>
-<h3 id="删除运行中的-Docker-容器"><a href="#删除运行中的-Docker-容器" class="headerlink" title="删除运行中的 Docker 容器"></a>删除运行中的 Docker 容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 7fcac910ad6a</span><br></pre></td></tr></table></figure>
+<h3 id="启动已暂停的-Docker-容器"><a href="#启动已暂停的-Docker-容器" class="headerlink" title="启动已暂停的 Docker 容器"></a>启动已暂停的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 7fcac910ad6a</span><br></pre></td></tr></table></figure>
+<h3 id="删除运行中的-Docker-容器"><a href="#删除运行中的-Docker-容器" class="headerlink" title="删除运行中的 Docker 容器"></a>删除运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 7fcac910ad6a</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-f</code>参数是强行删除。</p>
 </blockquote>
 <h3 id="以命令行模式进入容器"><a href="#以命令行模式进入容器" class="headerlink" title="以命令行模式进入容器"></a>以命令行模式进入容器</h3><p>你可以用命令行模式进入到容器内部，就好像登录到一台新的 Linux 一样。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 9ca4f91d4027 bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it 9ca4f91d4027 bash</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>exec</code>是在运行中的容器中运行一个命令，该命令需要接受两个参数。第一个是容器ID（这里是<code>9ca4f91d4027</code>），第二个参数是要执行的命令（这里是<code>bash</code>）。执行完毕后，我们就以<code>bash</code>命令行模式进入到了容器内部。</p>
 </blockquote>
@@ -624,24 +624,24 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>当然，你随时可以用<code>exit</code>命令从容器中退出。</p>
 </blockquote>
-<h3 id="从运行中的-Docker-容器生成-Docker-镜像"><a href="#从运行中的-Docker-容器生成-Docker-镜像" class="headerlink" title="从运行中的 Docker 容器生成 Docker 镜像"></a>从运行中的 Docker 容器生成 Docker 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m &quot;kenny nginx&quot; -a &quot;kenny&quot; 9ca4f91d4027 kenny/nginx:1.0</span><br></pre></td></tr></table></figure>
+<h3 id="从运行中的-Docker-容器生成-Docker-镜像"><a href="#从运行中的-Docker-容器生成-Docker-镜像" class="headerlink" title="从运行中的 Docker 容器生成 Docker 镜像"></a>从运行中的 Docker 容器生成 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m <span class="string">"kenny nginx"</span> -a <span class="string">"kenny"</span> 9ca4f91d4027 kenny/nginx:1.0</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-m</code> 是说明信息<br><code>-a</code> 是用户信息<br><code>kenny/nginx:1.0</code> 分别是镜像的用户名、仓库名和tag信息</p>
 </blockquote>
 <p>可以看到 Docker 镜像已成功生成。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkk3zaavrj319y066gn1.jpg" alt=""></p>
 <h3 id="基于-Dockerfile-生成-Docker-镜像"><a href="#基于-Dockerfile-生成-Docker-镜像" class="headerlink" title="基于 Dockerfile 生成 Docker 镜像"></a>基于 Dockerfile 生成 Docker 镜像</h3><p>我们可以创建一个名为<code>Dockerfile</code>的文件，编辑内容如下：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基于哪个Docker镜像生成新镜像</span></span><br><span class="line"><span class="keyword">FROM</span> nginx:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建者的基本信息</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> kenny.wang</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在build这个镜像时执行的操作</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 拷贝本地文件到镜像中</span></span></span><br><span class="line"><span class="bash">COPY ./index.html /usr/share/nginx/html/</span></span><br></pre></td></tr></table></figure></p>
 <p>执行<code>build</code>命令生成 Docker 镜像。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=&quot;kenny/nginx:2.0&quot; .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=<span class="string">"kenny/nginx:2.0"</span> .</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-t</code> 用来指定用户信息、tag等<br> <code>.</code> 是当前目录，用来寻找 Dockerfile</p>
 </blockquote>
 <p>再次用<code>docker images</code>查看，新的镜像已成功生成。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg" alt=""></p>
-<h3 id="删除-Docker-镜像"><a href="#删除-Docker-镜像" class="headerlink" title="删除 Docker 镜像"></a>删除 Docker 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 83a85d2939a2</span><br></pre></td></tr></table></figure>
+<h3 id="删除-Docker-镜像"><a href="#删除-Docker-镜像" class="headerlink" title="删除 Docker 镜像"></a>删除 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 83a85d2939a2</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-f</code> 表示强行删除<br><code>83a85d2939a2</code> 是 docker image id</p>
 </blockquote>
-<h3 id="将-Docker-镜像保存成-tar-文件"><a href="#将-Docker-镜像保存成-tar-文件" class="headerlink" title="将 Docker 镜像保存成 tar 文件"></a>将 Docker 镜像保存成 tar 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o kenny_nginx.tar kenny/nginx:2.0</span><br></pre></td></tr></table></figure>
-<h3 id="加载-Docker-镜像"><a href="#加载-Docker-镜像" class="headerlink" title="加载 Docker 镜像"></a>加载 Docker 镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i kenny_nginx.tar</span><br></pre></td></tr></table></figure>
+<h3 id="将-Docker-镜像保存成-tar-文件"><a href="#将-Docker-镜像保存成-tar-文件" class="headerlink" title="将 Docker 镜像保存成 tar 文件"></a>将 Docker 镜像保存成 tar 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o kenny_nginx.tar kenny/nginx:2.0</span><br></pre></td></tr></table></figure>
+<h3 id="加载-Docker-镜像"><a href="#加载-Docker-镜像" class="headerlink" title="加载 Docker 镜像"></a>加载 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i kenny_nginx.tar</span><br></pre></td></tr></table></figure>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Docker 是个好东西，以上仅仅是 Docker 的一些常用基本操作。它就像通往新世界的大门，为大规模集群化部署提供坚实的基础，后面会再写一下容器编排的文章，敬请关注！</p>
 
       
@@ -664,7 +664,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Docker/docker/">Docker - 通往新世界的大门</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2018年05月23日 - 00:05</p>
-  <p><span>最后更新:</span>2018年06月04日 - 03:06</p>
+  <p><span>最后更新:</span>2018年06月14日 - 17:06</p>
   <p><span>原始链接:</span><a href="/Docker/docker/" title="Docker - 通往新世界的大门">https://wangfanggang.com/Docker/docker/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Docker/docker/"  aria-label="复制成功！"></i></span>
   </p>
