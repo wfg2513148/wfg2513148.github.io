@@ -1,1 +1,1278 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0"><link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"6.3.0",sidebar:{position:"right",display:"post",offset:12,b2t:!1,scrollpercent:!0,onmobile:!1},fancybox:!0,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"IRZBM0L62M",apiKey:"5ca467735bb046ab76fcd421fe6facf3",indexName:"dev_hexo",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?30dfd7a6a7bf400f81280570922d1bce";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><meta name="description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试"><meta name="keywords" content="Docker,Shadowsocks,VPN"><meta property="og:type" content="article"><meta property="og:title" content="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）"><meta property="og:url" content="https://wangfanggang.com/Docker/shadowsocks-vpn/index.html"><meta property="og:site_name" content="钢钢更新"><meta property="og:description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fryzny7wofj30gz065q40.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fryzw18byyj30wd02f0t8.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz04czhmaj30eh0ax0vh.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz07klq0oj30ge0emgmd.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz09i43o8j30hw0au74o.jpg"><meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz0h0vcmjj30ku112t9i.jpg"><meta property="og:updated_time" content="2018-06-04T04:31:46.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）"><meta name="twitter:description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试"><meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg"><link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml"><link rel="canonical" href="https://wangfanggang.com/Docker/shadowsocks-vpn/"><script type="text/javascript" id="page.configurations">CONFIG.page={sidebar:""}</script><title>10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备） | 钢钢更新</title><script type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><noscript><style type="text/css">.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-right page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">钢钢更新</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1></div><div class="site-nav-toggle"> <button aria-label="切换导航栏"><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="algolia-popup popup search-popup"><div class="algolia-search"><div class="algolia-search-input-icon"><i class="fa fa-search"></i></div><div class="algolia-search-input" id="algolia-search-input"></div></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div id="algolia-pagination" class="algolia-pagination"></div></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-categories" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Docker/shadowsocks-vpn/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="王方钢 / Kenny Wang"><meta itemprop="description" content=""><meta itemprop="image" content="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6hb0y6xj305k05kgn9.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="钢钢更新"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2018-06-04 12:25:41 / 修改时间：12:31:46" itemprop="dateCreated datePublished" datetime="2018-06-04T12:25:41+08:00">2018-06-04</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span></span> <span id="/Docker/shadowsocks-vpn/" class="leancloud_visitors" data-flag-title="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count"></span></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">本文字数：</span> <span title="本文字数">1.7k</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">3 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg" alt=""></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？</p><p>这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试牛刀，10分钟搭建属于你自己的VPN服务器。</p><blockquote><p>还不了解 docker 是什么的同学请先阅读钢哥之前的博文：<a href="https://wangfanggang.com/Docker/docker/">Docker - 通往新世界的大门</a></p></blockquote><a id="more"></a><h2 id="具体搭建步骤"><a href="#具体搭建步骤" class="headerlink" title="具体搭建步骤"></a>具体搭建步骤</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先得找一台用来翻墙的海外服务器，该服务器一定要在墙外，比如：香港、新加坡、日本。你可以选择 AWS 的 EC2 或者阿里云的 ECS 服务器都可以。</p><p>其次，要在该服务器上安装 docker 运行时环境。这里以 CentOS 7 举例，首先安装 docker 运行时环境。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 安装 docker</span></span><br><span class="line">yum install docker -y</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动 docker 服务</span></span><br><span class="line">service docker start</span><br><span class="line">chkconfig docker on</span><br><span class="line"></span><br><span class="line"><span class="comment">## 检查 docker 版本</span></span><br><span class="line">docker -version</span><br></pre></td></tr></table></figure><p>这些都成功了？恭喜你，你已经成功一半了！</p><h3 id="拉取-docker-镜像"><a href="#拉取-docker-镜像" class="headerlink" title="拉取 docker 镜像"></a>拉取 docker 镜像</h3><p>好了，现在让我们直接拉取别人做好的 docker 镜像。这里我选择的是 Github 上别人做好的 <a href="https://github.com/oddrationale/docker-shadowsocks" target="_blank" rel="noopener">Shadowsock VPN Docker 镜像</a>，直接执行以下命令即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull oddrationale/docker-shadowsocks</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzny7wofj30gz065q40.jpg" alt=""></p><h3 id="运行-docker-镜像"><a href="#运行-docker-镜像" class="headerlink" title="运行 docker 镜像"></a>运行 docker 镜像</h3><p>运行如下命令启动该 docker 镜像。<br></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 12345:12345 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 12345 -k welcome -m aes-256-cfb</span><br></pre></td></tr></table></figure><p></p><blockquote><ul><li><code>-d</code>参数允许 docker 常驻后台运行</li><li><code>-p</code>来指定要映射的端口，这里端口号统一保持一致即可。例如：12345</li><li><code>-s</code>服务器 IP 地址，不用动</li><li><code>-k</code>后面设置你的 VPN 的密码，比如：welcome</li><li><code>-m</code>指定加密方式</li></ul></blockquote><p>运行<code>docker ps -a</code>查看容器是否已成功运行起来了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzw18byyj30wd02f0t8.jpg" alt=""></p><h3 id="安装-vpn-客户端（Mac-amp-Windows）"><a href="#安装-vpn-客户端（Mac-amp-Windows）" class="headerlink" title="安装 vpn 客户端（Mac &amp; Windows）"></a>安装 vpn 客户端（Mac &amp; Windows）</h3><p>接下来要测试我们的 VPN 服务器是否正常工作了，由于我们大部分时间都是用 PC 来翻墙，先下载个好用的 VPN 客户端。这里推荐下载 <a href="https://github.com/shadowsocks" target="_blank" rel="noopener">shadowsocks</a>，简单易用，各个平台版本也都有。</p><ul><li><a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">Shadowsocks (Windows版本)</a></li><li><a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG (Mac版本)</a></li></ul><p>这里以 Mac 版本为例，直接安装即可，非常简单。运行起来后，工具栏上有一个小飞机的图标，进入到“<strong>服务器设置</strong>”。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz04czhmaj30eh0ax0vh.jpg" alt=""></p><p>点击“<strong>+</strong>”图标添加新的服务器，如下图所示设置连接信息。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz07klq0oj30ge0emgmd.jpg" alt=""></p><p>设置好以后，赶紧打开浏览器，试着访问一下：<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>，一切正常的话，新世界的大门已经向你敞开了。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz09i43o8j30hw0au74o.jpg" alt=""></p><blockquote><p>钢哥注：如果访问不了，先确认你的连接信息是否正确。另外如果使用的云服务器，记得检查一下<code>网络安全组</code>里的网络<code>端口</code>是否已经开放了。</p></blockquote><h3 id="安装-vpn-客户端（手机端）"><a href="#安装-vpn-客户端（手机端）" class="headerlink" title="安装 vpn 客户端（手机端）"></a>安装 vpn 客户端（手机端）</h3><p>手机上也可以安装类似的 Shadowsocks 应用。由于我自己用的是 iPhone，所以安装了一个叫<code>Wingy</code>的应用。有一点需要注意，这个应用只在美国的 App Store 上提供，所以需要大家自己想办法啦。设置起来很简单，跟 PC 端是一样的，这里就不赘述了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz0h0vcmjj30ku112t9i.jpg" alt=""></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>怎么样？通过这次实践，是不是觉得 Docker 真的是个好东西？其实还有很多好的 Docker 镜像，大家也可以自己封装一些，然后上传到公共的 Docker 仓库上贡献给大家。</p><p>最后，希望大家都掌握了科学上网的技能，多多用来学习查资料，传播正能量，少看一些不可描述的东西：）</p><p>感谢大家的关注！！</p></div><div><div class="my_post_copyright"><script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script><script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><p><span>本文标题:</span><a href="/Docker/shadowsocks-vpn/">10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</a></p><p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p><p><span>发布时间:</span>2018年06月04日 - 12:06</p><p><span>最后更新:</span>2018年06月04日 - 12:06</p><p><span>原始链接:</span><a href="/Docker/shadowsocks-vpn/" title="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）">https://wangfanggang.com/Docker/shadowsocks-vpn/</a><span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Docker/shadowsocks-vpn/" aria-label="复制成功！"></i></span></p><p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p></div><script>var clipboard=new Clipboard(".fa-clipboard");$(".fa-clipboard").click(function(){clipboard.on("success",function(){swal({title:"",text:"复制成功",icon:"success",showConfirmButton:!0})})})</script></div><div><div id="wechat_subscriber" style="display:block;padding:10px 0;margin:20px auto;width:100%;text-align:center"> <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width:200px;max-width:100%"><div>王方钢 | 智叟网络</div></div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div></div> <button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'> <span>打赏</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"> <img id="wechat_qr" src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6ecphczj3334334x6q.jpg" alt="王方钢 / Kenny Wang 微信支付"><p>微信支付</p></div><div id="alipay" style="display:inline-block"> <img id="alipay_qr" src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6f6gutij30m80m87al.jpg" alt="王方钢 / Kenny Wang 支付宝"><p>支付宝</p></div></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a><a href="/tags/Shadowsocks/" rel="tag"><i class="fa fa-tag"></i> Shadowsocks</a><a href="/tags/VPN/" rel="tag"><i class="fa fa-tag"></i> VPN</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/Oracle/Oracle-APEX/apex-series-10/" rel="next" title="Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）"><i class="fa fa-chevron-left"></i> Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"></div></div></footer></div></article><div class="post-spread"></div></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6hb0y6xj305k05kgn9.jpg" alt="王方钢 / Kenny Wang"><p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">19</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">9</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">20</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i> Gmail</a></span><span class="links-of-author-item"><a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i> Linkedin</a></span><span class="links-of-author-item"><a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i> Webo</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">具体搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取-docker-镜像"><span class="nav-number">2.2.</span> <span class="nav-text">拉取 docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-docker-镜像"><span class="nav-number">2.3.</span> <span class="nav-text">运行 docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-vpn-客户端（Mac-amp-Windows）"><span class="nav-number">2.4.</span> <span class="nav-text">安装 vpn 客户端（Mac &amp; Windows）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-vpn-客户端（手机端）"><span class="nav-number">2.5.</span> <span class="nav-text">安装 vpn 客户端（手机端）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2018</span><span class="with-love" id="animate"><i class="fa fa-bug"></i></span> <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span></div><div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div> <span class="post-meta-divider">|</span><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div><div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div><div id="needsharebutton-float"><span class="btn"><i class="fa fa-share-alt" aria-hidden="true"></i></span></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script><link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css"><script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/src/algolia-search.js?v=6.3.0"></script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz","r8pBuanUxCRbTY1SCOv2kEde")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><script src="/lib/needsharebutton/needsharebutton.js"></script><script>flOptions={iconStyle:"box",boxForm:"horizontal",position:"middleRight",networks:"Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook"},new needShareButton("#needsharebutton-float",flOptions)</script></body></html>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?30dfd7a6a7bf400f81280570922d1bce";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试">
+<meta name="keywords" content="Docker,Shadowsocks,VPN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）">
+<meta property="og:url" content="https://wangfanggang.com/Docker/shadowsocks-vpn/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fryzny7wofj30gz065q40.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fryzw18byyj30wd02f0t8.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz04czhmaj30eh0ax0vh.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz07klq0oj30ge0emgmd.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz09i43o8j30hw0au74o.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz0h0vcmjj30ku112t9i.jpg">
+<meta property="og:updated_time" content="2018-06-04T04:31:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）">
+<meta name="twitter:description" content="引言相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？ 这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Docker/shadowsocks-vpn/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备） | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Docker/shadowsocks-vpn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6hb0y6xj305k05kgn9.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-04 12:25:41 / 修改时间：04:31:46" itemprop="dateCreated datePublished" datetime="2018-06-04T12:25:41+00:00">2018-06-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Docker/shadowsocks-vpn/" class="leancloud_visitors" data-flag-title="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg" alt=""></p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？</p>
+<p>这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试牛刀，10分钟搭建属于你自己的VPN服务器。</p>
+<blockquote>
+<p>还不了解 docker 是什么的同学请先阅读钢哥之前的博文：<a href="https://wangfanggang.com/Docker/docker/">Docker - 通往新世界的大门</a> </p>
+</blockquote>
+<a id="more"></a>
+<h2 id="具体搭建步骤"><a href="#具体搭建步骤" class="headerlink" title="具体搭建步骤"></a>具体搭建步骤</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先得找一台用来翻墙的海外服务器，该服务器一定要在墙外，比如：香港、新加坡、日本。你可以选择 AWS 的 EC2 或者阿里云的 ECS 服务器都可以。</p>
+<p>其次，要在该服务器上安装 docker 运行时环境。这里以 CentOS 7 举例，首先安装 docker 运行时环境。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 安装 docker</span></span><br><span class="line">yum install docker -y</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动 docker 服务</span></span><br><span class="line">service docker start</span><br><span class="line">chkconfig docker on</span><br><span class="line"></span><br><span class="line"><span class="comment">## 检查 docker 版本</span></span><br><span class="line">docker -version</span><br></pre></td></tr></table></figure>
+<p>这些都成功了？恭喜你，你已经成功一半了！</p>
+<h3 id="拉取-docker-镜像"><a href="#拉取-docker-镜像" class="headerlink" title="拉取 docker 镜像"></a>拉取 docker 镜像</h3><p>好了，现在让我们直接拉取别人做好的 docker 镜像。这里我选择的是 Github 上别人做好的 <a href="https://github.com/oddrationale/docker-shadowsocks" target="_blank" rel="noopener">Shadowsock VPN Docker 镜像</a>，直接执行以下命令即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull oddrationale/docker-shadowsocks</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzny7wofj30gz065q40.jpg" alt=""></p>
+<h3 id="运行-docker-镜像"><a href="#运行-docker-镜像" class="headerlink" title="运行 docker 镜像"></a>运行 docker 镜像</h3><p>运行如下命令启动该 docker 镜像。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 12345:12345 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 12345 -k welcome -m aes-256-cfb</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li><code>-d</code>参数允许 docker 常驻后台运行</li>
+<li><code>-p</code>来指定要映射的端口，这里端口号统一保持一致即可。例如：12345</li>
+<li><code>-s</code>服务器 IP 地址，不用动</li>
+<li><code>-k</code>后面设置你的 VPN 的密码，比如：welcome</li>
+<li><code>-m</code>指定加密方式</li>
+</ul>
+</blockquote>
+<p>运行<code>docker ps -a</code>查看容器是否已成功运行起来了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzw18byyj30wd02f0t8.jpg" alt=""></p>
+<h3 id="安装-vpn-客户端（Mac-amp-Windows）"><a href="#安装-vpn-客户端（Mac-amp-Windows）" class="headerlink" title="安装 vpn 客户端（Mac &amp; Windows）"></a>安装 vpn 客户端（Mac &amp; Windows）</h3><p>接下来要测试我们的 VPN 服务器是否正常工作了，由于我们大部分时间都是用 PC 来翻墙，先下载个好用的 VPN 客户端。这里推荐下载 <a href="https://github.com/shadowsocks" target="_blank" rel="noopener">shadowsocks</a>，简单易用，各个平台版本也都有。</p>
+<ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">Shadowsocks (Windows版本)</a></li>
+<li><a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG (Mac版本)</a></li>
+</ul>
+<p>这里以 Mac 版本为例，直接安装即可，非常简单。运行起来后，工具栏上有一个小飞机的图标，进入到“<strong>服务器设置</strong>”。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz04czhmaj30eh0ax0vh.jpg" alt=""></p>
+<p>点击“<strong>+</strong>”图标添加新的服务器，如下图所示设置连接信息。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz07klq0oj30ge0emgmd.jpg" alt=""></p>
+<p>设置好以后，赶紧打开浏览器，试着访问一下：<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>，一切正常的话，新世界的大门已经向你敞开了。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz09i43o8j30hw0au74o.jpg" alt=""></p>
+<blockquote>
+<p>钢哥注：如果访问不了，先确认你的连接信息是否正确。另外如果使用的云服务器，记得检查一下<code>网络安全组</code>里的网络<code>端口</code>是否已经开放了。</p>
+</blockquote>
+<h3 id="安装-vpn-客户端（手机端）"><a href="#安装-vpn-客户端（手机端）" class="headerlink" title="安装 vpn 客户端（手机端）"></a>安装 vpn 客户端（手机端）</h3><p>手机上也可以安装类似的 Shadowsocks 应用。由于我自己用的是 iPhone，所以安装了一个叫<code>Wingy</code>的应用。有一点需要注意，这个应用只在美国的 App Store 上提供，所以需要大家自己想办法啦。设置起来很简单，跟 PC 端是一样的，这里就不赘述了。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz0h0vcmjj30ku112t9i.jpg" alt=""></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>怎么样？通过这次实践，是不是觉得 Docker 真的是个好东西？其实还有很多好的 Docker 镜像，大家也可以自己封装一些，然后上传到公共的 Docker 仓库上贡献给大家。</p>
+<p>最后，希望大家都掌握了科学上网的技能，多多用来学习查资料，传播正能量，少看一些不可描述的东西：）</p>
+<p>感谢大家的关注！！</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Docker/shadowsocks-vpn/">10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2018年06月04日 - 12:06</p>
+  <p><span>最后更新:</span>2018年06月04日 - 04:06</p>
+  <p><span>原始链接:</span><a href="/Docker/shadowsocks-vpn/" title="10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）">https://wangfanggang.com/Docker/shadowsocks-vpn/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Docker/shadowsocks-vpn/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>王方钢 | 智叟网络</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6ecphczj3334334x6q.jpg" alt="王方钢 / Kenny Wang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6f6gutij30m80m87al.jpg" alt="王方钢 / Kenny Wang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+          
+            <a href="/tags/Shadowsocks/" rel="tag"><i class="fa fa-tag"></i> Shadowsocks</a>
+          
+            <a href="/tags/VPN/" rel="tag"><i class="fa fa-tag"></i> VPN</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-series-10/" rel="next" title="Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://ww1.sinaimg.cn/large/006By2pOgy1fqj6hb0y6xj305k05kgn9.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">具体搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取-docker-镜像"><span class="nav-number">2.2.</span> <span class="nav-text">拉取 docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-docker-镜像"><span class="nav-number">2.3.</span> <span class="nav-text">运行 docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-vpn-客户端（Mac-amp-Windows）"><span class="nav-number">2.4.</span> <span class="nav-text">安装 vpn 客户端（Mac &amp; Windows）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-vpn-客户端（手机端）"><span class="nav-number">2.5.</span> <span class="nav-text">安装 vpn 客户端（手机端）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
