@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2018-06-21T05:18:45.000Z</updated>
+  <updated>2018-06-21T06:58:01.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</id>
     <published>2018-06-21T03:38:59.000Z</published>
-    <updated>2018-06-21T05:18:45.000Z</updated>
+    <updated>2018-06-21T06:58:01.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fsiq9b1ae1j30v40kfk68.jpg" alt=""></p><p>最新的 Oracle APEX 博文也已加入到 <a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> 中。</p><ul><li><a href="http://dgielis.blogspot.com/2018/06/facebook-google-and-custom.html" target="_blank" rel="noopener">Facebook, Google and Custom Authentication in the same Oracle APEX 18.1 app</a> <code>2018.06</code></li><li><a href="http://dgielis.blogspot.com/2018/06/error-whats-going-in-apex-easiest-way.html" target="_blank" rel="noopener">Error!?! What’s going in APEX? The easiest way to Debug and Trace an Oracle APEX session</a> <code>2018.06</code></li><li><a href="http://apexbyg.blogspot.com/2018/06/apex-181-debugging-of-apex-sessions-was.html" target="_blank" rel="noopener">APEX 18.1: Debugging of the APEX sessions was never easier</a> <code>2018.06</code></li><li><a href="http://apexbyg.blogspot.com/2018/06/apex-181-generate-url-checksum-outside.html" target="_blank" rel="noopener">APEX 18.1: Generate URL checksum outside APEX session</a> <code>2018.06</code></li><li><a href="https://www.apex-at-work.com/2018/06/check-inside-your-apex-application-if.html" target="_blank" rel="noopener">Check inside your APEX application if debug mode is enabled</a> <code>2018.06</code></li><li><a href="http://www.explorer.uk.com/adding-an-auto-save-feature-to-an-apex-page/" target="_blank" rel="noopener">Adding an Auto Save Feature to an APEX Page</a> <code>2018.06</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fsit4fupruj30un0k2hdt.jpg" alt=""></p><p>最新的 Oracle APEX 博文也已加入到 <a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> 中。</p><ul><li><a href="http://dgielis.blogspot.com/2018/06/facebook-google-and-custom.html" target="_blank" rel="noopener">Facebook, Google and Custom Authentication in the same Oracle APEX 18.1 app</a> <code>2018.06</code></li><li><a href="http://dgielis.blogspot.com/2018/06/error-whats-going-in-apex-easiest-way.html" target="_blank" rel="noopener">Error!?! What’s going in APEX? The easiest way to Debug and Trace an Oracle APEX session</a> <code>2018.06</code></li><li><a href="http://apexbyg.blogspot.com/2018/06/apex-181-debugging-of-apex-sessions-was.html" target="_blank" rel="noopener">APEX 18.1: Debugging of the APEX sessions was never easier</a> <code>2018.06</code></li><li><a href="http://apexbyg.blogspot.com/2018/06/apex-181-generate-url-checksum-outside.html" target="_blank" rel="noopener">APEX 18.1: Generate URL checksum outside APEX session</a> <code>2018.06</code></li><li><a href="https://www.apex-at-work.com/2018/06/check-inside-your-apex-application-if.html" target="_blank" rel="noopener">Check inside your APEX application if debug mode is enabled</a> <code>2018.06</code></li><li><a href="http://www.explorer.uk.com/adding-an-auto-save-feature-to-an-apex-page/" target="_blank" rel="noopener">Adding an Auto Save Feature to an APEX Page</a> <code>2018.06</code></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fsiq9b1ae1j30v40kfk68.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fsit4fupruj30un0k2hdt.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;最新的 Oracle APEX 博文也已加入到 &lt;a href=&quot;https://wang
       
     
@@ -201,6 +201,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
     
       <category term="Tomcat" scheme="https://wangfanggang.com/tags/Tomcat/"/>
@@ -208,10 +212,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -258,6 +258,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
     
       <category term="Tomcat" scheme="https://wangfanggang.com/tags/Tomcat/"/>
@@ -265,10 +269,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -484,6 +484,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -493,10 +497,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -545,6 +545,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -554,10 +558,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -595,6 +595,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -604,10 +608,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -660,6 +660,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -669,10 +673,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
@@ -722,6 +722,10 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
       <category term="Aliyun" scheme="https://wangfanggang.com/tags/Aliyun/"/>
     
       <category term="CentOS" scheme="https://wangfanggang.com/tags/CentOS/"/>
@@ -731,10 +735,6 @@
       <category term="Nginx" scheme="https://wangfanggang.com/tags/Nginx/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
