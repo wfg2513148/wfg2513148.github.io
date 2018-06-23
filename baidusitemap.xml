@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
+    <lastmod>2018-06-23T06:52:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 学习笔记 - 钢钢更新</title>
+        <pubTime>2018-04-29T06:41:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+             
+              <breadCrumb title="Spring Boot" url="https://wangfanggang.com/categories/Java/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
     <lastmod>2018-06-23T06:50:59.000Z</lastmod>
     <data>
@@ -141,31 +166,6 @@
           
              
               <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
-    <lastmod>2018-06-06T10:46:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 学习笔记 - 钢钢更新</title>
-        <pubTime>2018-04-29T06:41:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-             
-              <breadCrumb title="Spring Boot" url="https://wangfanggang.com/categories/Java/Spring-Boot/"/>
           
         </display>
     </data>

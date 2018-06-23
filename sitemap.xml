@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
+    
+    <lastmod>2018-06-23T06:52:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
     
     <lastmod>2018-06-23T06:50:59.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/</loc>
     
     <lastmod>2018-06-14T17:25:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
-    
-    <lastmod>2018-06-06T10:46:42.000Z</lastmod>
     
   </url>
   
