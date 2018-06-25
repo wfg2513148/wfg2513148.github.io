@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
+    <lastmod>2018-06-25T03:41:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>魔法秀，让你的 H5 页面秒变 Native APP（原生应用）</title>
+        <pubTime>2018-06-25T02:48:30.000Z</pubTime>
+        
+        <tag>APEX</tag>
+         
+        <tag>Mobile</tag>
+         
+        <tag>Native APP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
     <lastmod>2018-06-25T03:37:09.000Z</lastmod>
     <data>
@@ -29,30 +53,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
-    <lastmod>2018-06-25T03:34:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>魔法秀，让你的 H5 页面秒变 Native APP（原生应用）</title>
-        <pubTime>2018-06-25T02:48:30.000Z</pubTime>
-        
-        <tag>APEX</tag>
-         
-        <tag>Mobile</tag>
-         
-        <tag>Native APP</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
     <lastmod>2018-06-24T03:59:07.000Z</lastmod>
     <data>
@@ -60,10 +60,6 @@
         <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
         <pubTime>2018-06-23T06:33:41.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -73,6 +69,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
         <tag>SSL</tag>
          
@@ -169,10 +169,6 @@
         <title>Oracle APEX 系列文章5：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</title>
         <pubTime>2018-05-05T14:38:05.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -182,6 +178,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -277,10 +277,6 @@
         <title>How to upgrade Oracle APEX from 5.1.4 to 18.1</title>
         <pubTime>2018-05-30T00:50:18.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -288,6 +284,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -310,10 +310,6 @@
         <title>Oracle APEX 系列文章3：在阿里云上打造属于你自己的APEX完整开发环境 (安装CentOS, Tomcat, Nginx)</title>
         <pubTime>2018-05-03T06:39:56.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -323,6 +319,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -345,10 +345,6 @@
         <title>Oracle APEX 系列文章8：如何从 APEX 5.1.4 升级到最新的 APEX 18.1</title>
         <pubTime>2018-05-29T13:10:18.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -356,6 +352,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -403,10 +403,6 @@
         <title>Oracle APEX 系列文章4：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</title>
         <pubTime>2018-05-04T08:28:14.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -416,6 +412,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -438,10 +438,6 @@
         <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</title>
         <pubTime>2018-05-02T00:01:12.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -451,6 +447,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -498,10 +498,6 @@
         <title>Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)</title>
         <pubTime>2018-05-02T23:35:24.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -511,6 +507,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
