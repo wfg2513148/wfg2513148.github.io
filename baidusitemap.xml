@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
+    <lastmod>2018-07-14T16:25:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.07.15</title>
+        <pubTime>2018-07-14T16:17:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
+    <lastmod>2018-07-14T16:25:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
+        <pubTime>2018-06-21T03:38:59.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
     <lastmod>2018-07-14T16:09:30.000Z</lastmod>
     <data>
@@ -180,10 +230,6 @@
         <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
         <pubTime>2018-06-23T06:33:41.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -194,34 +240,13 @@
          
         <tag>ORDS</tag>
          
-        <tag>SSL</tag>
-         
-        <tag>HTTPS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
-    <lastmod>2018-06-21T07:00:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
-        <pubTime>2018-06-21T03:38:59.000Z</pubTime>
-        
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
+         
+        <tag>SSL</tag>
+         
+        <tag>HTTPS</tag>
          
          
            
@@ -264,10 +289,6 @@
         <title>Oracle APEX 系列文章5：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</title>
         <pubTime>2018-05-05T14:38:05.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -277,6 +298,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -372,10 +397,6 @@
         <title>How to upgrade Oracle APEX from 5.1.4 to 18.1</title>
         <pubTime>2018-05-30T00:50:18.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -383,6 +404,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -405,10 +430,6 @@
         <title>Oracle APEX 系列文章3：在阿里云上打造属于你自己的APEX完整开发环境 (安装CentOS, Tomcat, Nginx)</title>
         <pubTime>2018-05-03T06:39:56.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -418,6 +439,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -440,10 +465,6 @@
         <title>Oracle APEX 系列文章8：如何从 APEX 5.1.4 升级到最新的 APEX 18.1</title>
         <pubTime>2018-05-29T13:10:18.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -451,6 +472,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -498,10 +523,6 @@
         <title>Oracle APEX 系列文章4：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</title>
         <pubTime>2018-05-04T08:28:14.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -511,6 +532,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -533,10 +558,6 @@
         <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</title>
         <pubTime>2018-05-02T00:01:12.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -546,6 +567,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
@@ -593,10 +618,6 @@
         <title>Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)</title>
         <pubTime>2018-05-02T23:35:24.000Z</pubTime>
         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -606,6 +627,10 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
+         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
          
          
            
