@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2018-07-26T07:16:05.000Z</updated>
+  <updated>2018-07-26T07:26:26.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</id>
     <published>2018-07-26T15:02:03.000Z</published>
-    <updated>2018-07-26T07:16:05.000Z</updated>
+    <updated>2018-07-26T07:26:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fsit712rjqj30un0akh7l.jpg" alt=""></p><p>以下是截止至 <code>2018.07.26</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><ul><li><a href="http://descubriendooracle.blogspot.com/2018/07/como-desmarcar-el-row-selector-del.html" target="_blank" rel="noopener">How to unmark the Row Selector of the first record in the Interactive Grid in APEX 18.1</a> <code>2018.07</code></li><li><a href="http://www.apexexplorer.com/how-to-implement-web-services-in-oracle-apex/" target="_blank" rel="noopener">How to implement web services in Oracle Apex</a> <code>2018.07</code></li><li><a href="http://dgielis.blogspot.com/2018/07/ora-22902-cursor-expression-not-allowed.html" target="_blank" rel="noopener">“ORA-22902: CURSOR expression not allowed” in ORDS and APEX and how to fix them</a> <code>2018.07</code></li><li><a href="https://insum.ca/simplified-cost-effective-development-in-ebs-think-oracle-apex/" target="_blank" rel="noopener">Simplify Oracle E-Business Suite Development - Think Oracle APEX</a> <code>2018.07</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fsit712rjqj30un0akh7l.jpg" alt=""></p><p>以下是截止至 <code>2018.07.26</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><ul><li><a href="http://descubriendooracle.blogspot.com/2018/07/como-desmarcar-el-row-selector-del.html" target="_blank" rel="noopener">How to unmark the Row Selector of the first record in the Interactive Grid in APEX 18.1</a> <code>2018.07</code></li><li><a href="http://www.apexexplorer.com/how-to-implement-web-services-in-oracle-apex/" target="_blank" rel="noopener">How to implement web services in Oracle Apex</a> <code>2018.07</code></li><li><a href="http://dgielis.blogspot.com/2018/07/ora-22902-cursor-expression-not-allowed.html" target="_blank" rel="noopener">“ORA-22902: CURSOR expression not allowed” in ORDS and APEX and how to fix them</a> <code>2018.07</code></li><li><a href="https://insum.ca/simplified-cost-effective-development-in-ebs-think-oracle-apex/" target="_blank" rel="noopener">Simplify Oracle E-Business Suite Development - Think Oracle APEX</a> <code>2018.07</code></li><li><a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">Oracle Database &amp; APEX Developer Docker Image</a> <code>2018.07</code></li></ul>]]></content>
     
     <summary type="html">
     
