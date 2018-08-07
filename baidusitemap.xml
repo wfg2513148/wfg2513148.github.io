@@ -4,6 +4,55 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/</loc>
+    <lastmod>2018-08-07T16:20:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</title>
+        <pubTime>2018-08-07T16:05:57.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
+    <lastmod>2018-08-07T16:04:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</title>
+        <pubTime>2018-06-25T02:48:30.000Z</pubTime>
+        
+        <tag>APEX</tag>
+         
+        <tag>Mobile</tag>
+         
+        <tag>Hybrid APP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
     <lastmod>2018-08-07T05:55:20.000Z</lastmod>
     <data>
@@ -242,30 +291,6 @@
            
              
               <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
-    <lastmod>2018-06-26T02:15:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>魔法秀，让你的 H5 页面秒变 APP</title>
-        <pubTime>2018-06-25T02:48:30.000Z</pubTime>
-        
-        <tag>APEX</tag>
-         
-        <tag>Mobile</tag>
-         
-        <tag>Hybrid APP</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
           
         </display>
     </data>
