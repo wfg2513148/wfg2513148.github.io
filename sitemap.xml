@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    
+    <lastmod>2018-08-08T01:27:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/</loc>
     
     <lastmod>2018-08-08T00:29:36.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
     
     <lastmod>2018-08-07T16:04:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    
-    <lastmod>2018-08-07T05:55:20.000Z</lastmod>
     
   </url>
   
