@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2018-08-08T16:00:16.000Z</updated>
+  <updated>2018-08-21T10:31:15.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Finally passed AWS Certified Solutions Architect - Professional</title>
+    <link href="https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/"/>
+    <id>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</id>
+    <published>2018-08-21T10:24:34.000Z</published>
+    <updated>2018-08-21T10:31:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>据说是 AWS 认证里最有含金量的认证，Mark一下!</p><p><a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=4&amp;t=c&amp;d=2018-08-21&amp;ci=AWS00258789" target="_blank" rel="noopener">https://www.certmetrics.com/amazon/public/badge.aspx?i=4&amp;t=c&amp;d=2018-08-21&amp;ci=AWS00258789</a></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fuhi1hcb2nj30o00fh40m.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;据说是 AWS 认证里最有含金量的认证，Mark一下!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.certmetrics.com/amazon/public/badge.aspx?i=4&amp;amp;t=c&amp;amp;d=2018-08-21&amp;amp;ci=AWS0
+      
+    
+    </summary>
+    
+      <category term="AWS" scheme="https://wangfanggang.com/categories/AWS/"/>
+    
+    
+      <category term="AWS" scheme="https://wangfanggang.com/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</title>
@@ -709,36 +735,6 @@
     
     
       <category term="Docker" scheme="https://wangfanggang.com/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>钢哥的MBA备考心得 - 献给同样努力的你</title>
-    <link href="https://wangfanggang.com/MBA/mba/"/>
-    <id>https://wangfanggang.com/MBA/mba/</id>
-    <published>2018-05-14T08:26:45.000Z</published>
-    <updated>2018-05-14T08:57:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fraxl6hl8zj31400u00x7.jpg" alt=""></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote><p>钢哥注：MBA备考漫漫征途，只为追求更好的自己。以下是我自己纯手工整理的MBA备考思维导图，钢哥用它们顺利考入了复旦，希望对其他同学也能有所帮助。</p></blockquote><h2 id="申请材料准备工作"><a href="#申请材料准备工作" class="headerlink" title="申请材料准备工作"></a>申请材料准备工作</h2><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frawqeczp1j33mk1qmq73.jpg" alt=""></p><h2 id="提前批面试"><a href="#提前批面试" class="headerlink" title="提前批面试"></a>提前批面试</h2><blockquote><p>钢哥注：想考好学校的同学<strong>一定一定要报提前批，而且越早越好</strong>，提前批通过了对后面的笔试会有很大优势。</p></blockquote><h3 id="面试综述"><a href="#面试综述" class="headerlink" title="面试综述"></a>面试综述</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fraws0ve1uj31ys1bidh9.jpg" alt=""></p><a id="more"></a><h3 id="个面"><a href="#个面" class="headerlink" title="个面"></a>个面</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frayhzqx4wj32ww3feu0y.jpg" alt=""></p><h3 id="组面"><a href="#组面" class="headerlink" title="组面"></a>组面</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frawuiyuxvj33q61767jl.jpg" alt=""></p><h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><blockquote><p>强烈推荐这套数学思维导图，老师不单讲得好，字写的也漂亮。</p></blockquote><h3 id="第一章-实数运算"><a href="#第一章-实数运算" class="headerlink" title="第一章 实数运算"></a>第一章 实数运算</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frawuwtzy4j352p1yuu0z.jpg" alt=""></p><h3 id="第二章-整式与分式"><a href="#第二章-整式与分式" class="headerlink" title="第二章 整式与分式"></a>第二章 整式与分式</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax0luqmnj34cg16yu0x.jpg" alt=""></p><h3 id="第三章-二次函数与二次方程"><a href="#第三章-二次函数与二次方程" class="headerlink" title="第三章 二次函数与二次方程"></a>第三章 二次函数与二次方程</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax1u19eij35k11sqx6q.jpg" alt=""></p><h3 id="第四章-不等式"><a href="#第四章-不等式" class="headerlink" title="第四章 不等式"></a>第四章 不等式</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax23k82gj33ri2ni7wp.jpg" alt=""></p><h3 id="第五章-数列"><a href="#第五章-数列" class="headerlink" title="第五章 数列"></a>第五章 数列</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax2atrp7j359i1wb1kz.jpg" alt=""></p><h3 id="第六章-应用题"><a href="#第六章-应用题" class="headerlink" title="第六章 应用题"></a>第六章 应用题</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax2gaxisj35cc1ueu0x.jpg" alt=""></p><h3 id="第七章-平面几何"><a href="#第七章-平面几何" class="headerlink" title="第七章 平面几何"></a>第七章 平面几何</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax2nyjowj34hl284kjp.jpg" alt=""></p><h3 id="第八章-解析几何"><a href="#第八章-解析几何" class="headerlink" title="第八章 解析几何"></a>第八章 解析几何</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax2w2ddhj33oa2pve86.jpg" alt=""></p><h3 id="第九章-立体几何"><a href="#第九章-立体几何" class="headerlink" title="第九章 立体几何"></a>第九章 立体几何</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax3dg7ltj34h00puqjm.jpg" alt=""></p><h3 id="第十章-排列组合"><a href="#第十章-排列组合" class="headerlink" title="第十章 排列组合"></a>第十章 排列组合</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax3kqj5dj34lx261kjr.jpg" alt=""></p><h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2><blockquote><p>钢哥注：逻辑这块儿我自己也很水，除了做题也没有很好的学习办法。可以上网听听老吕逻辑视频，他的形式逻辑讲得不错，其余的就做题自己领悟吧。</p></blockquote><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax3skuilj32ok3q17wi.jpg" alt=""></p><h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><blockquote><p>钢哥心得：英语里得“阅读”者得天下，强烈建议大家听听<strong>太奇培训</strong>的”<code>邵宁</code>“的英语阅读课！</p></blockquote><h3 id="单词记忆"><a href="#单词记忆" class="headerlink" title="单词记忆"></a>单词记忆</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax4uaesrj318p81nu0x.jpg" alt=""></p><h3 id="完形填空"><a href="#完形填空" class="headerlink" title="完形填空"></a>完形填空</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax6090olj317c0ciq37.jpg" alt=""></p><h3 id="阅读理解"><a href="#阅读理解" class="headerlink" title="阅读理解"></a>阅读理解</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax678u4jj32864hearf.jpg" alt=""></p><h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax6cvlvqj32up3i2h31.jpg" alt=""></p><h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frax6kziumj31dq7861ky.jpg" alt=""></p><h2 id="语文"><a href="#语文" class="headerlink" title="语文"></a>语文</h2><h3 id="大作文"><a href="#大作文" class="headerlink" title="大作文"></a>大作文</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fraxa48z5wj31rv5mjkjo.jpg" alt=""></p><h3 id="小作文"><a href="#小作文" class="headerlink" title="小作文"></a>小作文</h3><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fraxaajf8uj32rm3lydny.jpg" alt=""></p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>能看到这里已经算真爱了，好吧，源文件在<a href="https://github.com/wfg2513148/mba" target="_blank" rel="noopener">这里</a>，拿去。。。</p><p>最后用照片记录我的2017。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fraxl6hl8zj31400u00x7.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fraxl6hl8zj31400u00x7.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;钢哥注：MBA备考漫漫征途，只为追求更好的自己。以下是我自己纯手工整理的MBA备考思维导图，钢哥用它们顺利考入了复旦，希望对其他同学也能有所帮助。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;申请材料准备工作&quot;&gt;&lt;a href=&quot;#申请材料准备工作&quot; class=&quot;headerlink&quot; title=&quot;申请材料准备工作&quot;&gt;&lt;/a&gt;申请材料准备工作&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1frawqeczp1j33mk1qmq73.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;提前批面试&quot;&gt;&lt;a href=&quot;#提前批面试&quot; class=&quot;headerlink&quot; title=&quot;提前批面试&quot;&gt;&lt;/a&gt;提前批面试&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;钢哥注：想考好学校的同学&lt;strong&gt;一定一定要报提前批，而且越早越好&lt;/strong&gt;，提前批通过了对后面的笔试会有很大优势。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;面试综述&quot;&gt;&lt;a href=&quot;#面试综述&quot; class=&quot;headerlink&quot; title=&quot;面试综述&quot;&gt;&lt;/a&gt;面试综述&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fraws0ve1uj31ys1bidh9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="MBA" scheme="https://wangfanggang.com/categories/MBA/"/>
-    
-    
-      <category term="MBA" scheme="https://wangfanggang.com/tags/MBA/"/>
     
   </entry>
   
