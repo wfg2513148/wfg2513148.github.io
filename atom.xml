@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2018-09-30T17:05:54.000Z</updated>
+  <updated>2018-09-30T17:10:52.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/</id>
     <published>2018-09-30T17:02:03.000Z</published>
-    <updated>2018-09-30T17:05:54.000Z</updated>
+    <updated>2018-09-30T17:10:52.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg" alt=""></p><p><a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express（APEX）18.2</a> 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。</p><p>下面是 Oracle APEX 18.2 的一些改进，包括：</p><a id="more"></a><h2 id="创建页面向导"><a href="#创建页面向导" class="headerlink" title="创建页面向导"></a>创建页面向导</h2><p>在 Oracle APEX 18.2 中，“创建页面”向导已可以为并排主从关系和仪表板创建应用程序页面。并排主从表单使用并排布局创建单页主要详细信息，并使用模态弹出窗口编辑报表区域。仪表板可以根据样本数据创建第一个仪表板，您稍后可以使用 Page Designer 进行再次编辑。 </p><h2 id="Font-APEX"><a href="#Font-APEX" class="headerlink" title="Font APEX"></a>Font APEX</h2><p><a href="https://apex.oracle.com/fontapex" target="_blank" rel="noopener">Font APEX</a> 是超过 1,000 个高质量图标的集合，其中许多图标专门用于商业应用程序。APEX 18.1 中的 Font APEX 包括一组新的高分辨率 32 x 32 图标，可以根据APEX应用程序中的使用位置，将自动为您选择正确大小的字体。Oracle APEX 18.2 还包括独立于 Oracle APEX 版本的更新 Font APEX 样式表和字体文件功能。另外，Font APEX 现在可以在 GitHub 上找到了。</p><h2 id="减少停机时间"><a href="#减少停机时间" class="headerlink" title="减少停机时间"></a>减少停机时间</h2><p>在一个始终可用的云服务和企业应用程序的时代，APEX 18.2 特别关注显着减少 APEX 升级所带来的中断时间。APEX 18.1 首次引入了多阶段减少停机时间的升级方法，从而显著降低了升级过程中发生的总体中断。在 APEX 18.2 中，这一多阶段升级过程得到了进一步完善，从而使 APEX 升级已经短暂停机的时间进一步缩短。  </p><h2 id="简化服务请求和服务创建"><a href="#简化服务请求和服务创建" class="headerlink" title="简化服务请求和服务创建"></a>简化服务请求和服务创建</h2><p>请求 APEX 工作区的工作流程已大大简化，从而改善了首次尝试 Oracle APEX 的用户体验。APEX 配置中添加了其他设置，以便在工作区请求过程中使用开箱即用的合理默认值，并且启动和运行 APEX 所需的信息非常少！</p><h2 id="样本数据集增强功能"><a href="#样本数据集增强功能" class="headerlink" title="样本数据集增强功能"></a>样本数据集增强功能</h2><p>为了帮助学习过程，Oracle APEX 包含许多数据集，可以轻松安装并用于创建应用程序。在 APEX 18.2 中，创建应用程序向导将自动填充构建在数据集之上的组件。此外，一些数据集已经扩展到包括其他语言的数据，包括<code>中文、捷克语、法语、德语、日语、韩语、波兰语、俄语和西班牙语</code>。</p><p>与每个 APEX 版本一样，对生产力和示例应用程序进行了大量增强和修复。此外，APEX 18.2 中已修复了 150 多个错误，从而为 APEX 环境带来更高的质量和稳定性。</p><h2 id="附加信息"><a href="#附加信息" class="headerlink" title="附加信息"></a>附加信息</h2><p>Application Express（APEX）是低代码快速应用开发平台，可以在任何 Oracle 数据库中运行，并且包含在每个 Oracle 数据库云服务中。APEX 与 Oracle 数据库相结合，提供了一个完全集成的环境，用于构建、部署、维护和监控在移动和桌面设备上看起来很棒的数据驱动型业务应用程序。要了解有关 Oracle Application Express 的更多信息，请访问：<a href="apex.oracle.com">apex.oracle.com</a>。要了解有关 Oracle Database Cloud 的更多信息，请访问：<a href="cloud.oracle.com/database">cloud.oracle.com/database</a>。 </p>]]></content>
     
