@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    <lastmod>2018-11-12T15:29:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
+        <pubTime>2018-06-03T11:56:34.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
+    <lastmod>2018-11-12T15:26:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.11.12</title>
+        <pubTime>2018-11-12T15:32:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Database/oracle-xe-18c/</loc>
     <lastmod>2018-10-22T15:12:09.000Z</lastmod>
     <data>
@@ -81,31 +131,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2018-09-20T15:41:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
-        <pubTime>2018-06-03T11:56:34.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</loc>
     <lastmod>2018-09-10T12:31:32.000Z</lastmod>
     <data>
@@ -117,6 +142,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -124,8 +151,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -152,6 +177,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -159,8 +186,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -187,6 +212,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -194,8 +221,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -222,6 +247,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -229,8 +256,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -257,6 +282,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -264,8 +291,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -342,13 +367,13 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -424,13 +449,13 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
          
            
@@ -457,6 +482,8 @@
          
         <tag>APEX</tag>
          
+        <tag>ORDS</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -464,8 +491,6 @@
         <tag>Tomcat</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
          
         <tag>SSL</tag>
          
@@ -521,9 +546,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
          
            
