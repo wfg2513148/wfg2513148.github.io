@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    
+    <lastmod>2019-02-02T01:42:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
     
-    <lastmod>2019-02-02T01:33:42.000Z</lastmod>
+    <lastmod>2019-02-02T01:37:41.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
     
     <lastmod>2018-11-12T15:48:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    
-    <lastmod>2018-11-12T15:34:07.000Z</lastmod>
     
   </url>
   
