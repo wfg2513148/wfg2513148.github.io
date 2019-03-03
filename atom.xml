@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-02-02T01:37:41.000Z</updated>
+  <updated>2019-03-03T03:22:20.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2019.03.02</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</id>
+    <published>2019-03-01T16:13:00.000Z</published>
+    <updated>2019-03-03T03:22:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g0pfw744awj31f40wm1ky.jpg" alt=""></p><p>以下是截止至 <code>2019.02.02</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://dgielis.blogspot.com/2019/03/including-image-from-apex-static.html" target="_blank" rel="noopener">Including an image from APEX Static Application Files in an email</a> <code>2019.03</code></li><li><a href="http://descubriendooracle.blogspot.com/2019/02/agregar-estilos-los-items-text-y.html" target="_blank" rel="noopener">Add styles to the Text and Texarea Items of the Form in APEX 18.x</a> <code>2019.02</code></li><li><a href="https://blogs.oracle.com/apex/application-express-18-and-report-pagination" target="_blank" rel="noopener">Application Express 18 and Report Pagination</a> <code>2019.02</code></li><li><a href="https://blogs.oracle.com/apex/new-declarative-options-for-interactive-grid" target="_blank" rel="noopener">New declarative options for Interactive Grid</a> <code>2019.02</code></li><li><a href="https://blogs.oracle.com/apex/forms-in-apex-191-more-power%2c-more-flexibility" target="_blank" rel="noopener">Forms in APEX 19.1: More power, more Flexibility</a> <code>2019.02</code></li><li><a href="https://blogs.oracle.com/apex/quick-and-easy-data-loading-with-apex-191" target="_blank" rel="noopener">Quick and Easy Data Loading with APEX 19.1</a> <code>2019.02</code></li><li><a href="https://rimblas.com/blog/2019/02/add-a-reset-button-to-your-interactive-reports/" target="_blank" rel="noopener">Add a “Reset” button to your Interactive Reports</a> <code>2019.02</code></li><li><a href="http://lschilde.blogspot.com/2019/02/oracle-apex-large-tabular-form.html" target="_blank" rel="noopener">Oracle APEX large tabular form processing using JSON</a> <code>2019.02</code></li><li><a href="http://hardlikesoftware.com/weblog/2019/02/11/apex-inline-popups-and-dialogs/" target="_blank" rel="noopener">APEX Inline Popups and Dialogs</a> <code>2019.02</code></li><li><a href="https://roelhartman.blogspot.com/2019/02/caution-when-using-suppress-change.html" target="_blank" rel="noopener">Caution when using Suppress Change Event on an Interactive Grid Column</a> <code>2019.02</code></li><li><a href="https://www.talkapex.com/2019/02/how-to-intercept-interactive-report-save-and-delete-functions-in-apex/" target="_blank" rel="noopener">How to Intercept Interactive Report Save and Delete Functions in APEX</a> <code>2019.02</code></li><li><a href="https://www.talkapex.com/2019/02/case-insensitive-sorting-in-apex/" target="_blank" rel="noopener">Case Insensitive Sorting in APEX</a> <code>2019.02</code></li><li><a href="https://www.talkapex.com/2019/02/5-chrome-dev-tools-for-apex-developers/" target="_blank" rel="noopener">5 Chrome Dev Tools For APEX Developers</a> <code>2019.02</code></li><li><a href="https://www.talkapex.com/2019/02/how-to-disable-an-apex-application-during-a-release/" target="_blank" rel="noopener">How to Disable an APEX Application During a Release</a> <code>2019.02</code></li><li><a href="http://dgielis.blogspot.com/2019/02/region-only-shown-in-development-mode.html" target="_blank" rel="noopener">Region only shown in development mode in Oracle APEX</a> <code>2019.02</code></li><li><a href="https://ora-00001.blogspot.com/2019/01/apex-plugin-execute-plsql-code-and-return-content-to-page-updated.html" target="_blank" rel="noopener">APEX Plugin: Execute PL/SQL code and return content to page (updated)</a> <code>2019.01</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOly1g0pfw744awj31f40wm1ky.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2019.02.02&lt;/code&gt;收集的 Oracle APEX
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2019.02.02</title>
@@ -677,37 +707,6 @@
       <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
     
       <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</title>
-    <link href="https://wangfanggang.com/Docker/shadowsocks-vpn/"/>
-    <id>https://wangfanggang.com/Docker/shadowsocks-vpn/</id>
-    <published>2018-06-04T04:25:41.000Z</published>
-    <updated>2018-06-04T04:31:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg" alt=""></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？</p><p>这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试牛刀，10分钟搭建属于你自己的VPN服务器。</p><blockquote><p>还不了解 docker 是什么的同学请先阅读钢哥之前的博文：<a href="https://wangfanggang.com/Docker/docker/">Docker - 通往新世界的大门</a> </p></blockquote><a id="more"></a><h2 id="具体搭建步骤"><a href="#具体搭建步骤" class="headerlink" title="具体搭建步骤"></a>具体搭建步骤</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先得找一台用来翻墙的海外服务器，该服务器一定要在墙外，比如：香港、新加坡、日本。你可以选择 AWS 的 EC2 或者阿里云的 ECS 服务器都可以。</p><p>其次，要在该服务器上安装 docker 运行时环境。这里以 CentOS 7 举例，首先安装 docker 运行时环境。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 安装 docker</span></span><br><span class="line">yum install docker -y</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动 docker 服务</span></span><br><span class="line">service docker start</span><br><span class="line">chkconfig docker on</span><br><span class="line"></span><br><span class="line"><span class="comment">## 检查 docker 版本</span></span><br><span class="line">docker -version</span><br></pre></td></tr></table></figure><p>这些都成功了？恭喜你，你已经成功一半了！</p><h3 id="拉取-docker-镜像"><a href="#拉取-docker-镜像" class="headerlink" title="拉取 docker 镜像"></a>拉取 docker 镜像</h3><p>好了，现在让我们直接拉取别人做好的 docker 镜像。这里我选择的是 Github 上别人做好的 <a href="https://github.com/oddrationale/docker-shadowsocks" target="_blank" rel="noopener">Shadowsock VPN Docker 镜像</a>，直接执行以下命令即可。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull oddrationale/docker-shadowsocks</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzny7wofj30gz065q40.jpg" alt=""></p><h3 id="运行-docker-镜像"><a href="#运行-docker-镜像" class="headerlink" title="运行 docker 镜像"></a>运行 docker 镜像</h3><p>运行如下命令启动该 docker 镜像。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 12345:12345 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 12345 -k welcome -m aes-256-cfb</span><br></pre></td></tr></table></figure></p><blockquote><ul><li><code>-d</code>参数允许 docker 常驻后台运行</li><li><code>-p</code>来指定要映射的端口，这里端口号统一保持一致即可。例如：12345</li><li><code>-s</code>服务器 IP 地址，不用动</li><li><code>-k</code>后面设置你的 VPN 的密码，比如：welcome</li><li><code>-m</code>指定加密方式</li></ul></blockquote><p>运行<code>docker ps -a</code>查看容器是否已成功运行起来了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fryzw18byyj30wd02f0t8.jpg" alt=""></p><h3 id="安装-vpn-客户端（Mac-amp-Windows）"><a href="#安装-vpn-客户端（Mac-amp-Windows）" class="headerlink" title="安装 vpn 客户端（Mac &amp; Windows）"></a>安装 vpn 客户端（Mac &amp; Windows）</h3><p>接下来要测试我们的 VPN 服务器是否正常工作了，由于我们大部分时间都是用 PC 来翻墙，先下载个好用的 VPN 客户端。这里推荐下载 <a href="https://github.com/shadowsocks" target="_blank" rel="noopener">shadowsocks</a>，简单易用，各个平台版本也都有。</p><ul><li><a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">Shadowsocks (Windows版本)</a></li><li><a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG (Mac版本)</a></li></ul><p>这里以 Mac 版本为例，直接安装即可，非常简单。运行起来后，工具栏上有一个小飞机的图标，进入到“<strong>服务器设置</strong>”。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz04czhmaj30eh0ax0vh.jpg" alt=""></p><p>点击“<strong>+</strong>”图标添加新的服务器，如下图所示设置连接信息。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz07klq0oj30ge0emgmd.jpg" alt=""></p><p>设置好以后，赶紧打开浏览器，试着访问一下：<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>，一切正常的话，新世界的大门已经向你敞开了。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz09i43o8j30hw0au74o.jpg" alt=""></p><blockquote><p>钢哥注：如果访问不了，先确认你的连接信息是否正确。另外如果使用的云服务器，记得检查一下<code>网络安全组</code>里的网络<code>端口</code>是否已经开放了。</p></blockquote><h3 id="安装-vpn-客户端（手机端）"><a href="#安装-vpn-客户端（手机端）" class="headerlink" title="安装 vpn 客户端（手机端）"></a>安装 vpn 客户端（手机端）</h3><p>手机上也可以安装类似的 Shadowsocks 应用。由于我自己用的是 iPhone，所以安装了一个叫<code>Wingy</code>的应用。有一点需要注意，这个应用只在美国的 App Store 上提供，所以需要大家自己想办法啦。设置起来很简单，跟 PC 端是一样的，这里就不赘述了。</p><p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frz0h0vcmjj30ku112t9i.jpg" alt=""></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>怎么样？通过这次实践，是不是觉得 Docker 真的是个好东西？其实还有很多好的 Docker 镜像，大家也可以自己封装一些，然后上传到公共的 Docker 仓库上贡献给大家。</p><p>最后，希望大家都掌握了科学上网的技能，多多用来学习查资料，传播正能量，少看一些不可描述的东西：）</p><p>感谢大家的关注！！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1frz18df1sqj30e8080wel.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;相信搞 IT 的同学平时都需要上网查资料，特别是很多新特性、新知识，都要用 Google 才能查到（别告诉我百度也挺好，百度是用来测网络通不通的），想用 Google 势必需要翻墙，网络上的 VPN 服务商虽然多，但三天两头就跟你玩失踪，好一点儿的服务又价格不菲，难道就没有更好的办法么？&lt;/p&gt;
-&lt;p&gt;这点儿小事怎么能难住咱搞技术的，之前不是跟着钢哥走了一遍 Docker 的基本命令了么，今天咱们就来小试牛刀，10分钟搭建属于你自己的VPN服务器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;还不了解 docker 是什么的同学请先阅读钢哥之前的博文：&lt;a href=&quot;https://wangfanggang.com/Docker/docker/&quot;&gt;Docker - 通往新世界的大门&lt;/a&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://wangfanggang.com/categories/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://wangfanggang.com/tags/Docker/"/>
-    
-      <category term="Shadowsocks" scheme="https://wangfanggang.com/tags/Shadowsocks/"/>
-    
-      <category term="VPN" scheme="https://wangfanggang.com/tags/VPN/"/>
     
   </entry>
   
