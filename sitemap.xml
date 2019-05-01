@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
+    
+    <lastmod>2019-05-01T10:55:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
+    
+    <lastmod>2019-05-01T10:55:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
+    
+    <lastmod>2019-05-01T10:54:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group-event_20190419/</loc>
     
     <lastmod>2019-04-20T14:49:03.000Z</lastmod>
@@ -191,20 +212,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
-    
-    <lastmod>2018-07-14T16:25:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
-    
-    <lastmod>2018-07-14T16:25:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-new-official-account/</loc>
     
     <lastmod>2018-07-13T14:31:21.000Z</lastmod>
@@ -243,13 +250,6 @@
     <loc>https://wangfanggang.com/Docker/docker/</loc>
     
     <lastmod>2018-06-14T17:26:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
-    
-    <lastmod>2018-06-04T07:18:15.000Z</lastmod>
     
   </url>
   
