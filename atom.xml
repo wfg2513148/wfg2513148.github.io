@@ -236,16 +236,16 @@
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</id>
     <published>2018-09-20T15:32:03.000Z</published>
-    <updated>2019-05-01T15:45:54.000Z</updated>
+    <updated>2019-05-01T15:51:22.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg" alt=""></p><p>以下是截止至 <code>2018.09.20</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://descubriendooracle.blogspot.com/2018/09/instalar-apex-office-print-en-nuestro-ws.html" target="_blank" rel="noopener">Install APEX Office Print in our WS</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-5-event-theme42ready/" target="_blank" rel="noopener">APEX 5 Event: theme42ready</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-data-load-wizard-customizations-revisited/" target="_blank" rel="noopener">APEX Data Load Wizard Customizations ~ Revisited</a> <code>2018.09</code></li><li><a href="http://apexbyg.blogspot.com/2018/09/hot-to-set-ig-default-values-for-email.html" target="_blank" rel="noopener">How to set IG default values for email fields when downloading report</a> <code>2018.09</code></li><li><a href="http://lschilde.blogspot.com/2018/09/ig-toolbar-customization-using-function.html" target="_blank" rel="noopener">IG toolbar customization using a function</a> <code>2018.09</code></li><li><a href="https://apextips.blogspot.com/2018/09/clearing-error-state-of-interactive.html" target="_blank" rel="noopener">Clearing error state of an Interactive Grid column</a> <code>2018.09</code></li><li><a href="https://jeffkemponoracle.com/2018/09/using-apex_item-checkbox2-with-multiple-identifiers/" target="_blank" rel="noopener">Using apex_item.checkbox2 with multiple identifiers</a> <code>2018.09</code></li><li><a href="http://www.explorer.uk.com/undocumented-ig-features/" target="_blank" rel="noopener">Undocumented IG Features</a> <code>2018.09</code></li><li><a href="https://www.lrayner.com/blog/viewing-icons-in-the-interactive-report-apex-18-1" target="_blank" rel="noopener">Viewing icons in the Interactive Report [Apex 18.1]</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/oracle-apex-client-side-dynamic-actions-using-jquery-selectors.html" target="_blank" rel="noopener">Client Side Dynamic Actions using jQuery Selectors</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/remove-duplicate-from-oracle-apex-collection.html" target="_blank" rel="noopener">Remove duplicate from APEX collection</a> <code>2018.09</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg" alt=""></p><p>以下是截止至 <code>2018.09.20</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://descubriendooracle.blogspot.com/2018/09/instalar-apex-office-print-en-nuestro-ws.html" target="_blank" rel="noopener">Install APEX Office Print in our WS</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-5-event-theme42ready/" target="_blank" rel="noopener">APEX 5 Event: theme42ready</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-data-load-wizard-customizations-revisited/" target="_blank" rel="noopener">APEX Data Load Wizard Customizations ~ Revisited</a> <code>2018.09</code></li><li><a href="http://apexbyg.blogspot.com/2018/09/hot-to-set-ig-default-values-for-email.html" target="_blank" rel="noopener">How to set IG default values for email fields when downloading report</a> <code>2018.09</code></li><li><a href="http://lschilde.blogspot.com/2018/09/ig-toolbar-customization-using-function.html" target="_blank" rel="noopener">IG toolbar customization using a function</a> <code>2018.09</code></li><li><a href="https://apextips.blogspot.com/2018/09/clearing-error-state-of-interactive.html" target="_blank" rel="noopener">Clearing error state of an Interactive Grid column</a> <code>2018.09</code></li><li><a href="https://jeffkemponoracle.com/2018/09/using-apex_item-checkbox2-with-multiple-identifiers/" target="_blank" rel="noopener">Using apex_item.checkbox2 with multiple identifiers</a> <code>2018.09</code></li><li><a href="http://www.explorer.uk.com/undocumented-ig-features/" target="_blank" rel="noopener">Undocumented IG Features</a> <code>2018.09</code></li><li><a href="https://www.lrayner.com/blog/viewing-icons-in-the-interactive-report-apex-18-1" target="_blank" rel="noopener">Viewing icons in the Interactive Report [Apex 18.1]</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/oracle-apex-client-side-dynamic-actions-using-jquery-selectors.html" target="_blank" rel="noopener">Client Side Dynamic Actions using jQuery Selectors</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/remove-duplicate-from-oracle-apex-collection.html" target="_blank" rel="noopener">Remove duplicate from APEX collection</a> <code>2018.09</code></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;以下是截止至 &lt;code&gt;2018.09.20&lt;/code&gt;收集的 Oracle APEX
+        &lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2018.09.20&lt;/code&gt;收集的 Oracle APEX 
       
     
     </summary>
@@ -310,11 +310,11 @@
       <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
     
     
-      <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
       <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
     
       <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+      <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
     
       <category term="Docker" scheme="https://wangfanggang.com/tags/Docker/"/>
     

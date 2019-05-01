@@ -4,6 +4,53 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    <lastmod>2019-05-01T15:51:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.09.20</title>
+        <pubTime>2018-09-20T15:32:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Git/git/</loc>
+    <lastmod>2019-05-01T15:51:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习笔记 - 钢钢更新</title>
+        <pubTime>2018-04-19T06:52:06.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+        <tag>Github</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git" url="https://wangfanggang.com/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
     <lastmod>2019-05-01T15:46:00.000Z</lastmod>
     <data>
@@ -193,31 +240,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
-    <lastmod>2019-05-01T15:45:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.09.20</title>
-        <pubTime>2018-09-20T15:32:03.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
     <lastmod>2019-05-01T15:45:54.000Z</lastmod>
     <data>
@@ -275,11 +297,11 @@
         <title>Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</title>
         <pubTime>2018-09-05T13:14:10.000Z</pubTime>
         
-        <tag>ORDS</tag>
-         
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
          
         <tag>Docker</tag>
          
@@ -379,6 +401,10 @@
         <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
         <pubTime>2018-06-23T06:33:41.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -388,10 +414,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
         <tag>SSL</tag>
          
@@ -486,6 +508,31 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
+    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.07.26</title>
+        <pubTime>2018-07-26T07:02:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
     <lastmod>2019-05-01T15:45:46.000Z</lastmod>
     <data>
@@ -511,24 +558,23 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
-    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
+    <lastmod>2019-05-01T15:45:45.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.07.26</title>
-        <pubTime>2018-07-26T07:02:03.000Z</pubTime>
+        <title>Oracle SQLcl - 替代 sqlplus 的利器</title>
+        <pubTime>2018-05-25T00:22:08.000Z</pubTime>
         
         <tag>Oracle</tag>
          
-        <tag>APEX</tag>
+        <tag>sqlcl</tag>
+         
+        <tag>sql</tag>
          
          
            
              
               <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
           
         </display>
     </data>
@@ -561,23 +607,23 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
-    <lastmod>2019-05-01T15:45:45.000Z</lastmod>
+    <loc>https://wangfanggang.com/Docker/shadowsocks-vpn/</loc>
+    <lastmod>2019-05-01T15:45:44.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle SQLcl - 替代 sqlplus 的利器</title>
-        <pubTime>2018-05-25T00:22:08.000Z</pubTime>
+        <title>10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</title>
+        <pubTime>2018-06-04T04:25:41.000Z</pubTime>
         
-        <tag>Oracle</tag>
+        <tag>Docker</tag>
          
-        <tag>sqlcl</tag>
+        <tag>Shadowsocks</tag>
          
-        <tag>sql</tag>
+        <tag>VPN</tag>
          
          
            
              
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+              <breadCrumb title="Docker" url="https://wangfanggang.com/categories/Docker/"/>
           
         </display>
     </data>
@@ -605,30 +651,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Docker/shadowsocks-vpn/</loc>
-    <lastmod>2019-05-01T15:45:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）</title>
-        <pubTime>2018-06-04T04:25:41.000Z</pubTime>
-        
-        <tag>Docker</tag>
-         
-        <tag>Shadowsocks</tag>
-         
-        <tag>VPN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Docker" url="https://wangfanggang.com/categories/Docker/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/how-to-upgrade-apex-from-5-1-4-to-18-1/</loc>
     <lastmod>2019-05-01T15:45:43.000Z</lastmod>
     <data>
@@ -636,6 +658,10 @@
         <title>How to upgrade Oracle APEX from 5.1.4 to 18.1</title>
         <pubTime>2018-05-30T00:50:18.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -644,10 +670,6 @@
          
         <tag>ORDS</tag>
          
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
          
            
              
@@ -655,28 +677,6 @@
           
              
               <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Git/git/</loc>
-    <lastmod>2019-05-01T15:45:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习笔记 - 钢钢更新</title>
-        <pubTime>2018-04-19T06:52:06.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-        <tag>Github</tag>
-         
-         
-           
-             
-              <breadCrumb title="Git" url="https://wangfanggang.com/categories/Git/"/>
           
         </display>
     </data>
@@ -803,6 +803,10 @@
         <title>Oracle APEX 系列文章8：如何从 APEX 5.1.4 升级到最新的 APEX 18.1</title>
         <pubTime>2018-05-29T13:10:18.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>CentOS</tag>
          
         <tag>Tomcat</tag>
@@ -811,6 +815,27 @@
          
         <tag>ORDS</tag>
          
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
+    <lastmod>2019-05-01T15:45:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章6：Oracle APEX 到底适不适合企业环境？</title>
+        <pubTime>2018-05-13T05:28:25.000Z</pubTime>
+        
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
@@ -854,31 +879,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
-    <lastmod>2019-05-01T15:45:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章6：Oracle APEX 到底适不适合企业环境？</title>
-        <pubTime>2018-05-13T05:28:25.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/</loc>
     <lastmod>2019-05-01T15:45:33.000Z</lastmod>
     <data>
@@ -886,6 +886,10 @@
         <title>Oracle APEX 系列文章4：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</title>
         <pubTime>2018-05-04T08:28:14.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -895,10 +899,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
          
            
@@ -921,6 +921,10 @@
         <title>Oracle APEX 系列文章5：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</title>
         <pubTime>2018-05-05T14:38:05.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -930,10 +934,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
          
            
@@ -956,6 +956,10 @@
         <title>Oracle APEX 系列文章3：在阿里云上打造属于你自己的APEX完整开发环境 (安装CentOS, Tomcat, Nginx)</title>
         <pubTime>2018-05-03T06:39:56.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -965,10 +969,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
          
            
@@ -991,6 +991,10 @@
         <title>Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)</title>
         <pubTime>2018-05-02T23:35:24.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -1000,10 +1004,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
          
            
@@ -1026,6 +1026,10 @@
         <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</title>
         <pubTime>2018-05-02T00:01:12.000Z</pubTime>
         
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
         <tag>Aliyun</tag>
          
         <tag>CentOS</tag>
@@ -1035,10 +1039,6 @@
         <tag>Nginx</tag>
          
         <tag>ORDS</tag>
-         
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
          
          
            
