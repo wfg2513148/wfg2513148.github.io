@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-05-21T15:45:44.000Z</updated>
+  <updated>2019-06-06T16:04:55.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2019.06.06</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190606/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190606/</id>
+    <published>2019-06-06T15:50:00.000Z</published>
+    <updated>2019-06-06T16:04:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.pixabay.com/photo/2019/06/03/23/37/death-valley-4250244_1280.jpg" alt=""></p><p>以下是截止至 <code>2019.06.06</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.lrayner.com/blog/exception-handling-apex_error-oracle-apex-19-1" target="_blank" rel="noopener">Exception Handling + APEX_ERROR [Oracle APEX 19.1]</a> <code>2019.06</code></li><li><a href="https://jeffkemponoracle.com/2019/05/autoformat-numbers-in-an-interactive-grid/" target="_blank" rel="noopener">Autoformat Numbers in an Interactive Grid</a> <code>2019.05</code></li><li><a href="https://jeffkemponoracle.com/2019/05/hiding-html-when-downloading-an-interactive-report/" target="_blank" rel="noopener">Hiding HTML when downloading an Interactive Report</a> <code>2019.05</code></li><li><a href="http://apexbyg.blogspot.com/2019/05/generate-apex-url-in-javascript.html" target="_blank" rel="noopener">Generate APEX URL in JavaScript</a> <code>2019.05</code></li><li><a href="https://aflorestorres.blogspot.com/2019/03/install-oracle-database-18c-express-and.html" target="_blank" rel="noopener">Install Oracle DataBase 18c Express and Oracle Apex 18.2 / PL/SQL Gateway / Windows 10</a> <code>2019.05</code></li><li><a href="https://aflorestorres.blogspot.com/2019/05/validaciones-en-apexitem-oracle-apex.html" target="_blank" rel="noopener">Validations at apex_item Oracle Apex</a> <code>2019.05</code></li><li><a href="https://jeffkemponoracle.com/2019/04/form-regions-superclass-subclass/" target="_blank" rel="noopener">Form Regions – Superclass/Subclass</a> <code>2019.04</code></li><li><a href="https://jeffkemponoracle.com/2019/04/escaped-strings-and-pl-sql-dynamic-actions/" target="_blank" rel="noopener">Escaped strings and PL/SQL Dynamic Actions</a> <code>2019.04</code></li><li><a href="http://www.grassroots-oracle.com/2019/04/apex-classic-report-as-alerts.html" target="_blank" rel="noopener">APEX Classic Report as Alerts</a> <code>2019.04</code></li><li><a href="https://thtechnology.com/2019/04/28/apex-18-2-data-load-wizard-no-data-found-or-lets-revisit-the-data-load-wizard/" target="_blank" rel="noopener">APEX 18.2 Data Load Wizard no data found OR Let’s Revisit the Data Load Wizard</a> <code>2019.04</code></li><li><a href="https://fuzziebrain.com/content/id/1908" target="_blank" rel="noopener">Social Sign In with Azure</a> <code>2019.04</code></li><li><a href="http://www.grassroots-oracle.com/2019/04/highlight-current-card-in-oracle-apex.html" target="_blank" rel="noopener">Highlight ‘current’ card in APEX</a> <code>2019.04</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://cdn.pixabay.com/photo/2019/06/03/23/37/death-valley-4250244_1280.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2019.06.06&lt;/code&gt;收集的 
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Java学习笔记 - Hutool</title>
@@ -611,36 +641,6 @@
     
     
       <category term="MBA" scheme="https://wangfanggang.com/tags/MBA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle官方线上活动：APEX Office Hours (北京时间6月28日22点)</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</id>
-    <published>2018-06-26T14:02:06.000Z</published>
-    <updated>2019-05-01T15:45:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fsoxm7oltvj31zo08i7a7.jpg" alt=""></p><p><strong><code>本周四(06.28)北京时间晚上22点</code></strong>，Oracle 官方举办 APEX Office Hours 在线活动， 所有的 Oracle APEX 研发成员都会参加，回答大家的任何问题。想关注 Oracle APEX 最新动态的同学一定不要错过！！</p><p>详细信息请猛戳这里：<a href="http://apex.oracle.com/officehours" target="_blank" rel="noopener">http://apex.oracle.com/officehours</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;http://ws1.sinaimg.cn/large/006By2pOgy1fsoxm7oltvj31zo08i7a7.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;本周四(06.28)北京时间晚上22点&lt;/code&gt;&lt;/stro
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
