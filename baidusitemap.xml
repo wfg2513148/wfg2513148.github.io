@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://wangfanggang.com/Python/python-ai/</loc>
-    <lastmod>2019-07-11T09:04:42.000Z</lastmod>
+    <lastmod>2019-07-11T09:14:52.000Z</lastmod>
     <data>
         <display>
         <title>Python 数据科学 学习笔记 - 钢钢更新</title>
@@ -283,26 +283,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
-    <lastmod>2019-05-01T15:45:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>今天是个好日子</title>
-        <pubTime>2018-06-27T04:03:46.000Z</pubTime>
-        
-        <tag>MBA</tag>
-         
-         
-           
-             
-              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</loc>
     <lastmod>2019-05-01T15:45:59.000Z</lastmod>
     <data>
@@ -316,6 +296,26 @@
            
              
               <breadCrumb title="AWS" url="https://wangfanggang.com/categories/AWS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
+    <lastmod>2019-05-01T15:45:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>今天是个好日子</title>
+        <pubTime>2018-06-27T04:03:46.000Z</pubTime>
+        
+        <tag>MBA</tag>
+         
+         
+           
+             
+              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
           
         </display>
     </data>
@@ -577,45 +577,6 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
-    <lastmod>2019-05-01T15:45:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
-        <pubTime>2018-06-23T06:33:41.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>SSL</tag>
-         
-        <tag>HTTPS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-new-official-account/</loc>
     <lastmod>2019-05-01T15:45:48.000Z</lastmod>
     <data>
@@ -641,16 +602,30 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group/</loc>
-    <lastmod>2019-05-01T15:45:47.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
+    <lastmod>2019-05-01T15:45:48.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 中国区微信讨论群</title>
-        <pubTime>2018-06-26T03:42:41.000Z</pubTime>
+        <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
+        <pubTime>2018-06-23T06:33:41.000Z</pubTime>
         
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>SSL</tag>
+         
+        <tag>HTTPS</tag>
          
          
            
@@ -691,12 +666,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
-    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group/</loc>
+    <lastmod>2019-05-01T15:45:47.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
-        <pubTime>2018-06-21T03:38:59.000Z</pubTime>
+        <title>Oracle APEX 中国区微信讨论群</title>
+        <pubTime>2018-06-26T03:42:41.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -747,6 +722,31 @@
         <display>
         <title>Oracle APEX 活跃博文整理 | 2018.07.15</title>
         <pubTime>2018-07-14T16:17:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
+    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
+        <pubTime>2018-06-21T03:38:59.000Z</pubTime>
         
         <tag>Oracle</tag>
          
