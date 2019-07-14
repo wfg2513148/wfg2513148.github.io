@@ -1,1 +1,1425 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0"><link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"6.3.0",sidebar:{position:"right",display:"post",offset:12,b2t:!1,scrollpercent:!0,onmobile:!1},fancybox:!0,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"IRZBM0L62M",apiKey:"5ca467735bb046ab76fcd421fe6facf3",indexName:"dev_hexo",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?30dfd7a6a7bf400f81280570922d1bce";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><meta name="description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T"><meta name="keywords" content="Oracle,APEX,Aliyun,CentOS,Tomcat,Nginx,ORDS"><meta property="og:type" content="article"><meta property="og:title" content="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技"><meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/index.html"><meta property="og:site_name" content="钢钢更新"><meta property="og:description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtgg770lj30n70d00x4.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwre1l6j0j30n20cvgpa.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtdnv4zbj30n20cqwhe.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwte8apxrj30n70d141m.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwteo5enpj30n60cy0wp.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtexnfrrj30n20cwq76.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtf9b9vmj30n10cwtd3.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtfjreilj30n30cwjvh.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtg0fvkjj30n10czgqe.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx2twkoaj31hc0qo787.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx6t0kkvj31hc0qo78m.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx90gr58j30ys0koac7.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0g71yd2j30ys0qojub.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0kc81wuj31gx0w6gs4.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0z0cyiwj31990qeq6k.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0pnurclj31490q1tby.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0sdccznj31450mkwic.jpg"><meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0te7uh4j31480nitdk.jpg"><meta property="og:updated_time" content="2019-05-01T15:45:31.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技"><meta name="twitter:description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T"><meta name="twitter:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg"><link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml"><link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/"><script type="text/javascript" id="page.configurations">CONFIG.page={sidebar:""}</script><title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技 | 钢钢更新</title><script type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><noscript><style type="text/css">.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-right page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">钢钢更新</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1></div><div class="site-nav-toggle"> <button aria-label="切换导航栏"><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="algolia-popup popup search-popup"><div class="algolia-search"><div class="algolia-search-input-icon"><i class="fa fa-search"></i></div><div class="algolia-search-input" id="algolia-search-input"></div></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div id="algolia-pagination" class="algolia-pagination"></div></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-categories" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="王方钢 / Kenny Wang"><meta itemprop="description" content=""><meta itemprop="image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fuwn7nuz7ej305k05k3zp.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="钢钢更新"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2018-05-02 08:01:12" itemprop="dateCreated datePublished" datetime="2018-05-02T08:01:12+08:00">2018-05-02</time> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i></span> <span class="post-meta-item-text">更新于</span> <time title="修改时间：2019-05-01 23:45:31" itemprop="dateModified" datetime="2019-05-01T23:45:31+08:00">2019-05-01</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span> ， <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span></span> <span id="/Oracle/Oracle-APEX/apex-series-1/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count"></span></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">本文字数：</span> <span title="本文字数">4.9k</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">8 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg" alt=""></p><p>本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：</p><ul><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/">Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx)</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/">Oracle APEX 系列文章04：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/">Oracle APEX 系列文章05：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/">Oracle APEX 系列文章06：Oracle APEX 到底适不适合企业环境？</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/">Oracle APEX 系列文章07：Oracle APEX 18.1 新特性</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/">Oracle APEX 系列文章08：如何从 APEX 5.1.4 升级到 最新的 APEX 18.1</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/">Oracle APEX 系列文章09：为什么选择使用 Oracle APEX</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/">Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</a></li><li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li><li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li></ul><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>不知不觉在Oracle ERP这个领域已经13个年头了，从刚毕业学习最基本的SQL、PL/SQL、Linux Shell脚本、Oracle Form、Oracle Report、Workflow、Discovery、Middleware (BPEL)、OBIEE、BI (XML) Publisher、OAF、ADF，到后来的环境搭建、克隆等应用DBA的工作，可以说要想成为一名合格的Oracle ERP技术顾问，要掌握的东西太多了，远不是一个普通互联网开发人员的技能可比的。</p><p>但随着互联网技术的崛起，新的开发框架和技术层出不穷。成熟的互联网架构的出现、前后端技术的分离、缓存的大量使用、微服务的兴起，动辄就提全栈开发等等，都使得今天的Oracle技术从业者无论从技术方面还是待遇方面，都受到了不小的打击（想想10年前一名Oracle ERP技术顾问的待遇，绝对比相同经验的Java开发人员的薪资高一倍不止）。很多以前的从事Oracle ERP开发的同事现在不是另谋高就，就是在维护一些古董级的项目，偶尔聊起前途也是一片唉声叹气，感叹生不逢时。</p><p>是否从事Oracle开发出路就一定越来越窄呢？答案肯定是否定的。Oracle的数据库至今为止还是市场占有率最大的数据库，而Oracle ERP领域也不是互联网技术可以简单比拟的，其复杂的业务逻辑和行业经验才是你最宝贵的资本。如何合理利用自己已有的知识和技能，在当今互联网当道的时代重新闯出一片天地，恐怕是大部分Oracle技术人员目前面临的困惑。</p><p>不可否认，Oracle的产品线非常丰富，但带来的问题是技术栈也非常杂。另外在其主打的Oracle ERP产品：Oracle Fusion Application技术选型和设计上有硬伤。当年（2009年）我第一次了解Oracle Fusion Application时，就已经预判到Oracle ERP要走下坡路了。虽然Java很好，但Oracle打开的方式不对，它选择了ADF作为开发框架，性能和扩展性大打折扣，非常差的用户体验使得Oracle在坚持了多年、投入了巨大的资源后不得不放弃继续开发Oracle Fusion Application，转而收购了云ERP厂商（NetSuite）作为现在主推的ERP产品，浪费了大量的时间和人力物力，令人惋惜。</p><p>不过Oracle众多的产品，有一个是非常好的。（其实叫产品也不太贴切，因为它既是产品、又是开发工具、同时又可以作为框架来理解）自从我10年前使用，到最近两年Oracle加速发展，使得这一产品迎来了新的春天，它就是今天的主角：<code>Oracle Application Express</code>（简称<code>Oracle APEX</code>）。</p><h2 id="本文目的"><a href="#本文目的" class="headerlink" title="本文目的"></a>本文目的</h2><blockquote><p>本系列文章力求把我这些年使用 Oracle APEX 的经验积累沉淀下来，方便自己查询。同时也希望能为广大 Oracle 技术从业者带来一点儿灵感和思路，跟大家共同学习、共同进步！！<br>如果你满足以下任意一项：</p><ul><li><code>Oracle Developer</code></li><li><code>Oracle DBA</code></li><li><code>Oracle ERP技术开发顾问</code></li></ul></blockquote><blockquote><p>并且想要秒变全栈开发，一人把前端后端全搞定，just follow me！</p></blockquote><a id="more"></a><h2 id="Oracle-APEX-简史"><a href="#Oracle-APEX-简史" class="headerlink" title="Oracle APEX 简史"></a>Oracle APEX 简史</h2><p>Oracle APEX 是Oracle公司出品的基于Oracle数据库的一款Web应用快速开发工具，旨在方便Oracle数据库开发人员快速搭建Web应用系统。其历史最早可以追述到2004年，之前叫<code>HTML DB</code>，2009年更名为<code>Oracle APEX</code>。</p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtgg770lj30n70d00x4.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwre1l6j0j30n20cvgpa.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtdnv4zbj30n20cqwhe.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwte8apxrj30n70d141m.jpg" alt=""></p><p>但 Oracle APEX 真正被人们关注，要从 APEX 4.0 这个版本算起了。从这个版本开始，Oracle大大加强了APEX的开发效率，同时增强了很多新功能，使Web开发变得更加简单。</p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwteo5enpj30n60cy0wp.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtexnfrrj30n20cwq76.jpg" alt=""></p><p>而 APEX 5.0 可以说是 Oracle APEX 的一个里程碑。从5.0版本起，Oracle APEX增加了一系列新组件和新特性（特别是<code>Dynamic Actions</code>动态行为，允许用户嵌入自定义的javascript代码，也使得Ajax更加容易被应用到开发中），括开发工具的增强，可视化效果的提升，把 Oracle 开发Web应用的速度和质量推向了一个新高度，可以说是非常重要的一个版本。</p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtf9b9vmj30n10cwtd3.jpg" alt=""></p><p>而 APEX 5.1 增加了<code>Interactive Grid</code>控件，可以零代码实现对数据库表的增删改查，并且有很多非常易用的功能，极大地提高了开发效率。同时整合了Oracle最新的Javascript图标库<code>Oracle Jet</code>，使数据可视化更加方便高效。</p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtfjreilj30n30cwjvh.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtg0fvkjj30n10czgqe.jpg" alt=""></p><h2 id="Oracle-APEX-适合做什么"><a href="#Oracle-APEX-适合做什么" class="headerlink" title="Oracle APEX 适合做什么"></a>Oracle APEX 适合做什么</h2><p>现在互联网概念已经深入人心了，往往出来一门新技术或者工具，大家都喜欢放在互联网的范畴内进行比较。诚然，互联网技术有很多好东西值得借鉴，包括很多思想都可以运用到传统ERP领域。然而，很多时候我们做事还是要看性价比，不能为了“互联网”而“互联网”。对于个人而言，要考虑自身现有技能情况，最大化的利用已有技能，同时要保留技术敏感度，认识到自己现有技能有哪些缺失，有意识的学习。对于企业而言，要综合考虑今后一段时间的发展，目前的技术栈和人员技术水平，不能什么新上什么，而是什么适合自己上什么。做到“适合”也最不容易，这里就不展开讨论了。</p><blockquote><p>钢哥感悟：Oracle APEX适合做<code>to B类</code>的企业应用（<code>Enterprise Application</code>），即 ERP、CRM 类应用产品。这类产品的特点是对UI和并发要求不像 to C 类互联网产品那么高，但同时业务逻辑相对更复杂，更适合企业内部使用。优势也是相当明显的，往往一个有 Oracle 开发经验的初级程序员，通过 Oracle APEX 可以完成<code>前端 + 后端</code>的所有工作，而且基本属于零代码开发，无论从开发效率，还是开发质量方面，都不是传统企业开发工具或者技术能够比拟的，这一点在后面使用过程中大家就会深刻体会到。</p></blockquote><p>放几张图大家直观感受下APEX：</p><p><strong>开发者门户</strong>：整体 APEX 开发门户入口，包括：应用程序构建器、SQL工作室、小组开发以及打包的应用程序几大模块。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx2twkoaj31hc0qo787.jpg" alt=""></p><p><strong>应用开发界面</strong>：大部分时间都是在这里完成的。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx6t0kkvj31hc0qo78m.jpg" alt=""></p><p><strong>SQL工作室</strong>：又是熟悉的场景，可以替代SQL工具。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx90gr58j30ys0koac7.jpg" alt=""></p><p><strong>小组开发</strong>：Oracle APEX天然支持云端开发部署，远程协作当然已经考虑到了。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0g71yd2j30ys0qojub.jpg" alt=""></p><p><strong>打包的应用程序</strong>：自带的Web应用是学习APEX最佳途径。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0kc81wuj31gx0w6gs4.jpg" alt=""></p><p><strong>Interactive Grid 控件</strong>：是我见过的最NB的控件，零代码实现数据增删改查 + 搜索排序 + 级联等功能，也是APEX 5.1 以后新推出的功能，强烈推荐。<br><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0z0cyiwj31990qeq6k.jpg" alt=""></p><p><strong>更多图示</strong>：<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0pnurclj31490q1tby.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0sdccznj31450mkwic.jpg" alt=""></p><p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0te7uh4j31480nitdk.jpg" alt=""></p><blockquote><p>值得一提的是，Oracle APEX 开发工具本身就是用 APEX 开发的，是真正意义上的“<code>APEX on APEX</code>”，也是我们学习参考的重要规范。</p></blockquote><h2 id="Oracle-APEX-的优势"><a href="#Oracle-APEX-的优势" class="headerlink" title="Oracle APEX 的优势"></a>Oracle APEX 的优势</h2><ul><li>仅仅使用本机浏览器即可完成Web应用的设计和开发；</li><li>可以方便地对标准组件、UI等进行扩展、自定义开发；</li><li>开发完成即部署完成，天然适应云端部署；</li><li>零代码也可以快速开发出复杂的业务系统；</li><li>高效便捷的IDE令开发Web应用从未如此简单；</li><li>自带丰富的控件和可视化图库，让你不愁轮子和素材；</li><li>自适应UI皮肤，让你一次搞定PC端和移动端；</li><li>自带多种场景演示实例，让你快速起步；</li><li>Oracle官方支持，可以放心开发企业级应用，而无需担心额外成本；</li></ul><h2 id="Oracle-APEX-现状"><a href="#Oracle-APEX-现状" class="headerlink" title="Oracle APEX 现状"></a>Oracle APEX 现状</h2><p>目前 Oracle APEX 在全球拥有超过40万的开发者，但在中国真正使用 Oracle APEX 的公司或开发者却很少，鉴于目前国内对于 Oracle APEX 最新的技术资料有限，我有必要把自己的所学心得整理出来，以便更多的人了解学习。</p><ul><li><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX 官网</a></li><li><a href="http://apex.oracle.com/community" target="_blank" rel="noopener">Oracle APEX 社区</a></li><li><a href="https://community.oracle.com/community/database/developer-tools/application_express" target="_blank" rel="noopener">Oracle APEX官方论坛</a></li><li><a href="http://www.odtug.com/apex" target="_blank" rel="noopener">Oracle APEX活跃博客</a></li></ul><h2 id="Oracle-APEX-下载地址"><a href="#Oracle-APEX-下载地址" class="headerlink" title="Oracle APEX 下载地址"></a>Oracle APEX 下载地址</h2><p>截止到目前，最新版本2018年5月24日发布的 <a href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank" rel="noopener">Oracle APEX 18.1.0.00.45</a></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用Oracle APEX 的唯一要求，就是要有一个Oracle数据库（因为Oracle APEX必须依赖Oracle Database）。在下一篇文章里，我会带领大家一步一步的安装部署一个Oracle APEX开发环境，让大家更近一步了解Oracle APEX的强大所在。</p><p>跟着钢哥的步伐走，包你迅速掌握全栈开发，为了让脚下的路更宽，我们一起努力！！</p><h2 id="附录：精选Oracle-APEX博客网站"><a href="#附录：精选Oracle-APEX博客网站" class="headerlink" title="附录：精选Oracle APEX博客网站"></a>附录：精选Oracle APEX博客网站</h2><p>亲测可用，部分网站需要翻墙。</p><ul><li><a href="http://vmorneau.me" target="_blank" rel="noopener">http://vmorneau.me</a></li><li><a href="http://rimblas.com/blog" target="_blank" rel="noopener">http://rimblas.com/blog</a></li><li><a href="http://apexbyg.blogspot.sg" target="_blank" rel="noopener">http://apexbyg.blogspot.sg</a></li><li><a href="http://lschilde.blogspot.sg" target="_blank" rel="noopener">http://lschilde.blogspot.sg</a></li><li><a href="https://dickdral.blogspot.jp" target="_blank" rel="noopener">https://dickdral.blogspot.jp</a></li><li><a href="http://max-tremblay.blogspot.jp" target="_blank" rel="noopener">http://max-tremblay.blogspot.jp</a></li><li><a href="https://blogs.oracle.com/apex" target="_blank" rel="noopener">https://blogs.oracle.com/apex</a></li><li><a href="https://thtechnology.com" target="_blank" rel="noopener">https://thtechnology.com</a></li><li><a href="http://dgielis.blogspot.sg" target="_blank" rel="noopener">http://dgielis.blogspot.sg</a></li><li><a href="https://emoracle.wordpress.com" target="_blank" rel="noopener">https://emoracle.wordpress.com</a></li><li><a href="http://www.grassroots-oracle.com" target="_blank" rel="noopener">http://www.grassroots-oracle.com</a></li><li><a href="http://hardlikesoftware.com/weblog" target="_blank" rel="noopener">http://hardlikesoftware.com/weblog</a></li><li><a href="http://www.explorer.uk.com/blog" target="_blank" rel="noopener">http://www.explorer.uk.com/blog</a></li><li><a href="https://ruepprich.wordpress.com" target="_blank" rel="noopener">https://ruepprich.wordpress.com</a></li><li><a href="http://davidsgale.com" target="_blank" rel="noopener">http://davidsgale.com</a></li><li><a href="http://joelkallman.blogspot.hk" target="_blank" rel="noopener">http://joelkallman.blogspot.hk</a></li><li><a href="https://www.talkapex.com" target="_blank" rel="noopener">https://www.talkapex.com</a></li><li><a href="http://nuijten.blogspot.nl" target="_blank" rel="noopener">http://nuijten.blogspot.nl</a></li><li><a href="https://www.odtug.com/apex" target="_blank" rel="noopener">https://www.odtug.com/apex</a></li><li><a href="https://ora-00001.blogspot.sg" target="_blank" rel="noopener">https://ora-00001.blogspot.sg</a></li><li><a href="https://apextips.blogspot.sg" target="_blank" rel="noopener">https://apextips.blogspot.sg</a></li><li><a href="https://oracle-base.com" target="_blank" rel="noopener">https://oracle-base.com</a></li><li><a href="http://spendolini.blogspot.sg" target="_blank" rel="noopener">http://spendolini.blogspot.sg</a></li></ul></div><div><div class="my_post_copyright"><script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script><script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</a></p><p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p><p><span>发布时间:</span>2018年05月02日 - 08:05</p><p><span>最后更新:</span>2019年05月01日 - 23:05</p><p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-1/" title="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</a><span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/" aria-label="复制成功！"></i></span></p><p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p></div><script>var clipboard=new Clipboard(".fa-clipboard");$(".fa-clipboard").click(function(){clipboard.on("success",function(){swal({title:"",text:"复制成功",icon:"success",showConfirmButton:!0})})})</script></div><div><div id="wechat_subscriber" style="display:block;padding:10px 0;margin:20px auto;width:100%;text-align:center"> <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width:200px;max-width:100%"><div>王方钢 | 智叟网络</div></div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div></div> <button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'> <span>打赏</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"> <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/006By2pOgy1fqj6ecphczj3334334x6q.jpg" alt="王方钢 / Kenny Wang 微信支付"><p>微信支付</p></div><div id="alipay" style="display:inline-block"> <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/006By2pOgy1fqj6f6gutij30m80m87al.jpg" alt="王方钢 / Kenny Wang 支付宝"><p>支付宝</p></div></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a><a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a><a href="/tags/Aliyun/" rel="tag"><i class="fa fa-tag"></i> Aliyun</a><a href="/tags/CentOS/" rel="tag"><i class="fa fa-tag"></i> CentOS</a><a href="/tags/Tomcat/" rel="tag"><i class="fa fa-tag"></i> Tomcat</a><a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a><a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/ElasticSearch/ElasticSearch/" rel="next" title="ElasticSearch学习笔记 - 钢钢更新"><i class="fa fa-chevron-left"></i> ElasticSearch学习笔记 - 钢钢更新</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/Oracle/Oracle-APEX/apex-series-2/" rel="prev" title="Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)">Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="http://ws1.sinaimg.cn/large/006By2pOgy1fuwn7nuz7ej305k05k3zp.jpg" alt="王方钢 / Kenny Wang"><p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">46</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">14</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">33</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i> Gmail</a></span><span class="links-of-author-item"><a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i> Linkedin</a></span><span class="links-of-author-item"><a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i> Webo</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文目的"><span class="nav-number">2.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-简史"><span class="nav-number">3.</span> <span class="nav-text">Oracle APEX 简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-适合做什么"><span class="nav-number">4.</span> <span class="nav-text">Oracle APEX 适合做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-的优势"><span class="nav-number">5.</span> <span class="nav-text">Oracle APEX 的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-现状"><span class="nav-number">6.</span> <span class="nav-text">Oracle APEX 现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-下载地址"><span class="nav-number">7.</span> <span class="nav-text">Oracle APEX 下载地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录：精选Oracle-APEX博客网站"><span class="nav-number">9.</span> <span class="nav-text">附录：精选Oracle APEX博客网站</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span><span class="with-love" id="animate"><i class="fa fa-bug"></i></span> <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span></div><div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div> <span class="post-meta-divider">|</span><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div><div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div><div id="needsharebutton-float"><span class="btn"><i class="fa fa-share-alt" aria-hidden="true"></i></span></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script><link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css"><script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/src/algolia-search.js?v=6.3.0"></script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz","r8pBuanUxCRbTY1SCOv2kEde")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><script src="/lib/needsharebutton/needsharebutton.js"></script><script>flOptions={iconStyle:"box",boxForm:"horizontal",position:"middleRight",networks:"Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook"},new needShareButton("#needsharebutton-float",flOptions)</script></body></html>
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?30dfd7a6a7bf400f81280570922d1bce";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T">
+<meta name="keywords" content="Oracle,APEX,Aliyun,CentOS,Tomcat,Nginx,ORDS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtgg770lj30n70d00x4.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwre1l6j0j30n20cvgpa.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtdnv4zbj30n20cqwhe.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwte8apxrj30n70d141m.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwteo5enpj30n60cy0wp.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtexnfrrj30n20cwq76.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtf9b9vmj30n10cwtd3.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtfjreilj30n30cwjvh.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtg0fvkjj30n10czgqe.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx2twkoaj31hc0qo787.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx6t0kkvj31hc0qo78m.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqxx90gr58j30ys0koac7.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0g71yd2j30ys0qojub.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0kc81wuj31gx0w6gs4.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0z0cyiwj31990qeq6k.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0pnurclj31490q1tby.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOly1fqy0sdccznj31450mkwic.jpg">
+<meta property="og:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0te7uh4j31480nitdk.jpg">
+<meta property="og:updated_time" content="2019-05-01T15:45:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技">
+<meta name="twitter:description" content="本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 T">
+<meta name="twitter:image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ws1.sinaimg.cn/large/006By2pOgy1fuwn7nuz7ej305k05k3zp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-02 08:01:12" itemprop="dateCreated datePublished" datetime="2018-05-02T08:01:12+08:00">2018-05-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-01 23:45:31" itemprop="dateModified" datetime="2019-05-01T23:45:31+08:00">2019-05-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-series-1/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy4n04lv1j30s207oaeu.jpg" alt=""></p>
+<p>本文是钢哥的Oracle APEX系列文章中的第1篇，完整 Oracle APEX 系列文章如下：</p>
+<ul>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/">Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/">Oracle APEX 系列文章04：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/">Oracle APEX 系列文章05：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/">Oracle APEX 系列文章06：Oracle APEX 到底适不适合企业环境？</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/">Oracle APEX 系列文章07：Oracle APEX 18.1 新特性</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/">Oracle APEX 系列文章08：如何从 APEX 5.1.4 升级到 最新的 APEX 18.1</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/">Oracle APEX 系列文章09：为什么选择使用 Oracle APEX</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/">Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</a></li>
+<li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li>
+</ul>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>不知不觉在Oracle ERP这个领域已经13个年头了，从刚毕业学习最基本的SQL、PL/SQL、Linux Shell脚本、Oracle Form、Oracle Report、Workflow、Discovery、Middleware (BPEL)、OBIEE、BI (XML) Publisher、OAF、ADF，到后来的环境搭建、克隆等应用DBA的工作，可以说要想成为一名合格的Oracle ERP技术顾问，要掌握的东西太多了，远不是一个普通互联网开发人员的技能可比的。</p>
+<p>但随着互联网技术的崛起，新的开发框架和技术层出不穷。成熟的互联网架构的出现、前后端技术的分离、缓存的大量使用、微服务的兴起，动辄就提全栈开发等等，都使得今天的Oracle技术从业者无论从技术方面还是待遇方面，都受到了不小的打击（想想10年前一名Oracle ERP技术顾问的待遇，绝对比相同经验的Java开发人员的薪资高一倍不止）。很多以前的从事Oracle ERP开发的同事现在不是另谋高就，就是在维护一些古董级的项目，偶尔聊起前途也是一片唉声叹气，感叹生不逢时。</p>
+<p>是否从事Oracle开发出路就一定越来越窄呢？答案肯定是否定的。Oracle的数据库至今为止还是市场占有率最大的数据库，而Oracle ERP领域也不是互联网技术可以简单比拟的，其复杂的业务逻辑和行业经验才是你最宝贵的资本。如何合理利用自己已有的知识和技能，在当今互联网当道的时代重新闯出一片天地，恐怕是大部分Oracle技术人员目前面临的困惑。</p>
+<p>不可否认，Oracle的产品线非常丰富，但带来的问题是技术栈也非常杂。另外在其主打的Oracle ERP产品：Oracle Fusion Application技术选型和设计上有硬伤。当年（2009年）我第一次了解Oracle Fusion Application时，就已经预判到Oracle ERP要走下坡路了。虽然Java很好，但Oracle打开的方式不对，它选择了ADF作为开发框架，性能和扩展性大打折扣，非常差的用户体验使得Oracle在坚持了多年、投入了巨大的资源后不得不放弃继续开发Oracle Fusion Application，转而收购了云ERP厂商（NetSuite）作为现在主推的ERP产品，浪费了大量的时间和人力物力，令人惋惜。</p>
+<p>不过Oracle众多的产品，有一个是非常好的。（其实叫产品也不太贴切，因为它既是产品、又是开发工具、同时又可以作为框架来理解）自从我10年前使用，到最近两年Oracle加速发展，使得这一产品迎来了新的春天，它就是今天的主角：<code>Oracle Application Express</code>（简称<code>Oracle APEX</code>）。</p>
+<h2 id="本文目的"><a href="#本文目的" class="headerlink" title="本文目的"></a>本文目的</h2><blockquote>
+<p>本系列文章力求把我这些年使用 Oracle APEX 的经验积累沉淀下来，方便自己查询。同时也希望能为广大 Oracle 技术从业者带来一点儿灵感和思路，跟大家共同学习、共同进步！！<br>如果你满足以下任意一项：</p>
+<ul>
+<li><code>Oracle Developer</code></li>
+<li><code>Oracle DBA</code></li>
+<li><code>Oracle ERP技术开发顾问</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p>并且想要秒变全栈开发，一人把前端后端全搞定，just follow me！</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Oracle-APEX-简史"><a href="#Oracle-APEX-简史" class="headerlink" title="Oracle APEX 简史"></a>Oracle APEX 简史</h2><p>Oracle APEX 是Oracle公司出品的基于Oracle数据库的一款Web应用快速开发工具，旨在方便Oracle数据库开发人员快速搭建Web应用系统。其历史最早可以追述到2004年，之前叫<code>HTML DB</code>，2009年更名为<code>Oracle APEX</code>。</p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtgg770lj30n70d00x4.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwre1l6j0j30n20cvgpa.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtdnv4zbj30n20cqwhe.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwte8apxrj30n70d141m.jpg" alt=""></p>
+<p>但 Oracle APEX 真正被人们关注，要从 APEX 4.0 这个版本算起了。从这个版本开始，Oracle大大加强了APEX的开发效率，同时增强了很多新功能，使Web开发变得更加简单。</p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwteo5enpj30n60cy0wp.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtexnfrrj30n20cwq76.jpg" alt=""></p>
+<p>而 APEX 5.0 可以说是 Oracle APEX 的一个里程碑。从5.0版本起，Oracle APEX增加了一系列新组件和新特性（特别是<code>Dynamic Actions</code>动态行为，允许用户嵌入自定义的javascript代码，也使得Ajax更加容易被应用到开发中），括开发工具的增强，可视化效果的提升，把 Oracle 开发Web应用的速度和质量推向了一个新高度，可以说是非常重要的一个版本。</p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtf9b9vmj30n10cwtd3.jpg" alt=""></p>
+<p>而 APEX 5.1 增加了<code>Interactive Grid</code>控件，可以零代码实现对数据库表的增删改查，并且有很多非常易用的功能，极大地提高了开发效率。同时整合了Oracle最新的Javascript图标库<code>Oracle Jet</code>，使数据可视化更加方便高效。</p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtfjreilj30n30cwjvh.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqwtg0fvkjj30n10czgqe.jpg" alt=""></p>
+<h2 id="Oracle-APEX-适合做什么"><a href="#Oracle-APEX-适合做什么" class="headerlink" title="Oracle APEX 适合做什么"></a>Oracle APEX 适合做什么</h2><p>现在互联网概念已经深入人心了，往往出来一门新技术或者工具，大家都喜欢放在互联网的范畴内进行比较。诚然，互联网技术有很多好东西值得借鉴，包括很多思想都可以运用到传统ERP领域。然而，很多时候我们做事还是要看性价比，不能为了“互联网”而“互联网”。对于个人而言，要考虑自身现有技能情况，最大化的利用已有技能，同时要保留技术敏感度，认识到自己现有技能有哪些缺失，有意识的学习。对于企业而言，要综合考虑今后一段时间的发展，目前的技术栈和人员技术水平，不能什么新上什么，而是什么适合自己上什么。做到“适合”也最不容易，这里就不展开讨论了。</p>
+<blockquote>
+<p>钢哥感悟：Oracle APEX适合做<code>to B类</code>的企业应用（<code>Enterprise Application</code>），即 ERP、CRM 类应用产品。这类产品的特点是对UI和并发要求不像 to C 类互联网产品那么高，但同时业务逻辑相对更复杂，更适合企业内部使用。优势也是相当明显的，往往一个有 Oracle 开发经验的初级程序员，通过 Oracle APEX 可以完成<code>前端 + 后端</code>的所有工作，而且基本属于零代码开发，无论从开发效率，还是开发质量方面，都不是传统企业开发工具或者技术能够比拟的，这一点在后面使用过程中大家就会深刻体会到。</p>
+</blockquote>
+<p>放几张图大家直观感受下APEX：</p>
+<p><strong>开发者门户</strong>：整体 APEX 开发门户入口，包括：应用程序构建器、SQL工作室、小组开发以及打包的应用程序几大模块。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx2twkoaj31hc0qo787.jpg" alt=""></p>
+<p><strong>应用开发界面</strong>：大部分时间都是在这里完成的。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx6t0kkvj31hc0qo78m.jpg" alt=""></p>
+<p><strong>SQL工作室</strong>：又是熟悉的场景，可以替代SQL工具。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqxx90gr58j30ys0koac7.jpg" alt=""></p>
+<p><strong>小组开发</strong>：Oracle APEX天然支持云端开发部署，远程协作当然已经考虑到了。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0g71yd2j30ys0qojub.jpg" alt=""></p>
+<p><strong>打包的应用程序</strong>：自带的Web应用是学习APEX最佳途径。<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0kc81wuj31gx0w6gs4.jpg" alt=""></p>
+<p><strong>Interactive Grid 控件</strong>：是我见过的最NB的控件，零代码实现数据增删改查 + 搜索排序 + 级联等功能，也是APEX 5.1 以后新推出的功能，强烈推荐。<br><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0z0cyiwj31990qeq6k.jpg" alt=""></p>
+<p><strong>更多图示</strong>：<br><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0pnurclj31490q1tby.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOly1fqy0sdccznj31450mkwic.jpg" alt=""></p>
+<p><img src="http://ws1.sinaimg.cn/large/006By2pOgy1fqy0te7uh4j31480nitdk.jpg" alt=""></p>
+<blockquote>
+<p>值得一提的是，Oracle APEX 开发工具本身就是用 APEX 开发的，是真正意义上的“<code>APEX on APEX</code>”，也是我们学习参考的重要规范。</p>
+</blockquote>
+<h2 id="Oracle-APEX-的优势"><a href="#Oracle-APEX-的优势" class="headerlink" title="Oracle APEX 的优势"></a>Oracle APEX 的优势</h2><ul>
+<li>仅仅使用本机浏览器即可完成Web应用的设计和开发；</li>
+<li>可以方便地对标准组件、UI等进行扩展、自定义开发；</li>
+<li>开发完成即部署完成，天然适应云端部署；</li>
+<li>零代码也可以快速开发出复杂的业务系统；</li>
+<li>高效便捷的IDE令开发Web应用从未如此简单；</li>
+<li>自带丰富的控件和可视化图库，让你不愁轮子和素材；</li>
+<li>自适应UI皮肤，让你一次搞定PC端和移动端；</li>
+<li>自带多种场景演示实例，让你快速起步；</li>
+<li>Oracle官方支持，可以放心开发企业级应用，而无需担心额外成本；</li>
+</ul>
+<h2 id="Oracle-APEX-现状"><a href="#Oracle-APEX-现状" class="headerlink" title="Oracle APEX 现状"></a>Oracle APEX 现状</h2><p>目前 Oracle APEX 在全球拥有超过40万的开发者，但在中国真正使用 Oracle APEX 的公司或开发者却很少，鉴于目前国内对于 Oracle APEX 最新的技术资料有限，我有必要把自己的所学心得整理出来，以便更多的人了解学习。</p>
+<ul>
+<li><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX 官网</a></li>
+<li><a href="http://apex.oracle.com/community" target="_blank" rel="noopener">Oracle APEX 社区</a></li>
+<li><a href="https://community.oracle.com/community/database/developer-tools/application_express" target="_blank" rel="noopener">Oracle APEX官方论坛</a></li>
+<li><a href="http://www.odtug.com/apex" target="_blank" rel="noopener">Oracle APEX活跃博客</a></li>
+</ul>
+<h2 id="Oracle-APEX-下载地址"><a href="#Oracle-APEX-下载地址" class="headerlink" title="Oracle APEX 下载地址"></a>Oracle APEX 下载地址</h2><p>截止到目前，最新版本2018年5月24日发布的 <a href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank" rel="noopener">Oracle APEX 18.1.0.00.45</a> </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用Oracle APEX 的唯一要求，就是要有一个Oracle数据库（因为Oracle APEX必须依赖Oracle Database）。在下一篇文章里，我会带领大家一步一步的安装部署一个Oracle APEX开发环境，让大家更近一步了解Oracle APEX的强大所在。</p>
+<p>跟着钢哥的步伐走，包你迅速掌握全栈开发，为了让脚下的路更宽，我们一起努力！！</p>
+<h2 id="附录：精选Oracle-APEX博客网站"><a href="#附录：精选Oracle-APEX博客网站" class="headerlink" title="附录：精选Oracle APEX博客网站"></a>附录：精选Oracle APEX博客网站</h2><p>亲测可用，部分网站需要翻墙。</p>
+<ul>
+<li><a href="http://vmorneau.me" target="_blank" rel="noopener">http://vmorneau.me</a></li>
+<li><a href="http://rimblas.com/blog" target="_blank" rel="noopener">http://rimblas.com/blog</a></li>
+<li><a href="http://apexbyg.blogspot.sg" target="_blank" rel="noopener">http://apexbyg.blogspot.sg</a></li>
+<li><a href="http://lschilde.blogspot.sg" target="_blank" rel="noopener">http://lschilde.blogspot.sg</a></li>
+<li><a href="https://dickdral.blogspot.jp" target="_blank" rel="noopener">https://dickdral.blogspot.jp</a></li>
+<li><a href="http://max-tremblay.blogspot.jp" target="_blank" rel="noopener">http://max-tremblay.blogspot.jp</a></li>
+<li><a href="https://blogs.oracle.com/apex" target="_blank" rel="noopener">https://blogs.oracle.com/apex</a></li>
+<li><a href="https://thtechnology.com" target="_blank" rel="noopener">https://thtechnology.com</a></li>
+<li><a href="http://dgielis.blogspot.sg" target="_blank" rel="noopener">http://dgielis.blogspot.sg</a></li>
+<li><a href="https://emoracle.wordpress.com" target="_blank" rel="noopener">https://emoracle.wordpress.com</a></li>
+<li><a href="http://www.grassroots-oracle.com" target="_blank" rel="noopener">http://www.grassroots-oracle.com</a></li>
+<li><a href="http://hardlikesoftware.com/weblog" target="_blank" rel="noopener">http://hardlikesoftware.com/weblog</a></li>
+<li><a href="http://www.explorer.uk.com/blog" target="_blank" rel="noopener">http://www.explorer.uk.com/blog</a></li>
+<li><a href="https://ruepprich.wordpress.com" target="_blank" rel="noopener">https://ruepprich.wordpress.com</a></li>
+<li><a href="http://davidsgale.com" target="_blank" rel="noopener">http://davidsgale.com</a></li>
+<li><a href="http://joelkallman.blogspot.hk" target="_blank" rel="noopener">http://joelkallman.blogspot.hk</a></li>
+<li><a href="https://www.talkapex.com" target="_blank" rel="noopener">https://www.talkapex.com</a></li>
+<li><a href="http://nuijten.blogspot.nl" target="_blank" rel="noopener">http://nuijten.blogspot.nl</a></li>
+<li><a href="https://www.odtug.com/apex" target="_blank" rel="noopener">https://www.odtug.com/apex</a></li>
+<li><a href="https://ora-00001.blogspot.sg" target="_blank" rel="noopener">https://ora-00001.blogspot.sg</a></li>
+<li><a href="https://apextips.blogspot.sg" target="_blank" rel="noopener">https://apextips.blogspot.sg</a></li>
+<li><a href="https://oracle-base.com" target="_blank" rel="noopener">https://oracle-base.com</a></li>
+<li><a href="http://spendolini.blogspot.sg" target="_blank" rel="noopener">http://spendolini.blogspot.sg</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2018年05月02日 - 08:05</p>
+  <p><span>最后更新:</span>2019年05月01日 - 23:05</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-1/" title="Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>王方钢 | 智叟网络</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/006By2pOgy1fqj6ecphczj3334334x6q.jpg" alt="王方钢 / Kenny Wang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/006By2pOgy1fqj6f6gutij30m80m87al.jpg" alt="王方钢 / Kenny Wang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+          
+            <a href="/tags/Aliyun/" rel="tag"><i class="fa fa-tag"></i> Aliyun</a>
+          
+            <a href="/tags/CentOS/" rel="tag"><i class="fa fa-tag"></i> CentOS</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"><i class="fa fa-tag"></i> Tomcat</a>
+          
+            <a href="/tags/Nginx/" rel="tag"><i class="fa fa-tag"></i> Nginx</a>
+          
+            <a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ElasticSearch/ElasticSearch/" rel="next" title="ElasticSearch学习笔记 - 钢钢更新">
+                <i class="fa fa-chevron-left"></i> ElasticSearch学习笔记 - 钢钢更新
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-series-2/" rel="prev" title="Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)">
+                Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ws1.sinaimg.cn/large/006By2pOgy1fuwn7nuz7ej305k05k3zp.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本文目的"><span class="nav-number">2.</span> <span class="nav-text">本文目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-简史"><span class="nav-number">3.</span> <span class="nav-text">Oracle APEX 简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-适合做什么"><span class="nav-number">4.</span> <span class="nav-text">Oracle APEX 适合做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-的优势"><span class="nav-number">5.</span> <span class="nav-text">Oracle APEX 的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-现状"><span class="nav-number">6.</span> <span class="nav-text">Oracle APEX 现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-下载地址"><span class="nav-number">7.</span> <span class="nav-text">Oracle APEX 下载地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录：精选Oracle-APEX博客网站"><span class="nav-number">9.</span> <span class="nav-text">附录：精选Oracle APEX博客网站</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
