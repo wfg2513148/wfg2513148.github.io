@@ -153,7 +153,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006By2pOgy1g52m0j5xcjj32800qs0wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006By2pOgy1g52m6ejk7rj32800p2n0x.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006By2pOgy1g52md3w9o2j320u066q5c.jpg">
-<meta property="og:updated_time" content="2019-07-17T02:35:14.000Z">
+<meta property="og:updated_time" content="2019-07-17T02:39:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Cloud 学习笔记 - Consul">
 <meta name="twitter:description" content="Consul 介绍Consul 是 HashiCorp 公司推出的开源工具，用于实现分布式系统的服务发现与配置。与其他分布式服务注册与发现的方案，Consul 的方案更“一站式”，内置了服务注册与发现框 架、分布一致性协议实现、健康检查、Key/Value 存储、多数据中心方案，不再需要依赖其他工具（比如 ZooKeeper 等）。使用起来也较 为简单。Consul 使用 Go 语言编写，因此具">
@@ -428,7 +428,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-07-17 10:20:00 / 修改时间：10:35:14" itemprop="dateCreated datePublished" datetime="2019-07-17T10:20:00+08:00">2019-07-17</time>
+              <time title="创建时间：2019-07-17 10:20:00 / 修改时间：10:39:45" itemprop="dateCreated datePublished" datetime="2019-07-17T10:20:00+08:00">2019-07-17</time>
             
 
             
@@ -536,6 +536,7 @@ var _hmt = _hmt || [];
 <li>官方提供 web 管理界面, etcd 无此功能。</li>
 </ul>
 <p>综合比较, Consul 作为服务注册和配置管理的新星, 比较值得关注和研究。</p>
+<a id="more"></a>
 <h3 id="Consul-特性"><a href="#Consul-特性" class="headerlink" title="Consul 特性"></a>Consul 特性</h3><ul>
 <li>服务发现</li>
 <li>健康检查</li>
@@ -546,7 +547,6 @@ var _hmt = _hmt || [];
 <li>client: 客户端, 无状态, 将 HTTP 和 DNS 接口请求转发给局域网内的服务端集群。</li>
 <li>server: 服务端, 保存配置信息, 高可用集群, 在局域网内与本地客户端通讯, 通过广域网与其他数据中心通讯。 每个数据中心的 server 数量推荐为 3 个或是 5 个。</li>
 </ul>
-<a id="more"></a>
 <h2 id="Consul-安装（Docker）"><a href="#Consul-安装（Docker）" class="headerlink" title="Consul 安装（Docker）"></a>Consul 安装（Docker）</h2><h3 id="指定固定网络"><a href="#指定固定网络" class="headerlink" title="指定固定网络"></a>指定固定网络</h3><p>创建自定义网络，并指定网段：<code>172.10.0.0/16</code> 并命名为<code>mynetwork</code></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">network</span> <span class="string">create</span> <span class="bullet">--subnet=172.10.0.0/16</span> <span class="string">mynetwork</span></span><br></pre></td></tr></table></figure>
 <h3 id="查看网络"><a href="#查看网络" class="headerlink" title="查看网络"></a>查看网络</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">network</span> <span class="string">ls</span></span><br></pre></td></tr></table></figure>
