@@ -4,391 +4,8 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2019-08-31T13:57:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
-        <pubTime>2018-06-03T19:56:34.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190830/</loc>
-    <lastmod>2019-08-31T13:50:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.08.30</title>
-        <pubTime>2019-08-30T21:47:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/</loc>
-    <lastmod>2019-07-17T03:07:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.07.17</title>
-        <pubTime>2019-07-17T11:01:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/consul/</loc>
-    <lastmod>2019-07-17T02:39:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Cloud 学习笔记 - Consul</title>
-        <pubTime>2019-07-17T10:20:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Cloud</tag>
-         
-        <tag>Spring Boot</tag>
-         
-        <tag>Microservice</tag>
-         
-        <tag>Consul</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Python/python-ai/</loc>
-    <lastmod>2019-07-14T01:36:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python 数据科学 学习笔记 - 钢钢更新</title>
-        <pubTime>2019-07-12T20:22:35.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>AI</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>BI</tag>
-         
-        <tag>Data Science</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="https://wangfanggang.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/Spring-Cloud/springcloud/</loc>
-    <lastmod>2019-07-11T09:27:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Cloud 学习笔记 - 钢钢更新</title>
-        <pubTime>2019-07-01T11:03:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Cloud</tag>
-         
-        <tag>Spring Boot</tag>
-         
-        <tag>RabbitMQ</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-             
-              <breadCrumb title="Spring Cloud" url="https://wangfanggang.com/categories/Java/Spring-Cloud/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Python/python/</loc>
-    <lastmod>2019-07-11T05:36:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python 学习笔记 - 钢钢更新</title>
-        <pubTime>2019-07-11T13:08:35.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="https://wangfanggang.com/categories/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Docker/docker/</loc>
-    <lastmod>2019-07-09T01:43:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Docker - 通往新世界的大门</title>
-        <pubTime>2018-05-23T00:21:32.000Z</pubTime>
-        
-        <tag>Docker</tag>
-         
-         
-           
-             
-              <breadCrumb title="Docker" url="https://wangfanggang.com/categories/Docker/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
-    <lastmod>2019-06-13T16:09:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>Spring Boot 学习笔记 - 钢钢更新</title>
-        <pubTime>2018-04-29T14:41:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Spring Boot</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-             
-              <breadCrumb title="Spring Boot" url="https://wangfanggang.com/categories/Java/Spring-Boot/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190606/</loc>
-    <lastmod>2019-06-06T16:04:55.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.06.06</title>
-        <pubTime>2019-06-06T23:50:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/java_hutool/</loc>
-    <lastmod>2019-05-21T15:45:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>Java学习笔记 - Hutool</title>
-        <pubTime>2019-05-21T23:37:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Hutool</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Java/java_note/</loc>
-    <lastmod>2019-05-16T05:53:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>Java 学习笔记 - 钢钢更新</title>
-        <pubTime>2019-05-15T22:02:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
-    <lastmod>2019-05-01T15:51:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.09.20</title>
-        <pubTime>2018-09-20T23:32:03.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Git/git/</loc>
-    <lastmod>2019-05-01T15:51:19.000Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习笔记 - 钢钢更新</title>
-        <pubTime>2018-04-19T14:52:06.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-        <tag>Github</tag>
-         
-         
-           
-             
-              <breadCrumb title="Git" url="https://wangfanggang.com/categories/Git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
-    <lastmod>2019-05-01T15:46:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</title>
-        <pubTime>2018-06-25T10:48:30.000Z</pubTime>
-        
-        <tag>APEX</tag>
-         
-        <tag>Mobile</tag>
-         
-        <tag>Hybrid APP</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
-    <lastmod>2019-05-01T15:45:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>今天是个好日子</title>
-        <pubTime>2018-06-27T12:03:46.000Z</pubTime>
-        
-        <tag>MBA</tag>
-         
-         
-           
-             
-              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</loc>
-    <lastmod>2019-05-01T15:45:59.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Finally passed AWS Certified Solutions Architect - Professional</title>
@@ -407,12 +24,52 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
-    <lastmod>2019-05-01T15:45:58.000Z</lastmod>
+    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.04.13</title>
-        <pubTime>2019-04-13T00:13:00.000Z</pubTime>
+        <title>ElasticSearch学习笔记 - 钢钢更新</title>
+        <pubTime>2018-05-01T14:45:59.000Z</pubTime>
+        
+        <tag>Elastic</tag>
+         
+         
+           
+             
+              <breadCrumb title="ElasticSearch" url="https://wangfanggang.com/categories/ElasticSearch/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>今天是个好日子</title>
+        <pubTime>2018-06-27T12:03:46.000Z</pubTime>
+        
+        <tag>MBA</tag>
+         
+         
+           
+             
+              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
+        <pubTime>2018-06-21T11:38:59.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -432,12 +89,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
-    <lastmod>2019-05-01T15:45:57.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.02.02</title>
-        <pubTime>2019-02-02T09:20:00.000Z</pubTime>
+        <title>Oracle APEX 活跃博文整理 | 2018.07.15</title>
+        <pubTime>2018-07-15T00:17:03.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -457,12 +114,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
-    <lastmod>2019-05-01T15:45:57.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-new-official-account/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2019.03.02</title>
-        <pubTime>2019-03-02T00:13:00.000Z</pubTime>
+        <title>有关 APEX中文社区 订阅号启用的通知</title>
+        <pubTime>2018-07-12T23:25:28.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -482,12 +139,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
-    <lastmod>2019-05-01T15:45:56.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.11.12</title>
-        <pubTime>2018-11-12T23:48:03.000Z</pubTime>
+        <title>Oracle APEX 活跃博文整理 | 2018.07.26</title>
+        <pubTime>2018-07-26T15:02:03.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -507,12 +164,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/</loc>
-    <lastmod>2019-05-01T15:45:55.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 18.2 正式发布！！</title>
-        <pubTime>2018-10-01T01:02:03.000Z</pubTime>
+        <title>Oracle APEX 中国区微信讨论群</title>
+        <pubTime>2018-06-26T11:42:41.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -532,37 +189,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
-    <lastmod>2019-05-01T15:45:54.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group-event_20190419/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.08.24</title>
-        <pubTime>2018-08-24T22:41:03.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180807/</loc>
-    <lastmod>2019-05-01T15:45:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.08.07</title>
-        <pubTime>2018-08-07T12:16:03.000Z</pubTime>
+        <title>Oracle APEX 中国社区第一次线下活动圆满结束！</title>
+        <pubTime>2019-04-20T22:38:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -583,7 +215,7 @@
     
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/</loc>
-    <lastmod>2019-05-01T15:45:52.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</title>
@@ -612,7 +244,7 @@
     
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</loc>
-    <lastmod>2019-05-01T15:45:52.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Oracle官方线上活动：APEX Office Hours (北京时间6月28日22点)</title>
@@ -636,8 +268,466 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180807/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.08.07</title>
+        <pubTime>2018-08-07T12:16:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.08.24</title>
+        <pubTime>2018-08-24T22:41:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.03.02</title>
+        <pubTime>2019-03-02T00:13:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 18.2 正式发布！！</title>
+        <pubTime>2018-10-01T01:02:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.02.02</title>
+        <pubTime>2019-02-02T09:20:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.09.20</title>
+        <pubTime>2018-09-20T23:32:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2018.11.12</title>
+        <pubTime>2018-11-12T23:48:03.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.04.13</title>
+        <pubTime>2019-04-13T00:13:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.07.17</title>
+        <pubTime>2019-07-17T11:01:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/%E8%85%BE%E8%AE%AF%E4%BA%91/cosfs/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>腾讯云COSFS工具使用说明 - 钢钢更新</title>
+        <pubTime>2018-04-22T03:38:24.000Z</pubTime>
+        
+        <tag>腾讯云</tag>
+         
+        <tag>COSFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="腾讯云" url="https://wangfanggang.com/categories/%E8%85%BE%E8%AE%AF%E4%BA%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/MBA/mba/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>钢哥的MBA备考心得 - 献给同样努力的你</title>
+        <pubTime>2018-05-14T16:26:45.000Z</pubTime>
+        
+        <tag>MBA</tag>
+         
+         
+           
+             
+              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Database/oracle-xe-18c/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle Database 18c Express Edition (XE) 正式发布！！</title>
+        <pubTime>2018-10-22T22:15:01.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>Database</tag>
+         
+        <tag>xe</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Database" url="https://wangfanggang.com/categories/Oracle/Database/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Mobile/native-apex/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</title>
+        <pubTime>2018-06-25T10:48:30.000Z</pubTime>
+        
+        <tag>APEX</tag>
+         
+        <tag>Mobile</tag>
+         
+        <tag>Hybrid APP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mobile" url="https://wangfanggang.com/categories/Mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</title>
+        <pubTime>2018-05-02T08:01:12.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)</title>
+        <pubTime>2018-05-03T07:35:24.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章3：在阿里云上打造属于你自己的APEX完整开发环境 (安装CentOS, Tomcat, Nginx)</title>
+        <pubTime>2018-05-03T14:39:56.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章4：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</title>
+        <pubTime>2018-05-04T16:28:14.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/</loc>
-    <lastmod>2019-05-01T15:45:51.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</title>
@@ -661,12 +751,47 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-new-official-account/</loc>
-    <lastmod>2019-05-01T15:45:48.000Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>有关 APEX中文社区 订阅号启用的通知</title>
-        <pubTime>2018-07-12T23:25:28.000Z</pubTime>
+        <title>Oracle APEX 系列文章5：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</title>
+        <pubTime>2018-05-05T22:38:05.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>Aliyun</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章6：Oracle APEX 到底适不适合企业环境？</title>
+        <pubTime>2018-05-13T13:28:25.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -686,8 +811,141 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章9：为什么选择使用 Oracle APEX</title>
+        <pubTime>2018-05-31T14:28:53.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章8：如何从 APEX 5.1.4 升级到最新的 APEX 18.1</title>
+        <pubTime>2018-05-29T21:10:18.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/how-to-upgrade-apex-from-5-1-4-to-18-1/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>How to upgrade Oracle APEX from 5.1.4 to 18.1</title>
+        <pubTime>2018-05-30T08:50:18.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+        <tag>ORDS</tag>
+         
+        <tag>CentOS</tag>
+         
+        <tag>Tomcat</tag>
+         
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Git/git/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习笔记 - 钢钢更新</title>
+        <pubTime>2018-04-19T14:52:06.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+        <tag>Github</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git" url="https://wangfanggang.com/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Docker/docker/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Docker - 通往新世界的大门</title>
+        <pubTime>2018-05-23T00:21:32.000Z</pubTime>
+        
+        <tag>Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="Docker" url="https://wangfanggang.com/categories/Docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/</loc>
-    <lastmod>2019-05-01T15:45:48.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</title>
@@ -725,335 +983,8 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group-event_20190419/</loc>
-    <lastmod>2019-05-01T15:45:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 中国社区第一次线下活动圆满结束！</title>
-        <pubTime>2019-04-20T22:38:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group/</loc>
-    <lastmod>2019-05-01T15:45:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 中国区微信讨论群</title>
-        <pubTime>2018-06-26T11:42:41.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
-    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.06</title>
-        <pubTime>2018-06-21T11:38:59.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
-    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.07.15</title>
-        <pubTime>2018-07-15T00:17:03.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
-    <lastmod>2019-05-01T15:45:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 活跃博文整理 | 2018.07.26</title>
-        <pubTime>2018-07-26T15:02:03.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
-    <lastmod>2019-05-01T15:45:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle SQLcl - 替代 sqlplus 的利器</title>
-        <pubTime>2018-05-25T08:22:08.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>sqlcl</tag>
-         
-        <tag>sql</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/MBA/mba/</loc>
-    <lastmod>2019-05-01T15:45:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>钢哥的MBA备考心得 - 献给同样努力的你</title>
-        <pubTime>2018-05-14T16:26:45.000Z</pubTime>
-        
-        <tag>MBA</tag>
-         
-         
-           
-             
-              <breadCrumb title="MBA" url="https://wangfanggang.com/categories/MBA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/how-to-upgrade-apex-from-5-1-4-to-18-1/</loc>
-    <lastmod>2019-05-01T15:45:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>How to upgrade Oracle APEX from 5.1.4 to 18.1</title>
-        <pubTime>2018-05-30T08:50:18.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
-    <lastmod>2019-05-01T15:45:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>ElasticSearch学习笔记 - 钢钢更新</title>
-        <pubTime>2018-05-01T14:45:59.000Z</pubTime>
-        
-        <tag>Elastic</tag>
-         
-         
-           
-             
-              <breadCrumb title="ElasticSearch" url="https://wangfanggang.com/categories/ElasticSearch/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/%E8%85%BE%E8%AE%AF%E4%BA%91/cosfs/</loc>
-    <lastmod>2019-05-01T15:45:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>腾讯云COSFS工具使用说明 - 钢钢更新</title>
-        <pubTime>2018-04-22T03:38:24.000Z</pubTime>
-        
-        <tag>腾讯云</tag>
-         
-        <tag>COSFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="腾讯云" url="https://wangfanggang.com/categories/%E8%85%BE%E8%AE%AF%E4%BA%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
-    <lastmod>2019-05-01T15:45:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章8：如何从 APEX 5.1.4 升级到最新的 APEX 18.1</title>
-        <pubTime>2018-05-29T21:10:18.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/</loc>
-    <lastmod>2019-05-01T15:45:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章9：为什么选择使用 Oracle APEX</title>
-        <pubTime>2018-05-31T14:28:53.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
-    <lastmod>2019-05-01T15:45:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章6：Oracle APEX 到底适不适合企业环境？</title>
-        <pubTime>2018-05-13T13:28:25.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/</loc>
-    <lastmod>2019-05-01T15:45:34.000Z</lastmod>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章7：Oracle APEX 18.1 新特性</title>
@@ -1077,26 +1008,44 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/</loc>
-    <lastmod>2019-05-01T15:45:33.000Z</lastmod>
+    <loc>https://wangfanggang.com/Java/consul/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 系列文章4：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</title>
-        <pubTime>2018-05-04T16:28:14.000Z</pubTime>
+        <title>Spring Cloud 学习笔记 - Consul</title>
+        <pubTime>2019-07-17T10:20:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Cloud</tag>
+         
+        <tag>Spring Boot</tag>
+         
+        <tag>Microservice</tag>
+         
+        <tag>Consul</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
+        <pubTime>2018-06-03T19:56:34.000Z</pubTime>
         
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
          
          
            
@@ -1112,26 +1061,164 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/</loc>
-    <lastmod>2019-05-01T15:45:33.000Z</lastmod>
+    <loc>https://wangfanggang.com/Java/java_hutool/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 系列文章5：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</title>
-        <pubTime>2018-05-05T22:38:05.000Z</pubTime>
+        <title>Java学习笔记 - Hutool</title>
+        <pubTime>2019-05-21T23:37:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Hutool</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Java/Spring-Boot/springboot/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Boot 学习笔记 - 钢钢更新</title>
+        <pubTime>2018-04-29T14:41:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Boot</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+             
+              <breadCrumb title="Spring Boot" url="https://wangfanggang.com/categories/Java/Spring-Boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Python/python-ai/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 数据科学 学习笔记 - 钢钢更新</title>
+        <pubTime>2019-07-12T20:22:35.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>BI</tag>
+         
+        <tag>Data Science</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="https://wangfanggang.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Java/java_note/</loc>
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java 学习笔记 - 钢钢更新</title>
+        <pubTime>2019-05-15T22:02:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Java/Spring-Cloud/springcloud/</loc>
+    <lastmod>2019-09-03T12:27:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>Spring Cloud 学习笔记 - 钢钢更新</title>
+        <pubTime>2019-07-01T11:03:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>Spring Cloud</tag>
+         
+        <tag>Spring Boot</tag>
+         
+        <tag>RabbitMQ</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://wangfanggang.com/categories/Java/"/>
+          
+             
+              <breadCrumb title="Spring Cloud" url="https://wangfanggang.com/categories/Java/Spring-Cloud/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/sqlcl/</loc>
+    <lastmod>2019-09-03T12:23:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle SQLcl - 替代 sqlplus 的利器</title>
+        <pubTime>2018-05-25T08:22:08.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>sqlcl</tag>
+         
+        <tag>sql</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190830/</loc>
+    <lastmod>2019-08-31T13:50:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.08.30</title>
+        <pubTime>2019-08-30T21:47:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
          
          
            
@@ -1147,26 +1234,36 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/</loc>
-    <lastmod>2019-05-01T15:45:32.000Z</lastmod>
+    <loc>https://wangfanggang.com/Python/python/</loc>
+    <lastmod>2019-07-11T05:36:20.000Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 系列文章3：在阿里云上打造属于你自己的APEX完整开发环境 (安装CentOS, Tomcat, Nginx)</title>
-        <pubTime>2018-05-03T14:39:56.000Z</pubTime>
+        <title>Python 学习笔记 - 钢钢更新</title>
+        <pubTime>2019-07-11T13:08:35.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="https://wangfanggang.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190606/</loc>
+    <lastmod>2019-06-06T16:04:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2019.06.06</title>
+        <pubTime>2019-06-06T23:50:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
         <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
          
          
            
@@ -1175,103 +1272,6 @@
           
              
               <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</loc>
-    <lastmod>2019-05-01T15:45:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章1：Oracle APEX, 让你秒变全栈开发的黑科技</title>
-        <pubTime>2018-05-02T08:01:12.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/</loc>
-    <lastmod>2019-05-01T15:45:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章2：在阿里云上打造属于你自己的APEX完整开发环境 (准备工作)</title>
-        <pubTime>2018-05-03T07:35:24.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-        <tag>ORDS</tag>
-         
-        <tag>Aliyun</tag>
-         
-        <tag>CentOS</tag>
-         
-        <tag>Tomcat</tag>
-         
-        <tag>Nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Database/oracle-xe-18c/</loc>
-    <lastmod>2019-05-01T15:45:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle Database 18c Express Edition (XE) 正式发布！！</title>
-        <pubTime>2018-10-22T22:15:01.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>Database</tag>
-         
-        <tag>xe</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Database" url="https://wangfanggang.com/categories/Oracle/Database/"/>
           
         </display>
     </data>
