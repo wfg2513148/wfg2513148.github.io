@@ -135,19 +135,19 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="转自Docker — 从入门到实践">
+  <meta name="description" content="本文转自Docker — 从入门到实践 本附录是笔者对 Docker 官方文档中 Best practices for writing Dockerfiles 的理解与翻译。 一般性的指南和建议容器应该是短暂的通过 Dockerfile 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置工作量应该是极小的。 使用 .d">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dockerfile 最佳实践（转）">
 <meta property="og:url" content="https://wangfanggang.com/Docker/Dockerfile/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="转自Docker — 从入门到实践">
+<meta property="og:description" content="本文转自Docker — 从入门到实践 本附录是笔者对 Docker 官方文档中 Best practices for writing Dockerfiles 的理解与翻译。 一般性的指南和建议容器应该是短暂的通过 Dockerfile 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置工作量应该是极小的。 使用 .d">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://linuxforgeek.com/wp-content/uploads/2019/01/dockerfile-post-1-777x437.jpg">
-<meta property="og:updated_time" content="2019-09-05T06:25:57.000Z">
+<meta property="og:updated_time" content="2019-09-05T06:30:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dockerfile 最佳实践（转）">
-<meta name="twitter:description" content="转自Docker — 从入门到实践">
+<meta name="twitter:description" content="本文转自Docker — 从入门到实践 本附录是笔者对 Docker 官方文档中 Best practices for writing Dockerfiles 的理解与翻译。 一般性的指南和建议容器应该是短暂的通过 Dockerfile 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置工作量应该是极小的。 使用 .d">
 <meta name="twitter:image" content="https://linuxforgeek.com/wp-content/uploads/2019/01/dockerfile-post-1-777x437.jpg">
 
 
@@ -419,7 +419,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-09-05 14:18:32 / 修改时间：14:25:57" itemprop="dateCreated datePublished" datetime="2019-09-05T14:18:32+08:00">2019-09-05</time>
+              <time title="创建时间：2019-09-05 14:18:32 / 修改时间：14:30:45" itemprop="dateCreated datePublished" datetime="2019-09-05T14:18:32+08:00">2019-09-05</time>
             
 
             
@@ -517,8 +517,7 @@ var _hmt = _hmt || [];
 
       
         <p><img src="https://linuxforgeek.com/wp-content/uploads/2019/01/dockerfile-post-1-777x437.jpg" alt=""></p>
-<p>转自<a href="https://github.com/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a></p>
-<a id="more"></a>
+<p>本文转自<a href="https://github.com/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a></p>
 <p>本附录是笔者对 Docker 官方文档中 <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener">Best practices for writing Dockerfiles</a> 的理解与翻译。</p>
 <h1 id="一般性的指南和建议"><a href="#一般性的指南和建议" class="headerlink" title="一般性的指南和建议"></a>一般性的指南和建议</h1><h2 id="容器应该是短暂的"><a href="#容器应该是短暂的" class="headerlink" title="容器应该是短暂的"></a>容器应该是短暂的</h2><p>通过 <code>Dockerfile</code> 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置工作量应该是极小的。</p>
 <h2 id="使用-dockerignore-文件"><a href="#使用-dockerignore-文件" class="headerlink" title="使用 .dockerignore 文件"></a>使用 <code>.dockerignore</code> 文件</h2><p>使用 <code>Dockerfile</code> 构建镜像时最好是将 <code>Dockerfile</code> 放置在一个新建的空目录下。然后将构建镜像所需要的文件添加到该目录中。为了提高构建镜像的效率，你可以在目录下新建一个 <code>.dockerignore</code> 文件来指定要忽略的文件和目录。<code>.dockerignore</code> 文件的排除模式语法和 Git 的 <code>.gitignore</code> 文件相似。</p>
@@ -539,6 +538,7 @@ var _hmt = _hmt || [];
 <li>除了 <code>ADD</code> 和 <code>COPY</code> 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 <code>RUN apt-get -y update</code> 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。</li>
 </ul>
 <p>一旦缓存失效，所有后续的 <code>Dockerfile</code> 指令都将产生新的镜像，缓存不会被使用。</p>
+<a id="more"></a>
 <h1 id="Dockerfile-指令"><a href="#Dockerfile-指令" class="headerlink" title="Dockerfile 指令"></a>Dockerfile 指令</h1><p>下面针对 <code>Dockerfile</code> 中各种指令的最佳编写方式给出建议。</p>
 <h2 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h2><p>尽可能使用当前官方仓库作为你构建镜像的基础。推荐使用 <a href="https://hub.docker.com/_/alpine/" target="_blank" rel="noopener">Alpine</a> 镜像，因为它被严格控制并保持最小尺寸（目前小于 5 MB），但它仍然是一个完整的发行版。</p>
 <h2 id="LABEL"><a href="#LABEL" class="headerlink" title="LABEL"></a>LABEL</h2><p>你可以给镜像添加标签来帮助组织镜像、记录许可信息、辅助自动化构建等。每个标签一行，由 <code>LABEL</code> 开头加上一个或多个标签对。下面的示例展示了各种不同的可能格式。<code>#</code> 开头的行是注释内容。</p>
