@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?30dfd7a6a7bf400f81280570922d1bce";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="转自Docker — 从入门到实践">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dockerfile 最佳实践（转）">
+<meta property="og:url" content="https://wangfanggang.com/Docker/Dockerfile/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="转自Docker — 从入门到实践">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.yidianphp.com/wp-content/uploads/2019/02/timg-1.jpg">
+<meta property="og:updated_time" content="2019-09-05T06:04:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dockerfile 最佳实践（转）">
+<meta name="twitter:description" content="转自Docker — 从入门到实践">
+<meta name="twitter:image" content="https://www.yidianphp.com/wp-content/uploads/2019/02/timg-1.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Docker/Dockerfile/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Dockerfile 最佳实践（转） | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Docker/Dockerfile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Dockerfile 最佳实践（转）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-23 00:21:32" itemprop="dateCreated datePublished" datetime="2018-05-23T00:21:32+08:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-05 14:04:19" itemprop="dateModified" datetime="2019-09-05T14:04:19+08:00">2019-09-05</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Docker/Dockerfile/" class="leancloud_visitors" data-flag-title="Dockerfile 最佳实践（转）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://www.yidianphp.com/wp-content/uploads/2019/02/timg-1.jpg" alt=""></p>
+<p>转自<a href="https://github.com/yeasy/docker_practice" target="_blank" rel="noopener">Docker — 从入门到实践</a></p>
+<a id="more"></a>
+<h1 id="Dockerfile-最佳实践"><a href="#Dockerfile-最佳实践" class="headerlink" title="Dockerfile 最佳实践"></a>Dockerfile 最佳实践</h1><p>本附录是笔者对 Docker 官方文档中 <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener">Best practices for writing Dockerfiles</a> 的理解与翻译。</p>
+<h2 id="一般性的指南和建议"><a href="#一般性的指南和建议" class="headerlink" title="一般性的指南和建议"></a>一般性的指南和建议</h2><h3 id="容器应该是短暂的"><a href="#容器应该是短暂的" class="headerlink" title="容器应该是短暂的"></a>容器应该是短暂的</h3><p>通过 <code>Dockerfile</code> 构建的镜像所启动的容器应该尽可能短暂（生命周期短）。「短暂」意味着可以停止和销毁容器，并且创建一个新容器并部署好所需的设置和配置工作量应该是极小的。</p>
+<h3 id="使用-dockerignore-文件"><a href="#使用-dockerignore-文件" class="headerlink" title="使用 .dockerignore 文件"></a>使用 <code>.dockerignore</code> 文件</h3><p>使用 <code>Dockerfile</code> 构建镜像时最好是将 <code>Dockerfile</code> 放置在一个新建的空目录下。然后将构建镜像所需要的文件添加到该目录中。为了提高构建镜像的效率，你可以在目录下新建一个 <code>.dockerignore</code> 文件来指定要忽略的文件和目录。<code>.dockerignore</code> 文件的排除模式语法和 Git 的 <code>.gitignore</code> 文件相似。</p>
+<h3 id="使用多阶段构建"><a href="#使用多阶段构建" class="headerlink" title="使用多阶段构建"></a>使用多阶段构建</h3><p>在 <code>Docker 17.05</code> 以上版本中，你可以使用 <a href="../image/multistage-builds.md">多阶段构建</a> 来减少所构建镜像的大小。</p>
+<h3 id="避免安装不必要的包"><a href="#避免安装不必要的包" class="headerlink" title="避免安装不必要的包"></a>避免安装不必要的包</h3><p>为了降低复杂性、减少依赖、减小文件大小、节约构建时间，你应该避免安装任何不必要的包。例如，不要在数据库镜像中包含一个文本编辑器。</p>
+<h3 id="一个容器只运行一个进程"><a href="#一个容器只运行一个进程" class="headerlink" title="一个容器只运行一个进程"></a>一个容器只运行一个进程</h3><p>应该保证在一个容器中只运行一个进程。将多个应用解耦到不同容器中，保证了容器的横向扩展和复用。例如 web 应用应该包含三个容器：web应用、数据库、缓存。</p>
+<p>如果容器互相依赖，你可以使用 <a href="../network/linking.md">Docker 自定义网络</a> 来把这些容器连接起来。</p>
+<h3 id="镜像层数尽可能少"><a href="#镜像层数尽可能少" class="headerlink" title="镜像层数尽可能少"></a>镜像层数尽可能少</h3><p>你需要在 <code>Dockerfile</code> 可读性（也包括长期的可维护性）和减少层数之间做一个平衡。</p>
+<h3 id="将多行参数排序"><a href="#将多行参数排序" class="headerlink" title="将多行参数排序"></a>将多行参数排序</h3><p>将多行参数按字母顺序排序（比如要安装多个包时）。这可以帮助你避免重复包含同一个包，更新包列表时也更容易。也便于 <code>PRs</code> 阅读和审查。建议在反斜杠符号 <code>\</code> 之前添加一个空格，以增加可读性。</p>
+<p>下面是来自 <code>buildpack-deps</code> 镜像的例子：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="bash">  bzr \</span></span><br><span class="line"><span class="bash">  cvs \</span></span><br><span class="line"><span class="bash">  git \</span></span><br><span class="line"><span class="bash">  mercurial \</span></span><br><span class="line"><span class="bash">  subversion</span></span><br></pre></td></tr></table></figure>
+<h3 id="构建缓存"><a href="#构建缓存" class="headerlink" title="构建缓存"></a>构建缓存</h3><p>在镜像的构建过程中，Docker 会遍历 <code>Dockerfile</code> 文件中的指令，然后按顺序执行。在执行每条指令之前，Docker 都会在缓存中查找是否已经存在可重用的镜像，如果有就使用现存的镜像，不再重复创建。如果你不想在构建过程中使用缓存，你可以在 <code>docker build</code> 命令中使用 <code>--no-cache=true</code> 选项。</p>
+<p>但是，如果你想在构建的过程中使用缓存，你得明白什么时候会，什么时候不会找到匹配的镜像，遵循的基本规则如下：</p>
+<ul>
+<li>从一个基础镜像开始（<code>FROM</code> 指令指定），下一条指令将和该基础镜像的所有子镜像进行匹配，检查这些子镜像被创建时使用的指令是否和被检查的指令完全一样。如果不是，则缓存失效。</li>
+<li>在大多数情况下，只需要简单地对比 <code>Dockerfile</code> 中的指令和子镜像。然而，有些指令需要更多的检查和解释。</li>
+<li>对于 <code>ADD</code> 和 <code>COPY</code> 指令，镜像中对应文件的内容也会被检查，每个文件都会计算出一个校验和。文件的最后修改时间和最后访问时间不会纳入校验。在缓存的查找过程中，会将这些校验和和已存在镜像中的文件校验和进行对比。如果文件有任何改变，比如内容和元数据，则缓存失效。</li>
+<li>除了 <code>ADD</code> 和 <code>COPY</code> 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 <code>RUN apt-get -y update</code> 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。</li>
+</ul>
+<p>一旦缓存失效，所有后续的 <code>Dockerfile</code> 指令都将产生新的镜像，缓存不会被使用。</p>
+<h2 id="Dockerfile-指令"><a href="#Dockerfile-指令" class="headerlink" title="Dockerfile 指令"></a>Dockerfile 指令</h2><p>下面针对 <code>Dockerfile</code> 中各种指令的最佳编写方式给出建议。</p>
+<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p>尽可能使用当前官方仓库作为你构建镜像的基础。推荐使用 <a href="https://hub.docker.com/_/alpine/" target="_blank" rel="noopener">Alpine</a> 镜像，因为它被严格控制并保持最小尺寸（目前小于 5 MB），但它仍然是一个完整的发行版。</p>
+<h3 id="LABEL"><a href="#LABEL" class="headerlink" title="LABEL"></a>LABEL</h3><p>你可以给镜像添加标签来帮助组织镜像、记录许可信息、辅助自动化构建等。每个标签一行，由 <code>LABEL</code> 开头加上一个或多个标签对。下面的示例展示了各种不同的可能格式。<code>#</code> 开头的行是注释内容。</p>
+<blockquote>
+<p>注意：如果你的字符串中包含空格，必须将字符串放入引号中或者对空格使用转义。如果字符串内容本身就包含引号，必须对引号使用转义。</p>
+</blockquote>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set one or more individual labels</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> com.example.version=<span class="string">"0.0.1-beta"</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">LABEL vendor=<span class="string">"ACME Incorporated"</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">LABEL com.example.release-date=<span class="string">"2015-02-12"</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">LABEL com.example.version.is-production=<span class="string">""</span></span></span><br></pre></td></tr></table></figure>
+<p>一个镜像可以包含多个标签，但建议将多个标签放入到一个 <code>LABEL</code> 指令中。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set multiple labels at once, using line-continuation characters to break long lines</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> vendor=ACME\ Incorporated \</span></span><br><span class="line"><span class="bash">      com.example.is-beta= \</span></span><br><span class="line"><span class="bash">      com.example.is-production=<span class="string">""</span> \</span></span><br><span class="line"><span class="bash">      com.example.version=<span class="string">"0.0.1-beta"</span> \</span></span><br><span class="line"><span class="bash">      com.example.release-date=<span class="string">"2015-02-12"</span></span></span><br></pre></td></tr></table></figure>
+<p>关于标签可以接受的键值对，参考 <a href="https://docs.docker.com/config/labels-custom-metadata/" target="_blank" rel="noopener">Understanding object labels</a>。关于查询标签信息，参考 <a href="https://docs.docker.com/config/labels-custom-metadata/" target="_blank" rel="noopener">Managing labels on objects</a>。</p>
+<h3 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h3><p>为了保持 <code>Dockerfile</code> 文件的可读性，可理解性，以及可维护性，建议将长的或复杂的 <code>RUN</code> 指令用反斜杠 <code>\</code> 分割成多行。</p>
+<h4 id="apt-get"><a href="#apt-get" class="headerlink" title="apt-get"></a>apt-get</h4><p><code>RUN</code> 指令最常见的用法是安装包用的 <code>apt-get</code>。因为 <code>RUN apt-get</code> 指令会安装包，所以有几个问题需要注意。</p>
+<p>不要使用 <code>RUN apt-get upgrade</code> 或 <code>dist-upgrade</code>，因为许多基础镜像中的「必须」包不会在一个非特权容器中升级。如果基础镜像中的某个包过时了，你应该联系它的维护者。如果你确定某个特定的包，比如 <code>foo</code>，需要升级，使用 <code>apt-get install -y foo</code> 就行，该指令会自动升级 <code>foo</code> 包。</p>
+<p>永远将 <code>RUN apt-get update</code> 和 <code>apt-get install</code> 组合成一条 <code>RUN</code> 声明，例如：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="bash">        package-bar \</span></span><br><span class="line"><span class="bash">        package-baz \</span></span><br><span class="line"><span class="bash">        package-foo</span></span><br></pre></td></tr></table></figure>
+<p>将 <code>apt-get update</code> 放在一条单独的 <code>RUN</code> 声明中会导致缓存问题以及后续的 <code>apt-get install</code> 失败。比如，假设你有一个 <code>Dockerfile</code> 文件：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">18.04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">RUN apt-get install -y curl</span></span><br></pre></td></tr></table></figure>
+<p>构建镜像后，所有的层都在 Docker 的缓存中。假设你后来又修改了其中的 <code>apt-get install</code> 添加了一个包：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">18.04</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">RUN apt-get install -y curl nginx</span></span><br></pre></td></tr></table></figure>
+<p>Docker 发现修改后的 <code>RUN apt-get update</code> 指令和之前的完全一样。所以，<code>apt-get update</code> 不会执行，而是使用之前的缓存镜像。因为 <code>apt-get update</code> 没有运行，后面的 <code>apt-get install</code> 可能安装的是过时的 <code>curl</code> 和 <code>nginx</code> 版本。</p>
+<p>使用 <code>RUN apt-get update &amp;&amp; apt-get install -y</code> 可以确保你的 Dockerfiles 每次安装的都是包的最新的版本，而且这个过程不需要进一步的编码或额外干预。这项技术叫作 <code>cache busting</code>。你也可以显示指定一个包的版本号来达到 <code>cache-busting</code>，这就是所谓的固定版本，例如：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="bash">    package-bar \</span></span><br><span class="line"><span class="bash">    package-baz \</span></span><br><span class="line"><span class="bash">    package-foo=1.3.*</span></span><br></pre></td></tr></table></figure>
+<p>固定版本会迫使构建过程检索特定的版本，而不管缓存中有什么。这项技术也可以减少因所需包中未预料到的变化而导致的失败。</p>
+<p>下面是一个 <code>RUN</code> 指令的示例模板，展示了所有关于 <code>apt-get</code> 的建议。</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y \</span></span><br><span class="line"><span class="bash">    aufs-tools \</span></span><br><span class="line"><span class="bash">    automake \</span></span><br><span class="line"><span class="bash">    build-essential \</span></span><br><span class="line"><span class="bash">    curl \</span></span><br><span class="line"><span class="bash">    dpkg-sig \</span></span><br><span class="line"><span class="bash">    libcap-dev \</span></span><br><span class="line"><span class="bash">    libsqlite3-dev \</span></span><br><span class="line"><span class="bash">    mercurial \</span></span><br><span class="line"><span class="bash">    reprepro \</span></span><br><span class="line"><span class="bash">    ruby1.9.1 \</span></span><br><span class="line"><span class="bash">    ruby1.9.1-dev \</span></span><br><span class="line"><span class="bash">    s3cmd=1.1.* \</span></span><br><span class="line"><span class="bash"> &amp;&amp; rm -rf /var/lib/apt/lists/*</span></span><br></pre></td></tr></table></figure>
+<p>其中 <code>s3cmd</code> 指令指定了一个版本号 <code>1.1.*</code>。如果之前的镜像使用的是更旧的版本，指定新的版本会导致 <code>apt-get udpate</code> 缓存失效并确保安装的是新版本。</p>
+<p>另外，清理掉 apt 缓存 <code>var/lib/apt/lists</code> 可以减小镜像大小。因为 <code>RUN</code> 指令的开头为 <code>apt-get udpate</code>，包缓存总是会在 <code>apt-get install</code> 之前刷新。</p>
+<blockquote>
+<p>注意：官方的 Debian 和 Ubuntu 镜像会自动运行 apt-get clean，所以不需要显式的调用 apt-get clean。</p>
+</blockquote>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p><code>CMD</code> 指令用于执行目标镜像中包含的软件，可以包含参数。<code>CMD</code> 大多数情况下都应该以 <code>CMD [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;...]</code> 的形式使用。因此，如果创建镜像的目的是为了部署某个服务(比如 <code>Apache</code>)，你可能会执行类似于 <code>CMD [&quot;apache2&quot;, &quot;-DFOREGROUND&quot;]</code> 形式的命令。我们建议任何服务镜像都使用这种形式的命令。</p>
+<p>多数情况下，<code>CMD</code> 都需要一个交互式的 <code>shell</code> (bash, Python, perl 等)，例如 <code>CMD [&quot;perl&quot;, &quot;-de0&quot;]</code>，或者 <code>CMD [&quot;PHP&quot;, &quot;-a&quot;]</code>。使用这种形式意味着，当你执行类似 <code>docker run -it python</code> 时，你会进入一个准备好的 <code>shell</code> 中。<code>CMD</code> 应该在极少的情况下才能以 <code>CMD [&quot;param&quot;, &quot;param&quot;]</code> 的形式与 <code>ENTRYPOINT</code> 协同使用，除非你和你的镜像使用者都对 <code>ENTRYPOINT</code> 的工作方式十分熟悉。</p>
+<h3 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h3><p><code>EXPOSE</code> 指令用于指定容器将要监听的端口。因此，你应该为你的应用程序使用常见的端口。例如，提供 <code>Apache</code> web 服务的镜像应该使用 <code>EXPOSE 80</code>，而提供 <code>MongoDB</code> 服务的镜像使用 <code>EXPOSE 27017</code>。</p>
+<p>对于外部访问，用户可以在执行 <code>docker run</code> 时使用一个标志来指示如何将指定的端口映射到所选择的端口。</p>
+<h3 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h3><p>为了方便新程序运行，你可以使用 <code>ENV</code> 来为容器中安装的程序更新 <code>PATH</code> 环境变量。例如使用 <code>ENV PATH /usr/local/nginx/bin:$PATH</code> 来确保 <code>CMD [&quot;nginx&quot;]</code> 能正确运行。</p>
+<p><code>ENV</code> 指令也可用于为你想要容器化的服务提供必要的环境变量，比如 Postgres 需要的 <code>PGDATA</code>。</p>
+<p>最后，<code>ENV</code> 也能用于设置常见的版本号，比如下面的示例：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENV</span> PG_MAJOR <span class="number">9.3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> PG_VERSION <span class="number">9.3</span>.<span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> curl -SL http://example.com/postgres-<span class="variable">$PG_VERSION</span>.tar.xz | tar -xJC /usr/src/postgress &amp;&amp; …</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">ENV PATH /usr/<span class="built_in">local</span>/postgres-<span class="variable">$PG_MAJOR</span>/bin:<span class="variable">$PATH</span></span></span><br></pre></td></tr></table></figure>
+<p>类似于程序中的常量，这种方法可以让你只需改变 <code>ENV</code> 指令来自动的改变容器中的软件版本。</p>
+<h3 id="ADD-和-COPY"><a href="#ADD-和-COPY" class="headerlink" title="ADD 和 COPY"></a>ADD 和 COPY</h3><p>虽然 <code>ADD</code> 和 <code>COPY</code> 功能类似，但一般优先使用 <code>COPY</code>。因为它比 <code>ADD</code> 更透明。<code>COPY</code> 只支持简单将本地文件拷贝到容器中，而 <code>ADD</code> 有一些并不明显的功能（比如本地 tar 提取和远程 URL 支持）。因此，<code>ADD</code> 的最佳用例是将本地 tar 文件自动提取到镜像中，例如 <code>ADD rootfs.tar.xz</code>。</p>
+<p>如果你的 <code>Dockerfile</code> 有多个步骤需要使用上下文中不同的文件。单独 <code>COPY</code> 每个文件，而不是一次性的 <code>COPY</code> 所有文件，这将保证每个步骤的构建缓存只在特定的文件变化时失效。例如：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="bash"> requirements.txt /tmp/</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">RUN pip install --requirement /tmp/requirements.txt</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">COPY . /tmp/</span></span><br></pre></td></tr></table></figure>
+<p>如果将 <code>COPY . /tmp/</code> 放置在 <code>RUN</code> 指令之前，只要 <code>.</code> 目录中任何一个文件变化，都会导致后续指令的缓存失效。</p>
+<p>为了让镜像尽量小，最好不要使用 <code>ADD</code> 指令从远程 URL 获取包，而是使用 <code>curl</code> 和 <code>wget</code>。这样你可以在文件提取完之后删掉不再需要的文件来避免在镜像中额外添加一层。比如尽量避免下面的用法：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ADD</span><span class="bash"> http://example.com/big.tar.xz /usr/src/things/</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">RUN tar -xJf /usr/src/things/big.tar.xz -C /usr/src/things</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">RUN make -C /usr/src/things all</span></span><br></pre></td></tr></table></figure>
+<p>而是应该使用下面这种方法：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir -p /usr/src/things \</span></span><br><span class="line"><span class="bash">    &amp;&amp; curl -SL http://example.com/big.tar.xz \</span></span><br><span class="line"><span class="bash">    | tar -xJC /usr/src/things \</span></span><br><span class="line"><span class="bash">    &amp;&amp; make -C /usr/src/things all</span></span><br></pre></td></tr></table></figure>
+<p>上面使用的管道操作，所以没有中间文件需要删除。</p>
+<p>对于其他不需要 <code>ADD</code> 的自动提取功能的文件或目录，你应该使用 <code>COPY</code>。</p>
+<h3 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h3><p><code>ENTRYPOINT</code> 的最佳用处是设置镜像的主命令，允许将镜像当成命令本身来运行（用 <code>CMD</code> 提供默认选项）。</p>
+<p>例如，下面的示例镜像提供了命令行工具 <code>s3cmd</code>:</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [<span class="string">"s3cmd"</span>]</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">CMD [<span class="string">"--help"</span>]</span></span><br></pre></td></tr></table></figure>
+<p>现在直接运行该镜像创建的容器会显示命令帮助：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run s3cmd</span><br></pre></td></tr></table></figure>
+<p>或者提供正确的参数来执行某个命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run s3cmd ls s3://mybucket</span><br></pre></td></tr></table></figure>
+<p>这样镜像名可以当成命令行的参考。</p>
+<p><code>ENTRYPOINT</code> 指令也可以结合一个辅助脚本使用，和前面命令行风格类似，即使启动工具需要不止一个步骤。</p>
+<p>例如，<code>Postgres</code> 官方镜像使用下面的脚本作为 <code>ENTRYPOINT</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> = <span class="string">'postgres'</span> ]; <span class="keyword">then</span></span><br><span class="line">    chown -R postgres <span class="string">"<span class="variable">$PGDATA</span>"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$(ls -A "$PGDATA")</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">        gosu postgres initdb</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">exec</span> gosu postgres <span class="string">"<span class="variable">$@</span>"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span> <span class="string">"<span class="variable">$@</span>"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：该脚本使用了 Bash 的内置命令 exec，所以最后运行的进程就是容器的 PID 为 1 的进程。这样，进程就可以接收到任何发送给容器的 Unix 信号了。</p>
+</blockquote>
+<p>该辅助脚本被拷贝到容器，并在容器启动时通过 <code>ENTRYPOINT</code> 执行：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="bash"> ./docker-entrypoint.sh /</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">ENTRYPOINT [<span class="string">"/docker-entrypoint.sh"</span>]</span></span><br></pre></td></tr></table></figure>
+<p>该脚本可以让用户用几种不同的方式和 <code>Postgres</code> 交互。</p>
+<p>你可以很简单地启动 <code>Postgres</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run postgres</span><br></pre></td></tr></table></figure>
+<p>也可以执行 <code>Postgres</code> 并传递参数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run postgres postgres --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>最后，你还可以启动另外一个完全不同的工具，比如 <code>Bash</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --rm -it postgres bash</span><br></pre></td></tr></table></figure>
+<h3 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h3><p><code>VOLUME</code> 指令用于暴露任何数据库存储文件，配置文件，或容器创建的文件和目录。强烈建议使用 <code>VOLUME</code> 来管理镜像中的可变部分和用户可以改变的部分。</p>
+<h3 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h3><p>如果某个服务不需要特权执行，建议使用 <code>USER</code> 指令切换到非 root 用户。先在 <code>Dockerfile</code> 中使用类似 <code>RUN groupadd -r postgres &amp;&amp; useradd -r -g postgres postgres</code> 的指令创建用户和用户组。</p>
+<blockquote>
+<p>注意：在镜像中，用户和用户组每次被分配的 UID/GID 都是不确定的，下次重新构建镜像时被分配到的 UID/GID 可能会不一样。如果要依赖确定的 UID/GID，你应该显示的指定一个 UID/GID。</p>
+</blockquote>
+<p>你应该避免使用 <code>sudo</code>，因为它不可预期的 TTY 和信号转发行为可能造成的问题比它能解决的问题还多。如果你真的需要和 <code>sudo</code> 类似的功能（例如，以 root 权限初始化某个守护进程，以非 root 权限执行它），你可以使用 <a href="https://github.com/tianon/gosu" target="_blank" rel="noopener">gosu</a>。</p>
+<p>最后，为了减少层数和复杂度，避免频繁地使用 <code>USER</code> 来回切换用户。</p>
+<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><p>为了清晰性和可靠性，你应该总是在 <code>WORKDIR</code> 中使用绝对路径。另外，你应该使用 <code>WORKDIR</code> 来替代类似于 <code>RUN cd ... &amp;&amp; do-something</code> 的指令，后者难以阅读、排错和维护。</p>
+<h2 id="官方镜像示例"><a href="#官方镜像示例" class="headerlink" title="官方镜像示例"></a>官方镜像示例</h2><p>这些官方镜像的 Dockerfile 都是参考典范：<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">https://github.com/docker-library/docs</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>王方钢 | 智叟网络</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wexinpay.jpg" alt="王方钢 / Kenny Wang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="王方钢 / Kenny Wang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Docker/docker/" rel="next" title="Docker - 通往新世界的大门">
+                <i class="fa fa-chevron-left"></i> Docker - 通往新世界的大门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Oracle/sqlcl/" rel="prev" title="Oracle SQLcl - 替代 sqlplus 的利器">
+                Oracle SQLcl - 替代 sqlplus 的利器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dockerfile-最佳实践"><span class="nav-number">1.</span> <span class="nav-text">Dockerfile 最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般性的指南和建议"><span class="nav-number">1.1.</span> <span class="nav-text">一般性的指南和建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容器应该是短暂的"><span class="nav-number">1.1.1.</span> <span class="nav-text">容器应该是短暂的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-dockerignore-文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用 .dockerignore 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用多阶段构建"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用多阶段构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免安装不必要的包"><span class="nav-number">1.1.4.</span> <span class="nav-text">避免安装不必要的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个容器只运行一个进程"><span class="nav-number">1.1.5.</span> <span class="nav-text">一个容器只运行一个进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像层数尽可能少"><span class="nav-number">1.1.6.</span> <span class="nav-text">镜像层数尽可能少</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将多行参数排序"><span class="nav-number">1.1.7.</span> <span class="nav-text">将多行参数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建缓存"><span class="nav-number">1.1.8.</span> <span class="nav-text">构建缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-指令"><span class="nav-number">1.2.</span> <span class="nav-text">Dockerfile 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">1.2.1.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LABEL"><span class="nav-number">1.2.2.</span> <span class="nav-text">LABEL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">1.2.3.</span> <span class="nav-text">RUN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#apt-get"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">apt-get</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">1.2.4.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSE"><span class="nav-number">1.2.5.</span> <span class="nav-text">EXPOSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">1.2.6.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD-和-COPY"><span class="nav-number">1.2.7.</span> <span class="nav-text">ADD 和 COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENTRYPOINT"><span class="nav-number">1.2.8.</span> <span class="nav-text">ENTRYPOINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VOLUME"><span class="nav-number">1.2.9.</span> <span class="nav-text">VOLUME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">1.2.10.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">1.2.11.</span> <span class="nav-text">WORKDIR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方镜像示例"><span class="nav-number">1.3.</span> <span class="nav-text">官方镜像示例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
