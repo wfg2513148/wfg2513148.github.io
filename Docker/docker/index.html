@@ -156,7 +156,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frjcf5rbamj30c202cq31.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkk3zaavrj319y066gn1.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg">
-<meta property="og:updated_time" content="2019-09-03T12:27:53.000Z">
+<meta property="og:updated_time" content="2019-09-06T06:51:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker - 通往新世界的大门">
 <meta name="twitter:description" content="引言相信很多技术同学在开发时都会使用虚拟机，配置好一个开发环境，以后使用时只需要启动虚拟机就好了。但虚拟机动辄几个GB，大一点儿的甚至几百个GB，而且只要其中任意的虚拟机文件损坏，整个虚拟机就没办法启动了。你可能说应该经常备份，这的确是个好主意。但有没有更好的办法呢？今天钢哥就带着大家了解一下Docker（容器），看看它是否比传统的虚拟机更适合我们。 什么是容器?顾名思义，容器就是用来装东西的。">
@@ -448,7 +448,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-03 20:27:53" itemprop="dateModified" datetime="2019-09-03T20:27:53+08:00">2019-09-03</time>
+                <time title="修改时间：2019-09-06 14:51:35" itemprop="dateModified" datetime="2019-09-06T14:51:35+08:00">2019-09-06</time>
               
             
           </span>
@@ -506,7 +506,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.4k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -520,7 +520,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -637,10 +637,23 @@ var _hmt = _hmt || [];
 <p><code>-t</code> 用来指定用户信息、tag等<br> <code>.</code> 是当前目录，用来寻找 Dockerfile</p>
 </blockquote>
 <p>再次用<code>docker images</code>查看，新的镜像已成功生成。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg" alt=""></p>
+<h3 id="如何在build时动态传递参数"><a href="#如何在build时动态传递参数" class="headerlink" title="如何在build时动态传递参数"></a>如何在build时动态传递参数</h3><p>假设在docker build时，需要动态传递两个变量，比如: arg1, arg2, 这时候Dockerfile怎么写呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jre-alpine</span><br><span class="line"></span><br><span class="line">ARG arg1=456</span><br><span class="line">ARG arg2=&quot;hello world&quot;</span><br><span class="line"></span><br><span class="line">RUN echo $&#123;arg1&#125; $&#123;arg2&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用<code>ARG</code>定义docker变量;<br>使用<code>${arg1}</code>来引用变量值;<br>当未接收到值时, 如果有默认值，会取默认值;</p>
+</blockquote>
+<p>然后用下面的方式传递：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t kwang/openjdk:1.0 --build-arg arg1=123 --build-arg arg2=&quot;hello kenny&quot; .</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>用<code>--build-arg</code>参数来传递参数;</p>
+</blockquote>
+<blockquote>
+<p>注意: docker提供了两种方式保存变量：ARG和ENV，区别在于，ARG传递的变量是临时的，而ENV的值会打到docker镜像的层里，以便后续使用;<br>ENV的值可以用命令改写;</p>
+</blockquote>
 <h3 id="删除-Docker-镜像"><a href="#删除-Docker-镜像" class="headerlink" title="删除 Docker 镜像"></a>删除 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 83a85d2939a2</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-f</code> 表示强行删除<br><code>83a85d2939a2</code> 是 docker image id</p>
 </blockquote>
+<h3 id="快速删除无tag的容器和镜像"><a href="#快速删除无tag的容器和镜像" class="headerlink" title="快速删除无tag的容器和镜像"></a>快速删除无tag的容器和镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images|grep none|awk &apos;&#123;print $3&#125;&apos;|xargs docker rmi</span><br></pre></td></tr></table></figure>
 <h3 id="将-Docker-镜像保存成-tar-文件"><a href="#将-Docker-镜像保存成-tar-文件" class="headerlink" title="将 Docker 镜像保存成 tar 文件"></a>将 Docker 镜像保存成 tar 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save -o kenny_nginx.tar kenny/nginx:2.0</span><br></pre></td></tr></table></figure>
 <h3 id="加载-Docker-镜像"><a href="#加载-Docker-镜像" class="headerlink" title="加载 Docker 镜像"></a>加载 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i kenny_nginx.tar</span><br></pre></td></tr></table></figure>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Docker 是个好东西，以上仅仅是 Docker 的一些常用基本操作。它就像通往新世界的大门，为大规模集群化部署提供坚实的基础，后面会再写一下容器编排的文章，敬请关注！</p>
@@ -665,7 +678,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Docker/docker/">Docker - 通往新世界的大门</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2018年05月23日 - 00:05</p>
-  <p><span>最后更新:</span>2019年09月03日 - 20:09</p>
+  <p><span>最后更新:</span>2019年09月06日 - 14:09</p>
   <p><span>原始链接:</span><a href="/Docker/docker/" title="Docker - 通往新世界的大门">https://wangfanggang.com/Docker/docker/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Docker/docker/"  aria-label="复制成功！"></i></span>
   </p>
@@ -1029,7 +1042,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是容器"><span class="nav-number">2.</span> <span class="nav-text">什么是容器?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器有什么特点？"><span class="nav-number">3.</span> <span class="nav-text">容器有什么特点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器与虚拟机有什么区别？"><span class="nav-number">4.</span> <span class="nav-text">容器与虚拟机有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机的缺点"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟机的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器的优点"><span class="nav-number">4.2.</span> <span class="nav-text">容器的优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Docker"><span class="nav-number">5.</span> <span class="nav-text">什么是Docker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-的使用场景"><span class="nav-number">6.</span> <span class="nav-text">Docker 的使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何安装-Docker"><span class="nav-number">7.</span> <span class="nav-text">如何安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-常用命令"><span class="nav-number">8.</span> <span class="nav-text">Docker 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Docker-版本"><span class="nav-number">8.1.</span> <span class="nav-text">查看 Docker 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取-Docker-镜像"><span class="nav-number">8.2.</span> <span class="nav-text">拉取 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Docker-镜像"><span class="nav-number">8.3.</span> <span class="nav-text">查看 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-Docker-镜像"><span class="nav-number">8.4.</span> <span class="nav-text">运行 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看运行中的-Docker-容器"><span class="nav-number">8.5.</span> <span class="nav-text">查看运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂停运行中的-Docker-容器"><span class="nav-number">8.6.</span> <span class="nav-text">暂停运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动已暂停的-Docker-容器"><span class="nav-number">8.7.</span> <span class="nav-text">启动已暂停的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除运行中的-Docker-容器"><span class="nav-number">8.8.</span> <span class="nav-text">删除运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以命令行模式进入容器"><span class="nav-number">8.9.</span> <span class="nav-text">以命令行模式进入容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从运行中的-Docker-容器生成-Docker-镜像"><span class="nav-number">8.10.</span> <span class="nav-text">从运行中的 Docker 容器生成 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于-Dockerfile-生成-Docker-镜像"><span class="nav-number">8.11.</span> <span class="nav-text">基于 Dockerfile 生成 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-Docker-镜像"><span class="nav-number">8.12.</span> <span class="nav-text">删除 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-Docker-镜像保存成-tar-文件"><span class="nav-number">8.13.</span> <span class="nav-text">将 Docker 镜像保存成 tar 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载-Docker-镜像"><span class="nav-number">8.14.</span> <span class="nav-text">加载 Docker 镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">9.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是容器"><span class="nav-number">2.</span> <span class="nav-text">什么是容器?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器有什么特点？"><span class="nav-number">3.</span> <span class="nav-text">容器有什么特点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器与虚拟机有什么区别？"><span class="nav-number">4.</span> <span class="nav-text">容器与虚拟机有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机的缺点"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟机的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器的优点"><span class="nav-number">4.2.</span> <span class="nav-text">容器的优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Docker"><span class="nav-number">5.</span> <span class="nav-text">什么是Docker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-的使用场景"><span class="nav-number">6.</span> <span class="nav-text">Docker 的使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何安装-Docker"><span class="nav-number">7.</span> <span class="nav-text">如何安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-常用命令"><span class="nav-number">8.</span> <span class="nav-text">Docker 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Docker-版本"><span class="nav-number">8.1.</span> <span class="nav-text">查看 Docker 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取-Docker-镜像"><span class="nav-number">8.2.</span> <span class="nav-text">拉取 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-Docker-镜像"><span class="nav-number">8.3.</span> <span class="nav-text">查看 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-Docker-镜像"><span class="nav-number">8.4.</span> <span class="nav-text">运行 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看运行中的-Docker-容器"><span class="nav-number">8.5.</span> <span class="nav-text">查看运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂停运行中的-Docker-容器"><span class="nav-number">8.6.</span> <span class="nav-text">暂停运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动已暂停的-Docker-容器"><span class="nav-number">8.7.</span> <span class="nav-text">启动已暂停的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除运行中的-Docker-容器"><span class="nav-number">8.8.</span> <span class="nav-text">删除运行中的 Docker 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以命令行模式进入容器"><span class="nav-number">8.9.</span> <span class="nav-text">以命令行模式进入容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从运行中的-Docker-容器生成-Docker-镜像"><span class="nav-number">8.10.</span> <span class="nav-text">从运行中的 Docker 容器生成 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于-Dockerfile-生成-Docker-镜像"><span class="nav-number">8.11.</span> <span class="nav-text">基于 Dockerfile 生成 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在build时动态传递参数"><span class="nav-number">8.12.</span> <span class="nav-text">如何在build时动态传递参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-Docker-镜像"><span class="nav-number">8.13.</span> <span class="nav-text">删除 Docker 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速删除无tag的容器和镜像"><span class="nav-number">8.14.</span> <span class="nav-text">快速删除无tag的容器和镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-Docker-镜像保存成-tar-文件"><span class="nav-number">8.15.</span> <span class="nav-text">将 Docker 镜像保存成 tar 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载-Docker-镜像"><span class="nav-number">8.16.</span> <span class="nav-text">加载 Docker 镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">9.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
