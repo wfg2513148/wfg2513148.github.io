@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-09-08T02:03:14.000Z</updated>
+  <updated>2019-09-08T02:14:09.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -17,27 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://wangfanggang.com/uncategorized/shell/"/>
-    <id>https://wangfanggang.com/uncategorized/shell/</id>
-    <published>2019-09-08T02:03:14.000Z</published>
-    <updated>2019-09-08T02:03:14.000Z</updated>
+    <title>Shell脚本读取配置文件</title>
+    <link href="https://wangfanggang.com/Linux/shell/"/>
+    <id>https://wangfanggang.com/Linux/shell/</id>
+    <published>2019-09-08T02:02:06.000Z</published>
+    <updated>2019-09-08T02:14:09.000Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Git学习笔记 - 钢钢更新<br>date: 2019-09-08 10:02:06<br>copyright: true<br>type: categories<br>categories:</p><ul><li>Linux</li></ul><p>tags:</p><ul><li>Linux</li><li>Shell</li></ul><p>本文转自 <a href="https://www.cnblogs.com/binbinjx/p/5680214.html" target="_blank" rel="noopener">https://www.cnblogs.com/binbinjx/p/5680214.html</a></p><blockquote><p>配置文件<code>init.properties</code>内容如下</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ID=123</span><br><span class="line">IP=192.168.3.154</span><br><span class="line">Name=<span class="built_in">test</span></span><br></pre></td></tr></table></figure><h2 id="方法一，利用sed解析文本，提取配置信息"><a href="#方法一，利用sed解析文本，提取配置信息" class="headerlink" title="方法一，利用sed解析文本，提取配置信息"></a>方法一，利用sed解析文本，提取配置信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id=`sed <span class="string">'/^ID=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">ip=`sed <span class="string">'/^IP=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">name=`sed <span class="string">'/^Name=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$id</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ip</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br></pre></td></tr></table></figure><h2 id="方法二，利用eval方法解析"><a href="#方法二，利用eval方法解析" class="headerlink" title="方法二，利用eval方法解析"></a>方法二，利用eval方法解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span>  </span><br><span class="line">    <span class="built_in">eval</span> <span class="string">"<span class="variable">$line</span>"</span>  </span><br><span class="line"><span class="keyword">done</span> &amp;lt; init.properties  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br></pre></td></tr></table></figure><h2 id="方法三，直接将配置信息加载到session的环境变量中"><a href="#方法三，直接将配置信息加载到session的环境变量中" class="headerlink" title="方法三，直接将配置信息加载到session的环境变量中"></a>方法三，直接将配置信息加载到session的环境变量中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> init.properties</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span></span><br><span class="line">123</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span></span><br><span class="line">192.168.3.154</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>本文转自 <a href="https://www.cnblogs.com/binbinjx/p/5680214.html" target="_blank" rel="noopener">https://www.cnblogs.com/binbinjx/p/5680214.html</a></p><h2 id="配置文件init-properties"><a href="#配置文件init-properties" class="headerlink" title="配置文件init.properties"></a>配置文件<code>init.properties</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ID=123</span><br><span class="line">IP=192.168.3.154</span><br><span class="line">Name=<span class="built_in">test</span></span><br></pre></td></tr></table></figure><h2 id="方法一，利用sed解析文本，提取配置信息"><a href="#方法一，利用sed解析文本，提取配置信息" class="headerlink" title="方法一，利用sed解析文本，提取配置信息"></a>方法一，利用sed解析文本，提取配置信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id=`sed <span class="string">'/^ID=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">ip=`sed <span class="string">'/^IP=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">name=`sed <span class="string">'/^Name=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$id</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ip</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br></pre></td></tr></table></figure><h2 id="方法二，利用eval方法解析"><a href="#方法二，利用eval方法解析" class="headerlink" title="方法二，利用eval方法解析"></a>方法二，利用eval方法解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span>  </span><br><span class="line">    <span class="built_in">eval</span> <span class="string">"<span class="variable">$line</span>"</span>  </span><br><span class="line"><span class="keyword">done</span> &amp;lt; init.properties  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br></pre></td></tr></table></figure><h2 id="方法三，直接将配置信息加载到session的环境变量中"><a href="#方法三，直接将配置信息加载到session的环境变量中" class="headerlink" title="方法三，直接将配置信息加载到session的环境变量中"></a>方法三，直接将配置信息加载到session的环境变量中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> init.properties</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span></span><br><span class="line">123</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span></span><br><span class="line">192.168.3.154</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: Git学习笔记 - 钢钢更新&lt;br&gt;date: 2019-09-08 10:02:06&lt;br&gt;copyright: true&lt;br&gt;type: categories&lt;br&gt;categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Linux&lt;/li&gt;
-&lt;/u
+        &lt;p&gt;本文转自 &lt;a href=&quot;https://www.cnblogs.com/binbinjx/p/5680214.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/binbinjx/p/5680214.
       
     
     </summary>
     
+      <category term="Linux" scheme="https://wangfanggang.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://wangfanggang.com/tags/Linux/"/>
+    
+      <category term="Shell" scheme="https://wangfanggang.com/tags/Shell/"/>
     
   </entry>
   
