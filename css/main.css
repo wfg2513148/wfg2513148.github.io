@@ -2005,7 +2005,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6e4a67;
+  background: #cbb9ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2933,4 +2933,8 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+.header {
+  background: #f5f5f5 url("../../images/banner.jpg");
+  background-size: cover;
 }
