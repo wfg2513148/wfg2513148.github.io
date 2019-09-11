@@ -2005,7 +2005,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fca1ff;
+  background: #383ec3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2935,6 +2935,6 @@ embed {
   display: inline-block;
 }
 .header {
-  background: #f5f5f5 url("https://static.xmt.cn/3c7c0fb718bb41c1a91d9fa25d6e2d78.png");
+  background: #f5f5f5 url("https://static.xmt.cn/c009c49cd4e64107bb44aa610bd38599.png");
   background-size: cover;
 }
