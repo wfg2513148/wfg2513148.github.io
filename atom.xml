@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-09-09T14:25:27.000Z</updated>
+  <updated>2019-09-14T07:57:05.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 19.2 早期采用者版本现已推出！</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/oracle-apex-192-early-adopter-now-available/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-apex-192-early-adopter-now-available/</id>
+    <published>2019-09-14T08:42:41.000Z</published>
+    <updated>2019-09-14T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://static.xmt.cn/0071fb56797c4790a96f45ab0636d438.png" alt=""></p><p>Oracle APEX 19.2的早期采用者版本现已推出，并且向所有人开放！访问它的URL是：</p><p><a href="https://tryapexnow.com/" target="_blank" rel="noopener">https://tryapexnow.com/</a></p><p>在 Oracle APEX 的每个主要版本之前，我们都会执行托管的早期采用者（EA）计划。这类似于托管测试版，欢迎大家参与并提供反馈。这是社区参与 APEX 发布过程的绝佳机会。我们欢迎您提供有关功能、用户界面、错误、功能等的反馈。最终，您的反馈有助于我们将 Oracle APEX 打造成一个高质量、优质的框架。</p><p>此版本中有一些令人兴奋的新功能，包括：</p><ul><li>分面搜索（Faceted Search）</li><li>全新的团队开发功能</li><li>增强弹出LOV</li><li>扩展共享LOV</li><li>REST 支持交互式网格（REST Enabled Interactive Grid）</li><li>数据加载到现有表中</li><li>升级的 Oracle JET</li><li>环球主题中的暗模式主题风格</li><li><a href="https://apex.oracle.com/pls/apex/f?p=192192:FEATURES" target="_blank" rel="noopener">了解有关 APEX 19.2 中新功能的更多信息</a></li></ul><blockquote><p>与往常一样，要记住以下几点：<br>这只是托管。我们不提供 APEX 的早期版本可用于本地安装。<br>您在 APEX 的早期采用者实例上所做的一切都应该被视为丢失。无法保证您在 Early Adopter 实例中构建的APEX应用程序甚至可以安装在 Oracle Application Express 19.2 的生产版本中。<br>如果您在 APEX 19.2 发布后阅读此博文，您会发现 <a href="https://tryapexnow.com/" target="_blank" rel="noopener">https://tryapexnow.com/</a> 上的早期采用者不再可用。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://static.xmt.cn/0071fb56797c4790a96f45ab0636d438.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Oracle APEX 19.2的早期采用者版本现已推出，并且向所有人开放！访问它的URL是：&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2019.09.09</title>
@@ -574,36 +605,6 @@
       &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apex.oracle.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle Application Express（APEX）18.2&lt;/a&gt; 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。&lt;/p&gt;
 &lt;p&gt;下面是 Oracle APEX 18.2 的一些改进，包括：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2018.09.20</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</id>
-    <published>2018-09-20T15:32:03.000Z</published>
-    <updated>2019-09-03T12:27:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg" alt=""></p><p>以下是截止至 <code>2018.09.20</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://descubriendooracle.blogspot.com/2018/09/instalar-apex-office-print-en-nuestro-ws.html" target="_blank" rel="noopener">Install APEX Office Print in our WS</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-5-event-theme42ready/" target="_blank" rel="noopener">APEX 5 Event: theme42ready</a> <code>2018.09</code></li><li><a href="https://thtechnology.com/2018/09/11/apex-data-load-wizard-customizations-revisited/" target="_blank" rel="noopener">APEX Data Load Wizard Customizations ~ Revisited</a> <code>2018.09</code></li><li><a href="http://apexbyg.blogspot.com/2018/09/hot-to-set-ig-default-values-for-email.html" target="_blank" rel="noopener">How to set IG default values for email fields when downloading report</a> <code>2018.09</code></li><li><a href="http://lschilde.blogspot.com/2018/09/ig-toolbar-customization-using-function.html" target="_blank" rel="noopener">IG toolbar customization using a function</a> <code>2018.09</code></li><li><a href="https://apextips.blogspot.com/2018/09/clearing-error-state-of-interactive.html" target="_blank" rel="noopener">Clearing error state of an Interactive Grid column</a> <code>2018.09</code></li><li><a href="https://jeffkemponoracle.com/2018/09/using-apex_item-checkbox2-with-multiple-identifiers/" target="_blank" rel="noopener">Using apex_item.checkbox2 with multiple identifiers</a> <code>2018.09</code></li><li><a href="http://www.explorer.uk.com/undocumented-ig-features/" target="_blank" rel="noopener">Undocumented IG Features</a> <code>2018.09</code></li><li><a href="https://www.lrayner.com/blog/viewing-icons-in-the-interactive-report-apex-18-1" target="_blank" rel="noopener">Viewing icons in the Interactive Report [Apex 18.1]</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/oracle-apex-client-side-dynamic-actions-using-jquery-selectors.html" target="_blank" rel="noopener">Client Side Dynamic Actions using jQuery Selectors</a> <code>2018.09</code></li><li><a href="http://www.grassroots-oracle.com/2018/09/remove-duplicate-from-oracle-apex-collection.html" target="_blank" rel="noopener">Remove duplicate from APEX collection</a> <code>2018.09</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/mw690/006By2pOgy1fvgfrq6ieyj31860syx6p.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;以下是截止至 &lt;code&gt;2018.09.20&lt;/code&gt;收集的 Oracle APEX
-      
     
     </summary>
     
