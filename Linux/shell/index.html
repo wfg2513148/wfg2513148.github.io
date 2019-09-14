@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="本文转自 https://www.cnblogs.com/binbinjx/p/5680214.html 配置文件init.properties123ID=123IP=192.168.3.154Name=test 方法一，利用sed解析文本，提取配置信息123456id=`sed &apos;/^ID=/!d;s/.*=//&apos; init.properties`  ip=`sed &apos;/^IP=/!d;s/.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png">
-<meta property="og:updated_time" content="2019-09-14T07:13:15.000Z">
+<meta property="og:updated_time" content="2019-09-14T07:29:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux shell 学习笔记">
 <meta name="twitter:description" content="本文转自 https://www.cnblogs.com/binbinjx/p/5680214.html 配置文件init.properties123ID=123IP=192.168.3.154Name=test 方法一，利用sed解析文本，提取配置信息123456id=`sed &apos;/^ID=/!d;s/.*=//&apos; init.properties`  ip=`sed &apos;/^IP=/!d;s/.">
@@ -436,7 +436,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-14 15:13:15" itemprop="dateModified" datetime="2019-09-14T15:13:15+08:00">2019-09-14</time>
+                <time title="修改时间：2019-09-14 15:29:30" itemprop="dateModified" datetime="2019-09-14T15:29:30+08:00">2019-09-14</time>
               
             
           </span>
@@ -538,7 +538,7 @@ var _hmt = _hmt || [];
 <h2 id="获取本机IP"><a href="#获取本机IP" class="headerlink" title="获取本机IP"></a>获取本机IP</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a | grep inet | grep -v inet6 | grep -v 127 | sed <span class="string">'s/^[ \t]*//g'</span> | cut -d <span class="string">' '</span> -f2</span><br></pre></td></tr></table></figure>
 <h2 id="获取-10-参数值"><a href="#获取-10-参数值" class="headerlink" title="获取 10+ 参数值"></a>获取 10+ 参数值</h2><p>在Shell脚本中，可以用$n的方式获取第n个参数，例如，一个名为paramtest的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2</span><br></pre></td></tr></table></figure></p>
 <p>执行<code>./paramtest a b</code> 的结果是打印出第1个和第2个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　　　a b</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b</span><br></pre></td></tr></table></figure>
 <p>但是，若脚本需要10个以上的参数，直接写数字会有问题。例如，脚本为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2 $3 $4 $6 $7 $8 $9 $10</span><br></pre></td></tr></table></figure></p>
 <p>执行<code>./paramtest a b c d e f g h i j</code>，结果如下，第10个参数是不对的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e f g h i a0</span><br></pre></td></tr></table></figure></p>
 <p>显然<code>$10</code>被解释成了<code>$1+0</code></p>
