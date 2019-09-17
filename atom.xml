@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-09-14T07:57:05.000Z</updated>
+  <updated>2019-09-17T13:45:33.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle提供始终免费的自治数据库和云基础架构</title>
+    <link href="https://wangfanggang.com/Oracle/oracle-news-20190917/"/>
+    <id>https://wangfanggang.com/Oracle/oracle-news-20190917/</id>
+    <published>2019-09-17T13:47:00.000Z</published>
+    <updated>2019-09-17T13:45:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/6594654e-ea6a-44a7-9467-709d699a5eaa/Image/d93b94f62ffb14d0946f413a9c55c07b/blog_graphic_3.PNG" alt=""></p><h2 id="新的-Always-Free-服务使开发人员和学生能够无限时间学习，构建和获得-Oracle-云的实践经验"><a href="#新的-Always-Free-服务使开发人员和学生能够无限时间学习，构建和获得-Oracle-云的实践经验" class="headerlink" title="新的 Always Free 服务使开发人员和学生能够无限时间学习，构建和获得 Oracle 云的实践经验"></a>新的 Always Free 服务使开发人员和学生能够无限时间学习，构建和获得 Oracle 云的实践经验</h2><p>甲骨文今天宣布推出 <a href="https://www.oracle.com/cloud/free" target="_blank" rel="noopener">Oracle云免费套餐</a>，包括新的免费服务，任何人都可以无限时间尝试世界上第一个自动驾驶数据库和Oracle云基础架构。现在，大型和小型组织，开发人员，学生和教育工作者可以构建，学习和探索Oracle自治数据库和Oracle云基础架构的全部功能，包括计算虚拟机，块和对象存储以及负载均衡器 - 所有必需品开发人员在 Oracle Cloud 上构建完整的应用程序。 </p><p>虽然其他超大规模云供应商提供了一个为期12个月的关系数据库免费试用版，然后开始收费，但Oracle的 Always Free Autonomous Database 只要使用它就可以免费使用。与竞争对手的免费试用相比，Oracle还提供更多计算和存储作为Always Free服务。用户可以轻松升级以获得更多实例，更大的实例和其他服务。始终免费服务在世界所有地区都可用，任何人都可以使用，包括那些使用通用信用卡定价和新免费套餐帐户的付费帐户。 </p><p>“我们很高兴能够提供始终免费的Oracle自治数据库和Oracle云基础架构，”Oracle数据库服务器技术执行副总裁 Andrew Mendelsohn 说。“这使下一代开发人员，分析师和数据科学家能够学习最新的数据库和机器学习技术，以便在云上开发强大的数据驱动应用程序和分析。”</p><p>新程序使开发人员能够在Oracle云基础架构和自治数据库之上使用任何语言和框架构建应用程序。他们可以快速入门，无需等待IT人员提供和学习人工智能和机器学习等新技术。企业可以使用 Free Tier 进行原型设计，证明新技术，并在将生产工作负载迁移到云之前进行测试。他们可以采用强大的企业基础架构功能，如负载平衡和存储克隆。此外，学生可以学习如何使用最新技术，并为他们的职业生涯做好更充分的准备。</p><p>Oracle还提供了一组丰富的免费开发人员工具，因此开发人员可以在Oracle自治数据库上更快地构建和部署新的数据驱动应用程序。开发工具包括 <a href="https://apex.oracle.com/autonomous" target="_blank" rel="noopener">Oracle Application Express</a>（APEX低代码的Web应用程序的开发）、<a href="https://blogs.oracle.com/developers/sql-developer-web-now-available-for-oracle-autonomous-database" target="_blank" rel="noopener">SQL Developer Web</a>的网络与数据库，用户交互的<a href="https://blogs.oracle.com/datamining/introducing-oracle-machine-learning-sql-notebooks-for-the-oracle-autonomous-data-warehouse-cloud" target="_blank" rel="noopener">机器学习笔记本</a>，<a href="https://www.oracle.com/database/technologies/appdev/rest.html" target="_blank" rel="noopener">REST</a>接口，方便地访问和数据库数据的发布，以及所有流行的编程语言的驱动程序。在 <a href="https://cloudmarketplace.oracle.com/marketplace/app/clouddeveloper" target="_blank" rel="noopener">Oracle开发者云镜像</a> 包括最新的工具，选择开发语言，OCI软件开发工具包（SDK），以及数据库连接器。Oracle云基础架构资源都可以通过控制台运行，<a href="https://docs.cloud.oracle.com/iaas/Content/devtoolshome.htm" target="_blank" rel="noopener">REST API和SDK</a>，或使用Terraform自动化。</p><p>作为今天新闻的一部分，Oracle还将通过 <a href="https://www.oracle.com/corporate/pressrelease/oow19-oracle-academy-autonomous-091619.html" target="_blank" rel="noopener">Oracle Academy</a>，全球慈善教育计划，为教育工作者和学生提供 Oracle Cloud Free Tier。从2020年初开始，Oracle Academy 机构成员将享受轻松注册，教育工作者将能够为他们的学生创建免费帐户。此外，Oracle Academy 正在开发Oracle自治数据库和 Oracle APEX 的学术课程。</p><p>Oracle的Free Tier程序有两个组件：</p><p>始终免费服务，可无限制地访问Oracle云服务<br>免费试用，30天内提供300美元的积分，以尝试额外的服务和更大的形状</p><p>新的Always Free计划包括用户在云中构建和测试应用程序所需的基本知识：Oracle自治数据库，计算VM，块卷，对象和归档存储以及负载均衡器。规格包括：</p><ul><li>2个自治数据库（自治数据仓库或自治事务处理），每个都有1个OCPU和20 GB存储</li><li>2计算VM，每个VM具有1/8 OCPU和1 GB内存</li><li>2个Block Volumes，总共100 GB，最多5个免费备份</li><li>10 GB对象存储，10 GB存档存储和50,000 /月API请求</li><li>1个负载均衡器，10 Mbps带宽</li><li>10 TB /月的出站数据传输</li><li>5亿摄取数据点和10亿监测服务数据点</li><li>每月100万通知递送选项和每月1000封电子邮件</li></ul><p>Oracle拥有世界上最受欢迎的数据库之一，尤其适用于任务关键型应用程序。Oracle自治数据库以及Oracle的所有云服务和Oracle应用程序在Oracle云基础架构上运行最佳。Oracle自治数据库是业界第一个也是唯一一个自驱动数据库，旨在运行在Oracle的Gen 2基础架构上，几乎每个数据库和工作负载在Oracle云基础架构的性能，网络和安全性方面都能更好地运行。</p><p>Oracle自治数据库是第一个使用突破性的机器学习来提供自动驾驶，自我修复和自我保护功能。因此，它可以自动化数据库系统中的密钥管理和安全流程，如修补，调整和升级，同时保持关键基础架构不断运行以获得现代云体验。Oracle自治数据库在Oracle云基础架构上运行，其成本远低于其他选择。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/6594654e-ea6a-44a7-9467-709d699a5eaa/Image/d93
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+      <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
+    
+      <category term="Database" scheme="https://wangfanggang.com/tags/Database/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 19.2 早期采用者版本现已推出！</title>
@@ -588,34 +619,6 @@
       <category term="Database" scheme="https://wangfanggang.com/tags/Database/"/>
     
       <category term="xe" scheme="https://wangfanggang.com/tags/xe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 18.2 正式发布！！</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/</id>
-    <published>2018-09-30T17:02:03.000Z</published>
-    <updated>2019-09-03T12:27:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg" alt=""></p><p><a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express（APEX）18.2</a> 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。</p><p>下面是 Oracle APEX 18.2 的一些改进，包括：</p><a id="more"></a><h2 id="创建页面向导"><a href="#创建页面向导" class="headerlink" title="创建页面向导"></a>创建页面向导</h2><p>在 Oracle APEX 18.2 中，“创建页面”向导已可以为并排主从关系和仪表板创建应用程序页面。并排主从表单使用并排布局创建单页主要详细信息，并使用模态弹出窗口编辑报表区域。仪表板可以根据样本数据创建第一个仪表板，您稍后可以使用 Page Designer 进行再次编辑。 </p><h2 id="Font-APEX"><a href="#Font-APEX" class="headerlink" title="Font APEX"></a>Font APEX</h2><p><a href="https://apex.oracle.com/fontapex" target="_blank" rel="noopener">Font APEX</a> 是超过 1,000 个高质量图标的集合，其中许多图标专门用于商业应用程序。APEX 18.1 中的 Font APEX 包括一组新的高分辨率 32 x 32 图标，可以根据APEX应用程序中的使用位置，将自动为您选择正确大小的字体。Oracle APEX 18.2 还包括独立于 Oracle APEX 版本的更新 Font APEX 样式表和字体文件功能。另外，Font APEX 现在可以在 GitHub 上找到了。</p><h2 id="减少停机时间"><a href="#减少停机时间" class="headerlink" title="减少停机时间"></a>减少停机时间</h2><p>在一个始终可用的云服务和企业应用程序的时代，APEX 18.2 特别关注显着减少 APEX 升级所带来的中断时间。APEX 18.1 首次引入了多阶段减少停机时间的升级方法，从而显著降低了升级过程中发生的总体中断。在 APEX 18.2 中，这一多阶段升级过程得到了进一步完善，从而使 APEX 升级已经短暂停机的时间进一步缩短。  </p><h2 id="简化服务请求和服务创建"><a href="#简化服务请求和服务创建" class="headerlink" title="简化服务请求和服务创建"></a>简化服务请求和服务创建</h2><p>请求 APEX 工作区的工作流程已大大简化，从而改善了首次尝试 Oracle APEX 的用户体验。APEX 配置中添加了其他设置，以便在工作区请求过程中使用开箱即用的合理默认值，并且启动和运行 APEX 所需的信息非常少！</p><h2 id="样本数据集增强功能"><a href="#样本数据集增强功能" class="headerlink" title="样本数据集增强功能"></a>样本数据集增强功能</h2><p>为了帮助学习过程，Oracle APEX 包含许多数据集，可以轻松安装并用于创建应用程序。在 APEX 18.2 中，创建应用程序向导将自动填充构建在数据集之上的组件。此外，一些数据集已经扩展到包括其他语言的数据，包括<code>中文、捷克语、法语、德语、日语、韩语、波兰语、俄语和西班牙语</code>。</p><p>与每个 APEX 版本一样，对生产力和示例应用程序进行了大量增强和修复。此外，APEX 18.2 中已修复了 150 多个错误，从而为 APEX 环境带来更高的质量和稳定性。</p><h2 id="附加信息"><a href="#附加信息" class="headerlink" title="附加信息"></a>附加信息</h2><p>Application Express（APEX）是低代码快速应用开发平台，可以在任何 Oracle 数据库中运行，并且包含在每个 Oracle 数据库云服务中。APEX 与 Oracle 数据库相结合，提供了一个完全集成的环境，用于构建、部署、维护和监控在移动和桌面设备上看起来很棒的数据驱动型业务应用程序。要了解有关 Oracle Application Express 的更多信息，请访问：<a href="apex.oracle.com">apex.oracle.com</a>。要了解有关 Oracle Database Cloud 的更多信息，请访问：<a href="cloud.oracle.com/database">cloud.oracle.com/database</a>。 </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://apex.oracle.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle Application Express（APEX）18.2&lt;/a&gt; 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。&lt;/p&gt;
-&lt;p&gt;下面是 Oracle APEX 18.2 的一些改进，包括：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
