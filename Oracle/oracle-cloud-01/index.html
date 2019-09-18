@@ -135,20 +135,36 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="本文转自 https://www.cnblogs.com/binbinjx/p/5680214.html 配置文件init.properties123ID=123IP=192.168.3.154Name=test 方法一，利用sed解析文本，提取配置信息123456id=`sed &apos;/^ID=/!d;s/.*=//&apos; init.properties`  ip=`sed &apos;/^IP=/!d;s/.">
-<meta name="keywords" content="Linux,Shell">
+  <meta name="description" content="背景 钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 无限期免费 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！  注册 Oracl">
+<meta name="keywords" content="Oracle,Cloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux shell 学习笔记">
-<meta property="og:url" content="https://wangfanggang.com/Linux/shell/index.html">
+<meta property="og:title" content="Oracle Cloud 系列文章01：创建VM云实例">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/oracle-cloud-01/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="本文转自 https://www.cnblogs.com/binbinjx/p/5680214.html 配置文件init.properties123ID=123IP=192.168.3.154Name=test 方法一，利用sed解析文本，提取配置信息123456id=`sed &apos;/^ID=/!d;s/.*=//&apos; init.properties`  ip=`sed &apos;/^IP=/!d;s/.">
+<meta property="og:description" content="背景 钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 无限期免费 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！  注册 Oracl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png">
-<meta property="og:updated_time" content="2019-09-14T07:29:30.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918123757.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918102330.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918103151.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918104249.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105955.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110033.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110048.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110129.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110154.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110808.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918113637.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115042.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115231.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110800.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105800.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105840.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918112101.png">
+<meta property="og:updated_time" content="2019-09-18T04:41:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux shell 学习笔记">
-<meta name="twitter:description" content="本文转自 https://www.cnblogs.com/binbinjx/p/5680214.html 配置文件init.properties123ID=123IP=192.168.3.154Name=test 方法一，利用sed解析文本，提取配置信息123456id=`sed &apos;/^ID=/!d;s/.*=//&apos; init.properties`  ip=`sed &apos;/^IP=/!d;s/.">
-<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png">
+<meta name="twitter:title" content="Oracle Cloud 系列文章01：创建VM云实例">
+<meta name="twitter:description" content="背景 钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 无限期免费 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！  注册 Oracl">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918123757.png">
 
 
 
@@ -157,7 +173,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://wangfanggang.com/Linux/shell/"/>
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/oracle-cloud-01/"/>
 
 
 
@@ -167,7 +183,7 @@ var _hmt = _hmt || [];
   };
 </script>
 
-  <title>Linux shell 学习笔记 | 钢钢更新</title>
+  <title>Oracle Cloud 系列文章01：创建VM云实例 | 钢钢更新</title>
   
 
 
@@ -377,7 +393,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Linux/shell/">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/oracle-cloud-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王方钢 / Kenny Wang">
@@ -394,7 +410,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux shell 学习笔记
+          <h2 class="post-title" itemprop="name headline">Oracle Cloud 系列文章01：创建VM云实例
               
             
           </h2>
@@ -419,24 +435,12 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-09-08 10:02:06" itemprop="dateCreated datePublished" datetime="2019-09-08T10:02:06+08:00">2019-09-08</time>
+              <time title="创建时间：2019-09-18 12:35:01 / 修改时间：12:41:01" itemprop="dateCreated datePublished" datetime="2019-09-18T12:35:01+08:00">2019-09-18</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-14 15:29:30" itemprop="dateModified" datetime="2019-09-14T15:29:30+08:00">2019-09-14</time>
               
             
           </span>
@@ -453,7 +457,7 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
 
                 
                 
@@ -469,7 +473,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/Linux/shell/" class="leancloud_visitors" data-flag-title="Linux shell 学习笔记">
+             <span id="/Oracle/oracle-cloud-01/" class="leancloud_visitors" data-flag-title="Oracle Cloud 系列文章01：创建VM云实例">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -494,7 +498,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -528,22 +532,96 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png" alt=""></p>
-<p>本文转自 <a href="https://www.cnblogs.com/binbinjx/p/5680214.html" target="_blank" rel="noopener">https://www.cnblogs.com/binbinjx/p/5680214.html</a></p>
-<h2 id="配置文件init-properties"><a href="#配置文件init-properties" class="headerlink" title="配置文件init.properties"></a>配置文件<code>init.properties</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ID=123</span><br><span class="line">IP=192.168.3.154</span><br><span class="line">Name=<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<h2 id="方法一，利用sed解析文本，提取配置信息"><a href="#方法一，利用sed解析文本，提取配置信息" class="headerlink" title="方法一，利用sed解析文本，提取配置信息"></a>方法一，利用sed解析文本，提取配置信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id=`sed <span class="string">'/^ID=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">ip=`sed <span class="string">'/^IP=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">name=`sed <span class="string">'/^Name=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$id</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ip</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br></pre></td></tr></table></figure>
-<h2 id="方法二，利用eval方法解析"><a href="#方法二，利用eval方法解析" class="headerlink" title="方法二，利用eval方法解析"></a>方法二，利用eval方法解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span>  </span><br><span class="line">    <span class="built_in">eval</span> <span class="string">"<span class="variable">$line</span>"</span>  </span><br><span class="line"><span class="keyword">done</span> &amp;lt; init.properties  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br></pre></td></tr></table></figure>
-<h2 id="方法三，直接将配置信息加载到session的环境变量中"><a href="#方法三，直接将配置信息加载到session的环境变量中" class="headerlink" title="方法三，直接将配置信息加载到session的环境变量中"></a>方法三，直接将配置信息加载到session的环境变量中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> init.properties</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span></span><br><span class="line">123</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span></span><br><span class="line">192.168.3.154</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<h2 id="参数判断"><a href="#参数判断" class="headerlink" title="参数判断"></a>参数判断</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> = <span class="string">"Y"</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"true"</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"false"</span>;</span><br><span class="line"><span class="keyword">fi</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="获取本机IP"><a href="#获取本机IP" class="headerlink" title="获取本机IP"></a>获取本机IP</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a | grep inet | grep -v inet6 | grep -v 127 | sed <span class="string">'s/^[ \t]*//g'</span> | cut -d <span class="string">' '</span> -f2</span><br></pre></td></tr></table></figure>
-<h2 id="获取-10-参数值"><a href="#获取-10-参数值" class="headerlink" title="获取 10+ 参数值"></a>获取 10+ 参数值</h2><p>在Shell脚本中，可以用$n的方式获取第n个参数，例如，一个名为paramtest的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2</span><br></pre></td></tr></table></figure></p>
-<p>执行<code>./paramtest a b</code> 的结果是打印出第1个和第2个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b</span><br></pre></td></tr></table></figure>
-<p>但是，若脚本需要10个以上的参数，直接写数字会有问题。例如，脚本为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2 $3 $4 $6 $7 $8 $9 $10</span><br></pre></td></tr></table></figure></p>
-<p>执行<code>./paramtest a b c d e f g h i j</code>，结果如下，第10个参数是不对的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e f g h i a0</span><br></pre></td></tr></table></figure></p>
-<p>显然<code>$10</code>被解释成了<code>$1+0</code></p>
-<p>解决方法很简单，第10个参数加花括号即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2 $3 $4 $6 $7 $8 $9 $&#123;10&#125;</span><br></pre></td></tr></table></figure></p>
-<p>再次执行<code>./paramtest a b c d e f g h i j</code>，结果正确：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e f g h i j</span><br></pre></td></tr></table></figure></p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918123757.png" alt=""></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 <strong>无限期免费</strong> 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！</p>
+</blockquote>
+<h2 id="注册-Oracle-Cloud-账号"><a href="#注册-Oracle-Cloud-账号" class="headerlink" title="注册 Oracle Cloud 账号"></a>注册 Oracle Cloud 账号</h2><h3 id="填写邮箱及所在地"><a href="#填写邮箱及所在地" class="headerlink" title="填写邮箱及所在地"></a>填写邮箱及所在地</h3><p>首先注册个Oracle Cloud账号，地址：<a href="https://oracle.com/oow19freetier" target="_blank" rel="noopener">https://oracle.com/oow19freetier</a>。</p>
+<blockquote>
+<p>如果之前注册过Oracle Cloud，可以直接登录，一样可以享受终身免费待遇。<br>填写邮箱，选择所在国家。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918102330.png" alt=""></p>
+<h3 id="注册Home-Region及个人手机号"><a href="#注册Home-Region及个人手机号" class="headerlink" title="注册Home Region及个人手机号"></a>注册Home Region及个人手机号</h3><blockquote>
+<p>这个页面信息比较多，特别是 <code>Home Region</code> 栏位，这个是你今后服务器所在的区，<code>一旦注册成功是不能改的</code>，所以请谨慎选择。为了速度能快一点儿，建议选择亚洲的几个区，钢哥选的是<code>日本东京</code>。<br>最后输入自己的手机号，接收个验证码。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918103151.png" alt=""></p>
+<h3 id="注册信用卡"><a href="#注册信用卡" class="headerlink" title="注册信用卡"></a>注册信用卡</h3><blockquote>
+<p>之后需要填写<code>信用卡</code>信息，以便做扣款（1美金）验证，扣的钱稍后会自动退回，所以不用担心。支持的信用卡有 <code>VISA</code>、<code>Master</code>、<code>Google Pay</code>。</p>
+</blockquote>
+<h2 id="接收注册邮件，登录到-Oracle-Cloud-控制台"><a href="#接收注册邮件，登录到-Oracle-Cloud-控制台" class="headerlink" title="接收注册邮件，登录到 Oracle Cloud 控制台"></a>接收注册邮件，登录到 Oracle Cloud 控制台</h2><blockquote>
+<p>Oracle 审核通过后，会往你注册的邮箱里发一封注册成功的邮件。点击邮件里的<code>Sign In to Oracle Cloud</code>，即可登录到 Oracle Cloud 控制台。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918104249.png" alt=""></p>
+<h2 id="创建公钥-私钥"><a href="#创建公钥-私钥" class="headerlink" title="创建公钥/私钥"></a>创建公钥/私钥</h2><h3 id="下载-PuttyGen"><a href="#下载-PuttyGen" class="headerlink" title="下载 PuttyGen"></a>下载 <code>PuttyGen</code></h3><blockquote>
+<p>PuttyGen下载地址：<a href="https://www.puttygen.com/#Download_PuTTYgen_on_Windows" target="_blank" rel="noopener">https://www.puttygen.com/#Download_PuTTYgen_on_Windows</a></p>
+</blockquote>
+<h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><blockquote>
+<p>打开下载好的 PuttyGen</p>
+<ul>
+<li>确保 <strong>Key</strong> 菜单中选择了 <code>SSH-2 RSA key</code> 选项;</li>
+<li>确保最下面 <strong>Type of key to generate</strong> 选中了 <code>RSA</code>;</li>
+<li>确保右下角的 <strong>Number of bits in a generated key</strong> 中输入 <code>2048</code>;</li>
+<li>点击右侧的 <code>Generate</code> 按钮生成私钥；</li>
+</ul>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105955.png" alt=""></p>
+<blockquote>
+<p>生成过程中要不停的移动鼠标:)<br>生成过程结束后，确保 <strong>Key passphrase</strong> 栏位留空，点击 <code>Save private key</code> 按钮；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110033.png" alt=""></p>
+<blockquote>
+<p>忽略安全提示；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110048.png" alt=""></p>
+<blockquote>
+<p>按照需要重命名私钥文件，确保文件后缀是 <code>.ppk</code> 即可。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110129.png" alt=""></p>
+<h3 id="创建公钥"><a href="#创建公钥" class="headerlink" title="创建公钥"></a>创建公钥</h3><blockquote>
+<p>选中公钥区域的字符串，将全部内容拷贝到文本文件中；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110154.png" alt=""></p>
+<blockquote>
+<p>将文本保存为 <code>.pub</code> 后缀的文件；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110808.png" alt=""></p>
+<blockquote>
+<p>至此，公钥/私钥生成完毕。</p>
+</blockquote>
+<h2 id="创建VM实例（云服务器）"><a href="#创建VM实例（云服务器）" class="headerlink" title="创建VM实例（云服务器）"></a>创建VM实例（云服务器）</h2><blockquote>
+<p>选择<code>创建VM实例</code>，快速创建一个云服务器。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918113637.png" alt=""></p>
+<blockquote>
+<p>根据需要选择不同的操作系统，可以说Oracle还是很良心的，选择比较多；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115042.png" alt=""></p>
+<blockquote>
+<p>最后，选择之前生成的公钥文件，点击 <code>创建</code> 按钮即可；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115231.png" alt=""></p>
+<blockquote>
+<p>稍等片刻，Oracle 就为我们创建好了VM云实例；</p>
+</blockquote>
+<h2 id="远程连接到VM云实例"><a href="#远程连接到VM云实例" class="headerlink" title="远程连接到VM云实例"></a>远程连接到VM云实例</h2><blockquote>
+<p>记录下服务器 <code>公共IP地址</code>;</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110800.png" alt=""></p>
+<blockquote>
+<p>打开 <code>PuTTY</code> 客户端，配置连接信息；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105800.png" alt=""></p>
+<blockquote>
+<p>在 <code>Connection -&gt; SSH -&gt; Auth</code> 界面，选择之前生成好的 <code>.ppk</code> 秘钥文件，点击 <code>Open</code> 按钮进行连接；</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105840.png" alt=""></p>
+<blockquote>
+<p>提示输入用户名: <code>opc</code> 或者 <code>ubuntu</code>, enjoy it!!</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918112101.png" alt=""></p>
+<blockquote>
+<p>至此，你已经在 Oracle Cloud 上成功创建了一台VM云实例，并可以远程登录管理。至于用来做什么，大家仁者见仁智者见智吧:)</p>
+</blockquote>
 
       
     </div>
@@ -562,12 +640,12 @@ var _hmt = _hmt || [];
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Linux/shell/">Linux shell 学习笔记</a></p>
+  <p><span>本文标题:</span><a href="/Oracle/oracle-cloud-01/">Oracle Cloud 系列文章01：创建VM云实例</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
-  <p><span>发布时间:</span>2019年09月08日 - 10:09</p>
-  <p><span>最后更新:</span>2019年09月14日 - 15:09</p>
-  <p><span>原始链接:</span><a href="/Linux/shell/" title="Linux shell 学习笔记">https://wangfanggang.com/Linux/shell/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Linux/shell/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月18日 - 12:09</p>
+  <p><span>最后更新:</span>2019年09月18日 - 12:09</p>
+  <p><span>原始链接:</span><a href="/Oracle/oracle-cloud-01/" title="Oracle Cloud 系列文章01：创建VM云实例">https://wangfanggang.com/Oracle/oracle-cloud-01/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/oracle-cloud-01/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -635,9 +713,9 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
           
-            <a href="/tags/Shell/" rel="tag"><i class="fa fa-tag"></i> Shell</a>
+            <a href="/tags/Cloud/" rel="tag"><i class="fa fa-tag"></i> Cloud</a>
           
         </div>
       
@@ -650,8 +728,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Docker/Dockerfile/" rel="next" title="Dockerfile 最佳实践（转）">
-                <i class="fa fa-chevron-left"></i> Dockerfile 最佳实践（转）
+              <a href="/Oracle/oracle-news-20190917/" rel="next" title="Oracle提供始终免费的自治数据库和云基础架构">
+                <i class="fa fa-chevron-left"></i> Oracle提供始终免费的自治数据库和云基础架构
               </a>
             
           </div>
@@ -659,10 +737,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Oracle/Oracle-APEX/apex-update-20190908/" rel="prev" title="Oracle APEX 活跃博文整理 | 2019.09.09">
-                Oracle APEX 活跃博文整理 | 2019.09.09 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -939,7 +1013,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件init-properties"><span class="nav-number">1.</span> <span class="nav-text">配置文件init.properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一，利用sed解析文本，提取配置信息"><span class="nav-number">2.</span> <span class="nav-text">方法一，利用sed解析文本，提取配置信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二，利用eval方法解析"><span class="nav-number">3.</span> <span class="nav-text">方法二，利用eval方法解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法三，直接将配置信息加载到session的环境变量中"><span class="nav-number">4.</span> <span class="nav-text">方法三，直接将配置信息加载到session的环境变量中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数判断"><span class="nav-number">5.</span> <span class="nav-text">参数判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取本机IP"><span class="nav-number">6.</span> <span class="nav-text">获取本机IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-10-参数值"><span class="nav-number">7.</span> <span class="nav-text">获取 10+ 参数值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册-Oracle-Cloud-账号"><span class="nav-number">2.</span> <span class="nav-text">注册 Oracle Cloud 账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#填写邮箱及所在地"><span class="nav-number">2.1.</span> <span class="nav-text">填写邮箱及所在地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册Home-Region及个人手机号"><span class="nav-number">2.2.</span> <span class="nav-text">注册Home Region及个人手机号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册信用卡"><span class="nav-number">2.3.</span> <span class="nav-text">注册信用卡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接收注册邮件，登录到-Oracle-Cloud-控制台"><span class="nav-number">3.</span> <span class="nav-text">接收注册邮件，登录到 Oracle Cloud 控制台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建公钥-私钥"><span class="nav-number">4.</span> <span class="nav-text">创建公钥/私钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-PuttyGen"><span class="nav-number">4.1.</span> <span class="nav-text">下载 PuttyGen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建私钥"><span class="nav-number">4.2.</span> <span class="nav-text">创建私钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建公钥"><span class="nav-number">4.3.</span> <span class="nav-text">创建公钥</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建VM实例（云服务器）"><span class="nav-number">5.</span> <span class="nav-text">创建VM实例（云服务器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程连接到VM云实例"><span class="nav-number">6.</span> <span class="nav-text">远程连接到VM云实例</span></a></li></ol></div>
             
 
           </div>
