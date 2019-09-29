@@ -135,21 +135,40 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="本文是钢哥的 Oracle APEX 系列文章的第14篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
-<meta name="keywords" content="Oracle,APEX,Docker,ORDS">
+  <meta name="description" content="本文是钢哥的 Oracle APEX 系列文章的第15篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
+<meta name="keywords" content="Oracle,APEX,Docker,ORDS,Database,Shell,Installation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
-<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/index.html">
+<meta property="og:title" content="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="本文是钢哥的 Oracle APEX 系列文章的第14篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
+<meta property="og:description" content="本文是钢哥的 Oracle APEX 系列文章的第15篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fuyz8hkpxhj31i20zix6q.jpg">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929224703.png">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/b7e95341/badges/apex-tool-badge.svg">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/7919f913/badges/apex-love-badge.svg">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/88f0a6ed/badges/apex-5_0-badge.svg">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/88f0a6ed/badges/apex-5_1-badge.svg">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_1-badge.svg">
+<meta property="og:image" content="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_2-badge.svg">
+<meta property="og:image" content="https://oracle-apex-bucket.s3-ap-northeast-1.amazonaws.com/apex-badges/APEX-19.1-blue.svg">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926221241.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926222346.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131529.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131648.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131726.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130215.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926223113.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190928074719.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130445.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130654.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926230438.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927124836.png">
 <meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg">
-<meta property="og:updated_time" content="2019-09-03T12:27:53.000Z">
+<meta property="og:updated_time" content="2019-09-29T14:47:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
-<meta name="twitter:description" content="本文是钢哥的 Oracle APEX 系列文章的第14篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fuyz8hkpxhj31i20zix6q.jpg">
+<meta name="twitter:title" content="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
+<meta name="twitter:description" content="本文是钢哥的 Oracle APEX 系列文章的第15篇，完整文章目录如下：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Ngin">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929224703.png">
 
 
 
@@ -158,7 +177,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/"/>
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/"/>
 
 
 
@@ -168,7 +187,7 @@ var _hmt = _hmt || [];
   };
 </script>
 
-  <title>Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像 | 钢钢更新</title>
+  <title>Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境 | 钢钢更新</title>
   
 
 
@@ -378,7 +397,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王方钢 / Kenny Wang">
@@ -395,7 +414,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境
               
             
           </h2>
@@ -420,24 +439,12 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2018-09-05 21:14:10" itemprop="dateCreated datePublished" datetime="2018-09-05T21:14:10+08:00">2018-09-05</time>
+              <time title="创建时间：2019-09-29 22:36:10 / 修改时间：22:47:27" itemprop="dateCreated datePublished" datetime="2019-09-29T22:36:10+08:00">2019-09-29</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-03 20:27:53" itemprop="dateModified" datetime="2019-09-03T20:27:53+08:00">2019-09-03</time>
               
             
           </span>
@@ -477,7 +484,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/Oracle/Oracle-APEX/apex-series-14/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
+             <span id="/Oracle/Oracle-APEX/apex-series-15/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,7 +509,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -516,7 +523,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -536,8 +543,8 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fuyz8hkpxhj31i20zix6q.jpg" alt=""></p>
-<p>本文是钢哥的 Oracle APEX 系列文章的第14篇，完整文章目录如下：</p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929224703.png" alt=""></p>
+<p>本文是钢哥的 Oracle APEX 系列文章的第15篇，完整文章目录如下：</p>
 <ul>
 <li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li>
 <li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li>
@@ -553,140 +560,98 @@ var _hmt = _hmt || [];
 <li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li>
 <li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li>
 <li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境</a></li>
 </ul>
-<h2 id="镜像内容"><a href="#镜像内容" class="headerlink" title="镜像内容"></a>镜像内容</h2><blockquote>
-<p><strong>钢哥注：</strong>这个镜像是国外 Oracle APEX 大神做的，原始 Github 地址在<a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">这里</a>。由于安装介质下载往往耗时耗力，因此钢哥这里仅仅为大家简单打包了一下，并提供国内下载地址，镜像解压后大约会占用 20 GB 的磁盘空间。<br>该镜像仅用于学习 Oracle APEX 使用，<strong>不提供任何技术支持，也不包含任何 License</strong>，试用 24 小时后请自行删除。</p>
+<h1 id="Rapid-APEX-English-中文"><a href="#Rapid-APEX-English-中文" class="headerlink" title="Rapid-APEX (English 中文)"></a>Rapid-APEX (<a href="https://github.com/wfg2513148/rapid-apex" target="_blank" rel="noopener">English</a> 中文)</h1><p><a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/b7e95341/badges/apex-tool-badge.svg" alt="APEX Tool"></a> <a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/7919f913/badges/apex-love-badge.svg" alt="APEX Built with Love"></a> <a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/88f0a6ed/badges/apex-5_0-badge.svg" alt="APEX 5.0"></a> <a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/88f0a6ed/badges/apex-5_1-badge.svg" alt="APEX 5.1"></a> <a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_1-badge.svg" alt="APEX 18.1"></a> <a href="LINK"><img src="https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_2-badge.svg" alt="APEX 18.2"></a> <a href="LINK"><img src="https://oracle-apex-bucket.s3-ap-northeast-1.amazonaws.com/apex-badges/APEX-19.1-blue.svg" alt="APEX 18.2"></a> </p>
+<blockquote>
+<p><a href="https://apex.oracle.com/zh-cn/" target="_blank" rel="noopener">Oracle APEX</a> 的安装过程比较繁琐，涉及到东西比较多，特别是在结合ORDS时，总是容易犯错。另外，如果你想快速搭建一套测试环境，但需要特定版本的APEX/ORDS来验证测试某些功能时，每次重新搭环境也会浪费不少时间。<br><a href="https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX" target="_blank" rel="noopener">Rapid-APEX</a> 是可以让你从重复繁琐的安装过程中解脱出来，通过简单地设置你要搭建的环境信息，就可以生成对应的安装命令，直接执行即可完成相应的安装配置。</p>
 </blockquote>
-<p>该镜像的内容包括：</p>
+<blockquote>
+<p>目前支持的产品版本:</p>
 <ul>
-<li><a href="https://www.oracle.com/linux/" target="_blank" rel="noopener">Oracle Linux 7.5 64位</a></li>
-<li><a href="https://download.oracle.com/otn/linux/oracle18c/180000/LINUX.X64_180000_db_home.zip" target="_blank" rel="noopener">Oracle Database 18.3 企业版（non-CDB 架构）</a></li>
-<li><a href="http://download.oracle.com/otn/java/appexpress/apex_18.1.zip" target="_blank" rel="noopener">Oracle APEX 18.1.0</a></li>
-<li><a href="http://download.oracle.com/otn/java/ords/ords-18.2.0.zip" target="_blank" rel="noopener">Oracle ORDS 18.2</a></li>
-<li><a href="http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.0.53/bin/apache-tomcat-8.0.53.tar.gz" target="_blank" rel="noopener">Apache Tomcat 8.0.53</a></li>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Java JDK 8u181</a></li>
+<li><strong>Oracle Database:</strong> XE 18c</li>
+<li><strong>Oracle APEX:</strong> 19.1, 18.2, 18.1, 5.1.4, 5.0.4</li>
+<li><strong>Oracle ORDS:</strong> 19.2, 18.4, 18.2, 18.1, 3.0.12</li>
 </ul>
+</blockquote>
 <a id="more"></a>
-<h2 id="镜像拉取"><a href="#镜像拉取" class="headerlink" title="镜像拉取"></a>镜像拉取</h2><p>确保宿主机已安装好了<code>docker</code>，如果还没有安装的同学可以看这篇文章：<a href="https://wangfanggang.com/Docker/docker/">《Docker - 通往新世界的大门》</a></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">pull</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/kenny-mindex/apex:1.0</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><p>运行以下命令启动拉取好的镜像，稍等几分钟再访问服务。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="bullet">-d</span> <span class="bullet">--name</span> <span class="string">db-apex-dev-container</span> <span class="bullet">-p</span> <span class="number">2222</span><span class="string">:22</span> <span class="bullet">-p</span> <span class="number">8080</span><span class="string">:8080</span> <span class="bullet">-p</span> <span class="number">1521</span><span class="string">:1521</span>  <span class="bullet">-v</span> <span class="string">/dev/shm</span> <span class="bullet">--tmpfs</span> <span class="string">/dev/shm:rw,nosuid,nodev,exec,size=2g</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/kenny-mindex/apex:1.0</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h2><h3 id="Oracle-APEX-连接信息"><a href="#Oracle-APEX-连接信息" class="headerlink" title="Oracle APEX 连接信息"></a>Oracle APEX 连接信息</h3><p><a href="http://localhost:8080/ords/" target="_blank" rel="noopener">http://localhost:8080/ords/</a></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Workspace</td>
-<td>INTERNAL</td>
-</tr>
-<tr>
-<td>用户名</td>
-<td>ADMIN</td>
-</tr>
-<tr>
-<td>密码</td>
-<td>OrclAPEX1999!</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Oracle-数据库信息"><a href="#Oracle-数据库信息" class="headerlink" title="Oracle 数据库信息"></a>Oracle 数据库信息</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主机名</td>
-<td>localhost</td>
-</tr>
-<tr>
-<td>端口</td>
-<td>1521</td>
-</tr>
-<tr>
-<td>SID</td>
-<td>orcl</td>
-</tr>
-<tr>
-<td>服务名</td>
-<td>orcl</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>数据库用户名</th>
-<th>密码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>system</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>sys</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_listener</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_rest_public_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_public_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>logger_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>oosutils_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>aop</td>
-<td>oracle</td>
-</tr>
-</tbody>
-</table>
-<p>用<code>SQL*Plus</code>连接数据库:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system/oracle@localhost/orcl</span><br></pre></td></tr></table></figure></p>
-<h3 id="SSH-连接信息"><a href="#SSH-连接信息" class="headerlink" title="SSH 连接信息"></a>SSH 连接信息</h3><p>用<code>SSH</code>连接终端:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@localhost -p 2222</span><br></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th>用户名</th>
-<th>密码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>root</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>oracle</td>
-<td>oracle</td>
-</tr>
-</tbody>
-</table>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>再次感谢提供镜像的各位大神：</p>
+<h1 id="创建新的APEX实例"><a href="#创建新的APEX实例" class="headerlink" title="创建新的APEX实例"></a>创建新的APEX实例</h1><h2 id="生成安装命令"><a href="#生成安装命令" class="headerlink" title="生成安装命令"></a>生成安装命令</h2><p><a href="https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX" target="_blank" rel="noopener">https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX</a></p>
+<blockquote>
+<p>点击 “Generate New APEX Instance” 按钮</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926221241.png" alt=""></p>
+<h2 id="基本信息收集"><a href="#基本信息收集" class="headerlink" title="基本信息收集"></a>基本信息收集</h2><blockquote>
+<p>在弹出窗口中，输入 <strong>要安装的服务器IP地址</strong>, <strong>要安装的路径</strong> and <strong>操作系统版本</strong>等信息。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926222346.png" alt=""></p>
+<h2 id="数据库信息收集"><a href="#数据库信息收集" class="headerlink" title="数据库信息收集"></a>数据库信息收集</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131529.png" alt=""></p>
+<blockquote>
+<p>当前只有 <strong>Oracle Database XE 18c</strong> </p>
+</blockquote>
+<blockquote>
+<p>对于安装文件，支持3种方式：</p>
+<ol>
+<li><strong>快捷链接</strong>: 选择快捷链接可以从默认的存储库下载安装介质 <code>AWS S3 (East Asia)</code>，速度可能比较慢；</li>
+<li><strong>提供完整下载url</strong>: 如果你已经将安装介质上传到互联网上，可以提供诸如下面格式的链接：”<code>https://mybucket.s3.ap-northeast-1.amazonaws.com/oracle-database-xe-18c-1.0-1.x86_64.rpm</code>“</li>
+<li><strong>提供服务器上的路径</strong>: 如果你已经将安装介质下载到待安装的服务器，可以提供下列格式的地址：”<code>/root/oracle-database-xe-18c-1.0-1.x86_64.rpm</code>“</li>
+</ol>
+</blockquote>
+<h2 id="APEX-信息收集"><a href="#APEX-信息收集" class="headerlink" title="APEX 信息收集"></a>APEX 信息收集</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131648.png" alt=""></p>
+<h2 id="ORDS-信息收集"><a href="#ORDS-信息收集" class="headerlink" title="ORDS 信息收集"></a>ORDS 信息收集</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929131726.png" alt=""></p>
+<h2 id="恭喜"><a href="#恭喜" class="headerlink" title="恭喜!!"></a>恭喜!!</h2><blockquote>
+<p>你已经完成最难的部分了，接下来你要做的就是：</p>
+<ul>
+<li><strong>复制</strong>生成的安装命令,</li>
+<li><strong>粘贴</strong>进你的远程命令执行窗口,</li>
+<li><strong>回车</strong>启动安装;</li>
+<li>点击”<strong>Finish</strong>“按钮保存你的配置。 </li>
+</ul>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130215.png" alt=""></p>
+<h1 id="安装你的新APEX实例"><a href="#安装你的新APEX实例" class="headerlink" title="安装你的新APEX实例"></a>安装你的新APEX实例</h1><h2 id="执行安装命令"><a href="#执行安装命令" class="headerlink" title="执行安装命令"></a>执行安装命令</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926223113.png" alt=""></p>
+<blockquote>
+<p>整个安装过程可能持续几十分钟到几个小时（这取决于你的安装介质下载的速度）。<br>如果一切顺利，你将看到以下提示。 </p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190928074719.png" alt=""></p>
+<h1 id="验证你的新的APEX实例"><a href="#验证你的新的APEX实例" class="headerlink" title="验证你的新的APEX实例"></a>验证你的新的APEX实例</h1><h2 id="检查Docker镜像-容器状态"><a href="#检查Docker镜像-容器状态" class="headerlink" title="检查Docker镜像/容器状态"></a>检查Docker镜像/容器状态</h2><blockquote>
+<p>执行以下命令，正常情况下，安装脚本会自动生成两个docker进程，并且状态应该是’healthy’；</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130445.png" alt=""></p>
+<blockquote>
+<p>默认生成的docker镜像；</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130654.png" alt=""></p>
+<h2 id="登录你的APEX实例"><a href="#登录你的APEX实例" class="headerlink" title="登录你的APEX实例"></a>登录你的APEX实例</h2><blockquote>
+<p>现在可以测试新生成的APEX实例了，输入你当时设置的连接信息，例如：</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926230438.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927124836.png" alt=""></p>
+<blockquote>
+<p>如果一切正常的话，应该可以登录你的APEX实例了。</p>
+</blockquote>
+<h2 id="连接你的数据库"><a href="#连接你的数据库" class="headerlink" title="连接你的数据库"></a>连接你的数据库</h2><h3 id="在docker容器中连接数据库"><a href="#在docker容器中连接数据库" class="headerlink" title="在docker容器中连接数据库"></a>在docker容器中连接数据库</h3><p>连接字符串格式如下： </p>
+<ul>
+<li><strong>CDB:</strong> <code>sqlplus sys/oracle123@47.98.247.100:1521/XE as sysdba</code></li>
+<li><strong>PDB:</strong> <code>sqlplus sys/oracle123@47.98.247.100:1521/XEPDB1 as sysdba</code></li>
+</ul>
+<h3 id="在docker容器外连接数据库"><a href="#在docker容器外连接数据库" class="headerlink" title="在docker容器外连接数据库"></a>在docker容器外连接数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sqlplus sys/oracle@YOUR_REMOTE_SERVER_IP:YOUR_DB_PORT/XE as sysdba</span><br><span class="line">sqlplus sys/oracle@YOUR_REMOTE_SERVER_IP:YOUR_DB_PORT/XEPDB1 as sysdba</span><br></pre></td></tr></table></figure>
+<h2 id="修改配置信息（可选）"><a href="#修改配置信息（可选）" class="headerlink" title="修改配置信息（可选）"></a>修改配置信息（可选）</h2><ul>
+<li><strong>DB Data File:</strong> <code>/root/rapid-apex/oradata/</code></li>
+<li><strong>ORDS config file:</strong> <code>/root/rapid-apex/oracle-ords/</code></li>
+</ul>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><blockquote>
+<p>现在，你有能力快速安装部署不同版本的APEX/ORDS环境了。如果你觉得还不错，记得在Github上给我打星哦! <a href="https://github.com/wfg2513148/rapid-apex" target="_blank" rel="noopener">https://github.com/wfg2513148/rapid-apex</a></p>
+</blockquote>
+<blockquote>
+<p>感谢提供镜像的各位大神：</p>
 <ul>
 <li><a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">Oracle Database &amp; APEX Developer Docker Image</a></li>
-<li><a href="https://github.com/PhilippSalvisberg/docker-oracle12ee" target="_blank" rel="noopener">Philipp Salvisberg’s GitHub Project</a></li>
-<li><a href="https://github.com/araczkowski/docker-oracle-apex-ords" target="_blank" rel="noopener">Andrzej Raczkowski’s GitHub Project</a></li>
+<li><a href="https://github.com/fuzziebrain/docker-oracle-xe" target="_blank" rel="noopener">fuzziebrain/docker-oracle-xe</a></li>
+<li><a href="https://github.com/martindsouza/docker-oracle-ords" target="_blank" rel="noopener">martindsouza/docker-oracle-ords</a></li>
 </ul>
+</blockquote>
 <hr>
 <p>可以扫描下面的二维码关注<code>APEX中文社区</code>订阅号：</p>
 <p><img src="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg" alt="APEX中文社区"></p>
@@ -708,12 +673,12 @@ var _hmt = _hmt || [];
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></p>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-15/">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
-  <p><span>发布时间:</span>2018年09月05日 - 21:09</p>
-  <p><span>最后更新:</span>2019年09月03日 - 20:09</p>
-  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-14/" title="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月29日 - 22:09</p>
+  <p><span>最后更新:</span>2019年09月29日 - 22:09</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-15/" title="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -789,6 +754,12 @@ var _hmt = _hmt || [];
           
             <a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a>
           
+            <a href="/tags/Database/" rel="tag"><i class="fa fa-tag"></i> Database</a>
+          
+            <a href="/tags/Shell/" rel="tag"><i class="fa fa-tag"></i> Shell</a>
+          
+            <a href="/tags/Installation/" rel="tag"><i class="fa fa-tag"></i> Installation</a>
+          
         </div>
       
 
@@ -800,8 +771,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Oracle/Oracle-APEX/apex-update-20180824/" rel="next" title="Oracle APEX 活跃博文整理 | 2018.08.24">
-                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2018.08.24
+              <a href="/AWS/AWS-CLI-S3-upload/" rel="next" title="如何利用AWS CLI进行S3的上传下载">
+                <i class="fa fa-chevron-left"></i> 如何利用AWS CLI进行S3的上传下载
               </a>
             
           </div>
@@ -809,10 +780,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Oracle/Oracle-APEX/apex-update-20180920/" rel="prev" title="Oracle APEX 活跃博文整理 | 2018.09.20">
-                Oracle APEX 活跃博文整理 | 2018.09.20 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1099,7 +1066,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像内容"><span class="nav-number">1.</span> <span class="nav-text">镜像内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像拉取"><span class="nav-number">2.</span> <span class="nav-text">镜像拉取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动命令"><span class="nav-number">3.</span> <span class="nav-text">启动命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问地址"><span class="nav-number">4.</span> <span class="nav-text">访问地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-APEX-连接信息"><span class="nav-number">4.1.</span> <span class="nav-text">Oracle APEX 连接信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-数据库信息"><span class="nav-number">4.2.</span> <span class="nav-text">Oracle 数据库信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-连接信息"><span class="nav-number">4.3.</span> <span class="nav-text">SSH 连接信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">5.</span> <span class="nav-text">感谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rapid-APEX-English-中文"><span class="nav-number">1.</span> <span class="nav-text">Rapid-APEX (English 中文)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建新的APEX实例"><span class="nav-number">2.</span> <span class="nav-text">创建新的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成安装命令"><span class="nav-number">2.1.</span> <span class="nav-text">生成安装命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本信息收集"><span class="nav-number">2.2.</span> <span class="nav-text">基本信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库信息收集"><span class="nav-number">2.3.</span> <span class="nav-text">数据库信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APEX-信息收集"><span class="nav-number">2.4.</span> <span class="nav-text">APEX 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDS-信息收集"><span class="nav-number">2.5.</span> <span class="nav-text">ORDS 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恭喜"><span class="nav-number">2.6.</span> <span class="nav-text">恭喜!!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装你的新APEX实例"><span class="nav-number">3.</span> <span class="nav-text">安装你的新APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#执行安装命令"><span class="nav-number">3.1.</span> <span class="nav-text">执行安装命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证你的新的APEX实例"><span class="nav-number">4.</span> <span class="nav-text">验证你的新的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查Docker镜像-容器状态"><span class="nav-number">4.1.</span> <span class="nav-text">检查Docker镜像/容器状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录你的APEX实例"><span class="nav-number">4.2.</span> <span class="nav-text">登录你的APEX实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接你的数据库"><span class="nav-number">4.3.</span> <span class="nav-text">连接你的数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器中连接数据库"><span class="nav-number">4.3.1.</span> <span class="nav-text">在docker容器中连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器外连接数据库"><span class="nav-number">4.3.2.</span> <span class="nav-text">在docker容器外连接数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置信息（可选）"><span class="nav-number">4.4.</span> <span class="nav-text">修改配置信息（可选）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在最后"><span class="nav-number">5.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
