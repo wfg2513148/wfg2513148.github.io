@@ -157,7 +157,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926230438.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927124836.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929225822.png">
-<meta property="og:updated_time" content="2019-09-29T15:05:31.000Z">
+<meta property="og:updated_time" content="2019-09-29T15:21:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
 <meta name="twitter:description" content="Rapid-APEX Oracle APEX 的安装过程比较繁琐，涉及到东西比较多，特别是在结合ORDS时，总是容易犯错。另外，如果你想快速搭建一套测试环境，但需要特定版本的APEX/ORDS来验证测试某些功能时，每次重新搭环境也会浪费不少时间。Rapid-APEX 是可以让你从重复繁琐的安装过程中解脱出来，通过简单地设置你要搭建的环境信息，就可以生成对应的安装命令，直接执行即可完成相应的安装配">
@@ -432,7 +432,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-09-29 22:36:10 / 修改时间：23:05:31" itemprop="dateCreated datePublished" datetime="2019-09-29T22:36:10+08:00">2019-09-29</time>
+              <time title="创建时间：2019-09-29 22:36:10 / 修改时间：23:21:16" itemprop="dateCreated datePublished" datetime="2019-09-29T22:36:10+08:00">2019-09-29</time>
             
 
             
@@ -549,7 +549,7 @@ var _hmt = _hmt || [];
 </ul>
 </blockquote>
 <a id="more"></a>
-<h1 id="创建新的APEX实例"><a href="#创建新的APEX实例" class="headerlink" title="创建新的APEX实例"></a>创建新的APEX实例</h1><h2 id="生成安装命令"><a href="#生成安装命令" class="headerlink" title="生成安装命令"></a>生成安装命令</h2><p><a href="https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX" target="_blank" rel="noopener">https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX</a></p>
+<h1 id="创建你的APEX实例"><a href="#创建你的APEX实例" class="headerlink" title="创建你的APEX实例"></a>创建你的APEX实例</h1><h2 id="生成安装命令"><a href="#生成安装命令" class="headerlink" title="生成安装命令"></a>生成安装命令</h2><p><a href="https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX" target="_blank" rel="noopener">https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX</a></p>
 <blockquote>
 <p>点击 “Generate New APEX Instance” 按钮</p>
 </blockquote>
@@ -582,12 +582,12 @@ var _hmt = _hmt || [];
 </ul>
 </blockquote>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190927130215.png" alt=""></p>
-<h1 id="安装你的新APEX实例"><a href="#安装你的新APEX实例" class="headerlink" title="安装你的新APEX实例"></a>安装你的新APEX实例</h1><h2 id="执行安装命令"><a href="#执行安装命令" class="headerlink" title="执行安装命令"></a>执行安装命令</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926223113.png" alt=""></p>
+<h1 id="安装你的APEX实例"><a href="#安装你的APEX实例" class="headerlink" title="安装你的APEX实例"></a>安装你的APEX实例</h1><h2 id="执行安装命令"><a href="#执行安装命令" class="headerlink" title="执行安装命令"></a>执行安装命令</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190926223113.png" alt=""></p>
 <blockquote>
 <p>整个安装过程可能持续几十分钟到几个小时（这取决于你的安装介质下载的速度）。<br>如果一切顺利，你将看到以下提示。 </p>
 </blockquote>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190928074719.png" alt=""></p>
-<h1 id="验证你的新的APEX实例"><a href="#验证你的新的APEX实例" class="headerlink" title="验证你的新的APEX实例"></a>验证你的新的APEX实例</h1><h2 id="检查Docker镜像-容器状态"><a href="#检查Docker镜像-容器状态" class="headerlink" title="检查Docker镜像/容器状态"></a>检查Docker镜像/容器状态</h2><blockquote>
+<h1 id="验证你的APEX实例"><a href="#验证你的APEX实例" class="headerlink" title="验证你的APEX实例"></a>验证你的APEX实例</h1><h2 id="检查Docker镜像-容器状态"><a href="#检查Docker镜像-容器状态" class="headerlink" title="检查Docker镜像/容器状态"></a>检查Docker镜像/容器状态</h2><blockquote>
 <p>执行以下命令，正常情况下，安装脚本会自动生成两个docker进程，并且状态应该是’healthy’；</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
@@ -1059,7 +1059,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rapid-APEX"><span class="nav-number">1.</span> <span class="nav-text">Rapid-APEX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建新的APEX实例"><span class="nav-number">2.</span> <span class="nav-text">创建新的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成安装命令"><span class="nav-number">2.1.</span> <span class="nav-text">生成安装命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本信息收集"><span class="nav-number">2.2.</span> <span class="nav-text">基本信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库信息收集"><span class="nav-number">2.3.</span> <span class="nav-text">数据库信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APEX-信息收集"><span class="nav-number">2.4.</span> <span class="nav-text">APEX 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDS-信息收集"><span class="nav-number">2.5.</span> <span class="nav-text">ORDS 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恭喜"><span class="nav-number">2.6.</span> <span class="nav-text">恭喜!!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装你的新APEX实例"><span class="nav-number">3.</span> <span class="nav-text">安装你的新APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#执行安装命令"><span class="nav-number">3.1.</span> <span class="nav-text">执行安装命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证你的新的APEX实例"><span class="nav-number">4.</span> <span class="nav-text">验证你的新的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查Docker镜像-容器状态"><span class="nav-number">4.1.</span> <span class="nav-text">检查Docker镜像/容器状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录你的APEX实例"><span class="nav-number">4.2.</span> <span class="nav-text">登录你的APEX实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接你的数据库"><span class="nav-number">4.3.</span> <span class="nav-text">连接你的数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器中连接数据库"><span class="nav-number">4.3.1.</span> <span class="nav-text">在docker容器中连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器外连接数据库"><span class="nav-number">4.3.2.</span> <span class="nav-text">在docker容器外连接数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置信息（可选）"><span class="nav-number">4.4.</span> <span class="nav-text">修改配置信息（可选）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在最后"><span class="nav-number">5.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rapid-APEX"><span class="nav-number">1.</span> <span class="nav-text">Rapid-APEX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建你的APEX实例"><span class="nav-number">2.</span> <span class="nav-text">创建你的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成安装命令"><span class="nav-number">2.1.</span> <span class="nav-text">生成安装命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本信息收集"><span class="nav-number">2.2.</span> <span class="nav-text">基本信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库信息收集"><span class="nav-number">2.3.</span> <span class="nav-text">数据库信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APEX-信息收集"><span class="nav-number">2.4.</span> <span class="nav-text">APEX 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDS-信息收集"><span class="nav-number">2.5.</span> <span class="nav-text">ORDS 信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恭喜"><span class="nav-number">2.6.</span> <span class="nav-text">恭喜!!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装你的APEX实例"><span class="nav-number">3.</span> <span class="nav-text">安装你的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#执行安装命令"><span class="nav-number">3.1.</span> <span class="nav-text">执行安装命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证你的APEX实例"><span class="nav-number">4.</span> <span class="nav-text">验证你的APEX实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查Docker镜像-容器状态"><span class="nav-number">4.1.</span> <span class="nav-text">检查Docker镜像/容器状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登录你的APEX实例"><span class="nav-number">4.2.</span> <span class="nav-text">登录你的APEX实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接你的数据库"><span class="nav-number">4.3.</span> <span class="nav-text">连接你的数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器中连接数据库"><span class="nav-number">4.3.1.</span> <span class="nav-text">在docker容器中连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在docker容器外连接数据库"><span class="nav-number">4.3.2.</span> <span class="nav-text">在docker容器外连接数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置信息（可选）"><span class="nav-number">4.4.</span> <span class="nav-text">修改配置信息（可选）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写在最后"><span class="nav-number">5.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
