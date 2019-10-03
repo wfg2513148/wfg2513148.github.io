@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="keywords" content="AWS,Cloud,Migration,Architecture">
+<meta property="og:type" content="article">
+<meta property="og:title" content="企业上云迁移工具及方法总结（AWS）">
+<meta property="og:url" content="https://wangfanggang.com/AWS/aws-note/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003213641.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195012.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195042.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195115.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195155.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195242.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195317.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195345.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195410.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195437.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195527.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195701.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195642.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195549.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203305.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203409.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203505.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203527.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203626.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203649.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203806.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203840.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203921.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003202946.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003202922.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203123.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203203.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203236.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205754.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205845.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205909.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204030.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204051.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204120.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204232.png">
+<meta property="og:updated_time" content="2019-10-03T13:37:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="企业上云迁移工具及方法总结（AWS）">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003213641.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/AWS/aws-note/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>企业上云迁移工具及方法总结（AWS） | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/aws-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">企业上云迁移工具及方法总结（AWS）
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-03 22:11:00 / 修改时间：21:37:30" itemprop="dateCreated datePublished" datetime="2019-10-03T22:11:00+08:00">2019-10-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/AWS/aws-note/" class="leancloud_visitors" data-flag-title="企业上云迁移工具及方法总结（AWS）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">347</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003213641.png" alt=""></p>
+<a id="more"></a>
+<h2 id="如何选择各个服务"><a href="#如何选择各个服务" class="headerlink" title="如何选择各个服务"></a>如何选择各个服务</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195012.png" alt=""></p>
+<h2 id="云迁移模式"><a href="#云迁移模式" class="headerlink" title="云迁移模式"></a>云迁移模式</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195042.png" alt=""></p>
+<h2 id="透析现有环境及未来规划"><a href="#透析现有环境及未来规划" class="headerlink" title="透析现有环境及未来规划"></a>透析现有环境及未来规划</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195115.png" alt=""></p>
+<h2 id="安全架构平台管控参考规划"><a href="#安全架构平台管控参考规划" class="headerlink" title="安全架构平台管控参考规划"></a>安全架构平台管控参考规划</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195155.png" alt=""></p>
+<h2 id="企业基础与平台服务映射对照"><a href="#企业基础与平台服务映射对照" class="headerlink" title="企业基础与平台服务映射对照"></a>企业基础与平台服务映射对照</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195242.png" alt=""></p>
+<h2 id="数据中心迁移设计与规划流程"><a href="#数据中心迁移设计与规划流程" class="headerlink" title="数据中心迁移设计与规划流程"></a>数据中心迁移设计与规划流程</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195317.png" alt=""></p>
+<h2 id="数据中心迁移执行方法"><a href="#数据中心迁移执行方法" class="headerlink" title="数据中心迁移执行方法"></a>数据中心迁移执行方法</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195345.png" alt=""></p>
+<h2 id="数据中心迁移执行过程"><a href="#数据中心迁移执行过程" class="headerlink" title="数据中心迁移执行过程"></a>数据中心迁移执行过程</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195410.png" alt=""></p>
+<h2 id="迁移工具-方法（计算）"><a href="#迁移工具-方法（计算）" class="headerlink" title="迁移工具/方法（计算）"></a>迁移工具/方法（计算）</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195437.png" alt=""></p>
+<h2 id="大规模数据迁移方法（存储）"><a href="#大规模数据迁移方法（存储）" class="headerlink" title="大规模数据迁移方法（存储）"></a>大规模数据迁移方法（存储）</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195527.png" alt=""></p>
+<h2 id="AWS批量迁移服务路线图"><a href="#AWS批量迁移服务路线图" class="headerlink" title="AWS批量迁移服务路线图"></a>AWS批量迁移服务路线图</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195701.png" alt=""></p>
+<h2 id="建议的迁移工具"><a href="#建议的迁移工具" class="headerlink" title="建议的迁移工具"></a>建议的迁移工具</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195642.png" alt=""></p>
+<h2 id="迁移方法（数据库）"><a href="#迁移方法（数据库）" class="headerlink" title="迁移方法（数据库）"></a>迁移方法（数据库）</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003195549.png" alt=""></p>
+<h2 id="AWS数据库迁移服务（DMS）"><a href="#AWS数据库迁移服务（DMS）" class="headerlink" title="AWS数据库迁移服务（DMS）"></a>AWS数据库迁移服务（DMS）</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203305.png" alt=""></p>
+<h2 id="AWS迁移工具DMT（数据库）"><a href="#AWS迁移工具DMT（数据库）" class="headerlink" title="AWS迁移工具DMT（数据库）"></a>AWS迁移工具DMT（数据库）</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203409.png" alt=""></p>
+<h3 id="DMT工作原理"><a href="#DMT工作原理" class="headerlink" title="DMT工作原理"></a>DMT工作原理</h3><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203505.png" alt=""></p>
+<h4 id="迁移阶段"><a href="#迁移阶段" class="headerlink" title="迁移阶段"></a>迁移阶段</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203527.png" alt=""></p>
+<h4 id="加载时逐表进行的"><a href="#加载时逐表进行的" class="headerlink" title="加载时逐表进行的"></a>加载时逐表进行的</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203626.png" alt=""></p>
+<h3 id="同构或异构"><a href="#同构或异构" class="headerlink" title="同构或异构"></a>同构或异构</h3><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203649.png" alt=""></p>
+<h4 id="DMT-源和目标数据库"><a href="#DMT-源和目标数据库" class="headerlink" title="DMT 源和目标数据库"></a>DMT 源和目标数据库</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203806.png" alt=""></p>
+<h4 id="DMT-支持的所有源和数据库"><a href="#DMT-支持的所有源和数据库" class="headerlink" title="DMT 支持的所有源和数据库"></a>DMT 支持的所有源和数据库</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203840.png" alt=""></p>
+<h4 id="数据类型的限制"><a href="#数据类型的限制" class="headerlink" title="数据类型的限制"></a>数据类型的限制</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203921.png" alt=""></p>
+<h3 id="同构迁移"><a href="#同构迁移" class="headerlink" title="同构迁移"></a>同构迁移</h3><h4 id="：Oracle"><a href="#：Oracle" class="headerlink" title="：Oracle"></a>：Oracle</h4><h5 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h5><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003202946.png" alt=""></p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003202922.png" alt=""></p>
+<h4 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a>SQL Server</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203123.png" alt=""></p>
+<h4 id="MySQL和MariaDB"><a href="#MySQL和MariaDB" class="headerlink" title="MySQL和MariaDB"></a>MySQL和MariaDB</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203203.png" alt=""></p>
+<h4 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003203236.png" alt=""></p>
+<h3 id="异构迁移"><a href="#异构迁移" class="headerlink" title="异构迁移"></a>异构迁移</h3><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205754.png" alt=""></p>
+<h4 id="重新设计架构"><a href="#重新设计架构" class="headerlink" title="重新设计架构"></a>重新设计架构</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205845.png" alt=""></p>
+<h4 id="合作伙伴方案"><a href="#合作伙伴方案" class="headerlink" title="合作伙伴方案"></a>合作伙伴方案</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003205909.png" alt=""></p>
+<h3 id="何时使用DMT"><a href="#何时使用DMT" class="headerlink" title="何时使用DMT?"></a>何时使用DMT?</h3><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204030.png" alt=""></p>
+<h4 id="可做-不可做"><a href="#可做-不可做" class="headerlink" title="可做/不可做"></a>可做/不可做</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204051.png" alt=""></p>
+<h4 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204120.png" alt=""></p>
+<h4 id="定价-条款"><a href="#定价-条款" class="headerlink" title="定价/条款"></a>定价/条款</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191003204232.png" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢 | 智叟网络</div> -->
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wexinpay.jpg" alt="王方钢 / Kenny Wang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="王方钢 / Kenny Wang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AWS/" rel="tag"><i class="fa fa-tag"></i> AWS</a>
+          
+            <a href="/tags/Cloud/" rel="tag"><i class="fa fa-tag"></i> Cloud</a>
+          
+            <a href="/tags/Migration/" rel="tag"><i class="fa fa-tag"></i> Migration</a>
+          
+            <a href="/tags/Architecture/" rel="tag"><i class="fa fa-tag"></i> Architecture</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-series-15/" rel="next" title="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择各个服务"><span class="nav-number">1.</span> <span class="nav-text">如何选择各个服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#云迁移模式"><span class="nav-number">2.</span> <span class="nav-text">云迁移模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透析现有环境及未来规划"><span class="nav-number">3.</span> <span class="nav-text">透析现有环境及未来规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全架构平台管控参考规划"><span class="nav-number">4.</span> <span class="nav-text">安全架构平台管控参考规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#企业基础与平台服务映射对照"><span class="nav-number">5.</span> <span class="nav-text">企业基础与平台服务映射对照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据中心迁移设计与规划流程"><span class="nav-number">6.</span> <span class="nav-text">数据中心迁移设计与规划流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据中心迁移执行方法"><span class="nav-number">7.</span> <span class="nav-text">数据中心迁移执行方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据中心迁移执行过程"><span class="nav-number">8.</span> <span class="nav-text">数据中心迁移执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迁移工具-方法（计算）"><span class="nav-number">9.</span> <span class="nav-text">迁移工具/方法（计算）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大规模数据迁移方法（存储）"><span class="nav-number">10.</span> <span class="nav-text">大规模数据迁移方法（存储）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS批量迁移服务路线图"><span class="nav-number">11.</span> <span class="nav-text">AWS批量迁移服务路线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议的迁移工具"><span class="nav-number">12.</span> <span class="nav-text">建议的迁移工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迁移方法（数据库）"><span class="nav-number">13.</span> <span class="nav-text">迁移方法（数据库）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS数据库迁移服务（DMS）"><span class="nav-number">14.</span> <span class="nav-text">AWS数据库迁移服务（DMS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS迁移工具DMT（数据库）"><span class="nav-number">15.</span> <span class="nav-text">AWS迁移工具DMT（数据库）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DMT工作原理"><span class="nav-number">15.1.</span> <span class="nav-text">DMT工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#迁移阶段"><span class="nav-number">15.1.1.</span> <span class="nav-text">迁移阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载时逐表进行的"><span class="nav-number">15.1.2.</span> <span class="nav-text">加载时逐表进行的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同构或异构"><span class="nav-number">15.2.</span> <span class="nav-text">同构或异构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DMT-源和目标数据库"><span class="nav-number">15.2.1.</span> <span class="nav-text">DMT 源和目标数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DMT-支持的所有源和数据库"><span class="nav-number">15.2.2.</span> <span class="nav-text">DMT 支持的所有源和数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型的限制"><span class="nav-number">15.2.3.</span> <span class="nav-text">数据类型的限制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同构迁移"><span class="nav-number">15.3.</span> <span class="nav-text">同构迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#：Oracle"><span class="nav-number">15.3.1.</span> <span class="nav-text">：Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#工具"><span class="nav-number">15.3.1.1.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法"><span class="nav-number">15.3.1.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-Server"><span class="nav-number">15.3.2.</span> <span class="nav-text">SQL Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL和MariaDB"><span class="nav-number">15.3.3.</span> <span class="nav-text">MySQL和MariaDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PostgreSQL"><span class="nav-number">15.3.4.</span> <span class="nav-text">PostgreSQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异构迁移"><span class="nav-number">15.4.</span> <span class="nav-text">异构迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项"><span class="nav-number">15.4.1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重新设计架构"><span class="nav-number">15.4.2.</span> <span class="nav-text">重新设计架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合作伙伴方案"><span class="nav-number">15.4.3.</span> <span class="nav-text">合作伙伴方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时使用DMT"><span class="nav-number">15.5.</span> <span class="nav-text">何时使用DMT?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可做-不可做"><span class="nav-number">15.5.1.</span> <span class="nav-text">可做/不可做</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项-1"><span class="nav-number">15.5.2.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定价-条款"><span class="nav-number">15.5.3.</span> <span class="nav-text">定价/条款</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
