@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-10-03T13:37:30.000Z</updated>
+  <updated>2019-10-04T02:06:25.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2019.09.09</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191004/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191004/</id>
+    <published>2019-10-04T01:47:00.000Z</published>
+    <updated>2019-10-04T02:06:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191004095637.png" alt=""></p><p>以下是截止至 <code>2019.10.04</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/custom-authentication-and-authorization-using-built-in-apex-access-control-a-how-to" target="_blank" rel="noopener">Custom Authentication and Authorization using built in APEX Access Control - A How To</a> <code>2019.09</code></li><li><a href="https://www.traust.com/user-self-registration-in-oracle-apex-using-the-application-express-accounts-authentication-scheme/" target="_blank" rel="noopener">User Self-Registration In Oracle APEX: Using The Application Express Accounts Authentication Scheme</a> <code>2019.09</code></li><li><a href="http://c2anton.blogspot.com/2019/09/what-info-is-available-from-my-apex.html" target="_blank" rel="noopener">What Info is Available from my APEX Social Sign-In Provider?</a> <code>2019.09</code></li><li><a href="https://www.traust.com/working-with-checkbox-lists-and-lookup-tables-in-oracle-apex/" target="_blank" rel="noopener">Working With Checkbox Lists And Lookup Tables In Oracle APEX</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-3/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 3</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-2/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 2</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-1/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 1</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/oracle-atp-free-tier-machine-learning-and-apex-integration/" target="_blank" rel="noopener">Oracle ATP Free Tier: Machine Learning and APEX Integration</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/3-reasons-to-use-inline-dialogs/" target="_blank" rel="noopener">3 Reasons to use Inline Dialogs</a> <code>2019.09</code></li><li><a href="http://www.grassroots-oracle.com/2019/09/change-label-dynamically-in-oracle-apex.html" target="_blank" rel="noopener">Change label dynamically in Oracle APEX</a> <code>2019.09</code></li><li><a href="http://www.grassroots-oracle.com/2019/09/apex-192-dark-mode-css-extension.html" target="_blank" rel="noopener">APEX 19.x Dark Mode CSS Extension</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/a-reference-apex-application-for-apex_ir-get_report/" target="_blank" rel="noopener">A Reference APEX Application for APEX_IR.GET_REPORT</a> <code>2019.09</code></li><li><a href="https://krutten.blogspot.com/2018/09/47-oracle-apex-download-pdf-reports.html" target="_blank" rel="noopener">Oracle APEX download PDF reports</a> <code>2019.09</code></li><li><a href="http://c2anton.blogspot.com/2019/02/oracle-apex-less-social-sign-on-with-ms.html" target="_blank" rel="noopener">Oracle APEX Less Social Sign-On with MS Azure and Office 365</a> <code>2019.02</code></li><li><a href="http://c2anton.blogspot.com/2019/02/automatically-navigate-to-form-from.html" target="_blank" rel="noopener">Automatically Navigate to Form from Interactive Report - Oracle APEX</a> <code>2019.02</code></li></ul><h1 id="Oracle-Cloud"><a href="#Oracle-Cloud" class="headerlink" title="Oracle Cloud"></a>Oracle Cloud</h1><ul><li><a href="http://dgielis.blogspot.com/2019/10/free-oracle-cloud-10-running-sqlcl-and.html" target="_blank" rel="noopener">Free Oracle Cloud: 10. Running SQLcl and Datapump from the Compute Instance (VM) to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-9-setup-object.html" target="_blank" rel="noopener">Free Oracle Cloud: 9. Setup Object Storage and use for File Share and Backups</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-8-setup-apex-office.html" target="_blank" rel="noopener">Free Oracle Cloud: 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-7-setup-web-server-on.html" target="_blank" rel="noopener">Free Oracle Cloud: 7. Setup a web server on the Virtual Machine</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-6-create-vm-instance.html" target="_blank" rel="noopener">Free Oracle Cloud: 6. Create a VM Instance (Compute Cloud)</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-5-setup-apex-in-atp.html" target="_blank" rel="noopener">Free Oracle Cloud: 5. Setup APEX in ATP and create first APEX app</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-4-connecting-with-sql.html" target="_blank" rel="noopener">Free Oracle Cloud: 4. Connecting with SQL Developer Web to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-3-connecting-with-sql.html" target="_blank" rel="noopener">Free Oracle Cloud: 3. Connecting with SQL Developer (Desktop) to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-2-setup-autonomous.html" target="_blank" rel="noopener">Free Oracle Cloud: 2. Setup Autonomous Transaction Cloud (ATP)</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-1-sign-up-for-oracle.html" target="_blank" rel="noopener">Free Oracle Cloud: 1. Sign-up for Oracle Cloud Free</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/best-and-cheapest-oracle-apex-hosting.html" target="_blank" rel="noopener">Best and Cheapest Oracle APEX hosting: Free Oracle Cloud</a> <code>2019.09</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191004095637.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2019.10.04&lt;/code&gt;收集的 O
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>企业上云迁移工具及方法总结（AWS）</title>
@@ -625,36 +655,6 @@
     
     
       <category term="Java" scheme="https://wangfanggang.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 中国社区第一次线下活动圆满结束！</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group-event_20190419/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group-event_20190419/</id>
-    <published>2019-04-20T14:38:00.000Z</published>
-    <updated>2019-09-03T12:27:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>热烈庆祝APEX中国社区第一次线下活动与2019.04.19在上海圆满结束！本次活动有10位小伙伴参加，有来自Oracle的同事、合作伙伴、APEX铁杆粉丝、甚至还有Oracle APEX客户。特别要说明的是，本次活动还有Oracle APEX美国团队的同事参加，给大家分享了精彩的demo演示和心得体会。</p><p>活动中大家讨论热烈、积极发言，提了很多关于APEX的想法和建议。同时，也证明了APEX在国内是有用户基础的，而且大有可为。</p><p>本次活动的成功举行与各位小伙伴的积极参与和大力支持密不可分，当场就有小伙伴表示愿意为APEX社区贡献自己的心得体会，帮忙维护公众号。最让我欣慰和感动的是，很多朋友说是看了我的博客才对APEX有了更深的了解，并肯定了目前APEX微信群和公众号存在的意义，让我感到受宠若惊，同时，也让我更坚定了继续做下去的决心。</p><p>这次线下活动是一个好的开始，希望以后我们能多多举办类似的活动，召集更多喜爱APEX的朋友，一起把APEX发扬光大！</p><p>最后分享下当天活动的照片：</p><a id="more"></a><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29h0sdwk5j319e12u4qr.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29h0ii5tmj31ha0wsx6r.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29h06uzu3j31gy0z6x6r.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29gzw80shj31e00ry1kz.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29gzm2rj4j317o0sqe82.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29gyjlyvcj31b60tc4qr.jpg" alt=""></p><p><img src="https://ws1.sinaimg.cn/large/006By2pOly1g29gzajdlhj31my0t0qv7.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;热烈庆祝APEX中国社区第一次线下活动与2019.04.19在上海圆满结束！本次活动有10位小伙伴参加，有来自Oracle的同事、合作伙伴、APEX铁杆粉丝、甚至还有Oracle APEX客户。特别要说明的是，本次活动还有Oracle APEX美国团队的同事参加，给大家分享了精彩的demo演示和心得体会。&lt;/p&gt;
-&lt;p&gt;活动中大家讨论热烈、积极发言，提了很多关于APEX的想法和建议。同时，也证明了APEX在国内是有用户基础的，而且大有可为。&lt;/p&gt;
-&lt;p&gt;本次活动的成功举行与各位小伙伴的积极参与和大力支持密不可分，当场就有小伙伴表示愿意为APEX社区贡献自己的心得体会，帮忙维护公众号。最让我欣慰和感动的是，很多朋友说是看了我的博客才对APEX有了更深的了解，并肯定了目前APEX微信群和公众号存在的意义，让我感到受宠若惊，同时，也让我更坚定了继续做下去的决心。&lt;/p&gt;
-&lt;p&gt;这次线下活动是一个好的开始，希望以后我们能多多举办类似的活动，召集更多喜爱APEX的朋友，一起把APEX发扬光大！&lt;/p&gt;
-&lt;p&gt;最后分享下当天活动的照片：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
