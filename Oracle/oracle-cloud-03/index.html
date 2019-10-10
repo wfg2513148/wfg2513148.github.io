@@ -151,7 +151,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191010121320.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191010124432.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191010125636.png">
-<meta property="og:updated_time" content="2019-10-10T05:07:59.000Z">
+<meta property="og:updated_time" content="2019-10-10T05:14:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle Cloud 系列文章03：安装命令行工具（CLI）">
 <meta name="twitter:description" content="本文是钢哥 Oracle Cloud 系列文章第三篇，Oracle Cloud系列文章列表如下：  Oracle Cloud 系列文章01：创建VM云实例 Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP） Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI）   什么是CLI？ CLI是一种命令行工具，允许你通过">
@@ -426,7 +426,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-10-10 11:37:00 / 修改时间：13:07:59" itemprop="dateCreated datePublished" datetime="2019-10-10T11:37:00+08:00">2019-10-10</time>
+              <time title="创建时间：2019-10-10 11:37:00 / 修改时间：13:14:13" itemprop="dateCreated datePublished" datetime="2019-10-10T11:37:00+08:00">2019-10-10</time>
             
 
             
@@ -489,7 +489,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -536,7 +536,6 @@ var _hmt = _hmt || [];
 <p>CLI是一种命令行工具，允许你通过命令行来访问Oracle Cloud的可用服务。CLI提供与控制台相同的核心功能，以及其他命令。有关更多关于CLI的介绍，可以访问<a href="https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/gettingstartedwiththeCLI.htm" target="_blank" rel="noopener">这里</a>;</p>
 </blockquote>
 <h2 id="快速安装CLI"><a href="#快速安装CLI" class="headerlink" title="快速安装CLI"></a>快速安装CLI</h2><h3 id="MacOS-Linux-and-Unix"><a href="#MacOS-Linux-and-Unix" class="headerlink" title="MacOS, Linux, and Unix"></a>MacOS, Linux, and Unix</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c &quot;$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <h3 id="获取Tenancy-OCID"><a href="#获取Tenancy-OCID" class="headerlink" title="获取Tenancy OCID"></a>获取Tenancy OCID</h3><blockquote>
 <p>在管理控制台左侧菜单中依次选择<code>管理 -&gt; 租户详细信息</code>;</p>
 </blockquote>
@@ -577,7 +576,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oci setup config</span><br></pre></td></tr></table></figure>
 <p>或直接编辑~/.oci/config文件，内容格式如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line"><span class="comment">## 用户OCID</span></span><br><span class="line">user=ocid1.user.oc1..aaaaaaaaeysl4yw3en6pyecnhhnapncmsdddfunfesprl5wwso64jadpq</span><br><span class="line"></span><br><span class="line"><span class="comment">## 秘钥指纹</span></span><br><span class="line">fingerprint=53:04:22:07:9f:5a:8d:71:5c:96:c4:9f:3e:f7:75:5d</span><br><span class="line"></span><br><span class="line"><span class="comment">## 私钥文件</span></span><br><span class="line">key_file=~/.oci/oci_api_key.pem</span><br><span class="line"></span><br><span class="line"><span class="comment">## 租户OCID</span></span><br><span class="line">tenancy=ocid1.tenancy.oc1..aaaaaaaawxw6zpow3fddgf234qimsfdsfya7q5ajhbjefpwifaddzf6piobu63wq</span><br><span class="line"></span><br><span class="line"><span class="comment">## 默认的Region</span></span><br><span class="line">region=ap-tokyo-1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[DEFAULT]</span><br><span class="line">## 用户OCID</span><br><span class="line">user=ocid1.user.oc1..aaaaaaaaeysl4yw3en6pyecnhhnapncmsdddfunfesprl5wwso64jadpq</span><br><span class="line"></span><br><span class="line">## 秘钥指纹</span><br><span class="line">fingerprint=53:04:22:07:9f:5a:8d:71:5c:96:c4:9f:3e:f7:75:5d</span><br><span class="line"></span><br><span class="line">## 私钥文件</span><br><span class="line">key_file=~/.oci/oci_api_key.pem</span><br><span class="line"></span><br><span class="line">## 租户OCID</span><br><span class="line">tenancy=ocid1.tenancy.oc1..aaaaaaaawxw6zpow3fddgf234qimsfdsfya7q5ajhbjefpwifaddzf6piobu63wq</span><br><span class="line"></span><br><span class="line">## 默认的Region</span><br><span class="line">region=ap-tokyo-1</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>有关更多config文件的配置详情可以参考以下文章：<br><a href="https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm" target="_blank" rel="noopener">https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdkconfig.htm</a></p>
 </blockquote>
@@ -587,7 +586,7 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oci --help</span><br></pre></td></tr></table></figure>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191010125636.png" alt=""></p>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><blockquote>
-<p>有关更多快速安装CLI的内容可以参考以下文章：<br><a href="https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI" target="_blank" rel="noopener">https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI</a><br><a href="https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI" target="_blank" rel="noopener">https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI</a></p>
+<p>有关更多快速安装CLI的内容可以参考以下文章：<br><a href="https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI" target="_blank" rel="noopener">https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#StartingCLI</a></p>
 </blockquote>
 
       
