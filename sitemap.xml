@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Docker/harbor/</loc>
+    
+    <lastmod>2019-10-16T05:19:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/oracle-cloud-03/</loc>
     
     <lastmod>2019-10-11T01:10:28.000Z</lastmod>
@@ -135,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
@@ -157,6 +150,13 @@
   
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-group/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -177,28 +177,14 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -212,14 +198,14 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -233,6 +219,13 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
@@ -240,7 +233,28 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181112/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -275,7 +289,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -289,14 +303,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -310,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -318,13 +325,6 @@
   
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -339,6 +339,13 @@
   
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
