@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-11-02T06:48:50.000Z</updated>
+  <updated>2019-11-25T01:31:00.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2019.11.25</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191125/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191125/</id>
+    <published>2019-11-25T01:30:00.000Z</published>
+    <updated>2019-11-25T01:31:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191125093052.png" alt=""></p><p>以下是截止至 <code>2019.11.25</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.traust.com/managing-the-first-schema-provisioned-in-apex/" target="_blank" rel="noopener">Managing The First Schema Provisioned In APEX</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-change-dialog-title-dynamically-examples.html" target="_blank" rel="noopener">Change Dialog Title Dynamically Examples</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-create-master-detail-form-interactive-grid.html" target="_blank" rel="noopener">Create Master-Detail Form/Interactive Grid</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-tutorials-version-19-1-onwards.html" target="_blank" rel="noopener">Oracle Apex Tutorials (Version 19.1 Onwards)</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-set-number-format-and-allow-numbers-only-using-autonumeric-min-js.html" target="_blank" rel="noopener">Set Number Format and Allow Numbers Only Using autoNumeric.min.js</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-set-default-value-for-an-item.html" target="_blank" rel="noopener">Set Default Value for an Item</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/oracle-apex-format-number-with-comma-and-decimal-using-javascript.html" target="_blank" rel="noopener">Oracle Apex: Format Number with Comma and Decimal Using JavaScript</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/how-to-show-alert-messages-in-oracle-apex.html" target="_blank" rel="noopener">How to Show Alert Messages in Oracle Apex?</a> <code>2019.11</code></li><li><a href="https://www.foxinfotech.in/2019/11/creating-multi-column-popup-lov-in-oracle-apex-19-2.html" target="_blank" rel="noopener">Creating Multi-Column Popup LOV in Oracle Apex 19.2</a> <code>2019.11</code></li><li><a href="http://apexbyg.blogspot.com/2019/11/apex-192-finally-api-for-component.html" target="_blank" rel="noopener">APEX 19.2: Finally, API for component export</a> <code>2019.11</code></li><li><a href="https://krutten.blogspot.com/2018/09/47-oracle-apex-download-pdf-reports.html" target="_blank" rel="noopener">Oracle APEX download PDF reports</a> <code>2019.11</code></li><li><a href="http://apexbyg.blogspot.com/2019/11/region-display-selector-how-to-prevent.html" target="_blank" rel="noopener">Region Display Selector - How to Prevent Scroll on Page Load</a> <code>2019.11</code></li><li><a href="https://dickdral.blogspot.com/2019/11/internet-explorer-does-not-show-content.html" target="_blank" rel="noopener">Internet Explorer does not show content of Modal Dialog</a> <code>2019.11</code></li><li><a href="https://hardlikesoftware.com/weblog/2019/11/04/apex-ig-cookbook-update-for-19-2/" target="_blank" rel="noopener">APEX IG Cookbook Update for 19.2</a> <code>2019.11</code></li><li><a href="https://jeffkemponoracle.com/2019/11/getting-started-with-apex-plugins/" target="_blank" rel="noopener">Getting Started with APEX Plugins</a> <code>2019.11</code></li><li><a href="http://dgielis.blogspot.com/2019/11/free-oracle-cloud-request-could-not-be.html" target="_blank" rel="noopener">Free Oracle Cloud: 15. The request could not be mapped to any database</a> <code>2019.11</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191125093052.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2019.11.25&lt;/code&gt;收集的 O
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle Application Express（APEX）19.2 正式发布了！</title>
@@ -634,34 +664,6 @@
       <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
     
       <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux shell 学习笔记</title>
-    <link href="https://wangfanggang.com/Linux/shell/"/>
-    <id>https://wangfanggang.com/Linux/shell/</id>
-    <published>2019-09-08T02:02:06.000Z</published>
-    <updated>2019-09-14T07:29:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png" alt=""></p><p>本文转自 <a href="https://www.cnblogs.com/binbinjx/p/5680214.html" target="_blank" rel="noopener">https://www.cnblogs.com/binbinjx/p/5680214.html</a></p><h2 id="配置文件init-properties"><a href="#配置文件init-properties" class="headerlink" title="配置文件init.properties"></a>配置文件<code>init.properties</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ID=123</span><br><span class="line">IP=192.168.3.154</span><br><span class="line">Name=<span class="built_in">test</span></span><br></pre></td></tr></table></figure><h2 id="方法一，利用sed解析文本，提取配置信息"><a href="#方法一，利用sed解析文本，提取配置信息" class="headerlink" title="方法一，利用sed解析文本，提取配置信息"></a>方法一，利用sed解析文本，提取配置信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">id=`sed <span class="string">'/^ID=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">ip=`sed <span class="string">'/^IP=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line">name=`sed <span class="string">'/^Name=/!d;s/.*=//'</span> init.properties`  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$id</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ip</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br></pre></td></tr></table></figure><h2 id="方法二，利用eval方法解析"><a href="#方法二，利用eval方法解析" class="headerlink" title="方法二，利用eval方法解析"></a>方法二，利用eval方法解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span>  </span><br><span class="line">    <span class="built_in">eval</span> <span class="string">"<span class="variable">$line</span>"</span>  </span><br><span class="line"><span class="keyword">done</span> &amp;lt; init.properties  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span>  </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br></pre></td></tr></table></figure><h2 id="方法三，直接将配置信息加载到session的环境变量中"><a href="#方法三，直接将配置信息加载到session的环境变量中" class="headerlink" title="方法三，直接将配置信息加载到session的环境变量中"></a>方法三，直接将配置信息加载到session的环境变量中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> init.properties</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$ID</span></span><br><span class="line">123</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$IP</span></span><br><span class="line">192.168.3.154</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure><h2 id="参数判断"><a href="#参数判断" class="headerlink" title="参数判断"></a>参数判断</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> = <span class="string">"Y"</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"true"</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"false"</span>;</span><br><span class="line"><span class="keyword">fi</span>;</span><br></pre></td></tr></table></figure><h2 id="获取本机IP"><a href="#获取本机IP" class="headerlink" title="获取本机IP"></a>获取本机IP</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a | grep inet | grep -v inet6 | grep -v 127 | sed <span class="string">'s/^[ \t]*//g'</span> | cut -d <span class="string">' '</span> -f2</span><br></pre></td></tr></table></figure><h2 id="获取-10-参数值"><a href="#获取-10-参数值" class="headerlink" title="获取 10+ 参数值"></a>获取 10+ 参数值</h2><p>在Shell脚本中，可以用$n的方式获取第n个参数，例如，一个名为paramtest的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2</span><br></pre></td></tr></table></figure></p><p>执行<code>./paramtest a b</code> 的结果是打印出第1个和第2个参数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b</span><br></pre></td></tr></table></figure><p>但是，若脚本需要10个以上的参数，直接写数字会有问题。例如，脚本为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2 $3 $4 $6 $7 $8 $9 $10</span><br></pre></td></tr></table></figure></p><p>执行<code>./paramtest a b c d e f g h i j</code>，结果如下，第10个参数是不对的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e f g h i a0</span><br></pre></td></tr></table></figure></p><p>显然<code>$10</code>被解释成了<code>$1+0</code></p><p>解决方法很简单，第10个参数加花括号即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo $1 $2 $3 $4 $6 $7 $8 $9 $&#123;10&#125;</span><br></pre></td></tr></table></figure></p><p>再次执行<code>./paramtest a b c d e f g h i j</code>，结果正确：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a b c d e f g h i j</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190909223128.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;本文转自 &lt;a href=&quot;https://www.cnblogs.c
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://wangfanggang.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="https://wangfanggang.com/tags/Linux/"/>
-    
-      <category term="Shell" scheme="https://wangfanggang.com/tags/Shell/"/>
     
   </entry>
   
