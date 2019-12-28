@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2019-12-25T02:43:00.000Z</updated>
+  <updated>2019-12-28T14:42:07.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2019.12.28</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191228/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191228/</id>
+    <published>2019-12-28T14:30:00.000Z</published>
+    <updated>2019-12-28T14:42:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191228223052.png" alt=""></p><p>以下是截止至 <code>2019.12.28</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.traust.com/universal-buy-in-with-data-visualization-in-oracle-apex/" target="_blank" rel="noopener">Universal Buy-In With Data Visualization In Oracle APEX</a> <code>2019.12</code></li><li><a href="https://www.foxinfotech.in/2019/12/displaying-clob-contents-in-oracle-apex.html" target="_blank" rel="noopener">Displaying CLOB Contents in Oracle Apex</a> <code>2019.12</code></li><li><a href="https://www.foxinfotech.in/2019/12/oracle-apex-mask-password-using-css.html" target="_blank" rel="noopener">Mask Password Using CSS</a> <code>2019.12</code></li><li><a href="https://ora-00001.blogspot.com/2019/12/translation-enhancements-in-apex-18-and-19.html" target="_blank" rel="noopener">Translation enhancements in APEX 18 and 19</a> <code>2019.12</code></li><li><a href="https://explorer.co.uk/developing-secure-web-applications-with-apex-and-apexsec/" target="_blank" rel="noopener">Developing Secure Web Applications with APEX and ApexSec</a> <code>2019.12</code></li><li><a href="http://www.grassroots-oracle.com/2019/12/include-new-oracle-apex-templates-in-old-version-instance.html" target="_blank" rel="noopener">Include new APEX templates in an older APEX instance</a> <code>2019.12</code></li><li><a href="http://www.grassroots-oracle.com/2019/11/on-plsql-you-dont-write-when-using-oracle-apex.html" target="_blank" rel="noopener">On the PL/SQL you don’t write when using APEX</a> <code>2019.12</code></li><li><a href="https://hardlikesoftware.com/weblog/2019/12/23/all-the-things-that-pop-up/" target="_blank" rel="noopener">All the Things That Pop Up</a> <code>2019.12</code></li><li><a href="https://www.laureston.ca/2019/12/05/15-top-tips-to-tune-your-oracle-apex-performance/" target="_blank" rel="noopener">15 Top Tips to tune your Oracle APEX Performance</a> <code>2019.12</code></li><li><a href="https://blogs.oracle.com/apex/extending-interaction-to-interactive-grids-part-ii" target="_blank" rel="noopener">Extending interaction to Interactive Grids - Part II</a> <code>2019.12</code></li><li><a href="http://dgielis.blogspot.com/2019/12/free-oracle-cloud-18-monitoring-your.html" target="_blank" rel="noopener">Free Oracle Cloud: 18. Monitoring your website and APEX app</a> <code>2019.12</code></li><li><a href="http://dgielis.blogspot.com/2019/12/free-oracle-cloud-17-configure-domain.html" target="_blank" rel="noopener">Free Oracle Cloud: 17. Configure domain to redirect to APEX app</a> <code>2019.12</code></li><li><a href="http://dgielis.blogspot.com/2019/12/the-best-way-to-be-productive-with-apex.html" target="_blank" rel="noopener">The best way to be productive with APEX Office Print (AOP)</a> <code>2019.12</code></li><li><a href="http://dgielis.blogspot.com/2019/12/alternative-for-oracle-multimedia-apex.html" target="_blank" rel="noopener">Alternative for Oracle Multimedia: APEX Media Extension</a> <code>2019.12</code></li><li><a href="http://dgielis.blogspot.com/2019/12/free-oracle-cloud-16-renewing-lets.html" target="_blank" rel="noopener">Free Oracle Cloud: 16. Renewing Let’s Encrypt certificate</a> <code>2019.12</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191228223052.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;以下是截止至 &lt;code&gt;2019.12.28&lt;/code&gt;收集的 O
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>IT知识点整理</title>
@@ -631,37 +661,6 @@
       <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
     
       <category term="Database" scheme="https://wangfanggang.com/tags/Database/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 19.2 早期采用者版本现已推出！</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/oracle-apex-192-early-adopter-now-available/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-apex-192-early-adopter-now-available/</id>
-    <published>2019-09-14T08:42:41.000Z</published>
-    <updated>2019-09-14T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://static.xmt.cn/0071fb56797c4790a96f45ab0636d438.png" alt=""></p><p>Oracle APEX 19.2的早期采用者版本现已推出，并且向所有人开放！访问它的URL是：</p><p><a href="https://tryapexnow.com/" target="_blank" rel="noopener">https://tryapexnow.com/</a></p><p>在 Oracle APEX 的每个主要版本之前，我们都会执行托管的早期采用者（EA）计划。这类似于托管测试版，欢迎大家参与并提供反馈。这是社区参与 APEX 发布过程的绝佳机会。我们欢迎您提供有关功能、用户界面、错误、功能等的反馈。最终，您的反馈有助于我们将 Oracle APEX 打造成一个高质量、优质的框架。</p><p>此版本中有一些令人兴奋的新功能，包括：</p><ul><li>分面搜索（Faceted Search）</li><li>全新的团队开发功能</li><li>增强弹出LOV</li><li>扩展共享LOV</li><li>REST 支持交互式网格（REST Enabled Interactive Grid）</li><li>数据加载到现有表中</li><li>升级的 Oracle JET</li><li>环球主题中的暗模式主题风格</li><li><a href="https://apex.oracle.com/pls/apex/f?p=192192:FEATURES" target="_blank" rel="noopener">了解有关 APEX 19.2 中新功能的更多信息</a></li></ul><blockquote><p>与往常一样，要记住以下几点：<br>这只是托管。我们不提供 APEX 的早期版本可用于本地安装。<br>您在 APEX 的早期采用者实例上所做的一切都应该被视为丢失。无法保证您在 Early Adopter 实例中构建的APEX应用程序甚至可以安装在 Oracle Application Express 19.2 的生产版本中。<br>如果您在 APEX 19.2 发布后阅读此博文，您会发现 <a href="https://tryapexnow.com/" target="_blank" rel="noopener">https://tryapexnow.com/</a> 上的早期采用者不再可用。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://static.xmt.cn/0071fb56797c4790a96f45ab0636d438.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Oracle APEX 19.2的早期采用者版本现已推出，并且向所有人开放！访问它的URL是：&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
