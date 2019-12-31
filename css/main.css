@@ -2005,7 +2005,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #db8bff;
+  background: #a652c8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2935,6 +2935,6 @@ embed {
   display: inline-block;
 }
 .header {
-  background: #f5f5f5 url("https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191016135726.png");
+  background: #f5f5f5 url("https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191016135726.png?x-oss-process=image/format,jpg/quality,q_40");
   background-size: cover;
 }
