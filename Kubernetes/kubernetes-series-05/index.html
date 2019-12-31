@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
 <meta property="og:url" content="https://wangfanggang.com/Kubernetes/kubernetes-series-05/index.html">
 <meta property="og:site_name" content="钢钢更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png?x-oss-process=image/format,jpg/quality,q_40">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030140241.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030140627.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030140656.png">
@@ -169,10 +169,10 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030214454.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030214538.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191030220512.png">
-<meta property="og:updated_time" content="2019-10-31T03:39:44.000Z">
+<meta property="og:updated_time" content="2019-12-31T01:14:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes学习笔记(5)：Namespace, Resources和Label">
-<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png?x-oss-process=image/format,jpg/quality,q_40">
 
 
 
@@ -443,12 +443,24 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2019-10-31 11:37:00 / 修改时间：11:39:44" itemprop="dateCreated datePublished" datetime="2019-10-31T11:37:00+08:00">2019-10-31</time>
+              <time title="创建时间：2019-10-31 11:37:00" itemprop="dateCreated datePublished" datetime="2019-10-31T11:37:00+08:00">2019-10-31</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-31 09:14:48" itemprop="dateModified" datetime="2019-12-31T09:14:48+08:00">2019-12-31</time>
               
             
           </span>
@@ -540,7 +552,7 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png" alt=""></p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191031113921.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
 <a id="more"></a>
 <h1 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h1><h2 id="查看某一个Namespace下的pod"><a href="#查看某一个Namespace下的pod" class="headerlink" title="查看某一个Namespace下的pod"></a>查看某一个Namespace下的pod</h2><p>默认情况下，所有的pod都是运行在<code>default</code>这个namespace下的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n default</span><br></pre></td></tr></table></figure>
