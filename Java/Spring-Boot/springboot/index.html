@@ -162,7 +162,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fqtwjifycyj30vi14cwo5.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fqtwk4t00xj30zk0bcq6o.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fqtwl62vk3j31cq0wkdox.jpg">
-<meta property="og:updated_time" content="2019-10-05T12:02:28.000Z">
+<meta property="og:updated_time" content="2020-01-03T07:39:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring Boot 学习笔记 - 钢钢更新">
 <meta name="twitter:description" content="背景介绍该文档是在慕课网实战课程《2019版 微服务时代Spring Boot企业微信点餐系统》基础上总结而成，旨在记录Spring Boot一些相关知识，文章中涉及的代码都经过验证，可以直接使用。该文档作为个人参考资料，会长期更新。  慕课网课程地址：2019版 微服务时代Spring Boot企业微信点餐系统   数据库设计">
@@ -454,7 +454,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-05 20:02:28" itemprop="dateModified" datetime="2019-10-05T20:02:28+08:00">2019-10-05</time>
+                <time title="修改时间：2020-01-03 15:39:26" itemprop="dateModified" datetime="2020-01-03T15:39:26+08:00">2020-01-03</time>
               
             
           </span>
@@ -812,7 +812,7 @@ var _hmt = _hmt || [];
 <p>它们分别实现了按name查询User实体和按name和age查询User实体，可以看到我们这里没有任何类SQL语句就完成了两个条件查询方法。这就是Spring-data-jpa的一大特性：<strong>通过解析方法名创建查询</strong>。</p>
 <p>除了通过解析方法名来创建查询外，它也提供通过使用@Query 注解来创建查询，您只需要编写JPQL语句，并通过类似“:name”来映射@Param指定的参数，就像例子中的第三个findUser函数一样。</p>
 <blockquote>
-<p>Spring-data-jpa的能力远不止本文提到的这些，由于本文主要以整合介绍为主，对于Spring-data-jpa的使用只是介绍了常见的使用方式。诸如@Modifying操作、分页排序、原生SQL支持以及与Spring MVC的结合使用等等内容就不在本文中详细展开，这里先挖个坑，后续再补文章填坑，如您对这些感兴趣可以关注我博客或简书，同样欢迎大家留言交流想法。</p>
+<p>Spring-data-jpa的能力远不止本文提到的这些，由于本文主要以整合介绍为主，对于Spring-data-jpa的使用只是介绍了常见的使用方式。</p>
 </blockquote>
 <h4 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h4><h5 id="UserRepositoryTest"><a href="#UserRepositoryTest" class="headerlink" title="UserRepositoryTest"></a>UserRepositoryTest</h5><p>在完成了上面的数据访问接口之后，按照惯例就是编写对应的单元测试来验证编写的内容是否正确。这里就不多做介绍，主要通过数据操作和查询来反复验证操作的正确性。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mindex.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mindex.entities.User;</span><br><span class="line"><span class="keyword">import</span> org.junit.Assert;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRepositoryTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建10条记录</span></span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"AAA"</span>, <span class="number">10</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"BBB"</span>, <span class="number">20</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"CCC"</span>, <span class="number">30</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"DDD"</span>, <span class="number">40</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"EEE"</span>, <span class="number">50</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"FFF"</span>, <span class="number">60</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"GGG"</span>, <span class="number">70</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"HHH"</span>, <span class="number">80</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"III"</span>, <span class="number">90</span>));</span><br><span class="line">        userRepository.save(<span class="keyword">new</span> User(<span class="string">"JJJ"</span>, <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试findAll, 查询所有记录</span></span><br><span class="line">        Assert.assertEquals(<span class="number">10</span>, userRepository.findAll().size());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试findByName, 查询姓名为FFF的User</span></span><br><span class="line">        Assert.assertEquals(<span class="number">60</span>, userRepository.findByName(<span class="string">"FFF"</span>).getAge().longValue());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试findUser, 查询姓名为FFF的User</span></span><br><span class="line">        Assert.assertEquals(<span class="number">60</span>, userRepository.findUser(<span class="string">"FFF"</span>).getAge().longValue());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试findByNameAndAge, 查询姓名为FFF并且年龄为60的User</span></span><br><span class="line">        Assert.assertEquals(<span class="string">"FFF"</span>, userRepository.findByNameAndAge(<span class="string">"FFF"</span>, <span class="number">60</span>).getName());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试删除姓名为AAA的User</span></span><br><span class="line">        userRepository.delete(userRepository.findByName(<span class="string">"AAA"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 测试findAll, 查询所有记录, 验证上面的删除是否成功</span></span><br><span class="line">        Assert.assertEquals(<span class="number">9</span>, userRepository.findAll().size());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="集成Redis"><a href="#集成Redis" class="headerlink" title="集成Redis"></a>集成Redis</h2><h3 id="手动配置集成Redis"><a href="#手动配置集成Redis" class="headerlink" title="手动配置集成Redis"></a>手动配置集成Redis</h3><p>引入POM依赖：<code>pom.xml</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--此处并不是直接使用spring提供的redis-starter--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -855,7 +855,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Java/Spring-Boot/springboot/">Spring Boot 学习笔记 - 钢钢更新</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2018年04月29日 - 14:04</p>
-  <p><span>最后更新:</span>2019年10月05日 - 20:10</p>
+  <p><span>最后更新:</span>2020年01月03日 - 15:01</p>
   <p><span>原始链接:</span><a href="/Java/Spring-Boot/springboot/" title="Spring Boot 学习笔记 - 钢钢更新">https://wangfanggang.com/Java/Spring-Boot/springboot/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Java/Spring-Boot/springboot/"  aria-label="复制成功！"></i></span>
   </p>
@@ -882,41 +882,12 @@ var _hmt = _hmt || [];
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
     <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
-    <!-- <div>王方钢 | 智叟网络</div> -->
+    <!-- <div>王方钢</div> -->
 </div>
 
       </div>
     
 
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wexinpay.jpg" alt="王方钢 / Kenny Wang 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="王方钢 / Kenny Wang 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -1289,7 +1260,7 @@ var _hmt = _hmt || [];
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-bug"></i>
   </span>
