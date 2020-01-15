@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="ResourceBasic Deployment1234567891011121314151617181920212223apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1kind: Deploymentmetadata:  name: nginx-deployment-basic  labels:    a">
+<meta name="keywords" content="kubernetes,docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kubernetes学习笔记(7)：Yaml模板">
+<meta property="og:url" content="https://wangfanggang.com/Kubernetes/kubernetes-series-07/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="ResourceBasic Deployment1234567891011121314151617181920212223apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1kind: Deploymentmetadata:  name: nginx-deployment-basic  labels:    a">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200115212157.png?x-oss-process=image/format,jpg/quality,q_40">
+<meta property="og:updated_time" content="2020-01-15T13:22:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kubernetes学习笔记(7)：Yaml模板">
+<meta name="twitter:description" content="ResourceBasic Deployment1234567891011121314151617181920212223apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1kind: Deploymentmetadata:  name: nginx-deployment-basic  labels:    a">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200115212157.png?x-oss-process=image/format,jpg/quality,q_40">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Kubernetes/kubernetes-series-07/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Kubernetes学习笔记(7)：Yaml模板 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Kubernetes/kubernetes-series-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Kubernetes学习笔记(7)：Yaml模板
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-15 21:06:00 / 修改时间：21:22:45" itemprop="dateCreated datePublished" datetime="2020-01-15T21:06:00+08:00">2020-01-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Kubernetes/kubernetes-series-07/" class="leancloud_visitors" data-flag-title="Kubernetes学习笔记(7)：Yaml模板">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">18k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">31 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200115212157.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h2><h3 id="Basic-Deployment"><a href="#Basic-Deployment" class="headerlink" title="Basic Deployment"></a>Basic Deployment</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1beta2</span> <span class="comment"># for versions before 1.8.0 use apps/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nginx-deployment-basic</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    matchLabels:</span></span><br><span class="line"><span class="attr">      app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line">    <span class="comment"># nodeSelector:</span></span><br><span class="line">    <span class="comment"># env: test-team</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">        image:</span> <span class="attr">nginx:1.7.9</span> <span class="comment"># replace it with your exactly &lt;image_name:tags&gt;</span></span><br><span class="line"><span class="attr">        ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1beta2</span> <span class="comment"># for versions before 1.8.0 use apps/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nginx-deployment</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    matchLabels:</span></span><br><span class="line"><span class="attr">      app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">        image:</span> <span class="attr">nginx:1.7.9</span> <span class="comment"># replace it with your exactly &lt;image_name:tags&gt;</span></span><br><span class="line"><span class="attr">        ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">        livenessProbe:</span></span><br><span class="line"><span class="comment">#          exec:</span></span><br><span class="line"><span class="comment">#            command:</span></span><br><span class="line"><span class="comment">#            - sh</span></span><br><span class="line"><span class="comment">#            - -c</span></span><br><span class="line"><span class="comment">#            - "mysqladmin ping -u root -p$&#123;MYSQL_ROOT_PASSWORD&#125;"</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#          tcpSocket:</span></span><br><span class="line"><span class="comment">#            port: 8080</span></span><br><span class="line"><span class="attr">          httpGet:</span></span><br><span class="line"><span class="attr">            path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">            port:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">          initialDelaySeconds:</span> <span class="number">30</span></span><br><span class="line"><span class="attr">          timeoutSeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">          periodSeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">        readinessProbe:</span></span><br><span class="line"><span class="comment">#          exec:</span></span><br><span class="line"><span class="comment">#            command:</span></span><br><span class="line"><span class="comment">#            - sh</span></span><br><span class="line"><span class="comment">#            - -c</span></span><br><span class="line"><span class="comment">#            - "mysqladmin ping -u root -p$&#123;MYSQL_ROOT_PASSWORD&#125;"</span></span><br><span class="line"><span class="attr">          httpGet:</span></span><br><span class="line"><span class="attr">            path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">            port:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">          initialDelaySeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">          timeoutSeconds:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">          periodSeconds:</span> <span class="number">5</span></span><br><span class="line">        <span class="comment"># specify user/password from existing secret</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SECRET_USERNAME</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              secretKeyRef:</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">test-secret</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">username</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SECRET_PASSWORD</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              secretKeyRef:</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">test-secret</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">password</span></span><br><span class="line">          <span class="comment"># Define the environment variable for configmap</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SPECIAL_LEVEL_KEY</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              configMapKeyRef:</span></span><br><span class="line">                <span class="comment"># The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">aliyun-config</span></span><br><span class="line">                <span class="comment"># Specify the key associated with the value</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">special.env</span></span><br><span class="line">        <span class="comment"># configMap volume</span></span><br><span class="line"><span class="attr">        volumeMounts:</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">config-volume</span></span><br><span class="line"><span class="attr">            mountPath:</span> <span class="string">/etc/config</span></span><br><span class="line"><span class="attr">      volumes:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">config-volume</span></span><br><span class="line"><span class="attr">          configMap:</span></span><br><span class="line"><span class="attr">            name:</span> <span class="string">aliyun-config</span></span><br><span class="line"><span class="comment">#            items:</span></span><br><span class="line"><span class="comment">#            - key: special.env</span></span><br><span class="line"><span class="comment">#              path: env</span></span><br><span class="line">      <span class="comment"># create docker registry secrects with:</span></span><br><span class="line">      <span class="comment"># ` kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL`</span></span><br><span class="line"><span class="attr">      imagePullSecrets:</span>          <span class="comment">#Comment out to enable specific image pull secret</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">myregistrykey</span>    <span class="comment"># repleace it wity your specific docker registry secret</span></span><br><span class="line">      <span class="comment"># alternative way to set this field of imagePullSecrets can be automated by setting the imagePullSecrets in a serviceAccount resource</span></span><br><span class="line"><span class="comment">#      serviceAccountName: user1</span></span><br><span class="line"><span class="comment">#      automountServiceAccountToken: false</span></span><br></pre></td></tr></table></figure>
+<h3 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="comment">#  serviceAccountName: user1  # specify specific sevice account for pod creation</span></span><br><span class="line"><span class="comment">#    automountServiceAccountToken: true # mount token for api access inside pod/container</span></span><br><span class="line"><span class="comment">#  imagePullSecrets:          #Comment out to enable specific image pull secret</span></span><br><span class="line"><span class="comment">#    - name: myregistrykey    # repleace it to specific registry key</span></span><br><span class="line"><span class="attr">  containers:</span></span><br><span class="line"><span class="attr">    - image:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">      imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">      ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">8080</span></span><br><span class="line"><span class="attr">          protocol:</span> <span class="string">TCP</span></span><br><span class="line"><span class="attr">      resources:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">      securityContext:</span></span><br><span class="line"><span class="attr">        capabilities:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">        privileged:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">      terminationMessagePath:</span> <span class="string">/dev/termination-log</span></span><br><span class="line"><span class="attr">  dnsPolicy:</span> <span class="string">ClusterFirst</span></span><br><span class="line"><span class="attr">  restartPolicy:</span> <span class="string">Always</span></span><br><span class="line"><span class="comment">#  nodeSelector:</span></span><br><span class="line"><span class="comment">#    env: test-team</span></span><br><span class="line"><span class="attr">status:</span> <span class="string">&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Pod-amp-Node-Selector"><a href="#Pod-amp-Node-Selector" class="headerlink" title="Pod &amp; Node Selector"></a>Pod &amp; Node Selector</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  containers:</span></span><br><span class="line"><span class="attr">    - image:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">      imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">hello-pod</span></span><br><span class="line"><span class="attr">      ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">8080</span></span><br><span class="line"><span class="attr">          protocol:</span> <span class="string">TCP</span></span><br><span class="line"><span class="attr">      resources:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">      securityContext:</span></span><br><span class="line"><span class="attr">        capabilities:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">        privileged:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">      terminationMessagePath:</span> <span class="string">/dev/termination-log</span></span><br><span class="line"><span class="attr">  dnsPolicy:</span> <span class="string">ClusterFirst</span></span><br><span class="line"><span class="attr">  restartPolicy:</span> <span class="string">Always</span></span><br><span class="line"><span class="attr">  nodeSelector:</span> </span><br><span class="line"><span class="attr">    env:</span> <span class="string">test-team</span></span><br></pre></td></tr></table></figure>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">my-service1</span> <span class="comment">#<span class="doctag">TODO:</span> to specify your service name</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    app:</span> <span class="string">nginx-svc</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    app:</span> <span class="string">nginx</span> <span class="comment">#<span class="doctag">TODO:</span> change label selector to match your backend pod</span></span><br><span class="line"><span class="attr">  ports:</span></span><br><span class="line"><span class="attr">  - protocol:</span> <span class="string">TCP</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">http</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">30080</span> <span class="comment">#<span class="doctag">TODO:</span> choose an unique port on each node to avoid port conflict</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">NodePort</span></span><br><span class="line"><span class="comment">#  type: LoadBalancer</span></span><br></pre></td></tr></table></figure>
+<h3 id="StatefulSet"><a href="#StatefulSet" class="headerlink" title="StatefulSet"></a>StatefulSet</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">StatefulSet</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">"my-stateful-app"</span> <span class="comment">#<span class="doctag">TODO:</span> repliace it with your app name</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  serviceName:</span> <span class="string">"my-service"</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">2</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">"my-stateful-app"</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        app:</span> <span class="string">my-stateful-app</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">        image:</span> <span class="attr">nginx:1.7.9</span> <span class="comment">#<span class="doctag">TODO:</span> replace it with your exactly &lt;image_name:tags&gt;</span></span><br><span class="line"><span class="attr">        ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">        livenessProbe:</span></span><br><span class="line">    <span class="comment">#          exec:</span></span><br><span class="line">    <span class="comment">#            command:</span></span><br><span class="line">    <span class="comment">#            - sh</span></span><br><span class="line">    <span class="comment">#            - -c</span></span><br><span class="line">    <span class="comment">#            - "mysqladmin ping -u root -p$&#123;MYSQL_ROOT_PASSWORD&#125;"</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#          tcpSocket:</span></span><br><span class="line">    <span class="comment">#            port: 8080</span></span><br><span class="line"><span class="attr">          httpGet:</span></span><br><span class="line"><span class="attr">            path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">            port:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">          initialDelaySeconds:</span> <span class="number">30</span></span><br><span class="line"><span class="attr">          timeoutSeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">          periodSeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">        readinessProbe:</span></span><br><span class="line">    <span class="comment">#          exec:</span></span><br><span class="line">    <span class="comment">#            command:</span></span><br><span class="line">    <span class="comment">#            - sh</span></span><br><span class="line">    <span class="comment">#            - -c</span></span><br><span class="line">    <span class="comment">#            - "mysqladmin ping -u root -p$&#123;MYSQL_ROOT_PASSWORD&#125;"</span></span><br><span class="line"><span class="attr">          httpGet:</span></span><br><span class="line"><span class="attr">            path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">            port:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">          initialDelaySeconds:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">          timeoutSeconds:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">          periodSeconds:</span> <span class="number">5</span></span><br><span class="line">        <span class="comment"># specify user/password from existing secret</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SECRET_USERNAME</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              secretKeyRef:</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">test-secret</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">username</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SECRET_PASSWORD</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              secretKeyRef:</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">test-secret</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">password</span></span><br><span class="line">          <span class="comment"># Define the environment variable for configmap</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">SPECIAL_LEVEL_KEY</span></span><br><span class="line"><span class="attr">            valueFrom:</span></span><br><span class="line"><span class="attr">              configMapKeyRef:</span></span><br><span class="line">                <span class="comment"># The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY</span></span><br><span class="line"><span class="attr">                name:</span> <span class="string">aliyun-config</span></span><br><span class="line">                <span class="comment"># Specify the key associated with the value</span></span><br><span class="line"><span class="attr">                key:</span> <span class="string">special.env</span></span><br><span class="line">        <span class="comment"># configMap volume</span></span><br><span class="line"><span class="attr">        volumeMounts:</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">config-volume</span></span><br><span class="line"><span class="attr">            mountPath:</span> <span class="string">/etc/config</span></span><br><span class="line"><span class="attr">          - name:</span> <span class="string">datadir</span></span><br><span class="line"><span class="attr">            mountPath:</span> <span class="string">/usr/share/nginx/html</span></span><br><span class="line"><span class="attr">      volumes:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">config-volume</span></span><br><span class="line"><span class="attr">          configMap:</span></span><br><span class="line"><span class="attr">            name:</span> <span class="string">aliyun-config</span></span><br><span class="line"><span class="attr">  volumeClaimTemplates:</span></span><br><span class="line"><span class="attr">  - metadata:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">datadir</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      accessModes:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">"ReadWriteMany"</span></span><br><span class="line"><span class="attr">      resources:</span></span><br><span class="line"><span class="attr">        requests:</span></span><br><span class="line"><span class="attr">          storage:</span> <span class="string">"1Gi"</span></span><br></pre></td></tr></table></figure>
+<h3 id="ConfigMap"><a href="#ConfigMap" class="headerlink" title="ConfigMap"></a>ConfigMap</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kubectl create configmap game-config --from-file=docs/user-guide/configmap/kubectl</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ConfigMap</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">aliyun-config</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="comment"># replace your filename of properties configration and contents here.</span></span><br><span class="line">  <span class="string">game.properties:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    enemies=aliens</span></span><br><span class="line"><span class="string">    lives=3</span></span><br><span class="line"><span class="string">    enemies.cheat=true</span></span><br><span class="line"><span class="string">    enemies.cheat.level=noGoodRotten</span></span><br><span class="line"><span class="string">    secret.code.passphrase=UUDDLRLRBABAS</span></span><br><span class="line"><span class="string">    secret.code.allowed=true</span></span><br><span class="line"><span class="string">    secret.code.lives=30</span></span><br><span class="line"><span class="string">  ui.properties: |</span></span><br><span class="line"><span class="string">    color.good=purple</span></span><br><span class="line"><span class="string">    color.bad=yellow</span></span><br><span class="line"><span class="string">    allow.textmode=true</span></span><br><span class="line"><span class="string">    how.nice.to.look=fairlyNice</span></span><br><span class="line"><span class="string">  special.env: env_value</span></span><br></pre></td></tr></table></figure>
+<h3 id="Secret"><a href="#Secret" class="headerlink" title="Secret"></a>Secret</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Secret</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">test-secret</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line"><span class="attr">  username:</span> <span class="string">bXktYXBwCg==</span> <span class="comment"># echo -n 'my-app' | base64</span></span><br><span class="line"><span class="attr">  password:</span> <span class="string">Mzk1MjgkdmRnN0piCg==</span> <span class="comment"># echo -n '39528$vdg7Jb' | base64</span></span><br></pre></td></tr></table></figure>
+<h3 id="ResourceQuota"><a href="#ResourceQuota" class="headerlink" title="ResourceQuota"></a>ResourceQuota</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ResourceQuota</span> <span class="comment"># restrict resource quota for cpu, memory, storage, pvc, replicationcontroller, pods, service, secret, configmap</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">quota</span></span><br><span class="line"><span class="comment">#  namespace: users-namespace # specify your namespace to apply resource quota</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  hard:</span></span><br><span class="line"><span class="attr">    cpu:</span> <span class="string">"20"</span> <span class="comment"># adjust limits of cpu for your namespace</span></span><br><span class="line"><span class="attr">    memory:</span> <span class="number">12</span><span class="string">Gi</span> <span class="comment"># adjust memory upper limits for your namesapce</span></span><br><span class="line">    <span class="string">requests.storage:</span> <span class="number">1024</span><span class="string">G</span> <span class="comment"># adjust request of storage size for your namespace</span></span><br><span class="line"><span class="attr">    persistentvolumeclaims:</span> <span class="string">"100"</span> <span class="comment"># adjust number of pvc for your namespace</span></span><br><span class="line"><span class="attr">    pods:</span> <span class="string">"100"</span> <span class="comment">#adjust number of Pod in your namespace</span></span><br><span class="line"><span class="attr">    replicationcontrollers:</span> <span class="string">"10"</span> <span class="comment"># adjust number of ReplicationController in your namespace</span></span><br><span class="line"><span class="attr">    services:</span> <span class="string">"10"</span> <span class="comment"># adjust number of service for your namespace</span></span><br><span class="line"><span class="attr">    secrets:</span> <span class="string">"100"</span> <span class="comment"># adjust number of secrets for your namespace</span></span><br><span class="line"><span class="attr">    configmaps:</span> <span class="string">"100"</span> <span class="comment"># adjust number of configmap for your namespace</span></span><br></pre></td></tr></table></figure>
+<h3 id="LimitRange"><a href="#LimitRange" class="headerlink" title="LimitRange"></a>LimitRange</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">LimitRange</span> <span class="comment"># set default request/limit for your containers</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">limits</span></span><br><span class="line"><span class="comment">#  namespace: users-namespace # specify your namespace</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  limits:</span></span><br><span class="line"><span class="attr">  - default:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">4</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">4</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">    defaultRequest:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">100</span><span class="string">m</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">256</span><span class="string">Mi</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">Container</span></span><br></pre></td></tr></table></figure>
+<h3 id="Namespace-amp-LimitRange"><a href="#Namespace-amp-LimitRange" class="headerlink" title="Namespace &amp; LimitRange"></a>Namespace &amp; LimitRange</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Namespace</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ResourceQuota</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">quota</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  hard:</span></span><br><span class="line"><span class="attr">    cpu:</span> <span class="string">"20"</span></span><br><span class="line"><span class="attr">    memory:</span> <span class="number">12</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">    pods:</span> <span class="string">"10"</span></span><br><span class="line"><span class="attr">    replicationcontrollers:</span> <span class="string">"20"</span></span><br><span class="line"><span class="attr">    resourcequotas:</span> <span class="string">"10"</span></span><br><span class="line"><span class="attr">    services:</span> <span class="string">"5"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># init limits for each container [request, limit]</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">LimitRange</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">limits</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  limits:</span></span><br><span class="line"><span class="attr">  - default:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">4</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">4</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">    defaultRequest:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">100</span><span class="string">m</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">256</span><span class="string">Mi</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">Container</span></span><br></pre></td></tr></table></figure>
+<h3 id="Namespace"><a href="#Namespace" class="headerlink" title="Namespace"></a>Namespace</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Namespace</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ResourceQuota</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">quota</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  hard:</span></span><br><span class="line"><span class="attr">    cpu:</span> <span class="string">"20"</span></span><br><span class="line"><span class="attr">    memory:</span> <span class="number">12</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">    pods:</span> <span class="string">"10"</span></span><br><span class="line"><span class="attr">    replicationcontrollers:</span> <span class="string">"20"</span></span><br><span class="line"><span class="attr">    resourcequotas:</span> <span class="string">"10"</span></span><br><span class="line"><span class="attr">    services:</span> <span class="string">"5"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># init limits for each container [request, limit]</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">LimitRange</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">limits</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  limits:</span></span><br><span class="line"><span class="attr">  - default:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">4</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">4</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">    defaultRequest:</span></span><br><span class="line"><span class="attr">      cpu:</span> <span class="number">100</span><span class="string">m</span></span><br><span class="line"><span class="attr">      memory:</span> <span class="number">256</span><span class="string">Mi</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">Container</span></span><br></pre></td></tr></table></figure>
+<h3 id="PersistentVolumeClaim"><a href="#PersistentVolumeClaim" class="headerlink" title="PersistentVolumeClaim"></a>PersistentVolumeClaim</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolumeClaim</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nfs-pvc1</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">   -</span> <span class="string">ReadWriteMany</span></span><br><span class="line"><span class="attr">  resources:</span></span><br><span class="line"><span class="attr">    requests:</span></span><br><span class="line"><span class="attr">       storage:</span> <span class="number">1</span><span class="string">Gi</span> <span class="comment">#<span class="doctag">TODO:</span> specify the appropriate size to match pv in pool of nfs</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolumeClaim</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">ceph-rbd-pvc1</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">   -</span> <span class="string">ReadWriteOnce</span></span><br><span class="line"><span class="attr">  resources:</span></span><br><span class="line"><span class="attr">    requests:</span></span><br><span class="line"><span class="attr">       storage:</span> <span class="number">10</span><span class="string">Gi</span>  <span class="comment">#<span class="doctag">TODO:</span> specify the appropriate size to match pv in pool of ceph rbd</span></span><br><span class="line"><span class="attr">  storageClassName:</span> <span class="string">general</span></span><br></pre></td></tr></table></figure>
+<h3 id="Knative-Service"><a href="#Knative-Service" class="headerlink" title="Knative Service"></a>Knative Service</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">serving.knative.dev/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">helloworld-go</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">      - image:</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/knative-sample/helloworld-go:73fbdd56</span></span><br><span class="line"><span class="attr">        env:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">TARGET</span></span><br><span class="line"><span class="attr">          value:</span> <span class="string">"Knative"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h2><h3 id="Aliyun-Disk"><a href="#Aliyun-Disk" class="headerlink" title="Aliyun Disk"></a>Aliyun Disk</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolume</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">d-bp1j17ifxfasvts3tf40</span> <span class="comment">#<span class="doctag">TODO:</span> put pv name of cloud disk here</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  capacity:</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="number">20</span><span class="string">Gi</span> <span class="comment">#<span class="doctag">TODO:</span> put the exact size of cloud disk here</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ReadWriteOnce</span></span><br><span class="line"><span class="attr">  flexVolume:</span></span><br><span class="line"><span class="attr">    driver:</span> <span class="string">"alicloud/disk"</span></span><br><span class="line"><span class="attr">    fsType:</span> <span class="string">"ext4"</span></span><br><span class="line"><span class="attr">    options:</span></span><br><span class="line"><span class="attr">      volumeId:</span> <span class="string">"d-bp1j17ifxfasvts3tf40"</span> <span class="comment">#<span class="doctag">TODO:</span> put id of cloud disk</span></span><br></pre></td></tr></table></figure>
+<h3 id="Aliyun-NAS"><a href="#Aliyun-NAS" class="headerlink" title="Aliyun NAS"></a>Aliyun NAS</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolume</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nas-pv1</span> <span class="comment">#<span class="doctag">TODO:</span> give right name of nfs pv</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  capacity:</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="number">5</span><span class="string">Gi</span> <span class="comment">#size</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ReadWriteMany</span></span><br><span class="line"><span class="attr">  flexVolume:</span></span><br><span class="line"><span class="attr">    driver:</span> <span class="string">"alicloud/nas"</span></span><br><span class="line"><span class="attr">    options:</span></span><br><span class="line"><span class="attr">      server:</span> <span class="string">"0cd8b4a576-grs79.cn-hangzhou.nas.aliyuncs.com"</span> <span class="comment">#<span class="doctag">TODO:</span> url of nas</span></span><br><span class="line"><span class="attr">      path:</span> <span class="string">"/k8s1"</span></span><br><span class="line"><span class="attr">      vers:</span> <span class="string">"4.0"</span></span><br><span class="line"><span class="attr">      mode:</span> <span class="string">"755"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Aliyun-NAS-provisioner"><a href="#Aliyun-NAS-provisioner" class="headerlink" title="Aliyun NAS provisioner"></a>Aliyun NAS provisioner</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">storage.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">StorageClass</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">alicloud-nas</span></span><br><span class="line"><span class="attr">provisioner:</span> <span class="string">alicloud/nas</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1beta1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">run-alicloud-nas-controller</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="attr">  - kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">    namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line"><span class="attr">  kind:</span> <span class="string">ClusterRole</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">alicloud-disk-controller-runner</span></span><br><span class="line"><span class="attr">  apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">extensions/v1beta1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">  strategy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">Recreate</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        app:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      tolerations:</span></span><br><span class="line"><span class="attr">      - effect:</span> <span class="string">NoSchedule</span></span><br><span class="line"><span class="attr">        operator:</span> <span class="string">Exists</span></span><br><span class="line"><span class="attr">        key:</span> <span class="string">node-role.kubernetes.io/master</span></span><br><span class="line"><span class="attr">      - effect:</span> <span class="string">NoSchedule</span></span><br><span class="line"><span class="attr">        operator:</span> <span class="string">Exists</span></span><br><span class="line"><span class="attr">        key:</span> <span class="string">node.cloudprovider.kubernetes.io/uninitialized</span></span><br><span class="line"><span class="attr">      nodeSelector:</span></span><br><span class="line">         <span class="string">node-role.kubernetes.io/master:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">      serviceAccount:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">alicloud-nas-controller</span></span><br><span class="line"><span class="attr">          image:</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/acs/alicloud-nas-controller:v1.8.4</span></span><br><span class="line"><span class="attr">          volumeMounts:</span></span><br><span class="line"><span class="attr">            - name:</span> <span class="string">nfs-client-root</span></span><br><span class="line"><span class="attr">              mountPath:</span> <span class="string">/persistentvolumes</span></span><br><span class="line"><span class="attr">          env:</span></span><br><span class="line"><span class="attr">            - name:</span> <span class="string">PROVISIONER_NAME</span></span><br><span class="line"><span class="attr">              value:</span> <span class="string">alicloud/nas</span></span><br><span class="line"><span class="attr">            - name:</span> <span class="string">NFS_SERVER</span></span><br><span class="line"><span class="attr">              value:</span> <span class="number">0</span><span class="string">cd8b4a576-mmi32.cn-hangzhou.nas.aliyuncs.com</span> <span class="comment">##TODO</span></span><br><span class="line"><span class="attr">            - name:</span> <span class="string">NFS_PATH</span></span><br><span class="line"><span class="attr">              value:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">      volumes:</span></span><br><span class="line"><span class="attr">        - name:</span> <span class="string">nfs-client-root</span></span><br><span class="line"><span class="attr">          nfs:</span></span><br><span class="line"><span class="attr">            server:</span> <span class="number">0</span><span class="string">cd8b4a576-mmi32.cn-hangzhou.nas.aliyuncs.com</span>  <span class="comment">##TODO</span></span><br><span class="line"><span class="attr">            path:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
+<h3 id="Aliyun-OSS"><a href="#Aliyun-OSS" class="headerlink" title="Aliyun OSS"></a>Aliyun OSS</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolume</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">oss-pv1</span> <span class="comment"># <span class="doctag">TODO:</span> put your name of oss pv here</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  capacity:</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="number">5</span><span class="string">Gi</span> <span class="comment">#size</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ReadWriteMany</span></span><br><span class="line"><span class="attr">  flexVolume:</span></span><br><span class="line"><span class="attr">    driver:</span> <span class="string">"alicloud/oss"</span></span><br><span class="line"><span class="attr">    options:</span></span><br><span class="line"><span class="attr">      bucket:</span> <span class="string">"mybucket"</span> <span class="comment">#<span class="doctag">TODO:</span> put your buncket here</span></span><br><span class="line"><span class="attr">      url:</span> <span class="string">"oss-cn-hangzhou.aliyuncs.com"</span></span><br><span class="line"><span class="attr">      akId:</span> <span class="string">"***"</span> <span class="comment">#<span class="doctag">TODO:</span> put your ak ID here</span></span><br><span class="line"><span class="attr">      akSecret:</span> <span class="string">"***"</span> <span class="comment">#<span class="doctag">TODO:</span> put your ak secret here</span></span><br><span class="line"><span class="attr">      otherOpts:</span> <span class="string">"-o max_stat_cache_size=0 -o allow_other"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Ceph-RBD"><a href="#Ceph-RBD" class="headerlink" title="Ceph RBD"></a>Ceph RBD</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolume</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">ceph-rbd-pv1</span> <span class="comment">#<span class="doctag">TODO:</span> set pv name</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">ReadWriteOnce</span></span><br><span class="line"><span class="attr">  capacity:</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="number">10</span><span class="string">Gi</span> <span class="comment">#size</span></span><br><span class="line"><span class="attr">  persistentVolumeReclaimPolicy:</span> <span class="string">Delete</span> <span class="comment">#<span class="doctag">TODO:</span> speicfy reclaim policy Delete of Retain</span></span><br><span class="line"><span class="attr">  rbd:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">kubernetes-dynamic-pvc-92c9a35e-eadb-11e7-80f5-0a58ac10081b</span> <span class="comment">#<span class="doctag">TODO:</span> specify image id of ceph rbd</span></span><br><span class="line"><span class="attr">    keyring:</span> <span class="string">/etc/ceph/keyring</span></span><br><span class="line"><span class="attr">    monitors:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ceph-mon.ceph.svc.cluster.local:6789</span> <span class="comment">#<span class="doctag">TODO:</span> specify monitoring endpoint of ceph cluster</span></span><br><span class="line"><span class="attr">    pool:</span> <span class="string">rbd</span></span><br><span class="line"><span class="attr">    secretRef:</span></span><br><span class="line"><span class="attr">      name:</span> <span class="string">pvc-ceph-client-key</span> <span class="comment"># Ceph client secret</span></span><br><span class="line"><span class="attr">    user:</span> <span class="string">admin</span>                 <span class="comment"># Ceph user</span></span><br><span class="line"><span class="attr">  storageClassName:</span> <span class="string">general</span></span><br></pre></td></tr></table></figure>
+<h3 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">PersistentVolume</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nfs-pv4</span>  <span class="comment">#<span class="doctag">TODO:</span> give right name of nfs pv</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  capacity:</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="number">1</span><span class="string">Gi</span> <span class="comment">#<span class="doctag">TODO:</span> give size of this pv</span></span><br><span class="line"><span class="attr">  accessModes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ReadWriteMany</span></span><br><span class="line"><span class="attr">  nfs:</span></span><br><span class="line">    <span class="comment"># <span class="doctag">TODO:</span> use the right IP</span></span><br><span class="line"><span class="attr">    server:</span> <span class="number">192.168</span><span class="number">.254</span><span class="number">.15</span></span><br><span class="line">    <span class="comment"># <span class="doctag">TODO:</span> use the right export path</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">"/storage"</span></span><br><span class="line"><span class="attr">  persistentVolumeReclaimPolicy:</span> <span class="string">Recycle</span> <span class="comment">#<span class="doctag">TODO:</span> specify relcaim policy Recycle or Retain</span></span><br></pre></td></tr></table></figure>
+<h2 id="Permission"><a href="#Permission" class="headerlink" title="Permission"></a>Permission</h2><h3 id="Grant-user-permissions"><a href="#Grant-user-permissions" class="headerlink" title="Grant user permissions"></a>Grant user permissions</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RoleBinding</span> <span class="comment">#grant a set of permission to specific user,</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1-restricted</span> <span class="comment">#<span class="doctag">TODO:</span> specify an rolebinding name</span></span><br><span class="line"><span class="comment">#  namespace: test-namespace #<span class="doctag">TODO:</span> effective scop for specific namespace</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line"><span class="attr">  apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line"><span class="attr">  kind:</span> <span class="string">Role</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">regular-users</span> <span class="comment">#<span class="doctag">TODO:</span> specify an existing role definition (a set of permissions)</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="attr">- kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1</span> <span class="comment">#<span class="doctag">TODO:</span> specify user name of any service accounts or user accounts</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span> <span class="comment">#<span class="doctag">TODO:</span> specify namespace which user belong</span></span><br></pre></td></tr></table></figure>
+<h3 id="Role"><a href="#Role" class="headerlink" title="Role"></a>Role</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kind:</span> <span class="string">Role</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1beta1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">regular-users</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line"><span class="attr">- apiGroups:</span> <span class="string">["",</span> <span class="string">"extensions"</span><span class="string">,</span> <span class="string">"apps"</span><span class="string">]</span></span><br><span class="line">  <span class="comment"># define resource aggregation group for default restricted users</span></span><br><span class="line"><span class="attr">  resources:</span> <span class="string">["deployments",</span> <span class="string">"replicasets"</span><span class="string">,</span> <span class="string">"pods"</span><span class="string">,</span> <span class="string">"persistentvolumeclaims"</span><span class="string">,</span> <span class="string">"services"</span><span class="string">,</span> <span class="string">"configmaps"</span><span class="string">,</span> <span class="string">"replicationcontrollers"</span><span class="string">,</span> <span class="string">"secrets"</span><span class="string">,</span> <span class="string">"nodeports"</span><span class="string">]</span></span><br><span class="line"><span class="attr">  verbs:</span> <span class="string">["get",</span> <span class="string">"list"</span><span class="string">,</span> <span class="string">"watch"</span><span class="string">,</span> <span class="string">"create"</span><span class="string">,</span> <span class="string">"update"</span><span class="string">,</span> <span class="string">"patch"</span><span class="string">,</span> <span class="string">"delete"</span><span class="string">]</span></span><br></pre></td></tr></table></figure>
+<h3 id="RoleBinding"><a href="#RoleBinding" class="headerlink" title="RoleBinding"></a>RoleBinding</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RoleBinding</span> <span class="comment">#grant a set of permission to specific user,</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1-restricted</span> <span class="comment">#<span class="doctag">TODO:</span> specify an rolebinding name</span></span><br><span class="line"><span class="comment">#  namespace: users-namespace #<span class="doctag">TODO:</span> effective scop for specific namespace</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line"><span class="attr">  apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line"><span class="attr">  kind:</span> <span class="string">Role</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">regular-users</span> <span class="comment">#<span class="doctag">TODO:</span> specify an existing role definition (a set of permissions)</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="attr">- kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1</span> <span class="comment">#<span class="doctag">TODO:</span> specify user name of any service accounts or user accounts</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">users-namespace</span> <span class="comment">#<span class="doctag">TODO:</span> specify namespace which user belong</span></span><br></pre></td></tr></table></figure>
+<h3 id="Service-Account"><a href="#Service-Account" class="headerlink" title="Service Account"></a>Service Account</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1</span> <span class="comment">#<span class="doctag">TODO:</span> replace it with your user name</span></span><br><span class="line"><span class="comment">#  namespace: users-namespace #<span class="doctag">TODO:</span> replace it with your namespace</span></span><br><span class="line"><span class="comment">#automountServiceAccountToken: true</span></span><br><span class="line"><span class="comment"># create docker registry secrects with:</span></span><br><span class="line"><span class="comment"># ` kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL`</span></span><br><span class="line"><span class="comment">#imagePullSecrets:</span></span><br><span class="line"><span class="comment">#- name: myregistrykey</span></span><br></pre></td></tr></table></figure>
+<h3 id="Service-Account-Secret"><a href="#Service-Account-Secret" class="headerlink" title="Service Account Secret"></a>Service Account Secret</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Secret</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">user1-token-manually</span></span><br><span class="line"><span class="attr">  annotations:</span></span><br><span class="line">    <span class="string">kubernetes.io/service-account.name:</span> <span class="string">user1</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">kubernetes.io/service-account-token</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/kubernetes/" rel="tag"><i class="fa fa-tag"></i> kubernetes</a>
+          
+            <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20191228/" rel="next" title="Oracle APEX 活跃博文整理 | 2019.12.28">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2019.12.28
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource"><span class="nav-number">1.</span> <span class="nav-text">Resource</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Deployment"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deployment"><span class="nav-number">1.2.</span> <span class="nav-text">Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pod"><span class="nav-number">1.3.</span> <span class="nav-text">Pod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pod-amp-Node-Selector"><span class="nav-number">1.4.</span> <span class="nav-text">Pod &amp; Node Selector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">1.5.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StatefulSet"><span class="nav-number">1.6.</span> <span class="nav-text">StatefulSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConfigMap"><span class="nav-number">1.7.</span> <span class="nav-text">ConfigMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Secret"><span class="nav-number">1.8.</span> <span class="nav-text">Secret</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResourceQuota"><span class="nav-number">1.9.</span> <span class="nav-text">ResourceQuota</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LimitRange"><span class="nav-number">1.10.</span> <span class="nav-text">LimitRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Namespace-amp-LimitRange"><span class="nav-number">1.11.</span> <span class="nav-text">Namespace &amp; LimitRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Namespace"><span class="nav-number">1.12.</span> <span class="nav-text">Namespace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PersistentVolumeClaim"><span class="nav-number">1.13.</span> <span class="nav-text">PersistentVolumeClaim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Knative-Service"><span class="nav-number">1.14.</span> <span class="nav-text">Knative Service</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage"><span class="nav-number">2.</span> <span class="nav-text">Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliyun-Disk"><span class="nav-number">2.1.</span> <span class="nav-text">Aliyun Disk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliyun-NAS"><span class="nav-number">2.2.</span> <span class="nav-text">Aliyun NAS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliyun-NAS-provisioner"><span class="nav-number">2.3.</span> <span class="nav-text">Aliyun NAS provisioner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliyun-OSS"><span class="nav-number">2.4.</span> <span class="nav-text">Aliyun OSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ceph-RBD"><span class="nav-number">2.5.</span> <span class="nav-text">Ceph RBD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NFS"><span class="nav-number">2.6.</span> <span class="nav-text">NFS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permission"><span class="nav-number">3.</span> <span class="nav-text">Permission</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grant-user-permissions"><span class="nav-number">3.1.</span> <span class="nav-text">Grant user permissions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Role"><span class="nav-number">3.2.</span> <span class="nav-text">Role</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RoleBinding"><span class="nav-number">3.3.</span> <span class="nav-text">RoleBinding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Account"><span class="nav-number">3.4.</span> <span class="nav-text">Service Account</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Account-Secret"><span class="nav-number">3.5.</span> <span class="nav-text">Service Account Secret</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
