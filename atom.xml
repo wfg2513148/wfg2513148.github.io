@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2020-01-15T13:27:15.000Z</updated>
+  <updated>2020-01-30T04:03:35.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2020.01.30</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200130/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200130/</id>
+    <published>2020-01-30T03:40:00.000Z</published>
+    <updated>2020-01-30T04:03:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200130120314.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.01.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://dgielis.blogspot.com/2020/01/printing-to-local-zebra-printer-from.html" target="_blank" rel="noopener">Printing to local (Zebra) printer from Oracle APEX in the Cloud</a> <code>2020.01</code></li><li><a href="http://dgielis.blogspot.com/2020/01/print-pdf-from-oracle-apex-to-local.html" target="_blank" rel="noopener">Print PDF from Oracle APEX to Local or Remote Printer</a> <code>2020.01</code></li><li><a href="https://blogs.oracle.com/apex/forms-to-apex-creating-the-apex-application" target="_blank" rel="noopener">[Forms to APEX] Creating the APEX Application</a> <code>2020.01</code></li><li><a href="http://lschilde.blogspot.com/2020/01/oracle-apex-image-gallery.html" target="_blank" rel="noopener">Oracle APEX image gallery</a> <code>2020.01</code></li><li><a href="http://www.grassroots-oracle.com/2020/01/performance-on-oracle-apex-classic-reports-with-lovs.html" target="_blank" rel="noopener">Performance on Classic Reports with LOVs</a> <code>2020.01</code></li><li><a href="http://www.grassroots-oracle.com/2020/01/unpivoting-oracle-apex-meta-data.html" target="_blank" rel="noopener">Unpivoting Oracle APEX meta-data</a> <code>2020.01</code></li><li><a href="https://www.foxinfotech.in/2020/01/oracle-apex-display-custom-error-messages-from-pl-sql-process.html" target="_blank" rel="noopener">Display Custom Error Messages from PL/SQL Process</a> <code>2020.01</code></li><li><a href="https://www.foxinfotech.in/2020/01/resolve-session-state-protection-violation-error-in-oracle-apex.html" target="_blank" rel="noopener">Resolve “Session State Protection Violation” Error in Oracle Apex</a> <code>2020.01</code></li><li><a href="https://ogobrecht.github.io/posts/2020-01-01-download-blobs-with-sqlplus/" target="_blank" rel="noopener">Download BLOBs with SQL*Plus</a> <code>2020.01</code></li><li><a href="https://www.traust.com/create-dynamic-links-for-interactive-reports-in-oracle-apex/" target="_blank" rel="noopener">Create Dynamic Links For Interactive Reports In Oracle APEX</a> <code>2020.01</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200130120314.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Kubernetes学习笔记(7)：Yaml模板</title>
@@ -601,53 +630,6 @@
       <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
     
       <category term="ATP" scheme="https://wangfanggang.com/tags/ATP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle Cloud 系列文章01：创建VM云实例</title>
-    <link href="https://wangfanggang.com/Oracle/oracle-cloud-01/"/>
-    <id>https://wangfanggang.com/Oracle/oracle-cloud-01/</id>
-    <published>2019-09-18T04:35:01.000Z</published>
-    <updated>2019-12-31T02:07:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918123757.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>本文是钢哥 Oracle Cloud 系列文章第一篇，Oracle Cloud系列文章列表如下：</p><ul><li><a href="https://wangfanggang.com/Oracle/oracle-cloud-01/">Oracle Cloud 系列文章01：创建VM云实例</a></li><li><a href="https://wangfanggang.com/Oracle/APEX/oracle-cloud-02/">Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP）</a></li><li><a href="https://wangfanggang.com/Oracle/oracle-cloud-03/">Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI）</a></li></ul></blockquote><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote><p>钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 <strong>无限期免费</strong> 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！</p></blockquote><h2 id="注册-Oracle-Cloud-账号"><a href="#注册-Oracle-Cloud-账号" class="headerlink" title="注册 Oracle Cloud 账号"></a>注册 Oracle Cloud 账号</h2><h3 id="填写邮箱及所在地"><a href="#填写邮箱及所在地" class="headerlink" title="填写邮箱及所在地"></a>填写邮箱及所在地</h3><p>首先注册个Oracle Cloud账号，地址：<a href="https://oracle.com/oow19freetier" target="_blank" rel="noopener">https://oracle.com/oow19freetier</a>。</p><blockquote><p>如果之前注册过Oracle Cloud，可以直接登录，一样可以享受终身免费待遇。<br>填写邮箱，选择所在国家。</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918102330.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h3 id="注册Home-Region及个人手机号"><a href="#注册Home-Region及个人手机号" class="headerlink" title="注册Home Region及个人手机号"></a>注册Home Region及个人手机号</h3><blockquote><p>这个页面信息比较多，特别是 <code>Home Region</code> 栏位，这个是你今后服务器所在的区，<code>一旦注册成功是不能改的</code>，所以请谨慎选择。为了速度能快一点儿，建议选择亚洲的几个区，钢哥选的是<code>日本东京</code>。<br>最后输入自己的手机号，接收个验证码。</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918103151.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h3 id="注册信用卡"><a href="#注册信用卡" class="headerlink" title="注册信用卡"></a>注册信用卡</h3><blockquote><p>之后需要填写<code>信用卡</code>信息，以便做扣款（1美金）验证，扣的钱稍后会自动退回，所以不用担心。支持的信用卡有 <code>VISA</code>、<code>Master</code>、<code>Google Pay</code>。</p></blockquote><a id="more"></a><h2 id="接收注册邮件，登录到-Oracle-Cloud-控制台"><a href="#接收注册邮件，登录到-Oracle-Cloud-控制台" class="headerlink" title="接收注册邮件，登录到 Oracle Cloud 控制台"></a>接收注册邮件，登录到 Oracle Cloud 控制台</h2><blockquote><p>Oracle 审核通过后，会往你注册的邮箱里发一封注册成功的邮件。点击邮件里的<code>Sign In to Oracle Cloud</code>，即可登录到 Oracle Cloud 控制台。</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918104249.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h2 id="创建公钥-私钥"><a href="#创建公钥-私钥" class="headerlink" title="创建公钥/私钥"></a>创建公钥/私钥</h2><h3 id="下载-PuttyGen"><a href="#下载-PuttyGen" class="headerlink" title="下载 PuttyGen"></a>下载 <code>PuttyGen</code></h3><blockquote><p>PuttyGen下载地址：<a href="https://www.puttygen.com/#Download_PuTTYgen_on_Windows" target="_blank" rel="noopener">https://www.puttygen.com/#Download_PuTTYgen_on_Windows</a></p></blockquote><h3 id="创建私钥"><a href="#创建私钥" class="headerlink" title="创建私钥"></a>创建私钥</h3><blockquote><p>打开下载好的 PuttyGen</p><ul><li>确保 <strong>Key</strong> 菜单中选择了 <code>SSH-2 RSA key</code> 选项;</li><li>确保最下面 <strong>Type of key to generate</strong> 选中了 <code>RSA</code>;</li><li>确保右下角的 <strong>Number of bits in a generated key</strong> 中输入 <code>2048</code>;</li><li>点击右侧的 <code>Generate</code> 按钮生成私钥；</li></ul></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105955.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>生成过程中要不停的移动鼠标:)<br>生成过程结束后，确保 <strong>Key passphrase</strong> 栏位留空，点击 <code>Save private key</code> 按钮；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110033.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>忽略安全提示；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110048.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>按照需要重命名私钥文件，确保文件后缀是 <code>.ppk</code> 即可。</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110129.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h3 id="创建公钥"><a href="#创建公钥" class="headerlink" title="创建公钥"></a>创建公钥</h3><blockquote><p>选中公钥区域的字符串，将全部内容拷贝到文本文件中；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110154.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>将文本保存为 <code>.pub</code> 后缀的文件；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110808.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>至此，公钥/私钥生成完毕。</p></blockquote><h2 id="创建VM实例（云服务器）"><a href="#创建VM实例（云服务器）" class="headerlink" title="创建VM实例（云服务器）"></a>创建VM实例（云服务器）</h2><blockquote><p>选择<code>创建VM实例</code>，快速创建一个云服务器。</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918113637.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>根据需要选择不同的操作系统，可以说Oracle还是很良心的，选择比较多；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115042.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>最后，选择之前生成的公钥文件，点击 <code>创建</code> 按钮即可；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918115231.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>稍等片刻，Oracle 就为我们创建好了VM云实例；</p></blockquote><h2 id="远程连接到VM云实例"><a href="#远程连接到VM云实例" class="headerlink" title="远程连接到VM云实例"></a>远程连接到VM云实例</h2><h3 id="配置PuTTY客户端"><a href="#配置PuTTY客户端" class="headerlink" title="配置PuTTY客户端"></a>配置PuTTY客户端</h3><blockquote><p>记录下服务器 <code>公共IP地址</code>;</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918110800.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>打开 <code>PuTTY</code> 客户端，配置连接信息；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105800.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>在 <code>Connection -&gt; SSH -&gt; Auth</code> 界面，选择之前生成好的 <code>.ppk</code> 秘钥文件，点击 <code>Open</code> 按钮进行连接；</p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918105840.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h3 id="登录并修改root密码"><a href="#登录并修改root密码" class="headerlink" title="登录并修改root密码"></a>登录并修改root密码</h3><blockquote><p>提示输入用户名: <code>opc</code> 或者 <code>ubuntu</code></p></blockquote><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918130133.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><blockquote><p>至此，你已经在 Oracle Cloud 上成功创建了一台VM云实例，并可以远程登录管理。至于用来做什么，大家仁者见仁智者见智吧:)</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918123757.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文是钢哥 Oracle Cloud 系列文章第一篇，Oracle Cloud系列文章列表如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://wangfanggang.com/Oracle/oracle-cloud-01/&quot;&gt;Oracle Cloud 系列文章01：创建VM云实例&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://wangfanggang.com/Oracle/APEX/oracle-cloud-02/&quot;&gt;Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://wangfanggang.com/Oracle/oracle-cloud-03/&quot;&gt;Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;钢哥注：Larry 在重新掌舵 Oracle 后，在今年的 Oracle Open World 上放了大招儿。任何人都可以 &lt;strong&gt;无限期免费&lt;/strong&gt; 使用 Oracle Cloud 入门级基础功能，包括虚拟机、自治数据库、块存储以及负载均衡等。这对于我们这些穷人而言简直是一大福音啊！废话不多说，赶紧跟着钢哥去(hao)体(yang)验(mao)  Oracle Cloud 的魅力吧！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;注册-Oracle-Cloud-账号&quot;&gt;&lt;a href=&quot;#注册-Oracle-Cloud-账号&quot; class=&quot;headerlink&quot; title=&quot;注册 Oracle Cloud 账号&quot;&gt;&lt;/a&gt;注册 Oracle Cloud 账号&lt;/h2&gt;&lt;h3 id=&quot;填写邮箱及所在地&quot;&gt;&lt;a href=&quot;#填写邮箱及所在地&quot; class=&quot;headerlink&quot; title=&quot;填写邮箱及所在地&quot;&gt;&lt;/a&gt;填写邮箱及所在地&lt;/h3&gt;&lt;p&gt;首先注册个Oracle Cloud账号，地址：&lt;a href=&quot;https://oracle.com/oow19freetier&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://oracle.com/oow19freetier&lt;/a&gt;。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果之前注册过Oracle Cloud，可以直接登录，一样可以享受终身免费待遇。&lt;br&gt;填写邮箱，选择所在国家。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918102330.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;注册Home-Region及个人手机号&quot;&gt;&lt;a href=&quot;#注册Home-Region及个人手机号&quot; class=&quot;headerlink&quot; title=&quot;注册Home Region及个人手机号&quot;&gt;&lt;/a&gt;注册Home Region及个人手机号&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;这个页面信息比较多，特别是 &lt;code&gt;Home Region&lt;/code&gt; 栏位，这个是你今后服务器所在的区，&lt;code&gt;一旦注册成功是不能改的&lt;/code&gt;，所以请谨慎选择。为了速度能快一点儿，建议选择亚洲的几个区，钢哥选的是&lt;code&gt;日本东京&lt;/code&gt;。&lt;br&gt;最后输入自己的手机号，接收个验证码。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190918103151.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;注册信用卡&quot;&gt;&lt;a href=&quot;#注册信用卡&quot; class=&quot;headerlink&quot; title=&quot;注册信用卡&quot;&gt;&lt;/a&gt;注册信用卡&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;之后需要填写&lt;code&gt;信用卡&lt;/code&gt;信息，以便做扣款（1美金）验证，扣的钱稍后会自动退回，所以不用担心。支持的信用卡有 &lt;code&gt;VISA&lt;/code&gt;、&lt;code&gt;Master&lt;/code&gt;、&lt;code&gt;Google Pay&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
     
   </entry>
   
