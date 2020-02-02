@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="AbstractHighly available and scalable web hosting can be a complex and expensive proposition. Traditional scalable web architectures have not only needed to implement complex solutions to ensure high">
+<meta name="keywords" content="AWS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Application Hosting in the AWS Cloud - AWS Whitepaper">
+<meta property="og:url" content="https://wangfanggang.com/AWS/AWS whitepaper/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="AbstractHighly available and scalable web hosting can be a complex and expensive proposition. Traditional scalable web architectures have not only needed to implement complex solutions to ensure high">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124049.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124240.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124423.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124901.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202125059.png">
+<meta property="og:updated_time" content="2020-02-02T05:13:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Application Hosting in the AWS Cloud - AWS Whitepaper">
+<meta name="twitter:description" content="AbstractHighly available and scalable web hosting can be a complex and expensive proposition. Traditional scalable web architectures have not only needed to implement complex solutions to ensure high">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124049.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/AWS/AWS whitepaper/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Web Application Hosting in the AWS Cloud - AWS Whitepaper | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/AWS whitepaper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Web Application Hosting in the AWS Cloud - AWS Whitepaper
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-02 13:10:34 / 修改时间：13:13:48" itemprop="dateCreated datePublished" datetime="2020-02-02T13:10:34+08:00">2020-02-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/AWS/AWS whitepaper/" class="leancloud_visitors" data-flag-title="Web Application Hosting in the AWS Cloud - AWS Whitepaper">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">31k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">52 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Highly available and scalable web hosting can be a complex and expensive proposition. Traditional scalable web architectures have not only needed to implement complex solutions to ensure high levels of reliability, but they have also required an accurate forecast of traffic to provide a high level of customer service. Dense peak traffic periods and wild swings in traffic patterns result in low utilization rates of expensive hardware. This yields high operating costs to maintain idle hardware, and an inefficient use of capital for underused hardware.</p>
+<p>Amazon Web Services (AWS) provides a reliable, scalable, secure, and highly performing infrastructure for the most demanding web applications. This infrastructure matches IT costs with customer traffic patterns in real time.</p>
+<p>This whitepaper is for IT managers and system architects who look to the cloud to help them achieve the scalability to meet their on-demand computing needs.</p>
+<h2 id="An-Overview-of-Traditional-Web-Hosting"><a href="#An-Overview-of-Traditional-Web-Hosting" class="headerlink" title="An Overview of Traditional Web Hosting"></a>An Overview of Traditional Web Hosting</h2><p>Scalable web hosting is a well-known problem space. Figure 1 depicts a traditional web hosting architecture that implements a common three-tier web application model. In this model, the architecture is separated into presentation, application, and persistence layers. Scalability is provided by adding hosts at these layers. The architecture also has built-in performance, failover, and availability features. The traditional web hosting architecture is easily ported to the AWS Cloud with only a few modifications.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124049.png" alt=""></p>
+<p>In the following sections, we look at why and how such an architecture should be and could be deployed in the AWS Cloud.</p>
+<h2 id="Web-Application-Hosting-in-the-Cloud-Using-AWS"><a href="#Web-Application-Hosting-in-the-Cloud-Using-AWS" class="headerlink" title="Web Application Hosting in the Cloud Using AWS"></a>Web Application Hosting in the Cloud Using AWS</h2><p>The first question that you should ask concerns the value of moving a classic web application hosting solution into the AWS Cloud. If you decide that the cloud is right for you, you’ll need a suitable architecture. This section helps you evaluate an AWS Cloud solution. It compares deploying your web application in the cloud to an on-premises deployment, presents an AWS Cloud architecture for hosting your application, and discusses the key components of this solution.</p>
+<h3 id="How-AWS-Can-Solve-Common-Web-Application-Hosting-Issues"><a href="#How-AWS-Can-Solve-Common-Web-Application-Hosting-Issues" class="headerlink" title="How AWS Can Solve Common Web Application Hosting Issues"></a>How AWS Can Solve Common Web Application Hosting Issues</h3><p>If you’re responsible for running a web application, you face a variety of infrastructure and architectural issues for which AWS can provide seamless and cost-effective solutions. The following are just some of the benefits of using AWS over a traditional hosting model.</p>
+<h4 id="A-Cost-Effective-Alternative-to-Oversized-Fleets-Needed-to-Handle-Peaks"><a href="#A-Cost-Effective-Alternative-to-Oversized-Fleets-Needed-to-Handle-Peaks" class="headerlink" title="A Cost-Effective Alternative to Oversized Fleets Needed to Handle Peaks"></a>A Cost-Effective Alternative to Oversized Fleets Needed to Handle Peaks</h4><p>In the traditional hosting model, you have to provision servers to handle peak capacity. Unused cycles are wasted outside of peak periods. Web applications hosted by AWS can leverage on-demand provisioning of additional servers, so you can constantly adjust capacity and costs to actual traffic patterns.</p>
+<p>For example, the following graph shows a web application with a usage peak from 9AM to 3PM and less usage for the remainder of the day. An automatic scaling approach based on actual traffic trends, which provisions resources only when needed, would result in less wasted capacity and a greater than 50 percent reduction in cost.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124240.png" alt=""></p>
+<h4 id="A-Scalable-Solution-to-Handling-Unexpected-Traffic-Peaks"><a href="#A-Scalable-Solution-to-Handling-Unexpected-Traffic-Peaks" class="headerlink" title="A Scalable Solution to Handling Unexpected Traffic Peaks"></a>A Scalable Solution to Handling Unexpected Traffic Peaks</h4><p>An even more dire consequence of the slow provisioning associated with a traditional hosting model is the inability to respond in time to unexpected traffic spikes. There are many stories about web applications going down because of an unexpected spike in traffic after the site is mentioned in the popular media. The same on-demand capability that helps web applications scale to match regular traffic spikes can also handle an unexpected load. New hosts can be launched and ready in a matter of minutes, and they can be taken offline just as quickly when traffic returns to normal.</p>
+<h4 id="An-On-Demand-Solution-for-Test-Load-Beta-and-Preproduction-Environments"><a href="#An-On-Demand-Solution-for-Test-Load-Beta-and-Preproduction-Environments" class="headerlink" title="An On-Demand Solution for Test, Load, Beta, and Preproduction Environments"></a>An On-Demand Solution for Test, Load, Beta, and Preproduction Environments</h4><p>The hardware costs of building out a traditional hosting environment for a production web application don’t stop with the production fleet. Quite often, you need to create preproduction, beta, and testing fleets to ensure the quality of the web application at each stage of the development lifecycle. While you can make various optimizations to ensure the highest possible use of this testing hardware, these parallel fleets are not always used optimally: a lot of expensive hardware sits unused for long periods of time.</p>
+<p>In the AWS Cloud, you can provision testing fleets as you need them. Additionally, you can simulate user traffic on the AWS Cloud during load testing. You can also use these parallel fleets as a staging environment for a new production release. This enables quick switchover from current production to a new application version with little or no service outages.</p>
+<h4 id="An-AWS-Cloud-Architecture-for-Web-Hosting"><a href="#An-AWS-Cloud-Architecture-for-Web-Hosting" class="headerlink" title="An AWS Cloud Architecture for Web Hosting"></a>An AWS Cloud Architecture for Web Hosting</h4><p>The following figure provides another look at that classic web application architecture and how it can leverage the AWS Cloud computing infrastructure.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124423.png" alt=""></p>
+<ol>
+<li><strong>Load Balancing with Elastic Load Balancing (ELB)/Application Load Balancer (ALB)</strong> – Allows you to spread load across multiple Availability Zones and Amazon EC2 Auto Scaling groups for redundancy and decoupling of services.</li>
+<li><strong>Firewalls with Security Groups</strong> – Moves security to the instance to provide a stateful, host-level firewall for both web and application servers.</li>
+<li><strong>Caching with Amazon ElastiCache</strong> – Provides caching services with Redis or Memcached to remove load from the app and database, and lower latency for frequent requests.</li>
+<li><strong>Managed Database with Amazon RDS</strong> – Creates a highly available, Multi-AZ database architecture with six possible DB engines.</li>
+<li><strong>DNS Services with Amazon Route 53</strong> – Provides DNS services to simplify domain management.</li>
+<li><strong>Edge Caching with Amazon CloudFront</strong> – Edge caches high-volume content to decrease the latency to customers.</li>
+<li><strong>Edge Security for Amazon CloudFront with AWS WAF</strong> – Filters malicious traffic, including XSS and SQL injection via customer-defined rules.</li>
+<li><strong>DDoS Protection with AWS Shield</strong> – Safeguards your infrastructure against the most common network and transport layer DDoS attacks automatically.</li>
+<li><strong>Static Storage and Backups with Amazon S3</strong> – Enables simple HTTP-based object storage for backups and static assets like images and video.</li>
+</ol>
+<h3 id="Key-Components-of-an-AWS-Web-Hosting-Architecture"><a href="#Key-Components-of-an-AWS-Web-Hosting-Architecture" class="headerlink" title="Key Components of an AWS Web Hosting Architecture"></a>Key Components of an AWS Web Hosting Architecture</h3><p>The following sections outline some of the key components of a web hosting architecture deployed in the AWS Cloud, and explain how they differ from a traditional web hosting architecture.</p>
+<h4 id="Network-Management"><a href="#Network-Management" class="headerlink" title="Network Management"></a>Network Management</h4><p>In a cloud environment such as AWS, the ability to segment your network from that of other customers enables a more secure and scalable architecture. While security groups provide host-level security (see the Host Security section), Amazon Virtual Private Cloud (Amazon VPC) allows you to launch resources in a logically isolated and virtual network that you define.</p>
+<p>Amazon VPC is a free service that gives you full control over the details of your networking setup in AWS. Examples of this control include creating public-facing subnets for web servers, and private subnets with no internet access for your databases. Additionally, Amazon VPC enables you to create hybrid architectures by using hardware virtual private networks (VPNs), and use the AWS Cloud as an extension of your own data center.</p>
+<p>Amazon VPC also includes IPv6 support in addition to traditional IPv4 support for your network.</p>
+<h4 id="Content-Delivery"><a href="#Content-Delivery" class="headerlink" title="Content Delivery"></a>Content Delivery</h4><p>Edge caching is still relevant in the AWS Cloud computing infrastructure. Any existing solutions in your web application infrastructure should work just fine in the AWS Cloud. One additional option, however, is to use Amazon CloudFront for edge caching your website.</p>
+<p>You can use CloudFront to deliver your website, including dynamic, static, and streaming content using a global network of edge locations. CloudFront automatically routes requests for your content to the nearest edge location, so content is delivered with the best possible performance. CloudFront is optimized to work with other AWS services, like Amazon Simple Storage Service 3 (Amazon S3) and Amazon Elastic Compute Cloud (Amazon EC2). CloudFront also works seamlessly with any origin server that is not an AWS origin server, which stores the original, definitive versions of your files.</p>
+<p>Like other AWS services, there are no contracts or monthly commitments for using CloudFront – you pay only for as much or as little content as you actually deliver through the service.</p>
+<h4 id="Managing-Public-DNS"><a href="#Managing-Public-DNS" class="headerlink" title="Managing Public DNS"></a>Managing Public DNS</h4><p>Moving a web application to the AWS Cloud requires some DNS changes to take advantage of the multiple Availability Zones that AWS provides. To help you manage DNS routing, AWS provides Amazon Route 53, 5 a highly available and scalable DNS web service. Amazon Route 53 automatically routes queries for your domain to the nearest DNS server. As a result, queries are answered with the best possible performance. Amazon Route 53 resolves requests for your domain name (for example, <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a>) to your Classic Load Balancer, as well as your zone apex record (example.com).</p>
+<h4 id="Host-Security"><a href="#Host-Security" class="headerlink" title="Host Security"></a>Host Security</h4><p>Unlike a traditional web hosting model, inbound network traffic filtering should not be confined to the edge; it should also be applied at the host level. Amazon EC2 provides a feature named security groups. A security group is analogous to an inbound network firewall, for which you can specify the protocols, ports, and source IP ranges that are allowed to reach your EC2 instances. You can assign one or more security groups to each EC2 instance. Each security group routes the appropriate traffic to each instance. Security groups can be configured so that only specific subnets or IP addresses have access to an EC2 instance. Or they can reference other security groups to limit access to EC2 instances that are in specific groups.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124901.png" alt=""></p>
+<p>In the example AWS web hosting architecture in Figure 4, the security group for the web server cluster might allow access for any host only over TCP on ports 80 and 443 (HTTP and HTTPS), and from instances in the application server security group on port 22 (SSH) for direct host management. The application server security group, on the other hand, might allow access from the web server security group for handling web requests and from your organization’s subnet over TCP on port 22 (SSH) for direct host management. In this model, your support engineers could log in directly to the application servers from the corporate network and then access the other clusters from the application server boxes. For a deeper discussion on security, see the AWS Security Center. 6 The center contains security bulletins, certification information, and security whitepapers that explain the security capabilities of AWS.</p>
+<h4 id="Load-Balancing-Across-Clusters"><a href="#Load-Balancing-Across-Clusters" class="headerlink" title="Load Balancing Across Clusters"></a>Load Balancing Across Clusters</h4><p>Hardware load balancers are a common network appliance used in traditional web application architectures. AWS provides this capability through the Elastic Load Balancing (ELB) service. ELB is a configurable load-balancing solution that supports health checks on hosts, distribution of traffic to EC2 instances across multiple Availability Zones, and dynamic addition and removal of Amazon EC2 hosts from the load-balancing rotation. ELB can also dynamically grow and shrink the load-balancing capacity to adjust to traffic demands, while providing a predictable entry point by using a persistent CNAME. ELB also supports sticky sessions to address more advanced routing needs. If your application requires more advanced load-balancing capabilities you can run a software load-balancing package (e.g., Zeus, HAProxy, or NGINX Plus) on EC2 instances. You can then assign Elastic IP addresses to those load-balancing EC2 instances to minimize DNS changes.</p>
+<h4 id="Finding-Other-Hosts-and-Services"><a href="#Finding-Other-Hosts-and-Services" class="headerlink" title="Finding Other Hosts and Services"></a>Finding Other Hosts and Services</h4><p>In the traditional web hosting architecture, most of your hosts have static IP addresses. In the cloud, most of your hosts will have dynamic IP addresses. Although every EC2 instance can have both public and private DNS entries and will be addressable over the internet, the DNS entries and the IP addresses are assigned dynamically when you launch the instance. They cannot be manually assigned. Static IP addresses (Elastic IP addresses in AWS terminology) can be assigned to running instances after they are launched. You should use Elastic IP addresses for instances and services that require consistent endpoints, such as master databases, central file servers, and EC2-hosted load balancers.</p>
+<p>Server roles that can easily scale out and in, such as web servers, should be made discoverable at their dynamic endpoints by registering their IP address with a central repository. Because most web application architectures have a database server that is always on, the database server is a common repository for discovery information. For situations where consistent addressing is needed, instances can be allocated Elastic IP addresses from a pool of addresses by a bootstrapping script when the instance is launched.</p>
+<p>Using this model, newly added hosts can request the list of necessary endpoints for communications from the database as part of a bootstrapping phase. The location of the database can be provided as user data that is passed into each instance as it is launched. Alternatively, you can use Amazon SimpleDB to store and maintain configuration information. SimpleDB is a highly available service that is available at a well-known endpoint.</p>
+<h4 id="Caching-within-the-Web-Application"><a href="#Caching-within-the-Web-Application" class="headerlink" title="Caching within the Web Application"></a>Caching within the Web Application</h4><p>In-memory application caches can reduce load on services and improve performance and scalability on the database tier by caching frequently used information. Amazon ElastiCache  is a web service that makes it easy to deploy, operate, and scale an inmemory cache in the cloud. You can configure the in-memory cache you create to automatically scale with load and to automatically replace failed nodes. ElastiCache is protocol-compliant with Memcached and Redis, which simplifies migration from your current on-premises solution.</p>
+<h4 id="Database-Configuration-Backup-and-Failover"><a href="#Database-Configuration-Backup-and-Failover" class="headerlink" title="Database Configuration, Backup, and Failover"></a>Database Configuration, Backup, and Failover</h4><p>Many web applications contain some form of persistence, usually in the form of a relational or NoSQL database. AWS offers both relational and NoSQL database infrastructure. Alternatively, you can deploy your own database software on an EC2 instance. The following table summarizes these options, and we discuss them in greater detail in this section.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202125059.png" alt=""></p>
+<h5 id="Amazon-RDS"><a href="#Amazon-RDS" class="headerlink" title="Amazon RDS"></a>Amazon RDS</h5><p>Amazon Relational Database Service (Amazon RDS) gives you access to the capabilities of a familiar MySQL, PostgreSQL, Oracle, and Microsoft SQL Server database engine. The code, applications, and tools that you already use can be used with Amazon RDS. Amazon RDS automatically patches the database software and backs up your database, and it stores backups for a user-defined retention period. It also supports point-in-time recovery. You benefit from the flexibility of being able to scale the compute resources or storage capacity associated with your relational database instance by making a single API call.</p>
+<p>In addition, Amazon RDS Multi-AZ deployments increase your database availability and protect your database against unplanned outages. Amazon RDS Read Replicas provide read-only replicas of your database, so you can scale out beyond the capacity of a single database deployment for read-heavy database workloads. As with all AWS services, no upfront investments are required, and you pay only for the resources you use.</p>
+<h5 id="Hosting-a-Relational-Database-Management-System-RDBMS-on-an-Amazon-EC2-Instance"><a href="#Hosting-a-Relational-Database-Management-System-RDBMS-on-an-Amazon-EC2-Instance" class="headerlink" title="Hosting a Relational Database Management System (RDBMS) on an Amazon EC2 Instance"></a>Hosting a Relational Database Management System (RDBMS) on an Amazon EC2 Instance</h5><p>In addition to the managed Amazon RDS offering, you can install your choice of RDBMS (such as MySQL, Oracle, SQL Server, or DB2) on an EC2 instance and manage it yourself. AWS customers hosting a database on Amazon EC2 successfully use a variety of master/slave and replication models, including mirroring for read-only copies and log shipping for always-ready passive slaves.</p>
+<p>When managing your own database software directly on Amazon EC2, you should also consider the availability of fault-tolerant and persistent storage. For this purpose, we recommend that databases running on Amazon EC2 use Amazon Elastic Block Store (Amazon EBS) volumes, which are similar to network-attached storage. For EC2 instances running a database, you should place all database data and logs on EBS volumes. These will remain available even if the database host fails. This configuration allows for a simple failover scenario, in which a new EC2 instance can be launched if a host fails, and the existing EBS volumes can be attached to the new instance. The database can then pick up where it left off.</p>
+<p>EBS volumes automatically provide redundancy within the Availability Zone, which increases their availability over simple disks. If the performance of a single EBS volume is not sufficient for your databases needs, volumes can be striped to increase IOPS performance for your database. For demanding workloads you can also use EBS Provisioned IOPS, where you specify the IOPS required. If you use Amazon RDS, the service manages its own storage so you can focus on managing your data.</p>
+<h5 id="NoSQL-Solutions"><a href="#NoSQL-Solutions" class="headerlink" title="NoSQL Solutions"></a>NoSQL Solutions</h5><p>In addition to support for relational databases, AWS also offers Amazon DynamoDB, a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. Using the AWS Management Console or the DynamoDB API, you can scale capacity up or down without downtime or performance degradation. Because DynamoDB handles the administrative burdens of operating and scaling distributed databases to AWS, you don’t have to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling.</p>
+<p>Amazon SimpleDB provides a lightweight, highly available, and fault-tolerant core nonrelational database service that offers querying and indexing of data without the requirement of a fixed schema. SimpleDB can be a very effective replacement for databases in data access scenarios that require one big, highly indexed and flexible schema table.</p>
+<p>Additionally, you can use Amazon EC2 to host many other emerging technologies in the NoSQL movement, such as Cassandra, CouchDB, and MongoDB.</p>
+<h5 id="Storage-and-Backup-of-Data-and-Assets"><a href="#Storage-and-Backup-of-Data-and-Assets" class="headerlink" title="Storage and Backup of Data and Assets"></a>Storage and Backup of Data and Assets</h5><p>There are numerous options within the AWS Cloud for storing, accessing, and backing up your web application data and assets. Amazon S3 provides a highly available and redundant object store. Amazon S3 is a great storage solution for somewhat static or slow-changing objects, such as images, videos, and other static media. Amazon S3 also supports edge caching and streaming of these assets by interacting with CloudFront.</p>
+<p>For attached file system-like storage, EC2 instances can have EBS volumes attached. These act like mountable disks for running EC2 instances. Amazon EBS is great for data that needs to be accessed as block storage and that requires persistence beyond the life of the running instance, such as database partitions and application logs.</p>
+<p>In addition to having a lifetime that is independent of the EC2 instance, you can take snapshots of EBS volumes and store them in Amazon S3. Because EBS snapshots only back up changes since the previous snapshot, more frequent snapshots can reduce snapshot times. You can also use an EBS snapshot as a baseline for replicating data across multiple EBS volumes and attaching those volumes to other running instances.</p>
+<p>EBS volumes can be as large as 16 TB, and multiple EBS volumes can be striped for even larger volumes or for increased I/O performance. To maximize the performance of your I/O-intensive applications, you can use Provisioned IOPS volumes. Provisioned IOPS volumes are designed to meet the needs of I/O-intensive workloads, particularly database workloads that are sensitive to storage performance and consistency in random access I/O throughput. You specify an IOPS rate when you create the volume and Amazon EBS provisions that rate for the lifetime of the volume. Amazon EBS currently supports up to 20,000 IOPS per volume. You can stripe multiple volumes together to deliver thousands of IOPS per instance to your application.</p>
+<h5 id="Automatically-Scaling-the-Fleet"><a href="#Automatically-Scaling-the-Fleet" class="headerlink" title="Automatically Scaling the Fleet"></a>Automatically Scaling the Fleet</h5><p>One of the key differences between the AWS Cloud architecture and the traditional hosting model is that AWS can automatically scale the web application fleet on demand to handle changes in traffic. In the traditional hosting model, traffic forecasting models are generally used to provision hosts ahead of projected traffic. In AWS, instances can be provisioned on the fly according to a set of triggers for scaling the fleet out and back in. The Auto Scaling service can create capacity groups of servers that can grow or shrink on demand. Auto Scaling also works directly with Amazon CloudWatch for metrics data and with Elastic Load Balancing to add and remove hosts for load distribution. For example, if the web servers are reporting greater than 80 percent CPU utilization over a period of time, an additional web server could be quickly deployed and then automatically added to the load balancer for immediate inclusion in the loadbalancing rotation.</p>
+<p>As shown in the AWS web hosting architecture model, you can create multiple Auto Scaling groups for different layers of the architecture, so that each layer can scale independently. For example, the web server Auto Scaling group might trigger scaling in and out in response to changes in network I/O, whereas the application server Auto Scaling group might scale out and in according to CPU utilization. You can set minimums and maximums to help ensure 24/7 availability and to cap to usage within a group.</p>
+<p>Auto Scaling triggers can be set both to grow and to shrink the total fleet at a given layer to match resource utilization to actual demand. In addition to the Auto Scaling service, you can scale Amazon EC2 fleets directly through the Amazon EC2 API, which allows for launching, terminating, and inspecting instances.</p>
+<h5 id="Additional-Security-Features"><a href="#Additional-Security-Features" class="headerlink" title="Additional Security Features"></a>Additional Security Features</h5><p>The number and sophistication of Distributed Denial of Service (DDoS) attacks are rising. Traditionally, these attacks are difficult to fend off. They often end up being costly in both mitigation time and power spent, as well as the opportunity cost from lost visits to your website during the attack. There are a number of AWS factors and services that can help you defend against such attacks. The first is the scale of the AWS network. The AWS infrastructure is quite large, and we allow you to leverage our scale to optimize your defense. Several services including Elastic Load Balancing, Amazon CloudFront, and Amazon Route 53 are effective at scaling your web application in response to a large increase in traffic.</p>
+<p>Two services in particular help with your defense strategy. AWS Shield is a managed DDoS protection service that helps safeguard against various forms of DDoS attack vectors. The standard offering of AWS Shield is free and automatically active throughout your account. This standard offering helps to defend against the most common network and transportation layer attacks. In addition to this level, the advanced offering grants higher levels of protection against your web application by providing you with near real-time visibility into an ongoing attack, as well as integrating at higher levels with the services mentioned earlier. Additionally, you get access to the AWS DDoS Response Team (DRT) to help mitigate large-scale and sophisticated attacks against your resources.</p>
+<p>AWS WAF (web application firewall) is designed to protect your web applications from attacks that can compromise availability or security, or otherwise consume excessive resources. AWS WAF works inline with CloudFront or Application Load Balancer, along with your custom rules, to defend against attacks such as cross-site scripting, SQL injection, and DDoS. As with most AWS services, AWS WAF comes with a fully featured API that can help automate the creation and editing of rules for your WAF as your security needs change.</p>
+<h5 id="Failover-with-AWS"><a href="#Failover-with-AWS" class="headerlink" title="Failover with AWS"></a>Failover with AWS</h5><p>Another key advantage of AWS over traditional web hosting is the Availability Zones that give you easy access to redundant deployment locations. Availability Zones are physically distinct locations that are engineered to be insulated from failures in other Availability Zones. They provide inexpensive, low-latency network connectivity to other Availability Zones in the same AWS Region. As the AWS web hosting architecture diagram in Figure 3 shows, we recommend that you deploy EC2 hosts across multiple Availability Zones to make your web application more fault tolerant. It’s important to ensure that there are provisions for migrating single points of access across Availability Zones in the case of failure. For example, you should set up a database slave in a second Availability Zone so that the persistence of data remains consistent and highly available, even during an unlikely failure scenario. You can do this on Amazon EC2 or Amazon RDS with a click of a button.</p>
+<p>While some architectural changes are often required when moving an existing web application to the AWS Cloud, there are significant improvements to scalability, reliability, and cost-effectiveness that make using the AWS Cloud well worth the effort. In the next section, we discuss those improvements.</p>
+<h2 id="Key-Considerations-When-Using-AWS-for-Web-Hosting"><a href="#Key-Considerations-When-Using-AWS-for-Web-Hosting" class="headerlink" title="Key Considerations When Using AWS for Web Hosting"></a>Key Considerations When Using AWS for Web Hosting</h2><p>There are some key differences between the AWS Cloud and a traditional web application hosting model. The previous section highlighted many of the key areas that you should consider when deploying a web application to the cloud. This section points out some of the key architectural shifts that you need to consider when you bring any application into the cloud.</p>
+<h3 id="No-More-Physical-Network-Appliances"><a href="#No-More-Physical-Network-Appliances" class="headerlink" title="No More Physical Network Appliances"></a>No More Physical Network Appliances</h3><p>You cannot deploy physical network appliances in AWS. For example, firewalls, routers, and load balancers for your AWS applications can no longer reside on physical devices but must be replaced with software solutions. There is a wide variety of enterprisequality software solutions, whether for load balancing (e.g., Zeus, HAProxy, NGINX Plus, and Pound) or establishing a VPN connection (e.g., OpenVPN, OpenSwan, and Vyatta). This is not a limitation of what can be run on the AWS Cloud, but it is an architectural change to your application if you use these devices today.</p>
+<h3 id="Firewalls-Everywhere"><a href="#Firewalls-Everywhere" class="headerlink" title="Firewalls Everywhere"></a>Firewalls Everywhere</h3><p>Where you once had a simple DMZ and then open communications among your hosts in a traditional hosting model, AWS enforces a more secure model, in which every host is locked down. One of the steps in planning an AWS deployment is the analysis of traffic between hosts. This analysis will guide decisions on exactly what ports need to be opened. You can create security groups within Amazon EC2 for each type of host in your architecture. In addition, you can create a large variety of simple and tiered security models to enable the minimum access among hosts within your architecture. The use of network access control lists within Amazon VPC can help lock down your network at the subnet level.</p>
+<h3 id="Consider-the-Availability-of-Multiple-Data-Centers"><a href="#Consider-the-Availability-of-Multiple-Data-Centers" class="headerlink" title="Consider the Availability of Multiple Data Centers"></a>Consider the Availability of Multiple Data Centers</h3><p>Think of Availability Zones within an AWS Region as multiple data centers. EC2 instances in different Availability Zones are both logically and physically separated, and they provide an easy-to-use model for deploying your application across data centers for both high availability and reliability. Amazon VPC as a regional service allows you to leverage Availability Zones while keeping all of your resources in the same logical network.</p>
+<h3 id="Treat-Hosts-as-Ephemeral-and-Dynamic"><a href="#Treat-Hosts-as-Ephemeral-and-Dynamic" class="headerlink" title="Treat Hosts as Ephemeral and Dynamic"></a>Treat Hosts as Ephemeral and Dynamic</h3><p>Probably the most important shift in how you might architect your AWS application is that Amazon EC2 hosts should be considered ephemeral and dynamic. Any application built for the AWS Cloud should not assume that a host will always be available and should be designed with the knowledge that any data that is not on an EBS volume will be lost if an EC2 instance fails. Additionally, when a new host is brought up, you shouldn’t make assumptions about the IP address or location within an Availability Zone of the host. Your configuration model must be flexible, and your approach to bootstrapping a host must take the dynamic nature of the cloud into account. These techniques are critical for building and running a highly scalable and fault-tolerant application.</p>
+<h3 id="Consider-a-Serverless-Architecture"><a href="#Consider-a-Serverless-Architecture" class="headerlink" title="Consider a Serverless Architecture"></a>Consider a Serverless Architecture</h3><p>This whitepaper primarily focuses on a more traditional web architecture. However, newer services like AWS Lambda and Amazon API Gateway enable you to build a more serverless web application that abstracts away the use of virtual machines to perform compute. In these cases, code is executed on a request-by-request basis, and you pay only for the number of requests and the length of requests. You can find out more about serverless architectures here.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>There are numerous architectural and conceptual considerations when you are contemplating migrating your web application to the AWS Cloud. The benefits of having a cost-effective, highly scalable, and fault-tolerant infrastructure that grows with your business far outstrips the efforts of migrating to the AWS Cloud.</p>
+<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><p>The following individuals and organizations contributed to this document: </p>
+<ul>
+<li>Jack Hemion, Associate Solutions Architect, AWS</li>
+<li>Matt Tavis, Principal Solutions Architect, AWS</li>
+<li>Philip Fitzsimons, Sr. Manager Well-Architected, AWS</li>
+</ul>
+<h2 id="Further-Reading"><a href="#Further-Reading" class="headerlink" title="Further Reading"></a>Further Reading</h2><ul>
+<li>Getting started guide – AWS Web Application hosting for Linux</li>
+<li>Getting started guide – AWS Web Application hosting for Windows</li>
+<li>Getting started Video Series: Linux Web Applications in the AWS Cloud</li>
+<li>Getting started Video Series: .NET Web Applications in the AWS Cloud</li>
+</ul>
+<h2 id="Document-Revisions"><a href="#Document-Revisions" class="headerlink" title="Document Revisions"></a>Document Revisions</h2><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>September 2019</strong></td>
+<td>Updated icon label for “Caching with ElastiCache” in Figure 3.</td>
+</tr>
+<tr>
+<td><strong>July 2017</strong></td>
+<td>Multiple sections added and updated for new services. Updated diagrams for additional clarity and services. Addition of VPC as the standard networking method in AWS in “Network Management.” Added section on DDoS protection and mitigation in “Additional Security Features.” Added a small section on serverless architectures for web hosting.</td>
+</tr>
+<tr>
+<td><strong>September 2012</strong></td>
+<td>Multiple sections updated to improve clarity. Updated diagrams to use AWS icons. Addition of “Managing Public DNS” section for detail on Amazon Route 53. “Finding Other Hosts and Services” section updated for clarity. “Database Configuration, Backup, and Failover” section updated for clarity and DynamoDB. “Storage and Backup of Data and Assets” section expanded to cover EBS Provisioned IOPS volumes.</td>
+</tr>
+<tr>
+<td><strong>May 2010</strong></td>
+<td>First publication</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener">https://aws.amazon.com/vpc/</a><br><a href="https://aws.amazon.com/cloudfront/" target="_blank" rel="noopener">https://aws.amazon.com/cloudfront/</a><br><a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener">https://aws.amazon.com/s3/</a><br><a href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">https://aws.amazon.com/ec2/</a><br><a href="https://aws.amazon.com/route53/" target="_blank" rel="noopener">https://aws.amazon.com/route53/</a><br><a href="https://aws.amazon.com/security/" target="_blank" rel="noopener">https://aws.amazon.com/security/</a><br><a href="https://aws.amazon.com/elasticloadbalancing/" target="_blank" rel="noopener">https://aws.amazon.com/elasticloadbalancing/</a><br><a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html" target="_blank" rel="noopener">http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html</a><br><a href="https://aws.amazon.com/simpledb/" target="_blank" rel="noopener">https://aws.amazon.com/simpledb/</a><br><a href="https://aws.amazon.com/elasticache/" target="_blank" rel="noopener">https://aws.amazon.com/elasticache/</a><br><a href="https://aws.amazon.com/rds/" target="_blank" rel="noopener">https://aws.amazon.com/rds/</a><br><a href="https://aws.amazon.com/ebs/" target="_blank" rel="noopener">https://aws.amazon.com/ebs/</a><br><a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener">https://aws.amazon.com/dynamodb/</a><br><a href="https://aws.amazon.com/autoscaling/" target="_blank" rel="noopener">https://aws.amazon.com/autoscaling/</a><br><a href="https://aws.amazon.com/shield/" target="_blank" rel="noopener">https://aws.amazon.com/shield/</a><br><a href="https://aws.amazon.com/waf/" target="_blank" rel="noopener">https://aws.amazon.com/waf/</a><br><a href="https://aws.amazon.com/lambda/" target="_blank" rel="noopener">https://aws.amazon.com/lambda/</a><br><a href="https://aws.amazon.com/api-gateway/" target="_blank" rel="noopener">https://aws.amazon.com/api-gateway/</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AWS/" rel="tag"><i class="fa fa-tag"></i> AWS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20200130/" rel="next" title="Oracle APEX 活跃博文整理 | 2020.01.30">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2020.01.30
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#An-Overview-of-Traditional-Web-Hosting"><span class="nav-number">2.</span> <span class="nav-text">An Overview of Traditional Web Hosting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Application-Hosting-in-the-Cloud-Using-AWS"><span class="nav-number">3.</span> <span class="nav-text">Web Application Hosting in the Cloud Using AWS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-AWS-Can-Solve-Common-Web-Application-Hosting-Issues"><span class="nav-number">3.1.</span> <span class="nav-text">How AWS Can Solve Common Web Application Hosting Issues</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Cost-Effective-Alternative-to-Oversized-Fleets-Needed-to-Handle-Peaks"><span class="nav-number">3.1.1.</span> <span class="nav-text">A Cost-Effective Alternative to Oversized Fleets Needed to Handle Peaks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Scalable-Solution-to-Handling-Unexpected-Traffic-Peaks"><span class="nav-number">3.1.2.</span> <span class="nav-text">A Scalable Solution to Handling Unexpected Traffic Peaks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#An-On-Demand-Solution-for-Test-Load-Beta-and-Preproduction-Environments"><span class="nav-number">3.1.3.</span> <span class="nav-text">An On-Demand Solution for Test, Load, Beta, and Preproduction Environments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#An-AWS-Cloud-Architecture-for-Web-Hosting"><span class="nav-number">3.1.4.</span> <span class="nav-text">An AWS Cloud Architecture for Web Hosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Components-of-an-AWS-Web-Hosting-Architecture"><span class="nav-number">3.2.</span> <span class="nav-text">Key Components of an AWS Web Hosting Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Network-Management"><span class="nav-number">3.2.1.</span> <span class="nav-text">Network Management</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Content-Delivery"><span class="nav-number">3.2.2.</span> <span class="nav-text">Content Delivery</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Managing-Public-DNS"><span class="nav-number">3.2.3.</span> <span class="nav-text">Managing Public DNS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Host-Security"><span class="nav-number">3.2.4.</span> <span class="nav-text">Host Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-Balancing-Across-Clusters"><span class="nav-number">3.2.5.</span> <span class="nav-text">Load Balancing Across Clusters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Finding-Other-Hosts-and-Services"><span class="nav-number">3.2.6.</span> <span class="nav-text">Finding Other Hosts and Services</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Caching-within-the-Web-Application"><span class="nav-number">3.2.7.</span> <span class="nav-text">Caching within the Web Application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database-Configuration-Backup-and-Failover"><span class="nav-number">3.2.8.</span> <span class="nav-text">Database Configuration, Backup, and Failover</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Amazon-RDS"><span class="nav-number">3.2.8.1.</span> <span class="nav-text">Amazon RDS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hosting-a-Relational-Database-Management-System-RDBMS-on-an-Amazon-EC2-Instance"><span class="nav-number">3.2.8.2.</span> <span class="nav-text">Hosting a Relational Database Management System (RDBMS) on an Amazon EC2 Instance</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NoSQL-Solutions"><span class="nav-number">3.2.8.3.</span> <span class="nav-text">NoSQL Solutions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Storage-and-Backup-of-Data-and-Assets"><span class="nav-number">3.2.8.4.</span> <span class="nav-text">Storage and Backup of Data and Assets</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Automatically-Scaling-the-Fleet"><span class="nav-number">3.2.8.5.</span> <span class="nav-text">Automatically Scaling the Fleet</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Additional-Security-Features"><span class="nav-number">3.2.8.6.</span> <span class="nav-text">Additional Security Features</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Failover-with-AWS"><span class="nav-number">3.2.8.7.</span> <span class="nav-text">Failover with AWS</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Considerations-When-Using-AWS-for-Web-Hosting"><span class="nav-number">4.</span> <span class="nav-text">Key Considerations When Using AWS for Web Hosting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#No-More-Physical-Network-Appliances"><span class="nav-number">4.1.</span> <span class="nav-text">No More Physical Network Appliances</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Firewalls-Everywhere"><span class="nav-number">4.2.</span> <span class="nav-text">Firewalls Everywhere</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consider-the-Availability-of-Multiple-Data-Centers"><span class="nav-number">4.3.</span> <span class="nav-text">Consider the Availability of Multiple Data Centers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Treat-Hosts-as-Ephemeral-and-Dynamic"><span class="nav-number">4.4.</span> <span class="nav-text">Treat Hosts as Ephemeral and Dynamic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consider-a-Serverless-Architecture"><span class="nav-number">4.5.</span> <span class="nav-text">Consider a Serverless Architecture</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contributors"><span class="nav-number">6.</span> <span class="nav-text">Contributors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Further-Reading"><span class="nav-number">7.</span> <span class="nav-text">Further Reading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Document-Revisions"><span class="nav-number">8.</span> <span class="nav-text">Document Revisions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">9.</span> <span class="nav-text">Notes</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
