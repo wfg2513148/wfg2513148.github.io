@@ -146,8 +146,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124240.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124423.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202124901.png">
-<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202125059.png">
-<meta property="og:updated_time" content="2020-02-02T05:17:58.000Z">
+<meta property="og:updated_time" content="2020-02-02T05:22:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Application Hosting in the AWS Cloud - AWS Whitepaper">
 <meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202131743.png">
@@ -421,7 +420,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2020-02-02 13:10:34 / 修改时间：13:17:58" itemprop="dateCreated datePublished" datetime="2020-02-02T13:10:34+08:00">2020-02-02</time>
+              <time title="创建时间：2020-02-02 13:10:34 / 修改时间：13:22:28" itemprop="dateCreated datePublished" datetime="2020-02-02T13:10:34+08:00">2020-02-02</time>
             
 
             
@@ -564,7 +563,27 @@ var _hmt = _hmt || [];
 <p>Using this model, newly added hosts can request the list of necessary endpoints for communications from the database as part of a bootstrapping phase. The location of the database can be provided as user data that is passed into each instance as it is launched. Alternatively, you can use Amazon SimpleDB to store and maintain configuration information. SimpleDB is a highly available service that is available at a well-known endpoint.</p>
 <h4 id="Caching-within-the-Web-Application"><a href="#Caching-within-the-Web-Application" class="headerlink" title="Caching within the Web Application"></a>Caching within the Web Application</h4><p>In-memory application caches can reduce load on services and improve performance and scalability on the database tier by caching frequently used information. Amazon ElastiCache  is a web service that makes it easy to deploy, operate, and scale an inmemory cache in the cloud. You can configure the in-memory cache you create to automatically scale with load and to automatically replace failed nodes. ElastiCache is protocol-compliant with Memcached and Redis, which simplifies migration from your current on-premises solution.</p>
 <h4 id="Database-Configuration-Backup-and-Failover"><a href="#Database-Configuration-Backup-and-Failover" class="headerlink" title="Database Configuration, Backup, and Failover"></a>Database Configuration, Backup, and Failover</h4><p>Many web applications contain some form of persistence, usually in the form of a relational or NoSQL database. AWS offers both relational and NoSQL database infrastructure. Alternatively, you can deploy your own database software on an EC2 instance. The following table summarizes these options, and we discuss them in greater detail in this section.</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202125059.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Relational Database Solutions</strong></th>
+<th><strong>NoSQL Solutions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Managed Database Service</td>
+<td>Amazon RDS – MySQL, Oracle, SQL Server, MariaDB, PostgreSQL, Amazon Aurora</td>
+<td>Amazon DynamoDB</td>
+</tr>
+<tr>
+<td>Self-Managed</td>
+<td>Hosting a relational DBMS on an EC2 instance</td>
+<td>Hosting a NoSQL solution on an EC2 instance</td>
+</tr>
+</tbody>
+</table>
 <h5 id="Amazon-RDS"><a href="#Amazon-RDS" class="headerlink" title="Amazon RDS"></a>Amazon RDS</h5><p>Amazon Relational Database Service (Amazon RDS) gives you access to the capabilities of a familiar MySQL, PostgreSQL, Oracle, and Microsoft SQL Server database engine. The code, applications, and tools that you already use can be used with Amazon RDS. Amazon RDS automatically patches the database software and backs up your database, and it stores backups for a user-defined retention period. It also supports point-in-time recovery. You benefit from the flexibility of being able to scale the compute resources or storage capacity associated with your relational database instance by making a single API call.</p>
 <p>In addition, Amazon RDS Multi-AZ deployments increase your database availability and protect your database against unplanned outages. Amazon RDS Read Replicas provide read-only replicas of your database, so you can scale out beyond the capacity of a single database deployment for read-heavy database workloads. As with all AWS services, no upfront investments are required, and you pay only for the resources you use.</p>
 <h5 id="Hosting-a-Relational-Database-Management-System-RDBMS-on-an-Amazon-EC2-Instance"><a href="#Hosting-a-Relational-Database-Management-System-RDBMS-on-an-Amazon-EC2-Instance" class="headerlink" title="Hosting a Relational Database Management System (RDBMS) on an Amazon EC2 Instance"></a>Hosting a Relational Database Management System (RDBMS) on an Amazon EC2 Instance</h5><p>In addition to the managed Amazon RDS offering, you can install your choice of RDBMS (such as MySQL, Oracle, SQL Server, or DB2) on an EC2 instance and manage it yourself. AWS customers hosting a database on Amazon EC2 successfully use a variety of master/slave and replication models, including mirroring for read-only copies and log shipping for always-ready passive slaves.</p>
