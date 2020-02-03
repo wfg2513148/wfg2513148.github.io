@@ -135,20 +135,21 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="Oracle Application Express（APEX）18.2 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。 下面是 Oracle APEX">
-<meta name="keywords" content="Oracle,APEX">
+  <meta name="description" content="钢哥注：本文是对AWS官方博文《使用Oracle Data Pump将数据库迁移到AWS的RDS Oracle数据库》的整理，原文请点击 这里。  关键假设生产数据库的业务有足够的停机时间，在迁移过程中数据不会变化。 准备本地数据库使用docker镜像在本地快速创建Oracle数据库实例，Oracle数据库版本11.2.0.4 1234567891011121314151617## 下载数据库">
+<meta name="keywords" content="AWS,Oracle,Migration,Data Pump">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle APEX 18.2 正式发布！！">
-<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/index.html">
+<meta property="og:title" content="使用Oracle Data Pump将数据库迁移到AWS RDS Oracle数据库">
+<meta property="og:url" content="https://wangfanggang.com/AWS/AWS-oracle-dump-to-aws/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="Oracle Application Express（APEX）18.2 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。 下面是 Oracle APEX">
+<meta property="og:description" content="钢哥注：本文是对AWS官方博文《使用Oracle Data Pump将数据库迁移到AWS的RDS Oracle数据库》的整理，原文请点击 这里。  关键假设生产数据库的业务有足够的停机时间，在迁移过程中数据不会变化。 准备本地数据库使用docker镜像在本地快速创建Oracle数据库实例，Oracle数据库版本11.2.0.4 1234567891011121314151617## 下载数据库">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg">
-<meta property="og:updated_time" content="2019-09-03T12:27:53.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200203204506.png?x-oss-process=image/format,jpg/quality,q_30">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200203203530.png">
+<meta property="og:updated_time" content="2020-02-03T12:45:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle APEX 18.2 正式发布！！">
-<meta name="twitter:description" content="Oracle Application Express（APEX）18.2 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。 下面是 Oracle APEX">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg">
+<meta name="twitter:title" content="使用Oracle Data Pump将数据库迁移到AWS RDS Oracle数据库">
+<meta name="twitter:description" content="钢哥注：本文是对AWS官方博文《使用Oracle Data Pump将数据库迁移到AWS的RDS Oracle数据库》的整理，原文请点击 这里。  关键假设生产数据库的业务有足够的停机时间，在迁移过程中数据不会变化。 准备本地数据库使用docker镜像在本地快速创建Oracle数据库实例，Oracle数据库版本11.2.0.4 1234567891011121314151617## 下载数据库">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200203204506.png?x-oss-process=image/format,jpg/quality,q_30">
 
 
 
@@ -157,7 +158,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/"/>
+  <link rel="canonical" href="https://wangfanggang.com/AWS/AWS-oracle-dump-to-aws/"/>
 
 
 
@@ -167,7 +168,7 @@ var _hmt = _hmt || [];
   };
 </script>
 
-  <title>Oracle APEX 18.2 正式发布！！ | 钢钢更新</title>
+  <title>使用Oracle Data Pump将数据库迁移到AWS RDS Oracle数据库 | 钢钢更新</title>
   
 
 
@@ -377,7 +378,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20181001/">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/AWS-oracle-dump-to-aws/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王方钢 / Kenny Wang">
@@ -394,7 +395,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h2 class="post-title" itemprop="name headline">Oracle APEX 18.2 正式发布！！
+          <h2 class="post-title" itemprop="name headline">使用Oracle Data Pump将数据库迁移到AWS RDS Oracle数据库
               
             
           </h2>
@@ -419,24 +420,12 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2018-10-01 01:02:03" itemprop="dateCreated datePublished" datetime="2018-10-01T01:02:03+08:00">2018-10-01</time>
+              <time title="创建时间：2020-02-03 20:43:00 / 修改时间：20:45:40" itemprop="dateCreated datePublished" datetime="2020-02-03T20:43:00+08:00">2020-02-03</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-03 20:27:53" itemprop="dateModified" datetime="2019-09-03T20:27:53+08:00">2019-09-03</time>
               
             
           </span>
@@ -453,14 +442,7 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a></span>
 
                 
                 
@@ -476,7 +458,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/Oracle/Oracle-APEX/apex-update-20181001/" class="leancloud_visitors" data-flag-title="Oracle APEX 18.2 正式发布！！">
+             <span id="/AWS/AWS-oracle-dump-to-aws/" class="leancloud_visitors" data-flag-title="使用Oracle Data Pump将数据库迁移到AWS RDS Oracle数据库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -501,7 +483,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">2.8k</span>
               
 
               
@@ -515,7 +497,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -535,17 +517,28 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1fvs23wdh6ej314w0kawvq.jpg" alt=""></p>
-<p><a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express（APEX）18.2</a> 现已正式发布了！APEX 使您能够仅使用浏览器就可以开发、设计和部署美观、响应迅速、数据驱动的桌面和移动应用程序。APEX 18.1 在远程数据源集成方面迈出了一大步，并且包含强大，高质量的应用程序功能。在此成功的基础上，APEX 18.2 引入了许多功能，并提高了 APEX 的整体质量。</p>
-<p>下面是 Oracle APEX 18.2 的一些改进，包括：</p>
-<a id="more"></a>
-<h2 id="创建页面向导"><a href="#创建页面向导" class="headerlink" title="创建页面向导"></a>创建页面向导</h2><p>在 Oracle APEX 18.2 中，“创建页面”向导已可以为并排主从关系和仪表板创建应用程序页面。并排主从表单使用并排布局创建单页主要详细信息，并使用模态弹出窗口编辑报表区域。仪表板可以根据样本数据创建第一个仪表板，您稍后可以使用 Page Designer 进行再次编辑。 </p>
-<h2 id="Font-APEX"><a href="#Font-APEX" class="headerlink" title="Font APEX"></a>Font APEX</h2><p><a href="https://apex.oracle.com/fontapex" target="_blank" rel="noopener">Font APEX</a> 是超过 1,000 个高质量图标的集合，其中许多图标专门用于商业应用程序。APEX 18.1 中的 Font APEX 包括一组新的高分辨率 32 x 32 图标，可以根据APEX应用程序中的使用位置，将自动为您选择正确大小的字体。Oracle APEX 18.2 还包括独立于 Oracle APEX 版本的更新 Font APEX 样式表和字体文件功能。另外，Font APEX 现在可以在 GitHub 上找到了。</p>
-<h2 id="减少停机时间"><a href="#减少停机时间" class="headerlink" title="减少停机时间"></a>减少停机时间</h2><p>在一个始终可用的云服务和企业应用程序的时代，APEX 18.2 特别关注显着减少 APEX 升级所带来的中断时间。APEX 18.1 首次引入了多阶段减少停机时间的升级方法，从而显著降低了升级过程中发生的总体中断。在 APEX 18.2 中，这一多阶段升级过程得到了进一步完善，从而使 APEX 升级已经短暂停机的时间进一步缩短。  </p>
-<h2 id="简化服务请求和服务创建"><a href="#简化服务请求和服务创建" class="headerlink" title="简化服务请求和服务创建"></a>简化服务请求和服务创建</h2><p>请求 APEX 工作区的工作流程已大大简化，从而改善了首次尝试 Oracle APEX 的用户体验。APEX 配置中添加了其他设置，以便在工作区请求过程中使用开箱即用的合理默认值，并且启动和运行 APEX 所需的信息非常少！</p>
-<h2 id="样本数据集增强功能"><a href="#样本数据集增强功能" class="headerlink" title="样本数据集增强功能"></a>样本数据集增强功能</h2><p>为了帮助学习过程，Oracle APEX 包含许多数据集，可以轻松安装并用于创建应用程序。在 APEX 18.2 中，创建应用程序向导将自动填充构建在数据集之上的组件。此外，一些数据集已经扩展到包括其他语言的数据，包括<code>中文、捷克语、法语、德语、日语、韩语、波兰语、俄语和西班牙语</code>。</p>
-<p>与每个 APEX 版本一样，对生产力和示例应用程序进行了大量增强和修复。此外，APEX 18.2 中已修复了 150 多个错误，从而为 APEX 环境带来更高的质量和稳定性。</p>
-<h2 id="附加信息"><a href="#附加信息" class="headerlink" title="附加信息"></a>附加信息</h2><p>Application Express（APEX）是低代码快速应用开发平台，可以在任何 Oracle 数据库中运行，并且包含在每个 Oracle 数据库云服务中。APEX 与 Oracle 数据库相结合，提供了一个完全集成的环境，用于构建、部署、维护和监控在移动和桌面设备上看起来很棒的数据驱动型业务应用程序。要了解有关 Oracle Application Express 的更多信息，请访问：<a href="apex.oracle.com">apex.oracle.com</a>。要了解有关 Oracle Database Cloud 的更多信息，请访问：<a href="cloud.oracle.com/database">cloud.oracle.com/database</a>。 </p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200203204506.png?x-oss-process=image/format,jpg/quality,q_30" alt=""></p>
+<blockquote>
+<p>钢哥注：本文是对AWS官方博文《使用Oracle Data Pump将数据库迁移到AWS的RDS Oracle数据库》的整理，原文请点击 <a href="https://amazonaws-china.com/cn/blogs/china/oracle-data-pump-rds-oracle/" target="_blank" rel="noopener">这里</a>。</p>
+</blockquote>
+<h2 id="关键假设"><a href="#关键假设" class="headerlink" title="关键假设"></a>关键假设</h2><p>生产数据库的业务有足够的停机时间，在迁移过程中数据不会变化。</p>
+<h2 id="准备本地数据库"><a href="#准备本地数据库" class="headerlink" title="准备本地数据库"></a>准备本地数据库</h2><p>使用docker镜像在本地快速创建Oracle数据库实例，Oracle数据库版本11.2.0.4</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span># 下载数据库镜像</span><br><span class="line">docker pull registry.aliyuncs.com/helowin/oracle_11g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 启动数据库实例</span><br><span class="line">docker run -d --name oracle_11g -p 1521:1521 registry.aliyuncs.com/helowin/oracle_11g</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 查看容器进程</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 进入容器</span><br><span class="line">docker exec -it 容器ID /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 加载环境变量</span><br><span class="line">source /home/oracle/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 连接数据库</span><br><span class="line">sqlplus / as sysdba</span><br></pre></td></tr></table></figure>
+<h2 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h2><p>创建一些表和数据，作为数据库迁移的模拟数据。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span># 创建数据库导出目录</span><br><span class="line">mkdir -p /home/oracle/datapump/datafiles</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 连接到数据库</span></span><br><span class="line">sqlplus / as sysdba</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建test用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="keyword">test</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"welcome1"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 为test用户授权</span></span><br><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> <span class="keyword">test</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建数据表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> test.aa(<span class="keyword">id</span> varchar2(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span>, <span class="keyword">name</span> varchar2(<span class="number">30</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 插入测试数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test.aa <span class="keyword">values</span> (<span class="string">'1'</span>, <span class="string">'kenny'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test.aa <span class="keyword">values</span> (<span class="string">'2'</span>, <span class="string">'gloria'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test.aa <span class="keyword">values</span> (<span class="string">'3'</span>, <span class="string">'bob'</span>);</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 将数据库导出目录加入到数据库中</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">directory</span> dpump_dir <span class="keyword">as</span> <span class="string">'/home/oracle/datapump/datafiles'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 授权</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">read</span>, write <span class="keyword">on</span> <span class="keyword">directory</span> dpump_dir <span class="keyword">to</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="用expdp命令导出数据库"><a href="#用expdp命令导出数据库" class="headerlink" title="用expdp命令导出数据库"></a>用expdp命令导出数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span># 使用expdp命令导出test用户所有表</span><br><span class="line">expdp test/welcome1 directory=dpump_dir dumpfile=test.dmp</span><br></pre></td></tr></table></figure>
+<h2 id="配置目标RDS数据库"><a href="#配置目标RDS数据库" class="headerlink" title="配置目标RDS数据库"></a>配置目标RDS数据库</h2><p>在源数据库的 <code>tnsnames.ora</code> 文件中配置目标RDS数据库信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rdsorcl=(description=(address_list=(address=(protocol=TCP)(host=orcl.cr72zlp5vle5.ap-northeast-1.rds.amazonaws.com)(port=1517)))(connect_data=(SID=orcl)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span># 如果连接有错误，用tnsping检查RDS连接信息。正常情况下应返回"OK (xxx msec)"类似的字样</span><br><span class="line">tnsping "(description=(address_list=(address=(protocol=TCP)(host=orcl.cr72zlp5vle5.ap-northeast-1.rds.amazonaws.com)(port=1517)))(connect_data=(SID=rdsorcl)))"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># 使用sqlplus连接目标RDS数据库</span><br><span class="line">sqlplus test/welcome1@rdsorcl</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 在目标RDS数据库中创建directory对象</span></span><br><span class="line">exec rdsadmin.rdsadmin_util.create_directory('dpump_dir');</span><br></pre></td></tr></table></figure>
+<h2 id="将导出文件上传到目标RDS数据库"><a href="#将导出文件上传到目标RDS数据库" class="headerlink" title="将导出文件上传到目标RDS数据库"></a>将导出文件上传到目标RDS数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- sqlplus登录源数据库，创建指向目标RDS数据库的db link</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">link</span> to_rds <span class="keyword">connect</span> <span class="keyword">to</span> <span class="keyword">test</span> <span class="keyword">identified</span> <span class="keyword">by</span> welcome1 <span class="keyword">using</span> <span class="string">'(description=(address_list=(address=(protocol=TCP)(host=   orcl.cr72zlp5vle5.ap-northeast-1.rds.amazonaws.com)(port=1517)))(connect_data=(SID=orcl)))'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 运行DBMS_FILE_TRANSFER包，将导出的数据文件上传到RDS数据库的目录中</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    DBMS_FILE_TRANSFER.PUT_FILE(</span><br><span class="line">        source_directory_object =&gt; <span class="string">'dpump_dir'</span>,</span><br><span class="line">        source_file_name    =&gt; <span class="string">'test.dmp'</span>,</span><br><span class="line">        destination_directory_object    =&gt; <span class="string">'dpump_dir'</span>,</span><br><span class="line">        destination_file_name   =&gt; <span class="string">'test.dmp'</span>,</span><br><span class="line">        destination_database    =&gt; <span class="string">'to_rds'</span>);</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<h2 id="通过impdp命令导入数据"><a href="#通过impdp命令导入数据" class="headerlink" title="通过impdp命令导入数据"></a>通过impdp命令导入数据</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp test@rdsorcl dumpfile=test.dmp directory=dpump_dir full=y</span><br></pre></td></tr></table></figure>
+<p>执行完后检查RDS中的表和数据是否导入成功。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200203203530.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的过程我们可以看到，将一个Oracle数据库迁移到RDS的过程并不复杂，如果源数据库很大，由于需要导出数据、将数据上传到RDS的Data Pump目录、导入数据，迁移的过程也会比较长。</p>
+<p><strong>上述过程假设了我们生产数据库的业务有足够的停机时间，在迁移过程中数据不会变化。</strong> 如果迁移过程中，源数据库会发生变化，那么我们就需要同步数据中心和RDS数据库间的日志了。</p>
+<p>如果源数据库很大，可以在AWS上启动一台中间服务器，并在中间服务器上安装Oracle的客户端软件，将源数据库的 Data Pump 导出文件分片然后scp复制、Tsunami UDP 加速上传等方式将文件上传到中间服务器，然后再上传到RDS的 Data Pump 目录中，这样能加速迁移的过程。</p>
 
       
     </div>
@@ -579,9 +572,13 @@ var _hmt = _hmt || [];
       
         <div class="post-tags">
           
+            <a href="/tags/AWS/" rel="tag"><i class="fa fa-tag"></i> AWS</a>
+          
             <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
           
-            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+            <a href="/tags/Migration/" rel="tag"><i class="fa fa-tag"></i> Migration</a>
+          
+            <a href="/tags/Data-Pump/" rel="tag"><i class="fa fa-tag"></i> Data Pump</a>
           
         </div>
       
@@ -594,8 +591,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Oracle/Oracle-APEX/apex-update-20180920/" rel="next" title="Oracle APEX 活跃博文整理 | 2018.09.20">
-                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2018.09.20
+              <a href="/AWS/AWS whitepaper cn/" rel="next" title="Web Application Hosting in the AWS Cloud - AWS白皮书 中文翻译">
+                <i class="fa fa-chevron-left"></i> Web Application Hosting in the AWS Cloud - AWS白皮书 中文翻译
               </a>
             
           </div>
@@ -603,10 +600,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Oracle/Database/oracle-xe-18c/" rel="prev" title="Oracle Database 18c Express Edition (XE) 正式发布！！">
-                Oracle Database 18c Express Edition (XE) 正式发布！！ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -925,7 +918,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建页面向导"><span class="nav-number">1.</span> <span class="nav-text">创建页面向导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Font-APEX"><span class="nav-number">2.</span> <span class="nav-text">Font APEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少停机时间"><span class="nav-number">3.</span> <span class="nav-text">减少停机时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简化服务请求和服务创建"><span class="nav-number">4.</span> <span class="nav-text">简化服务请求和服务创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样本数据集增强功能"><span class="nav-number">5.</span> <span class="nav-text">样本数据集增强功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附加信息"><span class="nav-number">6.</span> <span class="nav-text">附加信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键假设"><span class="nav-number">1.</span> <span class="nav-text">关键假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备本地数据库"><span class="nav-number">2.</span> <span class="nav-text">准备本地数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化数据库"><span class="nav-number">3.</span> <span class="nav-text">初始化数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用expdp命令导出数据库"><span class="nav-number">4.</span> <span class="nav-text">用expdp命令导出数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置目标RDS数据库"><span class="nav-number">5.</span> <span class="nav-text">配置目标RDS数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将导出文件上传到目标RDS数据库"><span class="nav-number">6.</span> <span class="nav-text">将导出文件上传到目标RDS数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过impdp命令导入数据"><span class="nav-number">7.</span> <span class="nav-text">通过impdp命令导入数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
