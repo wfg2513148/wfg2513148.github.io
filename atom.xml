@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2020-02-29T06:24:21.000Z</updated>
+  <updated>2020-03-01T10:04:19.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过AWS CLI自动替换EC2实例IP地址</title>
+    <link href="https://wangfanggang.com/AWS/aws-cli-renew-ip/"/>
+    <id>https://wangfanggang.com/AWS/aws-cli-renew-ip/</id>
+    <published>2020-03-01T10:04:06.000Z</published>
+    <updated>2020-03-01T10:04:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301180328.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平时在AWS EC2上跑了点东西，方便查学习资料（你懂的）。之所以选择AWS是因为它家提供<a href="https://amazonaws-china.com/cn/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc" target="_blank" rel="noopener">1年免费套餐</a>，另外海外节点稳定。起先一切看起来不错，可以实现自由冲浪。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301173332.png" alt=""></p><p>但过不了多久就会被 <strong>王<del>府</del>井</strong> 屏蔽，没办法，多启几个容器吧（内存有限，一次启用5个不同的端口，发现不好用时手工切换本机客户端端口呗，5个端口都换完了就重新绑定个弹性IP，也算个解决办法。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301173433.png" alt=""></p><p>但最近发现， <strong>王<del>府</del>井</strong> 的效率变高了。基本上只要访问过一次受限网站，过不了几分钟这个端口就被封了，这让我怎么学习？没办法，不得不重新更换一个新的弹性IP地址。更换IP地址的过程是这样的：</p><ul><li>登录<a href="https://aws.amazon.com/?nc2=h_lg" target="_blank" rel="noopener">AWS控制台</a>（国内访问速度比较慢）</li><li>切换到EC2控制面板</li><li>分配新的弹性IP地址</li><li>将新地址绑定到EC2实例</li><li>释放旧的IP地址</li></ul><p>一轮操作下来，一般要十几分钟。有时候半天登录不上，痛苦啊啊啊。。。</p><p>每次重复劳动，对于我这个希望用行动改变世界的码农来说，不是我性格啊。趁今天有空，研究了一下如何用AWS命令行工具（AWS CLI）自动替换EC2实例的弹性IP地址，节省我的时间。</p><h2 id="编写处理脚本"><a href="#编写处理脚本" class="headerlink" title="编写处理脚本"></a>编写处理脚本</h2><p>关于如何配置<a href="https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-macos.html" target="_blank" rel="noopener">AWS CLI</a>，请参阅钢哥之前的博文<a href="https://wangfanggang.com/AWS/AWS-CLI-S3-upload/">《如何利用AWS CLI进行S3的上传下载》</a></p><p>这里假设你已经配置好了AWS CLI，可以通过命令行连接到你的AWS账户了。简单地通过 <code>aws configure</code> 可以验证你的CLI是否安装正常。</p><p>解决思路也很简单:</p><ul><li>找到我的EC2实例ID (instance id)（我的EC2实例上有个标签，值为<code>awsjp</code>）；</li><li>找到对应的IP地址分配的ID（allocation id）；</li><li>通过命令行生成新的弹性IP地址；</li><li>将新IP绑定到EC2实例上；</li><li>释放旧的弹性IP地址；</li></ul><p>以下是我的shell脚本内容，</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># get ec2 instance id by tag</span></span></span><br><span class="line">InstanceId=$(aws ec2 describe-instances --filters "Name=key-name,Values=awsjp" --query "Reservations[*].Instances[*].[InstanceId]" --output text)</span><br><span class="line">OldPublicIpAddress=$(aws ec2 describe-instances --filters "Name=key-name,Values=awsjp" --query "Reservations[*].Instances[*].[PublicIpAddress]" --output text)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># generate an elastic ip address</span></span></span><br><span class="line">NewPublicIpAddress=$(aws ec2 allocate-address --domain vpc --query "PublicIp" --output text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># associate an elastic ip to an existed ec2 instance</span></span></span><br><span class="line">result=$(aws ec2 associate-address --instance-id $InstanceId --public-ip $NewPublicIpAddress)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># release an existed elastic ip address</span></span></span><br><span class="line">aws ec2 release-address --allocation-id $(aws ec2 describe-addresses --filters "Name=public-ip,Values=$OldPublicIpAddress" --query "Addresses[*].[AllocationId]" --output text)</span><br><span class="line"></span><br><span class="line">echo "New Elastic IP: "$NewPublicIpAddress</span><br></pre></td></tr></table></figure><p>简单地运行脚本后，会提示新的弹性IP地址。更新到本机客户端，这样又可以愉快的上网了~</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301175428.png" alt=""></p><p>当然，你也可以选择其他云提供商，比如：Google，微软，都有免费套餐服务和对应的命令行工具，最主要的是要有稳定的海外节点。</p><p>什么？你不知道我在说什么？好吧，其实用 <a href="https://cn.bing.com/" target="_blank" rel="noopener">biying搜索</a> 也不错。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301180328.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="AWS" scheme="https://wangfanggang.com/categories/AWS/"/>
+    
+    
+      <category term="AWS" scheme="https://wangfanggang.com/tags/AWS/"/>
+    
+      <category term="Shell" scheme="https://wangfanggang.com/tags/Shell/"/>
+    
+      <category term="CLI" scheme="https://wangfanggang.com/tags/CLI/"/>
+    
+      <category term="EC2" scheme="https://wangfanggang.com/tags/EC2/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2020.02.29</title>
@@ -552,38 +583,9 @@
     
       <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
     
-      <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
-    
       <category term="CLI" scheme="https://wangfanggang.com/tags/CLI/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2019.10.04</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191004/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191004/</id>
-    <published>2019-10-04T02:09:00.000Z</published>
-    <updated>2019-12-31T01:38:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191004095637.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2019.10.04</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/custom-authentication-and-authorization-using-built-in-apex-access-control-a-how-to" target="_blank" rel="noopener">Custom Authentication and Authorization using built in APEX Access Control - A How To</a> <code>2019.09</code></li><li><a href="https://www.traust.com/user-self-registration-in-oracle-apex-using-the-application-express-accounts-authentication-scheme/" target="_blank" rel="noopener">User Self-Registration In Oracle APEX: Using The Application Express Accounts Authentication Scheme</a> <code>2019.09</code></li><li><a href="http://c2anton.blogspot.com/2019/09/what-info-is-available-from-my-apex.html" target="_blank" rel="noopener">What Info is Available from my APEX Social Sign-In Provider?</a> <code>2019.09</code></li><li><a href="https://www.traust.com/working-with-checkbox-lists-and-lookup-tables-in-oracle-apex/" target="_blank" rel="noopener">Working With Checkbox Lists And Lookup Tables In Oracle APEX</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-3/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 3</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-2/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 2</a> <code>2019.09</code></li><li><a href="https://pretius.com/oracle-apex-lets-integrate-with-jira-part-1/" target="_blank" rel="noopener">Oracle APEX – Let’s integrate with JIRA! Part 1</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/oracle-atp-free-tier-machine-learning-and-apex-integration/" target="_blank" rel="noopener">Oracle ATP Free Tier: Machine Learning and APEX Integration</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/3-reasons-to-use-inline-dialogs/" target="_blank" rel="noopener">3 Reasons to use Inline Dialogs</a> <code>2019.09</code></li><li><a href="http://www.grassroots-oracle.com/2019/09/change-label-dynamically-in-oracle-apex.html" target="_blank" rel="noopener">Change label dynamically in Oracle APEX</a> <code>2019.09</code></li><li><a href="http://www.grassroots-oracle.com/2019/09/apex-192-dark-mode-css-extension.html" target="_blank" rel="noopener">APEX 19.x Dark Mode CSS Extension</a> <code>2019.09</code></li><li><a href="https://explorer.co.uk/a-reference-apex-application-for-apex_ir-get_report/" target="_blank" rel="noopener">A Reference APEX Application for APEX_IR.GET_REPORT</a> <code>2019.09</code></li><li><a href="https://krutten.blogspot.com/2018/09/47-oracle-apex-download-pdf-reports.html" target="_blank" rel="noopener">Oracle APEX download PDF reports</a> <code>2019.09</code></li><li><a href="http://c2anton.blogspot.com/2019/02/oracle-apex-less-social-sign-on-with-ms.html" target="_blank" rel="noopener">Oracle APEX Less Social Sign-On with MS Azure and Office 365</a> <code>2019.02</code></li><li><a href="http://c2anton.blogspot.com/2019/02/automatically-navigate-to-form-from.html" target="_blank" rel="noopener">Automatically Navigate to Form from Interactive Report - Oracle APEX</a> <code>2019.02</code></li></ul><h1 id="Oracle-Cloud"><a href="#Oracle-Cloud" class="headerlink" title="Oracle Cloud"></a>Oracle Cloud</h1><ul><li><a href="http://dgielis.blogspot.com/2019/10/free-oracle-cloud-10-running-sqlcl-and.html" target="_blank" rel="noopener">Free Oracle Cloud: 10. Running SQLcl and Datapump from the Compute Instance (VM) to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-9-setup-object.html" target="_blank" rel="noopener">Free Oracle Cloud: 9. Setup Object Storage and use for File Share and Backups</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-8-setup-apex-office.html" target="_blank" rel="noopener">Free Oracle Cloud: 8. Setup APEX Office Print (AOP) to export to PDF, Excel, Word, Powerpoint, HTML and Text</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-7-setup-web-server-on.html" target="_blank" rel="noopener">Free Oracle Cloud: 7. Setup a web server on the Virtual Machine</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-6-create-vm-instance.html" target="_blank" rel="noopener">Free Oracle Cloud: 6. Create a VM Instance (Compute Cloud)</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-5-setup-apex-in-atp.html" target="_blank" rel="noopener">Free Oracle Cloud: 5. Setup APEX in ATP and create first APEX app</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-4-connecting-with-sql.html" target="_blank" rel="noopener">Free Oracle Cloud: 4. Connecting with SQL Developer Web to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-3-connecting-with-sql.html" target="_blank" rel="noopener">Free Oracle Cloud: 3. Connecting with SQL Developer (Desktop) to ATP</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-2-setup-autonomous.html" target="_blank" rel="noopener">Free Oracle Cloud: 2. Setup Autonomous Transaction Cloud (ATP)</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/free-oracle-cloud-1-sign-up-for-oracle.html" target="_blank" rel="noopener">Free Oracle Cloud: 1. Sign-up for Oracle Cloud Free</a> <code>2019.09</code></li><li><a href="http://dgielis.blogspot.com/2019/09/best-and-cheapest-oracle-apex-hosting.html" target="_blank" rel="noopener">Best and Cheapest Oracle APEX hosting: Free Oracle Cloud</a> <code>2019.09</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20191004095637.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+      <category term="Cloud" scheme="https://wangfanggang.com/tags/Cloud/"/>
     
   </entry>
   
