@@ -417,7 +417,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2020-03-01 18:04:06 / 修改时间：18:04:19" itemprop="dateCreated datePublished" datetime="2020-03-01T18:04:06+08:00">2020-03-01</time>
+              <time title="创建时间：2020-03-01 18:04:06 / 修改时间：18:09:31" itemprop="dateCreated datePublished" datetime="2020-03-01T18:04:06+08:00">2020-03-01</time>
             
 
             
@@ -515,8 +515,7 @@ var _hmt = _hmt || [];
 
       
         
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301180328.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301180328.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平时在AWS EC2上跑了点东西，方便查学习资料（你懂的）。之所以选择AWS是因为它家提供<a href="https://amazonaws-china.com/cn/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc" target="_blank" rel="noopener">1年免费套餐</a>，另外海外节点稳定。起先一切看起来不错，可以实现自由冲浪。</p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301173332.png" alt=""></p>
 <p>但过不了多久就会被 <strong>王<del>府</del>井</strong> 屏蔽，没办法，多启几个容器吧（内存有限，一次启用5个不同的端口，发现不好用时手工切换本机客户端端口呗，5个端口都换完了就重新绑定个弹性IP，也算个解决办法。</p>
@@ -531,24 +530,13 @@ var _hmt = _hmt || [];
 </ul>
 <p>一轮操作下来，一般要十几分钟。有时候半天登录不上，痛苦啊啊啊。。。</p>
 <p>每次重复劳动，对于我这个希望用行动改变世界的码农来说，不是我性格啊。趁今天有空，研究了一下如何用AWS命令行工具（AWS CLI）自动替换EC2实例的弹性IP地址，节省我的时间。</p>
-<h2 id="编写处理脚本"><a href="#编写处理脚本" class="headerlink" title="编写处理脚本"></a>编写处理脚本</h2><p>关于如何配置<a href="https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-macos.html" target="_blank" rel="noopener">AWS CLI</a>，请参阅钢哥之前的博文<a href="https://wangfanggang.com/AWS/AWS-CLI-S3-upload/">《如何利用AWS CLI进行S3的上传下载》</a></p>
-<p>这里假设你已经配置好了AWS CLI，可以通过命令行连接到你的AWS账户了。简单地通过 <code>aws configure</code> 可以验证你的CLI是否安装正常。</p>
-<p>解决思路也很简单:</p>
-<ul>
-<li>找到我的EC2实例ID (instance id)（我的EC2实例上有个标签，值为<code>awsjp</code>）；</li>
-<li>找到对应的IP地址分配的ID（allocation id）；</li>
-<li>通过命令行生成新的弹性IP地址；</li>
-<li>将新IP绑定到EC2实例上；</li>
-<li>释放旧的弹性IP地址；</li>
-</ul>
-<p>以下是我的shell脚本内容，</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># get ec2 instance id by tag</span></span></span><br><span class="line">InstanceId=$(aws ec2 describe-instances --filters "Name=key-name,Values=awsjp" --query "Reservations[*].Instances[*].[InstanceId]" --output text)</span><br><span class="line">OldPublicIpAddress=$(aws ec2 describe-instances --filters "Name=key-name,Values=awsjp" --query "Reservations[*].Instances[*].[PublicIpAddress]" --output text)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># generate an elastic ip address</span></span></span><br><span class="line">NewPublicIpAddress=$(aws ec2 allocate-address --domain vpc --query "PublicIp" --output text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># associate an elastic ip to an existed ec2 instance</span></span></span><br><span class="line">result=$(aws ec2 associate-address --instance-id $InstanceId --public-ip $NewPublicIpAddress)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># release an existed elastic ip address</span></span></span><br><span class="line">aws ec2 release-address --allocation-id $(aws ec2 describe-addresses --filters "Name=public-ip,Values=$OldPublicIpAddress" --query "Addresses[*].[AllocationId]" --output text)</span><br><span class="line"></span><br><span class="line">echo "New Elastic IP: "$NewPublicIpAddress</span><br></pre></td></tr></table></figure>
-<p>简单地运行脚本后，会提示新的弹性IP地址。更新到本机客户端，这样又可以愉快的上网了~</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301175428.png" alt=""></p>
-<p>当然，你也可以选择其他云提供商，比如：Google，微软，都有免费套餐服务和对应的命令行工具，最主要的是要有稳定的海外节点。</p>
-<p>什么？你不知道我在说什么？好吧，其实用 <a href="https://cn.bing.com/" target="_blank" rel="noopener">biying搜索</a> 也不错。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/AWS/aws-cli-renew-ip/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
