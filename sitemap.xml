@@ -4,7 +4,7 @@
   <url>
     <loc>https://wangfanggang.com/Architecture/how-to-quickly-understand-a-system/</loc>
     
-    <lastmod>2020-04-03T03:24:39.000Z</lastmod>
+    <lastmod>2020-04-03T03:32:40.000Z</lastmod>
     
   </url>
   
@@ -387,6 +387,13 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
@@ -401,28 +408,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201806/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
-    
-    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -436,7 +422,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -450,21 +436,28 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180626/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -485,6 +478,13 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180920/</loc>
+    
+    <lastmod>2019-09-03T12:27:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
@@ -492,14 +492,14 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20180824/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
@@ -520,14 +520,14 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Git/git/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/how-to-upgrade-apex-from-5-1-4-to-18-1/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/how-to-upgrade-apex-from-5-1-4-to-18-1/</loc>
+    <loc>https://wangfanggang.com/Git/git/</loc>
     
     <lastmod>2019-09-03T12:27:53.000Z</lastmod>
     
