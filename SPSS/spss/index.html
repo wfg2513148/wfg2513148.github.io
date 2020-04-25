@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="keywords" content="SPSS,Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPSS操作总结">
+<meta property="og:url" content="https://wangfanggang.com/SPSS/spss/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195145.png?x-oss-process=image/format,jpg/quality,q_40">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425110918.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425110947.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111036.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111157.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111248.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111315.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111341.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111533.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111906.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112042.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112157.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112356.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112517.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112627.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113238.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113457.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113546.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113928.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114040.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114059.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114400.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114452.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114757.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114949.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115131.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115339.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115508.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115704.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120210.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120546.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120641.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120845.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121039.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121159.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121240.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121445.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121802.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121649.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121850.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121550.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121910.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121929.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121945.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425185656.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190019.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190048.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190119.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190157.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190245.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190310.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190557.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190616.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190632.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190704.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190717.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190752.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190903.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191312.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191405.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191555.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191650.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191725.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191837.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191947.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192021.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192056.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192200.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192231.png">
+<meta property="og:updated_time" content="2020-04-25T11:52:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SPSS操作总结">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195145.png?x-oss-process=image/format,jpg/quality,q_40">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/SPSS/spss/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>SPSS操作总结 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/SPSS/spss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SPSS操作总结
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-25 19:24:06 / 修改时间：19:52:23" itemprop="dateCreated datePublished" datetime="2020-04-25T19:24:06+08:00">2020-04-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SPSS/" itemprop="url" rel="index"><span itemprop="name">SPSS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/SPSS/spss/" class="leancloud_visitors" data-flag-title="SPSS操作总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195145.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<a id="more"></a>
+<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><h3 id="数据随机分组"><a href="#数据随机分组" class="headerlink" title="数据随机分组"></a>数据随机分组</h3><p>现将数据导入到SPSS。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425110918.png" alt=""></p>
+<p>选择<code>计算变量</code>，生成随机数，用来作为数据分组的依据。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425110947.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111036.png" alt=""></p>
+<p>新的随机数字段</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111157.png" alt=""></p>
+<p>对数据进行分组排序</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111248.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111315.png" alt=""></p>
+<h3 id="训练集与检验集分离"><a href="#训练集与检验集分离" class="headerlink" title="训练集与检验集分离"></a>训练集与检验集分离</h3><p>总数据804条，这里对数据进行随机打散排序后，将其中的前一半（402条）作为训练集，后一半（402条）作为检验集。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111341.png" alt=""></p>
+<p>新增一列计算变量<code>Price_LOG_train</code>（即复制已有的列<code>Price_Log</code>），删除该列中从第403条到最后的数值，这样就产生了检验集数据。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111533.png" alt=""></p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="最优子集回归"><a href="#最优子集回归" class="headerlink" title="最优子集回归"></a>最优子集回归</h3><blockquote>
+<p>做最优子集回归的目的是要确定哪些自变量是对因变量”有用”的，以便在后面做进一步回归时选择这些“最优”的变量。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425111906.png" alt=""></p>
+<p>选型因变量和要评估的自变量</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112042.png" alt=""></p>
+<p>使用<code>最优子集</code>作为建模方法，点击运行按钮。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112157.png" alt=""></p>
+<p>从结果中可以看到刚才挑选的自变量对因变量的重要性。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112356.png" alt=""></p>
+<p>还可以查看各个自变量系数的显著性和重要性。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112517.png" alt=""></p>
+<p>从最终的模型构建结果可以看到，基于当前的准则，哪些自变量属于最优变量（最优子集）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425112627.png" alt=""></p>
+<h3 id="逐步回归"><a href="#逐步回归" class="headerlink" title="逐步回归"></a>逐步回归</h3><p>选择工具栏中的<code>分析 -&gt; 线性回归</code></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113238.png" alt=""></p>
+<p>确定因变量和自变量，选择<code>逐步</code>作为回归方法。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113457.png" alt=""></p>
+<p>设置<code>统计量</code>，可勾选<code>置信区间</code>、<code>D-W</code>、<code>部分相关和偏相关性</code>等选项。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113546.png" alt=""></p>
+<p>运行模型，从模型汇总结果可以看到每一步的R方（一般看最后一个即可）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425113928.png" alt=""></p>
+<p>ANOVA表</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114040.png" alt=""></p>
+<p>相关系数表</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114059.png" alt=""></p>
+<p>在参数配置时如果勾选了<code>保存 -&gt; 预测值(未标准化)</code>选项，在结果中就会自动生成一列<code>预测值</code>，这样就起到了预测的效果。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114400.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114452.png" alt=""></p>
+<h3 id="计算误差"><a href="#计算误差" class="headerlink" title="计算误差"></a>计算误差</h3><p>将预测结果保存成excel文件，以便在excel中方便地完成误差计算。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114757.png" alt=""></p>
+<p>在excel中，我们主要最关心的就是真实值与预测值之间的误差，即<code>Price_LOG</code>与<code>PRE_1</code><br>这两列。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425114949.png" alt=""></p>
+<p>第2-403行数据预测值是我们的模型拟合出来的，删除即可。从第404行开始，是我们真正的预测值。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115131.png" alt=""></p>
+<h4 id="相对误差"><a href="#相对误差" class="headerlink" title="相对误差"></a>相对误差</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115339.png" alt=""></p>
+<h4 id="相对误差平均值（MAPE）"><a href="#相对误差平均值（MAPE）" class="headerlink" title="相对误差平均值（MAPE）"></a>相对误差平均值（MAPE）</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115508.png" alt=""></p>
+<h4 id="均方根误差（RMSE）"><a href="#均方根误差（RMSE）" class="headerlink" title="均方根误差（RMSE）"></a>均方根误差（RMSE）</h4><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425115704.png" alt=""></p>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><h3 id="训练集和测试集数据分离"><a href="#训练集和测试集数据分离" class="headerlink" title="训练集和测试集数据分离"></a>训练集和测试集数据分离</h3><p>总数据700条，将前600条作为训练集，最后100条作为测试集。新建一个计算变量<code>default_model</code>，值从<code>default</code>列中复制。并将最后100条数据删除。</p>
+<h3 id="逻辑回归预测"><a href="#逻辑回归预测" class="headerlink" title="逻辑回归预测"></a>逻辑回归预测</h3><p>选择<code>分析 -&gt; 回归 -&gt; 二元Logistic</code>进行回归预测</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120210.png" alt=""></p>
+<p>确定因变量和自变量</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120546.png" alt=""></p>
+<p>勾选<code>保存</code>选项中的<code>概率</code>和<code>组成员</code>，以便在最终的预测值中体现这两项数值。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120641.png" alt=""></p>
+<p>在<code>选项</code>配置中，勾选<code>H-L拟合度</code>，也可以选择只显示<code>最后一步输出</code>，并设置<code>分类标准值</code>（分类依据的阈值，默认0.5）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425120845.png" alt=""></p>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><p>总共700条数据，其中600条是训练数据，100条预测数据。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121039.png" alt=""></p>
+<p>模型汇总</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121159.png" alt=""></p>
+<p>分类表，可重点关注最后一行，可以看到对于600条拟合数据，预测总体的准确率为81.5</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121240.png" alt=""></p>
+<p>从数据结果中可以看到，新生成了两列数据。<code>PRE_1</code>为预测的概率，<code>PGR_1</code><br>为预测分组。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121445.png" alt=""></p>
+<p>可以对100条预测数据的结果进行分析</p>
+<p>先将前600条数据排除</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121802.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121649.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121850.png" alt=""></p>
+<p>分析 -&gt; 描述统计 -&gt; 交叉表</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121550.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121910.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121929.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425121945.png" alt=""></p>
+<h2 id="季节分解和指数平滑法"><a href="#季节分解和指数平滑法" class="headerlink" title="季节分解和指数平滑法"></a>季节分解和指数平滑法</h2><h3 id="数据准备-1"><a href="#数据准备-1" class="headerlink" title="数据准备"></a>数据准备</h3><p>在SPSS中导入<code>社会消费品零售总额</code>数据文件。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425185656.png" alt=""></p>
+<p>做时间序列第一步，定义日期。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190019.png" alt=""></p>
+<p>根据数据实际情况设置日期参数</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190048.png" alt=""></p>
+<p>生成的数据结构如下</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190119.png" alt=""></p>
+<h3 id="季节性分解"><a href="#季节性分解" class="headerlink" title="季节性分解"></a>季节性分解</h3><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190157.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190245.png" alt=""></p>
+<ul>
+<li><code>ERR_1</code>: 不规则项</li>
+<li><code>SAS_1</code>: 季节性调整项（去掉季节项后的项）</li>
+<li><code>SAF_1</code>: 季节项</li>
+<li><code>STC_1</code>: 趋势 + 周期</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190310.png" alt=""></p>
+<p>要想画图，还需要增加一个x轴。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190557.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190616.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190632.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190704.png" alt=""></p>
+<p>选择<code>趋势 + 周期</code>（第4项）生成图形</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190717.png" alt=""></p>
+<p>选择<code>季节项</code>（第3项）生成图形</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190752.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425190903.png" alt=""></p>
+<h3 id="指数平滑法"><a href="#指数平滑法" class="headerlink" title="指数平滑法"></a>指数平滑法</h3><p>用指数平滑法进行预测</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191312.png" alt=""></p>
+<p>这里选择<code>指数平滑法</code>作为预测方法。如果选择<code>专家建模器</code>，SPSS会自动从指数平滑法和ARIMA里选择最优的。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191405.png" alt=""></p>
+<p>根据需要选择模型类型</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191555.png" alt=""></p>
+<p>勾选<code>拟合值</code>选项</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191650.png" alt=""></p>
+<p>勾选<code>预测值</code>选项</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191725.png" alt=""></p>
+<p>最关键的是<code>选项</code>参数，输入要预测的时间。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191837.png" alt=""></p>
+<p>结果如图所示</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425191947.png" alt=""></p>
+<p>预测值</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192021.png" alt=""></p>
+<p>可以调整模型类型，如：选择<code>Winters加法模型</code></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192056.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192200.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425192231.png" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/SPSS/spss/">SPSS操作总结</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2020年04月25日 - 19:04</p>
+  <p><span>最后更新:</span>2020年04月25日 - 19:04</p>
+  <p><span>原始链接:</span><a href="/SPSS/spss/" title="SPSS操作总结">https://wangfanggang.com/SPSS/spss/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/SPSS/spss/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SPSS/" rel="tag"><i class="fa fa-tag"></i> SPSS</a>
+          
+            <a href="/tags/Analysis/" rel="tag"><i class="fa fa-tag"></i> Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Architecture/how-to-quickly-understand-a-system/" rel="next" title="如何快速熟悉一个系统？">
+                <i class="fa fa-chevron-left"></i> 如何快速熟悉一个系统？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">59</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据准备"><span class="nav-number">1.</span> <span class="nav-text">数据准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据随机分组"><span class="nav-number">1.1.</span> <span class="nav-text">数据随机分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练集与检验集分离"><span class="nav-number">1.2.</span> <span class="nav-text">训练集与检验集分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">2.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优子集回归"><span class="nav-number">2.1.</span> <span class="nav-text">最优子集回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐步回归"><span class="nav-number">2.2.</span> <span class="nav-text">逐步回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算误差"><span class="nav-number">2.3.</span> <span class="nav-text">计算误差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相对误差"><span class="nav-number">2.3.1.</span> <span class="nav-text">相对误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对误差平均值（MAPE）"><span class="nav-number">2.3.2.</span> <span class="nav-text">相对误差平均值（MAPE）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#均方根误差（RMSE）"><span class="nav-number">2.3.3.</span> <span class="nav-text">均方根误差（RMSE）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归"><span class="nav-number">3.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#训练集和测试集数据分离"><span class="nav-number">3.1.</span> <span class="nav-text">训练集和测试集数据分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归预测"><span class="nav-number">3.2.</span> <span class="nav-text">逻辑回归预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果分析"><span class="nav-number">3.3.</span> <span class="nav-text">结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#季节分解和指数平滑法"><span class="nav-number">4.</span> <span class="nav-text">季节分解和指数平滑法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据准备-1"><span class="nav-number">4.1.</span> <span class="nav-text">数据准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#季节性分解"><span class="nav-number">4.2.</span> <span class="nav-text">季节性分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数平滑法"><span class="nav-number">4.3.</span> <span class="nav-text">指数平滑法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
