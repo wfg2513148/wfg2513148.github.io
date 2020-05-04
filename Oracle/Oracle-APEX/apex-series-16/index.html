@@ -179,7 +179,18 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204031.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204042.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204142.png">
-<meta property="og:updated_time" content="2020-05-04T15:00:15.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204330.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204340.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204827.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205036.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205113.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205432.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205842.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205931.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210036.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210110.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210212.png">
+<meta property="og:updated_time" content="2020-05-04T15:14:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle APEX 系列文章16：AOP - PDF报表打印新选择">
 <meta name="twitter:description" content="英文原文链接：Configuring AOP as Print Server in Oracle APEX 20.1 在 Oracle APEX 20.1 中将 AOP 配置为打印服务器Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。  在这篇文章中，将介绍这种集成的含义以及如何在 APEX 20.">
@@ -454,7 +465,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2020-05-04 21:46:10 / 修改时间：23:00:15" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:10+08:00">2020-05-04</time>
+              <time title="创建时间：2020-05-04 21:46:10 / 修改时间：23:14:30" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:10+08:00">2020-05-04</time>
             
 
             
@@ -524,7 +535,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.6k</span>
+                <span title="本文字数">6.4k</span>
               
 
               
@@ -538,7 +549,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">9 分钟</span>
+                <span title="阅读时长">11 分钟</span>
               
             </div>
           
@@ -688,6 +699,42 @@ var _hmt = _hmt || [];
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204042.png" alt=""></p>
 <p>保存页面并运行它，您将看到刚刚添加的打印按钮。</p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204142.png" alt=""></p>
+<p>点击<code>打印</code>按钮，将打开一个Word默认模板，您可以基于该模板进行自定义设置。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204330.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204340.png" alt=""></p>
+<p>AOP 要求您使用特定的标签创建模板，这个默认模板提供了一些常见的示例，同时还从您的互动报表区域提取了一些数据，以便您可以方便地对模板进行定制。</p>
+<p>您可以通过特殊的标签来开始/结束一个（数据）循环。</p>
+<p>您可以像使用 Word 一样在模板中创建诸如表格、文件头/尾、图片以及格式，您在模板上做的任何设置都将显示在您最终的报表输出中。</p>
+<p>以下是我对模板做的一些修改，并将模板保存为 <code>AOP_Template.docx</code> 。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504204827.png" alt=""></p>
+<p>将修改后的模板上传到静态资源管理中（<code>Shared Components</code> -&gt; <code>Static Application Files</code>)。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205036.png" alt=""></p>
+<p>点击<code>上传</code>按钮完成模板上传。</p>
+<p>返回页面编辑器，配置刚才新增的动态行为。</p>
+<ul>
+<li>Template Type: <code>Static Application Files</code></li>
+<li>Template Source: <code>AOP_Template.docx</code></li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205113.png" alt=""></p>
+<p>再次运行页面并点击打印按钮，您将看到修改后的结果。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205432.png" alt=""></p>
+<p>祝贺！！您完成了您的第一个 AOP 报表！</p>
+<p>但如果您只是希望原模原样地打印一个互动表格的话，其实有更简单的做法，您只需要在您的模板中使用 <code>{&amp;interactive}</code> 即可。</p>
+<p>让我们进一步修改这个标签，来展示 AOP 的魔法吧。</p>
+<p>继续编辑您的 Word 模板，插入一个空白页，以及一个 <code>{&amp;interactive}</code> 标签，保存文件名为 <code>AOP_Template.docx</code>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205842.png" alt=""></p>
+<p>上传模板文件并查看页面打印结果。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504205931.png" alt=""></p>
+<p>让我们在页面上设置一下互动报表。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210036.png" alt=""></p>
+<p>再次打印报表并查看结果。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210110.png" alt=""></p>
+<p>修改报表输出格式：</p>
+<ul>
+<li>Output Type：<code>PDF</code></li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504210212.png" alt=""></p>
+<p>您可以安装 <code>AOP Sample Application</code> 以便查看更多的 AOP 例子。</p>
 
       
     </div>
