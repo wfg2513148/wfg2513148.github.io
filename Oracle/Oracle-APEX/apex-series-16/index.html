@@ -151,7 +151,22 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162358.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162412.png">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162437.png">
-<meta property="og:updated_time" content="2020-05-04T14:26:29.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504190747.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504190809.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191000.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191037.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191525.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191846.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191959.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504192048.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504192331.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504193548.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504194433.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504194937.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195435.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195534.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195749.png">
+<meta property="og:updated_time" content="2020-05-04T14:30:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle APEX 系列文章16：AOP - PDF报表打印新选择">
 <meta name="twitter:description" content="英文原文链接：Configuring AOP as Print Server in Oracle APEX 20.1 在 Oracle APEX 20.1 中将 AOP 配置为打印服务器Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。  在这篇文章中，将介绍这种集成的含义以及如何在 APEX 20.">
@@ -426,7 +441,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2020-05-04 21:46:10 / 修改时间：22:26:29" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:10+08:00">2020-05-04</time>
+              <time title="创建时间：2020-05-04 21:46:10 / 修改时间：22:30:29" itemprop="dateCreated datePublished" datetime="2020-05-04T21:46:10+08:00">2020-05-04</time>
             
 
             
@@ -496,7 +511,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">4.9k</span>
               
 
               
@@ -510,7 +525,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -560,6 +575,72 @@ var _hmt = _hmt || [];
 <p>如果需要此功能，则需要使用 <code>AOP插件</code> 或 <code>AOP PL/SQL API</code>，就像在 APEX 20.1 之前一样,您可以从 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">www.apexofficeprint.com</a> 网站下载该文件。</p>
 <p>强烈建议您安装<code>AOP Sample App</code>，它展示了 AOP 在过去5年中获得的所有功能。在每个页面上，您都可以查看示例的构建方式以及使用的模板。</p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162437.png" alt=""></p>
+<h3 id="第1步：下载-AOP-安装包"><a href="#第1步：下载-AOP-安装包" class="headerlink" title="第1步：下载 AOP 安装包"></a>第1步：下载 AOP 安装包</h3><p>访问 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">AOP 官网</a>，点击<code>Downloads</code>链接，根据实际情况下载安装包。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504190747.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504190809.png" alt=""></p>
+<p>下载并解压后，目录结构如下：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191000.png" alt=""></p>
+<h3 id="第2步：安装-AOP"><a href="#第2步：安装-AOP" class="headerlink" title="第2步：安装 AOP"></a>第2步：安装 AOP</h3><p>安装 AOP PL/SQL API：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191037.png" alt=""></p>
+<p>登录到您希望使用 AOP 的 APEX 工作空间（Workspace），待安装的组件如下：</p>
+<ul>
+<li>AOP PL/SQL API</li>
+<li>AOP 插件（3个）</li>
+<li>AOP 示例应用</li>
+</ul>
+<p>这里假设您已安装了 APEX 自带的示例应用 <code>Sample Database packaged application</code>，希望在这个应用里使用 AOP 的打印功能。</p>
+<p>导航到 <code>SQL Workshop</code> -&gt; <code>SQL Scripts</code> -&gt; <code>Upload</code>，选择 <code>aop_db_pkg.sql</code> 进行上传（您可以在<code>db</code>目录下找到它）.</p>
+<p><code>aop_db_pkg.sql</code> 文件会安装 AOP 所需的数据库表、PL/SQL包、同义词等。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191525.png" alt=""></p>
+<p>别忘了点击<code>运行</code>按钮以便执行刚刚上传的sql文件。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191846.png" alt=""></p>
+<p>确保选择了正确的数据库schema。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504191959.png" alt=""></p>
+<p>运行完毕后，效果如下图所示：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504192048.png" alt=""></p>
+<p>如果您在创建同义词时遇到了 <code>ORA-01031 insufficient privileges</code> 错误，联系DBA让他授予您的数据库schema相应权限（CREATE SYNONYM）。</p>
+<p>安装 AOP 插件：</p>
+<p>AOP 包含了3个插件，您可以选择只用 AOP 的 PL/SQL API 来与 AOP 进行交互，但因为您需要与 APEX 配合使用，所以您还会用到 <code>动态行为插件</code>、<code>过程处理插件</code>和<code>内容转换插件</code>，这些插件可以处理所有的 PL/SQL 调用，您只需告诉 AOP 到哪里找到合适的模板和数据即可。</p>
+<ul>
+<li><code>AOP 动态行为插件</code>：这个插件应该用得是最多的，也是最简单和最稳定的。</li>
+<li><code>AOP 过程处理插件</code>：这个插件仅用在特定的场景，比如：在页面加载前用模式窗口显示 PDF 内容，或者您需要在调用 AOP 打印功能之前提交并保存数据。</li>
+<li><code>AOP 内容转换插件</code>：这个插件被用来将任意类型的文件转换成 PDF 格式，而无需依赖模板，这也是它唯一的用处。</li>
+</ul>
+<p>导航到 <code>Shared Components</code> -&gt; <code>Plug-ins</code>，点击 <code>Import</code> 按钮.</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504192331.png" alt=""></p>
+<p>选择 <code>dynamic_action_plugin_be_apexrnd_aop_da.sql</code> 文件（位于安装包的<code>apex</code>目录下），<code>文件类型</code> 选项选择 <code>Plug-in</code>，<code>字符集</code> 选择 <code>Unicode UTF-8</code>，点击若干次 <code>下一步</code> 按钮完成插件导入。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504193548.png" alt=""></p>
+<p>一旦安装完毕，您将来到 <code>Component Settings</code> 页面，以便对当前插件做进一步设置。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504194433.png" alt=""></p>
+<p>重复上述步骤，完成另外两个插件（<code>process_type_plugin_be_apexrnd_aop.sql</code>，<code>dynamic_action_plugin_be_apexrnd_aop_convert_da.sql</code>）的导入。</p>
+<h3 id="第3步：AOP-插件设置"><a href="#第3步：AOP-插件设置" class="headerlink" title="第3步：AOP 插件设置"></a>第3步：AOP 插件设置</h3><p>首先配置 <code>APEX Office Print (AOP) - DA [Plug-in]</code> 插件。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504194937.png" alt=""></p>
+<p>这里唯一需要修改的就是 <code>API Key</code>。如果您采用本地化部署（On Premises），则无需设置 API Key。您可以登陆 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">AOP 官网</a> 后，在 <code>AOP Dashboard</code> 中找到属于您的 <code>API Key</code>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195435.png" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195534.png" alt=""></p>
+<p>对于另外两个插件，同样设置 <code>API Key</code>。</p>
+<p>好了，如果您采用 AOP Free Cloud 的方式使用 AOP，以上设置就足够了。</p>
+<p>以下是更多有关插件的设置：</p>
+<ul>
+<li><code>AOP URL</code>: 这个 url 指向 AOP 服务器。如果您选择使用 AOP Cloud，保留默认值（<a href="http://api.apexofficeprint.com/）即可。如果您选择了本地化部署（On-Premises），请确保提供了正确的您的服务器地址。当使用" target="_blank" rel="noopener">http://api.apexofficeprint.com/）即可。如果您选择了本地化部署（On-Premises），请确保提供了正确的您的服务器地址。当使用</a> HTTPS 时，请确保您已经往数据库wallet中添加了必要的证书。有关这部分介绍，可以查看我们官网的相关文档。</li>
+<li><p><code>AOP Failover URL</code> (仅适用于本地化部署): 可选配置，可以指向您的备用 AOP 服务器，一旦主实例出现故障，备用服务器将提供服务。如果您选择的是 AOP Cloud 的方式，无需设置此项。</p>
+</li>
+<li><p><code>AOP Mode</code> (仅适用于AOP Cloud): AOP 可以运行在生产模式（<code>Production Mode</code>），生产模式下，打印报表时会相应地扣减您账户中的信用点；您也可以使用开发模式（<code>Development Mode</code>），开发模式下不会扣减任何信用点，唯一的差别是打印的报告中会带有水印。您可以利用一个名为<code>AOP_MODE</code>的内置 item 动态设置 AOP 的运行模式。</p>
+</li>
+<li><p><code>Debug</code>: 启用这一选项将强制 AOP 捕获发送到 AOP 服务器端的 JSON 内容，这一选项对您分析问题时将会特别有用。</p>
+<ul>
+<li>当该选项被设置为 <code>Local</code> 时：您的报表将下载为 JSON 格式，这将让您有机会分析具体问题所在。你也可以将问题描述及 JSON 文件发送给 <a href="mailto:support@apexofficeprint.com" target="_blank" rel="noopener">support@apexofficeprint.com</a> 以便获得进一步的支持。</li>
+<li>当该选项被设置为 <code>Remote</code> 时：将适用于 AOP Cloud 方式。您可以从 AOP Dashboard 中找到对应的 JSON 文件，进而进行进一步分析。</li>
+<li>您可以使用一个名为 <code>AOP_DEBUG</code> 的内置 item 来动态设置 Debug 模式。</li>
+</ul>
+</li>
+<li><p><code>Converter</code>: 为了能够将文档转换成 PDF 格式，AOP 需要使用外部转换器（Converter），AOP 使用 <code>LibreOffice</code> 作为默认转换器。如果您选择本地化部署，可以添加其他第三方转换器，比如：<code>AbiWord</code>, <code>Aspose</code>, 或者其他转换器。</p>
+</li>
+<li><code>Use settings defined in package</code>: 您可以编写 PL/SQL 包来设置 AOP 插件，这也让您可以很方便地在多个环境（开发、测试、生产）中安装部署 AOP 插件。</li>
+<li><code>Log Package</code>: AOP 内置支持日志功能。为了启用日志，您需要执行 <code>ALTER PACKAGE aop_api19_pkg COMPILE PLSQL_CCFLAGS = &#39;logger_on:TRUE&#39;;</code>。一旦编译成功，您可以通过指定全局变量 <code>g_logger_enabled</code> 来启用/关闭 debug 信息。您可以指定您自己的 debug 存储过程，所有的日志请求将被发送给 <code>aop_api_pkg.plsql_call_to_aop</code>。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504195749.png" alt=""></p>
+<p>AOP做的第一件事就是调用 <code>start_request</code>，最后一件事是调用 <code>stop_request</code>. 您可以在<code>AOP Sample APP</code>中找到更多关于 <code>aop_log_pkg</code> 的例子。</p>
 
       
     </div>
@@ -980,7 +1061,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中将-AOP-配置为打印服务器"><span class="nav-number">1.</span> <span class="nav-text">在 Oracle APEX 20.1 中将 AOP 配置为打印服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-中的后台打印-报表导出"><span class="nav-number">2.</span> <span class="nav-text">Oracle APEX 中的后台打印/报表导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-APEX-Office-Print（AOP）"><span class="nav-number">3.</span> <span class="nav-text">关于 APEX Office Print（AOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中配置-AOP"><span class="nav-number">4.</span> <span class="nav-text">在 Oracle APEX 20.1 中配置 AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中使用-AOP"><span class="nav-number">5.</span> <span class="nav-text">在 Oracle APEX 20.1 中使用 AOP</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中将-AOP-配置为打印服务器"><span class="nav-number">1.</span> <span class="nav-text">在 Oracle APEX 20.1 中将 AOP 配置为打印服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-中的后台打印-报表导出"><span class="nav-number">2.</span> <span class="nav-text">Oracle APEX 中的后台打印/报表导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-APEX-Office-Print（AOP）"><span class="nav-number">3.</span> <span class="nav-text">关于 APEX Office Print（AOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中配置-AOP"><span class="nav-number">4.</span> <span class="nav-text">在 Oracle APEX 20.1 中配置 AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中使用-AOP"><span class="nav-number">5.</span> <span class="nav-text">在 Oracle APEX 20.1 中使用 AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1步：下载-AOP-安装包"><span class="nav-number">5.1.</span> <span class="nav-text">第1步：下载 AOP 安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2步：安装-AOP"><span class="nav-number">5.2.</span> <span class="nav-text">第2步：安装 AOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3步：AOP-插件设置"><span class="nav-number">5.3.</span> <span class="nav-text">第3步：AOP 插件设置</span></a></li></ol></li></ol></div>
             
 
           </div>
