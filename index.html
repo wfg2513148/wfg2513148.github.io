@@ -371,236 +371,6 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle-APEX/apex-series-16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle-APEX/apex-series-16/" itemprop="url">
-                  Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-05-03 16:09:00 / 修改时间：17:24:33" itemprop="dateCreated datePublished" datetime="2020-05-03T16:09:00+08:00">2020-05-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle-APEX/apex-series-16/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本文是对博客 <a href="https://dgielis.blogspot.com/2020/05/configuring-aop-as-print-server-in.html?m=1" target="_blank" rel="noopener">“Configuring AOP as Print Server in Oracle APEX 20.1”</a> 的译文。</p>
-<h2 id="在Oracle-APEX-20-1中将AOP配置为打印服务器"><a href="#在Oracle-APEX-20-1中将AOP配置为打印服务器" class="headerlink" title="在Oracle APEX 20.1中将AOP配置为打印服务器"></a>在Oracle APEX 20.1中将AOP配置为打印服务器</h2><p>Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503161505.png" alt=""></p>
-<p>在这篇文章中，将介绍这种集成的含义以及如何在 APEX 20.1 中设置和使用 AOP。</p>
-<h2 id="Oracle-APEX-中的后台打印-报表导出"><a href="#Oracle-APEX-中的后台打印-报表导出" class="headerlink" title="Oracle APEX 中的后台打印/报表导出"></a>Oracle APEX 中的后台打印/报表导出</h2><p>Oracle APEX 3.0 引入了将报告区域导出为PDF的功能 - 本质上是打印报告。它是声明式定义的，并且可用于所有报告区域。您可以查看和打印带有在每个页面上重复的页面标题和页脚，以及与各种页面大小正确匹配的内容的报告。为此，可使用外部定义的报告服务器将报告数据转换为PDF格式。在早期，此外部报表服务器是 <code>Oracle BI Publisher</code> 或外部 <code>Apache FOP</code> 服务器。后来，当 <code>ORDS</code> 出现时，FOP服务器作为选件包括在内。</p>
-<p>我相信外部 <code>Apache FOP</code> 并没有被广泛使用，因为它太复杂，无法简单地设置。有能力支付（巨大的）许可证或已经在公司中拥有许可证的人使用 <code>Oracle BI Publisher</code>。以我的经验，ORDS是使用最多的打印服务器。 但是，在ORDS 18.4发行说明中，宣布将弃用内置FOP服务器，而在<a href="http://dgielis.blogspot.com/2019/12/important-update-of-ords-release-194.html" target="_blank" rel="noopener">ORDS 19.4</a>中，FOP更是被完全放弃。</p>
-<p>这意味着人们需要使用旧版本的ORDS或使用其他版本…</p>
-<h2 id="关于APEX-Office-Print（AOP）"><a href="#关于APEX-Office-Print（AOP）" class="headerlink" title="关于APEX Office Print（AOP）"></a>关于APEX Office Print（AOP）</h2><p><code>APEX Office Print（AOP）</code>已有5年多历史了，它使从 Oracle APEX 导出和打印报告变得更加容易且成本可控。根据您在Word，Excel，Powerpoint，HTML和Text中创建的模板，AOP会将来自APEX区域的数据，数据库中的数据甚至外部数据与已定义输出格式的模板（例如PDF或任何模板格式）合并。在过去的几年中，AOP广受欢迎，并已成为 Oracle APEX 项目的首选打印引擎。</p>
-<p>去年，Oracle宣布他们将直接在 Oracle APEX 中集成 APEX Office Print (AOP) ，而现在已在 APEX 20.1 版本中正式实现。在这一次版本迭代中，AOP 替代了 FOP 服务器，在将来的 Oracle APEX 版本中，则计划支持更多的 AOP 特性。</p>
-<h2 id="在-Oracle-APEX-20-1-中配置-AOP"><a href="#在-Oracle-APEX-20-1-中配置-AOP" class="headerlink" title="在 Oracle APEX 20.1 中配置 AOP"></a>在 Oracle APEX 20.1 中配置 AOP</h2><p>要将 AOP 配置为打印服务器，请登录到 <code>INTERNAL</code> 工作区并转到 <code>Instance Settings</code>：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162220.png" alt=""></p>
-<p>单击 <code>Report Printing</code>，然后选择 <code>APEX Office Print</code> 作为打印服务器：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162303.png" alt=""></p>
-<p>填写运行 AOP Server 的主机地址。AOP支持运行在AOP云中，或者本地部署AOP Server。您可以在 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">www.apexofficeprint.com</a> 上免费订阅AOP打印服务，也可以下载后进行本地部署。</p>
-<p>在APEX 20.1中，只能在实例级别上配置打印服务器。在未来的APEX 20.2版本中，将能够在工作空间（Workspace）级别上覆盖这些设置。这意味着您将有能力为不同的项目使用不同的AOP服务器或云帐户，增加更多的灵活性。</p>
-<h2 id="在-Oracle-APEX-20-1-中使用-AOP"><a href="#在-Oracle-APEX-20-1-中使用-AOP" class="headerlink" title="在 Oracle APEX 20.1 中使用 AOP"></a>在 Oracle APEX 20.1 中使用 AOP</h2><p>要查看实际运行中的AOP集成，可以转到任何经典报表（Classic Report）或交互式报表（Interactive Report），然后单击<code>“打印”</code>或<code>“下载到PDF”</code>链接。</p>
-<p>经典报表（Classic Report）中的<code>“打印”</code>链接：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162322.png" alt=""></p>
-<p>输出将如下所示：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162340.png" alt=""></p>
-<p>您可以在<code>“区域”</code>的<code>“打印属性”</code>中自定义输出：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162358.png" alt=""></p>
-<p>单击交互式报告（Interactive Report）中的<code>“操作”&gt;“下载”&gt;“PDF”</code>时，您具有相同的功能</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162412.png" alt=""></p>
-<p>这是 AOP 在 Oracle APEX 中的最基本功能，它模仿了提供的 ORDS、BI Publisher 或外部FOP服务器。</p>
-<p>实际上，APEX Office Print 可以做得更多。AOP 可以完全按照您在屏幕上看到的方式打印一个或多个 Interactive Reports，包括突出显示、分段显示、过滤器等。它还可以将 IR、IG 和 Classic Reports 结合在一起，甚至在您提供的自定义模板中将图表全部组合在一起。</p>
-<p>如果需要此功能，则需要使用 <code>AOP插件</code> 或 <code>AOP PL/SQL API</code>，就像在 APEX 20.1 之前一样,您可以从 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">www.apexofficeprint.com</a> 网站下载该文件。</p>
-<p>强烈建议您安装<code>AOP Sample App</code>，它展示了 AOP 在过去5年中获得的所有功能。在每个页面上，您都可以查看示例的构建方式以及使用的模板。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162437.png" alt=""></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200430/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2592,6 +2362,224 @@ var _hmt = _hmt || [];
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/AWS whitepaper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/AWS/AWS whitepaper/" itemprop="url">
+                  Web Application Hosting in the AWS Cloud - AWS Whitepaper
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-02 13:10:34" itemprop="dateCreated datePublished" datetime="2020-02-02T13:10:34+08:00">2020-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-03 20:59:51" itemprop="dateModified" datetime="2020-02-03T20:59:51+08:00">2020-02-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/AWS/AWS whitepaper/" class="leancloud_visitors" data-flag-title="Web Application Hosting in the AWS Cloud - AWS Whitepaper">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">32k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">53 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200202131743.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/AWS/AWS whitepaper/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2643,7 +2631,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2696,9 +2684,7 @@ var _hmt = _hmt || [];
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2829,11 +2815,7 @@ var _hmt = _hmt || [];
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
