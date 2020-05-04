@@ -144,19 +144,19 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="引言对于从事 Oracle 技术开发的同学，肯定都要连接 Oracle 数据库，而 Oracle 自带的 sqlplus 命令行工具功能太弱了，不支持命令联想、数据显示不美观，还要安装什么 Oracle Client，导致很多同学不得不用其他工具（PL/SQL Developer、Oracle SQL Developer）来连接数据库。但 PL/SQL Developer 仅支持 Windows">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmnjhiw2yj30ke05adgl.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmgvhaet3j30uo0ak75e.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmgxn7r7tj30u80f0415.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmhadn15nj30pm06wjrz.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmhj3he1pj30z40qk78p.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmhm8z0uej30sc0nuae4.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frml39kql1j305b01zdfv.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frml59hzt9j30bi04waa6.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmlc6dx8nj30y80hq41w.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmleo735bj30sw0ge0vz.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmlg17gd5j30o40h6q6i.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmn9egz4uj31540nojvq.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frmne5qk49j313e0xuwjy.jpg">
-<meta property="og:updated_time" content="2019-09-03T12:23:55.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114221.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114249.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114306.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114320.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114336.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114348.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114359.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114408.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114426.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114432.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114442.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114452.png">
+<meta property="og:updated_time" content="2020-05-04T03:44:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle SQLcl - 替代 sqlplus 的利器">
 <meta name="twitter:description" content="引言对于从事 Oracle 技术开发的同学，肯定都要连接 Oracle 数据库，而 Oracle 自带的 sqlplus 命令行工具功能太弱了，不支持命令联想、数据显示不美观，还要安装什么 Oracle Client，导致很多同学不得不用其他工具（PL/SQL Developer、Oracle SQL Developer）来连接数据库。但 PL/SQL Developer 仅支持 Windows">
@@ -448,7 +448,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-03 20:23:55" itemprop="dateModified" datetime="2019-09-03T20:23:55+08:00">2019-09-03</time>
+                <time title="修改时间：2020-05-04 11:44:57" itemprop="dateModified" datetime="2020-05-04T11:44:57+08:00">2020-05-04</time>
               
             
           </span>
@@ -554,36 +554,41 @@ var _hmt = _hmt || [];
 <p>想要立刻生效，别忘了<code>source ~/.bash_profile</code>。</p>
 <h2 id="SQLcl-实战"><a href="#SQLcl-实战" class="headerlink" title="SQLcl 实战"></a>SQLcl 实战</h2><p>让我们来看看 SQLcl 到底跟 sqlplus 有什么区别？</p>
 <h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql sys/welcome@localhost:1521:orcl as sysdba</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgvhaet3j30uo0ak75e.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114221.png" alt=""></p>
 <h3 id="清除屏幕"><a href="#清除屏幕" class="headerlink" title="清除屏幕"></a>清除屏幕</h3><p>使用<code>clear screen</code>命令，整个世界清静了。</p>
 <blockquote>
 <p>钢哥注：命令不需要曲敲全，<code>SQLcl</code>会自动智能提示/补全的，这一点比 sqlplus 好太多了。</p>
 </blockquote>
-<h3 id="help-帮助命令"><a href="#help-帮助命令" class="headerlink" title="help - 帮助命令"></a>help - 帮助命令</h3><p>输入<code>help</code>命令可以展示相关帮助主题。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmgxn7r7tj30u80f0415.jpg" alt=""></p>
+<h3 id="help-帮助命令"><a href="#help-帮助命令" class="headerlink" title="help - 帮助命令"></a>help - 帮助命令</h3><p>输入<code>help</code>命令可以展示相关帮助主题。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114249.png" alt=""></p>
 <h3 id="show-pdbs-显示命令"><a href="#show-pdbs-显示命令" class="headerlink" title="show pdbs - 显示命令"></a>show pdbs - 显示命令</h3><p>由于我用的是 Oracle Database 12c，可以用如下命令显示目前数据库中已有的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> pdbs</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhadn15nj30pm06wjrz.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114306.png" alt=""></p>
 <h3 id="alter-session-切换会话"><a href="#alter-session-切换会话" class="headerlink" title="alter session - 切换会话"></a>alter session - 切换会话</h3><p>切换当前 session 到特定的 Plugin DB：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">session</span> <span class="keyword">set</span> <span class="keyword">container</span>=orclpdb1;</span><br></pre></td></tr></table></figure></p>
 <h3 id="执行-sql-脚本"><a href="#执行-sql-脚本" class="headerlink" title="执行 sql 脚本"></a>执行 sql 脚本</h3><p>执行 sql 脚本，跟 sqlplus 一样用 <code>@</code> 即可，运行以下命令，创建<code>emp</code>和<code>dept</code>表及插入演示数据。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@https://raw.githubusercontent.com/OraOpenSource/OXAR/master/oracle/emp_dept.sql</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhj3he1pj30z40qk78p.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114320.png" alt=""></p>
 <h3 id="ddl-生成对象定义语句"><a href="#ddl-生成对象定义语句" class="headerlink" title="ddl - 生成对象定义语句"></a>ddl - 生成对象定义语句</h3><p>假如我们想快速生成<code>emp</code>这张表的定义语句，可以用如下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddl emp</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmhm8z0uej30sc0nuae4.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114336.png" alt=""></p>
 <h3 id="键盘左键-编辑已输入的命令"><a href="#键盘左键-编辑已输入的命令" class="headerlink" title="键盘左键 - 编辑已输入的命令"></a>键盘左键 - 编辑已输入的命令</h3><p>使用过 sqlplus 的同学都知道，如果一个 sql 命令很长，需要分多行输入，这都没问题。但有时候再输入了很多行以后，突然想改一下之前输入的命令，这就尴尬了，你会发现根本没办法修改，只能大侠重新来过，WTF。。。</p>
 <p>有了<code>SQLcl</code>就不存在这个问题了，它允许你用<strong>键盘左键</strong>进入快速编辑模式，然后就可以愉快地修改已经输入的命令了。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml39kql1j305b01zdfv.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114348.png" alt=""></p>
 <h3 id="键盘-tab-键-智能提示-补全"><a href="#键盘-tab-键-智能提示-补全" class="headerlink" title="键盘 tab 键 - 智能提示/补全"></a>键盘 tab 键 - 智能提示/补全</h3><p>如果在快速编辑模式下，输入表字段名的前几个字母，<code>SQLcl</code>会自动提示/补全剩余的字符，比<code>sqlplus</code>人性化多了。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frml59hzt9j30bi04waa6.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114359.png" alt=""></p>
 <h3 id="键盘上下键-快速切换已输入的命令"><a href="#键盘上下键-快速切换已输入的命令" class="headerlink" title="键盘上下键 - 快速切换已输入的命令"></a>键盘上下键 - 快速切换已输入的命令</h3><p>这个没什么好说的。</p>
-<h3 id="sqlformat-格式化-SQL-执行结果"><a href="#sqlformat-格式化-SQL-执行结果" class="headerlink" title="sqlformat - 格式化 SQL 执行结果"></a>sqlformat - 格式化 SQL 执行结果</h3><p>默认样式下执行<code>select * from emp</code>，显示结果如下图所示：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlc6dx8nj30y80hq41w.jpg" alt=""></p>
+<h3 id="sqlformat-格式化-SQL-执行结果"><a href="#sqlformat-格式化-SQL-执行结果" class="headerlink" title="sqlformat - 格式化 SQL 执行结果"></a>sqlformat - 格式化 SQL 执行结果</h3><p>默认样式下执行<code>select * from emp</code>，显示结果如下图所示：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114408.png" alt=""></p>
 <p>执行<code>show sqlformat</code>可以看到当前格式化样式为：<code>default</code></p>
 <p>set sqlformat ansiconsole<br>让我们修改下显示结果的样式：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat ansiconsole</span><br></pre></td></tr></table></figure></p>
-<p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmleo735bj30sw0ge0vz.jpg" alt=""></p>
+<p>再次执行<code>select * from emp</code>，格式如下：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114426.png" alt=""></p>
 <p>set sqlformat csv - 输出成CSV格式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat csv</span><br></pre></td></tr></table></figure></p>
-<p>再次执行<code>select * from emp</code>，格式如下：<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmlg17gd5j30o40h6q6i.jpg" alt=""></p>
+<p>再次执行<code>select * from emp</code>，格式如下：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114432.png" alt=""></p>
 <p>set sqlformat - 恢复默认样式<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> sqlformat</span><br></pre></td></tr></table></figure></p>
 <p>set head off - 清除 SQL 输出结果头信息行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">head</span> <span class="keyword">off</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="history-访问历史记录"><a href="#history-访问历史记录" class="headerlink" title="history - 访问历史记录"></a>history - 访问历史记录</h3><p>可以用<code>history</code>命令查看已经输入过的历史命令。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmn9egz4uj31540nojvq.jpg" alt=""></p>
+<h3 id="history-访问历史记录"><a href="#history-访问历史记录" class="headerlink" title="history - 访问历史记录"></a>history - 访问历史记录</h3><p>可以用<code>history</code>命令查看已经输入过的历史命令。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114442.png" alt=""></p>
 <p>想要再次输入某个历史命令，只需要在<code>history</code>命令后面加上对应的编号，然后再敲<code>/</code>执行即可。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history 15</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frmne5qk49j313e0xuwjy.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200504114452.png" alt=""></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是关于 Oracle SQLcl 简单的介绍和命令，用来替代 sqlplus 绝对绰绰有余了，希望对喜欢命令行操作的同学有所帮助，谢谢关注！</p>
 
       
@@ -606,7 +611,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Oracle/sqlcl/">Oracle SQLcl - 替代 sqlplus 的利器</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2018年05月25日 - 08:05</p>
-  <p><span>最后更新:</span>2019年09月03日 - 20:09</p>
+  <p><span>最后更新:</span>2020年05月04日 - 11:05</p>
   <p><span>原始链接:</span><a href="/Oracle/sqlcl/" title="Oracle SQLcl - 替代 sqlplus 的利器">https://wangfanggang.com/Oracle/sqlcl/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/sqlcl/"  aria-label="复制成功！"></i></span>
   </p>
@@ -754,7 +759,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">86</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -807,7 +812,9 @@ var _hmt = _hmt || [];
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -938,7 +945,11 @@ var _hmt = _hmt || [];
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

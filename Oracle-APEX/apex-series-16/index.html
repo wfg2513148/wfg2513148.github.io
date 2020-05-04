@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="本文是对博客 “Configuring AOP as Print Server in Oracle APEX 20.1” 的译文。 在Oracle APEX 20.1中将AOP配置为打印服务器Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。  在这篇文章中，将介绍这种集成的含义以及如何在 APEX">
+<meta name="keywords" content="Oracle,APEX,ORDS,AOP,Report">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器">
+<meta property="og:url" content="https://wangfanggang.com/Oracle-APEX/apex-series-16/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="本文是对博客 “Configuring AOP as Print Server in Oracle APEX 20.1” 的译文。 在Oracle APEX 20.1中将AOP配置为打印服务器Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。  在这篇文章中，将介绍这种集成的含义以及如何在 APEX">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503161505.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162220.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162303.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162322.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162340.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162358.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162412.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162437.png">
+<meta property="og:updated_time" content="2020-05-03T09:24:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器">
+<meta name="twitter:description" content="本文是对博客 “Configuring AOP as Print Server in Oracle APEX 20.1” 的译文。 在Oracle APEX 20.1中将AOP配置为打印服务器Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。  在这篇文章中，将介绍这种集成的含义以及如何在 APEX">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503161505.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle-APEX/apex-series-16/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle-APEX/apex-series-16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-03 16:09:00 / 修改时间：17:24:33" itemprop="dateCreated datePublished" datetime="2020-05-03T16:09:00+08:00">2020-05-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle-APEX/apex-series-16/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文是对博客 <a href="https://dgielis.blogspot.com/2020/05/configuring-aop-as-print-server-in.html?m=1" target="_blank" rel="noopener">“Configuring AOP as Print Server in Oracle APEX 20.1”</a> 的译文。</p>
+<h2 id="在Oracle-APEX-20-1中将AOP配置为打印服务器"><a href="#在Oracle-APEX-20-1中将AOP配置为打印服务器" class="headerlink" title="在Oracle APEX 20.1中将AOP配置为打印服务器"></a>在Oracle APEX 20.1中将AOP配置为打印服务器</h2><p>Oracle Application Express（APEX）20.1 的新功能之一，就是与 APEX Office Print（AOP）的集成。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503161505.png" alt=""></p>
+<p>在这篇文章中，将介绍这种集成的含义以及如何在 APEX 20.1 中设置和使用 AOP。</p>
+<h2 id="Oracle-APEX-中的后台打印-报表导出"><a href="#Oracle-APEX-中的后台打印-报表导出" class="headerlink" title="Oracle APEX 中的后台打印/报表导出"></a>Oracle APEX 中的后台打印/报表导出</h2><p>Oracle APEX 3.0 引入了将报告区域导出为PDF的功能 - 本质上是打印报告。它是声明式定义的，并且可用于所有报告区域。您可以查看和打印带有在每个页面上重复的页面标题和页脚，以及与各种页面大小正确匹配的内容的报告。为此，可使用外部定义的报告服务器将报告数据转换为PDF格式。在早期，此外部报表服务器是 <code>Oracle BI Publisher</code> 或外部 <code>Apache FOP</code> 服务器。后来，当 <code>ORDS</code> 出现时，FOP服务器作为选件包括在内。</p>
+<p>我相信外部 <code>Apache FOP</code> 并没有被广泛使用，因为它太复杂，无法简单地设置。有能力支付（巨大的）许可证或已经在公司中拥有许可证的人使用 <code>Oracle BI Publisher</code>。以我的经验，ORDS是使用最多的打印服务器。 但是，在ORDS 18.4发行说明中，宣布将弃用内置FOP服务器，而在<a href="http://dgielis.blogspot.com/2019/12/important-update-of-ords-release-194.html" target="_blank" rel="noopener">ORDS 19.4</a>中，FOP更是被完全放弃。</p>
+<p>这意味着人们需要使用旧版本的ORDS或使用其他版本…</p>
+<h2 id="关于APEX-Office-Print（AOP）"><a href="#关于APEX-Office-Print（AOP）" class="headerlink" title="关于APEX Office Print（AOP）"></a>关于APEX Office Print（AOP）</h2><p><code>APEX Office Print（AOP）</code>已有5年多历史了，它使从 Oracle APEX 导出和打印报告变得更加容易且成本可控。根据您在Word，Excel，Powerpoint，HTML和Text中创建的模板，AOP会将来自APEX区域的数据，数据库中的数据甚至外部数据与已定义输出格式的模板（例如PDF或任何模板格式）合并。在过去的几年中，AOP广受欢迎，并已成为 Oracle APEX 项目的首选打印引擎。</p>
+<p>去年，Oracle宣布他们将直接在 Oracle APEX 中集成 APEX Office Print (AOP) ，而现在已在 APEX 20.1 版本中正式实现。在这一次版本迭代中，AOP 替代了 FOP 服务器，在将来的 Oracle APEX 版本中，则计划支持更多的 AOP 特性。</p>
+<h2 id="在-Oracle-APEX-20-1-中配置-AOP"><a href="#在-Oracle-APEX-20-1-中配置-AOP" class="headerlink" title="在 Oracle APEX 20.1 中配置 AOP"></a>在 Oracle APEX 20.1 中配置 AOP</h2><p>要将 AOP 配置为打印服务器，请登录到 <code>INTERNAL</code> 工作区并转到 <code>Instance Settings</code>：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162220.png" alt=""></p>
+<p>单击 <code>Report Printing</code>，然后选择 <code>APEX Office Print</code> 作为打印服务器：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162303.png" alt=""></p>
+<p>填写运行 AOP Server 的主机地址。AOP支持运行在AOP云中，或者本地部署AOP Server。您可以在 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">www.apexofficeprint.com</a> 上免费订阅AOP打印服务，也可以下载后进行本地部署。</p>
+<p>在APEX 20.1中，只能在实例级别上配置打印服务器。在未来的APEX 20.2版本中，将能够在工作空间（Workspace）级别上覆盖这些设置。这意味着您将有能力为不同的项目使用不同的AOP服务器或云帐户，增加更多的灵活性。</p>
+<h2 id="在-Oracle-APEX-20-1-中使用-AOP"><a href="#在-Oracle-APEX-20-1-中使用-AOP" class="headerlink" title="在 Oracle APEX 20.1 中使用 AOP"></a>在 Oracle APEX 20.1 中使用 AOP</h2><p>要查看实际运行中的AOP集成，可以转到任何经典报表（Classic Report）或交互式报表（Interactive Report），然后单击<code>“打印”</code>或<code>“下载到PDF”</code>链接。</p>
+<p>经典报表（Classic Report）中的<code>“打印”</code>链接：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162322.png" alt=""></p>
+<p>输出将如下所示：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162340.png" alt=""></p>
+<p>您可以在<code>“区域”</code>的<code>“打印属性”</code>中自定义输出：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162358.png" alt=""></p>
+<p>单击交互式报告（Interactive Report）中的<code>“操作”&gt;“下载”&gt;“PDF”</code>时，您具有相同的功能</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162412.png" alt=""></p>
+<p>这是 AOP 在 Oracle APEX 中的最基本功能，它模仿了提供的 ORDS、BI Publisher 或外部FOP服务器。</p>
+<p>实际上，APEX Office Print 可以做得更多。AOP 可以完全按照您在屏幕上看到的方式打印一个或多个 Interactive Reports，包括突出显示、分段显示、过滤器等。它还可以将 IR、IG 和 Classic Reports 结合在一起，甚至在您提供的自定义模板中将图表全部组合在一起。</p>
+<p>如果需要此功能，则需要使用 <code>AOP插件</code> 或 <code>AOP PL/SQL API</code>，就像在 APEX 20.1 之前一样,您可以从 <a href="http://www.apexofficeprint.com" target="_blank" rel="noopener">www.apexofficeprint.com</a> 网站下载该文件。</p>
+<p>强烈建议您安装<code>AOP Sample App</code>，它展示了 AOP 在过去5年中获得的所有功能。在每个页面上，您都可以查看示例的构建方式以及使用的模板。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200503162437.png" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle-APEX/apex-series-16/">Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2020年05月03日 - 16:05</p>
+  <p><span>最后更新:</span>2020年05月03日 - 17:05</p>
+  <p><span>原始链接:</span><a href="/Oracle-APEX/apex-series-16/" title="Oracle APEX 系列文章16：将 AOP 作为 Oracle APEX 的报表打印服务器">https://wangfanggang.com/Oracle-APEX/apex-series-16/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle-APEX/apex-series-16/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+          
+            <a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a>
+          
+            <a href="/tags/AOP/" rel="tag"><i class="fa fa-tag"></i> AOP</a>
+          
+            <a href="/tags/Report/" rel="tag"><i class="fa fa-tag"></i> Report</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20200430/" rel="next" title="Oracle APEX 活跃博文整理 | 2020.04.30">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2020.04.30
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Oracle-APEX-20-1中将AOP配置为打印服务器"><span class="nav-number">1.</span> <span class="nav-text">在Oracle APEX 20.1中将AOP配置为打印服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-中的后台打印-报表导出"><span class="nav-number">2.</span> <span class="nav-text">Oracle APEX 中的后台打印/报表导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于APEX-Office-Print（AOP）"><span class="nav-number">3.</span> <span class="nav-text">关于APEX Office Print（AOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中配置-AOP"><span class="nav-number">4.</span> <span class="nav-text">在 Oracle APEX 20.1 中配置 AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Oracle-APEX-20-1-中使用-AOP"><span class="nav-number">5.</span> <span class="nav-text">在 Oracle APEX 20.1 中使用 AOP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
