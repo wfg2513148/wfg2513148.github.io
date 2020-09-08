@@ -143,24 +143,24 @@ var _hmt = _hmt || [];
 <meta property="og:site_name" content="钢钢更新">
 <meta property="og:description" content="引言相信很多技术同学在开发时都会使用虚拟机，配置好一个开发环境，以后使用时只需要启动虚拟机就好了。但虚拟机动辄几个GB，大一点儿的甚至几百个GB，而且只要其中任意的虚拟机文件损坏，整个虚拟机就没办法启动了。你可能说应该经常备份，这的确是个好主意。但有没有更好的办法呢？今天钢哥就带着大家了解一下Docker（容器），看看它是否比传统的虚拟机更适合我们。 什么是容器?顾名思义，容器就是用来装东西的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkkypmvegj30zw0jq14u.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1friye24vq8j30so0btwic.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1friz972ghgj30j40gg769.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj3rg1kbdj30w6080wfv.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj3tv0gyvj31a408y76k.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj41j2i6sj30pu024aab.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj45airtij315w01ijrk.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj4g3ku5cj30ov09vdh7.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frjc3ocniqj30fy06m3yz.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frj4jab8plj326w038dgk.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frjcf5rbamj30c202cq31.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkk3zaavrj319y066gn1.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg">
-<meta property="og:updated_time" content="2019-09-08T03:33:43.000Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222541.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222627.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222737.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222758.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222807.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222827.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222834.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222844.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222852.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222902.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222913.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222923.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222935.png">
+<meta property="og:updated_time" content="2020-09-08T14:29:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker - 通往新世界的大门">
 <meta name="twitter:description" content="引言相信很多技术同学在开发时都会使用虚拟机，配置好一个开发环境，以后使用时只需要启动虚拟机就好了。但虚拟机动辄几个GB，大一点儿的甚至几百个GB，而且只要其中任意的虚拟机文件损坏，整个虚拟机就没办法启动了。你可能说应该经常备份，这的确是个好主意。但有没有更好的办法呢？今天钢哥就带着大家了解一下Docker（容器），看看它是否比传统的虚拟机更适合我们。 什么是容器?顾名思义，容器就是用来装东西的。">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006By2pOgy1frkkypmvegj30zw0jq14u.jpg">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222541.png">
 
 
 
@@ -448,7 +448,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-08 11:33:43" itemprop="dateModified" datetime="2019-09-08T11:33:43+08:00">2019-09-08</time>
+                <time title="修改时间：2020-09-08 22:29:44" itemprop="dateModified" datetime="2020-09-08T22:29:44+08:00">2020-09-08</time>
               
             
           </span>
@@ -540,7 +540,7 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkkypmvegj30zw0jq14u.jpg" alt=""></p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222541.png" alt=""></p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信很多技术同学在开发时都会使用虚拟机，配置好一个开发环境，以后使用时只需要启动虚拟机就好了。但虚拟机动辄几个GB，大一点儿的甚至几百个GB，而且只要其中任意的虚拟机文件损坏，整个虚拟机就没办法启动了。你可能说应该经常备份，这的确是个好主意。但有没有更好的办法呢？今天钢哥就带着大家了解一下Docker（容器），看看它是否比传统的虚拟机更适合我们。</p>
 <h2 id="什么是容器"><a href="#什么是容器" class="headerlink" title="什么是容器?"></a>什么是容器?</h2><p>顾名思义，容器就是用来装东西的。我们平时喝水的杯子就是容器，只不过杯子这个“容器”是用来装水的，而我们这里的容器装的是应用程序。</p>
 <h2 id="容器有什么特点？"><a href="#容器有什么特点？" class="headerlink" title="容器有什么特点？"></a>容器有什么特点？</h2><ul>
@@ -561,7 +561,8 @@ var _hmt = _hmt || [];
 <li>体积小；</li>
 <li>启动快；</li>
 </ul>
-<p>下面是 <a href="https://www.docker.com/" target="_blank" rel="noopener">Docker 官网</a>截图（后文会解释什么是 Docker）<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1friye24vq8j30so0btwic.jpg" alt=""></p>
+<p>下面是 <a href="https://www.docker.com/" target="_blank" rel="noopener">Docker 官网</a>截图（后文会解释什么是 Docker）</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222627.png" alt=""></p>
 <p>从这张图我们可以看出，传统的虚拟机非常重，每一个虚拟机都是一台独立的操作系统。而 Docker 则不同，它会重用宿主机已有的系统资源，同时又完美地隔离了不同的容器，所以实现起来非常轻，也便于被标准化。有同学会说，这跟传统虚拟机也没什么本质差别啊，新的虚拟机罢了。其实不然，正是这种“轻量级”的特性，使其有机会成为新的标准化的应用发布方式。</p>
 <blockquote>
 <p>上世纪五六十年代出现了集装箱，看上去也没什么技术含量。但正是因为集装箱是一种标准化的物流方式，从而全球的海陆空运输、码头装卸等都围绕着集装箱形成了整个一个高效的物流体系，最终改变了世界贸易，促成了全球化。</p>
@@ -587,12 +588,12 @@ var _hmt = _hmt || [];
 <li><a href="https://docs.docker.com/install/linux/docker-ce/binaries/" target="_blank" rel="noopener">其他 Linux 发行版</a></li>
 </ul>
 <h2 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h2><h3 id="查看-Docker-版本"><a href="#查看-Docker-版本" class="headerlink" title="查看 Docker 版本"></a>查看 Docker 版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1friz972ghgj30j40gg769.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222737.png" alt=""></p>
 <h3 id="拉取-Docker-镜像"><a href="#拉取-Docker-镜像" class="headerlink" title="拉取 Docker 镜像"></a>拉取 Docker 镜像</h3><p>我们可以去 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> 站点拉取公共的 Docker 镜像。比如：搜索 <code>nginx</code> ，拉取官方的 nginx 镜像。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj3rg1kbdj30w6080wfv.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222758.png" alt=""></p>
 <h3 id="查看-Docker-镜像"><a href="#查看-Docker-镜像" class="headerlink" title="查看 Docker 镜像"></a>查看 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj3tv0gyvj31a408y76k.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222807.png" alt=""></p>
 <h3 id="运行-Docker-镜像"><a href="#运行-Docker-镜像" class="headerlink" title="运行 Docker 镜像"></a>运行 Docker 镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v /Users/kwang/docker:/usr/share/nginx/html/hello -p 80:80 -d nginx:latest</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-i</code>以交互模式运行容器，通常与 -t 同时使用；<br><code>-t</code>为容器重新分配一个伪输入终端，通常与 -i 同时使用；<br><code>-p</code>本机端口:容器端口 映射；<br><code>-d</code>后台运行，并返回容器ID；<br><code>-v</code>可以将本机目录映射到容器内。比如这里我就把我本机的<code>/home/kwang/docker</code>目录映射到<code>/usr/share/nginx/html/hello/</code>目录下；</p>
@@ -600,17 +601,18 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>我在<code>/home/kwang/docker/</code>目录下创建了一个静态页面<code>index.html</code>，内容仅仅输出<code>hello world!</code>。而<code>/usr/share/nginx/html/</code>目录是容器内的 nginx 网页根目录，这样设置的目的是为了演示目录映射。</p>
 </blockquote>
-<p>运行成功后，命令行返回一个 Docker 容器的 ID（这个ID是随机生成的，所以你看到的肯定跟我的不一样）。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj41j2i6sj30pu024aab.jpg" alt=""></p>
+<p>运行成功后，命令行返回一个 Docker 容器的 ID（这个ID是随机生成的，所以你看到的肯定跟我的不一样）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222827.png" alt=""></p>
 <h3 id="查看运行中的-Docker-容器"><a href="#查看运行中的-Docker-容器" class="headerlink" title="查看运行中的 Docker 容器"></a>查看运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 <p>可以看到我们刚才的镜像已经成功启动起来了，并且本机<code>0.0.0.0:80</code>端口已经成功映射到容器里的<code>80</code>端口了，该容器ID的前几位是<code>7fcac910ad6a</code></p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj45airtij315w01ijrk.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222834.png" alt=""></p>
 <p>打开本机浏览器，输入：<code>http://localhost:80</code>，可以看到nginx已经启动好了</p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj4g3ku5cj30ov09vdh7.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222844.png" alt=""></p>
 <p>如果更改浏览器地址：<code>http://localhost/hello/</code>，则可以看到我事先准备好的<code>index.html</code>。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frjc3ocniqj30fy06m3yz.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222852.png" alt=""></p>
 <h3 id="暂停运行中的-Docker-容器"><a href="#暂停运行中的-Docker-容器" class="headerlink" title="暂停运行中的 Docker 容器"></a>暂停运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 7fcac910ad6a</span><br></pre></td></tr></table></figure>
 <p><code>7fcac910ad6a</code>是要暂停的容器ID，可以看到容器状态已经变成<code>Exited</code>退出状态了。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frj4jab8plj326w038dgk.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222902.png" alt=""></p>
 <h3 id="启动已暂停的-Docker-容器"><a href="#启动已暂停的-Docker-容器" class="headerlink" title="启动已暂停的 Docker 容器"></a>启动已暂停的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 7fcac910ad6a</span><br></pre></td></tr></table></figure>
 <h3 id="删除运行中的-Docker-容器"><a href="#删除运行中的-Docker-容器" class="headerlink" title="删除运行中的 Docker 容器"></a>删除运行中的 Docker 容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 7fcac910ad6a</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -622,7 +624,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p><code>exec</code>是在运行中的容器中运行一个命令，该命令需要接受两个参数。第一个是容器ID（这里是<code>9ca4f91d4027</code>），第二个参数是要执行的命令（这里是<code>bash</code>）。执行完毕后，我们就以<code>bash</code>命令行模式进入到了容器内部。如果使用<code>bash</code>报错，也尝试使用<code>/bin/sh</code></p>
 </blockquote>
-<p><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frjcf5rbamj30c202cq31.jpg" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222913.png" alt=""></p>
 <blockquote>
 <p>当然，你随时可以用<code>exit</code>命令从容器中退出。</p>
 </blockquote>
@@ -630,14 +632,16 @@ var _hmt = _hmt || [];
 <blockquote>
 <p><code>-m</code> 是说明信息<br><code>-a</code> 是用户信息<br><code>kenny/nginx:1.0</code> 分别是镜像的用户名、仓库名和tag信息</p>
 </blockquote>
-<p>可以看到 Docker 镜像已成功生成。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkk3zaavrj319y066gn1.jpg" alt=""></p>
+<p>可以看到 Docker 镜像已成功生成。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222923.png" alt=""></p>
 <h3 id="基于-Dockerfile-生成-Docker-镜像"><a href="#基于-Dockerfile-生成-Docker-镜像" class="headerlink" title="基于 Dockerfile 生成 Docker 镜像"></a>基于 Dockerfile 生成 Docker 镜像</h3><p>我们可以创建一个名为<code>Dockerfile</code>的文件，编辑内容如下：<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基于哪个Docker镜像生成新镜像</span></span><br><span class="line"><span class="keyword">FROM</span> nginx:latest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建者的基本信息</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> kenny.wang</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在build这个镜像时执行的操作</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 拷贝本地文件到镜像中</span></span></span><br><span class="line"><span class="bash">COPY ./index.html /usr/share/nginx/html/</span></span><br></pre></td></tr></table></figure></p>
 <p>执行<code>build</code>命令生成 Docker 镜像。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t=<span class="string">"kenny/nginx:2.0"</span> .</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-t</code> 用来指定用户信息、tag等<br> <code>.</code> 是当前目录，用来寻找 Dockerfile</p>
 </blockquote>
-<p>再次用<code>docker images</code>查看，新的镜像已成功生成。<br><img src="https://ws1.sinaimg.cn/large/006By2pOgy1frkkez75tjj3192042dgm.jpg" alt=""></p>
+<p>再次用<code>docker images</code>查看，新的镜像已成功生成。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200908222935.png" alt=""></p>
 <h3 id="如何在build时动态传递参数"><a href="#如何在build时动态传递参数" class="headerlink" title="如何在build时动态传递参数"></a>如何在build时动态传递参数</h3><p>假设在docker build时，需要动态传递两个变量，比如: arg1, arg2, 这时候Dockerfile怎么写呢？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8-jre-alpine</span><br><span class="line"></span><br><span class="line">ARG arg1=456</span><br><span class="line">ARG arg2=&quot;hello world&quot;</span><br><span class="line"></span><br><span class="line">RUN echo $&#123;arg1&#125; $&#123;arg2&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -682,7 +686,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Docker/docker/">Docker - 通往新世界的大门</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2018年05月23日 - 00:05</p>
-  <p><span>最后更新:</span>2019年09月08日 - 11:09</p>
+  <p><span>最后更新:</span>2020年09月08日 - 22:09</p>
   <p><span>原始链接:</span><a href="/Docker/docker/" title="Docker - 通往新世界的大门">https://wangfanggang.com/Docker/docker/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Docker/docker/"  aria-label="复制成功！"></i></span>
   </p>
