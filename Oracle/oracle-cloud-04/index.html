@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="本文是关于 Oracle Cloud 的一篇译文，也是 Oracle Cloud 系列文章第四篇，Oracle Cloud系列文章列表如下：  Oracle Cloud 系列文章01：创建VM云实例 Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP） Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI） Oracl">
+<meta name="keywords" content="Oracle,Cloud,CLI,Oracle APEX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/oracle-cloud-04/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="本文是关于 Oracle Cloud 的一篇译文，也是 Oracle Cloud 系列文章第四篇，Oracle Cloud系列文章列表如下：  Oracle Cloud 系列文章01：创建VM云实例 Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP） Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI） Oracl">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230045.png?x-oss-process=image/format,jpg/quality,q_40">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230119.png">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230137.png">
+<meta property="og:updated_time" content="2021-01-14T15:38:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序">
+<meta name="twitter:description" content="本文是关于 Oracle Cloud 的一篇译文，也是 Oracle Cloud 系列文章第四篇，Oracle Cloud系列文章列表如下：  Oracle Cloud 系列文章01：创建VM云实例 Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP） Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI） Oracl">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230045.png?x-oss-process=image/format,jpg/quality,q_40">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/oracle-cloud-04/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/oracle-cloud-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-01-14 22:58:00 / 修改时间：23:38:07" itemprop="dateCreated datePublished" datetime="2021-01-14T22:58:00+08:00">2021-01-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/oracle-cloud-04/" class="leancloud_visitors" data-flag-title="Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230045.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<blockquote>
+<p>本文是关于 Oracle Cloud 的一篇译文，也是 Oracle Cloud 系列文章第四篇，Oracle Cloud系列文章列表如下：</p>
+<ul>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-01/">Oracle Cloud 系列文章01：创建VM云实例</a></li>
+<li><a href="https://wangfanggang.com/Oracle/APEX/oracle-cloud-02/">Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-03/">Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-04/">Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序</a></li>
+</ul>
+</blockquote>
+<p>英文原文请查阅这里：<a href="https://blogs.oracle.com/developers/build-apps-fast-with-new-apex-service" target="_blank" rel="noopener">https://blogs.oracle.com/developers/build-apps-fast-with-new-apex-service</a></p>
+<p>今天，2021年1月13日，Oracle公司推出了一项新的 Oracle Application Express（APEX）服务，用于在Oracle Cloud中快速构建和部署现代化的数据驱动的应用程序。这项新服务是在 <a href="https://www.oracle.com/cloud" target="_blank" rel="noopener">Oracle Cloud Infrastructure（OCI）</a> 上使用 Oracle APEX 低代码应用程序开发的理想入口。它提供了一个简单的、易于使用且易于访问的平台，从而使创建功能强大的应用程序变得异常快捷。</p>
+<h2 id="关于Oracle-APEX和低代码开发"><a href="#关于Oracle-APEX和低代码开发" class="headerlink" title="关于Oracle APEX和低代码开发"></a>关于Oracle APEX和低代码开发</h2><p><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX</a> 从根本上简化了数据驱动的应用程序的开发和部署过程，使普通用户和专业开发人员都能够以<a href="https://www.oracle.com/application-development/apex/solutions/low-code-development-platform/" target="_blank" rel="noopener">比编码快38倍的速度</a>创建Web应用程序。全球数以千计的 Oracle 客户正利用 Oracle APEX 来构建定制的应用程序，诸如：企业级报表系统、替换Excel等。它在全球拥有约50万个开发人员、倡导者及合作伙伴，目前每天有数百万的最终用户在使用用 Oracle APEX 创建的实时应用程序。Oracle 公司最近利用 Oracle APEX 为美国的患者和医护人员快速创建了 <a href="https://blogs.oracle.com/oracle-at-oracle/post/learn-how-oracle-used-apex-to-quickly-launch-its-covid-19-therapeutic-app" target="_blank" rel="noopener">COVID-19 大流行应对应用程序</a>，并<a href="https://www.oracle.com/corporate/citizenship/health/" target="_blank" rel="noopener">支持三个非洲国家的国家疾病疫苗接种计划</a>。</p>
+<h3 id="Oracle-APEX-的主要特征包括："><a href="#Oracle-APEX-的主要特征包括：" class="headerlink" title="Oracle APEX 的主要特征包括："></a>Oracle APEX 的主要特征包括：</h3><ul>
+<li><p><code>低代码</code>：Oracle APEX 提供了功能强大的低代码组件，这些组件可以提供现代的用户体验，在移动和桌面浏览器上看起来都非常漂亮，通过简单的拖放操作就可以将其添加到应用程序中。示例组件包括“交互式网格”，“分面搜索”，“卡片”和“图表”。开发人员使用声明性设置定义组件的行为，并使用标准查询填充要显示的数据。所有应用程序开发都可以在浏览器中进行——无需其他工具。</p>
+</li>
+<li><p><code>支持多种数据格式</code>：在 Oracle APEX 中创建的应用程序可以集成各种类型的数据，包括关系型数据、JSON格式数据、甚至是空间数据。另外，应用程序可以利用来自各种来源的数据，包括：SQL数据库和REST接口。开发人员也可以选择使用丰富的APEX插件、Javascript 或 PL/SQL 脚本扩展其应用程序。</p>
+</li>
+<li><p><code>存在与数据库中</code>：因为 Oracle APEX 引擎在 Oracle 数据库中运行的，因此应用程序与其要使用的数据“非常接近”，这就意味着可以以最高的性能和可伸缩性运行您的应用程序，这也消除了相应中间层的复杂性，使应用程序变得高度简化。</p>
+</li>
+<li><p><code>随处可用</code>：借助 Oracle APEX，开发人员可以在 Oracle 数据库运行的任何地方（包括：本地私有 Oracle 数据库、Oracle Cloud、Oracle Cloud@Customer、Oracle 专用区域云@Customer 和第三方云）构建和部署应用程序。此外，Oracle APEX 使在本地环境与混合云或纯云环境之间迁移应用程序变得容易。</p>
+</li>
+</ul>
+<h2 id="新的Oracle-APEX应用程序开发服务"><a href="#新的Oracle-APEX应用程序开发服务" class="headerlink" title="新的Oracle APEX应用程序开发服务"></a>新的Oracle APEX应用程序开发服务</h2><p>为了响应人们对低代码应用程序开发日益增长的需要，以及全球 Oracle APEX 开发人员社区的需求，Oracle 自豪地宣布 <a href="https://www.oracle.com/application-development/apex/" target="_blank" rel="noopener">Oracle APEX 应用程序开发产品</a> 即将上市。这项新的云服务（也称为“APEX服务”）将 Oracle APEX 低代码开发与 Oracle 的下一代 Oracle Cloud Infrastructure（OCI）和 <a href="https://www.oracle.com/autonomous-database/" target="_blank" rel="noopener">Oracle Autonomous Database-Shared Infrastructure（ADB）</a> 相结合，提供了突破性的功能和优势。</p>
+<p>首先，OCI 控制台针对开发人员优化了用户体验，使您可以比以往更轻松地访问 Oracle APEX，并使得在同一云租用期内管理多个 APEX 实例变得可能。OCI 控制台中的新界面将显示任何与 ADB 相关的服务上的 Oracle APEX，使您能够快速创建 APEX Service 实例，并允许您一键启动 APEX 并开始在正在运行的实例上进行开发。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230119.png" alt=""></p>
+<p>查看现有 Oracle APEX 实例将显示一个新的 APEX 详情页面，该页面显示了一些非常有用的信息，包括：实例名称、版本号以及新的 APEX 使用率和图表。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230137.png" alt=""></p>
+<p>其次，新的 APEX 服务将在一个软件包中提供所有关键功能，且非常容易被低代码开发人员所使用。该服务不仅提供 Oracle APEX，还提供了基础的 ADB 数据库以及带有 <a href="https://www.oracle.com/database/technologies/appdev/rest.html" target="_blank" rel="noopener">Oracle REST 数据服务（ORDS）</a>和 <a href="https://www.thatjeffsmith.com/archive/2019/12/sql-developer-web-is-now-available" target="_blank" rel="noopener">SQL Developer Web</a> 的预配置中间层。开发人员可以利用 ORDS 在其应用程序数据上创建和管理自定义 REST 端点，以便利用 SQL Developer Web 对数据进行图形化建模及编写 SQL 查询语句。APEX Service 及其包含的数据库具有完全的弹性，开发人员可以动态扩展硬件资源，以适应其 APEX 应用程序不断变化的需求。借助 <a href="https://www.oracle.com/engineered-systems/exadata/" target="_blank" rel="noopener">Oracle Exadata</a> 的出色性能，您最多可以扩展128个<code>OCPU</code>和500TB的存储。用户可以手动完成资源缩放，也可以根据负载的变化自动进行。如果应用程序需要 Oracle Net Services（SQL<em>Net）客户端连接，只需单击一下即可将 APEX Service 升级到支持 SQL</em>Net 的完整 ADB 实例即可。此外，无需额外费用即可提供进出 APEX 服务（入口 + 出口）的数据传输服务。</p>
+<p>第三，由于 APEX 服务建立在 ADB 上，默认情况下它将是完全托管的（自治的）。这意味着Oracle APEX、数据库、服务网络、物理存储和安全性都已预先配置、调整并可以立即投入使用。Oracle APEX 和数据库都会自动为您打补丁和升级——带有高级通知。Oracle APEX 通常每年进行两次升级，以添加新的低代码创新并提供新的外观皮肤，同时还会为您保留应用程序并将其推广到未来的几年。如果有必要，开发人员可以将 Oracle APEX 升级推迟45天。当然，可以通过更改 APEX Service 中的设置来实现，开发人员开箱即用的配置和维护职责将变得异常的少。</p>
+<p>最后，与新 APEX 服务相关的最大新闻也许是其合理的价格。现在，您可以每月以不到360美元的价格在 OCI 中运行 Oracle APEX。这一价格使各种低代码开发人员都可以更轻松地访问 Oracle APEX，无论他们是受雇于企业、独立工作还是志愿服务。此外，与其他供应商提供的低代码服务模式最大的不同，Oracle APEX 不按照应用程序、开发人员或最终用户的数量收费。对于可以部署的应用程序数量、使用该服务的开发人员数量、或可以使用应用程序的最终用户也统统没有限制。开发人员可以自由地在单个 APEX 服务实例上部署支持1000个最终用户帐户的多个 Oracle APEX 应用程序。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>全新的 APEX 服务以简单、包罗万象且价格合理的软件包的方式，提供给用户最喜欢的 Oracle APEX 低代码应用程序开发、ADB 和 OCI，它很好地补充了 OCI 中其他地方（例如ADB、Oracle Exadata Cloud Service 和 Oracle Database Cloud Service）中 Oracle APEX 的可用性，并以极低的价格让普通用户和专业开发人员都可以使用 Oracle APEX 快速地进行低代码开发。</p>
+<p>我们希望您喜欢使用 Oracle APEX 应用程序开发！</p>
+<hr>
+<h2 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h2><p>2021年1月13日（星期三）太平洋标准时间上午9:00加入 Oracle Live，以了解新的APEX服务的公告。活动注册在 <a href="https://www.oracle.com/events/live/new-database-innovations/" target="_blank" rel="noopener">这里</a>。</p>
+<p>在 <a href="https://youtu.be/fI0zXKga-6U" target="_blank" rel="noopener">此处</a> 观看 YouTube 上关于<code>新APEX服务</code>的深入演示视频。</p>
+<p>在 <a href="https://www.oracle.com/apex" target="_blank" rel="noopener">oracle.com/apex</a> 和 <a href="https://www.oracle.com/application-development/apex" target="_blank" rel="noopener">oracle.com/application-development/apex</a> 中可以了解更多的信息。要获得个性化帮助，请致电+1-800-633-0738 与 Oracle 销售代表联系。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle/oracle-cloud-04/">Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2021年01月14日 - 22:01</p>
+  <p><span>最后更新:</span>2021年01月14日 - 23:01</p>
+  <p><span>原始链接:</span><a href="/Oracle/oracle-cloud-04/" title="Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序">https://wangfanggang.com/Oracle/oracle-cloud-04/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/oracle-cloud-04/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/Cloud/" rel="tag"><i class="fa fa-tag"></i> Cloud</a>
+          
+            <a href="/tags/CLI/" rel="tag"><i class="fa fa-tag"></i> CLI</a>
+          
+            <a href="/tags/Oracle-APEX/" rel="tag"><i class="fa fa-tag"></i> Oracle APEX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20201231/" rel="next" title="Oracle APEX 活跃博文整理 | 2020.12.31">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2020.12.31
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Oracle-APEX和低代码开发"><span class="nav-number">1.</span> <span class="nav-text">关于Oracle APEX和低代码开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-APEX-的主要特征包括："><span class="nav-number">1.1.</span> <span class="nav-text">Oracle APEX 的主要特征包括：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新的Oracle-APEX应用程序开发服务"><span class="nav-number">2.</span> <span class="nav-text">新的Oracle APEX应用程序开发服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一步"><span class="nav-number">4.</span> <span class="nav-text">下一步</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="http://www.beian.miit.gov.cn/">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
