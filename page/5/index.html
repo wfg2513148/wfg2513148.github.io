@@ -371,6 +371,242 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-series-15/" itemprop="url">
+                  Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-29 22:36:10" itemprop="dateCreated datePublished" datetime="2019-09-29T22:36:10+08:00">2019-09-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-03 15:41:13" itemprop="dateModified" datetime="2020-01-03T15:41:13+08:00">2020-01-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-series-15/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20190929224703.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<h1 id="Rapid-APEX"><a href="#Rapid-APEX" class="headerlink" title="Rapid-APEX"></a>Rapid-APEX</h1><blockquote>
+<p><a href="https://apex.oracle.com/zh-cn/" target="_blank" rel="noopener">Oracle APEX</a> 的安装过程比较繁琐，涉及到东西比较多，特别是在结合ORDS时，总是容易犯错。另外，如果你想快速搭建一套测试环境，但需要特定版本的APEX/ORDS来验证测试某些功能时，每次重新搭环境也会浪费不少时间。<br><a href="https://apex.oracle.com/pls/apex/f?p=75079:RAPID-APEX" target="_blank" rel="noopener">Rapid-APEX</a> 是可以让你从重复繁琐的安装过程中解脱出来，通过简单地设置你要搭建的环境信息，就可以生成对应的安装命令，直接执行即可完成相应的安装配置。</p>
+</blockquote>
+<blockquote>
+<p>目前支持的产品版本:</p>
+<ul>
+<li><strong>Oracle Database:</strong> XE 18c</li>
+<li><strong>Oracle APEX:</strong> 19.1, 18.2, 18.1, 5.1.4, 5.0.4</li>
+<li><strong>Oracle ORDS:</strong> 19.2, 18.4, 18.2, 18.1, 3.0.12</li>
+</ul>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Oracle/Oracle-APEX/apex-series-15/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/AWS-CLI-S3-upload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2440,246 +2676,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190717/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20190717/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2019.07.17
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-17 11:01:00" itemprop="dateCreated datePublished" datetime="2019-07-17T11:01:00+08:00">2019-07-17</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-03 20:27:53" itemprop="dateModified" datetime="2019-09-03T20:27:53+08:00">2019-09-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20190717/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2019.07.17">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">941</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://ww1.sinaimg.cn/mw690/006By2pOgy1g52nqtpzcjj314g0qgb2a.jpg" alt=""></p>
-<p>以下是截止至 <code>2019.07.17</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="https://jeffkemponoracle.com/2019/07/wipe-apex-mail-queue/" target="_blank" rel="noopener">Wipe APEX mail queue</a> <code>2019.07</code></li>
-<li><a href="https://jeffkemponoracle.com/2019/07/change-item-icon-dynamically/" target="_blank" rel="noopener">Change Item Icon Dynamically</a> <code>2019.07</code></li>
-<li><a href="https://dickdral.blogspot.com/2019/07/creating-mobile-app-with-apex-part-5.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 5: Refining the Form page</a> <code>2019.07</code></li>
-<li><a href="https://dickdral.blogspot.com/2019/07/creating-mobile-app-with-apex-part-4.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 4: Refining the List View</a> <code>2019.07</code></li>
-<li><a href="https://dickdral.blogspot.com/2019/07/creating-mobile-app-with-apex-part-3.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 3: Adapting the layout</a> <code>2019.07</code></li>
-<li><a href="https://dickdral.blogspot.com/2019/07/creating-mobile-app-with-apex-part-2.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 2: The basic app</a> <code>2019.07</code></li>
-<li><a href="https://dickdral.blogspot.com/2019/07/creating-mobile-app-with-apex-part-1.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 1: Introduction and design</a> <code>2019.07</code></li>
-<li><a href="https://www.aflorestorres.com/2019/06/getting-oracle-apex-certificate-tips.html" target="_blank" rel="noopener">Getting the Oracle APEX certificate, Tips</a> <code>2019.06</code></li>
-<li><a href="http://hardlikesoftware.com/weblog/2019/06/29/interactive-grid-tour-app/" target="_blank" rel="noopener">Interactive Grid Tour App</a> <code>2019.06</code></li>
-<li><a href="https://joelkallman.blogspot.com/2019/06/should-oracle-apex-community-care-about.html" target="_blank" rel="noopener">Should the Oracle APEX Community Care About Autonomous Database?</a> <code>2019.06</code></li>
-<li><a href="https://blogs.oracle.com/apex/the-quick-guide-for-getting-started-with-apex-on-autonomous-database-serverless" target="_blank" rel="noopener">The Quick Guide for Getting Started with APEX on Autonomous Database Serverless</a> <code>2019.06</code></li>
-<li><a href="https://jeffkemponoracle.com/2019/06/showing-image-thumbnails-in-icon-view/" target="_blank" rel="noopener">Showing image thumbnails in Icon View</a> <code>2019.06</code></li>
-<li><a href="https://ora-00001.blogspot.com/2019/06/apex-custom-theme-style-performance.html" target="_blank" rel="noopener">APEX custom Theme Style performance</a> <code>2019.06</code></li>
-<li><a href="http://dgielis.blogspot.com/2019/06/see-apex-debug-info-in-plsql-and-sql.html" target="_blank" rel="noopener">See APEX Debug info in PL/SQL and SQL Developer</a> <code>2019.06</code></li>
-<li><a href="https://jeffkemponoracle.com/2019/06/before-header-branch/" target="_blank" rel="noopener">“Before Header” Branch</a> <code>2019.06</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2731,7 +2727,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-count">98</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
