@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-03-31T14:17:16.000Z</updated>
+  <updated>2021-03-31T14:36:14.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <title>Oracle APEX 活跃博文整理 | 2021.03.31</title>
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210331/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210331/</id>
-    <published>2021-03-31T14:01:00.000Z</published>
-    <updated>2021-03-31T14:17:16.000Z</updated>
+    <published>2021-03-31T14:36:00.000Z</published>
+    <updated>2021-03-31T14:36:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210228214634.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.03.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/oracle-apex-named-a-2021-gartner-peer-insights-customers-choice-for-enterprise-low-code-application-platforms" target="_blank" rel="noopener">Oracle APEX Named a 2021 Gartner Peer Insights Customers’ Choice for Enterprise Low-Code Application Platforms</a> <code>2021.03</code></li><li><a href="https://blogs.oracle.com/apex/synchronize-parent-child-rest-sources" target="_blank" rel="noopener">Synchronize Parent-Child REST Sources</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/design-simple-and-attractive-login-page-in-oracle-apex.html" target="_blank" rel="noopener">Design Simple and Attractive Login Page in Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/unchecked-checkbox-when-another-is-checked-in-oracle-apex.html" target="_blank" rel="noopener">Unchecked Checkbox When Another Is Checked in Oracle APEX</a> <code>2021.03</code></li><li><a href="http://mortezamashhadi.blogspot.com/2021/03/enable-multiselected-feature-of-oracle.html" target="_blank" rel="noopener">Enable Multiselected feature of Oracle APEX Tree</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-your-toolbar-interactive-grid.html" target="_blank" rel="noopener">Customize your Toolbar (Interactive Grid #9)</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-column-heading-menu.html" target="_blank" rel="noopener">Customize the Column Heading Menu (Interactive Grid #8)</a> <code>2021.03</code></li><li><a href="https://www.traust.com/read-only-disable-switch-widgets-in-oracle-apex/" target="_blank" rel="noopener">Read-Only/Disable Switch Widgets In Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.traust.com/lose-focus-da-and-submit-page-in-oracle-apex/" target="_blank" rel="noopener">Lose Focus DA And Submit Page In Oracle APEX</a> <code>2021.03</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210331223550.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.03.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/oracle-apex-named-a-2021-gartner-peer-insights-customers-choice-for-enterprise-low-code-application-platforms" target="_blank" rel="noopener">Oracle APEX Named a 2021 Gartner Peer Insights Customers’ Choice for Enterprise Low-Code Application Platforms</a> <code>2021.03</code></li><li><a href="https://blogs.oracle.com/apex/synchronize-parent-child-rest-sources" target="_blank" rel="noopener">Synchronize Parent-Child REST Sources</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/design-simple-and-attractive-login-page-in-oracle-apex.html" target="_blank" rel="noopener">Design Simple and Attractive Login Page in Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/unchecked-checkbox-when-another-is-checked-in-oracle-apex.html" target="_blank" rel="noopener">Unchecked Checkbox When Another Is Checked in Oracle APEX</a> <code>2021.03</code></li><li><a href="http://mortezamashhadi.blogspot.com/2021/03/enable-multiselected-feature-of-oracle.html" target="_blank" rel="noopener">Enable Multiselected feature of Oracle APEX Tree</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-your-toolbar-interactive-grid.html" target="_blank" rel="noopener">Customize your Toolbar (Interactive Grid #9)</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-column-heading-menu.html" target="_blank" rel="noopener">Customize the Column Heading Menu (Interactive Grid #8)</a> <code>2021.03</code></li><li><a href="https://www.traust.com/read-only-disable-switch-widgets-in-oracle-apex/" target="_blank" rel="noopener">Read-Only/Disable Switch Widgets In Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.traust.com/lose-focus-da-and-submit-page-in-oracle-apex/" target="_blank" rel="noopener">Lose Focus DA And Submit Page In Oracle APEX</a> <code>2021.03</code></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210228214634.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210331223550.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
       
     
     </summary>
