@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-03-31T14:36:14.000Z</updated>
+  <updated>2021-04-30T07:41:57.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2021.04.30</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210430/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210430/</id>
+    <published>2021-04-30T07:22:00.000Z</published>
+    <updated>2021-04-30T07:41:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210430154142.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.04.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/building-a-rest-api-to-deploy-apex-apps" target="_blank" rel="noopener">Building a REST API to Deploy APEX Apps</a> <code>2021.04</code></li><li><a href="http://dgielis.blogspot.com/2021/04/setup-apex-office-print-aop-server-with.html" target="_blank" rel="noopener">Setup the APEX Office Print (AOP) Server with the Oracle Cloud APEX Service</a> <code>2021.04</code></li><li><a href="http://dgielis.blogspot.com/2021/04/which-one-to-pick-free-apex-service-vs.html" target="_blank" rel="noopener">Which one to pick: Free APEX Service vs Free Oracle Autonomous DB</a> <code>2021.04</code></li><li><a href="https://jeffkemponoracle.com/2021/04/google-map-plugin-vs-oracle-apex-map-region/" target="_blank" rel="noopener">APEX Map Region vs. Google Map Plugin</a> <code>2021.04</code></li><li><a href="https://www.traust.com/oracle-apex-interview-with-jackie-mcilroy-apex-boss/" target="_blank" rel="noopener">Oracle APEX Interview With Jackie McIlroy, APEX Boss</a> <code>2021.04</code></li><li><a href="https://www.traust.com/setting-the-value-of-a-popup-lov-page-item-via-ig/" target="_blank" rel="noopener">Setting The Value Of A Popup LOV Page Item Via IG</a> <code>2021.04</code></li><li><a href="https://tm-apex.blogspot.com/2021/04/two-ways-to-fetch-current-records.html" target="_blank" rel="noopener">Two ways to fetch the current records (Interactive Grid #10)</a> <code>2021.04</code></li><li><a href="http://lschilde.blogspot.com/2021/04/oracle-apex-and-stripe-v3-part-3.html" target="_blank" rel="noopener">Oracle APEX and Stripe v3 - part 3</a> <code>2021.04</code></li><li><a href="http://lschilde.blogspot.com/2021/04/oracle-apex-20x-and-stripe-v3.html" target="_blank" rel="noopener">Oracle APEX and Stripe v3 - part 2</a> <code>2021.04</code></li><li><a href="http://lschilde.blogspot.com/2021/04/oracle-apex-and-latest-stripe.html" target="_blank" rel="noopener">Oracle APEX and Stripe v3 - part 1</a> <code>2021.04</code></li><li><a href="https://www.aflorestorres.com/2021/04/instalar-oracle-apex-en-google-cloud.html" target="_blank" rel="noopener">Install Oracle APEX, ORDS and Tomcat on Google Cloud Platform - Compute Engine - CentOS 8 - DB 18c Express Edition Part 4</a> <code>2021.04</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210430154142.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.03.31</title>
@@ -575,35 +604,6 @@
     
     
       <category term="Architecture" scheme="https://wangfanggang.com/tags/Architecture/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2020.03.30</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200330/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200330/</id>
-    <published>2020-03-30T12:53:00.000Z</published>
-    <updated>2020-03-30T13:25:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200330212541.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.03.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.traust.com/oracle-apex-version-control-from-sql-developer/" target="_blank" rel="noopener">Oracle APEX Version Control From SQL Developer</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-inserting-records-into-interactive-grid-using-javascript.html" target="_blank" rel="noopener">Inserting Records into Interactive Grid Using JavaScript</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-let-user-select-the-theme-of-his-choice.html" target="_blank" rel="noopener">Let User Select the Theme of His Choice</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-auto-refresh-report-after-a-specified-interval.html" target="_blank" rel="noopener">Auto Refresh Report After a Specified Interval</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-error-handling-function-example.html" target="_blank" rel="noopener">Error Handling Function Example</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-hide-processing-spinners-displayed-by-dynamic-actions.html" target="_blank" rel="noopener">Hide Processing Spinners Displayed by Dynamic Actions</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-function-returning-sql-query-example.html" target="_blank" rel="noopener">Oracle Apex Function Returning SQL Query Example</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-loop-through-interactive-grid-records.html" target="_blank" rel="noopener">Oracle Apex: Loop Through Interactive Grid Records</a> <code>2020.03</code></li><li><a href="https://joelkallman.blogspot.com/2020/03/how-to-show-dates-in-given-time-zone.html" target="_blank" rel="noopener">How to show dates in a given time zone when the value is stored in a DATE data type</a> <code>2020.03</code></li><li><a href="https://www.talkapex.com/2020/03/apex-19-form-pl-sql-processing/" target="_blank" rel="noopener">APEX 19 Form PL/SQL Processing</a> <code>2020.03</code></li><li><a href="https://explorer.co.uk/using-rest-data-sources-for-apex-list-of-values/" target="_blank" rel="noopener">Using REST Data Sources for APEX List of Values</a> <code>2020.03</code></li><li><a href="https://explorer.co.uk/apex-authentication-options/" target="_blank" rel="noopener">APEX Authentication Options</a> <code>2020.03</code></li><li><a href="https://explorer.co.uk/top-wow-features-of-apex/" target="_blank" rel="noopener">Top WOW Features of APEX</a> <code>2020.03</code></li><li><a href="https://explorer.co.uk/oracle-supported-ebs-extensions-with-apex-simply-explained/" target="_blank" rel="noopener">Oracle Supported EBS extensions with APEX – Simply explained</a> <code>2020.03</code></li><li><a href="http://www.grassroots-oracle.com/2020/03/inspect-element-deep-dive-oracle-apex.html" target="_blank" rel="noopener">Inspect Element Deep Dive, with Oracle APEX</a> <code>2020.03</code></li><li><a href="http://www.grassroots-oracle.com/2020/03/oracle-apex-tweaking-classic-reports.html" target="_blank" rel="noopener">Tweaking Classic Reports</a> <code>2020.03</code></li><li><a href="https://hardlikesoftware.com/weblog/2020/03/20/apex-navigation-menu-experiments-part-2/" target="_blank" rel="noopener">APEX Navigation Menu Experiments Part 2</a> <code>2020.03</code></li><li><a href="https://hardlikesoftware.com/weblog/2020/03/16/apex-navigation-menu-experiments-part-1/" target="_blank" rel="noopener">APEX Navigation Menu Experiments Part 1</a> <code>2020.03</code></li><li><a href="https://jeffkemponoracle.com/2020/03/next-previous-record-how-apex-does-it/" target="_blank" rel="noopener">Next/Previous Record: how APEX does it</a> <code>2020.03</code></li><li><a href="https://jeffkemponoracle.com/2020/03/loading-large-geojson-objects/" target="_blank" rel="noopener">Loading large GeoJSON objects</a> <code>2020.03</code></li><li><a href="http://dgielis.blogspot.com/2020/03/apex-media-extension-ame-publicly.html" target="_blank" rel="noopener">APEX Media Extension (AME) Publicly Available</a> <code>2020.03</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200330212541.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
