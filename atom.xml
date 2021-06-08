@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-05-02T00:27:38.000Z</updated>
+  <updated>2021-06-08T15:39:27.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2021.05.31</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210531/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210531/</id>
+    <published>2021-05-31T15:39:00.000Z</published>
+    <updated>2021-06-08T15:39:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210608233820.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>5月份的博文比较少，可能大家还沉寂在缅怀 <a href="https://blogs.oracle.com/author/joel-kallman" target="_blank" rel="noopener">Joel Kallman</a> 的悲痛中。虽然与Joel没有直接打过交道，但参加过几次APEX Hour活动, 也多次拜读过他的博客文章。Joel绝对算APEX的灵魂人物，希望天堂没有新冠，也希望APEX在中国开枝散叶能让他的在天之灵感到一丝欣慰。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210608232504.png" alt=""></p><p>以下是截止至 <code>2021.05.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/calendar-region-upgrade-guide-in-apex-211" target="_blank" rel="noopener">Calendar Region Upgrade Guide in APEX 21.1</a> <code>2021.05</code></li><li><a href="https://blogs.oracle.com/apex/user-interface-and-theme-roller-enhancements-in-apex-211" target="_blank" rel="noopener">User Interface and Theme Roller Enhancements in APEX 21.1</a> <code>2021.05</code></li><li><a href="https://www.traust.com/producing-report-from-colon-delimited-list-oracle-apex/" target="_blank" rel="noopener">Producing a Report from a Colon Delimited List in Oracle APEX</a> <code>2021.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210608233820.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.04.30</title>
@@ -582,28 +611,6 @@
       <category term="SPSS" scheme="https://wangfanggang.com/tags/SPSS/"/>
     
       <category term="Analysis" scheme="https://wangfanggang.com/tags/Analysis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何快速熟悉一个系统？</title>
-    <link href="https://wangfanggang.com/Architecture/how-to-quickly-understand-a-system/"/>
-    <id>https://wangfanggang.com/Architecture/how-to-quickly-understand-a-system/</id>
-    <published>2020-04-03T03:20:00.000Z</published>
-    <updated>2020-04-03T03:32:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200403112402.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><a id="more"></a><p>原文摘自：<a href="https://mp.weixin.qq.com/s/g7wvEIBa0mK3XbJZ_4ZvRA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/g7wvEIBa0mK3XbJZ_4ZvRA</a></p><h1 id="业务学习"><a href="#业务学习" class="headerlink" title="业务学习"></a>业务学习</h1><h2 id="系统所在行业的情况是怎样？"><a href="#系统所在行业的情况是怎样？" class="headerlink" title="系统所在行业的情况是怎样？"></a>系统所在行业的情况是怎样？</h2><h2 id="系统的目标用户是谁？"><a href="#系统的目标用户是谁？" class="headerlink" title="系统的目标用户是谁？"></a>系统的目标用户是谁？</h2><ul><li>公司高层</li><li>运营/客服</li><li>互联网用户</li></ul><h2 id="平均有多少人在使用？高峰期多少人在用？"><a href="#平均有多少人在使用？高峰期多少人在用？" class="headerlink" title="平均有多少人在使用？高峰期多少人在用？"></a>平均有多少人在使用？高峰期多少人在用？</h2><h2 id="系统有什么业务价值？有哪些指标可以衡量系统业务价值？"><a href="#系统有什么业务价值？有哪些指标可以衡量系统业务价值？" class="headerlink" title="系统有什么业务价值？有哪些指标可以衡量系统业务价值？"></a>系统有什么业务价值？有哪些指标可以衡量系统业务价值？</h2><h2 id="系统有哪些功能模块？"><a href="#系统有哪些功能模块？" class="headerlink" title="系统有哪些功能模块？"></a>系统有哪些功能模块？</h2><h2 id="系统有哪些领域概念？"><a href="#系统有哪些领域概念？" class="headerlink" title="系统有哪些领域概念？"></a>系统有哪些领域概念？</h2><ul><li>领域模型</li></ul><h2 id="系统的关键业务流程是怎样的？"><a href="#系统的关键业务流程是怎样的？" class="headerlink" title="系统的关键业务流程是怎样的？"></a>系统的关键业务流程是怎样的？</h2><h2 id="系统的非功能性需求有哪些？"><a href="#系统的非功能性需求有哪些？" class="headerlink" title="系统的非功能性需求有哪些？"></a>系统的非功能性需求有哪些？</h2><ul><li>性能</li><li>质量</li><li>扩展性</li><li>安全性</li></ul><h2 id="系统未来的发展规划是怎样？"><a href="#系统未来的发展规划是怎样？" class="headerlink" title="系统未来的发展规划是怎样？"></a>系统未来的发展规划是怎样？</h2><h1 id="技术学习"><a href="#技术学习" class="headerlink" title="技术学习"></a>技术学习</h1><h2 id="逻辑架构"><a href="#逻辑架构" class="headerlink" title="逻辑架构"></a>逻辑架构</h2><h3 id="核心设计任务"><a href="#核心设计任务" class="headerlink" title="核心设计任务"></a>核心设计任务</h3><ul><li>模块划分</li><li>接口定义</li><li>领域模型细化</li></ul><h3 id="常见图形"><a href="#常见图形" class="headerlink" title="常见图形"></a>常见图形</h3><h4 id="静态图"><a href="#静态图" class="headerlink" title="静态图"></a>静态图</h4><ul><li>包图</li><li>类图</li><li>对象图</li></ul><h4 id="动态图"><a href="#动态图" class="headerlink" title="动态图"></a>动态图</h4><ul><li>序列图</li><li>协作图</li><li>状态图</li><li>活动图</li></ul><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="有哪些子系统或模块？"><a href="#有哪些子系统或模块？" class="headerlink" title="有哪些子系统或模块？"></a>有哪些子系统或模块？</h4><h4 id="系统之间是什么样的关系？"><a href="#系统之间是什么样的关系？" class="headerlink" title="系统之间是什么样的关系？"></a>系统之间是什么样的关系？</h4><h4 id="对外上下游接口有哪些？"><a href="#对外上下游接口有哪些？" class="headerlink" title="对外上下游接口有哪些？"></a>对外上下游接口有哪些？</h4><h4 id="对接人是谁？"><a href="#对接人是谁？" class="headerlink" title="对接人是谁？"></a>对接人是谁？</h4><h4 id="关键业务流程怎么实现的？"><a href="#关键业务流程怎么实现的？" class="headerlink" title="关键业务流程怎么实现的？"></a>关键业务流程怎么实现的？</h4><ul><li>用类图、序列图等方式表达出来</li></ul><h2 id="开发架构"><a href="#开发架构" class="headerlink" title="开发架构"></a>开发架构</h2><h3 id="核心关注点"><a href="#核心关注点" class="headerlink" title="核心关注点"></a>核心关注点</h3><h4 id="系统源码"><a href="#系统源码" class="headerlink" title="系统源码"></a>系统源码</h4><h4 id="第三方SDK"><a href="#第三方SDK" class="headerlink" title="第三方SDK"></a>第三方SDK</h4><h4 id="使用的框架、中间件、工具包"><a href="#使用的框架、中间件、工具包" class="headerlink" title="使用的框架、中间件、工具包"></a>使用的框架、中间件、工具包</h4><h3 id="常见问题-1"><a href="#常见问题-1" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="代码在哪？"><a href="#代码在哪？" class="headerlink" title="代码在哪？"></a>代码在哪？</h4><h4 id="包怎么划分的？怎么分层？"><a href="#包怎么划分的？怎么分层？" class="headerlink" title="包怎么划分的？怎么分层？"></a>包怎么划分的？怎么分层？</h4><ul><li>controller、service、dao</li></ul><h4 id="用了什么框架？"><a href="#用了什么框架？" class="headerlink" title="用了什么框架？"></a>用了什么框架？</h4><ul><li>ssh、dubbo、spring cloud</li></ul><h4 id="用了哪些工具包？"><a href="#用了哪些工具包？" class="headerlink" title="用了哪些工具包？"></a>用了哪些工具包？</h4><ul><li>apache commons、guava、fastjson</li></ul><h4 id="用了哪些中间件？"><a href="#用了哪些中间件？" class="headerlink" title="用了哪些中间件？"></a>用了哪些中间件？</h4><ul><li>metaq、tair、schedulerX</li></ul><h4 id="依赖哪些平台？"><a href="#依赖哪些平台？" class="headerlink" title="依赖哪些平台？"></a>依赖哪些平台？</h4><ul><li>权限平台</li><li>流程引擎</li></ul><h2 id="运行框架"><a href="#运行框架" class="headerlink" title="运行框架"></a>运行框架</h2><h3 id="核心关注点-1"><a href="#核心关注点-1" class="headerlink" title="核心关注点"></a>核心关注点</h3><h4 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h4><h4 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h4><h4 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h4><h3 id="常见问题-2"><a href="#常见问题-2" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="系统能支撑多少QPS？峰值QPS多少？"><a href="#系统能支撑多少QPS？峰值QPS多少？" class="headerlink" title="系统能支撑多少QPS？峰值QPS多少？"></a>系统能支撑多少QPS？峰值QPS多少？</h4><h4 id="与上下游系统怎么交互的？"><a href="#与上下游系统怎么交互的？" class="headerlink" title="与上下游系统怎么交互的？"></a>与上下游系统怎么交互的？</h4><ul><li>RPC or RESTful API</li><li>同步/异步</li></ul><h2 id="物理架构"><a href="#物理架构" class="headerlink" title="物理架构"></a>物理架构</h2><h3 id="核心关注点-2"><a href="#核心关注点-2" class="headerlink" title="核心关注点"></a>核心关注点</h3><h4 id="目标程序及其依赖的运行库-系统软件最终如何安装或部署到物理机器上"><a href="#目标程序及其依赖的运行库-系统软件最终如何安装或部署到物理机器上" class="headerlink" title="目标程序及其依赖的运行库/系统软件最终如何安装或部署到物理机器上"></a>目标程序及其依赖的运行库/系统软件最终如何安装或部署到物理机器上</h4><h4 id="如何部署及其和网络"><a href="#如何部署及其和网络" class="headerlink" title="如何部署及其和网络"></a>如何部署及其和网络</h4><ul><li>高可用</li><li>高性能</li><li>高并发</li><li>可靠性</li><li>扩展性</li><li>安全性</li></ul><h3 id="常见问题-3"><a href="#常见问题-3" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="系统如何发布部署？有哪些部署环境？"><a href="#系统如何发布部署？有哪些部署环境？" class="headerlink" title="系统如何发布部署？有哪些部署环境？"></a>系统如何发布部署？有哪些部署环境？</h4><h4 id="系统有多少台机器？"><a href="#系统有多少台机器？" class="headerlink" title="系统有多少台机器？"></a>系统有多少台机器？</h4><h4 id="系统部署怎么部署的？"><a href="#系统部署怎么部署的？" class="headerlink" title="系统部署怎么部署的？"></a>系统部署怎么部署的？</h4><ul><li>集群部署</li><li>分布式部署</li></ul><h4 id="有没有容器化？"><a href="#有没有容器化？" class="headerlink" title="有没有容器化？"></a>有没有容器化？</h4><h4 id="有没有多机房部署？"><a href="#有没有多机房部署？" class="headerlink" title="有没有多机房部署？"></a>有没有多机房部署？</h4><h2 id="数据架构"><a href="#数据架构" class="headerlink" title="数据架构"></a>数据架构</h2><h3 id="核心关注点-3"><a href="#核心关注点-3" class="headerlink" title="核心关注点"></a>核心关注点</h3><h4 id="持久化数据的存储方案"><a href="#持久化数据的存储方案" class="headerlink" title="持久化数据的存储方案"></a>持久化数据的存储方案</h4><ul><li>存储格式</li><li>实体数据</li><li>实体关系数据</li><li>数据传递</li><li>数据复制</li><li>数据同步策略</li></ul><h3 id="常见问题-4"><a href="#常见问题-4" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="数据存储在哪？用了什么数据库？"><a href="#数据存储在哪？用了什么数据库？" class="headerlink" title="数据存储在哪？用了什么数据库？"></a>数据存储在哪？用了什么数据库？</h4><ul><li>Oracle</li><li>MySQL</li></ul><h4 id="梳理-E-R-图"><a href="#梳理-E-R-图" class="headerlink" title="梳理 E-R 图"></a>梳理 E-R 图</h4><h4 id="数据量有多少？是否有分库分表？"><a href="#数据量有多少？是否有分库分表？" class="headerlink" title="数据量有多少？是否有分库分表？"></a>数据量有多少？是否有分库分表？</h4><h4 id="用了哪些NoSQL数据库？"><a href="#用了哪些NoSQL数据库？" class="headerlink" title="用了哪些NoSQL数据库？"></a>用了哪些NoSQL数据库？</h4><ul><li>MongoDB</li><li>Redis</li><li>Memcache</li><li>ES</li></ul><h4 id="有哪些数据同步任务？"><a href="#有哪些数据同步任务？" class="headerlink" title="有哪些数据同步任务？"></a>有哪些数据同步任务？</h4><h4 id="大数据框架的使用情况如何？"><a href="#大数据框架的使用情况如何？" class="headerlink" title="大数据框架的使用情况如何？"></a>大数据框架的使用情况如何？</h4><ul><li>Hadoop</li><li>Apache</li><li>CDH</li><li>HBase</li><li>Hive</li><li>YARN</li><li>Flume</li><li>Kafka</li><li>Spark</li></ul><h2 id="系统运维"><a href="#系统运维" class="headerlink" title="系统运维"></a>系统运维</h2><h3 id="常见问题-5"><a href="#常见问题-5" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="什么时间容易出问题？"><a href="#什么时间容易出问题？" class="headerlink" title="什么时间容易出问题？"></a>什么时间容易出问题？</h4><ul><li>双十一大促</li><li>月末</li></ul><h4 id="对关键功能是否有监控？"><a href="#对关键功能是否有监控？" class="headerlink" title="对关键功能是否有监控？"></a>对关键功能是否有监控？</h4><ul><li>监控</li><li>报警</li></ul><h4 id="出了问题怎么解决？日志在哪？是否有全链路跟踪？是否有一些紧急操作？"><a href="#出了问题怎么解决？日志在哪？是否有全链路跟踪？是否有一些紧急操作？" class="headerlink" title="出了问题怎么解决？日志在哪？是否有全链路跟踪？是否有一些紧急操作？"></a>出了问题怎么解决？日志在哪？是否有全链路跟踪？是否有一些紧急操作？</h4><ul><li>开关配置</li><li>降级/限流配置</li></ul><h4 id="系统有哪些坑？"><a href="#系统有哪些坑？" class="headerlink" title="系统有哪些坑？"></a>系统有哪些坑？</h4><ul><li>找负责的产品、运营、技术了解</li><li>设计漏洞</li><li>性能隐患</li></ul><h4 id="运营、客服反馈的常见问题有哪些？"><a href="#运营、客服反馈的常见问题有哪些？" class="headerlink" title="运营、客服反馈的常见问题有哪些？"></a>运营、客服反馈的常见问题有哪些？</h4><h1 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h1><ul><li>做需求</li><li>修bug</li><li>重构</li><li>亲自动手编码</li><li>调试</li><li>测试</li><li>上线</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200403112402.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Architecture" scheme="https://wangfanggang.com/categories/Architecture/"/>
-    
-    
-      <category term="Architecture" scheme="https://wangfanggang.com/tags/Architecture/"/>
     
   </entry>
   
