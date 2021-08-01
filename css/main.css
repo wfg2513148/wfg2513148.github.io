@@ -1885,7 +1885,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2f71ab;
+  background: #677d22;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2815,6 +2815,6 @@ embed {
   display: inline-block;
 }
 .header {
-  background: #f5f5f5 url("https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/Hippopx.jpg?x-oss-process=image/format,jpg/quality,q_40");
+  background: #f5f5f5 url("https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/Hippopx.jpg");
   background-size: cover;
 }
