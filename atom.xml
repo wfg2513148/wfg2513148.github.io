@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-06-30T15:33:35.000Z</updated>
+  <updated>2021-08-01T02:52:18.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2021.07.31</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210731/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210731/</id>
+    <published>2021-07-31T02:42:00.000Z</published>
+    <updated>2021-08-01T02:52:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/alcedo-atthis-common-kingfisher-bird-small-preview.jpg?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.07.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.youtube.com/watch?v=hvy2xneAZhA&amp;ab_channel=OracleDevelopers" target="_blank" rel="noopener">Oracle APEX + Server-side JavaScript</a> <code>2021.07</code></li><li><a href="https://storm-petrel.com/2021/07/31/plsql-md5-checksum-calculation-for-blob/" target="_blank" rel="noopener">Oracle PL/SQL MD5 Checksum for a BLOB</a> <code>2021.07</code></li><li><a href="https://www.foxinfotech.in/2021/07/oracle-apex-after-login-redirect-page.html" target="_blank" rel="noopener">After Login Redirect the User to a Specific Page</a> <code>2021.07</code></li><li><a href="https://www.foxinfotech.in/2021/07/breadcrumbs-oracle-apex.html" target="_blank" rel="noopener">Creating Breadcrumbs in Oracle Apex</a> <code>2021.07</code></li><li><a href="https://www.foxinfotech.in/2021/07/oracle-apex-leave-site.html" target="_blank" rel="noopener">Oracle Apex Suppress Leave Site Warning Message</a> <code>2021.07</code></li><li><a href="http://dgielis.blogspot.com/2021/07/hiding-spinning-icon-in-apex-211-modal.html" target="_blank" rel="noopener">Hiding spinning icon in APEX 21.1 Modal Dialog</a> <code>2021.07</code></li><li><a href="https://www.oracle-and-apex.com/differences-between-apex-20-2-and-21-1/" target="_blank" rel="noopener">Differences between APEX 20.2 and 21.1</a> <code>2021.07</code></li><li><a href="https://strack-software-development.blogspot.com/2021/07/apex-api-tracer.html" target="_blank" rel="noopener">APEX API Tracer</a> <code>2021.07</code></li><li><a href="https://strack-software-development.blogspot.com/2021/06/an-apex-plugin-for-download-of.html" target="_blank" rel="noopener">An APEX Plugin for download of Interactive Reports as ZIP files</a> <code>2021.06</code></li><li><a href="https://blog.neilfernandez.com/rest_source_sync_and_deployment/" target="_blank" rel="noopener">REST Data Sources/Synchronization deployment tips in APEX 20.2</a> <code>2021.06</code></li><li><a href="https://storm-petrel.com/2021/06/23/apex_low-code_user_management/" target="_blank" rel="noopener">Oracle APEX Low-Code Authentication and Authorization</a> <code>2021.06</code></li><li><a href="https://storm-petrel.com/2021/06/25/oracle-apex-low-code-user-management-part-ii/" target="_blank" rel="noopener">Oracle APEX Low-Code User Management – Part II</a> <code>2021.06</code></li><li><a href="https://storm-petrel.com/2021/06/08/aws-s3-oracle/" target="_blank" rel="noopener">Oracle PL/SQL Storing Large Objects on AWS S3</a> <code>2021.06</code></li><li><a href="https://storm-petrel.com/2021/05/21/oracle-plsql-api-template/" target="_blank" rel="noopener">Oracle PLSQL Template for RESTful API</a> <code>2021.05</code></li><li><a href="https://storm-petrel.com/2021/05/19/oracle-apex-standardize-error-and-debugging/" target="_blank" rel="noopener">APEX Debug Messages – Standardize error collection, debugging and trace</a> <code>2021.05</code></li><li><a href="https://storm-petrel.com/2021/05/25/oracle-native-json-query/" target="_blank" rel="noopener">Querying JSON with Oracle SQL</a> <code>2021.05</code></li><li><a href="https://hartenfeller.dev/blog/apex-slideover-plugin" target="_blank" rel="noopener">The APEX Slideover Plug-In</a> <code>2021.05</code></li><li><a href="https://blog.neilfernandez.com/rest_source_sync_and_deployment/" target="_blank" rel="noopener">REST Data Sources/Synchronization deployment tips in APEX 20.2</a> <code>2021.06</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/alcedo-atthis-common-kingfisher-bird-small-preview.jpg?x-oss-process=i
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.06.30</title>
@@ -575,36 +604,6 @@
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200430230618.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
       
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 20.1 正式发布！</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200425/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200425/</id>
-    <published>2020-04-25T11:54:00.000Z</published>
-    <updated>2020-04-25T12:03:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425200255.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>千呼万唤始出来，Oracle APEX 20.1 正式发布了！</p><h1 id="Oracle-APEX-20-1-新特性"><a href="#Oracle-APEX-20-1-新特性" class="headerlink" title="Oracle APEX 20.1 新特性"></a>Oracle APEX 20.1 新特性</h1><h2 id="APEX-Redwood"><a href="#APEX-Redwood" class="headerlink" title="APEX + Redwood"></a>APEX + Redwood</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195506.png" alt=""></p><p>APEX 和应用构建器的用户界面进行了更新，以与 Oracle 新的用户体验设计语言 Redwood 保持一致。新的设计和颜色方案贯穿整个开发人员体验，并提供全新的视觉效果。</p><p>现在，APEX 的外观可以根据操作系统或平台设置自动在深色和浅色外观模式之间切换，使 APEX 可以与您的工作流无缝集成。</p><a id="more"></a><h2 id="分面搜索增强功能"><a href="#分面搜索增强功能" class="headerlink" title="分面搜索增强功能"></a>分面搜索增强功能</h2><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195603.png" alt=""></p><p>分面搜索进行了改进，以支持级联值列表、条件分面和压缩计数显示等增强功能。</p><ul><li><code>级联值列表</code>：分面可以具有级联值列表，允许数据与另一个父分面相关联</li><li><code>条件分面</code>：基于另一个分面的值隐藏不需要的分面</li><li><code>压缩计数显示</code>：显示压缩计数，例如 1K，而不是 1,000，从而简化总计数的显示</li><li><code>总行数显示</code>：自动为总行数创建单独的行</li><li><code>按分面列表条目的数量从多到少排序</code>：基于计数按降序对分面条目列表进行排序</li></ul><h2 id="友好-URL"><a href="#友好-URL" class="headerlink" title="友好 URL"></a>友好 URL</h2><p>APEX 应用的 URL 语法进行了简化，以便在运行时实现更友好的 URL。新的语法提供 SEO 友好的 URL 结构。该结构更易于理解，并提供关于您在应用内位置的直接上下文。</p><p>URL 不再主要使用应用或页码，改为使用工作区路径前缀、应用和页别名以及 URL 结构的标准 Web 参数语法。</p><ul><li><code>一键式的友好 URL</code>：通过编辑应用属性和打开友好 URL 的开关，为现有应用启用友好 URL。</li><li><code>废弃页码</code>：友好 URL 在 URL 中使用应用和页别名，您可以从应用构建器中轻松定制这些项。还可以定制路径前缀。</li><li><code>定制路径前缀</code>：友好 URL 包括工作区路径前缀。依次转到工作区管理、管理服务、设置工作区首选项，可更改此项。</li></ul><h2 id="部署和导出方面的改进"><a href="#部署和导出方面的改进" class="headerlink" title="部署和导出方面的改进"></a>部署和导出方面的改进</h2><p>应用生命周期管理进行了许多改进，包括一键式应用部署、自动备份、zip 导出等。通过这些功能，可以轻松部署 APEX 应用，并将其集成到现有工作流中。</p><ul><li><code>自动备份</code>：作为日常维护的一部分，您的 APEX 应用将自动滚动备份。仅当存在更改时才备份应用，每个应用至多可有 30 个备份。您可以随时锁定、下载或还原这些备份。</li><li><code>将应用导出为 Zip 格式</code>：现在可将 APEX 应用导出为单个 zip 文件，从而轻松与 GIT / SVN 集成并简化增量部署。该 zip 文件可镜像 APEXExport -split 实用程序的目录结构，并将应用、页和共享组件拆分为单独的文件，以便于管理。</li><li><code>一键式远程应用部署</code>：Oracle 自治数据库 (Autonomous Database, ADB) 升级到 20.1 后，可从内部部署或其他位置直接部署到 ADB。</li></ul><h2 id="本机-PDF-打印"><a href="#本机-PDF-打印" class="headerlink" title="本机 PDF 打印"></a>本机 PDF 打印</h2><p>现在可以直接从交互式网格打印 PDF 文件。此功能生成的 PDF 文件包括已应用于交互式网格的突出显示、列分组和分栏符等格式选项。要使用此功能，只需在区域属性中启用 PDF 下载格式。</p><ul><li><code>交互式网格中提供本机 PDF 支持</code>：要启用此功能，只需在交互式网格的区域属性中启用 PDF 下载格式。</li><li><code>保留网格格式设置</code>：PDF 文件中会保留突出显示、控制分段和列组。</li><li><code>定制 PDF 设置</code>：更改默认页大小、方向和不同字体设置。</li></ul><h2 id="大幅网页菜单"><a href="#大幅网页菜单" class="headerlink" title="大幅网页菜单"></a>大幅网页菜单</h2><p>通用主题现在为应用导航提供大幅网页菜单。大幅网页菜单采用可折叠的浮动面板呈现导航菜单，从而一次显示所有导航项。它对于显示应用的各个部分特别有用，并允许用户直接访问应用的各个部分。</p><ul><li><code>定制设置</code>：有许多模板选项，您可使用它们定制布局和外观，使其专门适用于您的应用。</li><li><code>图标、说明和徽章</code>：通过定制列表属性，可使用图标、说明、甚至徽章来丰富大幅网页菜单中的项。</li><li><code>自适应</code>：无论在较大的屏幕上采用什么布局，大幅网页菜单在小屏幕设备将合理地调整其外观，从而适应屏幕。</li><li><code>易于访问且键盘友好</code>：可使用键盘上的箭头键访问和浏览菜单内的导航项。</li></ul><h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><p>以下是您应该掌握的一些其他功能。</p><ul><li><code>会话超时预警</code>：现在，用户将在会话即将到期之前迅速收到预警，以有机会延长会话</li><li><code>SQL 工作室增强功能</code>：提供对 SODA 集合的基本支持，从而更好地支持 JSON</li><li><code>交互式网格增强功能</code>：引入 APEX_IG 程序包和 IG URL 筛选</li><li><code>其他增强功能和库升级</code>：JET JS 库已升级到版本 8.0</li><li><code>针对 RTL 语言的 UI 改进</code>：对于从右到左的语言，在通用主题内进行了许多改进和错误修复。</li></ul><p>浏览文档并查看已知问题，以了解有关 Oracle APEX 20.1 的更多信息。<br><a href="https://www.oracle.com/tools/downloads/apex-downloads.html" target="_blank" rel="noopener">https://www.oracle.com/tools/downloads/apex-downloads.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425200255.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;千呼万唤始出来，Oracle APEX 20.1 正式发布了！&lt;/p&gt;
-&lt;h1 id=&quot;Oracle-APEX-20-1-新特性&quot;&gt;&lt;a href=&quot;#Oracle-APEX-20-1-新特性&quot; class=&quot;headerlink&quot; title=&quot;Oracle APEX 20.1 新特性&quot;&gt;&lt;/a&gt;Oracle APEX 20.1 新特性&lt;/h1&gt;&lt;h2 id=&quot;APEX-Redwood&quot;&gt;&lt;a href=&quot;#APEX-Redwood&quot; class=&quot;headerlink&quot; title=&quot;APEX + Redwood&quot;&gt;&lt;/a&gt;APEX + Redwood&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200425195506.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;APEX 和应用构建器的用户界面进行了更新，以与 Oracle 新的用户体验设计语言 Redwood 保持一致。新的设计和颜色方案贯穿整个开发人员体验，并提供全新的视觉效果。&lt;/p&gt;
-&lt;p&gt;现在，APEX 的外观可以根据操作系统或平台设置自动在深色和浅色外观模式之间切换，使 APEX 可以与您的工作流无缝集成。&lt;/p&gt;
     
     </summary>
     
