@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-08-02T07:08:18.000Z</updated>
+  <updated>2021-08-30T12:18:57.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2021.08.30</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210830/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210830/</id>
+    <published>2021-08-30T11:23:00.000Z</published>
+    <updated>2021-08-30T12:18:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210830201834.png?x-oss-process=image/format,jpg/quality,q_50" alt=""></p><p>以下是截止至 <code>2021.08.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.javainhand.com/2021/08/add-emojis-in-oracle-apex.html" target="_blank" rel="noopener">Add Emojis in Oracle APEX</a> <code>2021.08</code></li><li><a href="https://dickdral.blogspot.com/2020/08/new-plug-in-reacting-on-changed-content.html" target="_blank" rel="noopener">New Plug-in: Reacting on changed content of APEX Autocomplete Item</a> <code>2021.08</code></li><li><a href="https://apextips.blogspot.com/2021/08/uploading-files-to-oci-object-storage.html" target="_blank" rel="noopener">Uploading Files to OCI Object Storage from Autonomous</a> <code>2021.08</code></li><li><a href="https://apextips.blogspot.com/2021/08/a-note-on-using-numerical-sysguid-with.html" target="_blank" rel="noopener">A note on using a numerical sys_guid with JavaScript</a> <code>2021.08</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210830201834.png?x-oss-process=image/format,jpg/quality,q_50&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.07.31</title>
@@ -586,35 +615,6 @@
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
     
       <category term="AOP" scheme="https://wangfanggang.com/tags/AOP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2020.04.30</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200430/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200430/</id>
-    <published>2020-04-30T14:32:00.000Z</published>
-    <updated>2020-04-30T15:06:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200430230618.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.04.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/creating-email-campaign-app-with-oracle-apex" target="_blank" rel="noopener">Creating Email Campaign App with Oracle APEX</a> <code>2020.04</code></li><li><a href="https://rimblas.com/blog/2020/04/video-007-conditional-validation-in-apex/" target="_blank" rel="noopener">Conditional Validation in APEX</a> <code>2020.04</code></li><li><a href="http://dgielis.blogspot.com/2020/04/oracle-apex-201-installed-with-only-2.html" target="_blank" rel="noopener">Oracle APEX 20.1 installed with only 2 mins downtime</a> <code>2020.04</code></li><li><a href="https://hardlikesoftware.com/weblog/2020/03/31/apex-navigation-menu-experiments-part-3/" target="_blank" rel="noopener">APEX Navigation Menu Experiments Part 3</a> <code>2020.04</code></li><li><a href="http://lschilde.blogspot.com/2020/04/interactive-grid-validation-duplicated.html" target="_blank" rel="noopener">APEX and IG validation part 2</a> <code>2020.04</code></li><li><a href="http://lschilde.blogspot.com/2020/04/oracle-apex-interactive-grid-url.html" target="_blank" rel="noopener">Oracle APEX Interactive Grid URL Filtering</a> <code>2020.04</code></li><li><a href="https://jeffkemponoracle.com/2020/04/friendly-url-structure/" target="_blank" rel="noopener">Friendly URL structure</a> <code>2020.04</code></li><li><a href="https://jeffkemponoracle.com/2020/04/font-awesome-v5-alongside-font-apex/" target="_blank" rel="noopener">Font Awesome v5 alongside Font APEX</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/03/oracle-apex-submit-page-when-enter-key-pressed.html" target="_blank" rel="noopener">Submit Page When Enter Key Pressed</a> <code>2020.03</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-date-picker.html" target="_blank" rel="noopener">Working with Date Picker</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-validation-pl-sql-function-returning-error-text.html" target="_blank" rel="noopener">Validation: PL/SQL Function Returning Error Text</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-validation-without-submit-using-javascript-and-ajax-callback.html" target="_blank" rel="noopener">Validation Without Submit Using JavaScript and Ajax Callback</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-get-client-ip-address.html" target="_blank" rel="noopener">Get Client IP Address</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-interactive-report-tutorial.html" target="_blank" rel="noopener">Interactive Report Tutorial</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/2-ways-to-unlock-oracle-apex-admin-account.html" target="_blank" rel="noopener">2 Ways to Unlock Oracle Apex Admin Account</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/how-to-add-html-and-css-code-snippets-in-oracle-apex.html" target="_blank" rel="noopener">How to Add HTML and CSS Code Snippets in Oracle Apex?</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-friendly-urls.html" target="_blank" rel="noopener">Make User and SEO Friendly URLs</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/oracle-apex-automated-backups.html" target="_blank" rel="noopener">Creating Automated Backups</a> <code>2020.04</code></li><li><a href="https://www.foxinfotech.in/2020/04/installing-oracle-apex-20-1.html" target="_blank" rel="noopener">Installing Oracle Apex 20.1</a> <code>2020.04</code></li><li><a href="">Logging APEX Report Downloads</a> <code>2020.04</code></li><li><a href="https://www.traust.com/oracle-apex-simple-login-page-theming/" target="_blank" rel="noopener">Oracle APEX Simple Login Page Theming</a> <code>2020.04</code></li><li><a href="https://www.traust.com/oracle-apex-image-errors-after-an-upgrade/" target="_blank" rel="noopener">Oracle APEX Image Errors After An Upgrade</a> <code>2020.04</code></li><li><a href="https://explorer.co.uk/low-code-an-apex-developers-perspective/" target="_blank" rel="noopener">Low Code – an APEX developer’s perspective</a> <code>2020.04</code></li><li><a href="https://explorer.co.uk/the-things-an-apex-developer-should-be-aware-of-when-developing-apex-applications-on-an-oracle-autonomous-database/" target="_blank" rel="noopener">The Things an APEX Developer Should Be Aware of When Developing APEX Applications on an Oracle Autonomous Database</a> <code>2020.04</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200430230618.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
