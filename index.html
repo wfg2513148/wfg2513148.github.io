@@ -371,6 +371,237 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-series-18/" itemprop="url">
+                  Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-09-15 22:19:00" itemprop="dateCreated datePublished" datetime="2021-09-15T22:19:00+08:00">2021-09-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-09-16 00:07:39" itemprop="dateModified" datetime="2021-09-16T00:07:39+08:00">2021-09-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-series-18/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210916000701.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在现实工作中，很多时候需要将第三方的系统数据集成到自己的系统中，但第三方系统使用的数据库不是Oracle数据库，甚至不在本地局域网内，无法简单地通过<code>数据库直连</code>的方式集成到APEX中。但对方可能会提供基于http的接口，如: SOAP Web Service或者RESTful风格的API。</p>
+<blockquote>
+<p>钢哥注: 不了解REST API与SOAP的区别的可以看这里：<a href="http://restful.p2hp.com/resources/soap-vs-rest-apis" target="_blank" rel="noopener">比较SOAP与REST API</a></p>
+</blockquote>
+<p>其实，APEX提供将RESTful API作为数据源的能力，这种方式可以不用管后端数据源是什么数据库，只要通过合法调用RESTful API，即可实现对远端数据的增删改查（前提是对方得提供增删改查的RESTful API），甚至可以实现定时同步远端数据（到本地表），从而扩展APEX数据源。很多APEX标准控件（如：Interactive Grid，Interactive Report, Classic Report）都支持使用REST作为数据源，开发者无需关心背后的数据是否来自”本地“，就可以像使用本地表一样进行页面开发，可以说还是非常不错的。</p>
+<p>下面就跟钢哥一起揭开APEX使用REST Data Source的神秘面纱吧。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Oracle/Oracle-APEX/apex-series-18/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210831/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2399,231 +2630,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20201231/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20201231/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2020.12.31
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-12-31 22:20:00 / 修改时间：22:29:50" itemprop="dateCreated datePublished" datetime="2020-12-31T22:20:00+08:00">2020-12-31</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20201231/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2020.12.31">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">705</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20201231221732.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
-<p>以下是截止至 <code>2020.12.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="https://www.laureston.ca/2019/12/28/oracle-apex-2019-year-in-review/" target="_blank" rel="noopener">Oracle APEX 2019 Year in Review</a> <code>2020.12</code></li>
-<li><a href="https://stefandobre.com/a-closer-look-at-the-rich-text-editor-of-orclapex-20-2/" target="_blank" rel="noopener">A closer look at the Rich Text Editor of #orclAPEX 20.2</a> <code>2020.12</code></li>
-<li><a href="https://stefandobre.com/dynamically-compute-interactive-grid-columns-in-orclapex-20-2/" target="_blank" rel="noopener">How to dynamically compute Interactive Grid Columns in #orclAPEX 20.2</a> <code>2020.12</code></li>
-<li><a href="https://www.aflorestorres.com/2020/12/region-de-alerta-alert-region-de-forma.html" target="_blank" rel="noopener">Alert Region dynamically with Classic Report</a> <code>2020.12</code></li>
-<li><a href="https://tm-apex.blogspot.com/2020/12/column-read-only-function-interactive.html" target="_blank" rel="noopener">Column “Read-only” Function (Interactive Grid #7)</a> <code>2020.12</code></li>
-<li><a href="https://tm-apex.blogspot.com/2020/12/ajax-callback.html" target="_blank" rel="noopener">AJAX Callback within Oracle APEX</a> <code>2020.12</code></li>
-<li><a href="https://srihariravva.blogspot.com/2020/12/web-components-in-oracle-apex.html" target="_blank" rel="noopener">Web Components in Oracle APEX</a> <code>2020.12</code></li>
-<li><a href="https://explorer.co.uk/apex-20-2-hidden-gems/" target="_blank" rel="noopener">APEX 20.2 Hidden Gems</a> <code>2020.12</code></li>
-<li><a href="https://explorer.co.uk/part-one-low-code-microsoft-and-oracle/" target="_blank" rel="noopener">Part One: Low Code – Microsoft and Oracle</a> <code>2020.12</code></li>
-<li><a href="https://explorer.co.uk/faceted-search/" target="_blank" rel="noopener">Faceted Search of Oracle APEX</a> <code>2020.12</code></li>
-<li><a href="https://www.traust.com/conditional-error-button-on-ig-in-oracle-apex/" target="_blank" rel="noopener">Conditional Error Button On IG In Oracle APEX</a> <code>2020.12</code></li>
-<li><a href="https://www.traust.com/conditionally-change-select-list-color-in-oracle-apex/" target="_blank" rel="noopener">Conditionally Change Select List Color In Oracle APEX</a> <code>2020.12</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2675,7 +2681,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

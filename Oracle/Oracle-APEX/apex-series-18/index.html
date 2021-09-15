@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="前言在现实工作中，很多时候需要将第三方的系统数据集成到自己的系统中，但第三方系统使用的数据库不是Oracle数据库，甚至不在本地局域网内，无法简单地通过数据库直连的方式集成到APEX中。但对方可能会提供基于http的接口，如: SOAP Web Service或者RESTful风格的API。  钢哥注: 不了解REST API与SOAP的区别的可以看这里：比较SOAP与REST API  其实，">
+<meta name="keywords" content="Oracle,APEX,ORDS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="前言在现实工作中，很多时候需要将第三方的系统数据集成到自己的系统中，但第三方系统使用的数据库不是Oracle数据库，甚至不在本地局域网内，无法简单地通过数据库直连的方式集成到APEX中。但对方可能会提供基于http的接口，如: SOAP Web Service或者RESTful风格的API。  钢哥注: 不了解REST API与SOAP的区别的可以看这里：比较SOAP与REST API  其实，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210916000701.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915213842.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214027.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915213948.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214155.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214249.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214320.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214412.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220527.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220604.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214610.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214628.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220647.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214816.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214844.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220823.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220852.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215102.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215155.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215235.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215311.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215354.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215509.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215533.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220359.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215701.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215722.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215849.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215752.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220015.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220040.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220131.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220953.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221135.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221200.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221342.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221416.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221449.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221620.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221711.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221745.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221711.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:updated_time" content="2021-09-15T16:07:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发">
+<meta name="twitter:description" content="前言在现实工作中，很多时候需要将第三方的系统数据集成到自己的系统中，但第三方系统使用的数据库不是Oracle数据库，甚至不在本地局域网内，无法简单地通过数据库直连的方式集成到APEX中。但对方可能会提供基于http的接口，如: SOAP Web Service或者RESTful风格的API。  钢哥注: 不了解REST API与SOAP的区别的可以看这里：比较SOAP与REST API  其实，">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210916000701.png?x-oss-process=image/format,jpg/quality,q_60">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-09-15 22:19:00" itemprop="dateCreated datePublished" datetime="2021-09-15T22:19:00+08:00">2021-09-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-09-16 00:07:39" itemprop="dateModified" datetime="2021-09-16T00:07:39+08:00">2021-09-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-series-18/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210916000701.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在现实工作中，很多时候需要将第三方的系统数据集成到自己的系统中，但第三方系统使用的数据库不是Oracle数据库，甚至不在本地局域网内，无法简单地通过<code>数据库直连</code>的方式集成到APEX中。但对方可能会提供基于http的接口，如: SOAP Web Service或者RESTful风格的API。</p>
+<blockquote>
+<p>钢哥注: 不了解REST API与SOAP的区别的可以看这里：<a href="http://restful.p2hp.com/resources/soap-vs-rest-apis" target="_blank" rel="noopener">比较SOAP与REST API</a></p>
+</blockquote>
+<p>其实，APEX提供将RESTful API作为数据源的能力，这种方式可以不用管后端数据源是什么数据库，只要通过合法调用RESTful API，即可实现对远端数据的增删改查（前提是对方得提供增删改查的RESTful API），甚至可以实现定时同步远端数据（到本地表），从而扩展APEX数据源。很多APEX标准控件（如：Interactive Grid，Interactive Report, Classic Report）都支持使用REST作为数据源，开发者无需关心背后的数据是否来自”本地“，就可以像使用本地表一样进行页面开发，可以说还是非常不错的。</p>
+<p>下面就跟钢哥一起揭开APEX使用REST Data Source的神秘面纱吧。</p>
+<a id="more"></a>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>一般而言，对方系统提供的接口是直接暴露到公网上的，为了安全起见，在调用时都需要对调用方的身份进行验证。如果是非法调用，接口是不会正常返回结果的。常见的几种验证方式有：基本用户名密码验证、Oauth2、请求头信息等。</p>
+<p>在使用APEX进行接口调用开发之前，需要先按照对方提供的接口说明，使用接口调试工具，如：<a href="https://www.postman.com/" target="_blank" rel="noopener">Postman</a>, <a href="https://hoppscotch.io/cn" target="_blank" rel="noopener">Postwoman</a>，对目标接口进行必要的测试，确保接口的可用性及调用参数的合法性。</p>
+<h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>本文假设对方提供了2个接口，一个是通过用户名和密码获取合法token，另一个是我们系统真正要使用的数据接口，用来查询系统数据的。</p>
+<ul>
+<li>接口1（登录接口）: 通过用户名密码获取合法的调用token。注意：这里要严格按照对方提供的接口要求进行传参。例如：对方要求使用<code>POST</code>的方式调用这个接口，同时需要提供两个参数<code>fLoginname</code>和<code>fPassword</code>，按照要求填写到接口测试工具中，点击”Send”按钮进行接口测试。</li>
+</ul>
+<p>如果一切顺利，对方将会返回预期的结果，如下图所示：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915213842.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>可以看到，login接口已经返回了我们需要的<code>token</code>值，后续调用其他接口时，需要带着这个token。</p>
+<ul>
+<li>接口2（用户信息查询接口）: 根据接口说明手册要求，这个接口需要在请求头（Request header）里添加一个固定参数<code>Authorization</code>，并且传递一个合法的token值（刚刚第一个接口获取到的)。</li>
+</ul>
+<p>如果不提供合法的token，直接调用接口2，返回结果如下图所示：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214027.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>利用登录接口中返回的合法token值，将请求头信息补全后再次进行测试，可以看到，接口成功返回了预期内容。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915213948.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="接口封装"><a href="#接口封装" class="headerlink" title="接口封装"></a>接口封装</h2><p>但这个token是有时效性的，过一段时间就会失效。现实中，我们不可能每次都手工获取token并填入其他接口后再进行调用，所以需要简单地对获取token的请求进行一下封装，以便简化接口调用的步骤。</p>
+<blockquote>
+<p>钢哥提示: 利用PL/SQL函数将登录接口调用过程进行一下封装，这样以后要获取合法的调用token，只需要执行一下这个函数即可。也可以将返回结果保存到表或者APEX的Application item中，方便后续引用。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">-- 获取token函数</span><br><span class="line">create or replace function hfja_get_rest_token return varchar2 as</span><br><span class="line">    l_clob       CLOB;</span><br><span class="line">    l_token      varchar2(4000);</span><br><span class="line">    j            apex_json.t_values;</span><br><span class="line">begin                    </span><br><span class="line">    -- 初始化请求头信息      </span><br><span class="line">    apex_web_service.g_request_headers(1).name := &apos;Accept&apos;;</span><br><span class="line">    apex_web_service.g_request_headers(1).Value := &apos;*/*&apos;;</span><br><span class="line">    apex_web_service.g_request_headers(1).name := &apos;Content-Type&apos;;</span><br><span class="line">    apex_web_service.g_request_headers(1).value := &apos;application/x-www-form-urlencoded&apos;;</span><br><span class="line"></span><br><span class="line">    -- 组装好RESTful API需要的初始化参数，发起http请求，并将返回结果保存到clob变量中</span><br><span class="line">    l_clob := apex_web_service.make_rest_request(</span><br><span class="line">                                                p_url =&gt; &apos;http://xxx.xxx.xxx.xxx:8090/SubstationWEBV2/user/login&apos;, --此处替换成你自己的RESTful API地址</span><br><span class="line">                                                p_http_method =&gt; &apos;POST&apos;, --选择合适的请求方法</span><br><span class="line">                                                p_parm_name =&gt; apex_util.string_to_table(&apos;fLoginname:fPassword&apos;), --用冒号分隔请求参数名称</span><br><span class="line">                                                p_parm_value =&gt; apex_util.string_to_table(&apos;test:123456&apos;) --用冒号分隔请求参数对应的传入值</span><br><span class="line">                                                );</span><br><span class="line"></span><br><span class="line">    -- 将clob类型的结果装换成json格式，方便截取返回结果中的关键信息</span><br><span class="line">    apex_json.parse(j, l_clob);</span><br><span class="line"></span><br><span class="line">    -- 获取真正需要的信息（token）</span><br><span class="line">    l_token := apex_json.get_varchar2(p_path=&gt;&apos;data.token&apos;, p_values=&gt;j);</span><br><span class="line">    return l_token; </span><br><span class="line"></span><br><span class="line">exception </span><br><span class="line">    when others then</span><br><span class="line">        dbms_output.put_line(&apos;sqlerrm=&apos;||sqlerrm);</span><br><span class="line">        return &apos;&apos;;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<p>简单调用测试一下，能够成功取到合法的token。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-- 调用函数实时获取token</span><br><span class="line">begin</span><br><span class="line">  dbms_output.put_line(hfja_get_rest_token);</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<h2 id="创建REST数据源"><a href="#创建REST数据源" class="headerlink" title="创建REST数据源"></a>创建REST数据源</h2><p>进入到APEX应用中，选择<code>共享组件</code> -&gt; <code>REST数据源</code>，从头创建一个REST数据源。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214155.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214249.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214320.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214412.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这里的<code>URL</code>就是要调用的REST接口地址。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220527.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>直接<code>下一步</code>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220604.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这一步需要提供接口验证方式。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214610.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>未提供合法验证方式的结果，APEX无法帮助我们自动生成配置。虽然配置信息后续可以手工创建，但为了简化后续步骤，最好还是提供一下正确的验证方式。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214628.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>验证方式分为以下几种:</p>
+<ul>
+<li><code>Basic Authentication</code>：基本验证，是指在页面表单上输入用户名和密码的方式；</li>
+<li><code>OAuth2 Client Credentials Flow</code>：OAuth2方式，一般像微信、钉钉等互联网应用常用的验证方式;</li>
+<li><code>Oracle Cloud Infrastructure (OCI)</code>：Oracle云自带的验证方式; </li>
+<li><code>HTTP Header</code>：在请求头信息中附加验证信息的方式;</li>
+<li><code>URL Query String</code>：在url上附加参数的方式。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220647.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>我们这里选择<code>HTTP Header</code>，并按照接口要求提供正确的参数名和token值，点击<code>Discover</code>按钮。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214816.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>可以看到，这次接口调用成功了，并且APEX自动返回了结果数据让我们预览。点击<code>Create REST Data Source</code>按钮进行REST数据源的创建。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915214844.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>创建完成后，如下图所示。除了刚刚我们自己输入的信息外，一个REST数据源还包括<code>Data Profile</code>、<code>Operation</code>和<code>Parameters</code>几个部分。</p>
+<p>点击<code>Edit Data Profile</code>按钮，查看APEX为我们自动生成的接口数据基础信息。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220823.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220852.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这里需要注意的是<code>Format</code>（返回的数据格式）和<code>Row Selector</code>（结果选择器）。一般来说，REST接口返回的数据都是<code>JSON</code>格式的，而<code>Row Selector</code>里的节点代表我们要返回的数据的根节点。</p>
+<p>另外还可以对每一个字段进行编辑，可以将不需要的字段隐藏掉（<code>Visible</code>设置成<code>No</code>），还可以设置主键字段（后面会讲到）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215102.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>返回REST数据源信息页面，在右边有一个<code>Manage Synchronization</code>的链接，这个链接可以进入到数据同步页面，方便我们创建定时同步任务，以便将远端REST数据定时同步到我们本地的表里。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215155.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>由于本地表还没创建，选择<code>New Table</code>选项，并输入表名，创建一个数据同步表，点击<code>Save</code>按钮后，APEX会提示当前表不存在，并贴心地帮你生成好了建表的SQL语句。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215235.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>点击<code>Show SQL</code>按钮可以查看APEX自动生成的建表语句，点击<code>Create Table</code>就可以自动创建数据同步表了。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215311.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215354.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h2><p>数据同步表创建好后，就可以点击<code>Save and Run</code>按钮尝试进行数据同步了。</p>
+<blockquote>
+<p>钢哥注: 这里有一个小问题，点击数据同步按钮后，同步状态一直显示<code>Running</code>，实际已经同步好了，只能通过刷新页面看到结果，不知道是不是bug。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215509.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>查看同步log，发现数据同步失败了，提示500错误。这是因为我们没有提供合法的token造成的。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215533.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>点击<code>Add Step</code>按钮添加一个同步步骤，</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220359.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>填写必要的<code>HTTP Header</code>信息：</p>
+<ul>
+<li>参数名称: <code>Authorization</code></li>
+<li>值类型: <code>PL/SQL函数体</code></li>
+<li>表达式: <code>return hfja_get_rest_token;</code></li>
+</ul>
+<p>这样就可以在同步的时候自动获取合法token了。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215701.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>再次执行数据同步操作并检查日志，可以看到这次数据同步成功了。 </p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215722.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>切换到<code>SQL Workshop</code> -&gt; <code>Object Browser</code>，查看数据同步表，可以看到远端数据已经同步到本地表里了。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215849.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915215752.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>在同步页面还有一个<code>Synchronization Type</code>（同步选项）需要注意，有3个选择：</p>
+<ul>
+<li><code>Append</code>: 追加方式同步，每次同步都执行插入;</li>
+<li><code>Merge</code>: 合并方式同步，根据主键自动判断是否需要插入还是更新;</li>
+<li><code>Replace</code>: 替换方式同步，每次同步前都删除之前的数据，重新插入。</li>
+</ul>
+<p>我们选择第二种<code>合并</code>方式。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220015.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>页面提示我们的REST数据源（返回的结果集）中没有提供主键，所以还需要修改一下<code>Data Profile</code>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220040.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>点击<code>Edit Data Profile</code>对REST数据源返回结果进行编辑。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220131.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>明确指定返回数据集中的主键列。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915220953.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>对本地表也进行相同的修改，设置好主键列。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221135.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221200.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>设置好以后，就可以选择<code>Merge</code>同步选项了，再次同步测试一下，发现数据也是正确的了。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221342.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h2><p>在APEX中创建一个页面，新增一个<code>Region</code>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221416.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>将控件类型设置成能够使用REST数据源的控件，如：<code>Interactive Report</code>。</p>
+<ul>
+<li>Location: <code>REST Source</code></li>
+<li>REST Source: <code>UserCommonInfo</code>（我们之前创建好的REST数据源）</li>
+</ul>
+<p>需要注意，如果我们不勾选<code>Use Sychnoronization table</code>选项，意味着我们是从远端REST接口查询数据，此时就必须要设置一下控件的参数。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221449.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>将参数<code>Authorization</code>设置成通过我们自己的PL/SQL函数获取合法token。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221620.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>运行页面，可以看到数据已经加载到页面上了。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221711.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>勾选<code>Use Sychnoronization table</code>选项，重新运行。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221745.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>此时数据看起来是一样的，但实际上是使用的我们同步到本地表的数据。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210915221711.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>通过以上的步骤，就可以将远端REST接口作为APEX新的数据源，通过数据同步的功能，使远端的数据可以定时同步至本地表，这样就变相地实现了跨系统的数据集成。</p>
+<p>以上仅仅是对<code>REST Data Source</code>这一新特性的简单使用。由于时间关系，对这一新功能了解得还不够，如有疏漏或错误，还请大家指正。</p>
+<p>钢哥的 Oracle APEX 系列文章：</p>
+<ul>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/">Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/">Oracle APEX 系列文章04：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/">Oracle APEX 系列文章05：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/">Oracle APEX 系列文章06：Oracle APEX 到底适不适合企业环境？</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/">Oracle APEX 系列文章07：Oracle APEX 18.1 新特性</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/">Oracle APEX 系列文章08：如何从 APEX 5.1.4 升级到 最新的 APEX 18.1</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/">Oracle APEX 系列文章09：为什么选择使用 Oracle APEX</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/">Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</a></li>
+<li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-16/">Oracle APEX 系列文章16：AOP - PDF报表打印新选择</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-17/">Oracle APEX 系列文章17：如何利用 Oracle APEX 助力企业应用开发</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/">Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-18/">Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2021年09月15日 - 22:09</p>
+  <p><span>最后更新:</span>2021年09月16日 - 00:09</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-18/" title="Oracle APEX 系列文章18：如何利用REST数据源进行APEX开发">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-18/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+          
+            <a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20210831/" rel="next" title="Oracle APEX 活跃博文整理 | 2021.08.31">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2021.08.31
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">106</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口调试"><span class="nav-number">3.</span> <span class="nav-text">接口调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口封装"><span class="nav-number">4.</span> <span class="nav-text">接口封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建REST数据源"><span class="nav-number">5.</span> <span class="nav-text">创建REST数据源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据同步"><span class="nav-number">6.</span> <span class="nav-text">数据同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建页面"><span class="nav-number">7.</span> <span class="nav-text">创建页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">8.</span> <span class="nav-text">结论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/recordQuery">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
