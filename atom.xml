@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-09-29T06:05:26.000Z</updated>
+  <updated>2021-09-29T06:11:21.000Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.09.28</title>
+    <title>Oracle APEX 活跃博文整理 | 2021.09.29</title>
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210929/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210929/</id>
     <published>2021-09-29T06:05:00.000Z</published>
-    <updated>2021-09-29T06:05:26.000Z</updated>
+    <updated>2021-09-29T06:11:21.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210928152946.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2021.09.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://nielsdebr.blogspot.com/2021/09/announcing-flows-for-apex-211.html" target="_blank" rel="noopener">Announcing Flows for APEX 21.1</a> <code>2021.09</code></li><li><a href="https://blogs.oracle.com/apex/post/adb-vanity-urls-part-2-blocking-tools" target="_blank" rel="noopener">Oracle Autonomous Database Vanity URLs Part 2: Blocking Developer and Administrator Tools</a> <code>2021.09</code></li><li><a href="https://blogs.oracle.com/apex/post/introducing-vanity-urls-on-adb" target="_blank" rel="noopener">Introducing Vanity URLs for APEX and ORDS on Oracle Autonomous Database</a> <code>2021.09</code></li><li><a href="https://apexapplab.dev/2021/09/07/ords-apex-and-secure-rest-apis-part-2-call-the-api/" target="_blank" rel="noopener">ORDS, APEX and secure REST APIs (Part 2 – call the API)</a> <code>2021.09</code></li><li><a href="https://apexapplab.dev/2021/09/06/ords-apex-and-secure-rest-apis-part-1/" target="_blank" rel="noopener">ORDS, APEX and secure REST APIs (Part 1 – secure the API)</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/06/retornar-valor-de-una-modal-en-un-interactive-grid-ig-oracle-apex/" target="_blank" rel="noopener">Return value of a modal in an Interactive Grid IG - Oracle APEX</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/20/the-network-adapter-could-not-establish-the-connection-el-adaptador-de-red-no-pudo-establecer-la-conexion/" target="_blank" rel="noopener">The network adapter could not establish the connection</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/25/apex-oracle-ords-503-service-unavailable/" target="_blank" rel="noopener">Ords 503 Service Unavailable</a> <code>2021.09</code></li></ul>]]></content>
     
