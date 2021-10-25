@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="智能过滤器（Smart Filters）智能过滤器是一个新的搜索组件，它允许用户使用过滤器建议或搜索词快速缩小要搜索的数据范围。开发人员可以使用该组件为用户提供简化的搜索体验，通过单个控件即可让用户立即找到他们想要寻找的信息。 视频演示 强大的搜索栏 智能过滤器具有全新的搜索栏，它可以为您的过滤器提供内置的自动完成功能，支持同时搜索多个关键词，并且提供键盘导航。  搜索建议 搜索建议是智能过滤器">
+<meta name="keywords" content="Oracle,APEX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle APEX 21.2 新增功能">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="智能过滤器（Smart Filters）智能过滤器是一个新的搜索组件，它允许用户使用过滤器建议或搜索词快速缩小要搜索的数据范围。开发人员可以使用该组件为用户提供简化的搜索体验，通过单个控件即可让用户立即找到他们想要寻找的信息。 视频演示 强大的搜索栏 智能过滤器具有全新的搜索栏，它可以为您的过滤器提供内置的自动完成功能，支持同时搜索多个关键词，并且提供键盘导航。  搜索建议 搜索建议是智能过滤器">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211025175611.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234451.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234620.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234912.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235012.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235040.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235609.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235651.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:updated_time" content="2021-10-25T09:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle APEX 21.2 新增功能">
+<meta name="twitter:description" content="智能过滤器（Smart Filters）智能过滤器是一个新的搜索组件，它允许用户使用过滤器建议或搜索词快速缩小要搜索的数据范围。开发人员可以使用该组件为用户提供简化的搜索体验，通过单个控件即可让用户立即找到他们想要寻找的信息。 视频演示 强大的搜索栏 智能过滤器具有全新的搜索栏，它可以为您的过滤器提供内置的自动完成功能，支持同时搜索多个关键词，并且提供键盘导航。  搜索建议 搜索建议是智能过滤器">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211025175611.png?x-oss-process=image/format,jpg/quality,q_60">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle APEX 21.2 新增功能 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 21.2 新增功能
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-10-25 17:55:00 / 修改时间：17:57:01" itemprop="dateCreated datePublished" datetime="2021-10-25T17:55:00+08:00">2021-10-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-21.2-new-features/" class="leancloud_visitors" data-flag-title="Oracle APEX 21.2 新增功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211025175611.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="智能过滤器（Smart-Filters）"><a href="#智能过滤器（Smart-Filters）" class="headerlink" title="智能过滤器（Smart Filters）"></a>智能过滤器（Smart Filters）</h2><p>智能过滤器是一个新的搜索组件，它允许用户使用过滤器建议或搜索词快速缩小要搜索的数据范围。开发人员可以使用该组件为用户提供简化的搜索体验，通过单个控件即可让用户立即找到他们想要寻找的信息。</p>
+<p><a href="https://www.youtube.com/watch?v=Orv2ZLFFxGw" target="_blank" rel="noopener">视频演示</a></p>
+<h3 id="强大的搜索栏"><a href="#强大的搜索栏" class="headerlink" title="强大的搜索栏"></a>强大的搜索栏</h3><ul>
+<li>智能过滤器具有全新的搜索栏，它可以为您的过滤器提供内置的自动完成功能，支持同时搜索多个关键词，并且提供键盘导航。</li>
+</ul>
+<h3 id="搜索建议"><a href="#搜索建议" class="headerlink" title="搜索建议"></a>搜索建议</h3><ul>
+<li>搜索建议是智能过滤器的核心，这些建议基于您事先定义好的过滤器，并可以在用户输入搜索词时即可显示，也可以显示到搜索栏下方的标签里。</li>
+</ul>
+<h3 id="建议标签"><a href="#建议标签" class="headerlink" title="建议标签"></a>建议标签</h3><ul>
+<li>过滤器会根据您的数据进行评估，并作为标签显示在搜索栏下方，为您提供最合适的过滤条件。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234451.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="渐进式网络应用程序"><a href="#渐进式网络应用程序" class="headerlink" title="渐进式网络应用程序"></a>渐进式网络应用程序</h2><p>从现在开始，您可以轻松地将APEX应用程序定义为渐进式Web应用程序(PWA)，使得您可以从高级缓存和改进的性能中受益，您的APEX应用甚至可以以独立的应用安装呈现在您的手机上。</p>
+<p><a href="https://www.youtube.com/watch?v=jaDGiqWfN7M" target="_blank" rel="noopener">视频演示</a></p>
+<h3 id="改进的应用程序性能"><a href="#改进的应用程序性能" class="headerlink" title="改进的应用程序性能"></a>改进的应用程序性能</h3><ul>
+<li>渐进式Web应用程序的响应会更快，PWA利用更有效的浏览器缓存来存储资源，从而缩短了页面加载时间，即使无需安装应用程序也能正常工作。</li>
+</ul>
+<h3 id="使您的APEX应用程序可安装"><a href="#使您的APEX应用程序可安装" class="headerlink" title="使您的APEX应用程序可安装"></a>使您的APEX应用程序可安装</h3><ul>
+<li>您的APEX应用程序现在可以出现在您的智能设备的主屏幕上，您的用户现在可以在他的手机上安装您的APEX应用。</li>
+</ul>
+<h3 id="自定义离线页面"><a href="#自定义离线页面" class="headerlink" title="自定义离线页面"></a>自定义离线页面</h3><ul>
+<li>当无网络连接时，APEX PWA目前可以提供一个可定制的离线页面，以便给用户一些友好提示。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234620.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="主题风格和UI界面更新"><a href="#主题风格和UI界面更新" class="headerlink" title="主题风格和UI界面更新"></a>主题风格和UI界面更新</h2><p>新的主题模板增加了组件位置、模态对话框增强、改进的可访问性、更流畅的页面加载等，让您可以更好地控制应用程序的用户界面。</p>
+<p>更新后的<a href="https://apex.oracle.com/ut" target="_blank" rel="noopener">参考应用程序</a>现在提供实时模板预览、记录的<a href="https://apex.oracle.com/pls/apex/apex_pm/r/ut/css-variables" target="_blank" rel="noopener">CSS变量</a>和标题中的新菜单版本，以便快速跳转到旧版本的的样例应用。</p>
+<p><a href="https://apex.oracle.com/ut" target="_blank" rel="noopener">样例应用</a> &gt; <a href="https://apex.oracle.com/pls/apex/apex_pm/r/ut/change-log" target="_blank" rel="noopener">更改日志</a></p>
+<h3 id="页面布局的更大灵活性"><a href="#页面布局的更大灵活性" class="headerlink" title="页面布局的更大灵活性"></a>页面布局的更大灵活性</h3><ul>
+<li>您将会享受到比以往任何时候都更好的页面组件定位控制和灵活性。现在，您可以构建更复杂的页面布局和彼此相邻且不同类型的页面组件，或将它们放置在页面上的任何位置。想要在页眉中放置一个搜索栏？简单！<a href="https://www.youtube.com/watch?v=SAQN1T-8aJo" target="_blank" rel="noopener">观看视频 (1:53)</a></li>
+</ul>
+<h3 id="模态对话框增强"><a href="#模态对话框增强" class="headerlink" title="模态对话框增强"></a>模态对话框增强</h3><ul>
+<li>有一个新模板可以渲染页面和区域模式对话框，这些对话框可以从屏幕两侧滑入，最大化屏幕空间并为辅助操作提供全新的用户体验。</li>
+</ul>
+<h3 id="辅助功能改进"><a href="#辅助功能改进" class="headerlink" title="辅助功能改进"></a>辅助功能改进</h3><ul>
+<li>改进后的主题通过提供适当的<code>aria-*</code>属性、更多语义标记和增强功能，全面提高可访问性，从而为用户提供更好的屏幕阅读器体验。</li>
+</ul>
+<h3 id="更快的页面渲染"><a href="#更快的页面渲染" class="headerlink" title="更快的页面渲染"></a>更快的页面渲染</h3><ul>
+<li>页面渲染速度的多项改进和UI闪烁的减少，将带来更加流畅的页面加载体验。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234912.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="新组件及组件增强"><a href="#新组件及组件增强" class="headerlink" title="新组件及组件增强"></a>新组件及组件增强</h1><h2 id="分面搜索增强"><a href="#分面搜索增强" class="headerlink" title="分面搜索增强"></a>分面搜索增强</h2><p>分面搜索现在对多列值集提供声明性的定义支持，同时改进了可访问性，让您更好地控制分面显示方式。</p>
+<h3 id="多值分面"><a href="#多值分面" class="headerlink" title="多值分面"></a>多值分面</h3><ul>
+<li>您可以轻松创建以字符串分隔或JSON数组形式存储的多值分面。<a href="https://www.youtube.com/watch?v=BneRrJBqtds" target="_blank" rel="noopener">观看视频 (2:41)</a></li>
+</ul>
+<h3 id="更多的UI控制"><a href="#更多的UI控制" class="headerlink" title="更多的UI控制"></a>更多的UI控制</h3><ul>
+<li>您现在可以控制过滤时是否为给定分面显示标签，还可以指定分面搜索区域旁边的分面标签图标。</li>
+</ul>
+<h3 id="可用性改进"><a href="#可用性改进" class="headerlink" title="可用性改进"></a>可用性改进</h3><ul>
+<li>有许多改进可以使分面搜索更易于使用和访问。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235012.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="警报和确认对话框增强"><a href="#警报和确认对话框增强" class="headerlink" title="警报和确认对话框增强"></a>警报和确认对话框增强</h2><h3 id="可定制的对话框"><a href="#可定制的对话框" class="headerlink" title="可定制的对话框"></a>可定制的对话框</h3><ul>
+<li>警报和确认对话框现在具有更新的外观，并提供自定义选项以轻松指定样式、标题、图标，甚至自定义按钮标签。</li>
+</ul>
+<h3 id="支持模板指令"><a href="#支持模板指令" class="headerlink" title="支持模板指令"></a>支持模板指令</h3><ul>
+<li>对话框消息支持HTML模板指令，包括动态警报项目引用的客户端级别的订阅。</li>
+</ul>
+<h3 id="按钮确认"><a href="#按钮确认" class="headerlink" title="按钮确认"></a>按钮确认</h3><ul>
+<li>您还可以通过简单地切换“需要确认”属性来触发任何按钮的确认对话框。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235040.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="地理编码和地图控件"><a href="#地理编码和地图控件" class="headerlink" title="地理编码和地图控件"></a>地理编码和地图控件</h2><p>地理编码从未如此简单，您甚至可以将地图显示为页面项目，最兴奋的是甚至不需要提供API密钥。</p>
+<h3 id="地理编码和地址规范化"><a href="#地理编码和地址规范化" class="headerlink" title="地理编码和地址规范化"></a>地理编码和地址规范化</h3><ul>
+<li>新的页面控件提供了一个匹配列表。当用户开始输入地址时可以快速进行选择，并返回对应坐标以及规范化的地址。</li>
+</ul>
+<h3 id="迷你地图显示控件"><a href="#迷你地图显示控件" class="headerlink" title="迷你地图显示控件"></a>迷你地图显示控件</h3><ul>
+<li>新的地图显示控件使您能够快速可视化地图上的单个坐标，非常适合在地址信息旁边显示一些信息的场景。<a href="https://youtu.be/HkqotXdiwiY" target="_blank" rel="noopener">观看视频 (1:49)</a></li>
+</ul>
+<h2 id="REST目录和改进"><a href="#REST目录和改进" class="headerlink" title="REST目录和改进"></a>REST目录和改进</h2><ul>
+<li>您现在可以搜索和浏览包含有关REST服务的元数据的目录，并根据目录中的REST服务元数据创建APEX REST数据源。此外，还提供了对HTTP REST数据源的内置分页支持。</li>
+</ul>
+<h3 id="跨应用程序共享目录"><a href="#跨应用程序共享目录" class="headerlink" title="跨应用程序共享目录"></a>跨应用程序共享目录</h3><ul>
+<li>作为APEX工作区的一部分，REST服务目录可以供其中的所有应用程序使用了。</li>
+</ul>
+<h3 id="轻松导出和导入"><a href="#轻松导出和导入" class="headerlink" title="轻松导出和导入"></a>轻松导出和导入</h3><ul>
+<li>目录可以轻松导出到单个文件并导入其他工作区。</li>
+</ul>
+<h3 id="基于URL的更新"><a href="#基于URL的更新" class="headerlink" title="基于URL的更新"></a>基于URL的更新</h3><ul>
+<li>您可以通过指向目录导出文件的URL来快速刷新目录。</li>
+</ul>
+<h3 id="REST服务的分页支持"><a href="#REST服务的分页支持" class="headerlink" title="REST服务的分页支持"></a>REST服务的分页支持</h3><ul>
+<li>简单的HTTP REST数据源可以通过启用分页选项来支持组件级分页。<a href="https://www.youtube.com/watch?v=54Slcxqt1EM" target="_blank" rel="noopener">观看视频 (3:54)</a></li>
+</ul>
+<h2 id="报表下载、订阅和打印改进"><a href="#报表下载、订阅和打印改进" class="headerlink" title="报表下载、订阅和打印改进"></a>报表下载、订阅和打印改进</h2><h3 id="下载报表中的图片"><a href="#下载报表中的图片" class="headerlink" title="下载报表中的图片"></a>下载报表中的图片</h3><ul>
+<li>报表下载现在支持导出图片，它们将嵌入到PDF、XLSX或HTML导出文件中。<a href="https://youtu.be/oE1kRDzg8f4" target="_blank" rel="noopener">观看视频 (1:32)</a></li>
+</ul>
+<h3 id="下载对话框改进"><a href="#下载对话框改进" class="headerlink" title="下载对话框改进"></a>下载对话框改进</h3><ul>
+<li>下载对话框新增了“剥离富文本”的选项。另外，PDF可用性属性可存储为用户首选项。</li>
+</ul>
+<h3 id="交互式报表订阅"><a href="#交互式报表订阅" class="headerlink" title="交互式报表订阅"></a>交互式报表订阅</h3><ul>
+<li>交互式报表订阅现在支持所有的下载格式，如果没有合适数据，将不再发送电子邮件。</li>
+</ul>
+<h1 id="开发者体验"><a href="#开发者体验" class="headerlink" title="开发者体验"></a>开发者体验</h1><h2 id="编辑器功能提升"><a href="#编辑器功能提升" class="headerlink" title="编辑器功能提升"></a>编辑器功能提升</h2><h3 id="静态文件编辑器"><a href="#静态文件编辑器" class="headerlink" title="静态文件编辑器"></a>静态文件编辑器</h3><ul>
+<li>允许开发人员创建、编辑和重命名静态应用程序、工作区、插件和主题文件，现在无需每次重新上传文件。增强功能还包括JavaScript和CSS文件的自动缩小，以及LESS文件的编译。<a href="https://youtu.be/BoSBm1n39iQ" target="_blank" rel="noopener">观看视频 (1:56)</a></li>
+</ul>
+<h3 id="改进的面包屑编辑器"><a href="#改进的面包屑编辑器" class="headerlink" title="改进的面包屑编辑器"></a>改进的面包屑编辑器</h3><ul>
+<li>改进了共享组件编辑体验，为页面提供多个条件面包屑。</li>
+</ul>
+<h3 id="在SQL命令中运行更大的SQL命令"><a href="#在SQL命令中运行更大的SQL命令" class="headerlink" title="在SQL命令中运行更大的SQL命令"></a>在SQL命令中运行更大的SQL命令</h3><ul>
+<li>现在支持大于32KB的大型SQL代码块用于页面提交和SQL命令。</li>
+</ul>
+<h2 id="应用环境设置"><a href="#应用环境设置" class="headerlink" title="应用环境设置"></a>应用环境设置</h2><h3 id="应用环境Banner"><a href="#应用环境Banner" class="headerlink" title="应用环境Banner"></a>应用环境Banner</h3><ul>
+<li>通过在实例或工作区级别配置banner（管理服务 → 定义环境横幅），可以轻松地区分不同APEX应用环境。</li>
+</ul>
+<h3 id="SAML认证"><a href="#SAML认证" class="headerlink" title="SAML认证"></a>SAML认证</h3><ul>
+<li>已支持将SAML作为身份验证方案，您可以从管理服务中为APEX开发环境以及您自己的应用程序配置该方案。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235609.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="邮件及其模板增强"><a href="#邮件及其模板增强" class="headerlink" title="邮件及其模板增强"></a>邮件及其模板增强</h2><h3 id="邮件模板支持通过过程发送"><a href="#邮件模板支持通过过程发送" class="headerlink" title="邮件模板支持通过过程发送"></a>邮件模板支持通过过程发送</h3><ul>
+<li>发送电子邮件页面进程现在支持带有声明性替换的电子邮件模板。<a href="https://youtu.be/trF1FjNkfxc" target="_blank" rel="noopener">观看视频 (2:55)</a></li>
+</ul>
+<h3 id="自动化中的电子邮件支持"><a href="#自动化中的电子邮件支持" class="headerlink" title="自动化中的电子邮件支持"></a>自动化中的电子邮件支持</h3><ul>
+<li>自动化功能可以实现发送电子邮件。</li>
+</ul>
+<h3 id="复制电子邮件模板"><a href="#复制电子邮件模板" class="headerlink" title="复制电子邮件模板"></a>复制电子邮件模板</h3><ul>
+<li>现在您可以轻松复制电子邮件模板。</li>
+</ul>
+<h3 id="内嵌电子邮件附件"><a href="#内嵌电子邮件附件" class="headerlink" title="内嵌电子邮件附件"></a>内嵌电子邮件附件</h3><ul>
+<li>电子邮件现在支持内嵌图像附件。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024235651.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="其他新特性"><a href="#其他新特性" class="headerlink" title="其他新特性"></a>其他新特性</h2><h3 id="数据打包器"><a href="#数据打包器" class="headerlink" title="数据打包器"></a>数据打包器</h3><ul>
+<li>现在可以轻松地将应用程序从一个实例迁移到另一个实例，并同时将数据包含在数据表中，可指定应用程序导出数据的表。<a href="https://youtu.be/kGFAF55SwJE" target="_blank" rel="noopener">看视频</a></li>
+</ul>
+<h3 id="弹出LOV设置显示值"><a href="#弹出LOV设置显示值" class="headerlink" title="弹出LOV设置显示值"></a>弹出LOV设置显示值</h3><ul>
+<li>通过动态行为或apex.item.setValue动态设置值、自动填充显示值和附加输出。</li>
+</ul>
+<h3 id="新的日期选择器“Show-On”属性"><a href="#新的日期选择器“Show-On”属性" class="headerlink" title="新的日期选择器“Show-On”属性"></a>新的日期选择器“Show-On”属性</h3><ul>
+<li>日期选择器现在具有“显示时间”属性，用于控制日历弹出窗口的显示时间。</li>
+</ul>
+<h3 id="新的模态对话框事件"><a href="#新的模态对话框事件" class="headerlink" title="新的模态对话框事件"></a>新的模态对话框事件</h3><ul>
+<li>如果用户按下对话框中的<code>Escape</code>键或<code>X</code>按钮，将触发新的“对话框关闭或取消”事件。</li>
+</ul>
+<h3 id="应用程序导出中的版权横幅"><a href="#应用程序导出中的版权横幅" class="headerlink" title="应用程序导出中的版权横幅"></a>应用程序导出中的版权横幅</h3><ul>
+<li>现在，您可以为应用程序导出定义版权横幅。</li>
+</ul>
+<h3 id="新的PL-SQL-API"><a href="#新的PL-SQL-API" class="headerlink" title="新的PL/SQL API"></a>新的PL/SQL API</h3><ul>
+<li>现在可以使用 <code>apex_debug.get_page_view_id</code> 和 <code>apex_debug.get_last_message_id</code> 将LOGGER写入的消息链接到APEX调试会话，并以正确的顺序显示LOGGER消息。</li>
+</ul>
+<h3 id="新的JavaScript-API"><a href="#新的JavaScript-API" class="headerlink" title="新的JavaScript API"></a>新的JavaScript API</h3><ul>
+<li>新API包括：mapRegion、facetsRegion、apex.date、apex.items、apex.regions 和 apex.env</li>
+</ul>
+<h3 id="以21种其他语言构建APEX应用程序"><a href="#以21种其他语言构建APEX应用程序" class="headerlink" title="以21种其他语言构建APEX应用程序"></a>以21种其他语言构建APEX应用程序</h3><ul>
+<li>APEX的运行时引擎现在共有31种语言版本，包括英语、西班牙语、芬兰语、法语、法语（加拿大）、עברית、Hrvatski、magyar、意大利语、日本语、한국어、荷兰语、挪威语、波兰语（葡萄牙语）葡萄牙）、葡萄牙（巴西）、Română、Русский、Slovenčina、Slovenščina、српски、Svenska、ไทย、Türkçe、中文（简体）、中文（繁体）、العربية、Deutsche <a href="https://youtu.be/gu-PNKEptcY" target="_blank" rel="noopener">观看视频 (2:12)</a></li>
+</ul>
+<h3 id="JavaScript库升级"><a href="#JavaScript库升级" class="headerlink" title="JavaScript库升级"></a>JavaScript库升级</h3><ul>
+<li>我们已将多个JavaScript库更新为较新版本，包括Oracle JET 11、jQuery 3.6.0、PrismJS 1.24.1、MarkedJS 3.0.0等。</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-21.2-new-features/">Oracle APEX 21.2 新增功能</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2021年10月25日 - 17:10</p>
+  <p><span>最后更新:</span>2021年10月25日 - 17:10</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-21.2-new-features/" title="Oracle APEX 21.2 新增功能">https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-update-20210929/" rel="next" title="Oracle APEX 活跃博文整理 | 2021.09.29">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2021.09.29
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">108</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#智能过滤器（Smart-Filters）"><span class="nav-number">1.</span> <span class="nav-text">智能过滤器（Smart Filters）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#强大的搜索栏"><span class="nav-number">1.1.</span> <span class="nav-text">强大的搜索栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索建议"><span class="nav-number">1.2.</span> <span class="nav-text">搜索建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建议标签"><span class="nav-number">1.3.</span> <span class="nav-text">建议标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐进式网络应用程序"><span class="nav-number">2.</span> <span class="nav-text">渐进式网络应用程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改进的应用程序性能"><span class="nav-number">2.1.</span> <span class="nav-text">改进的应用程序性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使您的APEX应用程序可安装"><span class="nav-number">2.2.</span> <span class="nav-text">使您的APEX应用程序可安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义离线页面"><span class="nav-number">2.3.</span> <span class="nav-text">自定义离线页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题风格和UI界面更新"><span class="nav-number">3.</span> <span class="nav-text">主题风格和UI界面更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面布局的更大灵活性"><span class="nav-number">3.1.</span> <span class="nav-text">页面布局的更大灵活性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模态对话框增强"><span class="nav-number">3.2.</span> <span class="nav-text">模态对话框增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辅助功能改进"><span class="nav-number">3.3.</span> <span class="nav-text">辅助功能改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更快的页面渲染"><span class="nav-number">3.4.</span> <span class="nav-text">更快的页面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新组件及组件增强"><span class="nav-number"></span> <span class="nav-text">新组件及组件增强</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分面搜索增强"><span class="nav-number">1.</span> <span class="nav-text">分面搜索增强</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多值分面"><span class="nav-number">1.1.</span> <span class="nav-text">多值分面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多的UI控制"><span class="nav-number">1.2.</span> <span class="nav-text">更多的UI控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可用性改进"><span class="nav-number">1.3.</span> <span class="nav-text">可用性改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警报和确认对话框增强"><span class="nav-number">2.</span> <span class="nav-text">警报和确认对话框增强</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可定制的对话框"><span class="nav-number">2.1.</span> <span class="nav-text">可定制的对话框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持模板指令"><span class="nav-number">2.2.</span> <span class="nav-text">支持模板指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮确认"><span class="nav-number">2.3.</span> <span class="nav-text">按钮确认</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地理编码和地图控件"><span class="nav-number">3.</span> <span class="nav-text">地理编码和地图控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地理编码和地址规范化"><span class="nav-number">3.1.</span> <span class="nav-text">地理编码和地址规范化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迷你地图显示控件"><span class="nav-number">3.2.</span> <span class="nav-text">迷你地图显示控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REST目录和改进"><span class="nav-number">4.</span> <span class="nav-text">REST目录和改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跨应用程序共享目录"><span class="nav-number">4.1.</span> <span class="nav-text">跨应用程序共享目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轻松导出和导入"><span class="nav-number">4.2.</span> <span class="nav-text">轻松导出和导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于URL的更新"><span class="nav-number">4.3.</span> <span class="nav-text">基于URL的更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REST服务的分页支持"><span class="nav-number">4.4.</span> <span class="nav-text">REST服务的分页支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#报表下载、订阅和打印改进"><span class="nav-number">5.</span> <span class="nav-text">报表下载、订阅和打印改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载报表中的图片"><span class="nav-number">5.1.</span> <span class="nav-text">下载报表中的图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载对话框改进"><span class="nav-number">5.2.</span> <span class="nav-text">下载对话框改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互式报表订阅"><span class="nav-number">5.3.</span> <span class="nav-text">交互式报表订阅</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发者体验"><span class="nav-number"></span> <span class="nav-text">开发者体验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器功能提升"><span class="nav-number">1.</span> <span class="nav-text">编辑器功能提升</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态文件编辑器"><span class="nav-number">1.1.</span> <span class="nav-text">静态文件编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进的面包屑编辑器"><span class="nav-number">1.2.</span> <span class="nav-text">改进的面包屑编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在SQL命令中运行更大的SQL命令"><span class="nav-number">1.3.</span> <span class="nav-text">在SQL命令中运行更大的SQL命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用环境设置"><span class="nav-number">2.</span> <span class="nav-text">应用环境设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用环境Banner"><span class="nav-number">2.1.</span> <span class="nav-text">应用环境Banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SAML认证"><span class="nav-number">2.2.</span> <span class="nav-text">SAML认证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮件及其模板增强"><span class="nav-number">3.</span> <span class="nav-text">邮件及其模板增强</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#邮件模板支持通过过程发送"><span class="nav-number">3.1.</span> <span class="nav-text">邮件模板支持通过过程发送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化中的电子邮件支持"><span class="nav-number">3.2.</span> <span class="nav-text">自动化中的电子邮件支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制电子邮件模板"><span class="nav-number">3.3.</span> <span class="nav-text">复制电子邮件模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内嵌电子邮件附件"><span class="nav-number">3.4.</span> <span class="nav-text">内嵌电子邮件附件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他新特性"><span class="nav-number">4.</span> <span class="nav-text">其他新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据打包器"><span class="nav-number">4.1.</span> <span class="nav-text">数据打包器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出LOV设置显示值"><span class="nav-number">4.2.</span> <span class="nav-text">弹出LOV设置显示值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的日期选择器“Show-On”属性"><span class="nav-number">4.3.</span> <span class="nav-text">新的日期选择器“Show-On”属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的模态对话框事件"><span class="nav-number">4.4.</span> <span class="nav-text">新的模态对话框事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序导出中的版权横幅"><span class="nav-number">4.5.</span> <span class="nav-text">应用程序导出中的版权横幅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的PL-SQL-API"><span class="nav-number">4.6.</span> <span class="nav-text">新的PL/SQL API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的JavaScript-API"><span class="nav-number">4.7.</span> <span class="nav-text">新的JavaScript API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以21种其他语言构建APEX应用程序"><span class="nav-number">4.8.</span> <span class="nav-text">以21种其他语言构建APEX应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript库升级"><span class="nav-number">4.9.</span> <span class="nav-text">JavaScript库升级</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/recordQuery">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
