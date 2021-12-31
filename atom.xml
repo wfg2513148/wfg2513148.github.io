@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-11-30T13:47:52.352Z</updated>
+  <updated>2021-12-31T14:39:03.416Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2021.12.31</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211231/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211231/</id>
+    <published>2021-12-31T14:18:00.000Z</published>
+    <updated>2021-12-31T14:39:03.416Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211231223623.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2021.12.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://appin5minuti.it/come-sviluppare-applicazioni-sicure-con-oracle-apex/" target="_blank" rel="noopener">How to develop secure applications with Oracle APEX</a> <code>2021.12</code></li><li><a href="https://diveintoapex.com/2021/12/12/capturing-lat-long-address-info-without-a-map/" target="_blank" rel="noopener">Capturing Lat/Long Address Info Without a Map</a> <code>2021.12</code></li><li><a href="https://aflorestorres.com/2021/12/12/primeros-pasos-optimizacion-en-oracle-apex-plsql/" target="_blank" rel="noopener">First steps optimization in Oracle APEX / PlSQL</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/javascript-apis-2-apexitem.html" target="_blank" rel="noopener">Javascript APIs (#2 apex.item)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/preview-of-your-email-apex-mail-3.html" target="_blank" rel="noopener">Preview of your email (APEX Mail #3)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/javascript-apis-3-date-namespace.html" target="_blank" rel="noopener">Javascript APIs (#3 the date namespace)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/sending-emails-with-attachment-apex.html" target="_blank" rel="noopener">Sending emails with attachment (APEX Mail #4)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/embedding-images-in-email-apex-mail-5.html" target="_blank" rel="noopener">Embedding images in an email (APEX Mail #5)</a> <code>2021.12</code></li></ul><p>2021年马上就要过去了，好事坏事，终成往事。<br>2022年，加油！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211231223623.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.11.30</title>
@@ -575,35 +604,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200930180746.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2020.08.30</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200830/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200830/</id>
-    <published>2020-08-30T01:55:00.000Z</published>
-    <updated>2020-08-30T03:26:15.924Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200830112557.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.08.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-shuttle-item.html" target="_blank" rel="noopener">Creating a Shuttle Item</a> <code>2020.08</code></li><li><a href="https://tm-apex.blogspot.com/2020/08/only-allow-numeric-values-as-text-input.html" target="_blank" rel="noopener">Only allow numeric values as text input</a> <code>2020.08</code></li><li><a href="https://tm-apex.blogspot.com/2020/08/highlight-cells-based-on-value.html" target="_blank" rel="noopener">Highlight cells based on value</a> <code>2020.08</code></li><li><a href="https://tm-apex.blogspot.com/2020/08/set-value-in-search-field-from-previous.html" target="_blank" rel="noopener">Set a value in the “Search Field” from a previous page</a> <code>2020.08</code></li><li><a href="https://tm-apex.blogspot.com/2020/08/custom-authentication-scheme-part-2.html" target="_blank" rel="noopener">Custom Authentication Scheme Part 2</a> <code>2020.08</code></li><li><a href="https://dickdral.blogspot.com/2020/08/apex-20.html" target="_blank" rel="noopener">APEX 20.1 nugget: Mega menu’s</a> <code>2020.08</code></li><li><a href="https://dickdral.blogspot.com/2020/08/new-plug-in-reacting-on-changed-content.html" target="_blank" rel="noopener">Reacting on changed content of APEX Autocomplete Item</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-client-side-condition-javascript-expression-example.html" target="_blank" rel="noopener">Oracle Apex Client-side Condition JavaScript Expression Example</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-dynamic-action-submit-page-example.html" target="_blank" rel="noopener">Dynamic Action Submit Page Example</a> <code>2020.08</code></li><li><a href="http://lschilde.blogspot.com/2020/08/apexitem-and-checkbox-processing-easy.html" target="_blank" rel="noopener">APEX_ITEM and checkbox processing the easy way</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-disable-escape-key-to-prevent-close-dialog.html" target="_blank" rel="noopener">Disable Escape Key (ESC) to Prevent Close Dialog</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-check-if-item-value-changed.html" target="_blank" rel="noopener">Check if Item Value Changed</a> <code>2020.08</code></li><li><a href="http://lschilde.blogspot.com/2020/08/exceltablewithOracleAPEX.html" target="_blank" rel="noopener">EXCEL like tables in Oracle APEX</a> <code>2020.08</code></li><li><a href="https://srihariravva.blogspot.com/2020/08/defining-link-for-gantt-chart.html" target="_blank" rel="noopener">Defining Link for Gantt Chart</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-get-display-value-from-select-list.html" target="_blank" rel="noopener">Get Display Value from Select List</a> <code>2020.08</code></li><li><a href="https://orclqa.com/oracle-apex-dynamic-action-to-show-hide-region/" target="_blank" rel="noopener">Dynamic Action to Show/Hide Region</a> <code>2020.08</code></li><li><a href="https://www.foxinfotech.in/2020/08/oracle-apex-creating-card-layout-report-with-images.html" target="_blank" rel="noopener">Creating Card Layout Report with Images</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/how-to-create-a-change-password-page-in-oracle-apex.html" target="_blank" rel="noopener">How to Create a Change Password Page in Oracle APEX</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/oracle-apex-logo-and-text.html" target="_blank" rel="noopener">Oracle APEX Logo And Text</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/how-to-add-logo-top-left-corner-in-oracle-apex.html" target="_blank" rel="noopener">How to Add Logo Top Left Corner in Oracle APEX</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/add-region-background-image-in-oracle-apex.html" target="_blank" rel="noopener">Add Region Background Image in Oracle APEX</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/top-3-oracle-apex-chrome-extensions-in-oracle-apex.html" target="_blank" rel="noopener">Top 3 Oracle APEX Chrome Extensions</a> <code>2020.08</code></li><li><a href="https://www.javainhand.com/2020/08/confirm-password-validation-in-oracle-apex.html" target="_blank" rel="noopener">Confirm Password Validation in Oracle APEX</a> <code>2020.08</code></li><li><a href="http://dgielis.blogspot.com/2020/07/more-info-on-oracle-always-free-apex.html" target="_blank" rel="noopener">More info on Oracle Always Free APEX upgrades</a> <code>2020.08</code></li><li><a href="https://www.aflorestorres.com/2020/08/ordenamiento-en-reportes-oracle-apex.html" target="_blank" rel="noopener">Sorting in Oracle APEX reports (sequences)</a> <code>2020.08</code></li><li><a href="https://explorer.co.uk/when-to-ajax-callback-vrs-when-to-dynamic-action/" target="_blank" rel="noopener">When to AJAX Callback vrs. When to Dynamic Action</a> <code>2020.08</code></li><li><a href="https://explorer.co.uk/creating-a-mobile-app-from-scratch/" target="_blank" rel="noopener">Creating A Mobile App From Scratch</a> <code>2020.08</code></li><li><a href="https://apextips.blogspot.com/2020/08/customising-apex-built-in-validation.html" target="_blank" rel="noopener">Customising APEX built-in validation messages</a> <code>2020.08</code></li><li><a href="https://www.traust.com/five-things-to-love-about-oracle-apex/" target="_blank" rel="noopener">Five Things To Love About Oracle APEX</a> <code>2020.08</code></li><li><a href="http://dgielis.blogspot.com/2020/07/more-info-on-oracle-always-free-apex.html" target="_blank" rel="noopener">More info on Oracle Always Free APEX upgrades</a> <code>2020.07</code></li><li><a href="https://tm-apex.blogspot.com/2020/07/show-additional-scrollbar-on-top.html" target="_blank" rel="noopener">Show an additional scrollbar on top</a> <code>2020.07</code></li><li><a href="https://tm-apex.blogspot.com/2020/07/automatically-activate-edit-mode-on.html" target="_blank" rel="noopener">Automatically activate the “edit” mode on page load</a> <code>2020.07</code></li><li><a href="https://www.foxinfotech.in/2020/07/how-to-clear-cache-of-a-page-in-oracle-apex.html" target="_blank" rel="noopener">How to Clear Cache of a Page in Oracle Apex</a> <code>2020.07</code></li><li><a href="https://blogs.oracle.com/apex/customizing-interactive-grid-to-improve-your-users-productivity" target="_blank" rel="noopener">Customizing Interactive Grid to improve your user’s productivity</a> <code>2020.07</code></li><li><a href="http://lschilde.blogspot.com/2020/07/APEX201requirechangepassword.html" target="_blank" rel="noopener">Oracle APEX 20.1 - Require Change of Password on First Use</a> <code>2020.07</code></li><li><a href="http://apexbyg.blogspot.com/2020/07/bulk-submit-all-region-items-to-session.html" target="_blank" rel="noopener">Bulk submit all region items to session state</a> <code>2020.07</code></li><li><a href="https://www.stinolez.com/2020/07/03/clob-in-apex-rich-text-editor/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=clob-in-apex-rich-text-editor" target="_blank" rel="noopener">CLOB in APEX Rich Text Editor</a> <code>2020.07</code></li><li><a href="http://nielsdebr.blogspot.com/2020/06/flows-for-apex.html" target="_blank" rel="noopener">Flows for APEX</a> <code>2020.06</code></li><li><a href="https://stefandobre.com/apex-20-1-introduces-the-apex-ig-package/" target="_blank" rel="noopener">APEX 20.1 finally introduces the APEX_IG package</a> <code>2020.03</code></li><li><a href="https://tm-apex.blogspot.com/2020/03/custom-authentication-scheme-part1.html" target="_blank" rel="noopener">Custom Authentication Scheme Part 1</a> <code>2020.03</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200830112557.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
       
     
     </summary>
