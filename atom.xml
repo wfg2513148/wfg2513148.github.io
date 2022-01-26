@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2021-12-31T14:39:03.416Z</updated>
+  <updated>2022-01-26T17:16:45.706Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2022.01.27</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220127/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220127/</id>
+    <published>2022-01-26T17:07:00.000Z</published>
+    <updated>2022-01-26T17:16:45.706Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220127011636.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.01.27</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.javainhand.com/2022/01/5-methods-to-get-oarcle-apex-page-item-value.html" target="_blank" rel="noopener">5 Methods to Get Oarcle APEX Page Item Value</a> <code>2022.01</code></li><li><a href="https://www.javainhand.com/2022/01/5-methods-to-set-oracle-apex-page-item-value.html" target="_blank" rel="noopener">5 Methods to Set Oracle APEX Page Item Value</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/including-link-in-email-to-apex-app.html" target="_blank" rel="noopener">Including a link in an email to an APEX App (APEX Mail #8)</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/checking-mail-log-and-queue-apex-mail-7.html" target="_blank" rel="noopener">Checking the mail log and queue (APEX Mail #7)</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/display-tabular-data-in-email-apex-mail.html" target="_blank" rel="noopener">Display tabular data in an email (APEX Mail #6)</a> <code>2022.01</code></li><li><a href="https://appin5minuti.it/applicazione-di-prenotazione-appuntamenti-in-oracle-apex/" target="_blank" rel="noopener">Appointment Booking Application in Oracle APEX</a> <code>2022.01</code></li><li><a href="https://apexapplab.dev/2022/01/12/create-a-custom-offline-page-for-your-apex-pwa-in-21-2/" target="_blank" rel="noopener">Create a custom offline page for your APEX PWA in 21.2</a> <code>2022.01</code></li><li><a href="https://diveintoapex.com/2022/01/04/adding-tags-using-multi-value-popuplovs-and-smart-filters/" target="_blank" rel="noopener">Adding Tags Using Multi-Value PopupLOVs and Smart Filters</a> <code>2022.01</code></li><li><a href="https://strack-software-development.blogspot.com/2022/01/automatically-publish-translations.html" target="_blank" rel="noopener">Automatically publish translations after changes in an APEX app</a> <code>2022.01</code></li><li><a href="https://www.oracle-and-apex.com/having-a-little-fun-with-wordle/" target="_blank" rel="noopener">Having a little fun with Wordle</a> <code>2022.01</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220127011636.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2021.12.31</title>
@@ -576,35 +605,6 @@
     
       &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20201029211306.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.oracle.com/tools/downloads/apex-downloads.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle APEX 20.2&lt;/a&gt; 如期而至，话不多说，一起来看看20.2的新特性！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2020.09.30</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200930/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200930/</id>
-    <published>2020-09-30T10:10:00.000Z</published>
-    <updated>2020-09-30T10:08:21.409Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200930180746.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.foxinfotech.in/2020/09/javascript-on-close-tab-show-warning-message.html" target="_blank" rel="noopener">On Close Tab Show Warning Message</a> <code>2020.09</code></li><li><a href="https://www.foxinfotech.in/2020/09/oracle-apex-collection-example.html" target="_blank" rel="noopener">Oracle Apex Collection Example</a> <code>2020.09</code></li><li><a href="https://www.javainhand.com/2020/09/display-image-item-in-oracle-apex.html" target="_blank" rel="noopener">Display Image Item in Oracle APEX</a> <code>2020.09</code></li><li><a href="https://www.javainhand.com/2020/09/instant-row-delete-in-oracle-apex.html" target="_blank" rel="noopener">Instant Row Delete in Oracle APEX</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/need-to-extend-oracle-apex-welcome-plug.html" target="_blank" rel="noopener">Need to extend Oracle APEX? Welcome Plug-ins Pro!</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/plug-ins-pro-getting-started-sign-up.html" target="_blank" rel="noopener">Getting started: Sign-up and install your first Oracle APEX Plug-in</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/building-better-form-in-oracle-apex.html" target="_blank" rel="noopener">Building a better Form in Oracle APEX: Instant validation and feedback on items</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/add-awesome-checkboxes-and-status.html" target="_blank" rel="noopener">Add awesome checkboxes and status fields in an Interactive Grid in Oracle APEX</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/adding-download-blob-link-and-context.html" target="_blank" rel="noopener">Adding a download (blob) link and context menu to your Interactive Grid in Oracle APEX</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/power-to-end-user-create-interactive.html" target="_blank" rel="noopener">Power to the end-user! Create Interactive JET Charts in Oracle APEX</a> <code>2020.09</code></li><li><a href="http://dgielis.blogspot.com/2020/09/more-advanced-file-uploads-in-oracle.html" target="_blank" rel="noopener">More Advanced File Uploads in Oracle APEX</a> <code>2020.09</code></li><li><a href="https://orclqa.com/oracle-apex-master-detail-form/" target="_blank" rel="noopener">Master-Detail Form Example on EMP and DEPT Tables</a> <code>2020.09</code></li><li><a href="https://srihariravva.blogspot.com/2020/09/including-images-in-oracle-apex-emails.html" target="_blank" rel="noopener">Including Images in Oracle APEX Emails</a> <code>2020.09</code></li><li><a href="https://explorer.co.uk/apex-rest-enabled-forms/" target="_blank" rel="noopener">APEX REST Enabled Forms</a> <code>2020.09</code></li><li><a href="https://explorer.co.uk/pl-pdf-or-aop-which-should-i-use/" target="_blank" rel="noopener">PL/PDF or AOP which should I use?</a> <code>2020.09</code></li><li><a href="https://explorer.co.uk/faster-apex-get-the-browser-to-work-for-you/" target="_blank" rel="noopener">Faster APEX get the browser to work for you</a> <code>2020.09</code></li><li><a href="https://apextips.blogspot.com/2020/09/a-universal-theme-adventure-header.html" target="_blank" rel="noopener">A Universal Theme Adventure: Header Height</a> <code>2020.09</code></li><li><a href="https://www.javainhand.com/2020/09/plsql-dynamic-content-in-oracle-apex.html" target="_blank" rel="noopener">PL/SQL Dynamic Content in Oracle APEX</a> <code>2020.09</code></li><li><a href="https://www.traust.com/diving-into-master-detail-pages-with-apex/" target="_blank" rel="noopener">Diving Into Master Detail Pages With APEX</a> <code>2020.09</code></li><li><a href="https://www.traust.com/oracle-apex-application-import-error-processing/" target="_blank" rel="noopener">Oracle APEX Application Import – Error Processing</a> <code>2020.09</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200930180746.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
     
     </summary>
     
