@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2022-03-05T03:17:00.644Z</updated>
+  <updated>2022-03-05T04:03:12.398Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220305/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220305/</id>
     <published>2022-03-05T02:37:00.000Z</published>
-    <updated>2022-03-05T03:17:00.644Z</updated>
+    <updated>2022-03-05T04:03:12.398Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220305110141.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.03.05</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://nielsdebr.blogspot.com/2022/02/out-now-flows-for-apex-221.html" target="_blank" rel="noopener">Out now: Flows for APEX 22.1</a> <code>2022.02</code></li><li><a href="https://jeffkemponoracle.com/2022/02/reusable-region-as-a-modal-page/" target="_blank" rel="noopener">Reusable Region as a Modal Page</a> <code>2022.02</code></li><li><a href="https://www.maxapex.com/blogs/advanced-javascript-in-oracle-application-apex/" target="_blank" rel="noopener">Advanced JavaScript in Oracle Application (APEX)</a> <code>2022.02</code></li><li><a href="https://diveintoapex.com/2022/02/06/checking-if-a-regions-data-source-returned-any-data/" target="_blank" rel="noopener">Checking If a Region’s Data Source Returned Any Data</a> <code>2022.02</code></li><li><a href="https://diveintoapex.com/2022/02/09/trick-to-reference-field-value-in-dynamic-action-on-grid-column/" target="_blank" rel="noopener">Trick to Reference Field Value in Dynamic Action on Grid Column</a> <code>2022.02</code></li><li><a href="https://aflorestorres.com/2022/02/27/ora-28001-the-password-has-expired-jar-ords-standalone/" target="_blank" rel="noopener">ORA-28001: the password has expired -Jar ORDs Standalone</a> <code>2022.02</code></li><li><a href="https://www.traust.com/creating-a-dynamic-copyright-notice-in-public-facing-apex-applications/" target="_blank" rel="noopener">Creating a Dynamic Copyright Notice in Public-Facing APEX Applications</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/summary-apex-mail-apex-mail-10.html" target="_blank" rel="noopener">Summary APEX Mail (APEX Mail #10)</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/javascript-api-4-message-namespace.html" target="_blank" rel="noopener">Javascript API (#4 Message namespace)</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/task-app-using-plsql-dynamic-content.html" target="_blank" rel="noopener">Task App using PL/SQL Dynamic Content Region</a> <code>2022.02</code></li></ul>]]></content>
     
