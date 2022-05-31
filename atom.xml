@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2022-05-10T06:49:09.062Z</updated>
+  <updated>2022-05-31T10:10:04.819Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2022.05</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220531/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220531/</id>
+    <published>2022-05-31T06:23:00.000Z</published>
+    <updated>2022-05-31T10:10:04.819Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220531180959.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.05.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://diveintoapex.com/2022/05/09/upgrading-21-2-dynamic-sort-to-new-order-by-page-item/" target="_blank" rel="noopener">Upgrading Dynamic Sort to 22.1 Order By Page Item</a> <code>2022.05</code></li><li><a href="https://roelhartman.blogspot.com/2020/05/using-static-files-in-apex-has-never.html" target="_blank" rel="noopener">Using Static Files in APEX has never been easier</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/enforcing-the-execution-order-of-an-interactive-grid" target="_blank" rel="noopener">Enforcing the Execution Order of an Interactive Grid</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/implementing-ckeditor-5-in-apex-19" target="_blank" rel="noopener">Implementing CKEditor 5 in APEX 19</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/options-for-hosting-apex-in-oracle-cloud" target="_blank" rel="noopener">Options for hosting APEX in Oracle Cloud</a> <code>2022.05</code></li><li><a href="https://appin5minuti.it/15-cose-che-avrei-voluto-sapere-quando-ho-iniziato-ad-usare-oracle-apex/" target="_blank" rel="noopener">15 Things I Wanted To Know When I Started Using Oracle APEX</a> <code>2022.05</code></li><li><a href="https://hardlikesoftware.com/weblog/2022/05/05/exploring-new-apis-in-apex-22-1/" target="_blank" rel="noopener">Exploring new APIs in APEX 22.1</a> <code>2022.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220531180959.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 22.1 全新发布</title>
@@ -589,35 +618,6 @@
       <category term="CLI" scheme="https://wangfanggang.com/tags/CLI/"/>
     
       <category term="Oracle APEX" scheme="https://wangfanggang.com/tags/Oracle-APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2020.12.31</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20201231/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20201231/</id>
-    <published>2020-12-31T14:20:00.000Z</published>
-    <updated>2020-12-31T14:29:50.841Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20201231221732.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2020.12.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.laureston.ca/2019/12/28/oracle-apex-2019-year-in-review/" target="_blank" rel="noopener">Oracle APEX 2019 Year in Review</a> <code>2020.12</code></li><li><a href="https://stefandobre.com/a-closer-look-at-the-rich-text-editor-of-orclapex-20-2/" target="_blank" rel="noopener">A closer look at the Rich Text Editor of #orclAPEX 20.2</a> <code>2020.12</code></li><li><a href="https://stefandobre.com/dynamically-compute-interactive-grid-columns-in-orclapex-20-2/" target="_blank" rel="noopener">How to dynamically compute Interactive Grid Columns in #orclAPEX 20.2</a> <code>2020.12</code></li><li><a href="https://www.aflorestorres.com/2020/12/region-de-alerta-alert-region-de-forma.html" target="_blank" rel="noopener">Alert Region dynamically with Classic Report</a> <code>2020.12</code></li><li><a href="https://tm-apex.blogspot.com/2020/12/column-read-only-function-interactive.html" target="_blank" rel="noopener">Column “Read-only” Function (Interactive Grid #7)</a> <code>2020.12</code></li><li><a href="https://tm-apex.blogspot.com/2020/12/ajax-callback.html" target="_blank" rel="noopener">AJAX Callback within Oracle APEX</a> <code>2020.12</code></li><li><a href="https://srihariravva.blogspot.com/2020/12/web-components-in-oracle-apex.html" target="_blank" rel="noopener">Web Components in Oracle APEX</a> <code>2020.12</code></li><li><a href="https://explorer.co.uk/apex-20-2-hidden-gems/" target="_blank" rel="noopener">APEX 20.2 Hidden Gems</a> <code>2020.12</code></li><li><a href="https://explorer.co.uk/part-one-low-code-microsoft-and-oracle/" target="_blank" rel="noopener">Part One: Low Code – Microsoft and Oracle</a> <code>2020.12</code></li><li><a href="https://explorer.co.uk/faceted-search/" target="_blank" rel="noopener">Faceted Search of Oracle APEX</a> <code>2020.12</code></li><li><a href="https://www.traust.com/conditional-error-button-on-ig-in-oracle-apex/" target="_blank" rel="noopener">Conditional Error Button On IG In Oracle APEX</a> <code>2020.12</code></li><li><a href="https://www.traust.com/conditionally-change-select-list-color-in-oracle-apex/" target="_blank" rel="noopener">Conditionally Change Select List Color In Oracle APEX</a> <code>2020.12</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20201231221732.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
