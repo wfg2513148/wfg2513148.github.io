@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2022-08-02T14:51:38.163Z</updated>
+  <updated>2022-09-07T05:03:26.088Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2022.08</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220907/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220907/</id>
+    <published>2022-09-07T04:31:00.000Z</published>
+    <updated>2022-09-07T05:03:26.088Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3047.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.09.07</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blog.cloudnueva.com/json-parsing-by-example" target="_blank" rel="noopener">JSON Parsing in Oracle SQL and PL/SQL</a> <code>2022.09</code></li><li><a href="https://apexapplab.dev/2022/09/06/apex-validations-email-address/" target="_blank" rel="noopener">APEX validations: Email address</a> <code>2022.09</code></li><li><a href="https://lmoreaux.hashnode.dev/customize-your-error-page" target="_blank" rel="noopener">Customize your error page</a> <code>2022.09</code></li><li><a href="https://appin5minuti.it/guida-alle-api-pl-sql-di-oracle-apex/" target="_blank" rel="noopener">Oracle APEX PL-SQL API Guide</a> <code>2022.08</code></li><li><a href="https://content.dsp.co.uk/apex/how-to-get-the-most-out-of-apex-advisor" target="_blank" rel="noopener">How to get the most out of APEX Advisor</a> <code>2022.08</code></li><li><a href="https://lmoreaux.hashnode.dev/how-to-make-your-mobile-apex-application-look-like-a-native-one-part-1" target="_blank" rel="noopener">How to make your mobile APEX application look like a native one - Part 1</a> <code>2022.08</code></li><li><a href="https://apexapplab.dev/2022/08/25/creating-a-chat-region-in-oracle-apex/" target="_blank" rel="noopener">Creating a Chat region in Oracle APEX</a> <code>2022.08</code></li><li><a href="https://appin5minuti.it/come-configurare-oracle-apex-su-oracle-cloud-infrastructure/" target="_blank" rel="noopener">How to configure Oracle APEX on Oracle Cloud Infrastructure</a> <code>2022.08</code></li><li><a href="https://appin5minuti.it/costruiamo-un-crm-con-oracle-apex/" target="_blank" rel="noopener">We build a CRM with Oracle APEX</a> <code>2022.08</code></li><li><a href="https://blogs.oracle.com/apex/post/getting-started-with-apex-on-oracle-cloud-quickstart" target="_blank" rel="noopener">Getting started with APEX on Oracle Cloud - QuickStart</a> <code>2022.08</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-apex-appdev-in-cloud-with-adb-cloning" target="_blank" rel="noopener">Simplify APEX Development in Oracle Cloud with Autonomous Database Cloning</a> <code>2022.08</code></li><li><a href="https://blogs.oracle.com/apex/post/implementing-multi-approvals-in-oracle-apex-221" target="_blank" rel="noopener">Implementing Multi-Approvals in Oracle APEX 22.1</a> <code>2022.08</code></li><li><a href="https://blogs.oracle.com/apex/post/how-to-provision-apex-in-oracle-cloud-using-web-browser" target="_blank" rel="noopener">How to Provision APEX in Oracle Cloud Interactively Using a Web Browser</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/apex-date-js-api" target="_blank" rel="noopener">Easy Date Handling in JavaScript with apex.date</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/teams-incoming-webhooks" target="_blank" rel="noopener">Post Actionable Cards to MS Teams Using Incoming Webhooks, APEX &amp; ORDS</a> <code>2022.08</code></li><li><a href="https://jdpenner.de/apex/working-with-jet-diagrams-in-oracle-apex/" target="_blank" rel="noopener">Working with JET Diagrams in Oracle Apex</a> <code>2022.08</code></li><li><a href="https://lmoreaux.hashnode.dev/ckeditor5-image-upload-part-3" target="_blank" rel="noopener">CKEditor5 Image Upload - Part 3</a> <code>2022.08</code></li><li><a href="https://apexdiff.foex.at/ords/util/r/apex-diff/apex-views" target="_blank" rel="noopener">APEX Views and PL/SQL API</a> <code>2022.08</code></li><li><a href="https://jeffkemponoracle.com/2022/08/protect-your-apex-app-from-url-tampering/" target="_blank" rel="noopener">Protect your APEX app from URL Tampering</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/apex-ords-and-rest-enabled-sql" target="_blank" rel="noopener">APEX, ORDS, and REST Enabled SQL</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/ords-teams-ob-webhook" target="_blank" rel="noopener">Use MS Teams to Chat with the World via Oracle REST Data Services</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/apex-run-sql-object-storage" target="_blank" rel="noopener">Run SQL Directly Against Files in Cloud Object Store with APEX</a> <code>2022.08</code></li><li><a href="https://blog.cloudnueva.com/apex-static-files" target="_blank" rel="noopener">Improve Load Times for APEX Static Files</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-template-directives" target="_blank" rel="noopener">Client-Side Formatting with APEX Template Directives</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-paypal" target="_blank" rel="noopener">Receiving Payments from Oracle APEX with PayPal</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-web-credentials" target="_blank" rel="noopener">Secure your Secrets with APEX Web Credentials</a> <code>2022.07</code></li><li><a href="https://sandra-suarez.com/apex-data-generator" target="_blank" rel="noopener">Generate Data Fast with Oracle APEX Data Generator</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-secure-object-store-setup" target="_blank" rel="noopener">Secure APEX Access to OCI Object Storage</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/action-your-oracle-apex-logs" target="_blank" rel="noopener">Action Your Oracle APEX Logs</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-ssp" target="_blank" rel="noopener">Protect APEX URLs with Session State Protection</a> <code>2022.07</code></li><li><a href="https://blog.cloudnueva.com/apex-performance-rest-services" target="_blank" rel="noopener">Improving Performance when Consuming REST Services with Oracle APEX</a> <code>2022.06</code></li><li><a href="https://blog.cloudnueva.com/apex-cdn" target="_blank" rel="noopener">Use Oracle’s CDN for APEX Product Static Files</a> <code>2022.06</code></li><li><a href="https://blog.cloudnueva.com/oracle-apex-builder-social-sign-on" target="_blank" rel="noopener">Oracle APEX Builder Social Sign-on</a> <code>2022.06</code></li><li><a href="https://blog.cloudnueva.com/apex-plsql-dynamic-content-regions-and-the-ppr-challenge" target="_blank" rel="noopener">Solving the APEX PL/SQL Dynamic Content Region Partial Page Refresh Problem</a> <code>2022.05</code></li><li><a href="http://orclking.blogspot.com/2022/05/rest-data-services-in-oracle-apex-plsql.html" target="_blank" rel="noopener">Create REST Data Services in Oracle APEX Using the Oracle REST Data Services PL/SQL API</a> <code>2022.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3047.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2022.07</title>
@@ -566,35 +595,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210228214634.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.01.30</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210130/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210130/</id>
-    <published>2021-01-30T04:13:00.000Z</published>
-    <updated>2021-01-30T05:40:12.311Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210130133934.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.01.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://dgielis.blogspot.com/2021/01/my-spin-on-new-oracle-apex-application.html" target="_blank" rel="noopener">My spin on the new Oracle APEX Application Development Service</a> <code>2021.01</code></li><li><a href="http://dgielis.blogspot.com/2021/01/setup-and-configure-apex-application.html" target="_blank" rel="noopener">Setup and configure the APEX Application Development Service (including email) in the Oracle Cloud</a> <code>2021.01</code></li><li><a href="http://mortezamashhadi.blogspot.com/2021/01/add-checkbox-item-to-ir-and-maintaining.html" target="_blank" rel="noopener">Add checkbox item to IR and Maintaining checkboxes state</a> <code>2021.01</code></li><li><a href="https://srihariravva.blogspot.com/2021/01/handling-javascript-errors-part-2.html" target="_blank" rel="noopener">Handling JavaScript Errors - Part 2</a> <code>2021.01</code></li><li><a href="https://srihariravva.blogspot.com/2021/01/handling-javascript-errors-part-1.html" target="_blank" rel="noopener">Handling JavaScript Errors - Part 1</a> <code>2021.01</code></li><li><a href="http://dgielis.blogspot.com/2021/01/import-existing-database-and-apex-app.html" target="_blank" rel="noopener">Import an existing database and APEX app into the Oracle APEX Application Development Service</a> <code>2021.01</code></li><li><a href="http://mortezamashhadi.blogspot.com/2021/01/add-details-section-to-ig.html" target="_blank" rel="noopener">Add details section to IG</a> <code>2021.01</code></li><li><a href="https://vmorneau.me/pinch-and-zoom-like-instagram/" target="_blank" rel="noopener">Pinch and Zoom like Instagram</a> <code>2021.01</code></li><li><a href="https://vmorneau.me/fetch-api-part-3/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 3: Security SIMPLIFIED</a> <code>2021.01</code></li><li><a href="https://vmorneau.me/securing-the-fetch-api-for-oracle-apex/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 2: Securing Endpoints</a> <code>2021.01</code></li><li><a href="https://vmorneau.me/using-javascript-fetch-api-in-oracle-apex/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 1: Basic Usage</a> <code>2021.01</code></li><li><a href="https://vmorneau.me/rich-animations/" target="_blank" rel="noopener">Rich animations for your APEX app</a> <code>2021.01</code></li><li><a href="https://jeffkemponoracle.com/2021/01/reportmap-release-1-5/" target="_blank" rel="noopener">ReportMap Release 1.5</a> <code>2021.01</code></li><li><a href="https://www.talkapex.com/2021/01/how-to-build-templates-in-aop/" target="_blank" rel="noopener">How to Quickly Build Templates in APEX Office Print</a> <code>2021.01</code></li><li><a href="https://explorer.co.uk/creating-a-dynamic-organisation-chart-in-apex-in-under-an-hour-from-your-active-directory/" target="_blank" rel="noopener">Creating a dynamic Organisation Chart in APEX in under an hour from your Active Directory</a> <code>2021.01</code></li><li><a href="https://explorer.co.uk/cards-new-region-type-in-apex-20-2/" target="_blank" rel="noopener">Cards – New Region Type in APEX 20.2</a> <code>2021.01</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210130133934.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
       
     
     </summary>
