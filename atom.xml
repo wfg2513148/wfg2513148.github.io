@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2022-10-01T16:26:37.008Z</updated>
+  <updated>2022-11-01T11:17:27.722Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2022.10</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221031/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221031/</id>
+    <published>2022-10-31T15:59:00.000Z</published>
+    <updated>2022-11-01T11:17:27.722Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3504.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.10.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://content.dsp.co.uk/apex/apex-22.2-new-features-spotlight" target="_blank" rel="noopener">APEX 22.2 - New Features Spotlight</a> <code>2022.10</code></li><li><a href="https://blog.rishoradev.com/2022/10/11/intro-extending-oracle-e-business-suite-r12-using-oracle-apex-joelkallmanday/" target="_blank" rel="noopener">EXTENDING ORACLE E-BUSINESS SUITE R12 USING ORACLE APEX</a> <code>2022.10</code></li><li><a href="https://insight2action.medium.com/a-guide-to-embedding-oracle-analytics-into-oracle-application-express-apex-1799f6ba4626" target="_blank" rel="noopener">A Guide to Embedding Oracle Analytics into Oracle Application Express (APEX)</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/how-to-find-nearest-stadiums-using-oracle-apex-maps-and-geolocation" target="_blank" rel="noopener">How to find nearest stadiums using Oracle APEX maps and geolocation</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/speed-up-your-apex-development-using-session-overrides-and-vs-code" target="_blank" rel="noopener">Speed up your APEX development using Session Overrides and VS Code</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/getting-the-best-address-and-location-searches-in-oracle-apex" target="_blank" rel="noopener">Getting the best address and location searches in Oracle APEX</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/all-about-apex-timeouts" target="_blank" rel="noopener">All About APEX Timeouts</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/apex-oci-par" target="_blank" rel="noopener">How To Generate &amp; Use OCI Pre-Authenticated Requests from APEX</a> <code>2022.10</code></li><li><a href="https://tm-apex.blogspot.com/2022/10/using-template-directives-in-e-mail.html" target="_blank" rel="noopener">Using Template Directives in E-Mail Templates (APEX Mail #11)</a> <code>2022.10</code></li><li><a href="https://blog.neilfernandez.com/json_mergepatch/" target="_blank" rel="noopener">Quick Tip: json_mergepatch</a> <code>2022.10</code></li><li><a href="https://blog.danielhochleitner.de/2021/10/11/new-apex-date-js-api-in-apex-21-2/" target="_blank" rel="noopener">New apex.date JS API in APEX 21.2</a> <code>2022.10</code></li><li><a href="https://diveintoapex.com/2022/10/11/building-a-mini-sql-workshop-joelkallmanday/" target="_blank" rel="noopener">Building a Mini SQL Workshop</a> <code>2022.10</code></li><li><a href="https://diveintoapex.com/2022/10/17/orclapex-grand-tour/" target="_blank" rel="noopener">Oracle APEX Grand Tour</a> <code>2022.10</code></li><li><a href="https://jkerr.hashnode.dev/easily-and-securely-check-user-passwords-for-compromise" target="_blank" rel="noopener">Easily and securely check user passwords for compromise</a> <code>2022.10</code></li><li><a href="http://www.oneoracledeveloper.com/2022/10/more-readable-code-via-apexstring.html" target="_blank" rel="noopener">More readable code via APEX_STRING</a> <code>2022.10</code></li><li><a href="https://content.dsp.co.uk/apex/flows-for-apex-joelkallmanday" target="_blank" rel="noopener">Flows for APEX</a> <code>2022.10</code></li><li><a href="https://jeffkemponoracle.com/2022/10/export-clob-as-a-sql-script/" target="_blank" rel="noopener">Export CLOB as a SQL Script</a> <code>2022.10</code></li><li><a href="https://lmoreaux.hashnode.dev/ckeditor5-word-character-count-feature-joelkallmanday" target="_blank" rel="noopener">CKEditor5 Word &amp; Character count feature</a> <code>2022.10</code></li><li><a href="https://apexapplab.dev/2022/10/21/understanding-better-the-apex-map-region/" target="_blank" rel="noopener">Understanding better the APEX Map Region</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/identificazione-a-2-fattori-basata-su-totp-time-based-one-time-password-con-oracle-apex/" target="_blank" rel="noopener">Time-based One-time Password (TOTP) -based 2-factor authentication with Oracle APEX</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/come-costruire-web-service-restful-con-ords-e-oracle-apex/" target="_blank" rel="noopener">How to build RESTful Web Services with ORDS and Oracle APEX</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/come-costruire-workflows-approvativi-in-oracle-apex/" target="_blank" rel="noopener">How to build Approval Workflows in Oracle APEX</a> <code>2022.10</code></li><li><a href="https://vmorneau.me/oracle-apex-22-2-meta-tags/" target="_blank" rel="noopener">Oracle APEX 22.2: Meta Tags</a> <code>2022.10</code></li><li><a href="https://dickdral.blogspot.com/2021/10/creating-mobile-app-with-apex-part-11.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 11: Displaying form items side by side</a> <code>2022.10</code></li><li><a href="http://dgielis.blogspot.com/2022/10/oracle-apex-form-save-before-print.html" target="_blank" rel="noopener">Oracle APEX Form: Save before Print</a> <code>2022.10</code></li><li><a href="http://dgielis.blogspot.com/2022/10/no-value-of-page-item-when-using.html" target="_blank" rel="noopener">No value of a page item when using a Dynamic Action</a> <code>2022.10</code></li><li><a href="http://nielsdebr.blogspot.com/2022/10/up-to-speed-with-apex.html" target="_blank" rel="noopener">Getting up to speed with Oracle Application Express (APEX)</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/apex-form-ig-regions-pro" target="_blank" rel="noopener">How To Handle Advanced APEX Form &amp; IG CRUD Operations Like a Pro</a> <code>2022.10</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3504.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2022.09</title>
@@ -566,35 +595,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210430154142.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.03.31</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210331/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210331/</id>
-    <published>2021-03-31T14:36:00.000Z</published>
-    <updated>2021-03-31T14:36:14.238Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210331223550.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p><p>以下是截止至 <code>2021.03.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/oracle-apex-named-a-2021-gartner-peer-insights-customers-choice-for-enterprise-low-code-application-platforms" target="_blank" rel="noopener">Oracle APEX Named a 2021 Gartner Peer Insights Customers’ Choice for Enterprise Low-Code Application Platforms</a> <code>2021.03</code></li><li><a href="https://blogs.oracle.com/apex/synchronize-parent-child-rest-sources" target="_blank" rel="noopener">Synchronize Parent-Child REST Sources</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/design-simple-and-attractive-login-page-in-oracle-apex.html" target="_blank" rel="noopener">Design Simple and Attractive Login Page in Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.javainhand.com/2021/03/unchecked-checkbox-when-another-is-checked-in-oracle-apex.html" target="_blank" rel="noopener">Unchecked Checkbox When Another Is Checked in Oracle APEX</a> <code>2021.03</code></li><li><a href="http://mortezamashhadi.blogspot.com/2021/03/enable-multiselected-feature-of-oracle.html" target="_blank" rel="noopener">Enable Multiselected feature of Oracle APEX Tree</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-your-toolbar-interactive-grid.html" target="_blank" rel="noopener">Customize your Toolbar (Interactive Grid #9)</a> <code>2021.03</code></li><li><a href="https://tm-apex.blogspot.com/2021/03/customize-column-heading-menu.html" target="_blank" rel="noopener">Customize the Column Heading Menu (Interactive Grid #8)</a> <code>2021.03</code></li><li><a href="https://www.traust.com/read-only-disable-switch-widgets-in-oracle-apex/" target="_blank" rel="noopener">Read-Only/Disable Switch Widgets In Oracle APEX</a> <code>2021.03</code></li><li><a href="https://www.traust.com/lose-focus-da-and-submit-page-in-oracle-apex/" target="_blank" rel="noopener">Lose Focus DA And Submit Page In Oracle APEX</a> <code>2021.03</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210331223550.png?x-oss-process=image/format,jpg/quality,q_40&quot; alt=&quot;&quot;
       
     
     </summary>
