@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-01-29T06:13:40.886Z</updated>
+  <updated>2023-03-04T14:23:06.716Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.02</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230304/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230304/</id>
+    <published>2023-03-04T14:07:00.000Z</published>
+    <updated>2023-03-04T14:23:06.716Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4514.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.03.04</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://grepora.com/2023/03/02/what-can-you-do-with-apex_collection/" target="_blank" rel="noopener">What can you do with APEX_COLLECTION</a> <code>2023.03</code></li><li><a href="https://diveintoapex.com/2023/02/07/designer-collab-for-date-ranges/" target="_blank" rel="noopener">Designer Collab for Date Ranges</a> <code>2023.02</code></li><li><a href="https://ora-00001.blogspot.com/2023/02/restrict-access-to-apex-builder-based-on-client-ip-when-using-.html" target="_blank" rel="noopener">estrict access to APEX Builder based on client IP when using Apache and ORDS</a> <code>2023.02</code></li><li><a href="https://content.dsp.co.uk/apex/implement-aws-cognito-authentication-in-your-apex-application" target="_blank" rel="noopener">Implement AWS Cognito Authentication in your APEX Application</a> <code>2023.02</code></li><li><a href="https://content.dsp.co.uk/apex/how-to-use-chatgpt-to-aid-your-oracle-apex-development" target="_blank" rel="noopener">How to use ChatGPT to aid your Oracle APEX development</a> <code>2023.02</code></li><li><a href="https://grepora.com/2023/02/09/getting-started-with-apex_string-split/" target="_blank" rel="noopener">Getting started with APEX_STRING.SPLIT</a> <code>2023.02</code></li><li><a href="https://www.javainhand.com/2023/02/show-image-instead-of-icon-in-oracle-apex-region-header.html" target="_blank" rel="noopener">Show Image Instead of Icon in Oracle APEX Region Header</a> <code>2023.02</code></li><li><a href="https://blogs.oracle.com/apex/post/oracle-apex-workflow-functionality" target="_blank" rel="noopener">Oracle APEX Workflow Functionality</a> <code>2023.02</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4514.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.01</title>
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230129/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230129/</id>
     <published>2023-01-29T06:07:00.000Z</published>
-    <updated>2023-01-29T06:13:40.886Z</updated>
+    <updated>2023-01-29T06:26:01.329Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4162.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.01.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://diveintoapex.com/2023/01/24/simplify-sharing-region-data/" target="_blank" rel="noopener">Simplify Sharing Region Data</a> <code>2023.01</code></li><li><a href="http://www.oneoracledeveloper.com/2023/01/apex-stripe-payment-gateway-demo-app.html" target="_blank" rel="noopener">APEX &amp; Stripe payment gateway (demo app)</a> <code>2023.01</code></li><li><a href="https://content.dsp.co.uk/apex/setting-up-oci-bucket-storage-and-accessing-from-apex" target="_blank" rel="noopener">Setting up OCI Bucket storage and accessing from APEX</a> <code>2023.01</code></li><li><a href="https://appin5minuti.it/come-personalizzare-laspetto-di-una-apps-oracle-apex/" target="_blank" rel="noopener">How to Customize the Appearance of an Oracle APEX APP</a> <code>2023.01</code></li><li><a href="https://blogs.oracle.com/apex/post/free-oci-email-for-apex" target="_blank" rel="noopener">Announcing Free Email Delivery in Oracle Cloud for Oracle APEX Apps</a> <code>2023.01</code></li><li><a href="https://pretius.com/blog/oracle-apex-map-region-introduction/" target="_blank" rel="noopener">Maps in Oracle APEX – introduction for beginners</a> <code>2023.01</code></li><li><a href="https://medium.com/oracledevs/using-apex-with-rdf-graphs-on-oracle-autonomous-database-7255c09880ff" target="_blank" rel="noopener">Using APEX with RDF Graphs on Oracle Autonomous Database</a> <code>2023.01</code></li><li><a href="https://blog.cloudnueva.com/arcs-file-integration-apex" target="_blank" rel="noopener">Oracle Cloud EPM Account Reconciliation (ARCS) File Integration With Oracle APEX</a> <code>2023.01</code></li><li><a href="https://blog.cloudnueva.com/apex-222-dynamic-content-regions" target="_blank" rel="noopener">APEX 22.2+ Dynamic Content Regions</a> <code>2023.01</code></li><li><a href="https://akilramesh.blogspot.com/2022/01/button-with-spinnerprogress-indicator.html" target="_blank" rel="noopener">Button with Spinner/Progress Indicator</a> <code>2023.01</code></li><li><a href="http://www.oneoracledeveloper.com/2022/12/apex-tabs-with-badges.html" target="_blank" rel="noopener">APEX Tabs with Badges</a> <code>2022.12</code></li><li><a href="https://lmoreaux.hashnode.dev/how-to-make-your-mobile-apex-application-look-like-a-native-one-part-2" target="_blank" rel="noopener">How to make your mobile APEX application look like a native one - Part 2</a> <code>2022.09</code></li></ul>]]></content>
     
@@ -578,35 +607,6 @@
       <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
       <category term="ORDS" scheme="https://wangfanggang.com/tags/ORDS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.08.31</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210831/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210831/</id>
-    <published>2021-08-30T16:58:00.000Z</published>
-    <updated>2021-08-30T16:59:38.635Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210830201834.png?x-oss-process=image/format,jpg/quality,q_50" alt=""></p><p>以下是截止至 <code>2021.08.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://github.com/fuzziebrain/docker-apex-stack" target="_blank" rel="noopener">Github: fuzziebrain/docker-apex-stack</a> <code>2021.08</code></li><li><a href="https://akilramesh.blogspot.com/2021/08/ig-hack-4-change-column-width-of.html" target="_blank" rel="noopener">IG Hack - #4, Change the column width of Interactive Grid using JavaScript in Oracle APEX</a> <code>2021.08</code></li><li><a href="https://appin5minuti.it/come-collegare-oracle-apex-con-google-drive/" target="_blank" rel="noopener">How to connect Oracle APEX with Google Drive</a> <code>2021.08</code></li><li><a href="https://appin5minuti.it/oracle-apex-come-creare-unapplicazione-web-in-5-minuti/" target="_blank" rel="noopener">Oracle APEX: how to create a web application in 5 minutes</a> <code>2021.08</code></li><li><a href="https://oracle-max.com/ajax-oracle-apex/" target="_blank" rel="noopener">Implementing AJAX in Oracle APEX requests</a> <code>2021.08</code></li><li><a href="https://orclqa.com/oracle-apex-javascript-get-column-value/" target="_blank" rel="noopener">Oracle APEX JavaScript - Get Column Value</a> <code>2021.08</code></li><li><a href="https://blog.longacre.ch/2021/08/autonomous-db-you-have-exceeded-maximum.html" target="_blank" rel="noopener">Autonomous DB “You have exceeded the maximum number of web service requests per workspace”</a> <code>2021.08</code></li><li><a href="https://appin5minuti.it/document-management-system-in-oracle-apex/" target="_blank" rel="noopener">Document Management System in Oracle APEX</a> <code>2021.08</code></li><li><a href="https://www.javainhand.com/2021/08/add-emojis-in-oracle-apex.html" target="_blank" rel="noopener">Add Emojis in Oracle APEX</a> <code>2021.08</code></li><li><a href="https://dickdral.blogspot.com/2020/08/new-plug-in-reacting-on-changed-content.html" target="_blank" rel="noopener">New Plug-in: Reacting on changed content of APEX Autocomplete Item</a> <code>2021.08</code></li><li><a href="https://apextips.blogspot.com/2021/08/uploading-files-to-oci-object-storage.html" target="_blank" rel="noopener">Uploading Files to OCI Object Storage from Autonomous</a> <code>2021.08</code></li><li><a href="https://apextips.blogspot.com/2021/08/a-note-on-using-numerical-sysguid-with.html" target="_blank" rel="noopener">A note on using a numerical sys_guid with JavaScript</a> <code>2021.08</code></li><li><a href="https://appin5minuti.it/oracle-apex-apps-tasks-manager-todo-list/" target="_blank" rel="noopener">how to create an APP To-Do List</a> <code>2021.07</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210830201834.png?x-oss-process=image/format,jpg/quality,q_50&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
     
   </entry>
   
