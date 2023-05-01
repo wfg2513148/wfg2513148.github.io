@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-04-08T15:23:43.125Z</updated>
+  <updated>2023-05-01T15:45:59.771Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.04</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230501/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230501/</id>
+    <published>2023-05-01T15:18:00.000Z</published>
+    <updated>2023-05-01T15:45:59.771Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4857.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.05.01</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://aflorestorres.com/2023/05/01/oracle-apex-usar-restfull-data-services-http-header-con-2-o-mas-parametros/" target="_blank" rel="noopener">Oracle APEX use RESTfull Data Services, HTTP Header with 2 or more parameters</a> <code>2023.05</code></li><li><a href="https://www.insum.ca/5-benefits-apex-handshake-ebs/" target="_blank" rel="noopener">5 Ways Handshake Helps Extend Oracle E-Business Suite with Oracle APEX</a> <code>2023.04</code></li><li><a href="https://blog.cloudnueva.com/apex-subscriptions" target="_blank" rel="noopener">Stay DRY by Using APEX Subscriptions</a> <code>2023.04</code></li><li><a href="https://hartenfeller.dev/blog/oracle-apex-template-components-introduction" target="_blank" rel="noopener">Introduction to Template Components in Oracle APEX 23.1</a> <code>2023.04</code></li><li><a href="https://tm-apex.hashnode.dev/quick-and-easy-apex-and-ords-installation-for-oracle-database-23c-developer-release-on-oci" target="_blank" rel="noopener">Quick and Easy APEX and ORDS Installation for Oracle Database 23c Developer Release on OCI</a> <code>2023.04</code></li><li><a href="http://www.oneoracledeveloper.com/2023/04/oracle-23c-free.html" target="_blank" rel="noopener">Oracle 23c Free</a> <code>2023.04</code></li><li><a href="https://content.dsp.co.uk/apex/pwa-progressive-web-applications" target="_blank" rel="noopener">PWA: Progressive Web Applications</a> <code>2023.04</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-231-page-processes-enhancements" target="_blank" rel="noopener"></a> <code>2023.04</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-231-tinymce" target="_blank" rel="noopener">Oracle APEX 23.1 - TinyMCE</a> <code>2023.04</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-card-image-carousel" target="_blank" rel="noopener">Step-by-Step Guide for Adding an Image Carousel to the Oracle APEX Card Region</a> <code>2023.04</code></li><li><a href="https://blogs.oracle.com/apex/post/new-workshop-build-a-social-media-app-using-oracle-apex" target="_blank" rel="noopener">New Workshop: Build a Social Media App using Oracle APEX</a> <code>2023.04</code></li><li><a href="https://blogs.oracle.com/apex/post/try-oracle-apex-231-on-apex-oracle-com" target="_blank" rel="noopener">Try Oracle APEX 23.1 on apex.oracle.com</a> <code>2023.04</code></li><li><a href="https://plamen9.hashnode.dev/apex-231-push-notifications-an-exciting-new-pwa-addition" target="_blank" rel="noopener">APEX 23.1 Push Notifications - an exciting new PWA addition</a> <code>2023.04</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4857.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.03</title>
@@ -562,35 +591,6 @@
 &lt;li&gt;过滤器会根据您的数据进行评估，并作为标签显示在搜索栏下方，为您提供最合适的过滤条件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234451.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.09.29</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210929/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210929/</id>
-    <published>2021-09-29T06:05:00.000Z</published>
-    <updated>2021-09-29T06:11:21.497Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210928152946.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2021.09.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://nielsdebr.blogspot.com/2021/09/announcing-flows-for-apex-211.html" target="_blank" rel="noopener">Announcing Flows for APEX 21.1</a> <code>2021.09</code></li><li><a href="https://blogs.oracle.com/apex/post/adb-vanity-urls-part-2-blocking-tools" target="_blank" rel="noopener">Oracle Autonomous Database Vanity URLs Part 2: Blocking Developer and Administrator Tools</a> <code>2021.09</code></li><li><a href="https://blogs.oracle.com/apex/post/introducing-vanity-urls-on-adb" target="_blank" rel="noopener">Introducing Vanity URLs for APEX and ORDS on Oracle Autonomous Database</a> <code>2021.09</code></li><li><a href="https://apexapplab.dev/2021/09/07/ords-apex-and-secure-rest-apis-part-2-call-the-api/" target="_blank" rel="noopener">ORDS, APEX and secure REST APIs (Part 2 – call the API)</a> <code>2021.09</code></li><li><a href="https://apexapplab.dev/2021/09/06/ords-apex-and-secure-rest-apis-part-1/" target="_blank" rel="noopener">ORDS, APEX and secure REST APIs (Part 1 – secure the API)</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/06/retornar-valor-de-una-modal-en-un-interactive-grid-ig-oracle-apex/" target="_blank" rel="noopener">Return value of a modal in an Interactive Grid IG - Oracle APEX</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/20/the-network-adapter-could-not-establish-the-connection-el-adaptador-de-red-no-pudo-establecer-la-conexion/" target="_blank" rel="noopener">The network adapter could not establish the connection</a> <code>2021.09</code></li><li><a href="https://aflorestorres.com/2021/09/25/apex-oracle-ords-503-service-unavailable/" target="_blank" rel="noopener">Ords 503 Service Unavailable</a> <code>2021.09</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210928152946.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
     
     </summary>
     

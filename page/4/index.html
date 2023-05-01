@@ -371,6 +371,224 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/oracle-cloud-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/oracle-cloud-04/" itemprop="url">
+                  Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-01-14 22:58:00 / 修改时间：23:58:44" itemprop="dateCreated datePublished" datetime="2021-01-14T22:58:00+08:00">2021-01-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/oracle-cloud-04/" class="leancloud_visitors" data-flag-title="Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210114230045.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<blockquote>
+<p>本文是关于 Oracle Cloud 的一篇译文，也是 Oracle Cloud 系列文章第四篇，Oracle Cloud系列文章列表如下：</p>
+<ul>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-01/">Oracle Cloud 系列文章01：创建VM云实例</a></li>
+<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/oracle-cloud-02/">Oracle Cloud 系列文章02：创建Oracle云数据库（自治事务处理ATP）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-03/">Oracle Cloud 系列文章03：安装配置Oracle Cloud命令行接口工具（CLI）</a></li>
+<li><a href="https://wangfanggang.com/Oracle/oracle-cloud-04/">Oracle Cloud 系列文章04：在 Oracle Cloud (OCI) 中快速构建APEX应用程序</a></li>
+</ul>
+</blockquote>
+<p>英文原文请查阅这里：<a href="https://blogs.oracle.com/developers/build-apps-fast-with-new-apex-service" target="_blank" rel="noopener">https://blogs.oracle.com/developers/build-apps-fast-with-new-apex-service</a></p>
+<p>今天，2021年1月13日，Oracle公司推出了一项新的 Oracle Application Express（APEX）服务，用于在Oracle Cloud中快速构建和部署现代化的数据驱动的应用程序。这项新服务是在 <a href="https://www.oracle.com/cloud" target="_blank" rel="noopener">Oracle Cloud Infrastructure（OCI）</a> 上使用 Oracle APEX 低代码应用程序开发的理想入口。它提供了一个简单的、易于使用且易于访问的平台，从而使创建功能强大的应用程序变得异常快捷。</p>
+<h2 id="关于Oracle-APEX和低代码开发"><a href="#关于Oracle-APEX和低代码开发" class="headerlink" title="关于Oracle APEX和低代码开发"></a>关于Oracle APEX和低代码开发</h2><p><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX</a> 从根本上简化了数据驱动的应用程序的开发和部署过程，使普通用户和专业开发人员都能够以<a href="https://www.oracle.com/application-development/apex/solutions/low-code-development-platform/" target="_blank" rel="noopener">比编码快38倍的速度</a>创建Web应用程序。全球数以千计的 Oracle 客户正利用 Oracle APEX 来构建定制的应用程序，诸如：企业级报表系统、替换Excel等。它在全球拥有约50万个开发人员、倡导者及合作伙伴，目前每天有数百万的最终用户在使用用 Oracle APEX 创建的实时应用程序。Oracle 公司最近利用 Oracle APEX 为美国的患者和医护人员快速创建了 <a href="https://blogs.oracle.com/oracle-at-oracle/post/learn-how-oracle-used-apex-to-quickly-launch-its-covid-19-therapeutic-app" target="_blank" rel="noopener">COVID-19 大流行应对应用程序</a>，并<a href="https://www.oracle.com/corporate/citizenship/health/" target="_blank" rel="noopener">支持三个非洲国家的国家疾病疫苗接种计划</a>。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Oracle/oracle-cloud-04/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20201231/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2470,233 +2688,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200530/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20200530/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2020.05.30
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-05-30 11:55:00 / 修改时间：13:32:46" itemprop="dateCreated datePublished" datetime="2020-05-30T11:55:00+08:00">2020-05-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20200530/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2020.05.30">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">851</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200530133221.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
-<p>以下是截止至 <code>2020.05.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="http://dgielis.blogspot.com/2020/05/today-united-codes-changes-way-you-look.html" target="_blank" rel="noopener">APE: APEX Project Eye</a> <code>2020.05</code></li>
-<li><a href="https://blogs.oracle.com/apex/im-in-india-and-im-interested-in-oracle-apex-where-do-i-get-started" target="_blank" rel="noopener">Where do I get started of Oracle APEX?</a> <code>2020.05</code></li>
-<li><a href="https://blogs.oracle.com/apex/remote-deployment-of-your-apex-app-is-just-one-click-away" target="_blank" rel="noopener">Remote Deployment of your APEX App is just One Click Away</a> <code>2020.05</code></li>
-<li><a href="https://rimblas.com/blog/2020/05/plugin-cav-success-message/" target="_blank" rel="noopener">Plugin: Cav Success Message</a> <code>2020.05</code></li>
-<li><a href="https://rimblas.com/blog/2020/05/plugin-defer-report-load-on-tab-focus/" target="_blank" rel="noopener">Plugin: Defer Report Load on Tab focus</a> <code>2020.05</code></li>
-<li><a href="https://rimblas.com/blog/2020/05/move-your-apex-plugin-plsql-code-to-the-database/" target="_blank" rel="noopener">Move your APEX Plugin PL/SQL code to the Database</a> <code>2020.05</code></li>
-<li><a href="https://rimblas.com/blog/2020/05/debugging-logger-conditional-compilation/" target="_blank" rel="noopener">Debugging, Logger &amp; Conditional Compilation</a> <code>2020.05</code></li>
-<li><a href="http://dgielis.blogspot.com/2020/05/configuring-aop-as-print-server-in.html" target="_blank" rel="noopener">Configuring AOP as Print Server in Oracle APEX 20.1</a> <code>2020.05</code></li>
-<li><a href="http://dgielis.blogspot.com/2020/05/ords-database-user-for-connection-pool.html" target="_blank" rel="noopener">ORDS: The database user for the connection pool named |apex|rt|, is not authorized to proxy to the schema</a> <code>2020.05</code></li>
-<li><a href="https://roelhartman.blogspot.com/2020/05/using-static-files-in-apex-has-never.html" target="_blank" rel="noopener">Using Static Files in APEX has never been easier</a> <code>2020.05</code></li>
-<li><a href="https://jeffkemponoracle.com/2020/05/reportmap-release-1-2/" target="_blank" rel="noopener">Plugin: ReportMap Release 1.2</a> <code>2020.05</code></li>
-<li><a href="http://oracoolapex.blogspot.com/2019/05/oracle-sql-developer-code-templates-for.html" target="_blank" rel="noopener">Oracle SQL Developer Code Templates for APEX APIs</a> <code>2020.05</code></li>
-<li><a href="https://www.foxinfotech.in/2020/05/oracle-apex-highlight-row-based-on-condition.html" target="_blank" rel="noopener">Highlight Row Based on Condition</a> <code>2020.05</code></li>
-<li><a href="https://jeffkemponoracle.com/2020/04/font-awesome-v5-alongside-font-apex/" target="_blank" rel="noopener">Font Awesome v5 alongside Font APEX</a> <code>2020.04</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2748,7 +2739,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">126</span>
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
