@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-05-05T06:25:26.948Z</updated>
+  <updated>2023-05-09T16:39:00.189Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>APEX中文社区2023主题活动(上海站)圆满成功</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-shanghai-meetup-20230507/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-shanghai-meetup-20230507/</id>
+    <published>2023-05-07T15:59:59.000Z</published>
+    <updated>2023-05-09T16:39:00.189Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG2933.jpeg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>Oracle APEX中文社区2023年主题活动于5月7日在Oracle上海办公室顺利举行。本次活动采用线上腾讯会议（48人）+线下（15人）的方式举行，由Oracle的小伙伴提供活动场地，社区的小伙伴提供了精彩分享。</p><p>同时，通过圆桌论坛自由讨论的形式，对大家关心的话题、以及社区未来的发展方向进行了讨论交流。以下是活动当天的一些照片和资料，供未能参加的小伙伴们学习。</p><p>再次感谢Oracle A&amp;C, Oracle Tech, Oracle OU以及社区小伙伴的大力支持与帮助，同时也希望咱们社区能有更多的小伙伴加入，更多的人进行加入分享，让我们APEX中文社区越办越好！</p><p>期待下次的重逢！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG2933.jpeg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 中文社区上海站主题活动（2023.05.07）</title>
@@ -552,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211130214738.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.10.31</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211031/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211031/</id>
-    <published>2021-10-31T00:21:00.000Z</published>
-    <updated>2021-10-31T00:21:39.552Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211026233224.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2021.10.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-menu-popup-joelkallmanday" target="_blank" rel="noopener">Oracle APEX menu popup</a> <code>2021.10</code></li><li><a href="https://diveintoapex.com/2021/10/11/user-configurable-card-size/" target="_blank" rel="noopener">Interactive, User-Configurable Card Width</a> <code>2021.10</code></li><li><a href="https://blog.hanielb.com/easily-integrate-apex-and-usps-web-tools-api/" target="_blank" rel="noopener">Integrating APEX and US. Postal Services Web Tools API - Part 1</a> <code>2021.10</code></li><li><a href="https://apexapplab.dev/2021/10/12/5-tips-to-help-you-build-better-apex-user-interfaces/" target="_blank" rel="noopener">5 tips to help you build better APEX user interfaces</a> <code>2021.10</code></li><li><a href="https://www.oracle-and-apex.com/apex-version-differences-joelkallmanday/" target="_blank" rel="noopener">APEX Version differences</a> <code>2021.10</code></li><li><a href="https://nuijten.blogspot.com/2021/10/everybody-needs-break-apexwebservice.html" target="_blank" rel="noopener">Everybody needs a break: APEX_WEB_SERVICE</a> <code>2021.10</code></li><li><a href="https://blog.danielhochleitner.de/2021/10/11/new-apex-date-js-api-in-apex-21-2/" target="_blank" rel="noopener">New apex.date JS API in APEX 21.2</a> <code>2021.10</code></li><li><a href="https://www.insum.ca/ords-and-apex-digital-process-automation/" target="_blank" rel="noopener">How ORDS and APEX can Help Automate your Digital Processes – Part 1</a> <code>2021.10</code></li><li><a href="https://www.jmjcloud.com/blog/create-okta-users-using-rest-joelkallmanday" target="_blank" rel="noopener">Create OKTA Users using REST</a> <code>2021.10</code></li><li><a href="https://yvonnebakx.wordpress.com/2021/10/11/oracle-apex-shortcuts/" target="_blank" rel="noopener">Oracle APEX – Shortcuts</a> <code>2021.10</code></li><li><a href="https://douggault.com/oracle-apex-workflow-problem-solved/" target="_blank" rel="noopener">Oracle APEX &amp; Workflow – Problem Solved?</a> <code>2021.10</code></li><li><a href="https://ogobrecht.com/posts/2021-10-13-generate-apex-plug-ins-on-the-command-line/" target="_blank" rel="noopener">Generate APEX plug-ins on the command line</a> <code>2021.10</code></li><li><a href="https://www.foxinfotech.in/2021/10/does-aws-support-oracle-apex.html" target="_blank" rel="noopener">Does AWS support Oracle APEX?</a> <code>2021.10</code></li><li><a href="https://appin5minuti.it/app-mobile-in-oracle-apex-5-suggerimenti-da-tenere-a-mente/" target="_blank" rel="noopener">Mobile APP in Oracle APEX: 5 Tips to Keep in Mind</a> <code>2021.10</code></li><li><a href="https://lmoreaux.hashnode.dev/popup-lov-custom-template" target="_blank" rel="noopener">Popup LOV custom template</a> <code>2021.10</code></li><li><a href="https://www.foxinfotech.in/2021/10/oracle-apex-documentation-handpicked-resources.html" target="_blank" rel="noopener">Oracle Apex Documentation (Handpicked Resources)</a> <code>2021.10</code></li><li><a href="https://appin5minuti.it/product-configurator-in-oracle-apex/" target="_blank" rel="noopener">Product Configurator in Oracle APEX</a> <code>2021.10</code></li><li><a href="https://stefandobre.com/2021/10/11/javascript-api-enhancements-in-apex-21-2-joelkallmanday/" target="_blank" rel="noopener">JavaScript API Enhancements in APEX</a> <code>2021.10</code></li><li><a href="https://www.javainhand.com/2021/10/flip-region-in-oracle-apex.html" target="_blank" rel="noopener">Flip Region in Oracle APEX</a> <code>2021.10</code></li><li><a href="https://www.javainhand.com/2021/10/disable-right-click-and-f12-developer-tool-option-in-oracle-apex.html" target="_blank" rel="noopener">Disable Right Click and F12 Developer Tools Option in Oracle APEX</a> <code>2021.10</code></li><li><a href="https://dickdral.blogspot.com/2021/10/creating-mobile-app-with-apex-part-11.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 11: Displaying form items side by side</a> <code>2021.10</code></li><li><a href="https://diveintoapex.com/2021/10/14/mixing-positional-named-params-can-lead-to-trouble/" target="_blank" rel="noopener">Mixing Positional &amp; Named Params Can Lead to Trouble</a> <code>2021.10</code></li><li><a href="https://appin5minuti.it/dashboard-interattiva-in-oracle-apex/" target="_blank" rel="noopener">Dashboard Interattiva in Oracle APEX</a> <code>2021.10</code></li><li><a href="https://srihariravva.blogspot.com/2021/10/interactive-grid-process-filtered-data.html" target="_blank" rel="noopener">Interactive Grid - Process Filtered Data on Server Side</a> <code>2021.10</code></li><li><a href="https://akilramesh.blogspot.com/2021/10/allow-only-numbersdecimal-in-numbertext.html" target="_blank" rel="noopener">Allow Only Number/Decimal values In a Number/Text Field Using JavaScript in Oracle APEX</a> <code>2021.10</code></li><li><a href="https://www.maxapex.com/blogs/contact-tracing-in-oracle-apex/" target="_blank" rel="noopener">Contact Tracing in Oracle APEX</a> <code>2021.10</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211026233224.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>
