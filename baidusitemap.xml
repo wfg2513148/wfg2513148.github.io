@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230518/</loc>
+    <lastmod>2023-05-18T11:20:01.186Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 23.1 正式发布！</title>
+        <pubTime>2023-05-18T10:58:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-shanghai-meetup-20230507/</loc>
     <lastmod>2023-05-10T10:05:04.872Z</lastmod>
     <data>
@@ -1188,9 +1213,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
          
            
@@ -1273,9 +1298,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
         <tag>Database</tag>
          
