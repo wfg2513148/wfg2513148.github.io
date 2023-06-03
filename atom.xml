@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-05-18T11:20:01.186Z</updated>
+  <updated>2023-06-03T00:49:56.585Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.05</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230603/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230603/</id>
+    <published>2023-06-02T23:42:00.000Z</published>
+    <updated>2023-06-03T00:49:56.585Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5014.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.06.03</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blog.cloudnueva.com/apex-and-pipelined-table-functions" target="_blank" rel="noopener">Turn Complex Logic into Simple SQL using Pipelined Table Functions</a> <code>2023.06</code></li><li><a href="https://www.youtube.com/playlist?list=PLUo-NIMouZ_s4egyLBamKKisn271iObLz" target="_blank" rel="noopener">Oracle APEX 23.1 New Features- Office Hours Sessions</a> <code>2023.05</code></li><li><a href="http://www.oneoracledeveloper.com/2023/05/new-apex-certification-oracle-apex.html" target="_blank" rel="noopener">New APEX certification, Oracle APEX Cloud Developer Professional</a> <code>2023.05</code></li><li><a href="https://www.oneoracledeveloper.com/2023/05/one-authorization-scheme-to-rule-them.html" target="_blank" rel="noopener">One authorization scheme to rule them all</a> <code>2023.05</code></li><li><a href="https://www.oneoracledeveloper.com/2023/05/one-authorization-scheme-for-apex.html" target="_blank" rel="noopener">One authorization scheme for APEX interactive grids</a> <code>2023.05</code></li><li><a href="https://www.oneoracledeveloper.com/2023/05/apex-interactive-grids-invoke-api-with.html" target="_blank" rel="noopener">APEX interactive grids &amp; Invoke API with zero arguments</a> <code>2023.05</code></li><li><a href="https://www.oneoracledeveloper.com/2023/05/apex-interactive-grids-health-check.html" target="_blank" rel="noopener">APEX interactive grids health check</a> <code>2023.05</code></li><li><a href="https://www.insum.ca/should-i-develop-my-own-ebs-apex-integration/" target="_blank" rel="noopener">Should I develop my own Oracle E-Business Suite (EBS)-APEX integration?</a> <code>2023.05</code></li><li><a href="https://plamen9.hashnode.dev/better-chatgpt-use-with-a-local-database-cache" target="_blank" rel="noopener">Better ChatGPT use with a local database cache</a> <code>2023.05</code></li><li><a href="https://github.com/plamen9/APEX-Chat" target="_blank" rel="noopener">showcasing an APEX Chat region</a> <code>2023.05</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-231-javascript-confirm-and-alert-functions-enhancement" target="_blank" rel="noopener">JavaScript confirm and alert functions enhancement</a> <code>2023.05</code></li><li><a href="https://blog.cloudnueva.com/apex-invoke-api-processes" target="_blank" rel="noopener">Call PL/SQL APIs Declaratively from APEX Using the Invoke API Process</a> <code>2023.05</code></li><li><a href="https://blogs.oracle.com/apex/post/announcing-the-oracle-apex-events-app" target="_blank" rel="noopener">Announcing the Oracle APEX Events App</a> <code>2023.05</code></li><li><a href="https://appin5minuti.it/come-costruire-una-progress-bar-in-oracle-apex/" target="_blank" rel="noopener">How to Build a Progress Bar in Oracle APEX</a> <code>2023.05</code></li><li><a href="https://content.dsp.co.uk/apex/exporting-apex-applications-using-sqlcl" target="_blank" rel="noopener">Exporting APEX Applications using SQLcl</a> <code>2023.05</code></li><li><a href="https://diveintoapex.com/2023/05/08/page-processing-power-unchained/" target="_blank" rel="noopener">Page Processing Power Unchained</a> <code>2023.05</code></li><li><a href="https://diveintoapex.com/2023/05/10/pushing-the-pwa-envelope/" target="_blank" rel="noopener">Pushing the PWA Envelope</a> <code>2023.05</code></li><li><a href="https://aflorestorres.com/2023/05/01/oracle-apex-usar-restfull-data-services-http-header-con-2-o-mas-parametros/" target="_blank" rel="noopener">Oracle APEX usar RESTfull Data Services, HTTP Header con 2 o más parámetros</a> <code>2023.05</code></li><li><a href="https://aflorestorres.com/2023/05/21/oracle-apex-restfull-data-services-post-y-put-insert-y-update/" target="_blank" rel="noopener">Oracle APEX, RESTfull Data Services, POST y PUT, insert y update</a> <code>2023.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5014.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 23.1 正式发布！</title>
@@ -552,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220127011636.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2021.12.31</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211231/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20211231/</id>
-    <published>2021-12-31T14:18:00.000Z</published>
-    <updated>2021-12-31T14:39:03.416Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211231223623.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2021.12.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://appin5minuti.it/come-sviluppare-applicazioni-sicure-con-oracle-apex/" target="_blank" rel="noopener">How to develop secure applications with Oracle APEX</a> <code>2021.12</code></li><li><a href="https://diveintoapex.com/2021/12/12/capturing-lat-long-address-info-without-a-map/" target="_blank" rel="noopener">Capturing Lat/Long Address Info Without a Map</a> <code>2021.12</code></li><li><a href="https://aflorestorres.com/2021/12/12/primeros-pasos-optimizacion-en-oracle-apex-plsql/" target="_blank" rel="noopener">First steps optimization in Oracle APEX / PlSQL</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/javascript-apis-2-apexitem.html" target="_blank" rel="noopener">Javascript APIs (#2 apex.item)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/preview-of-your-email-apex-mail-3.html" target="_blank" rel="noopener">Preview of your email (APEX Mail #3)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/javascript-apis-3-date-namespace.html" target="_blank" rel="noopener">Javascript APIs (#3 the date namespace)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/sending-emails-with-attachment-apex.html" target="_blank" rel="noopener">Sending emails with attachment (APEX Mail #4)</a> <code>2021.12</code></li><li><a href="https://tm-apex.blogspot.com/2021/12/embedding-images-in-email-apex-mail-5.html" target="_blank" rel="noopener">Embedding images in an email (APEX Mail #5)</a> <code>2021.12</code></li></ul><p>2021年马上就要过去了，好事坏事，终成往事。<br>2022年，加油！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211231223623.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>
