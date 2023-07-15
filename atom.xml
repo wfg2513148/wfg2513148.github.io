@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-06-03T00:49:56.585Z</updated>
+  <updated>2023-07-15T15:27:44.894Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.06</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230715/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230715/</id>
+    <published>2023-07-15T14:33:00.000Z</published>
+    <updated>2023-07-15T15:27:44.894Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5299.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.07.15</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blog.cloudnueva.com/apex-application-search" target="_blank" rel="noopener">Oracle APEX Application Search</a> <code>2023.07</code></li><li><a href="http://www.oneoracledeveloper.com/2023/07/heat-maps-for-apex-applications-usage.html" target="_blank" rel="noopener">Heat maps for APEX applications usage</a> <code>2023.07</code></li><li><a href="https://blogs.oracle.com/apex/post/faq-about-oracle-forms-to-apex-modernization" target="_blank" rel="noopener">FAQ about Oracle Forms to APEX Modernization</a> <code>2023.07</code></li><li><a href="https://www.anillabs.com/2023/06/sending-html-template-emails-from-oracle-apex/" target="_blank" rel="noopener">Sending HTML template emails from Oracle APEX</a> <code>2023.06</code></li><li><a href="https://micodify.de/highlight-current-row/" target="_blank" rel="noopener">Highlight current row</a> <code>2023.06</code></li><li><a href="https://micodify.de/better-ux-display-changes-without-reloading-a-page/" target="_blank" rel="noopener">Better UX - Display changes without reloading a page</a> <code>2023.06</code></li><li><a href="https://blog.cloudnueva.com/apex-dynamic-inline-help" target="_blank" rel="noopener">APEX Dynamic Inline Help</a> <code>2023.06</code></li><li><a href="https://content.dsp.co.uk/apex/introduction-to-integrating-apex-with-twilio" target="_blank" rel="noopener">Introduction to Integrating APEX with Twilio</a> <code>2023.06</code></li><li><a href="https://content.dsp.co.uk/apex/apex-behind-a-custom-domain-using-oracle-cloud-and-nginx" target="_blank" rel="noopener">APEX behind a Custom Domain using Oracle Cloud and NGINX</a> <code>2023.06</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-231-tinymce-image-upload" target="_blank" rel="noopener">Oracle APEX 23.1 - TinyMCE and image upload</a> <code>2023.06</code></li><li><a href="https://blog.cloudnueva.com/multi-tenant-apex-apps" target="_blank" rel="noopener">Building Multi-Tenant APEX Apps</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/does-aws-support-oracle-apex" target="_blank" rel="noopener">Does AWS support Oracle APEX?</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/oracle-apex-documentation-handpicked-resources" target="_blank" rel="noopener">Oracle Apex Documentation (Handpicked Resources)</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/oracle-apex-show-notification" target="_blank" rel="noopener">Show Notification on the Regions</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/best-oracle-apex-books" target="_blank" rel="noopener">Best Oracle Apex Books</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/best-oracle-apex-courses-udemy" target="_blank" rel="noopener">Best Oracle Apex Courses On Udemy</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/oracle-apex-page-mode" target="_blank" rel="noopener">Oracle Apex Property: Page Mode</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/control-access-to-page-oracle-apex" target="_blank" rel="noopener">How to Control Access to a Page in Oracle Apex?</a> <code>2023.06</code></li><li><a href="https://www.foxinfotech.org/display-tooltips-in-oracle-apex" target="_blank" rel="noopener">Display Tooltips on Mouseover in Oracle Apex</a> <code>2023.06</code></li><li><a href="https://micodify.de/better-ux-display-only-context-relevant-functions/" target="_blank" rel="noopener">Improve UX by using Knockout - show only functions that actually make sense</a> <code>2023.05</code></li><li><a href="https://plamen9.hashnode.dev/how-to-create-a-maskable-icon-for-your-apex-pwa" target="_blank" rel="noopener">How to create a Maskable Icon for Your APEX PWA</a> <code>2023.05</code></li><li><a href="https://plamen9.hashnode.dev/a-hidden-gem-in-apex-blueprints-and-built-in-datasets" target="_blank" rel="noopener">A hidden gem in APEX - Blueprints and built-in Datasets</a> <code>2023.05</code></li><li><a href="https://haniel.hashnode.dev/easy-file-downloads-with-apexdataexportdownload" target="_blank" rel="noopener">Easy File Downloads with APEX_DATA_EXPORT.DOWNLOAD</a> <code>2023.05</code></li><li><a href="https://oraclepress.wordpress.com/2023/05/16/apex-switching-from-default-authentication/" target="_blank" rel="noopener">APEX – Switching from default authentication</a> <code>2023.05</code></li><li><a href="https://oraclepress.wordpress.com/2023/05/26/enviar-sms-a-partir-do-oracle-database/" target="_blank" rel="noopener">Send SMS from Oracle Database</a> <code>2023.05</code></li><li><a href="https://www.insum.ca/10-steps-to-upgrading-oracle-apex/" target="_blank" rel="noopener">10 steps to upgrading your Oracle APEX applications</a> <code>2023.05</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-cicd-step-by-step-guide-aligned-to-the-apex-application-lifecycle-technical-paper" target="_blank" rel="noopener">Oracle APEX CI/CD: Step-by-step guide aligned to the APEX Application Lifecycle Technical Paper</a> <code>2023.05</code></li><li><a href="https://oraclepress.wordpress.com/2023/04/24/backup-do-apex-via-sqlcl/" target="_blank" rel="noopener">Backup do APEX via SQLcl</a> <code>2023.04</code></li><li><a href="https://oraclepress.wordpress.com/2023/05/04/apex-social-sign-in/" target="_blank" rel="noopener">Apex Social Sign-In</a> <code>2023.04</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5299.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.05</title>
@@ -551,35 +580,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220305110141.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.01.27</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220127/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220127/</id>
-    <published>2022-01-26T17:07:00.000Z</published>
-    <updated>2022-01-26T17:16:45.706Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220127011636.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.01.27</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.javainhand.com/2022/01/5-methods-to-get-oarcle-apex-page-item-value.html" target="_blank" rel="noopener">5 Methods to Get Oarcle APEX Page Item Value</a> <code>2022.01</code></li><li><a href="https://www.javainhand.com/2022/01/5-methods-to-set-oracle-apex-page-item-value.html" target="_blank" rel="noopener">5 Methods to Set Oracle APEX Page Item Value</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/including-link-in-email-to-apex-app.html" target="_blank" rel="noopener">Including a link in an email to an APEX App (APEX Mail #8)</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/checking-mail-log-and-queue-apex-mail-7.html" target="_blank" rel="noopener">Checking the mail log and queue (APEX Mail #7)</a> <code>2022.01</code></li><li><a href="https://tm-apex.blogspot.com/2022/01/display-tabular-data-in-email-apex-mail.html" target="_blank" rel="noopener">Display tabular data in an email (APEX Mail #6)</a> <code>2022.01</code></li><li><a href="https://appin5minuti.it/applicazione-di-prenotazione-appuntamenti-in-oracle-apex/" target="_blank" rel="noopener">Appointment Booking Application in Oracle APEX</a> <code>2022.01</code></li><li><a href="https://apexapplab.dev/2022/01/12/create-a-custom-offline-page-for-your-apex-pwa-in-21-2/" target="_blank" rel="noopener">Create a custom offline page for your APEX PWA in 21.2</a> <code>2022.01</code></li><li><a href="https://diveintoapex.com/2022/01/04/adding-tags-using-multi-value-popuplovs-and-smart-filters/" target="_blank" rel="noopener">Adding Tags Using Multi-Value PopupLOVs and Smart Filters</a> <code>2022.01</code></li><li><a href="https://strack-software-development.blogspot.com/2022/01/automatically-publish-translations.html" target="_blank" rel="noopener">Automatically publish translations after changes in an APEX app</a> <code>2022.01</code></li><li><a href="https://www.oracle-and-apex.com/having-a-little-fun-with-wordle/" target="_blank" rel="noopener">Having a little fun with Wordle</a> <code>2022.01</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220127011636.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>

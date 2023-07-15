@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230715/</loc>
+    <lastmod>2023-07-15T15:27:44.894Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2023.06</title>
+        <pubTime>2023-07-15T14:33:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    <lastmod>2023-07-15T15:23:16.715Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
+        <pubTime>2018-06-03T11:56:34.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230518/</loc>
     <lastmod>2023-06-03T00:58:07.243Z</lastmod>
     <data>
@@ -35,31 +85,6 @@
         <display>
         <title>Oracle APEX 活跃博文整理 | 2023.05</title>
         <pubTime>2023-06-02T23:42:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2023-06-03T00:42:43.586Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
-        <pubTime>2018-06-03T11:56:34.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -1238,9 +1263,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
          
            
@@ -1323,9 +1348,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
         <tag>Database</tag>
          
@@ -1383,9 +1408,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Cloud</tag>
-         
         <tag>Database</tag>
+         
+        <tag>Cloud</tag>
          
          
            
@@ -2598,9 +2623,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Cloud</tag>
-         
         <tag>Database</tag>
+         
+        <tag>Cloud</tag>
          
          
            
