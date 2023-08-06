@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230715/</loc>
-    <lastmod>2023-07-15T15:27:44.894Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230806/</loc>
+    <lastmod>2023-08-06T03:42:06.814Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2023.06</title>
-        <pubTime>2023-07-15T14:33:00.000Z</pubTime>
+        <title>Oracle APEX 活跃博文整理 | 2023.07</title>
+        <pubTime>2023-08-06T02:46:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -30,11 +30,36 @@
     
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2023-07-15T15:23:16.715Z</lastmod>
+    <lastmod>2023-08-06T03:39:12.339Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
         <pubTime>2018-06-03T11:56:34.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230715/</loc>
+    <lastmod>2023-07-15T15:27:44.894Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2023.06</title>
+        <pubTime>2023-07-15T14:33:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -1263,9 +1288,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Docker</tag>
-         
         <tag>ORDS</tag>
+         
+        <tag>Docker</tag>
          
          
            
@@ -1348,9 +1373,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Docker</tag>
-         
         <tag>ORDS</tag>
+         
+        <tag>Docker</tag>
          
         <tag>Database</tag>
          
@@ -1408,9 +1433,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Database</tag>
-         
         <tag>Cloud</tag>
+         
+        <tag>Database</tag>
          
          
            
@@ -2623,9 +2648,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Database</tag>
-         
         <tag>Cloud</tag>
+         
+        <tag>Database</tag>
          
          
            

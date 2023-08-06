@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-07-15T15:27:44.894Z</updated>
+  <updated>2023-08-06T03:42:06.814Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.07</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230806/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230806/</id>
+    <published>2023-08-06T02:46:00.000Z</published>
+    <updated>2023-08-06T03:42:06.814Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5396.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.08.06</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blog.cloudnueva.com/apex-rest-source-connector-plug-ins" target="_blank" rel="noopener">Master APEX REST Source Pagination with REST Source Connector Plug-Ins</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/a-stylised-language-selector-region-for-apex" target="_blank" rel="noopener">A stylised Language Selector Region for APEX</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/apex-saas-with-auth0-organizations" target="_blank" rel="noopener">APEX SaaS with Auth0 Organizations</a> <code>2023.07</code></li><li><a href="https://blog.cloudnueva.com/ords-plsql-based-rest-api-bp" target="_blank" rel="noopener">Best Practices for Building ORDS PL/SQL-Based REST APIs</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-authentication-with-microsoft-azure-active-directory" target="_blank" rel="noopener">Oracle APEX Authentication with Microsoft Azure Active Directory</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/auth0-authentication-with-apex" target="_blank" rel="noopener">Auth0 Authentication with APEX</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/what-info-is-available-from-my-apex-social-sign-in-provider" target="_blank" rel="noopener">What Info is Available from my APEX Social Sign-In Provider</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/making-the-apex-faceted-search-upper-bound-range-inclusive" target="_blank" rel="noopener">Making the APEX Faceted Search Upper-Bound Range Inclusive</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/create-a-glauth-ldap-server-on-oracle-cloud-compute-and-authenticate-with-apex" target="_blank" rel="noopener">Create a Glauth LDAP Server on Oracle Cloud Compute and Authenticate with APEX</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/okta-identity-cloud-authentication-authorization-with-apex" target="_blank" rel="noopener">OKTA Identity Cloud Authentication &amp; Authorization with APEX</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/achieving-a-saas-model-for-multi-tenant-apex-applications-using-oracle-iam-domains" target="_blank" rel="noopener">Achieving a SaaS Model for multi-tenant APEX Applications using Oracle IAM Domains</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/reverse-proxy-to-oracle-ords-apex-with-caddy" target="_blank" rel="noopener">Reverse Proxy to Oracle ORDS &amp; APEX with Caddy</a> <code>2023.07</code></li><li><a href="https://blogs.oracle.com/apex/post/get-started-with-oracle-apex-in-oracle-cloud-infrastructure" target="_blank" rel="noopener">Get Started with Oracle APEX in Oracle Cloud Infrastructure</a> <code>2023.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-push-notifications-acl-certificate-fix-for-on-premise-installations" target="_blank" rel="noopener">Oracle APEX Push Notifications ACL &amp; Certificate Fix for On Premise Installations</a> <code>2023.05</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-cicd-step-by-step-guide-aligned-to-the-apex-application-lifecycle-technical-paper" target="_blank" rel="noopener">Oracle APEX CI/CD: Step-by-step guide aligned to the APEX Application Lifecycle Technical Paper</a> <code>2023.05</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-cicd-initial-setup" target="_blank" rel="noopener">Oracle APEX CI/CD: Initial Setup</a> <code>2023.05</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-sqlcl-231-enhanced-apex-functionality" target="_blank" rel="noopener">Oracle SQLcl 23.1 Enhanced APEX functionality</a> <code>2023.04</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-23c-free-docker-apex-ords-all-in-one-simple-guide" target="_blank" rel="noopener">Oracle 23c Free Docker, APEX &amp; ORDS all in one simple guide</a> <code>2023.04</code></li><li><a href="https://mattmulvaney.hashnode.dev/fetching-nested-json-from-a-master-detail-query-in-a-oracle-ords-handler-definition" target="_blank" rel="noopener">Fetching nested JSON from a Master-Detail Query in a Oracle ORDS Handler Definition</a> <code>2023.04</code></li><li><a href="https://mattmulvaney.hashnode.dev/apex-json-based-facets" target="_blank" rel="noopener">APEX: JSON Based Facets</a> <code>2023.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/how-to-remove-the-text-formatting-of-appuser-in-the-apex-navigation-bar" target="_blank" rel="noopener">How to remove the text formatting of &amp;APP_USER. in the APEX Navigation Bar</a> <code>2023.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-db-schema-grants-required-for-apex" target="_blank" rel="noopener">Oracle DB Schema Grants required for APEX</a> <code>2023.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/configuration-of-ebs-vision-oci-vm-instance-apex" target="_blank" rel="noopener">Configuration of EBS Vision OCI VM Instance &amp; APEX</a> <code>2022.12</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-apex-plugin-with-3-life-saving-features-for-developers" target="_blank" rel="noopener">Oracle APEX plugin with 3 life-saving features for developers</a> <code>2022.11</code></li><li><a href="https://mattmulvaney.hashnode.dev/embed-images-in-to-apex-221-rich-text-editor" target="_blank" rel="noopener">Embed images in to APEX 22.1 Rich Text Editor</a> <code>2022.10</code></li><li><a href="https://mattmulvaney.hashnode.dev/enhance-the-standard-apex-tooltip-with-jquery" target="_blank" rel="noopener">Enhance the standard APEX Tooltip with jQuery</a> <code>2022.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/oracle-base-docker-images-multi-tenant-apexords" target="_blank" rel="noopener">Oracle-Base Docker Images: Multi-tenant APEX/ORDS</a> <code>2022.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5396.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.06</title>
@@ -551,35 +580,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2116.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.02</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220305/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220305/</id>
-    <published>2022-03-05T02:37:00.000Z</published>
-    <updated>2022-03-05T04:03:12.398Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220305110141.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.03.05</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://nielsdebr.blogspot.com/2022/02/out-now-flows-for-apex-221.html" target="_blank" rel="noopener">Out now: Flows for APEX 22.1</a> <code>2022.02</code></li><li><a href="https://jeffkemponoracle.com/2022/02/reusable-region-as-a-modal-page/" target="_blank" rel="noopener">Reusable Region as a Modal Page</a> <code>2022.02</code></li><li><a href="https://www.maxapex.com/blogs/advanced-javascript-in-oracle-application-apex/" target="_blank" rel="noopener">Advanced JavaScript in Oracle Application (APEX)</a> <code>2022.02</code></li><li><a href="https://diveintoapex.com/2022/02/06/checking-if-a-regions-data-source-returned-any-data/" target="_blank" rel="noopener">Checking If a Region’s Data Source Returned Any Data</a> <code>2022.02</code></li><li><a href="https://diveintoapex.com/2022/02/09/trick-to-reference-field-value-in-dynamic-action-on-grid-column/" target="_blank" rel="noopener">Trick to Reference Field Value in Dynamic Action on Grid Column</a> <code>2022.02</code></li><li><a href="https://aflorestorres.com/2022/02/27/ora-28001-the-password-has-expired-jar-ords-standalone/" target="_blank" rel="noopener">ORA-28001: the password has expired -Jar ORDs Standalone</a> <code>2022.02</code></li><li><a href="https://www.traust.com/creating-a-dynamic-copyright-notice-in-public-facing-apex-applications/" target="_blank" rel="noopener">Creating a Dynamic Copyright Notice in Public-Facing APEX Applications</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/summary-apex-mail-apex-mail-10.html" target="_blank" rel="noopener">Summary APEX Mail (APEX Mail #10)</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/javascript-api-4-message-namespace.html" target="_blank" rel="noopener">Javascript API (#4 Message namespace)</a> <code>2022.02</code></li><li><a href="https://tm-apex.blogspot.com/2022/02/task-app-using-plsql-dynamic-content.html" target="_blank" rel="noopener">Task App using PL/SQL Dynamic Content Region</a> <code>2022.02</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220305110141.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>
