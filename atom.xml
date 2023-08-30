@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-08-06T03:42:06.814Z</updated>
+  <updated>2023-08-30T07:07:04.779Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.08</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230831/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20230831/</id>
+    <published>2023-08-30T05:02:00.000Z</published>
+    <updated>2023-08-30T07:07:04.779Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5530.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.08.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://aflorestorres.com/2023/08/27/enviar-grandes-bloques-de-datos-usando-json-y-post-oracle-apex-restful-services/" target="_blank" rel="noopener">Send large blocks of data using JSON and POST – Oracle APEX RESTful Services</a> <code>2023.08</code></li><li><a href="https://npilot.hashnode.dev/stunning-pdf-reporting-solution-for-oracle-apex" target="_blank" rel="noopener">Stunning PDF+ Reporting Solution for Oracle APEX</a> <code>2023.08</code></li><li><a href="https://oracle-livelabs.github.io/apex/ai-vision-lab/workshops/tenancy/index.html" target="_blank" rel="noopener">Build AI-Powered Image Search into your Oracle APEX App</a> <code>2023.08</code></li><li><a href="https://fuzziebrain.com/content/revolutionising-language-learning" target="_blank" rel="noopener">Revolutionising Language Learning: How AI and Oracle APEX Transform Everyday Challenges</a> <code>2023.08</code></li><li><a href="https://kehindeadeyemi.hashnode.dev/add-a-stopwatch-to-your-oracle-apex-application" target="_blank" rel="noopener">Add a stopwatch to your Oracle APEX application</a> <code>2023.08</code></li><li><a href="https://aflorestorres.com/2023/08/27/enviar-grandes-bloques-de-datos-usando-json-y-post-oracle-apex-restful-services/" target="_blank" rel="noopener">Send large blocks of data using JSON and POST – Oracle APEX RESTful Services</a> <code>2023.08</code></li><li><a href="https://aflorestorres.com/2023/08/15/enviar-archivos-word-xls-pdf-imagenes-usando-post-oracle-apex-restful-services/" target="_blank" rel="noopener">Send word, xls, pdf, images files using POST – Oracle APEX RESTful Services</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/08/28/multilevel-story-approvals/" target="_blank" rel="noopener">Multilevel Story Approvals</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/08/21/parent-child-validation-made-easy/" target="_blank" rel="noopener">Parent/Child Validation Made Easy</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/08/15/bulk-data-loading-from-a-zip/" target="_blank" rel="noopener">Bulk Data Loading from a Zip</a> <code>2023.08</code></li><li><a href="https://blog.cloudnueva.com/leveraging-apex-theme-components" target="_blank" rel="noopener">Leveraging APEX ‘Theme’ Components</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/social-connections-to-apex-with-emulated-auth0-organizations" target="_blank" rel="noopener">Social Connections to APEX with Emulated Auth0 Organizations</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/incorporating-auth0-actions-with-apex-authentication" target="_blank" rel="noopener">Incorporating AUTH0 Actions with APEX Authentication</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/cost-efficient-apex-open-id-authentication-for-saas-role-based-emulation-of-auth0-organizations" target="_blank" rel="noopener">Cost-Efficient APEX Open ID Authentication for SaaS: Role-Based Emulation of Auth0 Organizations</a> <code>2023.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/the-thought-process-involved-in-the-creation-of-apex-template-components" target="_blank" rel="noopener">The thought process involved in the creation of APEX Template Components</a> <code>2023.08</code></li><li><a href="https://content.dsp.co.uk/apex/exporting-custom-interactive-reports-via-rest" target="_blank" rel="noopener">Exporting Custom Interactive Reports via REST</a> <code>2023.08</code></li><li><a href="https://blogs.oracle.com/apex/post/ai-integrations-with-oracle-apex" target="_blank" rel="noopener">Embracing the Future: Unleashing AI’s Power with Oracle APEX</a> <code>2023.08</code></li><li><a href="https://blogs.oracle.com/apex/post/oracle-apex-developer-professional-learning-path-is-now-available" target="_blank" rel="noopener">Oracle APEX Developer Professional Learning Path is now available</a> <code>2023.05</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5530.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.07</title>
@@ -551,35 +580,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220510144841.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.04</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220430/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220430/</id>
-    <published>2022-04-29T23:34:00.000Z</published>
-    <updated>2022-04-30T00:19:23.367Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2116.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.04.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://apexapplab.dev/2022/04/22/customizing-application-icons-in-apex-22-1/" target="_blank" rel="noopener">Customizing Application Icons in APEX 22.1</a> <code>2022.04</code></li><li><a href="https://hardlikesoftware.com/weblog/2022/04/25/interactive-grid-validation/" target="_blank" rel="noopener">Interactive Grid Validation</a> <code>2022.04</code></li><li><a href="http://dgielis.blogspot.com/2022/04/export-multiple-tables-to-one-excel.html" target="_blank" rel="noopener">Export multiple tables to one Excel with different sheets in Oracle APEX</a> <code>2022.04</code></li><li><a href="https://content.dsp.co.uk/apex/a-first-look-at-the-new-apex-22.1-features" target="_blank" rel="noopener">A first look at the new APEX 22.1 features</a> <code>2022.04</code></li><li><a href="https://www.maxapex.com/blogs/advanced-javascript-in-oracle-application-apex/" target="_blank" rel="noopener">Advanced JavaScript in Oracle Application (APEX)</a> <code>2022.04</code></li><li><a href="https://www.maxapex.com/blogs/inventory-application-development-in-oracle-apex/" target="_blank" rel="noopener">Inventory Application Development in Oracle APEX</a> <code>2022.04</code></li><li><a href="https://content.dsp.co.uk/apex/graphql" target="_blank" rel="noopener">A closer look at GraphQL</a> <code>2022.03</code></li><li><a href="https://diveintoapex.com/2022/03/21/21-2-fine-tuning-initial-render-of-tabs-cards/" target="_blank" rel="noopener">21.2: Fine-Tuning Initial Render of Tabs &amp; Cards</a> <code>2022.03</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2116.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>
