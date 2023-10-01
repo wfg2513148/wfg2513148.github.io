@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-08-30T07:07:04.779Z</updated>
+  <updated>2023-10-01T03:27:51.010Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.09</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231001/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231001/</id>
+    <published>2023-10-01T02:52:00.000Z</published>
+    <updated>2023-10-01T03:27:51.010Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5675.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://codix.ai/oracle-apex-translation-all-in-one/" target="_blank" rel="noopener">Oracle APEX Translation all in one</a> <code>2023.09</code></li><li><a href="https://codix.ai/building-a-ko-fi-clone-using-oracle-apex-part-1/" target="_blank" rel="noopener">Building a Ko-fi Clone Using Oracle APEX – Part 1</a> <code>2023.09</code></li><li><a href="https://kehindeadeyemi.hashnode.dev/display-an-image-on-a-navigation-bar-in-oracle-apex" target="_blank" rel="noopener">Display an image on a Navigation Bar in Oracle APEX</a> <code>2023.09</code></li><li><a href="https://codix.ai/export-apex-charts-as-powerpoint-charts/" target="_blank" rel="noopener">Export APEX charts as PowerPoint Charts</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/09/11/only-unused-items-in-grid-lov/" target="_blank" rel="noopener">Only Unused Items in Grid LOV</a> <code>2023.09</code></li><li><a href="https://www.foxinfotech.org/get-current-user-in-oracle-apex" target="_blank" rel="noopener">How to Get the Current User in Oracle Apex</a> <code>2023.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/self-host-matomo-analytics-on-oracle-compute-integrate-with-apex" target="_blank" rel="noopener">Self-Host Matomo Analytics on Oracle Compute &amp; integrate with APEX</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-parsing-fixed-width-formatted-files" target="_blank" rel="noopener">Oracle APEX - Parsing fixed-width formatted files</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-universal-theme-css-utility-classes" target="_blank" rel="noopener">Universal Theme CSS utility classes</a> <code>2023.09</code></li><li><a href="https://content.dsp.co.uk/apex/methods-on-tables-and-beyond-auto-generation-of-code-for-apex-applications" target="_blank" rel="noopener">Methods on Tables and Beyond – Auto-generation of code for APEX Applications</a> <code>2023.09</code></li><li><a href="https://blogs.oracle.com/apex/post/generative-ai-apex-1" target="_blank" rel="noopener">Generative AI + Oracle APEX for Low-Code Application Development</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/pushing-apex-collections-to-the-limit" target="_blank" rel="noopener">Pushing APEX Collections to the Limit</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/easy-number-handling-in-javascript-with-apexlocale" target="_blank" rel="noopener">Easy Number Handling in JavaScript with APEX.LOCALE</a> <code>2023.08</code></li><li><a href="https://blogs.oracle.com/apex/post/empowering-search-with-oci-vision-in-oracle-apex" target="_blank" rel="noopener">Empowering Search with OCI Vision in Oracle APEX</a> <code>2023.08</code></li><li><a href="https://codix.ai/oracle-apex-social-sign-in-integration/" target="_blank" rel="noopener">Oracle APEX Social Sign-In Integration</a> <code>2023.08</code></li><li><a href="https://codix.ai/make-oracle-apex-application-under-maintenance/" target="_blank" rel="noopener">Make Oracle APEX Application Under Maintenance</a> <code>2023.08</code></li><li><a href="https://codix.ai/drag-and-drop-email-builder-for-oracle-apex/" target="_blank" rel="noopener">Drag and Drop Email Builder For Oracle APEX</a> <code>2023.08</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5675.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.08</title>
@@ -551,35 +580,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220531180959.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 22.1 全新发布</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-22.1-new-features/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-22.1-new-features/</id>
-    <published>2022-05-04T05:49:00.000Z</published>
-    <updated>2022-05-10T06:49:09.062Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220510144841.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><h2 id="Oracle-APEX-22-1-现已全新发布！"><a href="#Oracle-APEX-22-1-现已全新发布！" class="headerlink" title="Oracle APEX 22.1 现已全新发布！"></a>Oracle APEX 22.1 现已全新发布！</h2><p>Oracle APEX 是世界上最受欢迎的企业级低代码开发平台，使您能够构建可扩展且安全的企业应用，同时兼具一流的特性，只要有个能联网的浏览器，就可以在任何地方进行开发测试和部署。在<a href="https://blogs.oracle.com/apex/post/oracle-named-a-2022-gartner-peer-insights-voice-of-the-customer-enterprise-low-code-application-platforms" target="_blank" rel="noopener">2022年Gartner Peer Insights</a>“客户之声”评选活动中，Oracle AEPX作为企业级低代码应用开发平台，第三次获得了客户选择奖！ </p><p>22.1新版本引入了审批控件和统一任务列表、简化的创建页面向导、JSON或YAML格式的可读应用程序导出、PWA定制化服务和持久身份验证、以及内置数据生成器、开发人员体验增强等更新组件和服务！ </p><p>以下是Oracle APEX 22.1中的功能亮点，请访问<a href="https://apex.oracle.com/en/platform/features/whats-new-221/" target="_blank" rel="noopener">APEX网站</a>了解有关此版本中所有新增功能。 </p><h3 id="审批和统一任务清单"><a href="#审批和统一任务清单" class="headerlink" title="审批和统一任务清单"></a>审批和统一任务清单</h3><p>新的审批组件让您可以在有限的时间里交付需要人工进行审批的解决方案。您可以轻松地在应用程序中定义任务，同时批准者有能力使用统一任务列表对待审批流程进行处理。新的<a href="https://apex.oracle.com/en/solutions/apps/" target="_blank" rel="noopener">Sample Approvals</a>应用程序拥有您开始所需的一切！<a href="https://www.youtube.com/watch?v=pAG0b_5yeO8" target="_blank" rel="noopener">Youtube相关视频</a></p><h3 id="简化页面创建"><a href="#简化页面创建" class="headerlink" title="简化页面创建"></a>简化页面创建</h3><p>简化的创建页面向导可以让您比以往更轻松地在创建APEX页面，并通过为应用赋予默认值、最小化用户输入、改进页面导航等方面进一步简化向导页面的操作。</p><p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT0C52B6A434E0412F8E487BEC2F8677D0/Medium?cb=_cache_d430&amp;format=jpg&amp;channelToken=e34e03301b55409b97de871892b41b87" alt=""></p><h3 id="JSON或YAML格式的可读应用程序导出"><a href="#JSON或YAML格式的可读应用程序导出" class="headerlink" title="JSON或YAML格式的可读应用程序导出"></a>JSON或YAML格式的可读应用程序导出</h3><p>新的应用程序导出功能包含<code>YAML/JSON</code>格式且易于解读的信息。<code>SQLcl</code>和<code>APEXExport</code>(Java)实用程序已更新并可以支持新的JSON和YAML导出格式。</p><p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONTE9814007AF8846D29E467F82152E39D9/Medium?cb=_cache_d430&amp;format=jpg&amp;channelToken=e34e03301b55409b97de871892b41b87" alt=""></p><h3 id="PWA渐进式Web应用程序和增强的用户体验"><a href="#PWA渐进式Web应用程序和增强的用户体验" class="headerlink" title="PWA渐进式Web应用程序和增强的用户体验"></a>PWA渐进式Web应用程序和增强的用户体验</h3><ul><li><p>开发人员现在可以通过在PWA中注入自己的服务代码，进而实现消息推送、在线支付、后台更新等任何事情。<a href="https://www.youtube.com/watch?v=ONHUK_MBQzo" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>您现在可以通过新的持久身份验证功能让您的客户更快地恢复行动。登录一次，保持登录状态。<a href="https://www.youtube.com/watch?v=G0e-7b1XS8Q" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>通用主题样式更新了全新的图像区域模板、对区域图像的支持并改进了页面渲染性能。</p></li></ul><h3 id="全新的和更新的组件"><a href="#全新的和更新的组件" class="headerlink" title="全新的和更新的组件"></a>全新的和更新的组件</h3><ul><li><p>行级搜索功能现在已得到了显著增强，可以为您提供更自然和直观的搜索体验。<a href="https://www.youtube.com/watch?v=3U-h8DA6lgQ" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>新的页面控件排序功能可以使开发人员更轻松地调整区域控件位置。<a href="https://www.youtube.com/watch?v=ZstWKJGrOoY" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>分面搜索功能也得到了更新，支持客户端过滤的搜索词高亮显示、分面的新操作菜单、额外的分面级控件，进一步提升了用户体验。</p></li><li><p>同时，无论是HTML还是Markdown，在富文本的创建和显示方面均得到了增强。</p></li></ul><h3 id="开发者体验"><a href="#开发者体验" class="headerlink" title="开发者体验"></a>开发者体验</h3><ul><li>使用APEX中全新的数据生成器，将可以轻松定义数据生成蓝图并使用随机生成的样本数据测试您的表格。定义好蓝图后，您可以选择将示例数据导出生成CSV或JSON文件，或将数据直接插入到现有表中。</li></ul><p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONTA362AC1376874958A79951A71E6EFB46/Medium?cb=_cache_d430&amp;format=jpg&amp;channelToken=e34e03301b55409b97de871892b41b87" alt=""></p><ul><li><p>应用程序图标现在可以在创建应用程序时就进行上传，并可以从开发人员工具栏或共享组件界面进行更新。<a href="https://www.youtube.com/watch?v=09DBcT2kYpY" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>现在，您无需离开APEX即可安装入门应用程序和示例应用程序。在几秒钟内，您可以选择您想要的应用程序并从更新的应用程序库中安装它。</p></li></ul><p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONTBF558BDF499643C0839A392D0580501F/Medium?cb=_cache_d430&amp;format=jpg&amp;channelToken=e34e03301b55409b97de871892b41b87" alt=""></p><ul><li><p>现在，您可以在支持REST的SQL之上创建REST源以在远程数据库上执行，并从APEX组件中抽象出SQL查询。<a href="https://www.youtube.com/watch?v=ZzZpD8Z59Kc" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>您现在可以将列表从一个应用程序订阅到另一个应用程序，从而使您拥有跨多个应用程序共享的单个列表定义。我们同时还简化了创建和复制列表向导以及编辑列表页面。</p></li><li><p>JavaScript和CSS文件（URL语法）已通过新功能得到增强，包括新的URL指令、注释及改进的编辑体验。<a href="https://www.youtube.com/watch?v=uo0rBwZFZpg" target="_blank" rel="noopener">Youtube视频</a></p></li><li><p>Session会话覆盖特性可以让开发人员在会话中快速更改APEX变量值，例如：文件路径、附加文件和全球化属性，从而为开发者提供极大的便利。<a href="https://www.youtube.com/watch?v=tQSBKFUzIGs" target="_blank" rel="noopener">Youtube视频</a></p></li></ul><p>APEX 22.1版本还包括很多附加功能，同时修复了很多错误，提供更高的质量和稳定性。有关<a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX 22.1</a>中的新功能以及许多其他令人兴奋的增强功能，请参阅<a href="https://docs.oracle.com/en/database/oracle/application-express/22.1/htmrn/index.html#HTMRN-GUID-540B73CB-08A7-4422-B6BF-CC785EC47694" target="_blank" rel="noopener">发行说明</a>或访问<a href="https://apex.oracle.com/en/platform/features/whats-new-221/" target="_blank" rel="noopener">新增功能</a>页面。您还可以访问<a href="https://apex.oracle.com/officehours" target="_blank" rel="noopener">Oracle APEX 办公时间</a>，更好地了解APEX 22.1的新特性。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220510144841.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>
