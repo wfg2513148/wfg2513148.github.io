@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-10-01T03:27:51.010Z</updated>
+  <updated>2023-10-28T13:45:01.818Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -17,13 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Oracle CAB 2023</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/oracle-cab-20231026/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-cab-20231026/</id>
+    <published>2023-10-28T13:42:00.000Z</published>
+    <updated>2023-10-28T13:45:01.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>有幸受邀第二次参加第十三届甲骨文中国VIP客户顾问委员会会议及第三届甲骨文中国合作伙伴顾问委员会会议，记录一下。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/1.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG212.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;有幸受邀第二次参加第十三届甲骨文中国VIP客户顾问委员会会议及第三届甲骨文中国合作伙伴顾问委员会会议，记录一下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/1.jpg?
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.09</title>
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231001/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231001/</id>
     <published>2023-10-01T02:52:00.000Z</published>
-    <updated>2023-10-01T03:27:51.010Z</updated>
+    <updated>2023-10-01T03:42:54.226Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5675.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://codix.ai/oracle-apex-translation-all-in-one/" target="_blank" rel="noopener">Oracle APEX Translation all in one</a> <code>2023.09</code></li><li><a href="https://codix.ai/building-a-ko-fi-clone-using-oracle-apex-part-1/" target="_blank" rel="noopener">Building a Ko-fi Clone Using Oracle APEX – Part 1</a> <code>2023.09</code></li><li><a href="https://kehindeadeyemi.hashnode.dev/display-an-image-on-a-navigation-bar-in-oracle-apex" target="_blank" rel="noopener">Display an image on a Navigation Bar in Oracle APEX</a> <code>2023.09</code></li><li><a href="https://codix.ai/export-apex-charts-as-powerpoint-charts/" target="_blank" rel="noopener">Export APEX charts as PowerPoint Charts</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/09/11/only-unused-items-in-grid-lov/" target="_blank" rel="noopener">Only Unused Items in Grid LOV</a> <code>2023.09</code></li><li><a href="https://www.foxinfotech.org/get-current-user-in-oracle-apex" target="_blank" rel="noopener">How to Get the Current User in Oracle Apex</a> <code>2023.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/self-host-matomo-analytics-on-oracle-compute-integrate-with-apex" target="_blank" rel="noopener">Self-Host Matomo Analytics on Oracle Compute &amp; integrate with APEX</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-parsing-fixed-width-formatted-files" target="_blank" rel="noopener">Oracle APEX - Parsing fixed-width formatted files</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-universal-theme-css-utility-classes" target="_blank" rel="noopener">Universal Theme CSS utility classes</a> <code>2023.09</code></li><li><a href="https://content.dsp.co.uk/apex/methods-on-tables-and-beyond-auto-generation-of-code-for-apex-applications" target="_blank" rel="noopener">Methods on Tables and Beyond – Auto-generation of code for APEX Applications</a> <code>2023.09</code></li><li><a href="https://blogs.oracle.com/apex/post/generative-ai-apex-1" target="_blank" rel="noopener">Generative AI + Oracle APEX for Low-Code Application Development</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/pushing-apex-collections-to-the-limit" target="_blank" rel="noopener">Pushing APEX Collections to the Limit</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/easy-number-handling-in-javascript-with-apexlocale" target="_blank" rel="noopener">Easy Number Handling in JavaScript with APEX.LOCALE</a> <code>2023.08</code></li><li><a href="https://blogs.oracle.com/apex/post/empowering-search-with-oci-vision-in-oracle-apex" target="_blank" rel="noopener">Empowering Search with OCI Vision in Oracle APEX</a> <code>2023.08</code></li><li><a href="https://codix.ai/oracle-apex-social-sign-in-integration/" target="_blank" rel="noopener">Oracle APEX Social Sign-In Integration</a> <code>2023.08</code></li><li><a href="https://codix.ai/make-oracle-apex-application-under-maintenance/" target="_blank" rel="noopener">Make Oracle APEX Application Under Maintenance</a> <code>2023.08</code></li><li><a href="https://codix.ai/drag-and-drop-email-builder-for-oracle-apex/" target="_blank" rel="noopener">Drag and Drop Email Builder For Oracle APEX</a> <code>2023.08</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5675.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> ，祝大家中秋国庆双节快乐！</p><p>常规APEX博文整理：</p><ul><li><a href="https://codix.ai/oracle-apex-translation-all-in-one/" target="_blank" rel="noopener">Oracle APEX Translation all in one</a> <code>2023.09</code></li><li><a href="https://codix.ai/building-a-ko-fi-clone-using-oracle-apex-part-1/" target="_blank" rel="noopener">Building a Ko-fi Clone Using Oracle APEX – Part 1</a> <code>2023.09</code></li><li><a href="https://kehindeadeyemi.hashnode.dev/display-an-image-on-a-navigation-bar-in-oracle-apex" target="_blank" rel="noopener">Display an image on a Navigation Bar in Oracle APEX</a> <code>2023.09</code></li><li><a href="https://codix.ai/export-apex-charts-as-powerpoint-charts/" target="_blank" rel="noopener">Export APEX charts as PowerPoint Charts</a> <code>2023.08</code></li><li><a href="https://diveintoapex.com/2023/09/11/only-unused-items-in-grid-lov/" target="_blank" rel="noopener">Only Unused Items in Grid LOV</a> <code>2023.09</code></li><li><a href="https://www.foxinfotech.org/get-current-user-in-oracle-apex" target="_blank" rel="noopener">How to Get the Current User in Oracle Apex</a> <code>2023.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/self-host-matomo-analytics-on-oracle-compute-integrate-with-apex" target="_blank" rel="noopener">Self-Host Matomo Analytics on Oracle Compute &amp; integrate with APEX</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-parsing-fixed-width-formatted-files" target="_blank" rel="noopener">Oracle APEX - Parsing fixed-width formatted files</a> <code>2023.09</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-universal-theme-css-utility-classes" target="_blank" rel="noopener">Universal Theme CSS utility classes</a> <code>2023.09</code></li><li><a href="https://content.dsp.co.uk/apex/methods-on-tables-and-beyond-auto-generation-of-code-for-apex-applications" target="_blank" rel="noopener">Methods on Tables and Beyond – Auto-generation of code for APEX Applications</a> <code>2023.09</code></li><li><a href="https://blogs.oracle.com/apex/post/generative-ai-apex-1" target="_blank" rel="noopener">Generative AI + Oracle APEX for Low-Code Application Development</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/pushing-apex-collections-to-the-limit" target="_blank" rel="noopener">Pushing APEX Collections to the Limit</a> <code>2023.09</code></li><li><a href="https://blog.cloudnueva.com/easy-number-handling-in-javascript-with-apexlocale" target="_blank" rel="noopener">Easy Number Handling in JavaScript with APEX.LOCALE</a> <code>2023.08</code></li><li><a href="https://blogs.oracle.com/apex/post/empowering-search-with-oci-vision-in-oracle-apex" target="_blank" rel="noopener">Empowering Search with OCI Vision in Oracle APEX</a> <code>2023.08</code></li><li><a href="https://codix.ai/oracle-apex-social-sign-in-integration/" target="_blank" rel="noopener">Oracle APEX Social Sign-In Integration</a> <code>2023.08</code></li><li><a href="https://codix.ai/make-oracle-apex-application-under-maintenance/" target="_blank" rel="noopener">Make Oracle APEX Application Under Maintenance</a> <code>2023.08</code></li><li><a href="https://codix.ai/drag-and-drop-email-builder-for-oracle-apex/" target="_blank" rel="noopener">Drag and Drop Email Builder For Oracle APEX</a> <code>2023.08</code></li></ul>]]></content>
     
     <summary type="html">
     
@@ -551,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2829.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.05</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220531/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220531/</id>
-    <published>2022-05-31T06:23:00.000Z</published>
-    <updated>2022-05-31T10:10:04.819Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220531180959.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.05.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://diveintoapex.com/2022/05/09/upgrading-21-2-dynamic-sort-to-new-order-by-page-item/" target="_blank" rel="noopener">Upgrading Dynamic Sort to 22.1 Order By Page Item</a> <code>2022.05</code></li><li><a href="https://roelhartman.blogspot.com/2020/05/using-static-files-in-apex-has-never.html" target="_blank" rel="noopener">Using Static Files in APEX has never been easier</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/enforcing-the-execution-order-of-an-interactive-grid" target="_blank" rel="noopener">Enforcing the Execution Order of an Interactive Grid</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/implementing-ckeditor-5-in-apex-19" target="_blank" rel="noopener">Implementing CKEditor 5 in APEX 19</a> <code>2022.05</code></li><li><a href="https://content.dsp.co.uk/apex/options-for-hosting-apex-in-oracle-cloud" target="_blank" rel="noopener">Options for hosting APEX in Oracle Cloud</a> <code>2022.05</code></li><li><a href="https://appin5minuti.it/15-cose-che-avrei-voluto-sapere-quando-ho-iniziato-ad-usare-oracle-apex/" target="_blank" rel="noopener">15 Things I Wanted To Know When I Started Using Oracle APEX</a> <code>2022.05</code></li><li><a href="https://hardlikesoftware.com/weblog/2022/05/05/exploring-new-apis-in-apex-22-1/" target="_blank" rel="noopener">Exploring new APIs in APEX 22.1</a> <code>2022.05</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20220531180959.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
       
     
     </summary>
