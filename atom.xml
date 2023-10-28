@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-10-28T13:45:01.818Z</updated>
+  <updated>2023-10-28T15:04:19.679Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2023.10</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231028/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231028/</id>
+    <published>2023-10-28T15:00:00.000Z</published>
+    <updated>2023-10-28T15:04:19.679Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5834.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2023.10.28</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/post/try-oracle-apex-232-on-apex-oracle-com" target="_blank" rel="noopener">Try the Oracle APEX 23.2 Preview on apex.oracle.com</a> <code>2023.10</code></li><li><a href="https://apps.cloudnueva.com/ords/r/apps/apex_blogs/home" target="_blank" rel="noopener">APEX Developer Blogs on Cloudnueva</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/generative-ai-apex-1" target="_blank" rel="noopener">Generative AI + Oracle APEX for Low-Code Application Development</a> <code>2023.10</code></li><li><a href="https://blog.apexapplab.dev/getting-started-with-oracle-property-graph-in-apex" target="_blank" rel="noopener">Getting started with Oracle Property Graph in APEX</a> <code>2023.10</code></li><li><a href="https://lschilde.blogspot.com/2023/10/oracle-apex-application-item-with.html" target="_blank" rel="noopener">ORACLE APEX Application item with global scope</a> <code>2023.10</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-tinymce-word-character-count-joelkallmanday" target="_blank" rel="noopener">Oracle APEX - TinyMCE Word &amp; Character count</a> <code>2023.10</code></li><li><a href="https://ora-00001.blogspot.com/2023/10/joel-kallman-day-2023-apex-automated.html" target="_blank" rel="noopener">APEX Automated Backups</a> <code>2023.10</code></li><li><a href="https://micodify.de/using-authenticator-based-mfa-in-oracle-apex-joelkallmanday/" target="_blank" rel="noopener">Using Authenticator Based MFA in Oracle APEX</a> <code>2023.10</code></li><li><a href="https://www.oneoracledeveloper.com/2023/10/combine-open-door-and-sso-login.html" target="_blank" rel="noopener">Combine open door and SSO login</a> <code>2023.10</code></li><li><a href="https://apexblog.dev/new-oracle-apex-plugin-scrollable-date-picker" target="_blank" rel="noopener">New Oracle APEX plugin! Scrollable Date Picker</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/oracle-apex-app-deployments-made-easy-use-the-ords-rest-apis" target="_blank" rel="noopener">Oracle APEX App Deployments made easy: Use the ORDS REST APIs</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-add-pages-to-the-application" target="_blank" rel="noopener">Simplify Business Process Management using APEX Workflow - Add Pages to the Application</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-run-the-doctor-appointments-application" target="_blank" rel="noopener">Simplify Business Process Management Using APEX Workflow - Run the Doctor Appointments Application</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application" target="_blank" rel="noopener">Simplify Business Process Management Using APEX Workflow - Create Doctor Appointment Application</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-adding-activities-and-connections" target="_blank" rel="noopener">Simplify Business Process Management using APEX Workflow - Adding Activities and Connections</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-the-doctor-appointment-workflow" target="_blank" rel="noopener">Simplify Business Process Management using APEX Workflow - Create Doctor Appointment Workflow</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-add-human-tasks-to-workflow" target="_blank" rel="noopener">Simplify Business Process Management Using APEX Workflow - Add Human Tasks to Workflow</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-medical-appointments-using-apex-workflow" target="_blank" rel="noopener">Simplify Business Process Management Using APEX Workflow</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-identify-business-steps" target="_blank" rel="noopener">Simplify Business Process Management Using APEX Workflow - Identify Business Steps</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/using-action-tasks-with-oracle-apex-232" target="_blank" rel="noopener">Using Action Tasks with Oracle APEX 23.2</a> <code>2023.10</code></li><li><a href="https://blog.apexapplab.dev/how-i-created-my-first-apex-template-component" target="_blank" rel="noopener">How I created my first APEX Template Component</a> <code>2023.10</code></li><li><a href="https://blog.apexapplab.dev/how-to-optimize-apex-maps-load-time-using-spatial-indexes" target="_blank" rel="noopener">How To Optimize APEX Maps Load Time Using Spatial Indexes</a> <code>2023.10</code></li><li><a href="https://blog.apexapplab.dev/from-prototype-to-great-application-component" target="_blank" rel="noopener">From Prototype to Great Application Component</a> <code>2023.10</code></li><li><a href="https://micodify.de/use-apex-api-to-display-version-infos-in-your-apps/" target="_blank" rel="noopener">Use APEX API to display version infos in your apps</a> <code>2023.10</code></li><li><a href="https://content.dsp.co.uk/apex/connecting-worlds-apex-and-woocommerce-rest-synchronisation" target="_blank" rel="noopener">APEX and WooCommerce REST Synchronisation</a> <code>2023.10</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-232-mastering-qr-codes-and-barcodes" target="_blank" rel="noopener">Mastering QR Codes and Barcodes</a> <code>2023.10</code></li><li><a href="https://mattmulvaney.hashnode.dev/scrapy-oracle-cloud-compute-apex-pwa-discount-beer" target="_blank" rel="noopener">Scrapy + Oracle Cloud Compute + APEX PWA = Discount Beer???</a> <code>2023.10</code></li><li><a href="https://mattmulvaney.hashnode.dev/keycloak-installation-for-oracle-compute-with-custom-domain-apex-configuration" target="_blank" rel="noopener">Keycloak installation for Oracle Compute with Custom Domain + APEX Configuration</a> <code>2023.10</code></li><li><a href="https://mattmulvaney.hashnode.dev/nginx-proxy-manager-on-oracle-cloud-compute-custom-domain-ssl" target="_blank" rel="noopener">Nginx Proxy Manager on Oracle Cloud Compute + Custom Domain + SSL</a> <code>2023.10</code></li><li><a href="https://mattmulvaney.hashnode.dev/keycloak-authentication-with-apex" target="_blank" rel="noopener">Keycloak Authentication with APEX</a> <code>2023.10</code></li><li><a href="https://blog.cloudnueva.com/apex-background-jobs-joelkallmanday" target="_blank" rel="noopener">APEX Background Jobs</a> <code>2023.10</code></li><li><a href="https://www.oneoracledeveloper.com/2023/10/setup-sso-for-apex-builder-recovery-on.html" target="_blank" rel="noopener">Setup SSO for APEX Builder + recovery on failure</a> <code>2023.10</code></li><li><a href="https://jkerr.hashnode.dev/putting-oracle-cloud-buckets-and-objects-to-work" target="_blank" rel="noopener">Putting Oracle Cloud Buckets and Objects to Work</a> <code>2023.09</code></li><li><a href="https://diveintoapex.com/2023/10/11/planning-with-gantt-calendar-joelkallmanday/" target="_blank" rel="noopener">Planning with Gantt &amp; Calendar</a> <code>2023.10</code></li><li><a href="https://blogs.oracle.com/apex/post/how-buzzclans-innovative-cloud-solution-transformed-hr-success-using-oracle-apex" target="_blank" rel="noopener">Revolutionizing HR Success: How BuzzClan’s Oracle APEX Solution Delivers Unmatched Innovation</a> <code>2023.10</code></li><li><a href="https://www.insum.ca/apex-ords-installation-configuration/" target="_blank" rel="noopener">APEX and ORDS Installation and Configuration – 2023</a> <code>2023.09</code></li><li><a href="https://jkerr.hashnode.dev/automate-file-processing-with-buckets-and-objects-part-ii" target="_blank" rel="noopener">Automate file processing with Buckets and Objects Part II</a> <code>2023.09</code></li><li><a href="https://jkerr.hashnode.dev/putting-oracle-cloud-buckets-and-objects-to-work" target="_blank" rel="noopener">Putting Oracle Cloud Buckets and Objects to Work</a> <code>2023.09</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_5834.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle CAB 2023</title>
@@ -552,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3047.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.07</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220802/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20220802/</id>
-    <published>2022-08-02T14:12:00.000Z</published>
-    <updated>2022-08-02T14:51:38.163Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2829.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.07.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/post/apex-adb-bookmarks" target="_blank" rel="noopener">Helpful URLs to Bookmark for Oracle APEX on Oracle Cloud</a> <code>2022.07</code></li><li><a href="https://lmoreaux.hashnode.dev/ckeditor5-image-upload-additional-thoughts" target="_blank" rel="noopener">CKEditor5 Image Upload - Additional thoughts</a> <code>2022.07</code></li><li><a href="https://lmoreaux.hashnode.dev/ckeditor5-image-upload" target="_blank" rel="noopener">CKEditor5 Image Upload</a> <code>2022.07</code></li><li><a href="https://www.maxapex.com/blogs/putting-it-all-in-one-place-using-apex_debug-outside-of-your-application/" target="_blank" rel="noopener">Putting it all in one place: Using APEX_DEBUG outside of your application</a> <code>2022.07</code></li><li><a href="https://diveintoapex.com/2022/07/25/managing-intersection-rows-with-drag-drop/" target="_blank" rel="noopener">Managing Intersection Rows with Drag &amp; Drop</a> <code>2022.07</code></li><li><a href="https://appin5minuti.it/la-legge-80-20-e-il-low-code-una-riflessione-su-quello-che-conta-davvero-nello-sviluppo-delle-applicazioni-gestionali/" target="_blank" rel="noopener">The 80/20 Law and the Low-Code: a reflection on what really matters in the Development of Management Applications</a> <code>2022.07</code></li><li><a href="https://content.dsp.co.uk/apex/placing-components-anywhere-since-apex-21.2" target="_blank" rel="noopener">Placing Components Anywhere since APEX 21.2</a> <code>2022.07</code></li><li><a href="https://content.dsp.co.uk/apex/20s-rest-improvements-for-apex...so-far" target="_blank" rel="noopener">REST Improvements for APEX since 20.1</a> <code>2022.07</code></li><li><a href="https://content.dsp.co.uk/apex/liquibase-and-flyway-using-database-versioning-tools-for-apex-database-projects" target="_blank" rel="noopener">Liquibase and Flyway: Using Database versioning tools for APEX database projects</a> <code>2022.07</code></li><li><a href="https://stefandobre.com/2022/06/19/hot-or-not-dynamically-styling-the-interactive-grids-save-button/" target="_blank" rel="noopener">Hot or Not. Dynamically Styling the Interactive Grid’s Save Button</a> <code>2022.06</code></li><li><a href="https://tm-apex.blogspot.com/2022/06/docker-compose-for-oracle-apex.html?utm_source=dlvr.it&amp;utm_medium=twitter" target="_blank" rel="noopener">Docker-compose for Oracle APEX</a> <code>2022.06</code></li><li><a href="https://tm-apex.blogspot.com/2022/06/running-apex-in-docker-container.html?utm_source=dlvr.it&amp;utm_medium=twitter" target="_blank" rel="noopener">Running APEX in Docker container</a> <code>2022.06</code></li><li><a href="https://www.javainhand.com/2022/06/preview-multiple-images-before-upload-using-javascript-in-oracle-apex.html" target="_blank" rel="noopener">Preview Multiple Images Before Upload Using JavaScript in Oracle APEX</a> <code>2022.06</code></li><li><a href="https://diveintoapex.com/2022/06/05/smartfiltering-multiple-regions/" target="_blank" rel="noopener">SmartFiltering Multiple Regions</a> <code>2022.06</code></li><li><a href="https://diveintoapex.com/2022/06/12/using-scriptable-devops-to-save-time/" target="_blank" rel="noopener">Using Scriptable DevOps to Save Time</a> <code>2022.06</code></li><li><a href="https://diveintoapex.com/2022/06/27/reordering-cards-using-clicks/" target="_blank" rel="noopener">Reordering Cards Using Clicks</a> <code>2022.06</code></li><li><a href="https://content.dsp.co.uk/apex/smart-filters" target="_blank" rel="noopener">Smart Filters</a> <code>2022.06</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_2829.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>
