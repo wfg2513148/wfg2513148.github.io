@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231115/</loc>
+    <lastmod>2023-11-15T02:08:46.582Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 23.2 正式发布</title>
+        <pubTime>2023-11-15T01:18:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231028/</loc>
-    <lastmod>2023-10-28T15:04:19.679Z</lastmod>
+    <lastmod>2023-10-28T15:13:17.185Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 活跃博文整理 | 2023.10</title>
@@ -1533,9 +1558,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Cloud</tag>
-         
         <tag>Database</tag>
+         
+        <tag>Cloud</tag>
          
          
            
@@ -2748,9 +2773,9 @@
          
         <tag>APEX</tag>
          
-        <tag>Cloud</tag>
-         
         <tag>Database</tag>
+         
+        <tag>Cloud</tag>
          
          
            
