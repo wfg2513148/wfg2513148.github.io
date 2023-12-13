@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-12-09T06:38:59.305Z</updated>
+  <updated>2023-12-13T04:02:17.589Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle ACE 计划介绍</title>
+    <link href="https://wangfanggang.com/Oracle/oracle-ace-program/"/>
+    <id>https://wangfanggang.com/Oracle/oracle-ace-program/</id>
+    <published>2023-12-13T03:30:00.000Z</published>
+    <updated>2023-12-13T04:02:17.589Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG346.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>钢哥已连续4年荣获“Oracle ACE Director”荣誉称号并收到来自Oracle的精美礼品了。但很多人可能还不了解Oracle ACE计划，今天给大家简单介绍一下。</p><h1 id="什么是Oracle-ACE-计划？"><a href="#什么是Oracle-ACE-计划？" class="headerlink" title="什么是Oracle ACE 计划？"></a>什么是Oracle ACE 计划？</h1><p><a href="https://ace.oracle.com/pls/apex/ace_program/r/oracle-aces/home" target="_blank" rel="noopener">Oracle ACE 计划</a> 是一项旨在表彰、奖励和晋升为Oracle社区做出巨大贡献的成员的计划。</p><p>想象一下您将因被Oracle提升为社区内的技术专家和思想领袖而获得曝光。您的贡献将在Oracle ACE Newsletter以及他们的LinkedIn和其他公司渠道上分享。这将不可避免地提高您的知名度和声誉，使您成为寻找Oracle开发人员的客户首选。</p><p>同时，您将获得Oracle颁发的证书，承认您是Oracle ACE计划的成员，还会获得精美礼品。</p><p>因此，如果您希望成为Oracle ACE，我可以为您提供指导。下面，我概述了您需要了解的有关Oracle ACE计划、其优势以及如何开始的所有信息。</p><a id="more"></a><h1 id="Oracle-ACE-计划的优势"><a href="#Oracle-ACE-计划的优势" class="headerlink" title="Oracle ACE 计划的优势"></a>Oracle ACE 计划的优势</h1><p>作为Oracle ACE，您所享有的声誉和知名度只是该计划的第一个好处。</p><p>作为Oracle ACE计划的成员，您可以享受一系列的好处，包括直接访问Oracle产品管理、云帐户、认证积分、独家内容等。</p><p>所有这些最终使您与普通Oracle应用程序开发人员区分开来。通过访问资源，您可以为客户提供更先进的服务，从而收取更多费用并赚取更多收入。</p><p>成为Oracle ACE的另一个好处就是，您可以受邀在全球Oracle会议和网络活动中进行在线和现场演讲。</p><h1 id="Oracle-ACE-会员级别"><a href="#Oracle-ACE-会员级别" class="headerlink" title="Oracle ACE 会员级别"></a>Oracle ACE 会员级别</h1><p>Oracle ACE计划分为3个会员级别：</p><ul><li>Oracle ACE Associate</li><li>Oracle ACE Pro</li><li>Oracle ACE Director</li></ul><p>每一级都比前一层有更多的好处。级别取决于您对Oracle社区的影响力和贡献程度。Oracle ACE Director是那些长期在社区中分享知识并不断向 Oracle本身提供想法和反馈的人，这些人是社区中的思想领袖。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_6200.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>无论您的Oracle ACE会员级别如何，您都将享受晋升和认可。</p><h1 id="如何成为-Oracle-ACE-会员"><a href="#如何成为-Oracle-ACE-会员" class="headerlink" title="如何成为 Oracle ACE 会员"></a>如何成为 Oracle ACE 会员</h1><p>要成为Oracle ACE会员，您必须由您自己或其他人提名。审核期大约需要4-12周，提名审核完成后，Oracle将立即通过电子邮件通知提名人。有关您提交的内容或Oracle ACE计划的问题，请发送电子邮件至 <a href="mailto:`oracle-ace_ww@oracle.com" target="_blank" rel="noopener">`oracle-ace_ww@oracle.com</a>`。</p><p>您只能提交Oracle ACE Associate和Oracle ACE Pro的提名。Oracle Ace Director必须由其他成员提名。</p><p>但如果您没有为Oracle社区做出贡献的记录，提名也将是徒劳的。</p><p>提名表单在这里：<a href="https://ace.oracle.com/pls/apex/r/ace_program/oracle-aces/nominate-an-oracle-ace" target="_blank" rel="noopener">https://ace.oracle.com/pls/apex/r/ace_program/oracle-aces/nominate-an-oracle-ace</a></p><p>关于如何成为Oracle ACE的更多解答请猛击<a href="https://developer.oracle.com/learn/technical-articles/oracle-ace-faq" target="_blank" rel="noopener">这里</a>。</p><h1 id="您如何为-Oracle-社区做出贡献？"><a href="#您如何为-Oracle-社区做出贡献？" class="headerlink" title="您如何为 Oracle 社区做出贡献？"></a>您如何为 Oracle 社区做出贡献？</h1><p>为Oracle社区做贡献很容易，您今天就可以开始。通过撰写博客文章或书籍、进行演示、在社交媒体上分享知识或在在线论坛上回答有关Oracle的问题，进而为Oracle社区做出贡献。只要您分享的信息是关于Oracle的并且能够解决人们的问题，您就可以被视为Oracle ACE。</p><p>组织会议和聚会或在Oracle用户组中担任Oracle领导职务的志愿者也可以获得Oracle ACE会员资格。只要您以某种方式为Oracle社区做出贡献，您就可以成为Oracle ACE。</p><p>所以，您可以随时在个人时间分享和贡献。</p><h1 id="如何知道您的提名是否已获得批准"><a href="#如何知道您的提名是否已获得批准" class="headerlink" title="如何知道您的提名是否已获得批准"></a>如何知道您的提名是否已获得批准</h1><p>如果您的Oracle ACE会员资格获得批准，您将收到一封电子邮件。不过，审核过程通常需要一段时间，甚至长达10周。</p><p>如果您的提名被拒绝，只有提名您的人才会收到有关此事的电子邮件。所以，请提醒他们帮您留意。</p><h1 id="最后的话"><a href="#最后的话" class="headerlink" title="最后的话"></a>最后的话</h1><p>请记住，Oracle ACE会员资格不是永久的，这取决于您对社区做出贡献的一致性。因此，即使作为会员，如果您不再具有相关性，您的会员资格可能会在12个月后被撤销。如果您继续做出贡献，您将在接下来的几年中继续获得认可。</p><p>如果您希望获得Oracle专家的知名度和声誉，成为Oracle ACE是您不容错过的机会。如果您还没有做出贡献，您可以从今天开始。加油吧！</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_6201.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG346.jpg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;钢哥已连续4年荣获“Oracle ACE Director”荣誉称号并收到来自Oracle的精美礼品了。但很多人可能还不了解Oracle ACE计划，今天给大家简单介绍一下。&lt;/p&gt;
+&lt;h1 id=&quot;什么是Oracle-ACE-计划？&quot;&gt;&lt;a href=&quot;#什么是Oracle-ACE-计划？&quot; class=&quot;headerlink&quot; title=&quot;什么是Oracle ACE 计划？&quot;&gt;&lt;/a&gt;什么是Oracle ACE 计划？&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://ace.oracle.com/pls/apex/ace_program/r/oracle-aces/home&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Oracle ACE 计划&lt;/a&gt; 是一项旨在表彰、奖励和晋升为Oracle社区做出巨大贡献的成员的计划。&lt;/p&gt;
+&lt;p&gt;想象一下您将因被Oracle提升为社区内的技术专家和思想领袖而获得曝光。您的贡献将在Oracle ACE Newsletter以及他们的LinkedIn和其他公司渠道上分享。这将不可避免地提高您的知名度和声誉，使您成为寻找Oracle开发人员的客户首选。&lt;/p&gt;
+&lt;p&gt;同时，您将获得Oracle颁发的证书，承认您是Oracle ACE计划的成员，还会获得精美礼品。&lt;/p&gt;
+&lt;p&gt;因此，如果您希望成为Oracle ACE，我可以为您提供指导。下面，我概述了您需要了解的有关Oracle ACE计划、其优势以及如何开始的所有信息。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.11</title>
@@ -552,35 +579,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3592.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.10</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221031/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221031/</id>
-    <published>2022-10-31T15:59:00.000Z</published>
-    <updated>2022-11-01T11:17:27.722Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3504.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.10.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://content.dsp.co.uk/apex/apex-22.2-new-features-spotlight" target="_blank" rel="noopener">APEX 22.2 - New Features Spotlight</a> <code>2022.10</code></li><li><a href="https://blog.rishoradev.com/2022/10/11/intro-extending-oracle-e-business-suite-r12-using-oracle-apex-joelkallmanday/" target="_blank" rel="noopener">EXTENDING ORACLE E-BUSINESS SUITE R12 USING ORACLE APEX</a> <code>2022.10</code></li><li><a href="https://insight2action.medium.com/a-guide-to-embedding-oracle-analytics-into-oracle-application-express-apex-1799f6ba4626" target="_blank" rel="noopener">A Guide to Embedding Oracle Analytics into Oracle Application Express (APEX)</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/how-to-find-nearest-stadiums-using-oracle-apex-maps-and-geolocation" target="_blank" rel="noopener">How to find nearest stadiums using Oracle APEX maps and geolocation</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/speed-up-your-apex-development-using-session-overrides-and-vs-code" target="_blank" rel="noopener">Speed up your APEX development using Session Overrides and VS Code</a> <code>2022.10</code></li><li><a href="https://plamen9.hashnode.dev/getting-the-best-address-and-location-searches-in-oracle-apex" target="_blank" rel="noopener">Getting the best address and location searches in Oracle APEX</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/all-about-apex-timeouts" target="_blank" rel="noopener">All About APEX Timeouts</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/apex-oci-par" target="_blank" rel="noopener">How To Generate &amp; Use OCI Pre-Authenticated Requests from APEX</a> <code>2022.10</code></li><li><a href="https://tm-apex.blogspot.com/2022/10/using-template-directives-in-e-mail.html" target="_blank" rel="noopener">Using Template Directives in E-Mail Templates (APEX Mail #11)</a> <code>2022.10</code></li><li><a href="https://blog.neilfernandez.com/json_mergepatch/" target="_blank" rel="noopener">Quick Tip: json_mergepatch</a> <code>2022.10</code></li><li><a href="https://blog.danielhochleitner.de/2021/10/11/new-apex-date-js-api-in-apex-21-2/" target="_blank" rel="noopener">New apex.date JS API in APEX 21.2</a> <code>2022.10</code></li><li><a href="https://diveintoapex.com/2022/10/11/building-a-mini-sql-workshop-joelkallmanday/" target="_blank" rel="noopener">Building a Mini SQL Workshop</a> <code>2022.10</code></li><li><a href="https://diveintoapex.com/2022/10/17/orclapex-grand-tour/" target="_blank" rel="noopener">Oracle APEX Grand Tour</a> <code>2022.10</code></li><li><a href="https://jkerr.hashnode.dev/easily-and-securely-check-user-passwords-for-compromise" target="_blank" rel="noopener">Easily and securely check user passwords for compromise</a> <code>2022.10</code></li><li><a href="http://www.oneoracledeveloper.com/2022/10/more-readable-code-via-apexstring.html" target="_blank" rel="noopener">More readable code via APEX_STRING</a> <code>2022.10</code></li><li><a href="https://content.dsp.co.uk/apex/flows-for-apex-joelkallmanday" target="_blank" rel="noopener">Flows for APEX</a> <code>2022.10</code></li><li><a href="https://jeffkemponoracle.com/2022/10/export-clob-as-a-sql-script/" target="_blank" rel="noopener">Export CLOB as a SQL Script</a> <code>2022.10</code></li><li><a href="https://lmoreaux.hashnode.dev/ckeditor5-word-character-count-feature-joelkallmanday" target="_blank" rel="noopener">CKEditor5 Word &amp; Character count feature</a> <code>2022.10</code></li><li><a href="https://apexapplab.dev/2022/10/21/understanding-better-the-apex-map-region/" target="_blank" rel="noopener">Understanding better the APEX Map Region</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/identificazione-a-2-fattori-basata-su-totp-time-based-one-time-password-con-oracle-apex/" target="_blank" rel="noopener">Time-based One-time Password (TOTP) -based 2-factor authentication with Oracle APEX</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/come-costruire-web-service-restful-con-ords-e-oracle-apex/" target="_blank" rel="noopener">How to build RESTful Web Services with ORDS and Oracle APEX</a> <code>2022.10</code></li><li><a href="https://appin5minuti.it/come-costruire-workflows-approvativi-in-oracle-apex/" target="_blank" rel="noopener">How to build Approval Workflows in Oracle APEX</a> <code>2022.10</code></li><li><a href="https://vmorneau.me/oracle-apex-22-2-meta-tags/" target="_blank" rel="noopener">Oracle APEX 22.2: Meta Tags</a> <code>2022.10</code></li><li><a href="https://dickdral.blogspot.com/2021/10/creating-mobile-app-with-apex-part-11.html" target="_blank" rel="noopener">Creating a mobile app with APEX - Part 11: Displaying form items side by side</a> <code>2022.10</code></li><li><a href="http://dgielis.blogspot.com/2022/10/oracle-apex-form-save-before-print.html" target="_blank" rel="noopener">Oracle APEX Form: Save before Print</a> <code>2022.10</code></li><li><a href="http://dgielis.blogspot.com/2022/10/no-value-of-page-item-when-using.html" target="_blank" rel="noopener">No value of a page item when using a Dynamic Action</a> <code>2022.10</code></li><li><a href="http://nielsdebr.blogspot.com/2022/10/up-to-speed-with-apex.html" target="_blank" rel="noopener">Getting up to speed with Oracle Application Express (APEX)</a> <code>2022.10</code></li><li><a href="https://blog.cloudnueva.com/apex-form-ig-regions-pro" target="_blank" rel="noopener">How To Handle Advanced APEX Form &amp; IG CRUD Operations Like a Pro</a> <code>2022.10</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_3504.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>
