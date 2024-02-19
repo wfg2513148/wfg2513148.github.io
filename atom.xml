@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2023-12-29T15:23:21.695Z</updated>
+  <updated>2024-02-19T14:11:02.485Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2024.02</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240218/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240218/</id>
+    <published>2024-02-18T05:10:00.000Z</published>
+    <updated>2024-02-19T14:11:02.485Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_6519.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2024.02.18</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://yaitcon.hashnode.dev/apex-links-in-interactive-grid" target="_blank" rel="noopener">APEX Link(s) in Interactive Grid</a> <code>2024.02</code></li><li><a href="https://www.oneoracledeveloper.com/2024/02/insert-javascript-and-css-code-to-apex.html" target="_blank" rel="noopener">Insert JavaScript and CSS code to APEX from PL/SQL</a> <code>2024.02</code></li><li><a href="https://apexdebug.com/monitor-page-performance-in-production" target="_blank" rel="noopener">Monitor Page Performance in Production</a> <code>2024.02</code></li><li><a href="https://blog.cloudnueva.com/5x-file-loads-with-dbmscloudcopydata" target="_blank" rel="noopener">5X File Loads from Object Storage with DBMS_CLOUD.COPY_DATA</a> <code>2024.02</code></li><li><a href="https://btimmerman.hashnode.dev/implementing-cicd-in-oracle-apex-using-jenkins-and-autonomous-database" target="_blank" rel="noopener">Implementing CI/CD in Oracle APEX using Jenkins and Autonomous Database</a> <code>2024.02</code></li><li><a href="https://tm-apex.hashnode.dev/enabling-passwordless-authentication-in-apex-using-oracle-identity-and-access-management" target="_blank" rel="noopener">Secure Access Made Easy: A Step-by-Step Guide Part 4</a> <code>2024.02</code></li><li><a href="https://tm-apex.hashnode.dev/enabling-multi-factor-authentication-in-apex-using-oracle-identity-and-access-management" target="_blank" rel="noopener">Secure Access Made Easy: A Step-by-Step Guide Part 3</a> <code>2024.02</code></li><li><a href="https://yvonnebakx.wordpress.com/2024/02/07/oracle-apex-calendar-tips/" target="_blank" rel="noopener">Oracle APEX – Calendar tips</a> <code>2024.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/unexpiring-the-ordspublicuser-user-for-apex" target="_blank" rel="noopener">Unexpiring the ORDS_PUBLIC_USER user for APEX</a> <code>2024.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/using-ai-to-generate-oracle-apex-theme-roller-styles" target="_blank" rel="noopener">Using AI to generate Oracle APEX Theme Roller Styles</a> <code>2024.01</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-232-store-static-resources-in-object-storage" target="_blank" rel="noopener">Store Static Resources in Object Storage</a> <code>2024.01</code></li><li><a href="https://osvaldogonzalezpy.hashnode.dev/importar-y-exportar-estilos-en-oracle-apex" target="_blank" rel="noopener">Import and Export Styles in Oracle APEX</a> <code>2024.01</code></li><li><a href="https://philgrinham.hashnode.dev/apexcollections-are-you-getting-invalid-datatype-errors" target="_blank" rel="noopener">APEX_COLLECTIONS - are you getting invalid datatype errors</a> <code>2024.01</code></li><li><a href="https://tm-apex.hashnode.dev/secure-user-authentication-with-jwt-in-oracle-apex" target="_blank" rel="noopener">Secure User Authentication with JWT in Oracle APEX</a> <code>2024.01</code></li><li><a href="https://pierre-yotti-it.com/effortless-csv-downloads-in-oracle-apex-interactive-grids/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=effortless-csv-downloads-in-oracle-apex-interactive-grids" target="_blank" rel="noopener">Effortless CSV Downloads in Oracle APEX Interactive Grids</a> <code>2024.01</code></li><li><a href="https://ebs-apex.hashnode.dev/handling-terminations-in-oracle-apex-workflow" target="_blank" rel="noopener">Handling Terminations in Oracle APEX Workflow</a> <code>2024.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/unlocking-hidden-colors-in-the-oracle-apex-redwood-light-theme-style" target="_blank" rel="noopener">Unlocking Hidden Colors in the Oracle APEX Redwood Light Theme Style</a> <code>2024.01</code></li><li><a href="https://talkapex.com/case-insensitive-searching-in-apex" target="_blank" rel="noopener">Case Insensitive Searching in APEX</a> <code>2024.01</code></li><li><a href="https://lmoreaux.hashnode.dev/oracle-apex-232-calendar-region-enhancements" target="_blank" rel="noopener">Calendar region enhancements</a> <code>2024.01</code></li><li><a href="https://tm-apex.hashnode.dev/tip3-avoid-success-message-on-refresh-page" target="_blank" rel="noopener">Avoid success message on refresh page</a> <code>2024.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/color-contrasts-for-apex-template-component-plugins" target="_blank" rel="noopener">Color Contrasts for APEX Template Component Plugins</a> <code>2024.01</code></li><li><a href="https://talkapex.com/what-happens-to-apex-page-items-that-are-never-rendered" target="_blank" rel="noopener">What Happens to APEX Page Items that are Never Rendered</a> <code>2024.01</code></li><li><a href="https://epolanco.dev/avoid-malicious-javascript-in-lists" target="_blank" rel="noopener">Avoid Malicious JavaScript in Lists</a> <code>2024.01</code></li><li><a href="https://talkapex.com/tips-for-apex-application-constants" target="_blank" rel="noopener">Tips for APEX Application Constants</a> <code>2024.01</code></li><li><a href="https://blog.cloudnueva.com/apex-developer-blogs-website" target="_blank" rel="noopener">APEX Developer Blogs Website</a> <code>2024.01</code></li><li><a href="https://blog.cloudnueva.com/apexwebservice-the-definitive-guide" target="_blank" rel="noopener">APEX_WEB_SERVICE The Definitive Guide</a> <code>2024.01</code></li><li><a href="https://tm-apex.hashnode.dev/implementing-social-sign-in-with-oracle-cloud-infrastructure-in-apex" target="_blank" rel="noopener">Secure Access Made Easy: A Step-by-Step Guide Part 1</a> <code>2024.01</code></li><li><a href="https://yvonnebakx.wordpress.com/2023/01/31/oracle-apex-update-your-ut-theme-style-according-to-environment/" target="_blank" rel="noopener">Update your (UT) Theme Style according to environment</a> <code>2024.01</code></li><li><a href="https://osvaldogonzalezpy.hashnode.dev/gestion-de-registros-con-interactive-grids-basado-en-el-modelo" target="_blank" rel="noopener">Log Management with Interactive Grids (model-based)</a> <code>2024.01</code></li><li><a href="https://mattmulvaney.hashnode.dev/scraping-paginated-apex-reports" target="_blank" rel="noopener">Scraping paginated APEX Reports</a> <code>2024.01</code></li><li><a href="https://blog.cloudnueva.com/load-testing-the-oracle-oci-apex-service" target="_blank" rel="noopener">Testing the Oracle OCI APEX Service</a> <code>2024.01</code></li><li><a href="https://www.rittmanmead.com/blog/2024/01/oracle-apex-dynamic-action-plugi-ins/" target="_blank" rel="noopener">Oracle APEX - Creating a Dynamic Action Plug-in</a> <code>2024.01</code></li><li><a href="https://tm-apex.hashnode.dev/implementing-user-access-control-in-apex-with-oracle-identity-and-access-management" target="_blank" rel="noopener">Implementing User Access Control in APEX with Oracle Identity and Access Management</a> <code>2024.01</code></li><li><a href="https://blogs.oracle.com/apex/post/modernizing-oracle-forms-using-oracle-apex" target="_blank" rel="noopener">General Guide: Modernizing Oracle Forms using Oracle APEX</a> <code>2024.01</code></li><li><a href="https://blogs.oracle.com/apex/post/custom-plugins-for-non-sequential-steps-in-apex-workflow" target="_blank" rel="noopener">Custom Plugins for non-sequential steps in APEX Workflow</a> <code>2024.01</code></li><li><a href="https://petarsimic.hashnode.dev/oracle-apex-save-user-preference-with-browser-storage" target="_blank" rel="noopener">Save User Preference With Browser Storage</a> <code>2024.01</code></li><li><a href="https://petarsimic.hashnode.dev/oracle-apex-auto-refresh-report" target="_blank" rel="noopener">Oracle APEX: Auto-refresh Report</a> <code>2024.01</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_6519.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2023.12</title>
@@ -550,35 +579,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4162.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2022.12</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221231/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20221231/</id>
-    <published>2022-12-31T06:36:00.000Z</published>
-    <updated>2022-12-31T07:21:37.549Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4063.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2022.12.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="http://www.oneoracledeveloper.com/2022/12/sharpen-saw.html" target="_blank" rel="noopener">Sharpen the saw</a> <code>2022.12</code></li><li><a href="https://apexpert.in/2022/12/12/oracle-apex-how-to-remember-users-selected-language-on-login-page/" target="_blank" rel="noopener">Oracle APEX – How to remember user’s selected language on Login page</a> <code>2022.12</code></li><li><a href="https://blog.cloudnueva.com/apex-attribute-directory" target="_blank" rel="noopener">Improve UI Consistency with APEX User Interface Defaults</a> <code>2022.12</code></li><li><a href="https://mbndata.hashnode.dev/reusable-apex-dynamic-actions" target="_blank" rel="noopener">Reusable APEX Dynamic Actions</a> <code>2022.12</code></li><li><a href="https://grepora.com/2022/12/01/what-is-oracle-apex-quick-sql/" target="_blank" rel="noopener">What is Oracle APEX Quick SQL?</a> <code>2022.12</code></li><li><a href="https://blog.csdn.net/u012779110/article/details/125059377" target="_blank" rel="noopener">Oracle APEX 安装 和 EBS 集成（一）</a> <code>2022.12</code></li><li><a href="http://www.oneoracledeveloper.com/2022/12/addingdropping-columns-in-repeatable-way.html" target="_blank" rel="noopener">Adding/dropping columns in a repeatable way</a> <code>2022.12</code></li><li><a href="http://www.oneoracledeveloper.com/2022/12/set-page-items-based-on-sql-query.html" target="_blank" rel="noopener">Set page items based on SQL query</a> <code>2022.12</code></li><li><a href="https://ora-00001.blogspot.com/2022/12/dynamic-content-region-in-oracle-apex.html" target="_blank" rel="noopener">Dynamic Content Region in Oracle APEX 22.2</a> <code>2022.12</code></li><li><a href="https://content.dsp.co.uk/apex/more-new-features-of-apex-22.2" target="_blank" rel="noopener">More New Features of APEX 22.2</a> <code>2022.12</code></li><li><a href="https://appin5minuti.it/come-costruire-la-navigazione-nella-apps-oracle-apex/" target="_blank" rel="noopener">How to build Navigation in Oracle APEX APPs</a> <code>2022.12</code></li><li><a href="https://appin5minuti.it/come-salvare-i-dati-usando-forms-e-interactive-grids-in-oracle-apex/" target="_blank" rel="noopener">How to Save Data using Forms and Interactive Grids in Oracle APEX</a> <code>2022.12</code></li><li><a href="https://appin5minuti.it/come-costruire-una-pagina-di-ricerca-globale-in-oracle-apex/" target="_blank" rel="noopener">How to build a Global Search Page in Oracle APEX</a> <code>2022.12</code></li><li><a href="https://blogs.oracle.com/apex/post/migrate-your-apex-applications-to-autonomous-database-part-2" target="_blank" rel="noopener">Migrate your APEX Applications to Autonomous Database, Part 2</a> <code>2022.12</code></li><li><a href="https://blogs.oracle.com/apex/post/migrate-your-apex-applications-to-autonomous-database-part-1" target="_blank" rel="noopener">Migrate your APEX Applications to Autonomous Database, Part 1</a> <code>2022.12</code></li><li><a href="https://hartenfeller.dev/blog/apex-anchored-inline-popups" target="_blank" rel="noopener">Oracle APEX anchored inline popups for data input</a> <code>2022.11</code></li><li><a href="https://grepora.com/2022/11/17/oracle-apex-list-of-values-and-popup-lov/" target="_blank" rel="noopener">Oracle APEX List of Values and Popup Lov</a> <code>2022.11</code></li><li><a href="https://grepora.com/2022/11/25/the-power-of-dynamic-actions-in-apex/" target="_blank" rel="noopener">The power of Dynamic Actions in APEX</a> <code>2022.11</code></li></ul><p>最慢的步伐不是跬步，而是徘徊；<br>最快的脚步不是冲刺，而是坚持！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4063.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>
