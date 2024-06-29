@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240629/</loc>
+    
+    <lastmod>2024-06-29T12:14:37.815Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
+    
+    <lastmod>2024-06-29T12:08:55.024Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-24.1-new-features/</loc>
     
-    <lastmod>2024-06-19T10:11:40.817Z</lastmod>
+    <lastmod>2024-06-19T10:34:18.152Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240531/</loc>
     
     <lastmod>2024-05-31T06:25:46.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    
-    <lastmod>2024-05-31T06:18:10.761Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231231/</loc>
     
     <lastmod>2023-12-29T15:26:57.295Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231230/</loc>
-    
-    <lastmod>2023-12-29T15:23:21.695Z</lastmod>
     
   </url>
   
