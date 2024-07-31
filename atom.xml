@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2024-06-29T12:14:37.815Z</updated>
+  <updated>2024-07-31T14:31:36.959Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2024.07</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240731/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240731/</id>
+    <published>2024-07-31T13:54:00.000Z</published>
+    <updated>2024-07-31T14:31:36.959Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_0227.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2024.07.31</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://lmoreaux.hashnode.dev/how-to-synchronize-oracle-identity-column-sequences" target="_blank" rel="noopener">How to Synchronize Oracle Identity Column Sequences</a> <code>2024.07</code></li><li><a href="https://apexblog.dev/managing-cssjs-cache-in-oracle-apex" target="_blank" rel="noopener">Managing CSS/JS cache in Oracle APEX</a> <code>2024.07</code></li><li><a href="https://ebs-apex.hashnode.dev/creating-a-copy-to-clipboard-feature-in-apex" target="_blank" rel="noopener">Creating a copy to clipboard feature in APEX</a> <code>2024.07</code></li><li><a href="https://dgielis.com/making-file-upload-required-in-oracle-apex" target="_blank" rel="noopener">Making File Upload required in Oracle APEX</a> <code>2024.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/what-exactly-is-the-apex-validations-by-page-report" target="_blank" rel="noopener">What exactly is the APEX Validations by Page Report</a> <code>2024.07</code></li><li><a href="https://yaitcon.hashnode.dev/authorization-schema-in-oracle-apex" target="_blank" rel="noopener">Authorization Schema in Oracle Apex</a> <code>2024.07</code></li><li><a href="https://oracleapexbytes.blogspot.com/2024/07/creating-custom-date-selectors-in.html" target="_blank" rel="noopener">Creating Custom Date Selectors in Oracle APEX: Month, Quarter, and Year</a> <code>2024.07</code></li><li><a href="https://www.oneoracledeveloper.com/2024/07/copy-cell-value-from-ig-revisited.html" target="_blank" rel="noopener">Copy cell value from IG, revisited</a> <code>2024.07</code></li><li><a href="https://aprenderdesarrolloapex.com/como-configurar-servicios-de-ia-generativa-usando-open-ai-en-oracle-apex-24-1/" target="_blank" rel="noopener">How to configure generative AI services using Open AI in Oracle APEX 24.1</a> <code>2024.07</code></li><li><a href="https://toshareapex.hashnode.dev/integrando-ia-en-una-aplicacion-apex" target="_blank" rel="noopener">Integrating AI into an APEX application</a> <code>2024.07</code></li><li><a href="https://blog.apexapplab.dev/apex-and-the-llm-system-prompts" target="_blank" rel="noopener">APEX and the LLM System Prompts</a> <code>2024.07</code></li><li><a href="https://mattmulvaney.hashnode.dev/configuration-test-of-oci-credentials-in-apex" target="_blank" rel="noopener">Configuration &amp; Test of OCI Credentials in APEX</a> <code>2024.07</code></li><li><a href="https://apexdebug.com/oracle-apex-invoke-an-ajax-callback-process" target="_blank" rel="noopener">Invoke an Ajax Callback Process</a> <code>2024.07</code></li><li><a href="https://blog.apexapplab.dev/how-the-new-apex-ai-features-work" target="_blank" rel="noopener">How the new APEX AI features work</a> <code>2024.07</code></li><li><a href="https://zorantica.blogspot.com/2024/07/oracle-apex-open-page-in-another.html" target="_blank" rel="noopener">open a Page in another Application from navigation Menu</a> <code>2024.07</code></li><li><a href="https://osvaldogonzalezpy.hashnode.dev/bloquear-eliminar-resaltadores-formatos-ir-ig" target="_blank" rel="noopener">Block removal of highlighters or formatting in IR/IG</a> <code>2024.07</code></li><li><a href="https://blogs.oracle.com/apex/post/implement-semantic-search-in-oracle-apex-using-ai-vector-search-of-oracle-database-23ai" target="_blank" rel="noopener">Implement Semantic Search in Oracle APEX using AI Vector Search of Oracle Database 23ai</a> <code>2024.07</code></li><li><a href="https://blog.cloudnueva.com/dynamic-parameters-in-oracle-apex-rest-data-source-synchronizations" target="_blank" rel="noopener">Dynamic Parameters in Oracle APEX REST Data Source Synchronizations</a> <code>2024.07</code></li><li><a href="https://blog.cloudnueva.com/apex-selectable-template-components" target="_blank" rel="noopener">APEX 24.1 Selectable Template Components</a> <code>2024.07</code></li><li><a href="https://petarsimic.hashnode.dev/oracle-apex-how-to-publish-apex-pwa-to-the-google-play-store" target="_blank" rel="noopener">How to Publish APEX (PWA) to the Google Play Store</a> <code>2024.07</code></li><li><a href="https://www.rittmanmead.com/blog/2024/06/dates-and-times-in-autonomous-db-and-apex/" target="_blank" rel="noopener">Set Dates and Times in Autonomous DB and APEX</a> <code>2024.07</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_0227.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2024.06</title>
@@ -550,35 +579,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG2933.jpeg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 中文社区上海站主题活动（2023.05.07）</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-meetup-20230507/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-meetup-20230507/</id>
-    <published>2023-05-05T06:22:00.000Z</published>
-    <updated>2023-05-05T06:25:26.948Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/Oracle%20APEX%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8A%E6%B5%B7%E7%AB%99%E4%B8%BB%E9%A2%98%E6%B4%BB%E5%8A%A8%EF%BC%882023.05.07%EF%BC%89%E6%B5%B7%E6%8A%A5.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>感谢Oracle A&amp;C, Oracle Tech, Oracle OU以及社区的小伙伴们的大力支持和帮助，APEX中文社区2023年活动第一站，上海不见不散！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/Oracle%20APEX%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%B8%8A%E6%B5%B7%E7
       
     
     </summary>
