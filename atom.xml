@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2024-07-31T14:31:36.959Z</updated>
+  <updated>2024-08-30T04:51:48.530Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2024.08</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240830/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240830/</id>
+    <published>2024-08-30T03:24:00.000Z</published>
+    <updated>2024-08-30T04:51:48.530Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_0742.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2024.08.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href=""></a> <code>2024.08</code></li><li><a href="https://osvaldogonzalezpy.hashnode.dev/aprovechando-el-rowselector-de-apex" target="_blank" rel="noopener">Taking advantage of APEX’s ROW_SELECTOR</a> <code>2024.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/sorting-in-apex-classic-reports-and-card-regions-explained" target="_blank" rel="noopener">Sorting in APEX: Classic Reports and Card Regions Explained</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-native-nested-report-with-template-directives" target="_blank" rel="noopener">Native Nested Report with Template Directives</a> <code>2024.08</code></li><li><a href="https://mattmulvaney.hashnode.dev/create-an-automatic-seed-publisher-for-your-apex-translated-applications" target="_blank" rel="noopener">Create an Automatic Seed &amp; Publisher for your APEX Translated Applications</a> <code>2024.08</code></li><li><a href="https://blog.cloudnueva.com/apex-workflow-for-enterprise-integrations" target="_blank" rel="noopener">Using APEX Workflow for Enterprise Integration Orchestration</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-post-it-notes-with-card-report" target="_blank" rel="noopener">Post-it Notes with Card Report</a> <code>2024.08</code></li><li><a href="https://lcieslik.hashnode.dev/wms-map-backgrounds-and-oracle-apex" target="_blank" rel="noopener">WMS, Map Backgrounds and Oracle APEX</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-multi-social-sign-in-provider" target="_blank" rel="noopener">Multi-Social Sign-In Provider</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-native-equal-height-regions-in-the-universal-theme" target="_blank" rel="noopener">Native Equal Height Regions in the Universal Theme</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-custom-highlight-animation" target="_blank" rel="noopener">Custom Highlight Animation</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-making-responsive-tables-with-universal-theme-native-classes" target="_blank" rel="noopener">Making Responsive Tables with Universal Theme Native Classes</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-mastering-collapsible-regions" target="_blank" rel="noopener">Oracle APEX - Mastering Collapsible Regions</a> <code>2024.08</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-customizing-fonts" target="_blank" rel="noopener">Oracle APEX - Customizing Fonts</a> <code>2024.08</code></li><li><a href="https://aprenderdesarrolloapex.com/ia-generativa-usando-el-asistente-de-apex/" target="_blank" rel="noopener">Generative AI: Using the APEX Wizard</a> <code>2024.08</code></li><li><a href="https://blog.cloudnueva.com/apex-email-templates-advanced-formatting" target="_blank" rel="noopener">APEX Email Templates - Advanced Formatting</a> <code>2024.08</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_0742.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 活跃博文整理 | 2024.07</title>
@@ -551,35 +580,6 @@
       &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20230518191942.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;模板组件&quot;&gt;&lt;a href=&quot;#模板组件&quot; class=&quot;headerlink&quot; title=&quot;模板组件&quot;&gt;&lt;/a&gt;模板组件&lt;/h1&gt;&lt;p&gt;全新推出的模板组件是一种新的插件类型，用于构建可重用的UI组件，并支持页设计器中的操作、菜单和定制属性。这些组件可以呈现为显示一行或多行数据的独立区域，也可以在报表中将部分组件用于列。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20230518190034.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>APEX中文社区2023(上海站)主题活动圆满成功</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-shanghai-meetup-20230507/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-cn-shanghai-meetup-20230507/</id>
-    <published>2023-05-07T15:59:59.000Z</published>
-    <updated>2023-05-10T10:05:04.872Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG2933.jpeg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>Oracle APEX中文社区2023年主题活动于5月7日在Oracle上海办公室顺利举行。本次活动采用线上腾讯会议（48人）+线下（15人）的方式举行，由Oracle的小伙伴提供活动场地，社区的小伙伴提供了精彩分享。</p><p>同时，通过圆桌论坛自由讨论的形式，对大家关心的话题、以及社区未来的发展方向进行了讨论交流。以下是活动当天的一些照片和资料，供未能参加的小伙伴们学习。</p><h1 id="APEX中文社区-amp-Oracle-APEX介绍"><a href="#APEX中文社区-amp-Oracle-APEX介绍" class="headerlink" title="APEX中文社区 &amp; Oracle APEX介绍"></a>APEX中文社区 &amp; Oracle APEX介绍</h1><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4928.png?x-oss-process=image/format,jpg/quality,q_60" alt=""><br><a href="https://www.bilibili.com/video/BV1VV4y1r7tQ/" target="_blank" rel="noopener">在线播放</a> | <a href="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/01.APEX%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%20&amp;%20Oracle%20APEX%E4%BB%8B%E7%BB%8D.pdf" target="_blank" rel="noopener">PDF下载</a></p><h1 id="利用Oracle-APEX“零代码”实现地理空间数据的查询和展现"><a href="#利用Oracle-APEX“零代码”实现地理空间数据的查询和展现" class="headerlink" title="利用Oracle APEX“零代码”实现地理空间数据的查询和展现"></a>利用Oracle APEX“零代码”实现地理空间数据的查询和展现</h1><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4929.png?x-oss-process=image/format,jpg/quality,q_60" alt=""><br><a href="https://www.bilibili.com/video/BV1Xk4y1j7D2/" target="_blank" rel="noopener">在线播放</a> | <a href="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/02.%E5%88%A9%E7%94%A8Oracle%20APEX%E5%AE%9E%E7%8E%B0%E5%9C%B0%E7%90%86%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%B1%95%E7%8E%B0.pdf" target="_blank" rel="noopener">PDF下载</a> </p><h1 id="利用ORDS进行RESTful-API接口开发"><a href="#利用ORDS进行RESTful-API接口开发" class="headerlink" title="利用ORDS进行RESTful API接口开发"></a>利用ORDS进行RESTful API接口开发</h1><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4930.png?x-oss-process=image/format,jpg/quality,q_60" alt=""><br><a href="https://www.bilibili.com/video/BV1LV4y1C771/" target="_blank" rel="noopener">在线播放</a> | <a href="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/03.%E5%88%A9%E7%94%A8ORDS%E8%BF%9B%E8%A1%8CRESTful%20API%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91.pdf" target="_blank" rel="noopener">PDF下载</a> </p><h1 id="利用Oracle-APEX快速拓展您的系统、员工和业务能力"><a href="#利用Oracle-APEX快速拓展您的系统、员工和业务能力" class="headerlink" title="利用Oracle APEX快速拓展您的系统、员工和业务能力"></a>利用Oracle APEX快速拓展您的系统、员工和业务能力</h1><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_4934.png?x-oss-process=image/format,jpg/quality,q_60" alt=""><br><a href="https://www.bilibili.com/video/BV1xo4y1c7uG/" target="_blank" rel="noopener">在线播放</a> | <a href="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/04.%E5%88%A9%E7%94%A8Oracle%20APEX%20%E5%BF%AB%E9%80%9F%E6%8B%93%E5%B1%95%E6%82%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E3%80%81%E5%91%98%E5%B7%A5%E5%92%8C%E4%B8%9A%E5%8A%A1%E8%83%BD%E5%8A%9B.pdf" target="_blank" rel="noopener">PDF下载</a> </p><p>再次感谢<code>Oracle A&amp;C</code>, <code>Oracle Tech</code>, <code>Oracle OU</code>以及社区小伙伴的大力支持与帮助，同时也希望咱们社区能有更多的小伙伴加入，更多的人进行加入分享，让我们APEX中文社区越办越好！</p><p>期待下次的重逢！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG2933.jpeg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;
-      
     
     </summary>
     
