@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240830/</loc>
-    <lastmod>2024-08-30T04:58:05.764Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240930/</loc>
+    <lastmod>2024-10-01T04:30:48.606Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2024.08</title>
-        <pubTime>2024-08-30T03:24:00.000Z</pubTime>
+        <title>Oracle APEX 活跃博文整理 | 2024.09</title>
+        <pubTime>2024-09-30T15:59:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -30,11 +30,36 @@
     
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2024-08-30T04:00:30.609Z</lastmod>
+    <lastmod>2024-10-01T02:53:55.777Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</title>
         <pubTime>2018-06-03T11:56:34.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240830/</loc>
+    <lastmod>2024-08-30T04:58:05.764Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 活跃博文整理 | 2024.08</title>
+        <pubTime>2024-08-30T03:24:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
