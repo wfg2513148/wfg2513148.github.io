@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-pab-2024/</loc>
+    <lastmod>2024-11-01T08:33:26.049Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle CAB & PAB 2024 in Shanghai</title>
+        <pubTime>2024-11-01T08:07:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20241101/</loc>
     <lastmod>2024-11-01T07:42:43.045Z</lastmod>
     <data>
@@ -2531,9 +2556,9 @@
         <title>Kubernetes学习笔记(7)：Yaml模板</title>
         <pubTime>2020-01-15T13:06:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
          
            
@@ -2774,9 +2799,9 @@
         <title>Kubernetes学习笔记(4)：打造自动化流水线(CI/CD)</title>
         <pubTime>2019-10-30T13:49:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
         <tag>CI/CD</tag>
          
@@ -2877,9 +2902,9 @@
         <title>Kubernetes学习笔记(1)：二进制方式安装部署k8s</title>
         <pubTime>2019-10-25T07:34:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
         <tag>installation</tag>
          
@@ -2901,9 +2926,9 @@
         <title>Kubernetes学习笔记(2)：k8s的服务发现</title>
         <pubTime>2019-10-27T06:54:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
         <tag>service discovery</tag>
          
@@ -2925,9 +2950,9 @@
         <title>Kubernetes学习笔记(3)：Java应用容器化 & 迁移到k8s</title>
         <pubTime>2019-10-27T13:49:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
         <tag>migration</tag>
          
@@ -2971,9 +2996,9 @@
         <title>安装配置高可用的Harbor镜像仓库</title>
         <pubTime>2019-10-16T05:17:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
         <tag>harbor</tag>
          
@@ -3020,9 +3045,9 @@
         <title>Kubernetes学习笔记(5)：Namespace, Resources和Label</title>
         <pubTime>2019-10-31T03:37:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
          
            
@@ -3042,9 +3067,9 @@
         <title>Kubernetes学习笔记(6)：健康检查 & 调度 & 部署</title>
         <pubTime>2019-10-31T03:51:00.000Z</pubTime>
         
-        <tag>docker</tag>
-         
         <tag>kubernetes</tag>
+         
+        <tag>docker</tag>
          
          
            
