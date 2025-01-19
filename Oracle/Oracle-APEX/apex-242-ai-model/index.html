@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="referrer" content="no-referrer" />
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'IRZBM0L62M',
+      apiKey: '5ca467735bb046ab76fcd421fe6facf3',
+      indexName: 'dev_hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fb8b3e3dd9c7bf2d6189a0aebf7be37a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <meta name="description" content="本文翻译自：https://blogs.oracle.com/apex/post/blog-create-data-model-using-ai 介绍构建APEX应用程序的过程始终从一个基本步骤开始 - 在数据库模式中包含表。这些表构成了应用程序的基础，定义了数据的存储、管理和访问方式。 但仅仅有桌子是不够的。精心设计的架构对于确保应用程序的可扩展性、性能和可维护性至关重要。开发人员必须遵循数据">
+<meta name="keywords" content="Oracle,APEX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle APEX 24.2 新特性 - AI驱动的数据建模">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/index.html">
+<meta property="og:site_name" content="钢钢更新">
+<meta property="og:description" content="本文翻译自：https://blogs.oracle.com/apex/post/blog-create-data-model-using-ai 介绍构建APEX应用程序的过程始终从一个基本步骤开始 - 在数据库模式中包含表。这些表构成了应用程序的基础，定义了数据的存储、管理和访问方式。 但仅仅有桌子是不够的。精心设计的架构对于确保应用程序的可扩展性、性能和可维护性至关重要。开发人员必须遵循数据">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192140436.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192144466.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192146756.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192148339.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192149861.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192150598.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192151489.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192152883.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192156574.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192157340.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192158742.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192158196.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192159137.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:updated_time" content="2025-01-19T14:01:41.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle APEX 24.2 新特性 - AI驱动的数据建模">
+<meta name="twitter:description" content="本文翻译自：https://blogs.oracle.com/apex/post/blog-create-data-model-using-ai 介绍构建APEX应用程序的过程始终从一个基本步骤开始 - 在数据库模式中包含表。这些表构成了应用程序的基础，定义了数据的存储、管理和访问方式。 但仅仅有桌子是不够的。精心设计的架构对于确保应用程序的可扩展性、性能和可维护性至关重要。开发人员必须遵循数据">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192140436.png?x-oss-process=image/format,jpg/quality,q_60">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oracle APEX 24.2 新特性 - AI驱动的数据建模 | 钢钢更新</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?78474f7e697cd58cac9e887d4559aa51";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">钢钢更新</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">用行动改变世界，做个有情怀的技术宅</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 24.2 新特性 - AI驱动的数据建模
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-01-19 21:38:00 / 修改时间：22:01:41" itemprop="dateCreated datePublished" datetime="2025-01-19T21:38:00+08:00">2025-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-ai-model/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - AI驱动的数据建模">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">10k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">17 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192140436.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/blog-create-data-model-using-ai" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/blog-create-data-model-using-ai</a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>构建APEX应用程序的过程始终从一个基本步骤开始 - 在数据库模式中包含表。这些表构成了应用程序的基础，定义了数据的存储、管理和访问方式。</p>
+<p>但仅仅有桌子是不够的。<strong>精心设计的架构</strong>对于确保应用程序的可扩展性、性能和可维护性至关重要。开发人员必须遵循<strong>数据库规范化</strong>等原则，以消除冗余、确保数据完整性并有效构建数据。他们还需要解决数据库设计的复杂问题，例如定义正确的<strong>主键和外键、创建适当的索引</strong>以及确保正确捕获实体之间的关系。</p>
+<p>设计这样的模式需要丰富的<strong>数据库专业知识</strong>。开发人员需要深入了解关系建模原则和最佳实践，以确保架构不仅满足当前的应用程序需求，而且还可以根据未来的需求进行适当的扩展。</p>
+<p>但如果这个基本任务可以简化呢？</p>
+<p>凭借由AI提供支持的生成式开发（<a href="https://blogs.oracle.com/apex/post/oracle-apex-gen-dev" target="_blank" rel="noopener">GenDev</a>）重新定义 APEX 开发人员工具包（帮助在代码编辑器中使用 <strong>APEX Assistant</strong> 编写和调试代码，甚至创建整个APEX应用程序），为什么不将其功能扩展到模式设计呢？ <a href="https://apex.oracle.com/go/242-is-now-available" target="_blank" rel="noopener">Oracle APEX 24.2</a> 的最新功能：使用AI人工智能技术创建数据模型。</p>
+<h1 id="使用-AI-创建数据模型-功能概述"><a href="#使用-AI-创建数据模型-功能概述" class="headerlink" title="使用 AI 创建数据模型 - 功能概述"></a>使用 AI 创建数据模型 - 功能概述</h1><p><strong>使用人工智能创建数据模型</strong>的一些主要亮点是：</p>
+<ol>
+<li><strong>使用AI创建架构</strong>：您可以通过提供高级需求来设计整个应用程序架构.</li>
+<li><strong>使用生成式人工智能服务</strong>：利用生成式人工智能服务来设计数据模型。</li>
+<li><strong>输出格式</strong>：您可以生成两种格式的模式：Oracle SQL和Quick SQL。</li>
+<li><strong>合成数据生成</strong>：您还可以为数据模型生成上下文准确的示例数据，以协助测试和原型设计。</li>
+</ol>
+<h1 id="使用案例：在线学习平台"><a href="#使用案例：在线学习平台" class="headerlink" title="使用案例：在线学习平台"></a>使用案例：在线学习平台</h1><p>在这篇博文中，我们将使用人工智能为在线学习平台设计一个数据模型。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192144466.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1.在线学习平台数据模型ERD图"></p>
+<h1 id="先决条件：创建生成式AI服务"><a href="#先决条件：创建生成式AI服务" class="headerlink" title="先决条件：创建生成式AI服务"></a>先决条件：创建生成式AI服务</h1><p>首先，我们需要建立一个生成式人工智能服务来帮助我们生成数据模型。要创建一个，请导航至<strong>Workspace Utilities &gt; Generative AI Service</strong>并单击“<strong>创建</strong>” 。在此演示中，我们将使用<strong>OCI Generative AI Service</strong>作为AI Provider和<strong>meta.llama-3.2-90b-vision-instruct</strong>。此功能适用于您选择的任何AI提供商和模型。</p>
+<p>确保<strong>App Builder使用开关</strong>已打开。这将激活工作区中的生成式AI功能。如果生成式AI功能在工作区中不可见，可能是因为生成式AI服务未启用“<strong>由应用程序生成器使用</strong>”开关。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192146756.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2.OCI生成式AI服务配置"></p>
+<p>完成后，让我们继续设计在线学习平台的数据模型。</p>
+<h1 id="使用人工智能进行数据建模"><a href="#使用人工智能进行数据建模" class="headerlink" title="使用人工智能进行数据建模"></a>使用人工智能进行数据建模</h1><p><strong>使用AI创建数据模型</strong> 选项位于 <strong>SQL Workshop &gt; 实用程序</strong> 下。您还可以直接从 <strong>SQL Workshop</strong> 主页的“<strong>任务</strong>” （右侧部分）下访问它。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192148339.png?x-oss-process=image/format,jpg/quality,q_60" alt="图3.在SQL Workshop实用程序下使用AI创建数据模型"></p>
+<p>单击此链接将打开 <strong>APEX Assistant</strong>，它与用于使用 Generative AI（在版本 24.1 中引入）生成 APEX 应用程序的 APEX Assistant 非常相似。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192149861.png?x-oss-process=image/format,jpg/quality,q_60" alt="图4.使用 AI APEX Assistant 创建数据模型"></p>
+<p>APEX Assistant 对话框中的一个关键属性是 <strong>SQL 格式</strong> 开关，它允许您生成两种格式的数据模型：</p>
+<ul>
+<li><strong>Oracle SQL</strong>：以 Oracle SQL 格式生成 DDL 以创建必要的表、索引和其他对象。</li>
+<li><strong>Quick SQL</strong>：以 Quick SQL 速记语法生成数据模型，稍后可以将其转换为 Oracle SQL 以创建所需的数据库对象。</li>
+</ul>
+<p>让我们从 <strong>Oracle SQL选项</strong> 开始。</p>
+<p>我提供以下提示：“为包含学生、课程和教师等实体的在线学习平台创建数据模型。” APEX Assistant 会立即生成包含创建数据模型所需SQL的响应。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192150598.png?x-oss-process=image/format,jpg/quality,q_60" alt="图5.使用AI创建数据模型 - 为在线学习平台创建数据模型"></p>
+<p>增强数据模型很容易，只需以对话方式提供附加提示即可。例如：“包括处理评估（测验、考试、项目）和学生成绩的表格。” APEX Assistant 合并了这些要求并相应地更新了数据模型。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192151489.png?x-oss-process=image/format,jpg/quality,q_60" alt="图6.使用AI创建数据模型 - 通过附加提示增强数据模型"></p>
+<p>满意后，单击“<strong>创建SQL脚本</strong>”以查看生成的脚本并保存以供以后使用。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192152883.png?x-oss-process=image/format,jpg/quality,q_60" alt="图7.查看SQL脚本下的脚本"></p>
+<h1 id="查看生成的-SQL-脚本"><a href="#查看生成的-SQL-脚本" class="headerlink" title="查看生成的 SQL 脚本"></a>查看生成的 SQL 脚本</h1><p>让我们花点时间分解并查看生成的SQL脚本。</p>
+<p>该脚本将自动创建以下7个表：<strong>olp_students、olp_courses、olp_instructors、olp_enrollments、 olp_course_instructors、olp_assessments</strong> 和 <strong>olp_grades</strong>，包括这些表所需的DDL语句，以及用于建立它们之间关系的主键和外键。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- create tables</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> olp_students (</span><br><span class="line">    <span class="keyword">id</span>                            <span class="built_in">number</span>         <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">on</span> <span class="literal">null</span> <span class="keyword">as</span> <span class="keyword">identity</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_students_pk primary <span class="keyword">key</span>,</span><br><span class="line">    student_id                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    <span class="keyword">name</span>                          varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    email                         varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">    <span class="keyword">password</span>                      varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    row_version                   <span class="built_in">integer</span>        <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> olp_courses (</span><br><span class="line">    <span class="keyword">id</span>                            <span class="built_in">number</span>         <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">on</span> <span class="literal">null</span> <span class="keyword">as</span> <span class="keyword">identity</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_courses_pk primary <span class="keyword">key</span>,</span><br><span class="line">    course_id                     varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">    title                         varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    description                   varchar2(<span class="number">4000</span>),</span><br><span class="line">    created_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    row_version                   <span class="built_in">integer</span>        <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> olp_instructors (</span><br><span class="line">    <span class="keyword">id</span>                            <span class="built_in">number</span>         <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">on</span> <span class="literal">null</span> <span class="keyword">as</span> <span class="keyword">identity</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_instructors_pk primary <span class="keyword">key</span>,</span><br><span class="line">    instructor_id                 varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">    <span class="keyword">name</span>                          varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    email                         varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">    created_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    row_version                   <span class="built_in">integer</span>        <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> olp_enrollments (</span><br><span class="line">    <span class="keyword">id</span>                            <span class="built_in">number</span>         <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">on</span> <span class="literal">null</span> <span class="keyword">as</span> <span class="keyword">identity</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_enrollments_pk primary <span class="keyword">key</span>,</span><br><span class="line">    student_id                    <span class="built_in">number</span>         <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_enrollments_students_fk</span><br><span class="line">                                                 <span class="keyword">references</span> olp_students ( <span class="keyword">id</span> ) <span class="keyword">on</span> <span class="keyword">delete</span> <span class="keyword">cascade</span>,</span><br><span class="line">    course_id                     <span class="built_in">number</span>         <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">                                                 <span class="keyword">constraint</span> olp_enrollments_courses_fk</span><br><span class="line">                                                 <span class="keyword">references</span> olp_courses ( <span class="keyword">id</span> ) <span class="keyword">on</span> <span class="keyword">delete</span> <span class="keyword">cascade</span>,</span><br><span class="line">    enrollment_date               <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    created_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_on                    <span class="built_in">date</span>           <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    updated_by                    varchar2(<span class="number">255</span>)  <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    row_version                   <span class="built_in">integer</span>        <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<p>它还将创建必要的索引，代码如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- table index</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_students_indx_1 <span class="keyword">on</span> olp_students ( email )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_students_indx_2 <span class="keyword">on</span> olp_students ( student_id )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_courses_indx_1 <span class="keyword">on</span> olp_courses ( course_id )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_instructors_indx_1 <span class="keyword">on</span> olp_instructors ( email )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_instructors_indx_2 <span class="keyword">on</span> olp_instructors ( instructor_id )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_enrollments_indx_1 <span class="keyword">on</span> olp_enrollments ( student_id )</span><br><span class="line">/</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> olp_enrollments_indx_2 <span class="keyword">on</span> olp_enrollments ( course_id )</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<p>此外，该脚本还为填充审核列的触发器生成DDL。它考虑了模型可能在APEX会话中运行的可能性，因此它通过使用以下命令从会话中获取<strong>APP_USER</strong>值来填充update_by列： <strong>sys_context(‘APEX$SESSION’, ‘APP_USER’) </strong>。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- triggers</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_students_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_students</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_students_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_courses_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_courses</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_courses_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_instructors_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_instructors</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_instructors_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_enrollments_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_enrollments</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_enrollments_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_course_instructors_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_course_instructors</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_course_instructors_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_assessments_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_assessments</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_assessments_biu;</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">trigger</span> olp_grades_biu</span><br><span class="line">    <span class="keyword">before</span> <span class="keyword">insert</span> <span class="keyword">or</span> <span class="keyword">update</span></span><br><span class="line">    <span class="keyword">on</span> olp_grades</span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">each</span> <span class="keyword">row</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    :new.updated_on := <span class="keyword">sysdate</span>;</span><br><span class="line">    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);</span><br><span class="line">    if inserting then</span><br><span class="line">        :new.row_version := 1;</span><br><span class="line">        :new.created_on := :new.updated_on;</span><br><span class="line">        :new.created_by := :new.updated_by;</span><br><span class="line">    elsif updating then</span><br><span class="line">        :new.row_version := nvl(:old.row_version, 0) + 1;</span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">end</span> olp_grades_biu;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<h1 id="为您的数据模型生成真实的样本数据"><a href="#为您的数据模型生成真实的样本数据" class="headerlink" title="为您的数据模型生成真实的样本数据"></a>为您的数据模型生成真实的样本数据</h1><p>此功能中的APEX助手允许您轻松生成示例数据以填充数据模型中的表。这些数据与现实世界的信息非常相似，有助于原型设计和测试数据模型。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192156574.png?x-oss-process=image/format,jpg/quality,q_60" alt="图8.使用AI生成综合数据"></p>
+<p>如果需要特定的行数，可以在提示中指定所需的数量。</p>
+<h1 id="生成Quick-SQL格式的数据模型"><a href="#生成Quick-SQL格式的数据模型" class="headerlink" title="生成Quick SQL格式的数据模型"></a>生成Quick SQL格式的数据模型</h1><p>如果您熟悉 Quick SQL 速记语法，则可以选择以 Quick SQL 格式生成DDL。这种格式的优点之一是结构紧凑、简洁，与 Oracle SQL 相比，这可能会导致消耗更少的AI令牌。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192157340.png?x-oss-process=image/format,jpg/quality,q_60" alt="图9.快速SQL格式"></p>
+<p>您可以单击“<strong>查看 Quick SQL</strong>”按钮来查看生成的 Quick SQL 脚本以及转换后的 Oracle SQL 以及ERD图（在“图表”选项卡下）。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192158742.png?x-oss-process=image/format,jpg/quality,q_60" alt="图10.快速SQL到Oracle SQL"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192158196.png?x-oss-process=image/format,jpg/quality,q_60" alt="图11.快速SQL到图表"></p>
+<h1 id="后续步骤：在数据模型之上创建应用程序"><a href="#后续步骤：在数据模型之上创建应用程序" class="headerlink" title="后续步骤：在数据模型之上创建应用程序"></a>后续步骤：在数据模型之上创建应用程序</h1><p>设计并准备好数据模型后，您现在可以继续基于此AI生成的数据模型生成APEX应用程序。例如，您可以使用“<strong>使用生成式人工智能生成应用程序</strong>”功能为在线学习平台创建应用程序蓝图。 APEX助手检查架构中的可用表（包括新生成的表），并将报告、表单和仪表板页面相应地合并到蓝图中。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192159137.png?x-oss-process=image/format,jpg/quality,q_60" alt="图12.使用生成式AI创建应用程序"></p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>在这篇博文中，我们了解了 Oracle APEX 24.2 的新“<strong>使用AI创建数据模型</strong>”功能如何帮助简化通常复杂且耗时的数据库模式设计过程。通过利用生成式人工智能的力量，开发人员现在可以根据高级应用程序需求创建高效、可扩展且结构良好的数据模型。此功能不仅有助于简化架构创建，还可以生成合成数据，从而支持测试和原型设计。</p>
+<p>无论您是构建简单的应用程序还是为在线学习系统等复杂平台奠定基础，这种人工智能驱动的方法都可以显着减少手动工作量，使开发人员能够专注于更高价值的任务。随着人工智能不断重塑开发实践，采用此类工具可以极大地提高生产力，并确保您的应用程序构建在坚实、面向未来的基础上。</p>
+<p>有了这项新功能，为您的APEX应用程序设计高效的数据模型变得前所未有的简单。</p>
+<p>其他资源</p>
+<ul>
+<li><a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aeutl/creating-data-model-ai.html#AEUTL-GUID-40F683A7-DA74-46D1-AA36-5B38310F11A4" target="_blank" rel="noopener">[文档] 使用人工智能创建数据模型</a></li>
+<li><a href="https://apex.oracle.com/go/professional" target="_blank" rel="noopener">[学习路径] 成为Oracle APEX开发专家</a></li>
+<li><a href="https://apex.oracle.com/go/poc-lab" target="_blank" rel="noopener">[教程] Oracle APEX 中人工智能辅助开发的智能项目管理应用程序</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.staticfile.org/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-242-ai-model/">Oracle APEX 24.2 新特性 - AI驱动的数据建模</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
+  <p><span>发布时间:</span>2025年01月19日 - 21:01</p>
+  <p><span>最后更新:</span>2025年01月19日 - 22:01</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-242-ai-model/" title="Oracle APEX 24.2 新特性 - AI驱动的数据建模">https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+          
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_services.jpg" alt="王方钢 / Kenny Wang wechat" style="width: 400px; max-width: 100%;"/>
+    <!-- <div>王方钢</div> -->
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Oracle/" rel="tag"><i class="fa fa-tag"></i> Oracle</a>
+          
+            <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Oracle/Oracle-APEX/apex-242-ai-vector-search/" rel="next" title="Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="王方钢 / Kenny Wang" />
+            
+              <p class="site-author-name" itemprop="name">王方钢 / Kenny Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">161</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wfg2513148" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wfgdlut@gmail.com" target="_blank" title="Gmail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/wangfanggang/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/wangfanggang" target="_blank" title="Webo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Webo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-AI-创建数据模型-功能概述"><span class="nav-number">2.</span> <span class="nav-text">使用 AI 创建数据模型 - 功能概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用案例：在线学习平台"><span class="nav-number">3.</span> <span class="nav-text">使用案例：在线学习平台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先决条件：创建生成式AI服务"><span class="nav-number">4.</span> <span class="nav-text">先决条件：创建生成式AI服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用人工智能进行数据建模"><span class="nav-number">5.</span> <span class="nav-text">使用人工智能进行数据建模</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看生成的-SQL-脚本"><span class="nav-number">6.</span> <span class="nav-text">查看生成的 SQL 脚本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为您的数据模型生成真实的样本数据"><span class="nav-number">7.</span> <span class="nav-text">为您的数据模型生成真实的样本数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成Quick-SQL格式的数据模型"><span class="nav-number">8.</span> <span class="nav-text">生成Quick SQL格式的数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续步骤：在数据模型之上创建应用程序"><span class="nav-number">9.</span> <span class="nav-text">后续步骤：在数据模型之上创建应用程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">10.</span> <span class="nav-text">结论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bug"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王方钢 / Kenny Wang</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/recordQuery">京ICP备18025217号</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("yflAgaP1BEGSSDpFcodnkHhM-gzGzoHsz", "r8pBuanUxCRbTY1SCOv2kEde");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Wechat,Weibo,Linkedin,Evernote,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
