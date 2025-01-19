@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250119/</loc>
+    <lastmod>2025-01-19T04:47:50.457Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle Report 已正式被弃用, Oracle APEX 为官方替代方案</title>
+        <pubTime>2025-01-19T04:21:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-apex-242/</loc>
-    <lastmod>2025-01-18T01:45:20.419Z</lastmod>
+    <lastmod>2025-01-18T13:58:10.170Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 24.2 正式发布</title>
@@ -1833,9 +1858,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
          
            
@@ -1918,9 +1943,9 @@
          
         <tag>APEX</tag>
          
-        <tag>ORDS</tag>
-         
         <tag>Docker</tag>
+         
+        <tag>ORDS</tag>
          
         <tag>Database</tag>
          
