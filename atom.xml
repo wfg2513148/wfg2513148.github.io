@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2025-01-19T14:42:56.208Z</updated>
+  <updated>2025-01-19T14:51:24.245Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Oracle APEX 24.2 新特性 - 多选与分面搜索功能增强</title>
+    <title>Oracle APEX 24.2 新特性 - 数据库对象依赖检测增强</title>
     <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/"/>
     <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/</id>
     <published>2025-01-19T14:35:00.000Z</published>
-    <updated>2025-01-19T14:42:56.208Z</updated>
+    <updated>2025-01-19T14:51:24.245Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192234806.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/242-database-object-dependencies" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/242-database-object-dependencies</a></p><p>Oracle APEX 24.1 中引入了 <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/aeapi/APEX_APP_OBJECT_DEPENDENCY.html" target="_blank" rel="noopener">APEX_APP_OBJECT_DEPENDENCY</a> API，以帮助开发人员分析其应用程序并按页面或应用程序报告对数据库对象的所有引用。在 Oracle APEX 24.2 中，开发人员可以找到一个新实用程序，该实用程序使用API轻松扫描应用程序并查看工作区中数据库对象引用的报告，从而使管理对象依赖性变得更加简单。</p><h1 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h1><ul><li>使用左侧的分层树控件可视化应用程序引用的所有错误、表、包、模式和系统依赖项及其组件，例如表列、包过程和函数。</li><li>用于跳转到检测到每个引用的组件属性的链接。</li><li>使用搜索过滤器过滤依赖项列表。</li><li>检查引用任何选定数据库对象的应用程序代码。</li><li>新的检测依赖项：<ul><li>在基于 SQL 表达式的报告列中。</li><li>由 REST 服务查询 ( #APEX$SOURCE_DATA# ) 产生。</li><li>由数据配置文件 SQL 表达式产生。</li></ul></li></ul><h1 id="如何使用它？"><a href="#如何使用它？" class="headerlink" title="如何使用它？"></a>如何使用它？</h1><ol><li>导航到 <strong>应用程序生成器</strong>；</li><li>单击您要扫描的应用程序；</li><li>单击 <strong>实用程序</strong>；</li><li>单击 “<strong>数据库对象依赖关系</strong>” ，然后单击 “<strong>扫描应用程序</strong>”；</li></ol><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192239718.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1. 数据库对象依赖关系功能"></p><ol start="5"><li>您可以执行全面扫描来扫描所有源的依赖项，包括错误。或者仅扫描错误以报告代码错误。您还可以选择扫描范围：扫描整个应用程序或仅扫描应用程序的一页。做出选择后，单击“<strong>扫描</strong>”；</li></ol><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192239011.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2. 扫描选项"></p><ol start="6"><li>您将获得应用程序的详细扫描报告；</li></ol><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192240219.png?x-oss-process=image/format,jpg/quality,q_60" alt="图3. 数据库对象依赖关系报告"></p><ol start="7"><li>要清除依赖关系报告，请单击“<strong>清除依赖关系</strong>”按钮并按照以下步骤操作。</li></ol><p>观看此简短视频，了解如何在APEX应用程序上使用此新功能：</p><p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT6B81FB084CD9445684C4C797031E25DF/native?cb=_cache_b9fd&amp;channelToken=e34e03301b55409b97de871892b41b87" alt=""></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Oracle APEX 24.2 中新的数据库对象依赖项实用程序不仅允许开发人员轻松识别APEX组件引用的数据库对象以及系统用户（包括 SYS、SYSTEM、PUBLIC 和 APEX 架构所有者）拥有的系统依赖项，而且还可以帮助列出可能导致错误的潜在错误。用户在运行应用程序时可能会遇到缺少应用程序引用的数据库对象的情况。</p><p>在 <a href="https://www.oracle.com/cloud/" target="_blank" rel="noopener">Oracle Cloud</a>、<a href="https://apex.oracle.com/" target="_blank" rel="noopener">apex.oracle.com</a> 上尝试此功能以及 APEX 24.2 中的其他新功能，或者从 <a href="https://apex.oracle.com/download" target="_blank" rel="noopener">apex.oracle.com/download</a> 下载此版本。</p>]]></content>
     
