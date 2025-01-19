@@ -371,6 +371,262 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/" itemprop="url">
+                  Oracle APEX 24.2 新特性 - REST数据源增强
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-01-19 23:27:00 / 修改时间：23:40:33" itemprop="dateCreated datePublished" datetime="2025-01-19T23:27:00+08:00">2025-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - REST数据源增强">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192327835.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/242-rest-data-source-enhancements" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/242-rest-data-source-enhancements</a></p>
+<p>新的 Oracle APEX 24.2 为 <strong>REST数据源</strong> 共享组件带来了新的增强功能。以下是新增强功能的摘要：</p>
+<ul>
+<li>支持“<strong>简单HTTP</strong>”REST 数据源中基于令牌的分页</li>
+<li>将排序谓词下推到“ORDS”类型的REST源时支持“<strong>Order By NULL</strong>”子句</li>
+<li>灵活的远程服务器</li>
+<li>以编程方式设置Web凭据的范围</li>
+</ul>
+<p>在这篇博文中，我们将探讨它们。</p>
+<h1 id="支持令牌的-“简单HTTP”-REST数据源"><a href="#支持令牌的-“简单HTTP”-REST数据源" class="headerlink" title="支持令牌的 “简单HTTP” REST数据源"></a>支持令牌的 “简单HTTP” REST数据源</h1><p>某些API支持基于令牌的分页。基于标记的分页依赖于不透明字符串，通常称为标记或光标，它充当指向下一页结果的指针。此令牌包含在JSON响应中，并在下一个API请求中作为URL参数传递以检索后续结果。</p>
+<p>以下是基于令牌的分页 REST API 示例。它使用 <strong>cursor</strong> 和 <strong>nextCursor</strong> 进行基于标记的分页。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192331660.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>如果您为之前显示的基于令牌的分页 REST API 创建“简单HTTP”类型的 REST 数据源，则该数据源类型现在支持具有基于令牌的分页的 REST 服务，从而增强与使用此分页方案的API的集成。</p>
+<p>您会注意到一个名为“页面大小和页面令牌”的新分页类型，您可以在其中定义以下参数的值：</p>
+<ul>
+<li>页面大小URL参数</li>
+<li>页面令牌URL参数</li>
+<li>下一页标记选择器</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192331816.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>现在，您可以使用该REST数据源作为交互式报表组件的源，并且导航可以无缝工作。</p>
+<h1 id="将排序谓词下推到“ORDS”类型的-REST-源时支持“Order-By-NULL”子句"><a href="#将排序谓词下推到“ORDS”类型的-REST-源时支持“Order-By-NULL”子句" class="headerlink" title="将排序谓词下推到“ORDS”类型的 REST 源时支持“Order By NULL”子句"></a>将排序谓词下推到“ORDS”类型的 REST 源时支持“Order By NULL”子句</h1><p>当将排序谓词下推到“ORDS”类型的 REST 源时，Oracle APEX 24.2 现在支持“ORDS By NULL”子句。此功能需要 ORDS 22.4 及更高版本。</p>
+<p>此属性指定如何处理 NULL 进行排序。</p>
+<p>可用选项包括：</p>
+<ul>
+<li><strong>空值最高</strong>按升序排列，空值出现在最后。按降序排列，NULL最先出现。</li>
+<li>另一个选项<strong>Flexible</strong>。仅 ORDS 22.4 或更高版本提供的REST数据源支持此选项。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192333950.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>例如，如果您为REST数据源选择“Flexible”并在交互式报表中使用它，您将在“<strong>排序</strong>”选项下看到一个新的“<strong>空排序</strong>”列。此功能允许您将“<strong>Nulls Always Last</strong>”或“<strong>Nulls Always First</strong>”谓词推送到ORDS，无论排序是升序还是降序。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192335339.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="灵活的远程服务器"><a href="#灵活的远程服务器" class="headerlink" title="灵活的远程服务器"></a>灵活的远程服务器</h1><p>Oracle APEX 引入了<strong>灵活的远程服务器</strong>，允许在运行时动态配置REST数据源和支持REST的SQL引用的服务器端点。此功能使应用程序能够根据用户或特定环境的要求动态调整<strong>远程服务器URL</strong>，从而增强了灵活性。您可以使用PL/SQL配置过程轻松动态地派生远程服务器对象的基本URL（用于REST数据源、支持REST的SQL、身份验证），APEX根据当前应用程序、租户或环境设置调用完全动态的端点。</p>
+<p>该功能包括两个关键亮点：</p>
+<ul>
+<li><strong>动态URL替换</strong>：允许使用配置过程中定义的参数在远程服务器URL中进行运行时替换。</li>
+<li><strong>配置过程</strong>：使开发人员能够定义PL/SQL过程或匿名块以动态生成替换参数。</li>
+</ul>
+<h2 id="示例-动态-URL-替换"><a href="#示例-动态-URL-替换" class="headerlink" title="示例 - 动态 URL 替换"></a>示例 - 动态 URL 替换</h2><p>远程服务器URL可以包含替换参数，允许在运行时使用动态值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//#host#:#port#/ords/#tenant#/api</span></span><br></pre></td></tr></table></figure>
+<p><strong>#host#、#port#</strong> 和 <strong>#tenant#</strong> 等替换参数可以根据运行时设置动态更新。</p>
+<h2 id="示例-配置过程"><a href="#示例-配置过程" class="headerlink" title="示例 - 配置过程"></a>示例 - 配置过程</h2><p>以下是PL/SQL配置过程的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">procedure configure_remote_server( </span><br><span class="line">                    p_info IN apex_plugin.t_remote_server_info,</span><br><span class="line">                    p_config OUT apex_plugin.t_remote_server_config</span><br><span class="line">)</span><br><span class="line">IS</span><br><span class="line">BEGIN</span><br><span class="line">    p_config.base_url := &apos;https://#host#:#port#/ords/#workspace#/#api#&apos;;</span><br><span class="line">    p_config.substitutions := apex_t_varchar2();</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;host&apos;, v(&apos;P65_HOSTNAME&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;port&apos;, v(&apos;P65_PORT&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;workspace&apos;, v(&apos;P65_WORKSPACE&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;api&apos;, v(&apos;P65_API&apos;));</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192338471.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="以编程方式设置-Web-凭据的范围"><a href="#以编程方式设置-Web-凭据的范围" class="headerlink" title="以编程方式设置 Web 凭据的范围"></a>以编程方式设置 Web 凭据的范围</h1><p>现在可以使用<strong>APEX_CREDENTIAL</strong> API 以编程方式设置Web凭据的“<strong>范围</strong>”。</p>
+<p>例如，如果您有一个带有名为“<strong>oauth_web_creds</strong>”的<strong>静态ID</strong>的Web凭证，开发人员可以使用以下 PL/SQL 代码以编程方式设置范围以具有<strong>user:read</strong>权限：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line">    apex_credential.set_scope (</span><br><span class="line">        p_credential_static_id =&gt; &apos;oauth_web_creds&apos;,</span><br><span class="line">        p_scope                =&gt; &apos;user:read&apos; </span><br><span class="line">    );</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从支持基于令牌的分页到支持“<strong>Order By Null</strong>”子句，将排序谓词下推到“ORDS”类型的REST源，再到提供灵活的远程服务器以编程方式设置Web凭证范围的能力，Oracle APEX 24.2 保持了向共享REST数据源添加更多功能。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2773,237 +3029,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20241229/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20241229/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2024.12
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2024-12-29 18:55:00 / 修改时间：19:10:03" itemprop="dateCreated datePublished" datetime="2024-12-29T18:55:00+08:00">2024-12-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20241229/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2024.12">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202412291900434.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>以下是截止至 <code>2024.12.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="https://toshareapex.hashnode.dev/tips-parte-3-el-camino-hacia-la-modernizacion-adaptacion-y-capacitacion-en-la-transicion-de-oracle-forms-a-oracle-apex" target="_blank" rel="noopener">Tips Part 3: The Path to Modernization: Adaptation and Training in the Transition from Oracle Forms to Oracle APEX</a> <code>2024.12</code></li>
-<li><a href="https://haczek.blog/executing-pl-sql-as-a-logged-in-user-in-oracle-apex-2/" target="_blank" rel="noopener">Executing SQL and PL/SQL as a logged-in user in Oracle APEX</a> <code>2024.12</code></li>
-<li><a href="https://blog.cloudnueva.com/calling-fusion-erp-bip-reports-from-apex" target="_blank" rel="noopener">Consuming Fusion ERP Data with BI Publisher &amp; APEX</a> <code>2024.12</code></li>
-<li><a href="https://btimmerman.hashnode.dev/arranging-oracle-apex-items-buttons" target="_blank" rel="noopener">Arranging Oracle APEX items &amp; buttons</a> <code>2024.12</code></li>
-<li><a href="https://yaitcon.hashnode.dev/apex-office-print-integration" target="_blank" rel="noopener">Apex Office Print integration</a> <code>2024.12</code></li>
-<li><a href="https://oraclequirks.blogspot.com/2024/12/accessing-values-stored-in-global.html" target="_blank" rel="noopener">Accessing values stored in a global context from APEX</a> <code>2024.12</code></li>
-<li><a href="https://karelekema.hashnode.dev/oracle-apex-custom-client-side-validation-plugin" target="_blank" rel="noopener">Oracle APEX - Custom Client-Side Validation Plugin</a> <code>2024.12</code></li>
-<li><a href="https://spendolini.blog/preserving-the-oracle-database-container" target="_blank" rel="noopener">Preserving the Oracle Database Container</a> <code>2024.12</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/bulk-import-users-from-oracle-apex-to-keycloak" target="_blank" rel="noopener">Bulk Import Users from Oracle &amp; APEX to Keycloak</a> <code>2024.12</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/seamlessly-transfer-apex-application-users-to-keycloak-with-keycloak-user-migration-plugin" target="_blank" rel="noopener">Seamlessly transfer APEX application users to Keycloak with Keycloak user migration plugin</a> <code>2024.12</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/managing-apex-web-credentials-remote-servers-on-import" target="_blank" rel="noopener">Managing APEX Web Credentials &amp; Remote Servers on Import</a> <code>2024.12</code></li>
-<li><a href="https://karelekema.hashnode.dev/oracle-apex-refresh-region-keep-pagination-plugin" target="_blank" rel="noopener">Oracle APEX - Refresh Region Keep Pagination Plugin</a> <code>2024.12</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-which-plsql-apis-to-use-in-apex-for-oci-rest-api-integration-projects-running-on-autonomous-db" target="_blank" rel="noopener">APEX: Which PL/SQL APIs to use in APEX for OCI REST API Integration projects running on Autonomous DB</a> <code>2024.12</code></li>
-<li><a href="https://rafal.hashnode.dev/part-51-oracle-sqlcl-project-the-only-cicd-tool-for-apex-you-will-ever-need" target="_blank" rel="noopener">Oracle’s SQLcl Project - the only CI/CD tool for APEX you will ever need</a> <code>2024.12</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/oracle-fusion-theme-style-for-apex" target="_blank" rel="noopener">Oracle Fusion Theme Style for APEX</a> <code>2024.12</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/apexregionopenquerycontext-and-row-counts" target="_blank" rel="noopener">APEX_REGION.OPEN_QUERY_CONTEXT and Row Counts</a> <code>2024.12</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-understand-the-sample-oci-document-generator-app" target="_blank" rel="noopener">APEX: Understand the Sample OCI Document Generator App</a> <code>2024.12</code></li>
-<li><a href="https://apexblog.dev/qr-code-enchancements" target="_blank" rel="noopener">QR CODE enchancements</a> <code>2024.12</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3055,7 +3080,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">163</span>
+                    <span class="site-state-item-count">164</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

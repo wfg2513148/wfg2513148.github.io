@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2025-01-19T14:51:24.245Z</updated>
+  <updated>2025-01-19T15:40:33.847Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 24.2 新特性 - REST数据源增强</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/</id>
+    <published>2025-01-19T15:27:00.000Z</published>
+    <updated>2025-01-19T15:40:33.847Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192327835.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/242-rest-data-source-enhancements" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/242-rest-data-source-enhancements</a></p><p>新的 Oracle APEX 24.2 为 <strong>REST数据源</strong> 共享组件带来了新的增强功能。以下是新增强功能的摘要：</p><ul><li>支持“<strong>简单HTTP</strong>”REST 数据源中基于令牌的分页</li><li>将排序谓词下推到“ORDS”类型的REST源时支持“<strong>Order By NULL</strong>”子句</li><li>灵活的远程服务器</li><li>以编程方式设置Web凭据的范围</li></ul><p>在这篇博文中，我们将探讨它们。</p><h1 id="支持令牌的-“简单HTTP”-REST数据源"><a href="#支持令牌的-“简单HTTP”-REST数据源" class="headerlink" title="支持令牌的 “简单HTTP” REST数据源"></a>支持令牌的 “简单HTTP” REST数据源</h1><p>某些API支持基于令牌的分页。基于标记的分页依赖于不透明字符串，通常称为标记或光标，它充当指向下一页结果的指针。此令牌包含在JSON响应中，并在下一个API请求中作为URL参数传递以检索后续结果。</p><p>以下是基于令牌的分页 REST API 示例。它使用 <strong>cursor</strong> 和 <strong>nextCursor</strong> 进行基于标记的分页。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192331660.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>如果您为之前显示的基于令牌的分页 REST API 创建“简单HTTP”类型的 REST 数据源，则该数据源类型现在支持具有基于令牌的分页的 REST 服务，从而增强与使用此分页方案的API的集成。</p><p>您会注意到一个名为“页面大小和页面令牌”的新分页类型，您可以在其中定义以下参数的值：</p><ul><li>页面大小URL参数</li><li>页面令牌URL参数</li><li>下一页标记选择器</li></ul><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192331816.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>现在，您可以使用该REST数据源作为交互式报表组件的源，并且导航可以无缝工作。</p><h1 id="将排序谓词下推到“ORDS”类型的-REST-源时支持“Order-By-NULL”子句"><a href="#将排序谓词下推到“ORDS”类型的-REST-源时支持“Order-By-NULL”子句" class="headerlink" title="将排序谓词下推到“ORDS”类型的 REST 源时支持“Order By NULL”子句"></a>将排序谓词下推到“ORDS”类型的 REST 源时支持“Order By NULL”子句</h1><p>当将排序谓词下推到“ORDS”类型的 REST 源时，Oracle APEX 24.2 现在支持“ORDS By NULL”子句。此功能需要 ORDS 22.4 及更高版本。</p><p>此属性指定如何处理 NULL 进行排序。</p><p>可用选项包括：</p><ul><li><strong>空值最高</strong>按升序排列，空值出现在最后。按降序排列，NULL最先出现。</li><li>另一个选项<strong>Flexible</strong>。仅 ORDS 22.4 或更高版本提供的REST数据源支持此选项。</li></ul><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192333950.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>例如，如果您为REST数据源选择“Flexible”并在交互式报表中使用它，您将在“<strong>排序</strong>”选项下看到一个新的“<strong>空排序</strong>”列。此功能允许您将“<strong>Nulls Always Last</strong>”或“<strong>Nulls Always First</strong>”谓词推送到ORDS，无论排序是升序还是降序。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192335339.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><h1 id="灵活的远程服务器"><a href="#灵活的远程服务器" class="headerlink" title="灵活的远程服务器"></a>灵活的远程服务器</h1><p>Oracle APEX 引入了<strong>灵活的远程服务器</strong>，允许在运行时动态配置REST数据源和支持REST的SQL引用的服务器端点。此功能使应用程序能够根据用户或特定环境的要求动态调整<strong>远程服务器URL</strong>，从而增强了灵活性。您可以使用PL/SQL配置过程轻松动态地派生远程服务器对象的基本URL（用于REST数据源、支持REST的SQL、身份验证），APEX根据当前应用程序、租户或环境设置调用完全动态的端点。</p><p>该功能包括两个关键亮点：</p><ul><li><strong>动态URL替换</strong>：允许使用配置过程中定义的参数在远程服务器URL中进行运行时替换。</li><li><strong>配置过程</strong>：使开发人员能够定义PL/SQL过程或匿名块以动态生成替换参数。</li></ul><h2 id="示例-动态-URL-替换"><a href="#示例-动态-URL-替换" class="headerlink" title="示例 - 动态 URL 替换"></a>示例 - 动态 URL 替换</h2><p>远程服务器URL可以包含替换参数，允许在运行时使用动态值：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//#host#:#port#/ords/#tenant#/api</span></span><br></pre></td></tr></table></figure><p><strong>#host#、#port#</strong> 和 <strong>#tenant#</strong> 等替换参数可以根据运行时设置动态更新。</p><h2 id="示例-配置过程"><a href="#示例-配置过程" class="headerlink" title="示例 - 配置过程"></a>示例 - 配置过程</h2><p>以下是PL/SQL配置过程的示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">procedure configure_remote_server( </span><br><span class="line">                    p_info IN apex_plugin.t_remote_server_info,</span><br><span class="line">                    p_config OUT apex_plugin.t_remote_server_config</span><br><span class="line">)</span><br><span class="line">IS</span><br><span class="line">BEGIN</span><br><span class="line">    p_config.base_url := &apos;https://#host#:#port#/ords/#workspace#/#api#&apos;;</span><br><span class="line">    p_config.substitutions := apex_t_varchar2();</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;host&apos;, v(&apos;P65_HOSTNAME&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;port&apos;, v(&apos;P65_PORT&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;workspace&apos;, v(&apos;P65_WORKSPACE&apos;));</span><br><span class="line">    apex_string.plist_put(p_config.substitutions, &apos;api&apos;, v(&apos;P65_API&apos;));</span><br><span class="line">END;</span><br></pre></td></tr></table></figure><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192338471.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><h1 id="以编程方式设置-Web-凭据的范围"><a href="#以编程方式设置-Web-凭据的范围" class="headerlink" title="以编程方式设置 Web 凭据的范围"></a>以编程方式设置 Web 凭据的范围</h1><p>现在可以使用<strong>APEX_CREDENTIAL</strong> API 以编程方式设置Web凭据的“<strong>范围</strong>”。</p><p>例如，如果您有一个带有名为“<strong>oauth_web_creds</strong>”的<strong>静态ID</strong>的Web凭证，开发人员可以使用以下 PL/SQL 代码以编程方式设置范围以具有<strong>user:read</strong>权限：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line">    apex_credential.set_scope (</span><br><span class="line">        p_credential_static_id =&gt; &apos;oauth_web_creds&apos;,</span><br><span class="line">        p_scope                =&gt; &apos;user:read&apos; </span><br><span class="line">    );</span><br><span class="line">end;</span><br></pre></td></tr></table></figure><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从支持基于令牌的分页到支持“<strong>Order By Null</strong>”子句，将排序谓词下推到“ORDS”类型的REST源，再到提供灵活的远程服务器以编程方式设置Web凭证范围的能力，Oracle APEX 24.2 保持了向共享REST数据源添加更多功能。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501192327835.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 24.2 新特性 - 数据库对象依赖检测增强</title>
@@ -552,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/pexels-photo-3205267.jpeg?x-oss-process=image/format,jpg/quality,q_60&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2024.04</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240429/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240429/</id>
-    <published>2024-04-29T03:21:00.000Z</published>
-    <updated>2024-04-29T05:09:55.408Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_7223.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2024.04.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://www.rittmanmead.com/blog/2024/04/oracle-apex-support-upgrade/" target="_blank" rel="noopener">Oracle APEX - Understanding Upgrades and Support</a> <code>2024.04</code></li><li><a href="https://www.rittmanmead.com/blog/2024/04/oracle-apex-escape-special-characters/" target="_blank" rel="noopener">Oracle APEX - Escape Vulnerabilities</a> <code>2024.04</code></li><li><a href="https://www.oracleplsqltr.com/2024/04/08/how-to-implement-wait-spinner-in-dynamic-action/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=how-to-implement-wait-spinner-in-dynamic-action" target="_blank" rel="noopener">How to implement wait spinner in APEX dynamic action</a> <code>2024.04</code></li><li><a href="https://philgrinham.hashnode.dev/oracle-apex-theme-update-left-me-spinning" target="_blank" rel="noopener">Oracle APEX Theme Update Left Me Spinning</a> <code>2024.04</code></li><li><a href="https://hartenfeller.dev/blog/apex-global-application-search" target="_blank" rel="noopener">How to add global application search to your APEX app</a> <code>2024.04</code></li><li><a href="https://cardoso.hashnode.dev/simplifying-log-recording-in-oracle-databases" target="_blank" rel="noopener">Simplifying Log Recording in Oracle Databases</a> <code>2024.04</code></li><li><a href="https://blog.cloudnueva.com/rad-stack-integrations-part1" target="_blank" rel="noopener">Building Integrations with the Oracle DB APEX &amp; ORDS - Part 1</a> <code>2024.04</code></li><li><a href="https://cardoso.hashnode.dev/scrolling-columns-in-interactive-reports-and-interactive-grids-in-oracle-apex" target="_blank" rel="noopener">Scrolling Columns in Interactive Reports and Interactive Grids in Oracle APEX</a> <code>2024.04</code></li><li><a href="https://diveintoapex.com/2024/04/19/flexing-fusion-apps-filters/" target="_blank" rel="noopener">Flexing Fusion Apps Filters</a> <code>2024.04</code></li><li><a href="https://jkerr.hashnode.dev/upgrading-systems-transitioning-legacy-data-to-a-new-system" target="_blank" rel="noopener">Using Oracle Forms migration to Oracle APEX as an example</a> <code>2024.04</code></li><li><a href="https://diveintoapex.com/2024/04/24/enabling-debug-on-apex-builder/" target="_blank" rel="noopener">Enabling Debug on APEX Builder</a> <code>2024.04</code></li><li><a href="https://mattmulvaney.hashnode.dev/review-of-brookstrut-sample-app-in-apex-232" target="_blank" rel="noopener">Review of Brookstrut Sample App in APEX 23.2</a> <code>2024.04</code></li><li><a href="https://www.oneoracledeveloper.com/2024/04/apex-custom-warning-messages.html" target="_blank" rel="noopener">APEX &amp; custom warning messages</a> <code>2024.04</code></li><li><a href="https://lschilde.blogspot.com/2024/04/oracle-apex-security-apex-sert.html" target="_blank" rel="noopener">ORACLE APEX Security - APEX SERT 23.2</a> <code>2024.04</code></li><li><a href="https://codix.ai/user-responsibilities-in-oracle-apex-for-efficient-authorization-management/" target="_blank" rel="noopener">User Responsibilities in Oracle APEX for Efficient Authorization Management</a> <code>2024.04</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_7223.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>
