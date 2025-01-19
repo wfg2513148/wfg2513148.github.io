@@ -417,7 +417,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2025-01-19 18:39:00 / 修改时间：19:16:11" itemprop="dateCreated datePublished" datetime="2025-01-19T18:39:00+08:00">2025-01-19</time>
+              <time title="创建时间：2025-01-19 18:39:00 / 修改时间：19:23:08" itemprop="dateCreated datePublished" datetime="2025-01-19T18:39:00+08:00">2025-01-19</time>
             
 
             
@@ -537,10 +537,10 @@ var _hmt = _hmt || [];
 <li>创建 Oracle AI 矢量搜索页面</li>
 </ol>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191854618.png?x-oss-process=image/format,jpg/quality,q_60" alt="使用Oracle Vector Search作为搜索类型创建的搜索配置页面"></p>
-<h1 id="1-在数据库表中添加向量列"><a href="#1-在数据库表中添加向量列" class="headerlink" title="1.在数据库表中添加向量列"></a>1.在数据库表中添加向量列</h1><h2 id="什么是AI矢量搜索？"><a href="#什么是AI矢量搜索？" class="headerlink" title="什么是AI矢量搜索？"></a>什么是AI矢量搜索？</h2><p>AI矢量搜索使用高级嵌入模型将数据表示为数学向量。与传统的文本搜索不同，矢量搜索允许语义查询，识别各种数据类型之间的相似性。无论是人脸识别、查找相关图像还是进行高级文本搜索，矢量嵌入都可以检索高度相关的结果。</p>
+<h1 id="在数据库表中添加向量列"><a href="#在数据库表中添加向量列" class="headerlink" title="在数据库表中添加向量列"></a>在数据库表中添加向量列</h1><h2 id="什么是AI矢量搜索？"><a href="#什么是AI矢量搜索？" class="headerlink" title="什么是AI矢量搜索？"></a>什么是AI矢量搜索？</h2><p>AI矢量搜索使用高级嵌入模型将数据表示为数学向量。与传统的文本搜索不同，矢量搜索允许语义查询，识别各种数据类型之间的相似性。无论是人脸识别、查找相关图像还是进行高级文本搜索，矢量嵌入都可以检索高度相关的结果。</p>
 <h2 id="矢量数据类型"><a href="#矢量数据类型" class="headerlink" title="矢量数据类型"></a>矢量数据类型</h2><p>VECTOR数据类型随Oracle Database 23ai的发布而引入，为在数据库中存储向量嵌入和业务数据提供了基础。使用嵌入模型，您可以将非结构化数据转换为向量嵌入，然后可用于对业务数据进行语义查询。</p>
 <p>请参阅以下在表定义中使用VECTOR数据类型的基本示例：创建表文档（doc_id INT、doc_text CLOB、doc_vector VECTOR）；</p>
-<h1 id="2-什么是向量提供者"><a href="#2-什么是向量提供者" class="headerlink" title="2.什么是向量提供者"></a>2.什么是向量提供者</h1><p>矢量提供程序是将文本转换为嵌入的关键。这种转变可以通过多种方式进行，包括：</p>
+<h1 id="什么是向量提供者"><a href="#什么是向量提供者" class="headerlink" title="什么是向量提供者"></a>什么是向量提供者</h1><p>矢量提供程序是将文本转换为嵌入的关键。这种转变可以通过多种方式进行，包括：</p>
 <ul>
 <li>本地数据库ONNX模型：直接在数据库中运行以实现高效处理，并具有将数据保留在数据库中以增强隐私性的额外优势。</li>
 <li>生成人工智能服务：生成嵌入的人工智能服务。</li>
@@ -568,7 +568,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p><strong>注意</strong>：如果您使用数据库ONNX模型，请确保您已将这些ONNX模型直接导入到分配给工作区的架构中。要了解有关如何加载ONNX模型的更多信息，请查看此<a href="https://blogs.oracle.com/apex/post/implement-semantic-search-in-oracle-apex-using-ai-vector-search-of-oracle-database-23ai" target="_blank" rel="noopener">博客文章</a>。</p>
 </blockquote>
-<h1 id="3-从向量提供者检索向量嵌入"><a href="#3-从向量提供者检索向量嵌入" class="headerlink" title="3. 从向量提供者检索向量嵌入"></a>3. 从向量提供者检索向量嵌入</h1><p>Oracle AI 矢量搜索使用矢量嵌入 - 捕获文本、图像和音频等数据背后含义的数学表示。与精确匹配单词的关键字搜索不同，矢量搜索侧重于上下文和含义，提供更准确的结果。</p>
+<h1 id="从向量提供者检索向量嵌入"><a href="#从向量提供者检索向量嵌入" class="headerlink" title="从向量提供者检索向量嵌入"></a>从向量提供者检索向量嵌入</h1><p>Oracle AI 矢量搜索使用矢量嵌入 - 捕获文本、图像和音频等数据背后含义的数学表示。与精确匹配单词的关键字搜索不同，矢量搜索侧重于上下文和含义，提供更准确的结果。</p>
 <p>它将数据映射到多维空间，其中相似的概念更加紧密地结合在一起，反映了它们的语义关系。这种方法使搜索在不同类型的内容中更具创新性和更相关。</p>
 <p>在APEX中设置搜索配置之前，建议将数据转换为向量嵌入并存储在向量数据类型列中。从 APEX 24.2 开始，新的PL/SQL API <strong>APEX_AI.GET_VECTOR_EMBEDDINGS</strong> 可使用多个签名来简化此过程。您还可以使用此API插入或更新矢量数据。</p>
 <p><strong>示例1：</strong></p>
@@ -577,7 +577,7 @@ var _hmt = _hmt || [];
 <p><strong>示例2：</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> EBA_PROJECT_MILESTONES</span><br><span class="line"><span class="keyword">SET</span> VECTOR_COLUMN = APEX_AI.GET_VECTOR_EMBEDDINGS(</span><br><span class="line">                              P_VALUE             =&gt;  <span class="keyword">NAME</span> || <span class="string">' '</span> || DESCRIPTION,</span><br><span class="line">                              P_SERVICE_STATIC_ID =&gt; <span class="string">'onnx_model'</span>);</span><br></pre></td></tr></table></figure>
 <p>在上面的示例中，p_service_static_id 指的是我们在上一节中创建的 Vector Provider Static ID。</p>
-<h1 id="4-创建搜索类型为-Oracle-Vector-Search-的搜索配置"><a href="#4-创建搜索类型为-Oracle-Vector-Search-的搜索配置" class="headerlink" title="4. 创建搜索类型为 Oracle Vector Search 的搜索配置"></a>4. 创建搜索类型为 Oracle Vector Search 的搜索配置</h1><p>Oracle AI Vector Search 配置需要 Oracle Database 23ai 或更高版本。在创建 Oracle AI Vector Search 配置之前，您需要完成上述所有步骤。</p>
+<h1 id="创建搜索类型为-Oracle-Vector-Search-的搜索配置"><a href="#创建搜索类型为-Oracle-Vector-Search-的搜索配置" class="headerlink" title="创建搜索类型为 Oracle Vector Search 的搜索配置"></a>创建搜索类型为 Oracle Vector Search 的搜索配置</h1><p>Oracle AI Vector Search 配置需要 Oracle Database 23ai 或更高版本。在创建 Oracle AI Vector Search 配置之前，您需要完成上述所有步骤。</p>
 <p>以下是创建 Oracle Vector Search 配置的方法：</p>
 <ul>
 <li>导航到<strong>Workspace</strong>主页，单击<strong>App Builder</strong>，然后选择您的应用程序。打开<strong>共享组件</strong>，然后单击导航和搜索下的<strong>搜索配置</strong>。</li>
