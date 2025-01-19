@@ -371,6 +371,272 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-workflow/" itemprop="url">
+                  Oracle APEX 24.2 新特性 - Workflow工作流
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-01-19 13:33:00 / 修改时间：13:55:11" itemprop="dateCreated datePublished" datetime="2025-01-19T13:33:00+08:00">2025-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-workflow/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - Workflow工作流">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191354129.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本博文翻译自：<a href="https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>APEX 23.2引入了工作流作为本机组件，专门用于建模和执行业务流程。APEX 24.2引入了多项增强功能，例如运行时工作流程图的可用性、存档/清除增强功能等。对于刚接触APEX工作流程的用户，在继续阅读此博客之前，可以先阅读以下介绍APEX工作流程概念的博客：</p>
+<ul>
+<li><a href="https://blogs.oracle.com/apex/post/simplify-medical-appointments-using-apex-workflow" target="_blank" rel="noopener">使用APEX工作流程简化业务流程管理</a></li>
+<li><a href="https://blogs.oracle.com/apex/post/multi-level-expense-approval-using-apex-workflow" target="_blank" rel="noopener">使用APEX工作流程进行多级费用审批</a></li>
+<li><a href="https://blogs.oracle.com/apex/post/apex-workflow-development-lifecycle" target="_blank" rel="noopener">APEX工作流程生命周期</a></li>
+</ul>
+<h1 id="为什么要在Workflow中使用工作流？"><a href="#为什么要在Workflow中使用工作流？" class="headerlink" title="为什么要在Workflow中使用工作流？"></a>为什么要在Workflow中使用工作流？</h1><p>允许从一个Workflow工作流调用另一个Workflow工作流有很多好处。</p>
+<ul>
+<li><strong>可管理性</strong> - 将复杂的业务流程分解为更小的、可管理的块，这些块可以从父工作流程中调用，从而保持流程干净且易于理解。员工入职是一个很好的例子，其中主工作流程可以由较小的不同工作流程组成，例如采购和申请、人力资源任务、部门任务、培训等。</li>
+<li><strong>可重用性</strong> - 常见任务可以组合到一个工作流程中，该工作流程可以由其他工作流程重用。典型的例子是个人的信用价值计算。这样的工作流程可以被不同的工作流程重复使用，例如 a) 住院流程、b) 住房贷款审批流程、c) 国际旅行审批等等。</li>
+</ul>
+<h1 id="APEX-调用工作流程活动"><a href="#APEX-调用工作流程活动" class="headerlink" title="APEX - 调用工作流程活动"></a>APEX - 调用工作流程活动</h1><p>APEX 24.2 版本引入了“<strong>调用工作流</strong>”活动，一种可以在工作流中用于调用不同工作流的特殊活动。</p>
+<p>如下图所示，“调用工作流活动”与其他活动一起出现在“工作流设计器”的“<strong>图表生成器</strong>”窗格底部的“<strong>活动选项板</strong>”中，并且可以拖放到工作流图表中。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191338189.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1.家长工作流程 - 笔记本电脑审批"></p>
+<p>下图显示了如何作为<strong>笔记本电脑请求</strong>工作流的一部分来调用<strong>预算审批</strong>工作流以及可用于<strong>调用工作流活动的不同设置</strong>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191342045.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2.调用的工作流程 - 预算审批"></p>
+<h2 id="家长工作流程指导"><a href="#家长工作流程指导" class="headerlink" title="家长工作流程指导"></a>家长工作流程指导</h2><p>请注意左窗格树区域中展开的“<strong>调用预算审批</strong>”活动的参数。<strong>员工ID</strong>和<strong>项目</strong>是从<strong>笔记本电脑请求工作流程</strong>传递到<strong>预算审批工作流程</strong>的输入。<strong>状态</strong>是<strong>预算审批工作流程</strong>传递回<strong>笔记本电脑审批工作流程</strong>的输出。根据通过的<strong>状态</strong>，笔记本电脑请求会被批准或拒绝。</p>
+<p>右侧窗格显示<strong>属性编辑器</strong>中的调用工作流设置：</p>
+<ul>
+<li><p><strong>工作流程定义</strong>：这是一个下拉列表，可以在其中选择要调用的工作流程。在此示例中，选择了预算审批工作流程。如果您尝试选择与当前工作流程相同的工作流程，或者尝试选择作为当前工作流程的父工作流程，则会引发验证错误。这消除了业务流程中引入循环依赖的风险。</p>
+</li>
+<li><p><strong>发起者项目</strong>：您可以选择指定所调用工作流发起者的父工作流变量。如果留空，父工作流的启动器将自动成为被调用工作流的启动器。</p>
+</li>
+<li><p><strong>详细信息主键项</strong>：如果调用的工作流指定了其他详细信息，则此项目指定与调用的工作流关联的其他详细信息记录的主键值。在此示例中，预算审批工作流程（如图 2 所示）将表EBA_DEMO_APPR_BUDGET指定为附加详细信息，并将EMPLOYEE_ID作为主键列。因此，图 1 中的详细信息主键指向唯一标识EBA_DEMO_APPR_BUDGET表中的行的 Employee ID 值。</p>
+</li>
+<li><p><strong>工作流ID项</strong>：可以选择一个工作流变量来存储调用的工作流实例 ID 的值。</p>
+</li>
+</ul>
+<p>接下来的两个设置在“<strong>调用工作流</strong>”活动的上下文中特别重要</p>
+<ul>
+<li><p><strong>等待完成</strong>：此开关确定父工作流是否将等待所调用的工作流完成，然后再进行到下一个活动。在我们的示例中，如图 I 所示，“等待完成”开关处于打开状态。这意味着需要先完成预算审批工作流程，然后才能继续处理笔记本电脑请求工作流程。当这个开关关闭时，它就是一个即发即忘的调用。父工作流仅调用指定的工作流并继续执行下一个活动。调用的工作流和父工作流执行在此时分叉，并且从此时开始两个流之间不存在依赖关系。这个开关是打开还是关闭完全取决于业务用例。</p>
+</li>
+<li><p><strong>重试点</strong>：这是一个具有两个值的下拉列表 - <strong>Resume</strong>和<strong>Start Over</strong>。<br>这是一些背景信息。当调用的工作流遇到故障并且等待完成设置为 true 时，故障将传播到父工作流。此时，工作流管理员或所有者可以重试父工作流。如果重试点设置为<strong>Resume</strong>，则将从故障活动中重试调用的工作流实例。如果重试点设置为“<strong>重新开始</strong>”，则调用的工作流实例将终止，并创建调用的工作流的新实例。重试点设置取决于业务用例。故障缓解要求因业务而异，对于某些原子工作流程，在故障后重新启动更有意义，而对于其他工作流程，修复故障活动并恢复现有实例是可行的。</p>
+</li>
+</ul>
+<h1 id="父工作流程和调用工作流程之间的无缝导航"><a href="#父工作流程和调用工作流程之间的无缝导航" class="headerlink" title="父工作流程和调用工作流程之间的无缝导航"></a>父工作流程和调用工作流程之间的无缝导航</h1><p>工作流程设计器允许在父工作流程和调用的工作流程之间轻松直观地来回导航。要从父工作流打开调用的工作流模型/定义，只需单击调用的工作流活动上的<strong>打开上下文</strong>菜单条目。要返回到父工作流模型/定义，请单击图表生成器工具栏区域中的“后退”按钮。下图说明了这种体验。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191348645.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191348216.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h1><p>由于支持调用工作流，APEX 24.2还允许指定参数方向（In、Out、In/Out）作为定义工作流的一部分。在预算审批工作流程中，状态参数指定为输入/输出。在父级（笔记本电脑请求）工作流的调用预算审批中，状态参数映射到 V_TASK_OUTCOME 工作流变量。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191349271.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191350578.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这意味着 V_TASK_OUTCOME 变量值从笔记本电脑请求工作流程传递到调用的预算审批工作流程。在调用的工作流程中，状态值经过处理后，通过 V_TASK_OUTCOME 变量返回到笔记本电脑请求工作流程。</p>
+<p>注意：当工作流程用于<strong>工作流程 - 起始页流程</strong>时，不会显示输出参数。这是因为工作流一旦从页面提交，就会异步运行，并且输出参数无法真正返回到页面。因此，输出参数仅与调用工作流活动中使用的工作流上下文相关。</p>
+<h1 id="运行时体验"><a href="#运行时体验" class="headerlink" title="运行时体验"></a>运行时体验</h1><p>在运行时，当为员工提出笔记本电脑请求并且笔记本电脑请求工作流开始执行时，它会在某一时刻到达调用预算审批活动。此时发起者会在<strong>工作流控制台中看到两个工作流</strong>。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191350037.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>请注意右侧“<strong>笔记本电脑请求工作流程详细信息</strong>”页面中带下划线的“<strong>调用预算批准</strong>”活动。单击该活动将打开调用的工作流程详细信息，如下所示。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191351913.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>调用的工作流程的详细信息页面在顶部有一个<strong>附加</strong>按钮（至父工作流程），用于返回父工作流程的详细信息。</p>
+<p>这有助于在运行时在父工作流和调用的工作流之间进行无缝来回导航。</p>
+<h1 id="从另一个应用程序复制工作流程"><a href="#从另一个应用程序复制工作流程" class="headerlink" title="从另一个应用程序复制工作流程"></a>从另一个应用程序复制工作流程</h1><p>APEX 24.2 中提供的另一个重要增强功能是能够从不同的应用程序复制工作流程。有了此功能，可以将形成自定义模板的标准化工作流程从基本应用程序复制到自定义应用程序中，然后根据业务需求进行编辑。这节省了开发人员的时间，并降低了实施错误的风险。从不同的应用程序复制工作流时，工作流使用的任何其他共享组件（例如电子邮件模板、人工任务、REST 数据源）也会复制到目标应用程序。如果正在复制的工作流具有调用工作流活动，则调用的工作流也会复制到目标应用程序</p>
+<p>从其他应用程序复制选项在工作流报告页面中可用，该页面从共享组件-&gt; 工作流和自动化-&gt; 工作流打开。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191352961.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>在此示例中，当复制笔记本电脑请求工作流程时，它也会自动复制预算审批工作流程，因为它是由笔记本电脑请求工作流程调用的。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191352732.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从其他工作流中声明性地调用工作流是一项强大的增强功能，将使业务流程的建模更加稳健并减少冗余。从其他应用程序复制工作流程的能力也有望提高应用程序开发人员的生产力。</p>
+<p>希望本博客的读者能够尝试APEX工作流程中这两个令人兴奋的新增强功能，并向Oracle提供反馈和想法，以使APEX工作流程在即将发布的版本中变得更加强大。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250119/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -417,7 +683,7 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2025-01-19 12:21:00 / 修改时间：13:09:03" itemprop="dateCreated datePublished" datetime="2025-01-19T12:21:00+08:00">2025-01-19</time>
+              <time title="创建时间：2025-01-19 12:21:00 / 修改时间：13:16:22" itemprop="dateCreated datePublished" datetime="2025-01-19T12:21:00+08:00">2025-01-19</time>
             
 
             
@@ -2537,238 +2803,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240629/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20240629/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2024.06
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2024-06-29 19:38:00 / 修改时间：20:14:37" itemprop="dateCreated datePublished" datetime="2024-06-29T19:38:00+08:00">2024-06-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20240629/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2024.06">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.2k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_8479.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>以下是截止至 <code>2024.06.29</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="https://blog.cloudnueva.com/generative-ai-comes-to-apex" target="_blank" rel="noopener">Generative AI Comes to APEX</a> <code>2024.06</code></li>
-<li><a href="https://www.thatjeffsmith.com/archive/2024/06/ords-installs-upgrades-the-tns-edition/" target="_blank" rel="noopener">ORDS installs &amp; upgrades, the TNS edition</a> <code>2024.06</code></li>
-<li><a href="https://spendolini.blog/apex-sert-the-sql" target="_blank" rel="noopener">APEX-SERT: The SQL</a> <code>2024.06</code></li>
-<li><a href="https://blog.apexapplab.dev/apex-in-the-ai-era" target="_blank" rel="noopener">APEX in the AI era</a> <code>2024.06</code></li>
-<li><a href="https://lmoreaux.hashnode.dev/how-to-easily-download-files-in-oracle-apex-241" target="_blank" rel="noopener">How to Easily Download Files in Oracle APEX 24.1</a> <code>2024.06</code></li>
-<li><a href="https://blog.cloudnueva.com/apex-select-one-select-many-item-types" target="_blank" rel="noopener">APEX Select One &amp; Select Many Item Types</a> <code>2024.06</code></li>
-<li><a href="https://btimmerman.hashnode.dev/upgrade-oracle-apex-to-241-fast-and-easy-instructions" target="_blank" rel="noopener">Upgrade Oracle APEX to 24.1: Fast and Easy Instructions</a> <code>2024.06</code></li>
-<li><a href="https://rafal.hashnode.dev/apex-241-working-copies-is-it-better-than-it-was-in-232" target="_blank" rel="noopener">APEX 24.1 Working Copies - is it better than it was in 23.2?</a> <code>2024.06</code></li>
-<li><a href="https://hartenfeller.dev/blog/apex-24-1-template-component-improvements" target="_blank" rel="noopener">Oracle APEX 24.1 Template Component Improvements</a> <code>2024.06</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/using-23ai-free-docker-container-alongside-23c-free-container" target="_blank" rel="noopener">Using 23ai Free docker container alongside 23c Free container</a> <code>2024.06</code></li>
-<li><a href="https://blog.cloudnueva.com/rad-stack-integrations-part3" target="_blank" rel="noopener">Building Integrations with the Oracle DB APEX &amp; ORDS - Part 3</a> <code>2024.06</code></li>
-<li><a href="https://blog.apexapplab.dev/securely-using-api-keys-in-oracle-apex" target="_blank" rel="noopener">Securely using API Keys in Oracle APEX</a> <code>2024.06</code></li>
-<li><a href="https://cardoso.hashnode.dev/apex-tip-standardize-and-simplify-rest-calls-using-substitution-strings" target="_blank" rel="noopener">APEX Tip: Standardize and Simplify REST Calls Using Substitution Strings</a> <code>2024.06</code></li>
-<li><a href="https://rafal.hashnode.dev/translate-your-oracle-apex-application-step-by-step" target="_blank" rel="noopener">Translate your Oracle APEX application - step by step</a> <code>2024.06</code></li>
-<li><a href="https://www.oneoracledeveloper.com/2024/06/apex-deployment-tool-automated-patching.html" target="_blank" rel="noopener">APEX Deployment Tool - Automated patching</a> <code>2024.06</code></li>
-<li><a href="https://sandra-suarez.com/modernize-order-to-cash-without-replacing-your-erp" target="_blank" rel="noopener">Modernize Order To Cash without replacing your ERP</a> <code>2024.06</code></li>
-<li><a href="https://blog.cloudnueva.com/rad-stack-integrations-part2" target="_blank" rel="noopener">Building Integrations with the Oracle DB APEX &amp; ORDS - Part 2</a> <code>2024.06</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/apex-debounce-throttle-dynamic-actions-a-visual-guide" target="_blank" rel="noopener">APEX Debounce &amp; Throttle Dynamic Actions: A Visual Guide</a> <code>2024.06</code></li>
-<li><a href="https://www.oneoracledeveloper.com/2024/06/apex-blueprint-2024-edition.html" target="_blank" rel="noopener">APEX Blueprint, the 2024 edition</a> <code>2024.06</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2820,7 +2854,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">156</span>
+                    <span class="site-state-item-count">157</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
