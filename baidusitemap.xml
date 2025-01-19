@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/</loc>
+    <lastmod>2025-01-19T11:16:11.368Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中</title>
+        <pubTime>2025-01-19T10:39:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</loc>
-    <lastmod>2025-01-19T10:27:15.004Z</lastmod>
+    <lastmod>2025-01-19T10:38:28.410Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发</title>

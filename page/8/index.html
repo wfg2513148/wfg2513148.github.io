@@ -371,6 +371,241 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-series-17/" itemprop="url">
+                  Oracle APEX 系列文章17：如何利用 Oracle APEX 助力企业应用开发
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-08-23 11:52:00" itemprop="dateCreated datePublished" datetime="2020-08-23T11:52:00+08:00">2020-08-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-30 14:14:24" itemprop="dateModified" datetime="2021-01-30T14:14:24+08:00">2021-01-30</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-series-17/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章17：如何利用 Oracle APEX 助力企业应用开发">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200823111005.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
+<blockquote>
+<p>在开始今天的分享之前先说一件高兴事儿，在小伙伴的努力和推荐下，钢哥有幸被 Oracle 评为今年的 <code>Oracle ACE Director</code>。很荣幸能跟各位行业大佬同框:) </p>
+</blockquote>
+<p><a href="https://apexapps.oracle.com/pls/apex/f?p=119297:3::::::" target="_blank" rel="noopener">https://apexapps.oracle.com/pls/apex/f?p=119297:3::::::</a></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200823113930.png" alt=""></p>
+<blockquote>
+<p>之所以说这个，是因为我觉得这个荣誉不是我一个人的，而是官方对 APEX 中文社区的认可，是对 APEX 中国用户组的肯定，也说明 Oracle 越来越重视 APEX 在中国的发展了。这对学习 APEX 的小伙伴绝对是一个好消息，也意味着后续 Oracle 会举行更多有关 APEX 的市场活动，届时肯定会第一时间通知大家。</p>
+<p>更多关于 Oracle ACE 项目的信息，可以看这里：<a href="https://mp.weixin.qq.com/s/TENL6XdGADiEyNF18zNCzA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/TENL6XdGADiEyNF18zNCzA</a></p>
+<p>作为新晋的 ACED，当然要肩负起 APEX 在中国推广的重任了。正好有小伙伴邀请，希望能分享一些 APEX 方面的话题，所以就有了以下内容，算是抛砖引玉，供大家参考。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Oracle/Oracle-APEX/apex-series-17/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20200730/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2385,226 +2620,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/AWS/aws-cli-renew-ip/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/AWS/aws-cli-renew-ip/" itemprop="url">
-                  通过AWS CLI自动替换EC2实例IP地址
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-03-01 18:04:06 / 修改时间：18:09:31" itemprop="dateCreated datePublished" datetime="2020-03-01T18:04:06+08:00">2020-03-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/AWS/aws-cli-renew-ip/" class="leancloud_visitors" data-flag-title="通过AWS CLI自动替换EC2实例IP地址">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301180328.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平时在AWS EC2上跑了点东西，方便查学习资料（你懂的）。之所以选择AWS是因为它家提供<a href="https://amazonaws-china.com/cn/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc" target="_blank" rel="noopener">1年免费套餐</a>，另外海外节点稳定。起先一切看起来不错，可以实现自由冲浪。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301173332.png" alt=""></p>
-<p>但过不了多久就会被 <strong>王<del>府</del>井</strong> 屏蔽，没办法，多启几个容器吧（内存有限，一次启用5个不同的端口，发现不好用时手工切换本机客户端端口呗，5个端口都换完了就重新绑定个弹性IP，也算个解决办法。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200301173433.png" alt=""></p>
-<p>但最近发现， <strong>王<del>府</del>井</strong> 的效率变高了。基本上只要访问过一次受限网站，过不了几分钟这个端口就被封了，这让我怎么学习？没办法，不得不重新更换一个新的弹性IP地址。更换IP地址的过程是这样的：</p>
-<ul>
-<li>登录<a href="https://aws.amazon.com/?nc2=h_lg" target="_blank" rel="noopener">AWS控制台</a>（国内访问速度比较慢）</li>
-<li>切换到EC2控制面板</li>
-<li>分配新的弹性IP地址</li>
-<li>将新地址绑定到EC2实例</li>
-<li>释放旧的IP地址</li>
-</ul>
-<p>一轮操作下来，一般要十几分钟。有时候半天登录不上，痛苦啊啊啊。。。</p>
-<p>每次重复劳动，对于我这个希望用行动改变世界的码农来说，不是我性格啊。趁今天有空，研究了一下如何用AWS命令行工具（AWS CLI）自动替换EC2实例的弹性IP地址，节省我的时间。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/AWS/aws-cli-renew-ip/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2656,7 +2671,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">159</span>
+                    <span class="site-state-item-count">160</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
