@@ -135,22 +135,41 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx) Oracle APEX 系列">
-<meta name="keywords" content="Oracle,APEX,Docker,ORDS">
+  <meta name="description" content="本文翻译自：https://blogs.oracle.com/apex/post/leveraging-json-sources-and-duality-views-for-flexible-component-development-in-oracle-apex Oracle APEX 是一个强大的低代码开发平台，用于构建可扩展和安全的企业应用。它通过集成越来越多的低代码功能不断优化开发人员的">
+<meta name="keywords" content="Oracle,APEX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
-<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/index.html">
+<meta property="og:title" content="Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx) Oracle APEX 系列">
+<meta property="og:description" content="本文翻译自：https://blogs.oracle.com/apex/post/leveraging-json-sources-and-duality-views-for-flexible-component-development-in-oracle-apex Oracle APEX 是一个强大的低代码开发平台，用于构建可扩展和安全的企业应用。它通过集成越来越多的低代码功能不断优化开发人员的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172250.png">
-<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg">
-<meta property="og:updated_time" content="2021-01-30T06:14:33.567Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191820349.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191758160.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191759032.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191759335.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191800250.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191800162.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191801875.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191801708.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191802229.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191803507.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191804461.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191805644.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191806078.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191807567.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT9FDE4DD945B646CEADAADDE898C88021/native?cb=_cache_b9fd&channelToken=e34e03301b55409b97de871892b41b87">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191811956.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191813078.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191814507.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT805D1767DE7042DB877227ED200DDAF1/native?cb=_cache_b9fd&channelToken=e34e03301b55409b97de871892b41b87">
+<meta property="og:updated_time" content="2025-01-19T10:21:45.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
-<meta name="twitter:description" content="钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS) Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx) Oracle APEX 系列">
-<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172250.png">
+<meta name="twitter:title" content="Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发">
+<meta name="twitter:description" content="本文翻译自：https://blogs.oracle.com/apex/post/leveraging-json-sources-and-duality-views-for-flexible-component-development-in-oracle-apex Oracle APEX 是一个强大的低代码开发平台，用于构建可扩展和安全的企业应用。它通过集成越来越多的低代码功能不断优化开发人员的">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191820349.png?x-oss-process=image/format,jpg/quality,q_60">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
@@ -158,7 +177,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/"/>
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/"/>
 
 
 
@@ -168,7 +187,7 @@ var _hmt = _hmt || [];
   };
 </script>
 
-  <title>Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像 | 钢钢更新</title>
+  <title>Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发 | 钢钢更新</title>
   
 
 
@@ -378,7 +397,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王方钢 / Kenny Wang">
@@ -395,7 +414,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发
               
             
           </h2>
@@ -420,24 +439,12 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2018-09-05 21:14:10" itemprop="dateCreated datePublished" datetime="2018-09-05T21:14:10+08:00">2018-09-05</time>
+              <time title="创建时间：2025-01-19 17:49:00 / 修改时间：18:21:45" itemprop="dateCreated datePublished" datetime="2025-01-19T17:49:00+08:00">2025-01-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-01-30 14:14:33" itemprop="dateModified" datetime="2021-01-30T14:14:33+08:00">2021-01-30</time>
               
             
           </span>
@@ -477,7 +484,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/Oracle/Oracle-APEX/apex-series-14/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">
+             <span id="/Oracle/Oracle-APEX/apex-242-json/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -502,7 +509,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -516,7 +523,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -536,163 +543,118 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172250.png" alt=""></p>
-<p>钢哥的 Oracle APEX 系列文章：</p>
-<ul>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/">Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/">Oracle APEX 系列文章04：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/">Oracle APEX 系列文章05：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/">Oracle APEX 系列文章06：Oracle APEX 到底适不适合企业环境？</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/">Oracle APEX 系列文章07：Oracle APEX 18.1 新特性</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/">Oracle APEX 系列文章08：如何从 APEX 5.1.4 升级到 最新的 APEX 18.1</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/">Oracle APEX 系列文章09：为什么选择使用 Oracle APEX</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/">Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</a></li>
-<li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-16/">Oracle APEX 系列文章16：AOP - PDF报表打印新选择</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-17/">Oracle APEX 系列文章17：如何利用 Oracle APEX 助力企业应用开发</a></li>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191820349.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/leveraging-json-sources-and-duality-views-for-flexible-component-development-in-oracle-apex" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/leveraging-json-sources-and-duality-views-for-flexible-component-development-in-oracle-apex</a></p>
+<p>Oracle APEX 是一个强大的低代码开发平台，用于构建可扩展和安全的企业应用。它通过集成越来越多的低代码功能不断优化开发人员的体验，简化应用开发。</p>
+<p>随着 Oracle APEX 24.2 的发布，引入了JSON数据源，允许用户创建可以直接通过新的JSON源共享组件与JSON数据进行交互的APEX应用程序或组件。此前，要开发基于JSON数据的APEX应用程序，需要将数据存储在临时表或集合中，然后在APEX应用程序中解析它。此次新功能使客户能够构建可以直接处理JSON数据的APEX应用程序，从而避免将数据存储在临时表或集合中进行解析和显示。</p>
+<p>通过24.2版本的新功能，用户现在可以开发Oracle APEX组件、页面和应用程序，这些应用程序可以利用来自具有JSON列的表或JSON集合的JSON数据。在本文中，我们将探讨使用“具有JSON列的表”方法创建和加载JSON数据的方法，因为我们已经熟悉将JSON数据加载到集合中的过程。</p>
+<h1 id="JSON数据源"><a href="#JSON数据源" class="headerlink" title="JSON数据源"></a>JSON数据源</h1><ul>
+<li>1.在选择“包含 JSON 列的表”选项时，必须在与 APEX 同一数据库中存在一个包含 JSON 列的表，或者该表可以通过 REST 启用的 SQL 服务访问。</li>
+<li>2.如果您选择“JSON 集合表”选项，必须在与 APEX 相同的数据库中创建一个集合，或者可以通过 REST 启用的 SQL 服务访问该集合。</li>
+<li>3.如果集合是在本地数据库中创建的，它将在对象浏览器中的 SODA 集合中列出。</li>
+<li>4.对于“JSON 集合表”选项，开发者可以提供一个 JSON 模式文件，如果他们没有提供，APEX 会从数据中推断出模式。</li>
 </ul>
-<h2 id="镜像内容"><a href="#镜像内容" class="headerlink" title="镜像内容"></a>镜像内容</h2><blockquote>
-<p><strong>钢哥注：</strong>这个镜像是国外 Oracle APEX 大神做的，原始 Github 地址在<a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">这里</a>。由于安装介质下载往往耗时耗力，因此钢哥这里仅仅为大家简单打包了一下，并提供国内下载地址，镜像解压后大约会占用 20 GB 的磁盘空间。<br>该镜像仅用于学习 Oracle APEX 使用，<strong>不提供任何技术支持，也不包含任何 License</strong>，试用 24 小时后请自行删除。</p>
+<blockquote>
+<p><strong>NOTE</strong>: 如果您想使用“<strong>JSON Collection Table</strong>”选项，需要 <strong>Oracle Database 23ai</strong>。对于“具有 JSON 列的表”选项，您可以使用 <strong>Oracle database 19c</strong> 以及 <strong>Oracle APEX 24.2</strong>。</p>
 </blockquote>
-<p>该镜像的内容包括：</p>
+<p>在本文中，我们将使用“带有JSON列的表格”功能，从而可以构建一个简单的表格，其中包含一个CLOB列，用于存储 JSON 数据，特别是与 PurchaseOrder-LineItems 相关的数据。</p>
+<h1 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h1><p>在配置 Oracle APEX 的JSON源之前，必须满足以下先决条件：</p>
+<p>在您的 Oracle 数据库中执行以下SQL命令以创建一个CLOB数据类型的数据表。该表将用于将JSON数据导入CLOB字段中。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> my_json_table(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">number</span></span><br><span class="line">   <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">on</span> <span class="literal">null</span> <span class="keyword">as</span> <span class="keyword">identity</span> primary <span class="keyword">key</span>,</span><br><span class="line">doc <span class="keyword">CLOB</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191758160.png?x-oss-process=image/format,jpg/quality,q_60" alt="在Oracle数据库中创建具有JSON列的表"></p>
+<p>创建带有JSON列的表以及将数据加载到其中的方法在不同的Oracle数据库版本中保持一致，无论是使用Oracle数据库 19c还是23ai。需要注意的是，Oracle APEX 24.2 至少需要Oracle数据库版本19c。</p>
+<p>现在表已经创建好了，我将使用SQL Workshop数据加载功能将附带的数据导入到之前创建的表中。必须使用制表符（）作为列分隔符，并禁用引号，以确保APEX有效地将每一行数据加载到表的CLOB列中。</p>
+<p><strong>PurchaseOrders-json.txt</strong>包含用于加载到 MY_JSON_TABLE CLOB 字段 (DOC) 的数据</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191759032.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191759335.png?x-oss-process=image/format,jpg/quality,q_60" alt="加载数据"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191800250.png?x-oss-process=image/format,jpg/quality,q_60" alt="复制JSON数据 &quot;PurchaseOrders-json.txt&quot;"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191800162.png?x-oss-process=image/format,jpg/quality,q_60" alt="选择包含JSON列的表"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191801875.png?x-oss-process=image/format,jpg/quality,q_60" alt="选择CLOB列以加载JSON"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191801708.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这完成了将JSON数据加载到表中的过程。接下来，我们可以通过选择“查看表”来迅速检查表中的数据。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191802229.png?x-oss-process=image/format,jpg/quality,q_60" alt="加载的JSON数据"></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>要配置JSON源，请遵循这些步骤：</p>
 <ul>
-<li><a href="https://www.oracle.com/linux/" target="_blank" rel="noopener">Oracle Linux 7.5 64位</a></li>
-<li><a href="https://download.oracle.com/otn/linux/oracle18c/180000/LINUX.X64_180000_db_home.zip" target="_blank" rel="noopener">Oracle Database 18.3 企业版（non-CDB 架构）</a></li>
-<li><a href="http://download.oracle.com/otn/java/appexpress/apex_18.1.zip" target="_blank" rel="noopener">Oracle APEX 18.1.0</a></li>
-<li><a href="http://download.oracle.com/otn/java/ords/ords-18.2.0.zip" target="_blank" rel="noopener">Oracle ORDS 18.2</a></li>
-<li><a href="http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.0.53/bin/apache-tomcat-8.0.53.tar.gz" target="_blank" rel="noopener">Apache Tomcat 8.0.53</a></li>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">Java JDK 8u181</a></li>
+<li>1.在您的 Oracle APEX 工作区中，选择您希望设置 JSON Sources 作为数据源的应用程序，然后前往共享组件，选择数据源接着选择 JSON Sources（共享组件 → 数据源 → JSON Sources）。</li>
 </ul>
-<a id="more"></a>
-<h2 id="镜像拉取"><a href="#镜像拉取" class="headerlink" title="镜像拉取"></a>镜像拉取</h2><p>确保宿主机已安装好了<code>docker</code>，如果还没有安装的同学可以看这篇文章：<a href="https://wangfanggang.com/Docker/docker/">《Docker - 通往新世界的大门》</a></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">pull</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/kenny-mindex/apex:1.0</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><p>运行以下命令启动拉取好的镜像，稍等几分钟再访问服务。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">run</span> <span class="bullet">-d</span> <span class="bullet">--name</span> <span class="string">db-apex-dev-container</span> <span class="bullet">-p</span> <span class="number">2222</span><span class="string">:22</span> <span class="bullet">-p</span> <span class="number">8080</span><span class="string">:8080</span> <span class="bullet">-p</span> <span class="number">1521</span><span class="string">:1521</span>  <span class="bullet">-v</span> <span class="string">/dev/shm</span> <span class="bullet">--tmpfs</span> <span class="string">/dev/shm:rw,nosuid,nodev,exec,size=2g</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/kenny-mindex/apex:1.0</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="访问地址"><a href="#访问地址" class="headerlink" title="访问地址"></a>访问地址</h2><h3 id="Oracle-APEX-连接信息"><a href="#Oracle-APEX-连接信息" class="headerlink" title="Oracle APEX 连接信息"></a>Oracle APEX 连接信息</h3><p><a href="http://localhost:8080/ords/" target="_blank" rel="noopener">http://localhost:8080/ords/</a></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Workspace</td>
-<td>INTERNAL</td>
-</tr>
-<tr>
-<td>用户名</td>
-<td>ADMIN</td>
-</tr>
-<tr>
-<td>密码</td>
-<td>OrclAPEX1999!</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Oracle-数据库信息"><a href="#Oracle-数据库信息" class="headerlink" title="Oracle 数据库信息"></a>Oracle 数据库信息</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主机名</td>
-<td>localhost</td>
-</tr>
-<tr>
-<td>端口</td>
-<td>1521</td>
-</tr>
-<tr>
-<td>SID</td>
-<td>orcl</td>
-</tr>
-<tr>
-<td>服务名</td>
-<td>orcl</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>数据库用户名</th>
-<th>密码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>system</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>sys</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_listener</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_rest_public_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>apex_public_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>logger_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>oosutils_user</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>aop</td>
-<td>oracle</td>
-</tr>
-</tbody>
-</table>
-<p>用<code>SQL*Plus</code>连接数据库:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system/oracle@localhost/orcl</span><br></pre></td></tr></table></figure></p>
-<h3 id="SSH-连接信息"><a href="#SSH-连接信息" class="headerlink" title="SSH 连接信息"></a>SSH 连接信息</h3><p>用<code>SSH</code>连接终端:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@localhost -p 2222</span><br></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th>用户名</th>
-<th>密码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>root</td>
-<td>oracle</td>
-</tr>
-<tr>
-<td>oracle</td>
-<td>oracle</td>
-</tr>
-</tbody>
-</table>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>再次感谢提供镜像的各位大神：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191803507.png?x-oss-process=image/format,jpg/quality,q_60" alt="在Oracle APEX中创建JSON数据源"></p>
 <ul>
-<li><a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">Oracle Database &amp; APEX Developer Docker Image</a></li>
-<li><a href="https://github.com/PhilippSalvisberg/docker-oracle12ee" target="_blank" rel="noopener">Philipp Salvisberg’s GitHub Project</a></li>
-<li><a href="https://github.com/araczkowski/docker-oracle-apex-ords" target="_blank" rel="noopener">Andrzej Raczkowski’s GitHub Project</a></li>
+<li>2.为您的JSON源命名，并选择合适的JSON源类型，该类型可以是带有JSON列的表或JSON集合表。就本文档的上下文而言，请选择“带有JSON列的表”，并选择之前创建的表。</li>
 </ul>
-<hr>
-<p>可以扫描下面的二维码关注<code>APEX中文社区</code>订阅号：</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg" alt="APEX中文社区"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191804461.png?x-oss-process=image/format,jpg/quality,q_60" alt="带有JSON列的表格"></p>
+<ul>
+<li>3.作为下一步，请选择至少一列包含JSON文档。可选地上传一个JSON Schema文件，以便APEX在点击“下一步”之前推断JSON结构。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191805644.png?x-oss-process=image/format,jpg/quality,q_60" alt="包含JSON数据的CLOB列"></p>
+<ul>
+<li><p>4.对于这篇博客，我们将使用下面提到的schema文件，该文件对应于我上传到表中的数据。PurchaseOrders JSON Schema</p>
+</li>
+<li><p>5.在数据概要页面上，选择与各种父列对应的适当字段作为主键，然后点击“创建”以在您的 Oracle APEX 应用中生成JSON源。下面的片段说明了如何从CLOB列或上传的JSON模式中识别数组/父列，从而生成数据概要。</p>
+</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191806078.png?x-oss-process=image/format,jpg/quality,q_60" alt="JSON文档数据配置"></p>
+<p>我们成功创建了 JSON 源。现在让我们探索在 Oracle APEX 中我们可以用 JSON 源做什么。</p>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p>您可以在Oracle APEX应用中使用JSON源作为数据源创建不同类型的页面、值列表和搜索配置。下面的示例展示了如何选择JSON源作为数据源以创建交互式报告。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191807567.png?x-oss-process=image/format,jpg/quality,q_60" alt="使用JSON源作为数据源创建交互式报告"></p>
+<p>请参阅下方的GIF，了解开发人员如何在 Oracle APEX 中使用JSON源进行低代码应用开发。</p>
+<p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT9FDE4DD945B646CEADAADDE898C88021/native?cb=_cache_b9fd&amp;channelToken=e34e03301b55409b97de871892b41b87" alt="Oracle APEX - JSON数据源"></p>
+<h1 id="二元性视图"><a href="#二元性视图" class="headerlink" title="二元性视图"></a>二元性视图</h1><p>随着 Oracle Database 23ai 的发布，通过引入二元性视图，对JSON数据的支持得到了增强。这些视图基于标准关系表构建，镜像JSON负载的结构，用于选择、插入、更新和删除操作。用户可以使用JSON数据指定所需的操作（选择、插入、删除或更新），相应的操作将在底层关系表上执行。</p>
+<h1 id="先决条件-1"><a href="#先决条件-1" class="headerlink" title="先决条件"></a>先决条件</h1><p>在配置 Oracle APEX 的二元性视图之前，必须满足以下先决条件：</p>
+<ul>
+<li>二元性视图必须存在于Oracle数据库中。它可以位于与您的APEX应用程序相同的模式中，或者可以通过REST启用的SQL服务访问。</li>
+<li>需要执行的操作，如选择、插入、更新或删除，应该在Duality视图本身中定义，该视图应遵循类似JSON的结构。</li>
+<li>如果将来需要对JSON格式进行任何修改，这些更改必须在数据库级别进行，并且需要相应地更新APEX中的数据配置文件。</li>
+</ul>
+<p>以下是用于在<strong>Emp</strong>和<strong>Dept</strong>表上创建JSON关系二元性视图以执行插入、更新和删除操作的语法。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">json</span> <span class="keyword">relational</span> duality <span class="keyword">view</span> deptemp_sql_dv <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">json</span>&#123; <span class="string">'_id'</span>:      d.deptno,</span><br><span class="line">             <span class="string">'dname'</span>:    d.dname,</span><br><span class="line">             <span class="string">'loc'</span>:      d.loc,</span><br><span class="line">             <span class="string">'employees'</span>:</span><br><span class="line">             [ <span class="keyword">select</span> <span class="keyword">json</span>&#123; <span class="string">'empno'</span>:        e.empno,</span><br><span class="line">                            <span class="string">'ename'</span>:        e.ename,</span><br><span class="line">                            <span class="string">'job'</span>:          e.job,</span><br><span class="line">                            <span class="string">'hiredate'</span>:     e.hiredate,</span><br><span class="line">                            <span class="string">'compensation'</span>: &#123;</span><br><span class="line">                                              <span class="string">'sal'</span>:  e.sal,</span><br><span class="line">                                              <span class="string">'comm'</span>: e.comm</span><br><span class="line">                                            &#125;</span><br><span class="line">                      &#125;</span><br><span class="line">                 <span class="keyword">from</span> emp e</span><br><span class="line">                 <span class="keyword">with</span> <span class="keyword">insert</span> <span class="keyword">update</span> <span class="keyword">delete</span></span><br><span class="line">                <span class="keyword">where</span> e.deptno = d.deptno</span><br><span class="line">             ]</span><br><span class="line">       &#125;</span><br><span class="line">  <span class="keyword">from</span> dept d</span><br><span class="line">  <span class="keyword">with</span> <span class="keyword">insert</span> <span class="keyword">update</span> <span class="keyword">delete</span> <span class="keyword">nocheck</span></span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<h1 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h1><p>要在您的 Oracle APEX 工作区中配置或创建二元性视图，请遵循这些步骤：</p>
+<ul>
+<li>1.从您的 Oracle APEX 工作区中选择一个应用程序，您希望在那里建立 Duality Views 作为数据源。接下来，前往共享组件 → 数据源 → Duality Views。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191811956.png?x-oss-process=image/format,jpg/quality,q_60" alt="共享组件 &gt; 二元性视图"></p>
+<ul>
+<li>2.要在您的 Oracle APEX 工作区中开始创建一个新的二元性视图，请点击“创建”。为二元性视图命名并选择其位置，无论是本地数据库还是REST启用的SQL服务。然后，从下拉菜单中选择二元性视图并点击“下一步”。</li>
+</ul>
+<blockquote>
+<p>注意：这是我们在Oracle数据库先决条件部分创建的二元性视图。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191813078.png?x-oss-process=image/format,jpg/quality,q_60" alt="在Oracle APEX中创建二元性视图"></p>
+<ul>
+<li>3.在数据概要页面上，选择与各种数组列对应的适当字段作为主键，然后点击“创建”以在您的 Oracle APEX 应用中创建/配置二元性视图。</li>
+</ul>
+<h1 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo"></a>Demo</h1><p>您可以在 Oracle APEX 应用程序中以二元性视图作为数据源创建不同类型的页面、值列表和搜索配置。下面的代码片段展示了您如何选择二元性视图作为数据源以创建一个交互式报表。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191814507.png?x-oss-process=image/format,jpg/quality,q_60" alt="使用二元性视图作为数据源的交互式报告创建"></p>
+<p>按照下方的GIF，了解开发人员如何在 Oracle APEX 中使用二元性视图进行低代码应用开发。</p>
+<p><img src="https://blogs.oracle.com/content/published/api/v1.1/assets/CONT805D1767DE7042DB877227ED200DDAF1/native?cb=_cache_b9fd&amp;channelToken=e34e03301b55409b97de871892b41b87" alt="Oracle APEX - 二元性视图"></p>
+<blockquote>
+<p><strong>注意</strong>：您可以从这里了解更多关于<strong>Oracle二元性视图</strong>的信息，它是 Oracle Database 23ai 的一部分。</p>
+</blockquote>
+<p>开发者可以使用JSON源或二元性视图构建的组件如下：</p>
+<ul>
+<li>图表</li>
+<li>日历</li>
+<li>卡片</li>
+<li>内容行</li>
+<li>交互式网格</li>
+<li>交互式报告</li>
+<li>经典报告</li>
+<li>重排报告</li>
+<li>表单</li>
+<li>主-从</li>
+<li>智能过滤器</li>
+<li>搜索页面</li>
+<li>分面搜索</li>
+<li>值列表</li>
+<li>搜索配置</li>
+</ul>
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p>我们现在已经探讨了 JSON 源和双重视图的概念。接下来，让我们考察这些概念可以应用的场景。</p>
+<h1 id="JSON源"><a href="#JSON源" class="headerlink" title="JSON源"></a>JSON源</h1><ul>
+<li>JSON数据源非常适合需要直接与JSON数据进行交互的场景，无需定位和配置REST源API。</li>
+<li>JSON团队旨在通过使用Mongo应用程序与MongoDB客户建立联系。通过导出数据并将JSON加载到Oracle中，他们可以使用APEX创建报告和仪表板。</li>
+<li>当您的数据仅由JSON文档组成，并且您希望利用APEX进行快速可视化和简单表单时，这种方法特别有益。<br>对偶视图。</li>
+<li>JSON二元性视图使应用程序能够直接访问以JSON格式的关系表。</li>
+</ul>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>整合JSON源和二元性视图到 Oracle APEX 应用程序中，使组件开发更加灵活和动态。这种方法增强了数据处理，并简化了复杂、交互式用户界面的创建。通过利用这些技术，开发者可以以最小的努力创建更强大和响应迅速的APEX应用程序。</p>
 
       
     </div>
@@ -711,12 +673,12 @@ var _hmt = _hmt || [];
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></p>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-242-json/">Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
-  <p><span>发布时间:</span>2018年09月05日 - 21:09</p>
-  <p><span>最后更新:</span>2021年01月30日 - 14:01</p>
-  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-14/" title="Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2025年01月19日 - 17:01</p>
+  <p><span>最后更新:</span>2025年01月19日 - 18:01</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-242-json/" title="Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发">https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -759,10 +721,6 @@ var _hmt = _hmt || [];
           
             <a href="/tags/APEX/" rel="tag"><i class="fa fa-tag"></i> APEX</a>
           
-            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
-          
-            <a href="/tags/ORDS/" rel="tag"><i class="fa fa-tag"></i> ORDS</a>
-          
         </div>
       
 
@@ -774,8 +732,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Oracle/Oracle-APEX/apex-update-20180824/" rel="next" title="Oracle APEX 活跃博文整理 | 2018.08.24">
-                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2018.08.24
+              <a href="/Oracle/Oracle-APEX/apex-242-workflow-2/" rel="next" title="Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流
               </a>
             
           </div>
@@ -783,10 +741,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Oracle/Oracle-APEX/apex-update-20180920/" rel="prev" title="Oracle APEX 活跃博文整理 | 2018.09.20">
-                Oracle APEX 活跃博文整理 | 2018.09.20 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1117,7 +1071,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像内容"><span class="nav-number">1.</span> <span class="nav-text">镜像内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像拉取"><span class="nav-number">2.</span> <span class="nav-text">镜像拉取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动命令"><span class="nav-number">3.</span> <span class="nav-text">启动命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问地址"><span class="nav-number">4.</span> <span class="nav-text">访问地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-APEX-连接信息"><span class="nav-number">4.1.</span> <span class="nav-text">Oracle APEX 连接信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-数据库信息"><span class="nav-number">4.2.</span> <span class="nav-text">Oracle 数据库信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-连接信息"><span class="nav-number">4.3.</span> <span class="nav-text">SSH 连接信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">5.</span> <span class="nav-text">感谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON数据源"><span class="nav-number">1.</span> <span class="nav-text">JSON数据源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先决条件"><span class="nav-number">2.</span> <span class="nav-text">先决条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo"><span class="nav-number">4.</span> <span class="nav-text">Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二元性视图"><span class="nav-number">5.</span> <span class="nav-text">二元性视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先决条件-1"><span class="nav-number">6.</span> <span class="nav-text">先决条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-1"><span class="nav-number">7.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo-1"><span class="nav-number">8.</span> <span class="nav-text">Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用法"><span class="nav-number">9.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON源"><span class="nav-number">10.</span> <span class="nav-text">JSON源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">11.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>
