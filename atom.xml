@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2025-01-19T05:55:11.728Z</updated>
+  <updated>2025-01-19T06:21:22.930Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</id>
+    <published>2025-01-19T06:05:00.000Z</published>
+    <updated>2025-01-19T06:21:22.930Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191420335.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><h1 id="简介和背景"><a href="#简介和背景" class="headerlink" title="简介和背景"></a>简介和背景</h1><p>自从 APEX 23.2 引入了Workflow工作流作为本机组件，APEX就有了专门用于工作流程建模和执行业务流程的能力。当Workflow工作流在给定活动中遇到错误时，它会进入“故障”状态。此时，工作流的管理员或所有者可以重试工作流。重试工作流将从故障活动中恢复执行。这就是大多数业务流程建模和执行产品（包括遵循 BPMN 2.0 标准的产品）的工作方式。查看此博客，其中讨论了如何在 APEX 24.2 之前的APEX中重试出现故障的工作流程。</p><p>然而，在现实生活中的用例中，这种故障缓解方法具有很大的限制性。</p><p>任何流程自动化解决方案最需要的功能之一是保持现有工作流实例运行，无论业务流程生命周期中可能发生任何问题，包括：</p><ul><li><strong>人为错误</strong>：如果用户在表单中输入一些错误的数据，然后使用该数据在工作流中进行分支（用户输入数量 100 而不是 1000，并且稍后在工作流中是基于该数量的切换活动），则可能会发生人为错误如果人工任务的潜在所有者意外批准了某项任务，但后来由于某种原因决定拒绝该任务，反之亦然。</li><li><strong>自动化任务中的错误</strong>：工作流通过执行代码或调用 API活动来执行业务逻辑。此业务逻辑的实现中可能会出现错误，从而导致异常或将工作流发送到不需要的路径，因为业务逻辑返回了一些错误的值。</li></ul><p>对于客户来说，对运行的工作流程进行一定的控制以解决工作流程中因人为或业务逻辑错误而导致的问题至关重要。由于现有工作流程中出现一些错误，用户不愿意重新启动工作流程，因为这意味着需要重做之前的工作；参与工作流程的人员需要再次参与，这可能既昂贵又耗时。</p><p>使用 APEX 24.2，工作流的管理员可以暂停工作流并在工作流内的<strong>任意活动</strong>处恢复它。这使得工作流程更具弹性，并允许任意重新路由故障/挂起的工作流程。现在，工作流程可以通过一组完全不同的路径进行路由，而不是保留在其原始路线上。</p><h1 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h1><p>本博客假设读者熟悉APEX Workflow工作流的概念和术语。</p><p>对于 APEX Workflow 工作流程的新用户来说，在继续阅读此博客之前，可以先阅读以下介绍 APEX Workflow 工作流程概念的博客：</p><ul><li><a href="https://blogs.oracle.com/apex/post/simplify-medical-appointments-using-apex-workflow" target="_blank" rel="noopener">使用 APEX Workflow 工作流程简化业务流程管理</a></li><li><a href="https://blogs.oracle.com/apex/post/multi-level-expense-approval-using-apex-workflow" target="_blank" rel="noopener">使用 APEX Workflow 工作流程进行多级费用审批</a></li><li><a href="https://blogs.oracle.com/apex/post/apex-workflow-development-lifecycle" target="_blank" rel="noopener">APEX Workflow 工作流程生命周期</a></li></ul><h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>下图显示了<strong>工作流程设计器</strong>中简单的<strong>订单申请工作流程</strong>的模型。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191409530.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>该工作流实现以下逻辑：</p><ul><li>如果请购金额小于或等于 1000，则会自动批准并创建订单。</li><li>否则，将为请购单创建审批任务，并且仅在请购单获得批准后才创建订单。</li><li>创建订单后，将其发送以供审批。</li><li>订单状态根据批准订单任务的结果进行更新。</li><li>申请 ID、项目和项目金额是工作流程的输入参数。</li></ul><h1 id="运行申请单应用程序"><a href="#运行申请单应用程序" class="headerlink" title="运行申请单应用程序"></a>运行申请单应用程序</h1><p>下面的示例显示了一个项目表，以及为Macbook Pro提交的新申请，金额为2500美元。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410400.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>提交会触发新的工作流程。由于物料价值大于1000美元，因此<strong>不会</strong>自动批准，并且会创建人工任务来批准请购单。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410225.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410026.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>假设此时应用程序用户意识到该申请实际上符合自动批准的条件，因为在提交Workflow工作流之前已经收到了口头批准。在 APEX 24.2 之前，自动批准的唯一方法是终止当前Workflow工作流程，并更改项目数量或仅更改此申请的业务逻辑，然后提交新的Workflow工作流程。通过当前的增强功能，Workflow工作流管理员可以登录Workflow工作流控制台，并打开详细信息页面来暂停工作流。</p><p>然后，管理员将Workflow工作流变量“金额”更新为900并保存该值。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191411464.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>在单击“<strong>恢复</strong>”按钮之前，管理员将“<strong>审核中的更新申请状态</strong>”设置为应恢复工作流的活动。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412376.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>单击“<strong>恢复</strong>”后，工作流程将根据更新的项目数量重新路由，这次采用自动审批路由。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412961.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>请注意工作流程活动和审核图。这表明<strong>批准申请</strong>人工任务活动已终止，并且跳过了其路径上的后续活动。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191413211.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><h1 id="自定义生成的工作流程详细信息页面"><a href="#自定义生成的工作流程详细信息页面" class="headerlink" title="自定义生成的工作流程详细信息页面"></a>自定义生成的工作流程详细信息页面</h1><p>让我们看看如何自定义生成的<strong>工作流程详细信息</strong>页面以选择任意活动并从那里恢复工作流程。</p><p>在生成的“工作流程详细信息”页面的“<strong>按钮</strong>区域”中，添加了“选择列表”类型的新页面项目。这将用于选择将从中恢复工作流的特定活动。</p><p>用于检索给定工作流程中的活动名称和静态ID的查询如下:</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> wa.name <span class="keyword">as</span> <span class="keyword">name</span>,</span><br><span class="line">       wa.static_id <span class="keyword">as</span> <span class="keyword">value</span></span><br><span class="line">  <span class="keyword">from</span> apex_appl_workflow_activities wa,</span><br><span class="line">       apex_appl_workflow_versions   wv,</span><br><span class="line">       apex_workflows                wf$</span><br><span class="line"> <span class="keyword">where</span> wf$.workflow_id = :P8_WORKFLOW_ID</span><br><span class="line">   <span class="keyword">and</span> wf$.workflow_version_id  = wv.version_id</span><br><span class="line">   <span class="keyword">and</span> wv.version_id   = wa.version_id</span><br><span class="line">   <span class="keyword">and</span> wv.workflow_static_id = wa.workflow_static_id</span><br></pre></td></tr></table></figure><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191414264.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>页面进程 - <strong>恢复</strong>现在有一个新属性： <strong>Activity Static ID Item</strong>。它设置为包含所选工作流程活动的静态 ID 的页面项目。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191415622.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><blockquote><p>注意：与恢复页面流程类似，<strong>API apex_workflow.resume</strong> 也经过修改以接受特定活动的静态ID作为可选参数。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line"></span><br><span class="line">    apex_workflow.resume(</span><br><span class="line">         p_instance_id          =&gt; 1234,</span><br><span class="line">         p_activity_static_id   =&gt; &apos;UPDATE_REQUISITION_FOR_REVIEW&apos;)</span><br></pre></td></tr></table></figure><blockquote><p>当未提供静态ID时，<strong>Resume API</strong>的工作方式与以前的版本相同，即Workflow工作流在暂停时从其等待的活动处恢复。</p></blockquote><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>上面的示例显示了设计一个应用程序是多么容易，其中工作流管理员可以重新路由提交的Workflow工作流。本文演示了从上游活动恢复Workflow工作流，但是，也可以使用相同的方法从下游活动（稍后出现在Workflow工作流中的活动）恢复Workflow工作流。</p><p>您还可以在此<a href="https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more" target="_blank" rel="noopener">博客</a>中了解 Oracle APEX 24.2 中其他重要的Workflow工作流程增强功能。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191420335.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle APEX 24.2 新特性 - Workflow工作流</title>
@@ -550,35 +579,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_6160.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 23.2 正式发布</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231115/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20231115/</id>
-    <published>2023-11-15T01:18:00.000Z</published>
-    <updated>2023-11-15T02:08:46.582Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG3125.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>好消息！！Oracle APEX 23.2 现已提供<a href="https://apex.oracle.com/download" target="_blank" rel="noopener">官方下载</a> ，并将在全球 Oracle云基础设施 (OCI) 区域推出。</p><p>新版本让开发人员能够以低代码的方式轻松构建安全且可扩展的企业云、移动端以及SaaS应用。开发者现在有能力访问各种原生的企业级特性和功能，包括端到端的流程自动化、协作开发和新的UI组件。  </p><p>以下是 <a href="https://apex.oracle.com/en/platform/features/whats-new-232/" target="_blank" rel="noopener">Oracle APEX 23.2</a> 用于企业级应用开发的亮点：</p><ul><li><strong>端到端的原生工作流支持</strong></li></ul><p>从这个版本开始，APEX拥有了完全集成的工作流解决方案。开发人员能够使用原生内置的直观、可视化工作流设计器实现业务流程和工作流程的自动化，包括系统到系统、人与系统的交互。</p><ul><li><strong>协作开发：应用程序工作副本</strong></li></ul><p>原生的团队开发功能支持，使开发人员有能力通过创建应用程序的工作副本来修复错误或添加功能，有选择地将其更改并合并回主应用程序，进而解决多个开发人员并行开发同一应用程序过程中发生的冲突问题。</p><ul><li><strong>新的UI控件</strong></li></ul><p>新的页面控件（包括QR二维码生成器、图片上传和组合框控件）为企业级应用程序提供了无需编码的全新功能。</p><p>此版本还包括许多附加功能和错误修复，从而为APEX应用程序带来更高的质量和稳定性。有关<a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX 23.2</a>中的新功能以及许多其他令人兴奋的增强功能的更多信息，请参阅<a href="https://docs.oracle.com/en/database/oracle/apex/23.2/htmrn/about-release-notes.html" target="_blank" rel="noopener">发行说明</a>或访问 <a href="https://apex.oracle.com/en/platform/features/whats-new-232/" target="_blank" rel="noopener">新增功能</a>页面。您还可以访问 <a href="https://apex.oracle.com/officehours" target="_blank" rel="noopener">Oracle APEX Office Hours</a>页面观看APEX 23.2新功能介绍视频。  </p><p><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX</a>由超过<strong>70万名</strong>开发人员组成的充满活力的社区提供支持，他们正在构建复杂的应用程序来解决众多企业面临的最严峻的挑战。这些开发人员在APEX方面取得的成功和产品发展方向中发挥着重要作用，我们很高兴在APEX 23.2中分享已经实现的<a href="https://apex.oracle.com/go/ideas-delivered-in-apex" target="_blank" rel="noopener">来自20多个开发人员请求的想法</a>。APEX开发人员正在构建的系统涵盖了从ERP、内容管理、CRM、物流管理、付款处理、欺诈检测到简单的电子表格替换应用程序等众多领域，与使用“高代码”技术相比，开发人员通过APEX能够<a href="https://www.oracle.com/a/ocom/docs/pique-solutions-apex-vs-reactjs-study.pdf" target="_blank" rel="noopener">以20倍的速度</a>构建具有世界级的企业应用，代码量减少了100倍 ，同时将<a href="https://www.oracle.com/customers/nomura-research-institute/" target="_blank" rel="noopener">应用程序开发工作量减少了65%</a>。 </p><p>低代码应用开发者也在寻找利用人工智能为其组织提供新的尖端功能的方法。据<a href="https://www.gartner.com/en/topics/generative-ai" target="_blank" rel="noopener">Gartner®</a>称，<strong>“到2024年，40%的企业应用程序将嵌入对话式AI，而2020年这一比例还不到5%。”</strong></p><p><strong>Oracle APEX使开发者能够通过RESTful API的方式与OCI AI服务进行轻松打通，进而快速构建下一代人工智能驱动的应用系统</strong>。这些人工智能服务包括：<code>Oracle Generative AI、AI Speech、AI Vision、Oracle Document Understanding、Oracle Digital Assistant和Oracle Data Science</code>。通过Oracle APEX和OCI AI服务相结合，开发人员可以收益于强大的AI带来的个性化体验和建议、处理自然语言提示、自动执行图像和对象检测、生成文本（电子邮件、营销文案等）。</p><h2 id="APEX-可用性和定价"><a href="#APEX-可用性和定价" class="headerlink" title="APEX 可用性和定价"></a>APEX 可用性和定价</h2><p>Oracle APEX在OCI（Oracle所有全球云区域）中作为独立、<a href="https://www.oracle.com/application-development/apex/" target="_blank" rel="noopener">完全托管的服务</a>以按使用量付费模式提供服务。您只需为您消耗的资源付费，无须为每个应用或每个用户付费。OCI的始终免费服务中也包含了相应的免费版本。同时，APEX还免费包含在任何Oracle数据库服务中，包括自治数据库（ADB）。特定功能不收取额外费用 - 所有功能均可供所有客户使用。</p><h3 id="顾客"><a href="#顾客" class="headerlink" title="顾客"></a><a href="https://apex.oracle.com/en/solutions/success-stories/" target="_blank" rel="noopener">顾客</a></h3><p>截至目前，全球客户已使用Oracle APEX创建了超过<strong>1900万</strong>个应用程序。我们在过去一个月里收到了来自世界各地试用APEX 23.2预览版的用户的非常积极的反馈。以下是该产品实际用户的一些引用：</p><blockquote><p>“开发人员创建分支的可能性使应用程序开发体验变得更加容易，这是APEX 23.2中我最喜欢的功能。适应工作流程的可视化构建器是创建复杂任务的一个巨大增强。我们已经在使用分面搜索和最新增强功能带有过滤器选项为用户提供了更大的灵活性。” – Birthe Gebhardt 博士，西门子交通团队负责人</p></blockquote><blockquote><p>“我们有一个非常庞大的APEX团队致力于多个应用程序。APEX 23.2中的应用程序工作副本将会产生巨大的影响，特别是对于我们的发布团队来说，了解发生了什么变化并保持一切正常。我个人对模板组件感到很兴奋，并看到人们的创造力在于我们如何引入比现成的更有趣的可视化效果。期待尽快获得APEX 23.2！” – Sayee Natarajan，Syneos Health RxDataScience 首席执行官</p></blockquote><blockquote><p>“作为开发人员，应用程序工作副本是APEX 23.2的救星。这将使我们的团队能够在合并更改之前共同工作并审查更改。以前，我们必须维护同一应用程序的多个副本。工作流程也在不断改进使用新的视觉设计器轻松进行任务管理，对我们的客户产生巨大影响” – Tasos Tzamarias，慕尼黑 RE HealthTech</p></blockquote><blockquote><p>“我们从APEX 18.x开始就一直在使用Oracle APEX，我很高兴看到APEX团队在每个版本中都发布了出色的新功能。就我个人而言，我们已经等待应用程序工作副本一年了。QR代码生成器作为声明性选项是一个这是当今时代的一个重要功能，因为人们使用二维码来获取文档和报告。以前，我们必须使用第三方工具才能实现同样的功能。祝贺整个APEX团队发布新版本！” – Soham ERP 董事总经理 Suketu Shah</p></blockquote><p>您还可以通过APEX业务创新系列直接聆听和了解我们的客户如何使用Oracle APEX为其全球组织构建新应用程序。<a href="https://asktom.oracle.com/pls/apex/asktom.search?oh=19665" target="_blank" rel="noopener">注册下一期</a>。 </p><h3 id="从哪里可以获得-Oracle-APEX-23-2？"><a href="#从哪里可以获得-Oracle-APEX-23-2？" class="headerlink" title="从哪里可以获得 Oracle APEX 23.2？"></a>从哪里可以获得 Oracle APEX 23.2？</h3><p>立即注册<a href="https://apex.oracle.com/go/request-workspace" target="_blank" rel="noopener">免费在线工作区</a> 或<a href="https://apex.oracle.com/download" target="_blank" rel="noopener">下载</a>产品来试用Oracle APEX 23.2吧。几分钟之内，您就可以构建<a href="https://apex.oracle.com/en/learn/build-your-first-app/" target="_blank" rel="noopener">您的第一个低代码应用程序</a>。如果您有兴趣了解Oracle APEX，我们鼓励您注册免费在线<a href="https://apex.oracle.com/en/learn/training/" target="_blank" rel="noopener">学习课程</a>。这些自定进度的课程为每个开发人员提供了按照自己的进度和便利程度精通APEX的机会。 </p><p>立即尝试APEX 23.2吧！我们很乐意通过<a href="https://apex.oracle.com/forum" target="_blank" rel="noopener">apex.oracle.com/forum</a>听到您的反馈。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/WechatIMG3125.jpg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;&quot;&gt;
       
     
     </summary>

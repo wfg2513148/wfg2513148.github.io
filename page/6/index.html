@@ -371,6 +371,243 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-21.2-new-features/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-21.2-new-features/" itemprop="url">
+                  Oracle APEX 21.2 新增功能
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-10-25 19:56:00" itemprop="dateCreated datePublished" datetime="2021-10-25T19:56:00+08:00">2021-10-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-11-06 13:07:01" itemprop="dateModified" datetime="2021-11-06T13:07:01+08:00">2021-11-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-21.2-new-features/" class="leancloud_visitors" data-flag-title="Oracle APEX 21.2 新增功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211025175611.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h2 id="智能过滤器（Smart-Filters）"><a href="#智能过滤器（Smart-Filters）" class="headerlink" title="智能过滤器（Smart Filters）"></a>智能过滤器（Smart Filters）</h2><p>智能过滤器是一个新的搜索组件，它允许用户使用过滤器建议或搜索词快速缩小要搜索的数据范围。开发人员可以使用该组件为用户提供简化的搜索体验，通过单个控件即可让用户立即找到他们想要寻找的信息。</p>
+<p><a href="https://www.youtube.com/watch?v=Orv2ZLFFxGw" target="_blank" rel="noopener">视频演示</a></p>
+<h3 id="强大的搜索栏"><a href="#强大的搜索栏" class="headerlink" title="强大的搜索栏"></a>强大的搜索栏</h3><ul>
+<li>智能过滤器具有全新的搜索栏，它可以为您的过滤器提供内置的自动完成功能，支持同时搜索多个关键词，并且提供键盘导航。</li>
+</ul>
+<h3 id="搜索建议"><a href="#搜索建议" class="headerlink" title="搜索建议"></a>搜索建议</h3><ul>
+<li>搜索建议是智能过滤器的核心，这些建议基于您事先定义好的过滤器，并可以在用户输入搜索词时即可显示，也可以显示到搜索栏下方的标签里。</li>
+</ul>
+<h3 id="建议标签"><a href="#建议标签" class="headerlink" title="建议标签"></a>建议标签</h3><ul>
+<li>过滤器会根据您的数据进行评估，并作为标签显示在搜索栏下方，为您提供最合适的过滤条件。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20211024234451.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Oracle/Oracle-APEX/apex-21.2-new-features/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210929/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2404,235 +2641,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20210130/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20210130/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2021.01.30
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-01-30 12:13:00 / 修改时间：13:40:12" itemprop="dateCreated datePublished" datetime="2021-01-30T12:13:00+08:00">2021-01-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20210130/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2021.01.30">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20210130133934.png?x-oss-process=image/format,jpg/quality,q_40" alt=""></p>
-<p>以下是截止至 <code>2021.01.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="http://dgielis.blogspot.com/2021/01/my-spin-on-new-oracle-apex-application.html" target="_blank" rel="noopener">My spin on the new Oracle APEX Application Development Service</a> <code>2021.01</code></li>
-<li><a href="http://dgielis.blogspot.com/2021/01/setup-and-configure-apex-application.html" target="_blank" rel="noopener">Setup and configure the APEX Application Development Service (including email) in the Oracle Cloud</a> <code>2021.01</code></li>
-<li><a href="http://mortezamashhadi.blogspot.com/2021/01/add-checkbox-item-to-ir-and-maintaining.html" target="_blank" rel="noopener">Add checkbox item to IR and Maintaining checkboxes state</a> <code>2021.01</code></li>
-<li><a href="https://srihariravva.blogspot.com/2021/01/handling-javascript-errors-part-2.html" target="_blank" rel="noopener">Handling JavaScript Errors - Part 2</a> <code>2021.01</code></li>
-<li><a href="https://srihariravva.blogspot.com/2021/01/handling-javascript-errors-part-1.html" target="_blank" rel="noopener">Handling JavaScript Errors - Part 1</a> <code>2021.01</code></li>
-<li><a href="http://dgielis.blogspot.com/2021/01/import-existing-database-and-apex-app.html" target="_blank" rel="noopener">Import an existing database and APEX app into the Oracle APEX Application Development Service</a> <code>2021.01</code></li>
-<li><a href="http://mortezamashhadi.blogspot.com/2021/01/add-details-section-to-ig.html" target="_blank" rel="noopener">Add details section to IG</a> <code>2021.01</code></li>
-<li><a href="https://vmorneau.me/pinch-and-zoom-like-instagram/" target="_blank" rel="noopener">Pinch and Zoom like Instagram</a> <code>2021.01</code></li>
-<li><a href="https://vmorneau.me/fetch-api-part-3/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 3: Security SIMPLIFIED</a> <code>2021.01</code></li>
-<li><a href="https://vmorneau.me/securing-the-fetch-api-for-oracle-apex/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 2: Securing Endpoints</a> <code>2021.01</code></li>
-<li><a href="https://vmorneau.me/using-javascript-fetch-api-in-oracle-apex/" target="_blank" rel="noopener">Fetch API for Oracle APEX - Part 1: Basic Usage</a> <code>2021.01</code></li>
-<li><a href="https://vmorneau.me/rich-animations/" target="_blank" rel="noopener">Rich animations for your APEX app</a> <code>2021.01</code></li>
-<li><a href="https://jeffkemponoracle.com/2021/01/reportmap-release-1-5/" target="_blank" rel="noopener">ReportMap Release 1.5</a> <code>2021.01</code></li>
-<li><a href="https://www.talkapex.com/2021/01/how-to-build-templates-in-aop/" target="_blank" rel="noopener">How to Quickly Build Templates in APEX Office Print</a> <code>2021.01</code></li>
-<li><a href="https://explorer.co.uk/creating-a-dynamic-organisation-chart-in-apex-in-under-an-hour-from-your-active-directory/" target="_blank" rel="noopener">Creating a dynamic Organisation Chart in APEX in under an hour from your Active Directory</a> <code>2021.01</code></li>
-<li><a href="https://explorer.co.uk/cards-new-region-type-in-apex-20-2/" target="_blank" rel="noopener">Cards – New Region Type in APEX 20.2</a> <code>2021.01</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2684,7 +2692,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">158</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

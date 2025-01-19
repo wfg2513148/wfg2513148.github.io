@@ -135,23 +135,33 @@ var _hmt = _hmt || [];
 </script>
 
 
-  <meta name="description" content="引言经常有刚刚接触 Oracle APEX 的同学，想自己动手试一试，但找不到比较好的入门教程。其实网上有很多，比如 Oracle Learning Library，或者 Youtube 上。问的人多了，索性整理一下，节省大家时间，方便大家快速入门。 钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracl">
+  <meta name="description" content="简介和背景自从 APEX 23.2 引入了Workflow工作流作为本机组件，APEX就有了专门用于工作流程建模和执行业务流程的能力。当Workflow工作流在给定活动中遇到错误时，它会进入“故障”状态。此时，工作流的管理员或所有者可以重试工作流。重试工作流将从故障活动中恢复执行。这就是大多数业务流程建模和执行产品（包括遵循 BPMN 2.0 标准的产品）的工作方式。查看此博客，其中讨论了如何在">
 <meta name="keywords" content="Oracle,APEX">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理">
-<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/index.html">
+<meta property="og:title" content="Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流">
+<meta property="og:url" content="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/index.html">
 <meta property="og:site_name" content="钢钢更新">
-<meta property="og:description" content="引言经常有刚刚接触 Oracle APEX 的同学，想自己动手试一试，但找不到比较好的入门教程。其实网上有很多，比如 Oracle Learning Library，或者 Youtube 上。问的人多了，索性整理一下，节省大家时间，方便大家快速入门。 钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracl">
+<meta property="og:description" content="简介和背景自从 APEX 23.2 引入了Workflow工作流作为本机组件，APEX就有了专门用于工作流程建模和执行业务流程的能力。当Workflow工作流在给定活动中遇到错误时，它会进入“故障”状态。此时，工作流的管理员或所有者可以重试工作流。重试工作流将从故障活动中恢复执行。这就是大多数业务流程建模和执行产品（包括遵循 BPMN 2.0 标准的产品）的工作方式。查看此博客，其中讨论了如何在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172213.png">
-<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7yzed8dhj30ce0fatdk.jpg">
-<meta property="og:updated_time" content="2021-01-30T06:14:40.757Z">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191420335.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191409530.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410400.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410225.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410026.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191411464.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412376.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412961.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191413211.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191414264.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191415622.png?x-oss-process=image/format,jpg/quality,q_60">
+<meta property="og:updated_time" content="2025-01-19T06:21:22.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理">
-<meta name="twitter:description" content="引言经常有刚刚接触 Oracle APEX 的同学，想自己动手试一试，但找不到比较好的入门教程。其实网上有很多，比如 Oracle Learning Library，或者 Youtube 上。问的人多了，索性整理一下，节省大家时间，方便大家快速入门。 钢哥的 Oracle APEX 系列文章：  Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技 Oracl">
-<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172213.png">
+<meta name="twitter:title" content="Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流">
+<meta name="twitter:description" content="简介和背景自从 APEX 23.2 引入了Workflow工作流作为本机组件，APEX就有了专门用于工作流程建模和执行业务流程的能力。当Workflow工作流在给定活动中遇到错误时，它会进入“故障”状态。此时，工作流的管理员或所有者可以重试工作流。重试工作流将从故障活动中恢复执行。这就是大多数业务流程建模和执行产品（包括遵循 BPMN 2.0 标准的产品）的工作方式。查看此博客，其中讨论了如何在">
+<meta name="twitter:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191420335.png?x-oss-process=image/format,jpg/quality,q_60">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="钢钢更新" type="application/atom+xml" />
@@ -159,7 +169,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/"/>
+  <link rel="canonical" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/"/>
 
 
 
@@ -169,7 +179,7 @@ var _hmt = _hmt || [];
   };
 </script>
 
-  <title>Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理 | 钢钢更新</title>
+  <title>Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流 | 钢钢更新</title>
   
 
 
@@ -379,7 +389,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王方钢 / Kenny Wang">
@@ -396,7 +406,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h2 class="post-title" itemprop="name headline">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理
+          <h2 class="post-title" itemprop="name headline">Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流
               
             
           </h2>
@@ -421,24 +431,12 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2018-08-08 00:05:57" itemprop="dateCreated datePublished" datetime="2018-08-08T00:05:57+08:00">2018-08-08</time>
+              <time title="创建时间：2025-01-19 14:05:00 / 修改时间：14:21:22" itemprop="dateCreated datePublished" datetime="2025-01-19T14:05:00+08:00">2025-01-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-01-30 14:14:40" itemprop="dateModified" datetime="2021-01-30T14:14:40+08:00">2021-01-30</time>
               
             
           </span>
@@ -478,7 +476,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/Oracle/Oracle-APEX/apex-series-13/" class="leancloud_visitors" data-flag-title="Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理">
+             <span id="/Oracle/Oracle-APEX/apex-242-workflow-2/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -503,7 +501,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.5k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -517,7 +515,7 @@ var _hmt = _hmt || [];
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -537,106 +535,63 @@ var _hmt = _hmt || [];
       
 
       
-        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/20200302172213.png" alt=""></p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>经常有刚刚接触 Oracle APEX 的同学，想自己动手试一试，但找不到比较好的入门教程。其实网上有很多，比如 <a href="https://apexapps.oracle.com/pls/apex/f?p=44785:OLL_HOME:5347733649657:::::" target="_blank" rel="noopener">Oracle Learning Library</a>，或者 Youtube 上。问的人多了，索性整理一下，节省大家时间，方便大家快速入门。</p>
-<p>钢哥的 Oracle APEX 系列文章：</p>
+        <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191420335.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="简介和背景"><a href="#简介和背景" class="headerlink" title="简介和背景"></a>简介和背景</h1><p>自从 APEX 23.2 引入了Workflow工作流作为本机组件，APEX就有了专门用于工作流程建模和执行业务流程的能力。当Workflow工作流在给定活动中遇到错误时，它会进入“故障”状态。此时，工作流的管理员或所有者可以重试工作流。重试工作流将从故障活动中恢复执行。这就是大多数业务流程建模和执行产品（包括遵循 BPMN 2.0 标准的产品）的工作方式。查看此博客，其中讨论了如何在 APEX 24.2 之前的APEX中重试出现故障的工作流程。</p>
+<p>然而，在现实生活中的用例中，这种故障缓解方法具有很大的限制性。</p>
+<p>任何流程自动化解决方案最需要的功能之一是保持现有工作流实例运行，无论业务流程生命周期中可能发生任何问题，包括：</p>
 <ul>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-1/">Oracle APEX 系列文章01：Oracle APEX, 让你秒变全栈开发的黑科技</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-2/">Oracle APEX 系列文章02：在阿里云上打造属于你自己的APEX完整开发环境 (安装 CentOS)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-3/">Oracle APEX 系列文章03：在阿里云上打造属于你自己的APEX完整开发环境 (安装 Tomcat, Nginx)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-4/">Oracle APEX 系列文章04：在阿里云上打造属于你自己的APEX完整开发环境 (安装XE, ORDS, APEX)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-5/">Oracle APEX 系列文章05：在阿里云上打造属于你自己的APEX完整开发环境 (进一步优化)</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-6/">Oracle APEX 系列文章06：Oracle APEX 到底适不适合企业环境？</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-7/">Oracle APEX 系列文章07：Oracle APEX 18.1 新特性</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/">Oracle APEX 系列文章08：如何从 APEX 5.1.4 升级到 最新的 APEX 18.1</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-9/">Oracle APEX 系列文章09：为什么选择使用 Oracle APEX</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX 系列文章10：Oracle APEX Evangelion（EVA 补完计划）</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-11/">Oracle APEX 系列文章11：全站启用 HTTPS，让你的 APEX 更安全</a></li>
-<li><a href="https://wangfanggang.com/Mobile/native-apex/">Oracle APEX 系列文章12：魔法秀，让你的 H5 页面秒变 APP</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-14/">Oracle APEX 系列文章14：Oracle APEX 18.1 Docker 镜像</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-15/">Oracle APEX 系列文章15：无人值守一键安装Oracle APEX环境</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-16/">Oracle APEX 系列文章16：AOP - PDF报表打印新选择</a></li>
-<li><a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-17/">Oracle APEX 系列文章17：如何利用 Oracle APEX 助力企业应用开发</a></li>
+<li><strong>人为错误</strong>：如果用户在表单中输入一些错误的数据，然后使用该数据在工作流中进行分支（用户输入数量 100 而不是 1000，并且稍后在工作流中是基于该数量的切换活动），则可能会发生人为错误如果人工任务的潜在所有者意外批准了某项任务，但后来由于某种原因决定拒绝该任务，反之亦然。</li>
+<li><strong>自动化任务中的错误</strong>：工作流通过执行代码或调用 API活动来执行业务逻辑。此业务逻辑的实现中可能会出现错误，从而导致异常或将工作流发送到不需要的路径，因为业务逻辑返回了一些错误的值。</li>
 </ul>
-<h2 id="Oracle-APEX-官网-推荐"><a href="#Oracle-APEX-官网-推荐" class="headerlink" title="Oracle APEX 官网 (推荐)"></a>Oracle APEX 官网 (推荐)</h2><p><a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX 官网</a>上有关于 Oracle APEX 最权威的信息，同时，Oracle 官方还贴心地重新制作了官网页面，并整理了一个面向初学者的 <a href="https://apex.oracle.com/en/learn/getting-started/" target="_blank" rel="noopener">Getting Started 入门指南</a>，并且有配套视频教程，推荐初学者学习。</p>
-<h2 id="Oracle-Learning-Library-推荐"><a href="#Oracle-Learning-Library-推荐" class="headerlink" title="Oracle Learning Library (推荐)"></a>Oracle Learning Library (推荐)</h2><p><a href="https://apexapps.oracle.com/pls/apex/f?p=44785:OLL_HOME:5347733649657:::::" target="_blank" rel="noopener">Oracle Learning Library</a> 是学习 Oracle 产品最佳途径，上面有Oracle各产品官网的教程。有关 APEX 的请移步这里：<a href="https://apexapps.oracle.com/pls/apex/f?p=44785:141:5347733649657::NO:::" target="_blank" rel="noopener">Oracle Application Express Learning Library</a>，以下简单整理 APEX 官方教程列表。</p>
-<a id="more"></a>
+<p>对于客户来说，对运行的工作流程进行一定的控制以解决工作流程中因人为或业务逻辑错误而导致的问题至关重要。由于现有工作流程中出现一些错误，用户不愿意重新启动工作流程，因为这意味着需要重做之前的工作；参与工作流程的人员需要再次参与，这可能既昂贵又耗时。</p>
+<p>使用 APEX 24.2，工作流的管理员可以暂停工作流并在工作流内的<strong>任意活动</strong>处恢复它。这使得工作流程更具弹性，并允许任意重新路由故障/挂起的工作流程。现在，工作流程可以通过一组完全不同的路径进行路由，而不是保留在其原始路线上。</p>
+<h1 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h1><p>本博客假设读者熟悉APEX Workflow工作流的概念和术语。</p>
+<p>对于 APEX Workflow 工作流程的新用户来说，在继续阅读此博客之前，可以先阅读以下介绍 APEX Workflow 工作流程概念的博客：</p>
+<ul>
+<li><a href="https://blogs.oracle.com/apex/post/simplify-medical-appointments-using-apex-workflow" target="_blank" rel="noopener">使用 APEX Workflow 工作流程简化业务流程管理</a></li>
+<li><a href="https://blogs.oracle.com/apex/post/multi-level-expense-approval-using-apex-workflow" target="_blank" rel="noopener">使用 APEX Workflow 工作流程进行多级费用审批</a></li>
+<li><a href="https://blogs.oracle.com/apex/post/apex-workflow-development-lifecycle" target="_blank" rel="noopener">APEX Workflow 工作流程生命周期</a></li>
+</ul>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>下图显示了<strong>工作流程设计器</strong>中简单的<strong>订单申请工作流程</strong>的模型。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191409530.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>该工作流实现以下逻辑：</p>
+<ul>
+<li>如果请购金额小于或等于 1000，则会自动批准并创建订单。</li>
+<li>否则，将为请购单创建审批任务，并且仅在请购单获得批准后才创建订单。</li>
+<li>创建订单后，将其发送以供审批。</li>
+<li>订单状态根据批准订单任务的结果进行更新。</li>
+<li>申请 ID、项目和项目金额是工作流程的输入参数。</li>
+</ul>
+<h1 id="运行申请单应用程序"><a href="#运行申请单应用程序" class="headerlink" title="运行申请单应用程序"></a>运行申请单应用程序</h1><p>下面的示例显示了一个项目表，以及为Macbook Pro提交的新申请，金额为2500美元。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410400.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>提交会触发新的工作流程。由于物料价值大于1000美元，因此<strong>不会</strong>自动批准，并且会创建人工任务来批准请购单。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410225.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191410026.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>假设此时应用程序用户意识到该申请实际上符合自动批准的条件，因为在提交Workflow工作流之前已经收到了口头批准。在 APEX 24.2 之前，自动批准的唯一方法是终止当前Workflow工作流程，并更改项目数量或仅更改此申请的业务逻辑，然后提交新的Workflow工作流程。通过当前的增强功能，Workflow工作流管理员可以登录Workflow工作流控制台，并打开详细信息页面来暂停工作流。</p>
+<p>然后，管理员将Workflow工作流变量“金额”更新为900并保存该值。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191411464.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>在单击“<strong>恢复</strong>”按钮之前，管理员将“<strong>审核中的更新申请状态</strong>”设置为应恢复工作流的活动。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412376.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>单击“<strong>恢复</strong>”后，工作流程将根据更新的项目数量重新路由，这次采用自动审批路由。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191412961.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>请注意工作流程活动和审核图。这表明<strong>批准申请</strong>人工任务活动已终止，并且跳过了其路径上的后续活动。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191413211.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<h1 id="自定义生成的工作流程详细信息页面"><a href="#自定义生成的工作流程详细信息页面" class="headerlink" title="自定义生成的工作流程详细信息页面"></a>自定义生成的工作流程详细信息页面</h1><p>让我们看看如何自定义生成的<strong>工作流程详细信息</strong>页面以选择任意活动并从那里恢复工作流程。</p>
+<p>在生成的“工作流程详细信息”页面的“<strong>按钮</strong>区域”中，添加了“选择列表”类型的新页面项目。这将用于选择将从中恢复工作流的特定活动。</p>
+<p>用于检索给定工作流程中的活动名称和静态ID的查询如下:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> wa.name <span class="keyword">as</span> <span class="keyword">name</span>,</span><br><span class="line">       wa.static_id <span class="keyword">as</span> <span class="keyword">value</span></span><br><span class="line">  <span class="keyword">from</span> apex_appl_workflow_activities wa,</span><br><span class="line">       apex_appl_workflow_versions   wv,</span><br><span class="line">       apex_workflows                wf$</span><br><span class="line"> <span class="keyword">where</span> wf$.workflow_id = :P8_WORKFLOW_ID</span><br><span class="line">   <span class="keyword">and</span> wf$.workflow_version_id  = wv.version_id</span><br><span class="line">   <span class="keyword">and</span> wv.version_id   = wa.version_id</span><br><span class="line">   <span class="keyword">and</span> wv.workflow_static_id = wa.workflow_static_id</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191414264.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>页面进程 - <strong>恢复</strong>现在有一个新属性： <strong>Activity Static ID Item</strong>。它设置为包含所选工作流程活动的静态 ID 的页面项目。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191415622.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
 <blockquote>
-<p><strong>注</strong>：<code>APEX 5.1</code>版本跟最新的<code>18.1</code>没有太大的区别，对于初学者来说，把 5.1 的教程先走一遍，对于掌握 APEX 基础而言已经足够了。</p>
+<p>注意：与恢复页面流程类似，<strong>API apex_workflow.resume</strong> 也经过修改以接受特定活动的静态ID作为可选参数。</p>
 </blockquote>
-<ul>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/charts/charts.html" target="_blank" rel="noopener">Adding Charts to your Existing Database Application in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/packagedapp/index.html" target="_blank" rel="noopener">Installing and Running a Packaged Application in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/appfromcsv/index.html" target="_blank" rel="noopener">Creating an Application Express Database Application from a Spreadsheet</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/addingsecurity/index.html" target="_blank" rel="noopener">Adding Security to your Database Application Using Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/using_interactive_grid/using_interactive_grid.html" target="_blank" rel="noopener">Using Interactive Grid Regions in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/translating_appln/translating_appln.html" target="_blank" rel="noopener">Translating an Application in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/transtoapex5.1/index.html" target="_blank" rel="noopener">Transitioning to Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/dynamic_actions/dynamic_actions.html" target="_blank" rel="noopener">Building Dynamic Actions in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/mobile_web_app/mobile_web_app.html" target="_blank" rel="noopener">Building a Mobile Web Application Using Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/websheet_app/websheet_app.html" target="_blank" rel="noopener">Building a Websheet Application in Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/building_and_customizing_interactive_grid/interactive_grids_part1.html" target="_blank" rel="noopener">Building and Customizing an Interactive Grid in Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/pdf_printing/pdf_printing.html" target="_blank" rel="noopener">Creating PDF Reports with Oracle Application Express 5.1 and Oracle REST Data Services</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/dataload/dataload.html" target="_blank" rel="noopener">Creating a Data Load Wizard for Your Application with Oracle Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/restful_web_services/restful_web_services.html" target="_blank" rel="noopener">Creating and Using a RESTful Web Service in Application Express 5.1</a></li>
-<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/apex/r51/themeroller/themeroller.html" target="_blank" rel="noopener">Modifying the Universal Theme by using Theme Roller in Application Express 5.1</a></li>
-</ul>
-<h2 id="Oracle-APEX-插件-推荐"><a href="#Oracle-APEX-插件-推荐" class="headerlink" title="Oracle APEX 插件 (推荐)"></a>Oracle APEX 插件 (推荐)</h2><ul>
-<li><a href="https://apex.world/" target="_blank" rel="noopener">apex.world</a> 是另一个钢哥常去的网站，特别是上面有很多好用的 <a href="https://apex.world/ords/f?p=100:700:::NO:700::&amp;cs=3nJKWbr-PCmZ3KR-A4fNp608r8dg" target="_blank" rel="noopener">APEX 插件</a>，更新也很及时，强烈推荐有进阶需求的同学。</li>
-<li><a href="http://www.apex-plugin.com/" target="_blank" rel="noopener">http://www.apex-plugin.com/</a>，这个网站的时间比较早，上面有很多比较老的插件，算是对 apex.world 的补充吧。</li>
-<li><a href="http://apex.pretius.com/apex/f?p=PLUGINS:HOME:::NO:::" target="_blank" rel="noopener">Pretius plugins for Oracle APEX</a> 一个第三方的 Oracle APEX 插件公司。</li>
-</ul>
-<h2 id="Youtube-视频教程-推荐"><a href="#Youtube-视频教程-推荐" class="headerlink" title="Youtube 视频教程 (推荐)"></a>Youtube 视频教程 (推荐)</h2><p>Youtube 上也有很多网友自行录制的 Oracle APEX 视频教程，不喜欢看文字的同学可以直接看视频学习。不过 Youtube 需要翻墙访问，请自备梯子。有关如何翻墙，可以参考钢哥之前的文章《<a href="https://wangfanggang.com/Docker/shadowsocks-vpn/">10分钟用 Docker 搭建自己的 Shadowsocks VPN</a>》，或者用<a href="https://getlantern.org/zh_CN/" target="_blank" rel="noopener">蓝灯</a>之类的VPN工具，相信这点儿困难挡不住爱学习的你。</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=q_GfZFio9qg&amp;list=PLUo-NIMouZ_vKrZL3CyRIXH6adADcGp9K" target="_blank" rel="noopener">Oracle APEX 18.1 Getting Started</a></li>
-<li><a href="https://www.youtube.com/channel/UCEpIXFjcQIztReQNLymvYrQ" target="_blank" rel="noopener">Oracle Application Express 订阅频道</a></li>
-<li><a href="https://www.youtube.com/channel/UCyhuNcrGetIRY9SdD92Uigw" target="_blank" rel="noopener">SkillBuilders for APEX 订阅频道</a></li>
-</ul>
-<h2 id="Oracle-Technology-Network"><a href="#Oracle-Technology-Network" class="headerlink" title="Oracle Technology Network"></a>Oracle Technology Network</h2><p><a href="http://www.oracle.com/technetwork/index.html" target="_blank" rel="noopener">OTN</a> 也是 Oracle 官网的一部分，上面有 Oracle 最前沿的技术动态，也可以在上面找到有关 Oracle APEX 的信息。</p>
-<ul>
-<li><a href="http://www.oracle.com/technetwork/developer-tools/apex/application-express/apex-getting-started-1863613.html" target="_blank" rel="noopener">Oracle Application Express Getting Started</a></li>
-</ul>
-<p>这里是另一个<a href="https://www.oracle.com/database/technologies/appdev/apex.html" target="_blank" rel="noopener">入口</a>。</p>
-<h2 id="Oracle-Application-Express-Discussion-Forum"><a href="#Oracle-Application-Express-Discussion-Forum" class="headerlink" title="Oracle Application Express Discussion Forum"></a>Oracle Application Express Discussion Forum</h2><p><a href="https://community.oracle.com/community/database/developer-tools/application_express" target="_blank" rel="noopener">Oracle Application Express Discussion Forum</a> 是 Oracle APEX 的官方论坛，任何有关 APEX 的问题都可以直接在上面提，经常有 Oracle 原厂的同事帮忙解答。</p>
-<h2 id="Oracle-Application-Express-Community"><a href="#Oracle-Application-Express-Community" class="headerlink" title="Oracle Application Express Community"></a>Oracle Application Express Community</h2><p><a href="https://apex.oracle.com/pls/apex/f?p=411:1" target="_blank" rel="noopener">Oracle APEX 社区</a>也是 Oracle 官方为 APEX 专门打造的产品社区，里面有关于 Oracle APEX 方方面面的信息。</p>
-<ul>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:2:::NO:::" target="_blank" rel="noopener">Oracle APEX 咨询公司</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:4:::NO:::" target="_blank" rel="noopener">Oracle APEX 托管公司</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:5:::NO:::" target="_blank" rel="noopener">Oracle APEX 商业产品</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:9:::NO:::" target="_blank" rel="noopener">Oracle APEX 互联网应用产品</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:13:::NO:::" target="_blank" rel="noopener">Oracle APEX 相关图书</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:11:::NO:::" target="_blank" rel="noopener">Oracle APEX 成功案例</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:15:::NO:::" target="_blank" rel="noopener">Oracle APEX 客户评价</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:19:::NO:::" target="_blank" rel="noopener">Oracle APEX 杂志文章</a></li>
-<li><a href="https://apex.oracle.com/pls/apex/f?p=411:17:::NO:::" target="_blank" rel="noopener">Oracle APEX 相关链接</a></li>
-<li><a href="https://www.builtwithapex.com/ords/f?p=BWA:LIST" target="_blank" rel="noopener">Oracle APEX 开发的真实网站</a></li>
-</ul>
-<p>这里有另一个 <a href="https://www.odtug.com/apex" target="_blank" rel="noopener">APEX 社区</a>，主要聚合了很多 Oracle APEX 的文章。</p>
-<h2 id="Oracle-Application-Express-Documentation-Release-18-1"><a href="#Oracle-Application-Express-Documentation-Release-18-1" class="headerlink" title="Oracle Application Express Documentation Release 18.1"></a>Oracle Application Express Documentation Release 18.1</h2><p><a href="https://docs.oracle.com/database/apex-18.1/index.htm" target="_blank" rel="noopener">Oracle APEX 18.1 官方文档库</a>，主要内容如下：</p>
-<ul>
-<li><a href="https://docs.oracle.com/database/apex-18.1/HTMRN/toc.htm" target="_blank" rel="noopener">Release Notes</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/HTMIG/toc.htm" target="_blank" rel="noopener">Installation Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/HTMDB/toc.htm" target="_blank" rel="noopener">App Builder User’s Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEMIG/toc.htm" target="_blank" rel="noopener">Application Migration Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEUTL/toc.htm" target="_blank" rel="noopener">SQL Workshop Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEAPI/toc.htm" target="_blank" rel="noopener">API Reference</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEXJS/index.html" target="_blank" rel="noopener">JavaScript API Reference</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEADM/toc.htm" target="_blank" rel="noopener">Administration Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEEUG/toc.htm" target="_blank" rel="noopener">End User’s Guide</a></li>
-<li><a href="https://docs.oracle.com/database/apex-18.1/AEACC/toc.htm" target="_blank" rel="noopener">Accessibility Guide</a></li>
-</ul>
-<h2 id="其他-Oracle-APEX-资源"><a href="#其他-Oracle-APEX-资源" class="headerlink" title="其他 Oracle APEX 资源"></a>其他 Oracle APEX 资源</h2><ul>
-<li><a href="https://o7planning.org/en/11003/oracle-apex" target="_blank" rel="noopener">Oracle APEX Tutorials</a></li>
-<li><a href="http://www.oracle.com/technetwork/developer-tools/apex/learnmore/apex-hols-2578401.html" target="_blank" rel="noopener">Oracle APEX Hands-On Labs</a> 附带官方出品的虚拟机。</li>
-<li><a href="https://github.com/Dani3lSun/docker-db-apex-dev" target="_blank" rel="noopener">Oracle Database &amp; APEX Developer Docker Image</a> APEX 大神自己搭的 docker 镜像。</li>
-<li><a href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=609&amp;get_params=dc:D79653,clang:EN" target="_blank" rel="noopener">Oracle University</a> 大名鼎鼎的甲骨文大学，里面有专业的讲师和培训课程，有钱的公司可以直接请他们上门培训。</li>
-<li><a href="http://translate-apex.com/apex/f?p=800:START::::::" target="_blank" rel="noopener">Translate APEX</a> 有多语言需求的同学可以关注下。</li>
-</ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>总结了这么多有关 Oracle APEX 的资源，如果再来问我要基础学习资料就说不过去了，把上面这些都过一遍，绝对不止入门级别了。想进阶的同学请关注钢哥整理的博文列表 <a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a>。学习知识贵在持之以恒，主要还是得自己多学多练，在实践中积累，并不断总结反思，这样进步才快。钢哥也会不定期更新有关 Oracle APEX 的最新文章和动态，希望与你共同进步！</p>
-<p>可以扫描下面的二维码关注<code>APEX中文社区</code>订阅号：<br><img src="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7hvy8x9ij309k09kwef.jpg" alt="APEX中文社区"></p>
-<p>另外，<code>APEX中文社区微信群</code>里每天都在讨论有关 Oracle APEX 的各种话题和最新动态，群里甚至有 APEX 美国原厂的大咖，帮助大家答疑解惑，所以关注 APEX 的同学一定不要错过。由于目前人数已经超过100人了，需要邀请才能加入，想加入的同学请加钢哥微信（添加钢哥时请注明：希望加入<code>APEX中文社区微信群</code>），钢哥来拉大家入群。</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/006By2pOly1ft7yzed8dhj30ce0fatdk.jpg" alt="APEX中文社区微信群"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line"></span><br><span class="line">    apex_workflow.resume(</span><br><span class="line">         p_instance_id          =&gt; 1234,</span><br><span class="line">         p_activity_static_id   =&gt; &apos;UPDATE_REQUISITION_FOR_REVIEW&apos;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当未提供静态ID时，<strong>Resume API</strong>的工作方式与以前的版本相同，即Workflow工作流在暂停时从其等待的活动处恢复。</p>
+</blockquote>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>上面的示例显示了设计一个应用程序是多么容易，其中工作流管理员可以重新路由提交的Workflow工作流。本文演示了从上游活动恢复Workflow工作流，但是，也可以使用相同的方法从下游活动（稍后出现在Workflow工作流中的活动）恢复Workflow工作流。</p>
+<p>您还可以在此<a href="https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more" target="_blank" rel="noopener">博客</a>中了解 Oracle APEX 24.2 中其他重要的Workflow工作流程增强功能。</p>
 
       
     </div>
@@ -655,12 +610,12 @@ var _hmt = _hmt || [];
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="//cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-series-13/">Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理</a></p>
+  <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-242-workflow-2/">Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
-  <p><span>发布时间:</span>2018年08月08日 - 00:08</p>
-  <p><span>最后更新:</span>2021年01月30日 - 14:01</p>
-  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-series-13/" title="Oracle APEX 系列文章13：Oracle APEX 入门基础资料整理">https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-13/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2025年01月19日 - 14:01</p>
+  <p><span>最后更新:</span>2025年01月19日 - 14:01</p>
+  <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-242-workflow-2/" title="Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流">https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -714,8 +669,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Oracle/Oracle-APEX/apex-update-20180807/" rel="next" title="Oracle APEX 活跃博文整理 | 2018.08.07">
-                <i class="fa fa-chevron-left"></i> Oracle APEX 活跃博文整理 | 2018.08.07
+              <a href="/Oracle/Oracle-APEX/apex-242-workflow/" rel="next" title="Oracle APEX 24.2 新特性 - Workflow工作流">
+                <i class="fa fa-chevron-left"></i> Oracle APEX 24.2 新特性 - Workflow工作流
               </a>
             
           </div>
@@ -723,10 +678,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/AWS/AWS-Certified-Solutions-Architect-Professional/" rel="prev" title="Finally passed AWS Certified Solutions Architect - Professional">
-                Finally passed AWS Certified Solutions Architect - Professional <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1057,7 +1008,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-官网-推荐"><span class="nav-number">2.</span> <span class="nav-text">Oracle APEX 官网 (推荐)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-Learning-Library-推荐"><span class="nav-number">3.</span> <span class="nav-text">Oracle Learning Library (推荐)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-APEX-插件-推荐"><span class="nav-number">4.</span> <span class="nav-text">Oracle APEX 插件 (推荐)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Youtube-视频教程-推荐"><span class="nav-number">5.</span> <span class="nav-text">Youtube 视频教程 (推荐)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-Technology-Network"><span class="nav-number">6.</span> <span class="nav-text">Oracle Technology Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-Application-Express-Discussion-Forum"><span class="nav-number">7.</span> <span class="nav-text">Oracle Application Express Discussion Forum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-Application-Express-Community"><span class="nav-number">8.</span> <span class="nav-text">Oracle Application Express Community</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-Application-Express-Documentation-Release-18-1"><span class="nav-number">9.</span> <span class="nav-text">Oracle Application Express Documentation Release 18.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他-Oracle-APEX-资源"><span class="nav-number">10.</span> <span class="nav-text">其他 Oracle APEX 资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">11.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介和背景"><span class="nav-number">1.</span> <span class="nav-text">简介和背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先决条件"><span class="nav-number">2.</span> <span class="nav-text">先决条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行申请单应用程序"><span class="nav-number">4.</span> <span class="nav-text">运行申请单应用程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义生成的工作流程详细信息页面"><span class="nav-number">5.</span> <span class="nav-text">自定义生成的工作流程详细信息页面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">6.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>
