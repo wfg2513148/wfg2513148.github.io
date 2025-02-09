@@ -371,6 +371,543 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-text-message-enhancements/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-text-message-enhancements/" itemprop="url">
+                  Oracle APEX 24.2 新特性 - 文本消息增强
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-02-09 11:05:00 / 修改时间：11:31:32" itemprop="dateCreated datePublished" datetime="2025-02-09T11:05:00+08:00">2025-02-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-text-message-enhancements/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - 文本消息增强">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091114380.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/whats-new-in-apex-242-text-message-enhancements" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/whats-new-in-apex-242-text-message-enhancements</a></p>
+<p>文本消息是一个强大的功能，可以用来构建带有替换变量的可翻译文本字符串，这些字符串随后可以从PL/SQL包、过程和函数中调用。在APEX应用程序中使用文本消息具有如下好处：</p>
+<ul>
+<li>动态多语言应用翻译</li>
+<li>集中管理文本</li>
+<li>动态UI文本和提示</li>
+<li>无缝更新内容变更</li>
+<li>本地化电子邮件和通知</li>
+<li>大型应用程序的改进可维护性</li>
+</ul>
+<p>在 <a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle APEX 24.2</a> 中，文本消息得到了进一步增强。现在，您可以：</p>
+<ul>
+<li>添加有意义的占位符</li>
+<li>编写更简短的替换语法</li>
+<li>忽略前缀</li>
+<li>直接指定参数值</li>
+<li>使用页面设计器中的文本消息选择器</li>
+</ul>
+<p>让我们深入了解如何在APEX应用程序中使用文本消息。</p>
+<h1 id="创建带有有意义的占位符的文本消息"><a href="#创建带有有意义的占位符的文本消息" class="headerlink" title="创建带有有意义的占位符的文本消息"></a>创建带有有意义的占位符的文本消息</h1><p>现在，您可以使用有意义的占位符，如 <strong>%name</strong> 和 <strong>%quantity</strong>，来代替位置参数，如%0 和%1。这不仅使代码更容易阅读，还有助于解决添加内容可能改变变量位置等常见问题。命名约定有助于调试并更好地理解输出。</p>
+<p>创建文本消息，请前往 <code>共享组件</code> → <code>全球化</code> → <code>文本消息</code> 并点击 <strong>创建文本消息</strong> 或点击现有文本消息进行编辑。</p>
+<p>在“<strong>创建/编辑文本消息</strong>”对话框中，输入以下属性：</p>
+<p>姓名：<strong>TEXT_MESSAGE</strong><br>语言：<strong>English (en)</strong><br>文本：要显示的文本消息</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091107177.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1 创建一个文本消息"></p>
+<h1 id="如何应用-APEX-24-2-中的文本消息？"><a href="#如何应用-APEX-24-2-中的文本消息？" class="headerlink" title="如何应用 APEX 24.2 中的文本消息？"></a>如何应用 APEX 24.2 中的文本消息？</h1><p>创建文本消息后，它就准备好在您的应用程序中使用。您可以通过将其作为以下内容集成到服务器端和客户端代码中来利用和访问文本消息：</p>
+<ul>
+<li>静态内容</li>
+<li>PL/SQL代码</li>
+<li>JavaScript代码</li>
+</ul>
+<h1 id="使用静态内容处理文本消息"><a href="#使用静态内容处理文本消息" class="headerlink" title="使用静态内容处理文本消息"></a>使用静态内容处理文本消息</h1><p>让我们考虑一个场景，即您正在构建一个在线购物应用程序，并希望使用文本消息显示订单确认。一个简单的选项是创建一个类型为 <strong>静态值</strong> 的页面项，其中包含可翻译的消息，这些消息可以轻松地在屏幕上显示。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>创建一个 <strong>仅显示</strong> 页面项。</li>
+<li>在“<strong>源</strong>”下<ol>
+<li>对于类型，选择 <strong>静态值</strong></li>
+<li>静态值，请输入以下代码：</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&#123;SALES_CONFIRMATION user=<span class="string">"John"</span> quantity=<span class="string">"1"</span> product=<span class="string">"Laptop"</span>&#125;.</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091109800.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2 添加一个文本消息到页面控件上"></p>
+<p>这是一个简单的实现，将提供以下输出：</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091109509.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2.1 来自文本消息控件的输出样例"></p>
+<h1 id="使用PL-SQL处理文本消息"><a href="#使用PL-SQL处理文本消息" class="headerlink" title="使用PL/SQL处理文本消息"></a>使用PL/SQL处理文本消息</h1><p>您可以使用PL/SQL代码与文本消息结合，通过应用来自 Oracle APEX API 的 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/APEX_LANG.GET_MESSAGE-Function.html" target="_blank" rel="noopener">apex_lang.get_message</a> 函数，轻松创建可定制的消息输出，从而提高可读性和安全性。为了展示这一点，让我们创建一个计算示例。</p>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ol>
+<li>在您的 APEX 页面上，导航到 <strong>渲染树</strong>。</li>
+<li>在“<strong>标题之前</strong>”上右键单击并选择“<strong>创建计算</strong>”。</li>
+<li>在属性编辑器中，输入/选择以下内容：<ol>
+<li>对于 <strong>类型</strong>，选择 <strong>表达式</strong></li>
+<li>为语言选择 <strong>PL/SQL</strong></li>
+<li>对于 PL/SQL 表达式，请输入以下代码：</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apex_lang.get_message( &apos;SALES_CONFIRMATION&apos;</span><br><span class="line">                     , apex_t_varchar2( &apos;user&apos;, :P6_CUSTOMER</span><br><span class="line">                                      , &apos;quantity&apos;, 1</span><br><span class="line">                                      , &apos;product&apos;, &apos;Laptop&apos;</span><br><span class="line">                                      )</span><br><span class="line">                     )</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091110587.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<blockquote>
+<p>注意：这是之前使用静态内容创建的相同文本消息。观察结果保持不变。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091111742.png?x-oss-process=image/format,jpg/quality,q_60" alt="图3 使用PL/SQL编写文本消息"></p>
+<h1 id="使用JavaScript处理文本消息"><a href="#使用JavaScript处理文本消息" class="headerlink" title="使用JavaScript处理文本消息"></a>使用JavaScript处理文本消息</h1><p>某些应用可能需要执行客户端代码的消息。这可以通过在 JavaScript 中应用文本消息来实现。</p>
+<blockquote>
+<p>注意：为了使此功能正常工作，您应该在“<strong>创建文本消息</strong>”对话框中<strong>启用JavaScript选项</strong>。</p>
+</blockquote>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091111438.png?x-oss-process=image/format,jpg/quality,q_60" alt="图4 启用Javascript选项处理文本消息"></p>
+<h2 id="步骤：-1"><a href="#步骤：-1" class="headerlink" title="步骤："></a>步骤：</h2><ul>
+<li>创建一个 APEX 按钮</li>
+<li>右键单击按钮并选择 <strong>创建点击动态动作</strong></li>
+<li>动作 <strong>显示</strong> 将默认出现，将其更改为 <strong>执行JavaScript代码</strong> 动作。</li>
+<li>请注意，在您的 JavaScript 代码中，您将使用 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aexjs/apex.lang.html#.formatMessage" target="_blank" rel="noopener">apex.lang.formatMessage</a> 函数。</li>
+<li>当 JavaScript 代码执行时，文本消息以一个 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aexjs/apex.message.html#.alert" target="_blank" rel="noopener">APEX Alert</a> 对话框的形式显示。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Text Message Data </span></span><br><span class="line"><span class="keyword">const</span> textMessage = <span class="string">'SALES_CONFIRMATION'</span> </span><br><span class="line"><span class="keyword">const</span> textMessageParameters = &#123; <span class="attr">user</span>: <span class="string">'John'</span>, <span class="attr">quantity</span>: <span class="number">1</span>, <span class="attr">product</span>: <span class="string">'Laptop'</span> &#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// Calling the formatted text message from the JS API </span></span><br><span class="line"><span class="keyword">const</span> message = apex.lang.formatMessage(textMessage, textMessageParameters); </span><br><span class="line"></span><br><span class="line"><span class="comment">// Showing the text with in a alert </span></span><br><span class="line">apex.message.alert(message, <span class="literal">null</span>, &#123;<span class="attr">style</span>: <span class="string">"success"</span>, <span class="attr">iconClasses</span>: <span class="string">"fa fa-check fa-2x"</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091112325.png?x-oss-process=image/format,jpg/quality,q_60" alt="图5 添加文本消息到Javascript中"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091112120.png?x-oss-process=image/format,jpg/quality,q_60" alt="图6 在alert对话框中显示文本消息"></p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>文本消息是多功能组件，可以从服务器端和客户端代码中利用和访问。从维护大型应用程序到本地化电子邮件和通知，文本消息有助于维护单一事实来源和集中化文本管理。在这篇博客文章中，您看到了使用文本消息与静态内容、PL/SQL表达式和JavaScript代码的示例。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/" itemprop="url">
+                  Oracle APEX 24.2 新特性 - 文本消息增强
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-02-09 11:05:00 / 修改时间：11:52:21" itemprop="dateCreated datePublished" datetime="2025-02-09T11:05:00+08:00">2025-02-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - 文本消息增强">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091132306.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/whats-new-in-apex-242-dynamic-action-generate-text-with-ai" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/whats-new-in-apex-242-dynamic-action-generate-text-with-ai</a></p>
+<p><a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-242" target="_blank" rel="noopener">Oracle APEX 24.2</a> 版本发布了一个名为“使用AI生成文本”的激动人心的 <a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-242" target="_blank" rel="noopener">动态操作</a>。这一创新功能帮助开发者将AI驱动的文本生成能力添加到应用程序中，通过动态操作激活。凭借其直观的配置过程，该功能为开发者提供了一种轻松利用AI增强应用程序的新方法，使应用程序比以往任何时候都更加易于访问和高效。使用AI生成文本有助于降低集成先进AI驱动功能的技术门槛，实现更快的开发和更丰富的用户体验。</p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在 APEX 原生生成式 AI 功能引入之前，开发者必须建立 Web 服务连接以从生成式 AI 服务获取响应。随着 <a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-241" target="_blank" rel="noopener">APEX 24.1</a> 版本中引入 <code>APEX_AI</code> API，开发者可以通过传递正确的参数来调用 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/APEX_AI.GENERATE-Function-Signature-1.html" target="_blank" rel="noopener">apex_ai.generate</a> 函数，以获取响应。现在，在 APEX 24.2 版本中，如图 1 所示，开发者可以通过在属性编辑器中配置一系列属性，直接在应用程序中实现由 AI 驱动的文本生成。该功能灵活，可以根据应用程序的具体需求满足各种用例。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091135651.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1 使用“利用AI生成文字”的动态操作"></p>
+<p>让我们通过例子更深入地探讨细节。</p>
+<h1 id="示例1：仅显示系统提示的配置"><a href="#示例1：仅显示系统提示的配置" class="headerlink" title="示例1：仅显示系统提示的配置"></a>示例1：仅显示系统提示的配置</h1><p>动态操作 <code>Generate Text with AI action</code> 可以基于 <strong>predefined input</strong> 动态生成文本信息，使用 <strong>substitution strings</strong> 或两者的组合。该操作随后在 <strong>designated page item</strong>，如 <code>P1_AI_RESPONSE</code> 中返回生成的文本，提供一种简单且无缝的方式在应用中展示AI生成的内容。此功能允许应用生成灵活且动态的文本，以满足应用和用户交互的特定需求。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>在一个 APEX 页面中，创建一个 <strong>按钮</strong>。</li>
+<li>创建按钮上的一个 <strong>动态操作</strong>。</li>
+<li>为动作，选择 <strong>使用AI生成文本</strong>。</li>
+<li>对于 <strong>输入值 -&gt; 类型</strong>，请选择 <strong>仅系统提示</strong>。</li>
+<li>为 <strong>生成式AI -&gt; 系统提示</strong> 编写您的提示。或者，您可以使用 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmdb/about-using-substitution-strings.html#GUID-009536EC-D969-42B0-B272-3A353F2834EB" target="_blank" rel="noopener">替换字符串</a>（图3）来引用实际的提示。</li>
+<li>对于 <strong>使用响应 -&gt; 项目</strong> 选项，选择要写入生成文本的页面项目。</li>
+</ol>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091136833.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2 利用AI生成文本 - 显示文字"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091136416.png?x-oss-process=image/format,jpg/quality,q_60" alt="图3 利用AI生成文本 - 动态消息"></p>
+<p>点击 <strong>生成</strong> 按钮，以生成文本。结果将显示在下面的 <strong>AI响应</strong> 文本区域中。请注意，生成的文本可能因您的AI提供商和系统提示而有所不同。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091137957.png?x-oss-process=image/format,jpg/quality,q_60" alt="图4 在页面控件上输出AI生成的文本"></p>
+<p>这种方法有助于在应用自主驱动文本生成过程的情况下。例如，它可以支持需要基于提示的响应的应用功能，无需任何用户交互，如自动生成摘要或预填充表单内容。开发者可以将 <a href="https://blogs.oracle.com/apex/post/blog-ai-config-and-rag-sources" target="_blank" rel="noopener">检索增强生成（RAG）</a> 方法集成到这些提示中，以增强其上下文。</p>
+<h1 id="示例2：系统提示与页面-应用程序项目"><a href="#示例2：系统提示与页面-应用程序项目" class="headerlink" title="示例2：系统提示与页面/应用程序项目"></a>示例2：系统提示与页面/应用程序项目</h1><p>为需要更高灵活性的应用，AI 动态动作生成文本功能结合用户输入或通过页面或应用项目动态生成的内容。通过将系统提示与 P1_INPUT_ITEM 等项的内容相结合，该动作生成输出，随后在另一个项目如 P1_AI_RESPONSE 中显示。这种设置有助于实现高度动态的交互，其中 AI 生成的文本适应用户输入或应用内的其他内容，使其更加个性化和情境感知。</p>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ol>
+<li>在一个APEX页面中，创建一个 <strong>按钮</strong>。</li>
+<li>创建按钮上的一个 <strong>动态操作</strong>。</li>
+<li>为动作选项中，选择 <strong>使用AI生成文本</strong>。</li>
+<li>在“<strong>输入值</strong>”下，选择将帮助填充提示的“<strong>页面项</strong>”。</li>
+<li>在 <strong>系统提示</strong> 属性中编写您的提示。</li>
+<li>为 <strong>使用响应 -&gt; 控件</strong>，选择利用AI将文字作为响应。</li>
+</ol>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091137156.png?x-oss-process=image/format,jpg/quality,q_60" alt="图5 利用AI生成文本 - 输入控件"></p>
+<p>通过考虑用户输入，可以创建一些非常有趣的解决方案。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091137614.png?x-oss-process=image/format,jpg/quality,q_60" alt="图6 利用提示+控件生成邮件内容的例子"></p>
+<p>此配置非常适合创建交互式应用程序。潜在用途包括构建人工智能助手以回答用户查询、提供有关主题的详细解释或协助完成需要创意触感的重复性任务。它使开发者能够根据运行时数据或用户输入动态调整生成的文本，从而实现更个性化和情境感知的响应。</p>
+<h1 id="示例3：使用JavaScript进行高级配置"><a href="#示例3：使用JavaScript进行高级配置" class="headerlink" title="示例3：使用JavaScript进行高级配置"></a>示例3：使用JavaScript进行高级配置</h1><p>在输入或输出元素未与页面项绑定的情况下，开发者可以使用JavaScript来管理这些交互。例如，当输入来自客户端变量或纯HTML中动态生成的内容时，JavaScript允许开发者为 <strong>使用AI生成文本</strong> 动态操作定义输入和输出源。这种方法提供了更大的灵活性，使得可以将 AI 功能与客户端生成或操作的内容集成，而无需受限于页面项绑定。它为创建更复杂和交互式的应用程序打开了更广泛的可能性。</p>
+<p>步骤与 <strong>示例2</strong> 中的相同，主要区别在于您需要使用JavaScript来引用元素。</p>
+<p>为HTML文本区域，输入值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#input-selector'</span>).textContent</span><br></pre></td></tr></table></figure>
+<p>对于 HTML 基本输入标签，在输出值中写入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#output-selector'</span>).value = <span class="keyword">this</span>.data.response;</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091138313.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>使用JavaScript，您可以检索和分配自定义HTML元素的值。这允许与可能不是标准表单控件或页面项的元素进行动态交互。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091139114.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>这种方法适用于需要高度定制交互的应用程序，或者客户端动态生成输入数据的场景。尽管更加冗长，但它为复杂实现提供了无与伦比的灵活性。鼓励开发者仅在简单选项（如页面或应用程序项）不可行时使用JavaScript配置。</p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>Oracle APEX 24.2 中的 <strong>利用AI动态动作生成文本</strong> 功能，通过提供无代码、可配置的AI文本生成解决方案，增强了开发者的工具集。无论是通过简单的提示、灵活的页面项还是高级JavaScript配置，此功能都能适应广泛的应用需求。开发者可以利用此动态动作的完整潜力，简化流程、提升用户体验，并将智能功能无缝集成到他们的应用程序中。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250204/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2486,538 +3023,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-workflow/" itemprop="url">
-                  Oracle APEX 24.2 新特性 - Workflow工作流
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2025-01-19 13:33:00 / 修改时间：13:55:11" itemprop="dateCreated datePublished" datetime="2025-01-19T13:33:00+08:00">2025-01-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-242-workflow/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - Workflow工作流">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">5 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191354129.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>本博文翻译自：<a href="https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/new-in-apex-242-workflow-within-workflow-out-parameters-copy-and-more</a></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>APEX 23.2引入了工作流作为本机组件，专门用于建模和执行业务流程。APEX 24.2引入了多项增强功能，例如运行时工作流程图的可用性、存档/清除增强功能等。对于刚接触APEX工作流程的用户，在继续阅读此博客之前，可以先阅读以下介绍APEX工作流程概念的博客：</p>
-<ul>
-<li><a href="https://blogs.oracle.com/apex/post/simplify-medical-appointments-using-apex-workflow" target="_blank" rel="noopener">使用APEX工作流程简化业务流程管理</a></li>
-<li><a href="https://blogs.oracle.com/apex/post/multi-level-expense-approval-using-apex-workflow" target="_blank" rel="noopener">使用APEX工作流程进行多级费用审批</a></li>
-<li><a href="https://blogs.oracle.com/apex/post/apex-workflow-development-lifecycle" target="_blank" rel="noopener">APEX工作流程生命周期</a></li>
-</ul>
-<h1 id="为什么要在Workflow中使用工作流？"><a href="#为什么要在Workflow中使用工作流？" class="headerlink" title="为什么要在Workflow中使用工作流？"></a>为什么要在Workflow中使用工作流？</h1><p>允许从一个Workflow工作流调用另一个Workflow工作流有很多好处。</p>
-<ul>
-<li><strong>可管理性</strong> - 将复杂的业务流程分解为更小的、可管理的块，这些块可以从父工作流程中调用，从而保持流程干净且易于理解。员工入职是一个很好的例子，其中主工作流程可以由较小的不同工作流程组成，例如采购和申请、人力资源任务、部门任务、培训等。</li>
-<li><strong>可重用性</strong> - 常见任务可以组合到一个工作流程中，该工作流程可以由其他工作流程重用。典型的例子是个人的信用价值计算。这样的工作流程可以被不同的工作流程重复使用，例如 a) 住院流程、b) 住房贷款审批流程、c) 国际旅行审批等等。</li>
-</ul>
-<h1 id="APEX-调用工作流程活动"><a href="#APEX-调用工作流程活动" class="headerlink" title="APEX - 调用工作流程活动"></a>APEX - 调用工作流程活动</h1><p>APEX 24.2 版本引入了“<strong>调用工作流</strong>”活动，一种可以在工作流中用于调用不同工作流的特殊活动。</p>
-<p>如下图所示，“调用工作流活动”与其他活动一起出现在“工作流设计器”的“<strong>图表生成器</strong>”窗格底部的“<strong>活动选项板</strong>”中，并且可以拖放到工作流图表中。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191338189.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1.家长工作流程 - 笔记本电脑审批"></p>
-<p>下图显示了如何作为<strong>笔记本电脑请求</strong>工作流的一部分来调用<strong>预算审批</strong>工作流以及可用于<strong>调用工作流活动的不同设置</strong>。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191342045.png?x-oss-process=image/format,jpg/quality,q_60" alt="图2.调用的工作流程 - 预算审批"></p>
-<h2 id="家长工作流程指导"><a href="#家长工作流程指导" class="headerlink" title="家长工作流程指导"></a>家长工作流程指导</h2><p>请注意左窗格树区域中展开的“<strong>调用预算审批</strong>”活动的参数。<strong>员工ID</strong>和<strong>项目</strong>是从<strong>笔记本电脑请求工作流程</strong>传递到<strong>预算审批工作流程</strong>的输入。<strong>状态</strong>是<strong>预算审批工作流程</strong>传递回<strong>笔记本电脑审批工作流程</strong>的输出。根据通过的<strong>状态</strong>，笔记本电脑请求会被批准或拒绝。</p>
-<p>右侧窗格显示<strong>属性编辑器</strong>中的调用工作流设置：</p>
-<ul>
-<li><p><strong>工作流程定义</strong>：这是一个下拉列表，可以在其中选择要调用的工作流程。在此示例中，选择了预算审批工作流程。如果您尝试选择与当前工作流程相同的工作流程，或者尝试选择作为当前工作流程的父工作流程，则会引发验证错误。这消除了业务流程中引入循环依赖的风险。</p>
-</li>
-<li><p><strong>发起者项目</strong>：您可以选择指定所调用工作流发起者的父工作流变量。如果留空，父工作流的启动器将自动成为被调用工作流的启动器。</p>
-</li>
-<li><p><strong>详细信息主键项</strong>：如果调用的工作流指定了其他详细信息，则此项目指定与调用的工作流关联的其他详细信息记录的主键值。在此示例中，预算审批工作流程（如图 2 所示）将表EBA_DEMO_APPR_BUDGET指定为附加详细信息，并将EMPLOYEE_ID作为主键列。因此，图 1 中的详细信息主键指向唯一标识EBA_DEMO_APPR_BUDGET表中的行的 Employee ID 值。</p>
-</li>
-<li><p><strong>工作流ID项</strong>：可以选择一个工作流变量来存储调用的工作流实例 ID 的值。</p>
-</li>
-</ul>
-<p>接下来的两个设置在“<strong>调用工作流</strong>”活动的上下文中特别重要</p>
-<ul>
-<li><p><strong>等待完成</strong>：此开关确定父工作流是否将等待所调用的工作流完成，然后再进行到下一个活动。在我们的示例中，如图 I 所示，“等待完成”开关处于打开状态。这意味着需要先完成预算审批工作流程，然后才能继续处理笔记本电脑请求工作流程。当这个开关关闭时，它就是一个即发即忘的调用。父工作流仅调用指定的工作流并继续执行下一个活动。调用的工作流和父工作流执行在此时分叉，并且从此时开始两个流之间不存在依赖关系。这个开关是打开还是关闭完全取决于业务用例。</p>
-</li>
-<li><p><strong>重试点</strong>：这是一个具有两个值的下拉列表 - <strong>Resume</strong>和<strong>Start Over</strong>。<br>这是一些背景信息。当调用的工作流遇到故障并且等待完成设置为 true 时，故障将传播到父工作流。此时，工作流管理员或所有者可以重试父工作流。如果重试点设置为<strong>Resume</strong>，则将从故障活动中重试调用的工作流实例。如果重试点设置为“<strong>重新开始</strong>”，则调用的工作流实例将终止，并创建调用的工作流的新实例。重试点设置取决于业务用例。故障缓解要求因业务而异，对于某些原子工作流程，在故障后重新启动更有意义，而对于其他工作流程，修复故障活动并恢复现有实例是可行的。</p>
-</li>
-</ul>
-<h1 id="父工作流程和调用工作流程之间的无缝导航"><a href="#父工作流程和调用工作流程之间的无缝导航" class="headerlink" title="父工作流程和调用工作流程之间的无缝导航"></a>父工作流程和调用工作流程之间的无缝导航</h1><p>工作流程设计器允许在父工作流程和调用的工作流程之间轻松直观地来回导航。要从父工作流打开调用的工作流模型/定义，只需单击调用的工作流活动上的<strong>打开上下文</strong>菜单条目。要返回到父工作流模型/定义，请单击图表生成器工具栏区域中的“后退”按钮。下图说明了这种体验。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191348645.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191348216.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<h1 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h1><p>由于支持调用工作流，APEX 24.2还允许指定参数方向（In、Out、In/Out）作为定义工作流的一部分。在预算审批工作流程中，状态参数指定为输入/输出。在父级（笔记本电脑请求）工作流的调用预算审批中，状态参数映射到 V_TASK_OUTCOME 工作流变量。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191349271.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191350578.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>这意味着 V_TASK_OUTCOME 变量值从笔记本电脑请求工作流程传递到调用的预算审批工作流程。在调用的工作流程中，状态值经过处理后，通过 V_TASK_OUTCOME 变量返回到笔记本电脑请求工作流程。</p>
-<p>注意：当工作流程用于<strong>工作流程 - 起始页流程</strong>时，不会显示输出参数。这是因为工作流一旦从页面提交，就会异步运行，并且输出参数无法真正返回到页面。因此，输出参数仅与调用工作流活动中使用的工作流上下文相关。</p>
-<h1 id="运行时体验"><a href="#运行时体验" class="headerlink" title="运行时体验"></a>运行时体验</h1><p>在运行时，当为员工提出笔记本电脑请求并且笔记本电脑请求工作流开始执行时，它会在某一时刻到达调用预算审批活动。此时发起者会在<strong>工作流控制台中看到两个工作流</strong>。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191350037.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>请注意右侧“<strong>笔记本电脑请求工作流程详细信息</strong>”页面中带下划线的“<strong>调用预算批准</strong>”活动。单击该活动将打开调用的工作流程详细信息，如下所示。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191351913.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>调用的工作流程的详细信息页面在顶部有一个<strong>附加</strong>按钮（至父工作流程），用于返回父工作流程的详细信息。</p>
-<p>这有助于在运行时在父工作流和调用的工作流之间进行无缝来回导航。</p>
-<h1 id="从另一个应用程序复制工作流程"><a href="#从另一个应用程序复制工作流程" class="headerlink" title="从另一个应用程序复制工作流程"></a>从另一个应用程序复制工作流程</h1><p>APEX 24.2 中提供的另一个重要增强功能是能够从不同的应用程序复制工作流程。有了此功能，可以将形成自定义模板的标准化工作流程从基本应用程序复制到自定义应用程序中，然后根据业务需求进行编辑。这节省了开发人员的时间，并降低了实施错误的风险。从不同的应用程序复制工作流时，工作流使用的任何其他共享组件（例如电子邮件模板、人工任务、REST 数据源）也会复制到目标应用程序。如果正在复制的工作流具有调用工作流活动，则调用的工作流也会复制到目标应用程序</p>
-<p>从其他应用程序复制选项在工作流报告页面中可用，该页面从共享组件-&gt; 工作流和自动化-&gt; 工作流打开。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191352961.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>在此示例中，当复制笔记本电脑请求工作流程时，它也会自动复制预算审批工作流程，因为它是由笔记本电脑请求工作流程调用的。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191352732.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>从其他工作流中声明性地调用工作流是一项强大的增强功能，将使业务流程的建模更加稳健并减少冗余。从其他应用程序复制工作流程的能力也有望提高应用程序开发人员的生产力。</p>
-<p>希望本博客的读者能够尝试APEX工作流程中这两个令人兴奋的新增强功能，并向Oracle提供反馈和想法，以使APEX工作流程在即将发布的版本中变得更加强大。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250119/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20250119/" itemprop="url">
-                  Oracle Reports 已被弃用, Oracle APEX 为官方替代方案
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2025-01-19 12:21:00 / 修改时间：13:16:22" itemprop="dateCreated datePublished" datetime="2025-01-19T12:21:00+08:00">2025-01-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20250119/" class="leancloud_visitors" data-flag-title="Oracle Reports 已被弃用, Oracle APEX 为官方替代方案">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">6.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">11 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191302429.avif?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>本博文翻译自：<a href="https://blogs.oracle.com/apex/post/oracle-reports-is-deprecated" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/oracle-reports-is-deprecated</a></p>
-<p>Oracle Forms 12.2.1.4 发行说明中已明确说明，Oracle Reports自Fusion Middleware 12c第2版 (12.2.1.3.0) 起已被正式弃用。未来也没有计划进一步开发Oracle Reports。如果将来的版本可用，除了关键错误修复和使其与新的支持技术堆栈兼容所需的更改之外，Oracle不计划对Oracle Reports进行任何功能增强。欲了解更多信息，请参阅此处提供的报告方向声明。</p>
-<p>本博文的目的是展示使用 <a href="https://apex.oracle.com/en/" target="_blank" rel="noopener">Oracle APEX</a> 探索Oracle Report的各种替代方案，Oracle APEX是世界上最受欢迎的企业应用程序低代码平台，使您能够构建具有世界一流功能的可扩展、安全的企业应用程序可以部署在任何地方。此外，APEX是Oracle数据库完全支持的免费功能，这意味着如果您使用Oracle数据库，则可以开始使用APEX，无需额外的许可费用。APEX提供以下报告打印配置选项：</p>
-<ul>
-<li><strong>无（本机）</strong> - 如果您不使用外部打印服务器，请选择此选项。此选项使您能够使用基本打印功能，包括CSV、HTML、PDF和XLSX。</li>
-<li><strong>Oracle 文档生成器预构建函数</strong> - 如果您使用Oracle文档生成器预构建函数，请选择此选项。此选项使您能够获取报告查询结果并使用Oracle Document Generator预构建功能将其从JSON转换为PDF格式。选择此选项可上传您自己的DOCX模板，以便在APEX中打印报告。</li>
-<li><strong>Oracle BI Publisher</strong> - 此选项需要Oracle BI Publisher（也称为 Oracle XML Publisher）的有效许可证。它使您能够获取报告查询结果并使用Oracle BI Publisher将其从XML转换为RTF格式。选择此选项可上传您自己的自定义RTF或XSL-FO模板，以便在APEX中打印报告。 Oracle BI Publisher支持Adob​​e可移植文档格式 (PDF)、Microsoft Word 富文本格式 (RTF)、Microsoft Excel 格式 (XLS) 或可扩展标记语言 (XML)。如果您选择使用其他第三方渲染引擎，还可以配置其他输出格式。</li>
-<li><strong>APEX Office Print</strong> - 如果您使用 APEX Office Print，请选择此选项。此选项使您能够获取报告查询结果并使用APEX Office Print将其从JSON转换为PDF/MS Office格式。选择此选项可上传您自己的MS Office模板，以便在APEX中打印报告。</li>
-<li><strong>Apache FOP</strong> - 如果您在外部 J2EE 服务器上使用 Apache FOP，请选择此选项。此选项使您能够使用基本打印功能，其中包括使用 APEX 中提供的默认模板以及使用您自己的自定义 XSL-FO 模板创建报告查询和打印报告区域。</li>
-</ul>
-<p>话虽如此，说到Report，您可以找到两种类型的Report：</p>
-<ul>
-<li>带有列标题和数据的简单纯Report。在 Oracle Report中也称为“表格”、“上方组”、“矩阵”。</li>
-<li>像素完美的定义Report。在Oracle Report中也称为表格、套用信函。</li>
-</ul>
-<p>让我们使用示例Oracle Reports查询来查看APEX中的每种类型的报告，该查询可在 <a href="https://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/rpt/r904/creatingrptmanually/manual_rpt.html" target="_blank" rel="noopener">使用Reports Builder手动创建报告</a> 教程中找到：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ALL DEPARTMENTS.DEPARTMENT_NAME, EMPLOYEES.FIRST_NAME, EMPLOYEES.LAST_NAME, EMPLOYEES.SALARY, LOCATIONS.CITY, COUNTRIES.COUNTRY_NAME, EMPLOYEES.HIRE_DATE</span><br><span class="line"><span class="keyword">FROM</span> OEHR_EMPLOYEES EMPLOYEES, OEHR_DEPARTMENTS DEPARTMENTS, OEHR_LOCATIONS LOCATIONS, OEHR_COUNTRIES COUNTRIES</span><br><span class="line"><span class="keyword">WHERE</span> EMPLOYEES.HIRE_DATE &gt; <span class="keyword">to_date</span>(<span class="string">'01-01-2000'</span>,<span class="string">'dd-mm-yyyy'</span>)</span><br><span class="line"><span class="keyword">AND</span> ((EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID)</span><br><span class="line"><span class="keyword">AND</span> (DEPARTMENTS.MANAGER_ID = EMPLOYEES.EMPLOYEE_ID)</span><br><span class="line"><span class="keyword">AND</span> (DEPARTMENTS.LOCATION_ID= LOCATIONS.LOCATION_ID)</span><br><span class="line"><span class="keyword">AND</span> (LOCATIONS.COUNTRY_ID=COUNTRIES.COUNTRY_ID))</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> DEPARTMENTS.DEPARTMENT_NAME <span class="keyword">ASC</span></span><br></pre></td></tr></table></figure>
-<h1 id="简单明了的报告"><a href="#简单明了的报告" class="headerlink" title="简单明了的报告"></a>简单明了的报告</h1><p>Oracle APEX具有多个组件，可帮助您根据需要显示数据：</p>
-<ul>
-<li><a href="https://apex.oracle.com/pls/apex/r/apex_pm/ut/reports-faceted-search" target="_blank" rel="noopener">分面搜索</a> 或 <a href="https://apex.oracle.com/pls/apex/r/apex_pm/ut/reports-smart-filters" target="_blank" rel="noopener">智能过滤器</a> 允许用户过滤不同的列和报告以仅获取他们需要的数据。您可以将此功能与经典报表、卡片、地图或日历区域结合使用。</li>
-<li><a href="https://apex.oracle.com/pls/apex/r/apex_pm/ut/interactive-report" target="_blank" rel="noopener">交互式报告</a> 提供了用于自定义报告的强大功能，例如搜索、过滤、排序、突出显示、分组、数据透视、聚合、计算、图表等。</li>
-<li><a href="https://apex.oracle.com/pls/apex/r/apex_pm/ut/interactive-grid" target="_blank" rel="noopener">交互式网格</a> 包括交互式报表中提供的大多数自定义功能，而且用户可以快速编辑多行数据 - 就像单击单元格并编辑其值一样简单。</li>
-<li><a href="https://apex.oracle.com/pls/apex/r/apex_pm/ut/standard-reports" target="_blank" rel="noopener">经典报告</a> 具有基于SQL查询的格式化结果的简单报告页面。</li>
-<li><a href="https://docs.oracle.com/en/database/oracle/apex/24.1/aeapi/APEX_REGION-EXPORT_DATA-Function.html#GUID-BB045B2B-AFB9-4060-9E21-5AA6365C3C94" target="_blank" rel="noopener">APEX_REGION.EXPORT_DATA</a> 和 <a href="https://docs.oracle.com/en/database/oracle/apex/22.2/aeapi/APEX_DATA_EXPORT.html" target="_blank" rel="noopener">APEX_DATA_EXPORT</a> API以编程方式生成PDF、CSV、Excel、HTML、JSON和XML文件。</li>
-</ul>
-<p>对于表格报告，您可以使用分面搜索/智能过滤器页面和经典报告，允许用户进一步过滤数据、显示图表和下载数据。只需使用向导即可为您的 APEX 应用程序创建页面：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191303423.gif?x-oss-process=image/format,jpg/quality,q_60" alt="图1.基于SQL查询创建新的分面搜索页面"></p>
-<p>生成报告有两种方法：</p>
-<ul>
-<li>下载：您可以在经典报告区域中启用此选项，允许用户将报告内容下载到CSV文件。</li>
-<li>打印：您还可以在经典报告区域中启用此选项，该选项允许您选择报告输出格式（PDF、Word、Excel、HTML 和 XML）和报告布局。</li>
-</ul>
-<p>将报表布局与报表区域或报表查询结合使用，以远程打印服务器支持的打印机友好格式呈现数据。根据远程打印服务器的类型，可以使用以下方式设计报告布局：</p>
-<ul>
-<li>Template Builder Word插件并作为RTF或XSL-FO类型的文件上传。</li>
-<li>使用特殊模板语法的Word文档。</li>
-</ul>
-<p>对于远程打印服务器，您可以选择 <a href="https://blogs.oracle.com/apex/post/apex-202-report-printing-use-oracle-analytics-cloud-as-a-print-server" target="_blank" rel="noopener">Oracle Analytics Publisher</a>、<a href="https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functions_pbf_catalog_document_generator.htm" target="_blank" rel="noopener">文档生成器</a> 功能或 <a href="https://www.apexofficeprint.com/" target="_blank" rel="noopener">APEX Office Print</a>。其中任何一个都允许您使用 <a href="https://docs.oracle.com/en/database/oracle/apex/24.1/htmdb/formatting-using-report-layouts.html#GUID-3835B68D-D38A-4523-BDAC-9CAB42121013" target="_blank" rel="noopener">自定义报告布局</a> 下载数据。</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191305875.gif?x-oss-process=image/format,jpg/quality,q_60" alt="图2.下载和打印属性"></p>
-<p>对于“Group Below”报表，您可以使用“交互式报表”或“交互式网格”。使用向导创建页面，然后运行该页面来自定义报告以满足您的要求：</p>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191306604.gif?x-oss-process=image/format,jpg/quality,q_60" alt="图3.自定义报告"></p>
-<p>如果您的页面上没有报告区域，您仍然可以通过在APEX页面上创建进程来使用APEX_DATA_EXPORT API导出数据，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">    l_highlights     apex_data_export.t_highlights;</span><br><span class="line">    l_context        apex_exec.t_context;</span><br><span class="line">    l_export         apex_data_export.t_export;</span><br><span class="line">    l_print_config    apex_data_export.t_print_config;</span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">    l_context := apex_exec.open_query_context(</span><br><span class="line">        p_location    =&gt; apex_exec.c_location_local_db,</span><br><span class="line">        p_sql_query   =&gt; &apos;SELECT ALL DEPARTMENTS.DEPARTMENT_NAME &quot;Department Name&quot;, EMPLOYEES.FIRST_NAME &quot;First Name&quot;, EMPLOYEES.LAST_NAME &quot;Last Name&quot;, </span><br><span class="line">        EMPLOYEES.SALARY &quot;Salary&quot;, LOCATIONS.CITY &quot;City&quot;, COUNTRIES.COUNTRY_NAME &quot;Country Name&quot;, EMPLOYEES.HIRE_DATE &quot;Hire Date&quot;</span><br><span class="line">FROM OEHR_EMPLOYEES EMPLOYEES, OEHR_DEPARTMENTS DEPARTMENTS, OEHR_LOCATIONS LOCATIONS, OEHR_COUNTRIES COUNTRIES</span><br><span class="line">WHERE EMPLOYEES.HIRE_DATE &gt; to_date(&apos;&apos;01-01-2000&apos;&apos;,&apos;&apos;dd-mm-yyyy&apos;&apos;)</span><br><span class="line">AND ((EMPLOYEES.DEPARTMENT_ID = DEPARTMENTS.DEPARTMENT_ID) </span><br><span class="line">AND (DEPARTMENTS.MANAGER_ID = EMPLOYEES.EMPLOYEE_ID) </span><br><span class="line">AND (DEPARTMENTS.LOCATION_ID= LOCATIONS.LOCATION_ID) </span><br><span class="line">AND (LOCATIONS.COUNTRY_ID=COUNTRIES.COUNTRY_ID))</span><br><span class="line">ORDER BY DEPARTMENTS.DEPARTMENT_NAME ASC&apos; );</span><br><span class="line"></span><br><span class="line">l_print_config := apex_data_export.get_print_config(</span><br><span class="line">        p_body_font_color             =&gt; &apos;#4B4540&apos;,</span><br><span class="line">        p_page_header                 =&gt; &apos;Report of Employees&apos;,</span><br><span class="line">        p_page_header_font_color      =&gt; &apos;#4B4540&apos;,</span><br><span class="line">        p_page_header_font_size       =&gt; 14,</span><br><span class="line">        p_page_header_font_weight     =&gt; apex_data_export.c_font_weight_bold,</span><br><span class="line">        p_page_footer                 =&gt; &apos;Your Company&apos;,</span><br><span class="line">        p_page_footer_font_color      =&gt; &apos;#4B4540&apos;,</span><br><span class="line">        p_page_footer_font_size       =&gt; 14,   </span><br><span class="line">        p_page_footer_font_weight     =&gt; apex_data_export.c_font_weight_bold,</span><br><span class="line">        p_border_width                =&gt; 1,</span><br><span class="line">        p_border_color                =&gt; &apos;#4B4540&apos;);                            </span><br><span class="line"></span><br><span class="line">    l_export := apex_data_export.export (</span><br><span class="line">                        p_context      =&gt; l_context,</span><br><span class="line">                        p_format       =&gt; apex_data_export.c_format_pdf,</span><br><span class="line">                        p_print_config =&gt; l_print_config );</span><br><span class="line"></span><br><span class="line">    apex_exec.close( l_context );</span><br><span class="line"></span><br><span class="line">    apex_data_export.download( p_export =&gt; l_export );</span><br><span class="line"></span><br><span class="line">exception</span><br><span class="line">    when others then</span><br><span class="line">        apex_exec.close( l_context );</span><br><span class="line">        raise;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
-<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191308289.gif?x-oss-process=image/format,jpg/quality,q_60" alt="图4.使用APEX_DATA_EXPORT API导出SQL查询数据"></p>
-<p>要了解有关如何使用API的更多信息，请阅读探索 <a href="https://blogs.oracle.com/apex/post/exploring-report-printing-in-apex-202" target="_blank" rel="noopener">Oracle APEX 的报表打印</a>。</p>
-<h1 id="像素完美的报告"><a href="#像素完美的报告" class="headerlink" title="像素完美的报告"></a>像素完美的报告</h1><p>本博客文章开头提到的发行说明指出，Oracle建议出于报告目的迁移到Oracle BI Publisher。让我们回顾一下您可能拥有的像素完美报告的替代方案：</p>
-<h2 id="Oracle分析发布者"><a href="#Oracle分析发布者" class="headerlink" title="Oracle分析发布者"></a>Oracle分析发布者</h2><p>要使用 APEX 应用程序配置Oracle Analytics，请执行以下步骤：</p>
-<ol>
-<li>将云端或本地的Oracle Analytics 实例配置为 APEX 工作区上的打印服务器。</li>
-<li>创建报告布局。可以使用MS Word的Oracle BI Publisher插件创建布局，该插件通过提供简单的拖放界面使报表布局设计变得容易。</li>
-<li>创建您的报告查询。</li>
-<li>从您的页面调用您的报告。</li>
-</ol>
-<p><strong>文档生成器预建功能</strong>：最近推出的功能，可根据JSON数据和MS Word模板的组合生成PDF文档。在APEX 24.1 中，您现在可以通过将文档生成器服务配置为远程打印服务器来轻松集成它。您可以在Word文档中开发打印模板，PDF引擎将其与您的应用程序数据相结合以呈现最终输出。了解更多：<a href="https://blogs.oracle.com/apex/post/seamless-pdf-generation-with-oracle-apex-and-oci-document-generator" target="_blank" rel="noopener">使用Oracle APEX和OCI文档生成器无缝生成 PDF</a></p>
-<p><strong>APEX Office Print (AOP)</strong>：灵活的引擎，使Oracle APEX能够生成PDF、Word、Excel、PowerPoint和 HTML 文档。此外，您还可以使用 <a href="https://www.apexofficeedit.com/" target="_blank" rel="noopener">APEX Office Edit (AOE) </a>，它允许您直接在APEX应用程序中创建和编辑文档。了解更多： <a href="https://www.apexofficeprint.com/docs/category/getting-started" target="_blank" rel="noopener">https://www.apexofficeprint.com/docs/category/getting-started</a></p>
-<p><strong>JasperReportsIntegration</strong>提供了一个在Oracle数据库应用程序（特别是 Oracle APEX）中使用 JasperReports报告引擎的接口。了解更多： <a href="https://github.com/daust/JasperReportsIntegration/blob/main/src/doc/github/installation-quickstart.md" target="_blank" rel="noopener">https://github.com/daust/JasperReportsIntegration/blob/main/src/doc/github/installation-quickstart.md</a></p>
-<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>Oracle APEX是一个完整的企业应用程序平台，无论您是使用APEX对Forms应用程序进行现代化改造，还是在云或本地从头开始创建应用程序，它都能满足您的业务需求。在 <a href="https://apex.oracle.com/en/" target="_blank" rel="noopener">apex.oracle.com</a> 上免费尝试和探索APEX。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3069,7 +3074,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">165</span>
+                    <span class="site-state-item-count">167</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
