@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2025-02-19T05:22:18.809Z</updated>
+  <updated>2025-02-20T07:34:52.956Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在 Oracle EBS 12.2 上启用OCI生成式AI实现自然语言查询</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-ebs-oci-ai/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-ebs-oci-ai/</id>
+    <published>2025-02-20T07:02:00.000Z</published>
+    <updated>2025-02-20T07:34:52.956Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502201511425.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>本文翻译自Oracle官网博客：<a href="https://blogs.oracle.com/ebstech/post/enabling-natural-language-query-of-ebs-122-using-oracle-generative-ai-now-available" target="_blank" rel="noopener">https://blogs.oracle.com/ebstech/post/enabling-natural-language-query-of-ebs-122-using-oracle-generative-ai-now-available</a></p><h2 id="什么是基于OCI生成式AI的自然语言查询？"><a href="#什么是基于OCI生成式AI的自然语言查询？" class="headerlink" title="什么是基于OCI生成式AI的自然语言查询？"></a>什么是基于OCI生成式AI的自然语言查询？</h2><p><a href="https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/select-ai-about.html#GUID-D3FFFC75-0BC6-4D17-9FB0-C60E1FEC2E46" target="_blank" rel="noopener">Oracle Select AI</a> 是 Oracle 自治数据库（ADB）自带的功能，可以用来处理自然语言提示，补充提示的元数据，访问大型语言模型（LLMs）生成对应的SQL查询语句，并在目标数据库中执行该查询以便返回对应的结果。</p><p>Oracle E-Business Suite（EBS）提供许多强大的查询和复杂的报告功能，例如 <a href="https://www.oracle.com/a/ocom/docs/applications/ebusiness/ebs-enterprise-command-center-quick-start-guide.pdf" target="_blank" rel="noopener">Oracle EBS 企业指挥中心（ECC）</a>。Oracle Select AI 则更进一步，允许用户通过自然语言向EBS进行提问，并在APEX页面中中获取返回的结果（如图1所示）。</p><h2 id="技术架构与实现原理"><a href="#技术架构与实现原理" class="headerlink" title="技术架构与实现原理"></a>技术架构与实现原理</h2><p>Oracle Select AI 通过利用Oracle自治数据库的 Select AI 功能和 Oracle 云基础设施的生成式AI，将自然语言问题转换为对应的SQL查询，从而在Oracle EBS 12.2上通过自然语言提问的方式实现数据查询。</p><p>SQL语句将自动在用户（本地）的 Oracle EBS 数据库中执行并返回结果。每个查询都在具有最小权限的新 XX_NLQ 模式中执行。与新的受保护视图和新的虚拟专用数据库（VPD）策略一起，利用 Oracle APEX 提供简单直观的询问 Oracle E-Business Suite 用户界面。</p><p>以下图示，（图2-技术架构图）展示了 APEX 前端页面、Oracle 云基础设施（OCI）上的 ADB、LLM服务和 EBS 之间的交互。</p><p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502201514220.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><blockquote><p>注意：虽然 ADB（Oracle 自治数据库） 只能在OCI上运行，但Oracle EBS系统本身可以根据需要灵活部署在本地或OCI上的。</p></blockquote><h2 id="在哪里可以了解到更多关于使用自然语言查询EBS数据的信息？"><a href="#在哪里可以了解到更多关于使用自然语言查询EBS数据的信息？" class="headerlink" title="在哪里可以了解到更多关于使用自然语言查询EBS数据的信息？"></a>在哪里可以了解到更多关于使用自然语言查询EBS数据的信息？</h2><p>Oracle Support上已发布了最新的技术论文：<a href="https://support.oracle.com/rs?type=doc&amp;id=3059877.1" target="_blank" rel="noopener">《利用 Oracle 生成式AI 实现 Oracle E-Business Suite (EBS) 12.2 的自然语言查询》（MOS ID: 3059877.1）</a>。</p><p>本技术论文描述了：</p><ul><li>官方发布的原型APEX应用程序，有关如何将 Oracle EBS 与 APEX 进行无缝集成的更多信息，请参阅 <a href="https://blogs.oracle.com/ebstech/post/enhanced-integration-with-ebs-122-and-apex-now-available" target="_blank" rel="noopener">增强的 Oracle EBS 12.2 和 APEX 集成</a>。</li><li>Oracle EBS 自然语言查询的完整先决条件列表，例如 EBS 12.2.7、数据库 19c 和 APEX 24.1。</li><li>利用 Oracle 生成式 AI 启用 Oracle EBS 12.2 自然查询语言步骤。</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul><li><a href="https://support.oracle.com/rs?type=doc&amp;id=3059877.1" target="_blank" rel="noopener">启用 Oracle E-Business Suite (EBS) Release 12.2 的自然语言查询功能，利用 Oracle 生成式 AI (MOS ID: 3059877.1)</a></li><li><a href="https://www.oracle.com/a/otn/docs/apex_ebs_extension_technical_paper.pdf" target="_blank" rel="noopener">使用 Oracle APEX 扩展 Oracle E-Business Suite Release 12.2（PDF）</a></li><li><a href="https://support.oracle.com/epmos/faces/DocContentDisplay?id=1577661.1" target="_blank" rel="noopener">开发与部署 Oracle E-Business Suite 12.2 版本的自定义功能（MOS ID: 1577661.1）</a></li><li><a href="https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/select-ai-about.html#GUID-D3FFFC75-0BC6-4D17-9FB0-C60E1FEC2E46" target="_blank" rel="noopener">Oracle 云基础设施文档 - 关于 Oracle 选择</a></li><li><a href="https://docs.oracle.com/cd/E26401_01/doc.122/e22961/toc.htm" target="_blank" rel="noopener">Oracle E-Business Suite 开发者指南（HTML）</a></li></ul><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul><li><a href="https://blogs.oracle.com/ebstech/post/enhanced-integration-with-ebs-122-and-apex-now-available" target="_blank" rel="noopener">增强的 Oracle EBS 12.2 和 APEX 集成</a></li><li><a href="https://blogs.oracle.com/machinelearning/post/introducing-natural-language-to-sql-generation-on-autonomous-database" target="_blank" rel="noopener">Oracle Select AI 介绍 - 在自治数据库上实现自然语言到SQL查询语句的生成</a></li><li><a href="https://blogs.oracle.com/ebstech/post/oracle-ebusiness-suite-12214-now-available" target="_blank" rel="noopener">Oracle E-Business Suite 12.2.14 现已发布</a></li><li><a href="https://blogs.oracle.com/ebstech/post/ad-and-txk-delta-16-updates-available-for-ebs-122" target="_blank" rel="noopener">AD 和 TXK Delta 16 更新适用于 EBS 12.2</a></li><li><a href="https://blogs.oracle.com/ebstech/post/oa-framework-122-latest-bundles-available-oct-2024" target="_blank" rel="noopener">OA 框架 12.2 最新捆绑包（2024 年 10 月）</a></li><li><a href="https://blogs.oracle.com/ebstech/post/ebs-122-certified-with-database-release-update-1925-all-platforms-october-2024" target="_blank" rel="noopener">EBS 12.2 与数据库发布更新 19.25 认证 - 所有平台</a></li><li><a href="https://blogs.oracle.com/ebstech/category/ebs-oracle-application-framework" target="_blank" rel="noopener">EBS 技术博客公告：Oracle 应用程序框架</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502201511425.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>成为 Oracle APEX 专家：您需要遵循的最新学习路径</title>
@@ -552,35 +581,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_1786.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2024.09</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240930/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240930/</id>
-    <published>2024-09-30T15:59:00.000Z</published>
-    <updated>2024-10-01T04:37:49.869Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_1202.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2024.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blogs.oracle.com/apex/post/oracle-apex-gen-dev" target="_blank" rel="noopener">Oracle APEX Generative Development</a> <code>2024.09</code></li><li><a href="https://synuora.hashnode.dev/apex-make-rest-request-via-plsql" target="_blank" rel="noopener">APEX: Make REST Request via PL/SQL</a> <code>2024.09</code></li><li><a href="https://pcvdbroek.hashnode.dev/understanding-oracle-apex-session-state-part-1" target="_blank" rel="noopener">Understanding Oracle APEX Session State Part 1</a> <code>2024.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/deep-dive-into-oracle-apex-globalization-understanding-multi-language-and-locales" target="_blank" rel="noopener">Deep Dive into Oracle APEX Globalization: Understanding Multi-Language and Locales</a> <code>2024.09</code></li><li><a href="https://synuora.hashnode.dev/apex-rest-request-body-templates" target="_blank" rel="noopener">APEX: Rest Request Body Templates</a> <code>2024.09</code></li><li><a href="https://synuora.hashnode.dev/apex-extending-fusion-describe" target="_blank" rel="noopener">APEX: Extending Fusion /describe</a> <code>2024.09</code></li><li><a href="https://blog.cloudnueva.com/apex-background-page-processing-the-definitive-gude" target="_blank" rel="noopener">APEX Background Page Processing - The Definitive Gude</a> <code>2024.09</code></li><li><a href="https://btimmerman.hashnode.dev/improve-apex-functionality-using-oracle-digital-assistant" target="_blank" rel="noopener">Improve APEX Functionality Using Oracle Digital Assistant</a> <code>2024.09</code></li><li><a href="https://mattmulvaney.hashnode.dev/should-i-use-apex-ui-defaults" target="_blank" rel="noopener">Should I use APEX UI Defaults</a> <code>2024.09</code></li><li><a href="https://toshareapex.hashnode.dev/como-integrar-un-codigo-qr-en-una-aplicacion-oracle-apex" target="_blank" rel="noopener">How to integrate a QR code into an Oracle APEX application</a> <code>2024.09</code></li><li><a href="https://followthecoffee.com/how-to-kill-an-ords-process/" target="_blank" rel="noopener">How to kill an ORDS process</a> <code>2024.09</code></li><li><a href="https://nielsdebr.blogspot.com/2024/09/common-misperceptions-around-oracle-apex.html" target="_blank" rel="noopener">Common misperceptions around Oracle APEX</a> <code>2024.09</code></li><li><a href="https://synuora.hashnode.dev/apex-filtering-fusion-rest-integrations" target="_blank" rel="noopener">APEX: Filtering Fusion REST Integrations</a> <code>2024.09</code></li><li><a href="https://blog.lucashir.eu/oracle-apex-limiting-text-lines-with-native-classes-in-oracle-apex" target="_blank" rel="noopener">Limiting text lines with native classes in Oracle APEX</a> <code>2024.09</code></li><li><a href="https://svenweller.wordpress.com/2024/09/27/oracle-apex-24-1-quickie-how-to-import-a-working-copy/" target="_blank" rel="noopener">how to import a working copy</a> <code>2024.09</code></li><li><a href="https://lschilde.blogspot.com/2024/09/oracle-apex-security-apex-sert-241.html" target="_blank" rel="noopener">ORACLE APEX Security - APEX SERT 24.1</a> <code>2024.09</code></li><li><a href="https://www.maxapex.com/blogs/security-best-practices-in-oracle-apex/" target="_blank" rel="noopener">Security Best Practices in Oracle APEX</a> <code>2024.09</code></li><li><a href="https://aflorestorres.com/2024/09/06/activar-camara-webcam-smartphone-camera-en-oracle-apex/" target="_blank" rel="noopener">Enable Camera, Webcam, Smartphone Camera in Oracle APEX</a> <code>2024.09</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_1202.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
       
     
     </summary>

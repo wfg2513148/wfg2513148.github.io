@@ -371,6 +371,312 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王方钢 / Kenny Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="钢钢更新">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-242-ai-vector-search/" itemprop="url">
+                  Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2025-01-19 18:39:00 / 修改时间：19:23:08" itemprop="dateCreated datePublished" datetime="2025-01-19T18:39:00+08:00">2025-01-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+
+
+          
+            
+          
+
+          
+          
+             <span id="/Oracle/Oracle-APEX/apex-242-ai-vector-search/" class="leancloud_visitors" data-flag-title="Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191914184.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p>本文翻译自：<a href="https://blogs.oracle.com/apex/post/nextgen-data-search-integrating-ai-vector-search-into-search-configurations" target="_blank" rel="noopener">https://blogs.oracle.com/apex/post/nextgen-data-search-integrating-ai-vector-search-into-search-configurations</a></p>
+<p><a href="https://www.oracle.com/in/database/23ai/" target="_blank" rel="noopener">Oracle Database 23ai</a> 引入了一项改变游戏规则的功能：<strong>Oracle AI Vector Search</strong>。这项新功能使您能够将向量嵌入与业务数据一起存储，从而为更高级的语义查询打开了大门。通过利用嵌入模型，您可以将非结构化数据转换为向量嵌入，从而增强从数据中提取有意义的见解和联系的能力。要了解有关向量嵌入和嵌入模型的更多信息，请查看此 <a href="https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/overview-ai-vector-search.html" target="_blank" rel="noopener">链接</a>。在 APEX 24.2 版本中，我们现在在搜索配置中包含了AI矢量搜索支持。</p>
+<p>让我们探讨一下这一创新功能的工作原理及其与<a href="https://apex.oracle.com/en/" target="_blank" rel="noopener">Oracle APEX</a>的无缝集成。我们还将了解有关矢量提供程序、PL/SQL API等的更多信息，我们将利用它们来创建搜索配置。</p>
+<p>在这篇博文中，我们将探讨如何将<strong>Oracle AI Vector Search</strong>与<strong>Oracle APEX</strong>结合使用</p>
+<p>我们将了解如何：</p>
+<ol>
+<li>将向量列添加到表中</li>
+<li>创建向量提供者</li>
+<li>从向量提供者检索向量嵌入</li>
+<li>创建搜索类型为 <strong>Oracle Vector Search</strong> 的搜索配置</li>
+<li>创建 Oracle AI 矢量搜索页面</li>
+</ol>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191854618.png?x-oss-process=image/format,jpg/quality,q_60" alt="使用Oracle Vector Search作为搜索类型创建的搜索配置页面"></p>
+<h1 id="在数据库表中添加向量列"><a href="#在数据库表中添加向量列" class="headerlink" title="在数据库表中添加向量列"></a>在数据库表中添加向量列</h1><h2 id="什么是AI矢量搜索？"><a href="#什么是AI矢量搜索？" class="headerlink" title="什么是AI矢量搜索？"></a>什么是AI矢量搜索？</h2><p>AI矢量搜索使用高级嵌入模型将数据表示为数学向量。与传统的文本搜索不同，矢量搜索允许语义查询，识别各种数据类型之间的相似性。无论是人脸识别、查找相关图像还是进行高级文本搜索，矢量嵌入都可以检索高度相关的结果。</p>
+<h2 id="矢量数据类型"><a href="#矢量数据类型" class="headerlink" title="矢量数据类型"></a>矢量数据类型</h2><p>VECTOR数据类型随Oracle Database 23ai的发布而引入，为在数据库中存储向量嵌入和业务数据提供了基础。使用嵌入模型，您可以将非结构化数据转换为向量嵌入，然后可用于对业务数据进行语义查询。</p>
+<p>请参阅以下在表定义中使用VECTOR数据类型的基本示例：创建表文档（doc_id INT、doc_text CLOB、doc_vector VECTOR）；</p>
+<h1 id="什么是向量提供者"><a href="#什么是向量提供者" class="headerlink" title="什么是向量提供者"></a>什么是向量提供者</h1><p>矢量提供程序是将文本转换为嵌入的关键。这种转变可以通过多种方式进行，包括：</p>
+<ul>
+<li>本地数据库ONNX模型：直接在数据库中运行以实现高效处理，并具有将数据保留在数据库中以增强隐私性的额外优势。</li>
+<li>生成人工智能服务：生成嵌入的人工智能服务。</li>
+<li>用户定义的自定义 PL/SQL 函数：根据您的特定需求量身定制的自定义 PL/SQL 函数。</li>
+</ul>
+<p>矢量提供程序是工作区级别的资源，使它们可以跨同一工作区中的所有应用程序访问。它们确保一致性和可重用性，同时保持无缝集成。</p>
+<h2 id="导出和导入载体提供者"><a href="#导出和导入载体提供者" class="headerlink" title="导出和导入载体提供者"></a>导出和导入载体提供者</h2><p>Oracle APEX 简化了跨不同环境的矢量提供程序的管理。导出应用程序时，任何关联的矢量提供程序都包含在导出文件中。将应用程序导入到另一个工作区后，Oracle APEX 会检查是否已存在具有相同静态ID的矢量提供程序。如果是，应用程序将使用现有的提供程序。否则，Vector Provider会自动在目标工作区中创建，确保迁移过程顺利高效。</p>
+<h2 id="创建向量提供者"><a href="#创建向量提供者" class="headerlink" title="创建向量提供者"></a>创建向量提供者</h2><ol>
+<li>通过 Oracle APEX Workspace 主页上的 <strong>App Builder</strong> 导航到 <strong>Workspace Utilities</strong>。然后，单击 Oracle APEX 24.2 中引入的 <strong>Vector Providers</strong>。</li>
+<li>单击“创建”开始，然后输入矢量提供程序的唯一名称和静态 ID 。静态 ID 必须是唯一的，并且在将服务与APEX_AI包 <strong>APEX_AI.GET_VECTOR_EMBEDDINGS</strong> 一起使用时将被引用。</li>
+<li>选择提供商类型：<ul>
+<li><strong>数据库ONNX模型</strong>：<ul>
+<li>指定ONNX模型所有者（从分配给您的工作区的架构中选择）。</li>
+<li>选择ONNX模型名称（用于生成嵌入的模型）。</li>
+</ul>
+</li>
+<li><strong>生成式人工智能服务</strong>：选择人工智能提供商。选项包括 <strong>OCI、OpenAI 或 Cohere</strong>。 APEX会根据选择自动调整界面。</li>
+<li><strong>自定义PL/SQL</strong>：输入自定义函数名称（将输入转换为嵌入并返回 VECTOR 数据类型的 PL/SQL 函数）。</li>
+</ul>
+</li>
+<li>单击“创建”进行保存。</li>
+</ol>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191900382.png?x-oss-process=image/format,jpg/quality,q_60" alt="创建类型为ONNX模型的向量提供程序"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191900503.png?x-oss-process=image/format,jpg/quality,q_60" alt="使用类型生成AI服务创建向量提供程序"></p>
+<blockquote>
+<p><strong>注意</strong>：如果您使用数据库ONNX模型，请确保您已将这些ONNX模型直接导入到分配给工作区的架构中。要了解有关如何加载ONNX模型的更多信息，请查看此<a href="https://blogs.oracle.com/apex/post/implement-semantic-search-in-oracle-apex-using-ai-vector-search-of-oracle-database-23ai" target="_blank" rel="noopener">博客文章</a>。</p>
+</blockquote>
+<h1 id="从向量提供者检索向量嵌入"><a href="#从向量提供者检索向量嵌入" class="headerlink" title="从向量提供者检索向量嵌入"></a>从向量提供者检索向量嵌入</h1><p>Oracle AI 矢量搜索使用矢量嵌入 - 捕获文本、图像和音频等数据背后含义的数学表示。与精确匹配单词的关键字搜索不同，矢量搜索侧重于上下文和含义，提供更准确的结果。</p>
+<p>它将数据映射到多维空间，其中相似的概念更加紧密地结合在一起，反映了它们的语义关系。这种方法使搜索在不同类型的内容中更具创新性和更相关。</p>
+<p>在APEX中设置搜索配置之前，建议将数据转换为向量嵌入并存储在向量数据类型列中。从 APEX 24.2 开始，新的PL/SQL API <strong>APEX_AI.GET_VECTOR_EMBEDDINGS</strong> 可使用多个签名来简化此过程。您还可以使用此API插入或更新矢量数据。</p>
+<p><strong>示例1：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">   APEX_AI.GET_VECTOR_EMBEDDINGS(</span><br><span class="line">      P_VALUE              =&gt; <span class="string">'What is Oracle APEX'</span>,</span><br><span class="line">      P_SERVICE_STATIC_ID  =&gt; <span class="string">'onnx_model'</span></span><br><span class="line">   ) <span class="keyword">AS</span> VECTOR_EMBEDDING;</span><br></pre></td></tr></table></figure>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191903184.png?x-oss-process=image/format,jpg/quality,q_60" alt="检查apex_ai.get_vector_embeddings的输出"></p>
+<p><strong>示例2：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> EBA_PROJECT_MILESTONES</span><br><span class="line"><span class="keyword">SET</span> VECTOR_COLUMN = APEX_AI.GET_VECTOR_EMBEDDINGS(</span><br><span class="line">                              P_VALUE             =&gt;  <span class="keyword">NAME</span> || <span class="string">' '</span> || DESCRIPTION,</span><br><span class="line">                              P_SERVICE_STATIC_ID =&gt; <span class="string">'onnx_model'</span>);</span><br></pre></td></tr></table></figure>
+<p>在上面的示例中，p_service_static_id 指的是我们在上一节中创建的 Vector Provider Static ID。</p>
+<h1 id="创建搜索类型为-Oracle-Vector-Search-的搜索配置"><a href="#创建搜索类型为-Oracle-Vector-Search-的搜索配置" class="headerlink" title="创建搜索类型为 Oracle Vector Search 的搜索配置"></a>创建搜索类型为 Oracle Vector Search 的搜索配置</h1><p>Oracle AI Vector Search 配置需要 Oracle Database 23ai 或更高版本。在创建 Oracle AI Vector Search 配置之前，您需要完成上述所有步骤。</p>
+<p>以下是创建 Oracle Vector Search 配置的方法：</p>
+<ul>
+<li>导航到<strong>Workspace</strong>主页，单击<strong>App Builder</strong>，然后选择您的应用程序。打开<strong>共享组件</strong>，然后单击导航和搜索下的<strong>搜索配置</strong>。</li>
+<li>单击“<strong>创建</strong>”。为您的配置命名（例如，Search Movies - Vector），选择<strong>Oracle Vector Search</strong>作为类型，然后单击<strong>Next</strong>。</li>
+<li>通过选择矢量提供者来设置源以生成嵌入（例如 ONNX 模型）。选择源类型（表或 SQL 查询）并选择包含向量列的表所有者和表名称（例如，POPULAR_MOVIES）。单击“<strong>下一步</strong>” 。</li>
+<li>映射列。要将搜索类型创建为<strong>Oracle矢量搜索</strong>，我们需要将矢量属性与列映射一起映射。</li>
+<li>主键列：选择键列（例如ID）。<ul>
+<li>矢量列：选择矢量数据列（例如OVERVIEW_V）。</li>
+<li>标题列：选择标题列（例如，TITLE）。</li>
+<li>描述列：选择描述列（例如，概述）。</li>
+<li>图标来源：设置图标的显示方式，例如使用缩写。</li>
+</ul>
+</li>
+<li>单击“<strong>创建搜索配置</strong>”进行保存。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191908293.png?x-oss-process=image/format,jpg/quality,q_60" alt="创建搜索类型为Oracle Vector Search的搜索配置"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191908996.png?x-oss-process=image/format,jpg/quality,q_60" alt="设置用于创建搜索配置的源值"></p>
+<h2 id="自定义矢量属性"><a href="#自定义矢量属性" class="headerlink" title="自定义矢量属性"></a>自定义矢量属性</h2><p>创建矢量搜索配置后，您可以通过自定义矢量属性来进一步细化它以满足您的特定要求。</p>
+<p>例如，在矢量属性下，您可以：</p>
+<ul>
+<li>根据所需的精度，将搜索类型设置为精确或近似。</li>
+<li>选择最适合您的用例的距离度量，例如余弦、点、欧几里德、欧几里德平方、汉明或曼哈顿。</li>
+</ul>
+<p>此外，在图标和显示下，您可以配置：</p>
+<ul>
+<li>最大向量距离定义允许的相似性阈值。</li>
+<li>要返回的最大行数控制显示的结果数。</li>
+</ul>
+<p>这些调整有助于定制搜索行为和结果呈现，以完全符合您的应用程序的需求。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191909728.png?x-oss-process=image/format,jpg/quality,q_60" alt="自定义矢量属性"></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191910752.png?x-oss-process=image/format,jpg/quality,q_60" alt="自定义最大向量距离和要返回的行"></p>
+<ul>
+<li>创建 Oracle 矢量搜索页面</li>
+</ul>
+<p>创建页面向导可帮助您轻松设置搜索功能。它会创建一个搜索字段，并允许您在设置过程中选择搜索配置。如果需要，您还可以稍后在页面设计器中添加更多搜索配置。</p>
+<p>搜索页面包括搜索字段和搜索结果区域。在页面设计器中，搜索结果区域使用直接映射到共享组件中定义的搜索配置的搜索源。这确保了搜索功能集成良好且易于管理。</p>
+<p>查看此 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/htmdb/creating-an-oracle-vector-search.html#GUID-C0BEB835-CC6F-4499-B8EB-0334AE646F0C" target="_blank" rel="noopener">链接</a> 以了解有关如何在 Oracle APEX 中创建搜索页面的更多信息。</p>
+<h2 id="使用用于Oracle矢量搜索的-APEX-SEARCH-SEARCH-API增强搜索灵活性"><a href="#使用用于Oracle矢量搜索的-APEX-SEARCH-SEARCH-API增强搜索灵活性" class="headerlink" title="使用用于Oracle矢量搜索的 APEX_SEARCH.SEARCH API增强搜索灵活性"></a>使用用于Oracle矢量搜索的 APEX_SEARCH.SEARCH API增强搜索灵活性</h2><p>除了搜索配置中 Oracle Vector Search 的令人兴奋的功能外， <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/APEX_SEARCH.SEARCH-Function.html" target="_blank" rel="noopener">APEX_SEARCH.SEARCH</a> PL/SQL API 现在还支持搜索配置中的 Oracle AI Vector Search。开发人员可以使用多个搜索配置静态ID来跨各种配置和技术进行组合搜索。这使开发人员能够在任何地方使用搜索配置，例如在卡片区域中。业务数据触手可及，您可以轻松执行矢量搜索，同时集成各种来源。</p>
+<p>以下是如何使用它的示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *  </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">TABLE</span>( apex_search.search(  </span><br><span class="line">            p_search_static_ids =&gt; apex_t_varchar2(<span class="string">'vector_search_movies_db'</span>, <span class="string">'character_search'</span>),  </span><br><span class="line">            p_search_expression =&gt; :P4_SEARCH,  </span><br><span class="line">            p_apply_order_bys   =&gt; <span class="string">'N'</span>)</span><br><span class="line">         );</span><br></pre></td></tr></table></figure>
+<p>这种灵活性增强了APEX应用程序中搜索功能的多功能性。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202501191913193.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
+<p><strong>Oracle APEX 24.2</strong> 在搜索配置中引入了 <strong>Oracle AI Vector Search</strong>，支持高级语义搜索功能。通过与 <strong>Oracle Database 23ai</strong> 的 <strong>Oracle AI Vector Search</strong> 功能集成，您可以创建利用矢量嵌入的搜索配置来获得更准确和上下文感知的结果。此功能允许无缝定制和集成，从而更轻松地在 APEX 应用程序中实现强大的搜索功能。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2683,249 +2989,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20240930/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王方钢 / Kenny Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="钢钢更新">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Oracle/Oracle-APEX/apex-update-20240930/" itemprop="url">
-                  Oracle APEX 活跃博文整理 | 2024.09
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2024-09-30 23:59:00" itemprop="dateCreated datePublished" datetime="2024-09-30T23:59:00+08:00">2024-09-30</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2024-10-01 12:37:49" itemprop="dateModified" datetime="2024-10-01T12:37:49+08:00">2024-10-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Oracle/Oracle-APEX/" itemprop="url" rel="index"><span itemprop="name">Oracle APEX</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-
-
-          
-            
-          
-
-          
-          
-             <span id="/Oracle/Oracle-APEX/apex-update-20240930/" class="leancloud_visitors" data-flag-title="Oracle APEX 活跃博文整理 | 2024.09">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/screenshot_1202.png?x-oss-process=image/format,jpg/quality,q_60" alt=""></p>
-<p>以下是截止至 <code>2024.09.30</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p>
-<p>常规APEX博文整理：</p>
-<ul>
-<li><a href="https://blogs.oracle.com/apex/post/oracle-apex-gen-dev" target="_blank" rel="noopener">Oracle APEX Generative Development</a> <code>2024.09</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-make-rest-request-via-plsql" target="_blank" rel="noopener">APEX: Make REST Request via PL/SQL</a> <code>2024.09</code></li>
-<li><a href="https://pcvdbroek.hashnode.dev/understanding-oracle-apex-session-state-part-1" target="_blank" rel="noopener">Understanding Oracle APEX Session State Part 1</a> <code>2024.09</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/deep-dive-into-oracle-apex-globalization-understanding-multi-language-and-locales" target="_blank" rel="noopener">Deep Dive into Oracle APEX Globalization: Understanding Multi-Language and Locales</a> <code>2024.09</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-rest-request-body-templates" target="_blank" rel="noopener">APEX: Rest Request Body Templates</a> <code>2024.09</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-extending-fusion-describe" target="_blank" rel="noopener">APEX: Extending Fusion /describe</a> <code>2024.09</code></li>
-<li><a href="https://blog.cloudnueva.com/apex-background-page-processing-the-definitive-gude" target="_blank" rel="noopener">APEX Background Page Processing - The Definitive Gude</a> <code>2024.09</code></li>
-<li><a href="https://btimmerman.hashnode.dev/improve-apex-functionality-using-oracle-digital-assistant" target="_blank" rel="noopener">Improve APEX Functionality Using Oracle Digital Assistant</a> <code>2024.09</code></li>
-<li><a href="https://mattmulvaney.hashnode.dev/should-i-use-apex-ui-defaults" target="_blank" rel="noopener">Should I use APEX UI Defaults</a> <code>2024.09</code></li>
-<li><a href="https://toshareapex.hashnode.dev/como-integrar-un-codigo-qr-en-una-aplicacion-oracle-apex" target="_blank" rel="noopener">How to integrate a QR code into an Oracle APEX application</a> <code>2024.09</code></li>
-<li><a href="https://followthecoffee.com/how-to-kill-an-ords-process/" target="_blank" rel="noopener">How to kill an ORDS process</a> <code>2024.09</code></li>
-<li><a href="https://nielsdebr.blogspot.com/2024/09/common-misperceptions-around-oracle-apex.html" target="_blank" rel="noopener">Common misperceptions around Oracle APEX</a> <code>2024.09</code></li>
-<li><a href="https://synuora.hashnode.dev/apex-filtering-fusion-rest-integrations" target="_blank" rel="noopener">APEX: Filtering Fusion REST Integrations</a> <code>2024.09</code></li>
-<li><a href="https://blog.lucashir.eu/oracle-apex-limiting-text-lines-with-native-classes-in-oracle-apex" target="_blank" rel="noopener">Limiting text lines with native classes in Oracle APEX</a> <code>2024.09</code></li>
-<li><a href="https://svenweller.wordpress.com/2024/09/27/oracle-apex-24-1-quickie-how-to-import-a-working-copy/" target="_blank" rel="noopener">how to import a working copy</a> <code>2024.09</code></li>
-<li><a href="https://lschilde.blogspot.com/2024/09/oracle-apex-security-apex-sert-241.html" target="_blank" rel="noopener">ORACLE APEX Security - APEX SERT 24.1</a> <code>2024.09</code></li>
-<li><a href="https://www.maxapex.com/blogs/security-best-practices-in-oracle-apex/" target="_blank" rel="noopener">Security Best Practices in Oracle APEX</a> <code>2024.09</code></li>
-<li><a href="https://aflorestorres.com/2024/09/06/activar-camara-webcam-smartphone-camera-en-oracle-apex/" target="_blank" rel="noopener">Enable Camera, Webcam, Smartphone Camera in Oracle APEX</a> <code>2024.09</code></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-          
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2977,7 +3040,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">169</span>
+                    <span class="site-state-item-count">170</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
