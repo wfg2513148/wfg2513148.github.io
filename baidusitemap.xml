@@ -4,12 +4,237 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/</loc>
-    <lastmod>2025-02-28T01:44:09.366Z</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/</loc>
+    <lastmod>2025-02-28T01:48:23.348Z</lastmod>
     <data>
         <display>
-        <title>Oracle APEX 活跃博文整理 | 2025.02</title>
-        <pubTime>2025-02-28T01:06:00.000Z</pubTime>
+        <title>Oracle APEX 24.2 新特性 - Workflow工作流</title>
+        <pubTime>2025-01-19T05:33:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</loc>
+    <lastmod>2025-02-28T01:48:11.754Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流</title>
+        <pubTime>2025-01-19T06:05:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-text-message-enhancements/</loc>
+    <lastmod>2025-02-28T01:47:59.418Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 文本消息增强</title>
+        <pubTime>2025-02-09T03:05:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/</loc>
+    <lastmod>2025-02-28T01:47:50.200Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - REST数据源增强</title>
+        <pubTime>2025-01-19T15:27:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</loc>
+    <lastmod>2025-02-28T01:47:40.484Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发</title>
+        <pubTime>2025-01-19T09:49:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-faceted-search/</loc>
+    <lastmod>2025-02-28T01:47:32.249Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 多选与分面搜索功能增强</title>
+        <pubTime>2025-01-19T14:13:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/</loc>
+    <lastmod>2025-02-28T01:47:22.734Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 数据库对象依赖检测增强</title>
+        <pubTime>2025-01-19T14:35:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/</loc>
+    <lastmod>2025-02-28T01:47:00.304Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 利用AI生成文字的动态操作</title>
+        <pubTime>2025-02-09T04:05:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/</loc>
+    <lastmod>2025-02-28T01:46:51.246Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中</title>
+        <pubTime>2025-01-19T10:39:00.000Z</pubTime>
+        
+        <tag>Oracle</tag>
+         
+        <tag>APEX</tag>
+         
+         
+           
+             
+              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
+          
+             
+              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/</loc>
+    <lastmod>2025-02-28T01:46:42.627Z</lastmod>
+    <data>
+        <display>
+        <title>Oracle APEX 24.2 新特性 - AI驱动的数据建模</title>
+        <pubTime>2025-01-19T13:38:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          
@@ -30,7 +255,7 @@
     
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250228/</loc>
-    <lastmod>2025-02-28T01:25:25.806Z</lastmod>
+    <lastmod>2025-02-28T01:44:09.366Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 活跃博文整理 | 2025.02</title>
@@ -129,262 +354,12 @@
 
     
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/</loc>
-    <lastmod>2025-02-09T04:00:41.228Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 利用AI生成文字的动态操作</title>
-        <pubTime>2025-02-09T04:05:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-text-message-enhancements/</loc>
-    <lastmod>2025-02-09T03:56:03.530Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 文本消息增强</title>
-        <pubTime>2025-02-09T03:05:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250204/</loc>
     <lastmod>2025-02-04T09:42:56.354Z</lastmod>
     <data>
         <display>
         <title>Oracle APEX 活跃博文整理 | 2025.01</title>
         <pubTime>2025-02-04T08:43:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/</loc>
-    <lastmod>2025-01-19T15:42:55.485Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - REST数据源增强</title>
-        <pubTime>2025-01-19T15:27:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/</loc>
-    <lastmod>2025-01-19T14:51:24.245Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 数据库对象依赖检测增强</title>
-        <pubTime>2025-01-19T14:35:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-faceted-search/</loc>
-    <lastmod>2025-01-19T14:25:53.385Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 多选与分面搜索功能增强</title>
-        <pubTime>2025-01-19T14:13:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/</loc>
-    <lastmod>2025-01-19T14:01:41.863Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - AI驱动的数据建模</title>
-        <pubTime>2025-01-19T13:38:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/</loc>
-    <lastmod>2025-01-19T11:23:08.034Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 将AI矢量搜索集成到搜索配置中</title>
-        <pubTime>2025-01-19T10:39:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</loc>
-    <lastmod>2025-01-19T10:38:28.410Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 利用JSON数据源和二元性视图实现灵活组件开发</title>
-        <pubTime>2025-01-19T09:49:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</loc>
-    <lastmod>2025-01-19T06:30:21.440Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - 从任意活动恢复Workflow工作流</title>
-        <pubTime>2025-01-19T06:05:00.000Z</pubTime>
-        
-        <tag>Oracle</tag>
-         
-        <tag>APEX</tag>
-         
-         
-           
-             
-              <breadCrumb title="Oracle" url="https://wangfanggang.com/categories/Oracle/"/>
-          
-             
-              <breadCrumb title="Oracle APEX" url="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/</loc>
-    <lastmod>2025-01-19T05:55:11.728Z</lastmod>
-    <data>
-        <display>
-        <title>Oracle APEX 24.2 新特性 - Workflow工作流</title>
-        <pubTime>2025-01-19T05:33:00.000Z</pubTime>
         
         <tag>Oracle</tag>
          

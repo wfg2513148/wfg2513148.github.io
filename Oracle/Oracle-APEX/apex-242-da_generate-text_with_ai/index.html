@@ -152,7 +152,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091137614.png?x-oss-process=image/format,jpg/quality,q_60">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091138313.png?x-oss-process=image/format,jpg/quality,q_60">
 <meta property="og:image" content="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091139114.png?x-oss-process=image/format,jpg/quality,q_60">
-<meta property="og:updated_time" content="2025-02-09T04:00:41.228Z">
+<meta property="og:updated_time" content="2025-02-28T01:47:00.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle APEX 24.2 新特性 - 利用AI生成文字的动态操作">
 <meta name="twitter:description" content="本文翻译自：https://blogs.oracle.com/apex/post/whats-new-in-apex-242-dynamic-action-generate-text-with-ai Oracle APEX 24.2 版本发布了一个名为“使用AI生成文本”的激动人心的 动态操作。这一创新功能帮助开发者将AI驱动的文本生成能力添加到应用程序中，通过动态操作激活。凭借其直观的配置过程">
@@ -427,12 +427,24 @@ var _hmt = _hmt || [];
                 
               
 
-              <time title="创建时间：2025-02-09 12:05:00 / 修改时间：12:00:41" itemprop="dateCreated datePublished" datetime="2025-02-09T12:05:00+08:00">2025-02-09</time>
+              <time title="创建时间：2025-02-09 12:05:00" itemprop="dateCreated datePublished" datetime="2025-02-09T12:05:00+08:00">2025-02-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2025-02-28 09:47:00" itemprop="dateModified" datetime="2025-02-28T09:47:00+08:00">2025-02-28</time>
               
             
           </span>
@@ -537,6 +549,7 @@ var _hmt = _hmt || [];
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在 APEX 原生生成式 AI 功能引入之前，开发者必须建立 Web 服务连接以从生成式 AI 服务获取响应。随着 <a href="https://blogs.oracle.com/apex/post/announcing-oracle-apex-241" target="_blank" rel="noopener">APEX 24.1</a> 版本中引入 <code>APEX_AI</code> API，开发者可以通过传递正确的参数来调用 <a href="https://docs.oracle.com/en/database/oracle/apex/24.2/aeapi/APEX_AI.GENERATE-Function-Signature-1.html" target="_blank" rel="noopener">apex_ai.generate</a> 函数，以获取响应。现在，在 APEX 24.2 版本中，如图 1 所示，开发者可以通过在属性编辑器中配置一系列属性，直接在应用程序中实现由 AI 驱动的文本生成。该功能灵活，可以根据应用程序的具体需求满足各种用例。</p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502091135651.png?x-oss-process=image/format,jpg/quality,q_60" alt="图1 使用“利用AI生成文字”的动态操作"></p>
 <p>让我们通过例子更深入地探讨细节。</p>
+<a id="more"></a>
 <h1 id="示例1：仅显示系统提示的配置"><a href="#示例1：仅显示系统提示的配置" class="headerlink" title="示例1：仅显示系统提示的配置"></a>示例1：仅显示系统提示的配置</h1><p>动态操作 <code>Generate Text with AI action</code> 可以基于 <strong>predefined input</strong> 动态生成文本信息，使用 <strong>substitution strings</strong> 或两者的组合。该操作随后在 <strong>designated page item</strong>，如 <code>P1_AI_RESPONSE</code> 中返回生成的文本，提供一种简单且无缝的方式在应用中展示AI生成的内容。此功能允许应用生成灵活且动态的文本，以满足应用和用户交互的特定需求。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
 <li>在一个 APEX 页面中，创建一个 <strong>按钮</strong>。</li>
@@ -596,7 +609,7 @@ var _hmt = _hmt || [];
   <p><span>本文标题:</span><a href="/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/">Oracle APEX 24.2 新特性 - 利用AI生成文字的动态操作</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 王方钢 / Kenny Wang 的个人博客">王方钢 / Kenny Wang</a></p>
   <p><span>发布时间:</span>2025年02月09日 - 12:02</p>
-  <p><span>最后更新:</span>2025年02月09日 - 12:02</p>
+  <p><span>最后更新:</span>2025年02月28日 - 09:02</p>
   <p><span>原始链接:</span><a href="/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/" title="Oracle APEX 24.2 新特性 - 利用AI生成文字的动态操作">https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/"  aria-label="复制成功！"></i></span>
   </p>
@@ -742,7 +755,7 @@ var _hmt = _hmt || [];
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">171</span>
+                    <span class="site-state-item-count">170</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

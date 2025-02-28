@@ -2,16 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/</loc>
     
-    <lastmod>2025-02-28T01:44:09.366Z</lastmod>
+    <lastmod>2025-02-28T01:48:23.348Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</loc>
+    
+    <lastmod>2025-02-28T01:48:11.754Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-text-message-enhancements/</loc>
+    
+    <lastmod>2025-02-28T01:47:59.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/</loc>
+    
+    <lastmod>2025-02-28T01:47:50.200Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</loc>
+    
+    <lastmod>2025-02-28T01:47:40.484Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-faceted-search/</loc>
+    
+    <lastmod>2025-02-28T01:47:32.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/</loc>
+    
+    <lastmod>2025-02-28T01:47:22.734Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/</loc>
+    
+    <lastmod>2025-02-28T01:47:00.304Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/</loc>
+    
+    <lastmod>2025-02-28T01:46:51.246Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/</loc>
+    
+    <lastmod>2025-02-28T01:46:42.627Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250228/</loc>
     
-    <lastmod>2025-02-28T01:25:25.806Z</lastmod>
+    <lastmod>2025-02-28T01:44:09.366Z</lastmod>
     
   </url>
   
@@ -37,79 +100,9 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-da_generate-text_with_ai/</loc>
-    
-    <lastmod>2025-02-09T04:00:41.228Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-text-message-enhancements/</loc>
-    
-    <lastmod>2025-02-09T03:56:03.530Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250204/</loc>
     
     <lastmod>2025-02-04T09:42:56.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-rest-data-source-enhancements/</loc>
-    
-    <lastmod>2025-01-19T15:42:55.485Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-data-dependency/</loc>
-    
-    <lastmod>2025-01-19T14:51:24.245Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-faceted-search/</loc>
-    
-    <lastmod>2025-01-19T14:25:53.385Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-model/</loc>
-    
-    <lastmod>2025-01-19T14:01:41.863Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-ai-vector-search/</loc>
-    
-    <lastmod>2025-01-19T11:23:08.034Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-json/</loc>
-    
-    <lastmod>2025-01-19T10:38:28.410Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow-2/</loc>
-    
-    <lastmod>2025-01-19T06:30:21.440Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-242-workflow/</loc>
-    
-    <lastmod>2025-01-19T05:55:11.728Z</lastmod>
     
   </url>
   
