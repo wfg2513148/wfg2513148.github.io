@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangfanggang.com/"/>
-  <updated>2025-02-20T07:34:52.956Z</updated>
+  <updated>2025-02-28T01:25:25.806Z</updated>
   <id>https://wangfanggang.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle APEX 活跃博文整理 | 2025.02</title>
+    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/"/>
+    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/</id>
+    <published>2025-02-28T01:06:00.000Z</published>
+    <updated>2025-02-28T01:25:25.806Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502280925542.jpg?x-oss-process=image/format,jpg/quality,q_60" alt=""></p><p>以下是截止至 <code>2025.02.28</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://blog.lucashir.eu/oracle-apex-taking-advantage-of-helper-classes" target="_blank" rel="noopener">Taking Advantage of Helper Classes</a> <code>2025.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/unzipping-in-oracle-apex-has-changed" target="_blank" rel="noopener">Unzipping in Oracle APEX has changed - Examples Galore</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/24/business-processes-with-apex-24-2-workflows-a-practical-demo/" target="_blank" rel="noopener">Business Processes with APEX 24.2 Workflows: A Practical Demo</a> <code>2025.02</code></li><li><a href="https://blog.cloudnueva.com/text-messages-in-apex-242" target="_blank" rel="noopener">APEX 24.2: New Text Messaging Features</a> <code>2025.02</code></li><li><a href="https://apexblog.dev/how-to-fire-a-close-event-on-dialog-x-button-click" target="_blank" rel="noopener">How to Fire a Close Event on Dialog X Button Click</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/17/securing-apex-hiding-the-url-format/" target="_blank" rel="noopener">Securing APEX: Hiding the URL Format</a> <code>2025.02</code></li><li><a href="https://petarsimic.hashnode.dev/oracle-apex-working-with-row-selection-in-interactive-grid" target="_blank" rel="noopener">Working with Row Selection in Interactive Grid</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/14/integrating-openai-with-oracle-apex-build-intelligent-chat-applications-with-rest-api/" target="_blank" rel="noopener">Making APEX Smarter One Chat at a Time</a> <code>2025.02</code></li><li><a href="https://petarsimic.hashnode.dev/oracle-apex-audit-data-displayed-to-the-users" target="_blank" rel="noopener">Oracle APEX: Auditing User-Requested Data</a> <code>2025.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/find-an-apex-component-id-in-all-oracle-apex-dictionary-views" target="_blank" rel="noopener">Find an APEX Component ID in all Oracle APEX Dictionary Views</a> <code>2025.02</code></li><li><a href="https://blog.cloudnueva.com/validation-logic-with-apexerror" target="_blank" rel="noopener">Consolidating Validation Logic with APEX_ERROR</a> <code>2025.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/using-ai-to-generate-oracle-apex-theme-roller-styles-v2" target="_blank" rel="noopener">Using AI to generate Oracle APEX Theme Roller Styles v.2</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/05/implementing-file-upload-with-ai-in-oracle-apex-validation-error-handling-openai-api-integration/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 1</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/07/custom-events-in-oracle-apex-how-to-create-trigger-and-manage-dynamic-actions/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 2</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/11/efficient-file-management-and-download-integration-in-oracle-apex/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 3</a> <code>2025.02</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502280925542.jpg?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
+      
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
+    
+      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
+    
+    
+      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
+    
+      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
+    
+  </entry>
   
   <entry>
     <title>在 Oracle EBS 12.2 上启用OCI生成式AI实现自然语言查询</title>
@@ -59,35 +88,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/202502191033708.png?x-oss-process=image/format,jpg/quality,q_60&quot; alt=&quot;
-      
-    
-    </summary>
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/categories/Oracle/"/>
-    
-      <category term="Oracle APEX" scheme="https://wangfanggang.com/categories/Oracle/Oracle-APEX/"/>
-    
-    
-      <category term="Oracle" scheme="https://wangfanggang.com/tags/Oracle/"/>
-    
-      <category term="APEX" scheme="https://wangfanggang.com/tags/APEX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle APEX 活跃博文整理 | 2025.02</title>
-    <link href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/"/>
-    <id>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250212/</id>
-    <published>2025-02-12T09:02:00.000Z</published>
-    <updated>2025-02-12T09:07:26.559Z</updated>
-    
-    <content type="html"><![CDATA[<p>以下是截止至 <code>2025.02.12</code>收集的 Oracle APEX 最新博文，完整博文列表请移步这里：<a href="https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/">Oracle APEX Evangelion（EVA 补完计划）</a> </p><p>常规APEX博文整理：</p><ul><li><a href="https://petarsimic.hashnode.dev/oracle-apex-audit-data-displayed-to-the-users" target="_blank" rel="noopener">Oracle APEX: Auditing User-Requested Data</a> <code>2025.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/find-an-apex-component-id-in-all-oracle-apex-dictionary-views" target="_blank" rel="noopener">Find an APEX Component ID in all Oracle APEX Dictionary Views</a> <code>2025.02</code></li><li><a href="https://blog.cloudnueva.com/validation-logic-with-apexerror" target="_blank" rel="noopener">Consolidating Validation Logic with APEX_ERROR</a> <code>2025.02</code></li><li><a href="https://mattmulvaney.hashnode.dev/using-ai-to-generate-oracle-apex-theme-roller-styles-v2" target="_blank" rel="noopener">Using AI to generate Oracle APEX Theme Roller Styles v.2</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/05/implementing-file-upload-with-ai-in-oracle-apex-validation-error-handling-openai-api-integration/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 1</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/07/custom-events-in-oracle-apex-how-to-create-trigger-and-manage-dynamic-actions/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 2</a> <code>2025.02</code></li><li><a href="https://www.novoshore.com/2025/02/11/efficient-file-management-and-download-integration-in-oracle-apex/" target="_blank" rel="noopener">Because Humans Need Breaks, working with documents, part 3</a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li><li><a href=""></a> <code>2025.02</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;以下是截止至 &lt;code&gt;2025.02.12&lt;/code&gt;收集的 Oracle APEX 最新博文，完整博文列表请移步这里：&lt;a href=&quot;https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/&quot;&gt;Orac
       
     
     </summary>
