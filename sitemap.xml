@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250705/</loc>
+    <loc>https://wangfanggang.com/Oracle/apex-update-20250705/</loc>
     
     <lastmod>2025-07-05</lastmod>
     
@@ -1406,6 +1406,15 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</loc>
+    
+    <lastmod>2019-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
     
     <lastmod>2019-09-03</lastmod>
@@ -1416,15 +1425,6 @@
   
   <url>
     <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
-    
-    <lastmod>2019-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/AWS/AWS-Certified-Solutions-Architect-Professional/</loc>
     
     <lastmod>2019-09-03</lastmod>
     
@@ -1754,20 +1754,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/tags/SSL/</loc>
-    <lastmod>2025-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/tags/HTTPS/</loc>
-    <lastmod>2025-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/tags/Database/</loc>
     <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1797,6 +1783,34 @@
   
   <url>
     <loc>https://wangfanggang.com/tags/Cloud/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/Certification/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/AI/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/Oracle-Cloud/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/Data/</loc>
     <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2006,13 +2020,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/tags/AI/</loc>
-    <lastmod>2025-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/tags/Machine-Learning/</loc>
     <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -2070,6 +2077,20 @@
   
   <url>
     <loc>https://wangfanggang.com/tags/sql/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/SSL/</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/tags/HTTPS/</loc>
     <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
