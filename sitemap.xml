@@ -1442,15 +1442,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
-    
-    <lastmod>2019-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/MBA/MBA-notification/</loc>
     
     <lastmod>2019-09-03</lastmod>
@@ -1550,6 +1541,15 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
+    
+    <lastmod>2019-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190302/</loc>
     
     <lastmod>2019-09-03</lastmod>
@@ -1560,15 +1560,6 @@
   
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190413/</loc>
-    
-    <lastmod>2019-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20190202/</loc>
     
     <lastmod>2019-09-03</lastmod>
     
@@ -1632,6 +1623,15 @@
   
   <url>
     <loc>https://wangfanggang.com/Python/python-ai/</loc>
+    
+    <lastmod>2019-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/ElasticSearch/ElasticSearch/</loc>
     
     <lastmod>2019-09-03</lastmod>
     
@@ -1712,13 +1712,6 @@
   
   <url>
     <loc>https://wangfanggang.com/tags/Data-Pump/</loc>
-    <lastmod>2025-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/tags/Elastic/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2123,17 +2116,17 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://wangfanggang.com/categories/AWS/</loc>
+    <loc>https://wangfanggang.com/tags/Elastic/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://wangfanggang.com/categories/ElasticSearch/</loc>
+    <loc>https://wangfanggang.com/categories/AWS/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2238,6 +2231,13 @@
   </url>
   
   <url>
+    <loc>https://wangfanggang.com/categories/Java/Spring-Boot/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/categories/Java/Spring-Cloud/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -2252,7 +2252,7 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/categories/Java/Spring-Boot/</loc>
+    <loc>https://wangfanggang.com/categories/ElasticSearch/</loc>
     <lastmod>2025-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
