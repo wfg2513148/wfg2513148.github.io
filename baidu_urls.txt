@@ -1,1 +1,1 @@
-https://wangfanggang.com/Oracle/APEX/ORDS/apex-ords-rest-oauth2/
+https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250830/
