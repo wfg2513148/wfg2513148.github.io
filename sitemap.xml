@@ -1514,15 +1514,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
-    
-    <lastmod>2019-09-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
     
     <lastmod>2019-09-03</lastmod>
@@ -1677,6 +1668,15 @@
   
   <url>
     <loc>https://wangfanggang.com/Python/python-ai/</loc>
+    
+    <lastmod>2019-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
     
     <lastmod>2019-09-03</lastmod>
     
