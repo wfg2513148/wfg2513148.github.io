@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251130/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-wallet-setup/</loc>
+    <lastmod>2025-12-01</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251030/</loc>
@@ -43,10 +47,6 @@
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250630/</loc>
     <lastmod>2025-07-01</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-wallet-setup/</loc>
-    <lastmod>2025-06-27</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250531/</loc>
@@ -661,6 +661,10 @@
     <lastmod>2019-09-03</lastmod>
   </url>
   <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
+    <lastmod>2019-09-03</lastmod>
+  </url>
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-20180726/</loc>
     <lastmod>2019-09-03</lastmod>
   </url>
@@ -730,10 +734,6 @@
   </url>
   <url>
     <loc>https://wangfanggang.com/Python/python-ai/</loc>
-    <lastmod>2019-09-03</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-blogs-201807/</loc>
     <lastmod>2019-09-03</lastmod>
   </url>
   <url>
