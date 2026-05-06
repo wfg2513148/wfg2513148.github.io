@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260331/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260430/</loc>
+    <lastmod>2026-05-06</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/integrating-oci-generative-ai-agents-with-oracle-apex-zh/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260331/</loc>
+    <lastmod>2026-04-06</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260228/</loc>
     <lastmod>2026-02-28</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-10/</loc>
-    <lastmod>2026-02-28</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251130/</loc>
-    <lastmod>2026-02-28</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251030/</loc>
-    <lastmod>2026-02-28</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-wallet-setup/</loc>
-    <lastmod>2026-02-28</lastmod>
-  </url>
-  <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250930/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260131/</loc>
+    <lastmod>2026-01-31</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251231/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2025-12-31</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260131/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/oracle-wallet-setup/</loc>
+    <lastmod>2025-12-01</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/APEX/ORDS/apex-ords-rest-oauth2/</loc>
-    <lastmod>2025-08-30</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251130/</loc>
+    <lastmod>2025-11-30</lastmod>
+  </url>
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/ollama-ngrok-apex-ucai/</loc>
+    <lastmod>2025-11-28</lastmod>
+  </url>
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251030/</loc>
+    <lastmod>2025-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250930/</loc>
+    <lastmod>2025-09-30</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250830/</loc>
     <lastmod>2025-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://wangfanggang.com/Oracle/APEX/ORDS/apex-ords-rest-oauth2/</loc>
+    <lastmod>2025-08-29</lastmod>
   </url>
   <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250801/</loc>
@@ -69,11 +69,11 @@
     <lastmod>2025-07-01</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250531/</loc>
-    <lastmod>2025-06-15</lastmod>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
+    <lastmod>2025-05-31</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-series-8/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250531/</loc>
     <lastmod>2025-05-31</lastmod>
   </url>
   <url>
@@ -593,10 +593,6 @@
     <lastmod>2019-12-31</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20191031/</loc>
-    <lastmod>2019-12-31</lastmod>
-  </url>
-  <url>
     <loc>https://wangfanggang.com/Kubernetes/kubernetes-series-04/</loc>
     <lastmod>2019-12-31</lastmod>
   </url>
@@ -749,11 +745,11 @@
     <lastmod>2019-09-03</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Oracle/Database/oracle-xe-18c/</loc>
+    <loc>https://wangfanggang.com/Python/python-ai/</loc>
     <lastmod>2019-09-03</lastmod>
   </url>
   <url>
-    <loc>https://wangfanggang.com/Python/python-ai/</loc>
+    <loc>https://wangfanggang.com/Oracle/Database/oracle-xe-18c/</loc>
     <lastmod>2019-09-03</lastmod>
   </url>
   <url>

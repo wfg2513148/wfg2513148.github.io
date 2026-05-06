@@ -1,1 +1,1 @@
-https://wangfanggang.com/Oracle/Oracle-APEX/integrating-oci-generative-ai-agents-with-oracle-apex-zh/
+https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260430/
