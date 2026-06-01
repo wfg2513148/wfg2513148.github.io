@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wangfanggang.com/Oracle/APEX/ORDS/apex-ords-rest-oauth2/</loc>
+    
+    <lastmod>2026-06-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20260531/</loc>
     
     <lastmod>2026-06-01</lastmod>
@@ -104,15 +113,6 @@
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20250830/</loc>
     
     <lastmod>2025-08-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/Oracle/APEX/ORDS/apex-ords-rest-oauth2/</loc>
-    
-    <lastmod>2025-08-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
