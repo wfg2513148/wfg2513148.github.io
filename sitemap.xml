@@ -83,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/ollama-ngrok-apex-ucai/</loc>
-    
-    <lastmod>2025-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wangfanggang.com/Oracle/Oracle-APEX/apex-update-20251030/</loc>
     
     <lastmod>2025-11-12</lastmod>
@@ -2133,13 +2124,6 @@
   
   <url>
     <loc>https://wangfanggang.com/tags/Hybrid-APP/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wangfanggang.com/tags/PL-SQL/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
