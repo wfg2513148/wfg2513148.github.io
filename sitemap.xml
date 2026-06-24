@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wangfanggang.com/uncategorized/oracle-apex-develper-guide-cn/</loc>
+    <loc>https://wangfanggang.com/Oracle/Oracle-APEX/AI/oracle-apex-develper-guide-cn/</loc>
     
     <lastmod>2026-06-24</lastmod>
     
@@ -2391,6 +2391,13 @@
   
   <url>
     <loc>https://wangfanggang.com/categories/SPSS/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wangfanggang.com/categories/Oracle/Oracle-APEX/AI/</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
