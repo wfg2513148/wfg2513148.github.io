@@ -32475,4 +32475,169 @@ dtype: float64
         <tag>PL/SQL</tag>
       </tags>
   </entry>
+  <entry>
+    <title>APEX 26.1 之后，别再把 App Builder 当作唯一开发入口</title>
+    <url>/Oracle/Oracle-APEX/apex-26.1-ai-dev-process/</url>
+    <content><![CDATA[<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/01-cover.png" alt="小黑在 App Builder、APEXlang 与 Git 之间搬运 APEX 应用定义"></p>
+<p>过去做 APEX 项目，开发现场几乎只有一个：App Builder。</p>
+<p>页面、区域、Dynamic Action、Validation、Shared Components，都在浏览器里配置。改完刷新页面，结果马上出现。这个反馈速度很难替代，也是许多人喜欢 APEX 的原因。</p>
+<p>问题出在项目变大以后。两三个人同时修改同一个应用，Git 里只留下一份导出 SQL，评审者很难看清某个按钮为什么换了位置、某个 Authorization Scheme 是否被误改。再把 AI Coding Agent 拉进来，麻烦会更明显：它能写 SQL 和 PL&#x2F;SQL，却很难从安装脚本里还原整套应用结构。</p>
+<p>APEX 26.1 给出了新的解法。APEXlang 把应用元数据表达成结构化、可读的 <code>.apx</code> 文件；SQLcl 提供生成、导出、验证和导入命令；Blueprint 把规格先变成可试用的应用骨架；Oracle 提供的 Skills 则告诉 Coding Agent 怎样理解和修改这些文件。[^oracle-apexlang-new]</p>
+<p>我更愿意把它看成一次开发现场的扩建。App Builder 还在，而且仍然重要。只是从 26.1 开始，浏览器不再是唯一现场。</p>
+<span id="more"></span>
+
+<h2 id="一、App-Builder-没有退场，应用定义走出了浏览器"><a href="#一、App-Builder-没有退场，应用定义走出了浏览器" class="headerlink" title="一、App Builder 没有退场，应用定义走出了浏览器"></a>一、App Builder 没有退场，应用定义走出了浏览器</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/02-two-workbenches.png" alt="App Builder 与 APEXlang 是同一套应用定义的两个工作现场"></p>
+<p>APEXlang 在 26.1 中是可选的应用表达格式。开发者仍然可以在 App Builder 里搭页面，也可以把应用导出成 APEXlang，在 VS Code、Git 和 Coding Agent 中阅读、修改，再用 SQLcl 验证和导入。两条路径操作的是同一套 APEX 应用元数据。[^oracle-working-apexlang]</p>
+<p>一份典型的 APEXlang 项目会包含类似结构：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">application.apx</span><br><span class="line">pages/</span><br><span class="line">shared_components/</span><br><span class="line">supporting_objects/</span><br><span class="line">deployments/</span><br><span class="line">.apex/</span><br></pre></td></tr></table></figure>
+
+<p>这组文件先补上了三个一直难处理的缺口。</p>
+<p>第一，应用变化终于比较容易读了。Pull Request 不必只展示一份庞大的安装脚本，评审者可以定位到页面、组件和属性。</p>
+<p>第二，Coding Agent 有了明确的编辑对象。它可以搜索某类按钮、分析共享组件引用、修改多个页面，再根据编译错误继续修正。</p>
+<p>第三，CI 有了官方验证入口。SQLcl 26.1 的 APEX 命令包括：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">apex generate</span><br><span class="line">apex export</span><br><span class="line">apex validate</span><br><span class="line">apex import</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>apex validate</code> 可以在没有数据库连接时编译 APEXlang。这个能力很适合放进本地检查和 Pull Request 流水线。导入仍然需要数据库连接，并会先完成验证。[^oracle-sqlcl-apexlang]</p>
+<p>这并不意味着“源码文件永远正确，数据库里的应用只是副本”。浏览器里的紧急修改、不同环境的运行状态、应用 ID 和 Workspace 映射都可能造成偏差。团队仍要规定谁可以修改哪一端，以及什么时候重新导出基线。</p>
+<h2 id="二、六个名词看起来挨得很近，其实各管一层"><a href="#二、六个名词看起来挨得很近，其实各管一层" class="headerlink" title="二、六个名词看起来挨得很近，其实各管一层"></a>二、六个名词看起来挨得很近，其实各管一层</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/03-six-concepts.png" alt="Spec、Blueprint、APEXlang、Skills、MCP 与 AI Agent 的六层边界"></p>
+<p>APEX 26.1 的资料里经常同时出现 Functional Specification、Blueprint、APEXlang、Skills、SQLcl&#x2F;MCP 和 AI Agent。把它们统称为“AI 开发工具”会掩盖最重要的边界。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>它解决的问题</th>
+<th>不应该被理解为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Functional Specification</td>
+<td>业务目标、角色、流程、规则和验收条件</td>
+<td>一次性的 Prompt</td>
+</tr>
+<tr>
+<td>Blueprint</td>
+<td>把规格和数据模型整理成可导入的应用骨架</td>
+<td>完整生产应用源码</td>
+</tr>
+<tr>
+<td>APEXlang</td>
+<td>表达完整 APEX 应用定义</td>
+<td>数据库 Migration 的替代品</td>
+</tr>
+<tr>
+<td>Skills</td>
+<td>给 Coding Agent 提供 APEX 领域规则和工作方法</td>
+<td>数据库连接或执行权限</td>
+</tr>
+<tr>
+<td>SQLcl &#x2F; MCP</td>
+<td>验证、导入以及受控数据库操作通道</td>
+<td>可以绕过权限治理的万能接口</td>
+</tr>
+<tr>
+<td>APEX AI Agent</td>
+<td>在运行期通过已批准的 Tools 服务最终用户</td>
+<td>开发期修改 APEXlang 的 Coding Agent</td>
+</tr>
+</tbody></table>
+<p>Blueprint 最容易被高估。Oracle 官方的 Spec-Driven Development 流程以功能规格、Schema Metadata 和 Blueprint System Prompt 为输入，AI 产出结构化 Markdown，再由 APEX 导入并确定性生成脚手架应用。这个应用可以给业务人员提前试用，但官方文档也明确提醒：脚手架不是成品，后续仍要补体验、业务逻辑和集成。[^oracle-blueprint]</p>
+<p>APEXlang 负责另一个阶段。骨架通过评审后，团队可以继续在 App Builder 和文本工具中演进完整应用。Oracle 的 APEXlang Skills 支持 Coding Agent 生成页面、组件和增量修改，并建议把 <code>apex validate</code> 放进编辑循环。[^oracle-coding-agents]</p>
+<p>MCP 更不能和 Skill 混用。Skill 告诉 Agent 应该怎样做，MCP 给 Agent 一条调用工具和数据的通道。SQLcl MCP Server 官方文档专门提醒：给 LLM 数据库权限会带来数据泄露和越权风险，应使用最小权限账号，避免直连生产，并审计它执行的操作。[^oracle-sqlcl-mcp]</p>
+<h2 id="三、一条能落地的-APEX-26-1-工程流程"><a href="#三、一条能落地的-APEX-26-1-工程流程" class="headerlink" title="三、一条能落地的 APEX 26.1 工程流程"></a>三、一条能落地的 APEX 26.1 工程流程</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/apex-engineering-flow%402x.png?v=20260726-3" alt="APEX 26.1 从规格、原型到开发、验证和环境部署的工程闭环"></p>
+<p>这条流程的起点不该是“请 AI 帮我创建五个页面”，而是一份可以评审的规格。</p>
+<p>规格至少应说明业务目标、用户角色、核心对象、流程、权限、异常处理、验收标准，以及本期明确不做什么。数据库表、约束、索引、Package 和初始化数据则进入独立的数据库目录，由 Migration 管理。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">database/</span><br><span class="line">├── migrations/</span><br><span class="line">├── packages/</span><br><span class="line">├── views/</span><br><span class="line">├── seed-data/</span><br><span class="line">└── tests/</span><br></pre></td></tr></table></figure>
+
+<p>准备好功能规格和 Schema Metadata 后，再生成 Blueprint。业务人员先围绕可运行骨架确认页面、导航和流程。骨架得到认可后导出 APEXlang，建立 Git 基线。之后的每次修改，都用一份小型 Change Spec 约束 AI 和人工操作。</p>
+<p>例如，统一四个“新建”按钮，不需要写一篇长需求：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Change ID</span></span><br><span class="line">CRM-142</span><br><span class="line"></span><br><span class="line"><span class="section"># 目标</span></span><br><span class="line">统一 New Lead、New Opportunity、New Account、New Contact 的位置和样式。</span><br><span class="line"></span><br><span class="line"><span class="section"># 约束</span></span><br><span class="line"><span class="bullet">-</span> 按钮放在 Breadcrumb Bar 右侧</span><br><span class="line"><span class="bullet">-</span> 使用 Hot 样式</span><br><span class="line"><span class="bullet">-</span> 不修改 Authorization Scheme、Branch 和 Dynamic Action</span><br><span class="line"></span><br><span class="line"><span class="section"># 验收</span></span><br><span class="line"><span class="bullet">-</span> 四个页面位置一致</span><br><span class="line"><span class="bullet">-</span> 未授权用户仍不可见</span><br><span class="line"><span class="bullet">-</span> 原有跳转保持不变</span><br><span class="line"><span class="bullet">-</span> APEXlang 验证通过</span><br><span class="line"><span class="bullet">-</span> 浏览器回归通过</span><br></pre></td></tr></table></figure>
+
+<p>Coding Agent 可以据此分析影响范围、修改 APEXlang、运行验证并总结 Diff。开发者要审查它是否碰了范围外的组件。然后部署数据库 Migration，导入应用，在 DEV 或临时环境运行数据库测试、页面冒烟、核心流程 E2E、权限矩阵和安全检查。</p>
+<p><code>apex validate</code> 通过只说明应用定义能够被编译。它不理解你的业务口径，也不知道“财务审批人不能看到其他法人数据”是不是硬规则。编译器负责语法和元数据约束，测试与人工评审负责业务正确性。</p>
+<h2 id="四、别强求唯一的-Source-of-Truth，先把边界划清"><a href="#四、别强求唯一的-Source-of-Truth，先把边界划清" class="headerlink" title="四、别强求唯一的 Source of Truth，先把边界划清"></a>四、别强求唯一的 Source of Truth，先把边界划清</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/apex-ai-boundaries%402x.png?v=20260726-3" alt="开发期 AI 与运行期 AI 的对象、通道和责任边界"></p>
+<p>很多团队喜欢问：“到底哪一份才是唯一事实来源？”在 APEX 项目里，硬把所有事实塞进一个仓库目录，通常会制造新的误解。</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>建议的事实来源</th>
+<th>主要内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>业务</td>
+<td>Functional Specification</td>
+<td>目标、角色、流程、规则、验收</td>
+</tr>
+<tr>
+<td>原型设计</td>
+<td>Blueprint</td>
+<td>页面骨架、导航、报表、表单、初始行为</td>
+</tr>
+<tr>
+<td>应用定义</td>
+<td>APEXlang</td>
+<td>页面、共享组件、流程和应用元数据</td>
+</tr>
+<tr>
+<td>数据与业务逻辑</td>
+<td>DDL、PL&#x2F;SQL、Migration</td>
+<td>表、约束、Package、视图和数据变更</td>
+</tr>
+<tr>
+<td>环境</td>
+<td>Deployment 配置与 CI 变量</td>
+<td>Workspace、Schema、App ID 和目标环境</td>
+</tr>
+<tr>
+<td>验收</td>
+<td>自动化测试与人工证据</td>
+<td>实现是否满足规格</td>
+</tr>
+<tr>
+<td>运行</td>
+<td>已部署的 APEX Application</td>
+<td>某个环境此刻真正运行的实例</td>
+</tr>
+</tbody></table>
+<p>开发期 AI 和运行期 AI 也应分开治理。</p>
+<p>Codex、Claude 等 Coding Agent 读取规格和 APEXlang，修改仓库文件，再通过 SQLcl 验证或导入。APEX 应用里的 AI Agent 面向最终用户，它通过事先定义的 AI Tools 查询允许的数据或执行业务动作。APEX 26.1 的原生 Tool 类型包括检索数据、执行服务端代码和执行客户端代码；开发者决定工具能做什么，以及是否需要用户确认。[^oracle-ai-tools]</p>
+<p>这两类 Agent 可以使用同一个模型，但责任完全不同。开发期 Agent 受 Git、Diff、测试和部署权限约束；运行期 Agent 受 APEX 授权、工具定义、会话与业务规则约束。把两条通道混在一起，很容易让“辅助开发”滑向“模型直接操作生产数据”。</p>
+<h2 id="五、从实验走向生产，先接受-APEXlang-26-1-的现实边界"><a href="#五、从实验走向生产，先接受-APEXlang-26-1-的现实边界" class="headerlink" title="五、从实验走向生产，先接受 APEXlang 26.1 的现实边界"></a>五、从实验走向生产，先接受 APEXlang 26.1 的现实边界</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/04-production-airlock.png" alt="APEXlang 进入生产前要经过 Migration、测试、权限和审批气闸"></p>
+<p>APEXlang 让工程化容易了不少，但 26.1 不是把所有历史问题一次性清零。</p>
+<p>当前版本有几条边界值得提前写进团队规范：</p>
+<ul>
+<li>APEXlang 导入以整应用为单位，不能按 APEXlang 格式只导入单个页面；单页导入仍可使用 SQL 格式。</li>
+<li>APEXlang 导出暂不包含 Public Reports、Private Reports、Report Subscriptions、Workflow Instances 和 Task Instances 等运行期数据。</li>
+<li>通过 App Builder 导入 APEXlang 时，Workspace 中至少要有一个 REST-enabled Schema。</li>
+<li><code>.apex/apexlang.json</code> 中的 MMD 版本决定编译规则，不应手工改写。</li>
+<li>整应用导入会放大多人并行开发冲突，团队要建立基线、分支、Rebase、备份和回滚规则。[^oracle-apexlang-new]</li>
+</ul>
+<p>数据库变更也不能塞进应用导入里碰运气。更稳妥的发布顺序是：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">部署数据库 Migration</span><br><span class="line">→ 验证数据库对象</span><br><span class="line">→ 导入依赖这些对象的 APEXlang</span><br><span class="line">→ 执行数据与应用测试</span><br><span class="line">→ 人工审批进入下一环境</span><br></pre></td></tr></table></figure>
+
+<p>生产环境尤其要克制。Coding Agent 可以在本地修改文件和运行离线验证；DEV 可以给受控账号导入与测试权限；TEST 和 PROD 应由审批后的流水线部署。SQLcl MCP Server 即使支持限制和审计，也不构成把生产库直接交给 LLM 的理由。</p>
+<p>APEX 26.1 已有公开 Known Issues 和 Patch Set Bundle。准备把新流程用于正式项目时，应检查目标实例的精确版本、补丁和已知问题，而不是只确认“已经是 26.1”。[^oracle-known-issues]</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>APEX 的优势一直是快速反馈。以前，这种速度主要来自浏览器里的声明式开发；现在，APEXlang 又把文本编辑、Git、Coding Agent 和编译验证接进了同一套应用模型。</p>
+<p>App Builder 仍然适合处理复杂页面和即时调试。APEXlang 适合版本管理、批量修改和 AI 协作。Blueprint 负责把模糊需求变成可试用骨架。SQLcl 负责把应用定义送进编译与部署环节。测试、权限和审批继续由团队承担。</p>
+<p>工具多了，责任并没有消失。APEX 26.1 只是把一条更容易审查、复现和治理的路铺到了团队面前。能不能沿着它稳定交付，仍取决于规格、数据库、应用定义、测试和权限有没有被认真分开。</p>
+<p>[^oracle-apexlang-new]: Oracle APEX 26.1 Release Notes: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmrn/new-features.html">New Features - APEXlang</a></p>
+<p>[^oracle-working-apexlang]: Oracle APEX Developer’s Companion: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/apxdc/working-apexlang.html">Working with APEXlang</a></p>
+<p>[^oracle-sqlcl-apexlang]: Oracle SQLcl User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/sql-developer-command-line/26.1/sqcug/apexlang.html">APEXlang Commands</a></p>
+<p>[^oracle-blueprint]: Oracle APEX App Builder User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/creating-an-app-using-spec-driven-development.html">Creating an App Using AI and Spec-Driven Development</a></p>
+<p>[^oracle-coding-agents]: Oracle APEX Developer’s Companion: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/apxdc/using-apexlang-coding-agents.html">Using APEXlang with AI Coding Agents</a></p>
+<p>[^oracle-sqlcl-mcp]: Oracle SQLcl User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.4/sqcug/using-oracle-sqlcl-mcp-server.html">Using the Oracle SQLcl MCP Server</a></p>
+<p>[^oracle-ai-tools]: Oracle APEX App Builder User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/managing-ai-agents-and-ai-tools.html">Managing AI Agents and AI Tools</a></p>
+<p>[^oracle-known-issues]: Oracle: <a href="https://www.oracle.com/tools/downloads/apex-downloads/apex-261-known-issues/">APEX 26.1 Known Issues</a></p>
+]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>Oracle APEX</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>APEX</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
 </search>
