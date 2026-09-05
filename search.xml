@@ -32479,11 +32479,11 @@ dtype: float64
     <title>APEX 26.1 之后，别再把 App Builder 当作唯一开发入口</title>
     <url>/Oracle/Oracle-APEX/apex-26.1-ai-dev-process/</url>
     <content><![CDATA[<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/01-cover.png" alt="小黑在 App Builder、APEXlang 与 Git 之间搬运 APEX 应用定义"></p>
-<p>过去做 APEX 项目，开发现场几乎只有一个：App Builder。</p>
+<p>过去做 APEX 项目，开发入口几乎只有一个：App Builder。</p>
 <p>页面、区域、Dynamic Action、Validation、Shared Components，都在浏览器里配置。改完刷新页面，结果马上出现。这个反馈速度很难替代，也是许多人喜欢 APEX 的原因。</p>
 <p>问题出在项目变大以后。两三个人同时修改同一个应用，Git 里只留下一份导出 SQL，评审者很难看清某个按钮为什么换了位置、某个 Authorization Scheme 是否被误改。再把 AI Coding Agent 拉进来，麻烦会更明显：它能写 SQL 和 PL&#x2F;SQL，却很难从安装脚本里还原整套应用结构。</p>
 <p>APEX 26.1 给出了新的解法。APEXlang 把应用元数据表达成结构化、可读的 <code>.apx</code> 文件；SQLcl 提供生成、导出、验证和导入命令；Blueprint 把规格先变成可试用的应用骨架；Oracle 提供的 Skills 则告诉 Coding Agent 怎样理解和修改这些文件。[^oracle-apexlang-new]</p>
-<p>我更愿意把它看成一次开发现场的扩建。App Builder 还在，而且仍然重要。只是从 26.1 开始，浏览器不再是唯一现场。</p>
+<p>我更愿意把它看成一次开发入口的扩建。App Builder 还在，而且仍然重要。只是从 26.1 开始，浏览器不再是唯一现场。</p>
 <span id="more"></span>
 
 <h2 id="一、App-Builder-没有退场，应用定义走出了浏览器"><a href="#一、App-Builder-没有退场，应用定义走出了浏览器" class="headerlink" title="一、App Builder 没有退场，应用定义走出了浏览器"></a>一、App Builder 没有退场，应用定义走出了浏览器</h2><p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/blog/2026-07-26-apex-26-1-development-paradigm/images/02-two-workbenches.png" alt="App Builder 与 APEXlang 是同一套应用定义的两个工作现场"></p>
@@ -32629,6 +32629,55 @@ dtype: float64
 <p>[^oracle-sqlcl-mcp]: Oracle SQLcl User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.4/sqcug/using-oracle-sqlcl-mcp-server.html">Using the Oracle SQLcl MCP Server</a></p>
 <p>[^oracle-ai-tools]: Oracle APEX App Builder User’s Guide: <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/managing-ai-agents-and-ai-tools.html">Managing AI Agents and AI Tools</a></p>
 <p>[^oracle-known-issues]: Oracle: <a href="https://www.oracle.com/tools/downloads/apex-downloads/apex-261-known-issues/">APEX 26.1 Known Issues</a></p>
+]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>Oracle APEX</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>APEX</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>把 APEX 中文社区变成你的个人知识库</title>
+    <url>/Oracle/Oracle-APEX/apexcn-cli/</url>
+    <content><![CDATA[<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_mowDwMs2.png" alt="小黑把社区讨论筛成带出处的答案"></p>
+<blockquote>
+<p>当你在排查 ORDS、REST API 或页面问题时，真正耗时间的常常不是写代码，而是把散落的经验找出来、判断能不能用，再整理成自己的下一步。<code>apexcn-cli</code> 做的事很朴素：让本地 AI 能够使用 APEX 中文社区。</p>
+</blockquote>
+<p>一个 ORDS 认证失败，通常不是搜不到答案，而是答案分散在不同话题里。你会打开社区、搜索、跳转、读几段回复，再把关键信息带回正在工作的 AI 对话。这样做当然没错，只是每次都要重复。</p>
+<p><code>apexcn-cli</code> 把这段路缩短了。</p>
+<p>它是一个运行在本机的命令行工具，但真正的使用者不必是命令行熟手。只要你在使用 Codex、WorkBuddy、千问办公这类能够执行本机命令的 AI 工具，就可以让 AI 在后台调用它：查社区、读话题、整理答案，并把原始链接一并带回来。</p>
+<h2 id="先从社区开始"><a href="#先从社区开始" class="headerlink" title="先从社区开始"></a>先从社区开始</h2><p>APEX 中文社区按问题求助、新手入门、进阶技巧和建议反馈组织内容。它仍然是阅读原帖、参与讨论的地方；<code>apexcn-cli</code> 做的是让 AI 能更快抵达这些内容，而不是另起一套页面。</p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_3at2ZfZJ.jpg" alt="APEX 中文社区首页与内容栏目"></p>
+<h2 id="从一句安装请求开始"><a href="#从一句安装请求开始" class="headerlink" title="从一句安装请求开始"></a>从一句安装请求开始</h2><p>项目唯一官方仓库是 <a href="https://github.com/wfg2513148/apexcn-cli">wfg2513148&#x2F;apexcn-cli</a>。安装时，不需要在一堆同名仓库里赌运气，也不需要把 API Key 交给 AI。</p>
+<p>在 AI 工具里发出下面这句话即可：</p>
+<blockquote>
+<p>请从官方 GitHub 仓库 <a href="https://github.com/wfg2513148/apexcn-cli">https://github.com/wfg2513148/apexcn-cli</a> 在本机安装 apexcn-cli。只使用该仓库的官方安装器；安装后运行 <code>apexcn --version</code> 并告诉我结果。安装阶段不要向我索取、记录或显示 API Key。</p>
+</blockquote>
+<p>安装完成后，<code>apexcn</code> 会成为本机可用的全局命令。第一次配置 API Key 时，用户只需打开一次终端，完成保存和检查；之后就可以回到 AI 工具里正常提问。</p>
+<p>API Key 在社区账号菜单中的 <strong>API Key 管理</strong> 页面获取。复制后按 README 的步骤配置本机 CLI；不要把完整 Key 发到普通聊天、帖子或截图中。</p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_mtfibKoM.png" alt="APEX 中文社区 API Key 管理页面"></p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_XVcDj16b.png" alt="AI 从官方仓库安装 apexcn-cli，并查询最近更新的话题"></p>
+<p>这张图里最值得看的不是版本号，而是后半段：安装验证结束后，用户直接让 AI 查询最近 7 天更新的话题。AI 给出的是可继续打开的社区内容，而不是一段脱离来源的摘要。</p>
+<h2 id="它把什么带进了-AI-对话"><a href="#它把什么带进了-AI-对话" class="headerlink" title="它把什么带进了 AI 对话"></a>它把什么带进了 AI 对话</h2><p>最常见的场景，是让 AI 先帮你把资料找准。</p>
+<p>例如，你可以说：</p>
+<blockquote>
+<p>请在 APEX 中文社区搜索“ORDS 认证失败”，总结最相关的 5 篇话题，并显示完整标题、社区链接和原文链接。</p>
+</blockquote>
+<p>也可以问得更具体：</p>
+<blockquote>
+<p>请根据社区现有内容回答“Oracle APEX 如何调用 REST API”，为关键结论附上对应话题标题和链接。</p>
+</blockquote>
+<p>这类请求的区别在于，AI 不只负责组织语言，还要把社区话题当作证据来使用。你能看到答案从哪里来，也能顺着链接回到原始讨论，判断它是否适合自己的 APEX 版本和环境。</p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_Uz3Zujvj.png" alt="AI 根据社区内容回答 Oracle APEX REST API 问题，并保留参考话题"></p>
+<p>有时社区里只有部分可回答的信息。这个时候，正确的结果不该是一段看起来很完整的结论，而应该是清楚地告诉你：哪些经验可以参考，哪些部分仍然需要查官方文档或做本地验证。</p>
+<h2 id="不只是搜索，也不该急着替你发布"><a href="#不只是搜索，也不该急着替你发布" class="headerlink" title="不只是搜索，也不该急着替你发布"></a>不只是搜索，也不该急着替你发布</h2><p>除了搜索和阅读，<code>apexcn-cli</code> 还可以查看个人创建的话题、回复。发帖、回复、修改、删除或标记正确答案，都会先生成预览。AI 要先把目标和内容摆在你面前，等你明确确认后才执行。</p>
+<p>CLI 还支持收藏、订阅等功能，可以把 APEX 中文社区真正变成你的个人知识库和收藏夹。</p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905113738768.png?x-oss-process=image/format,jpg/quality,q_60"></p>
+<p>项目地址：<a href="https://github.com/wfg2513148/apexcn-cli">https://github.com/wfg2513148/apexcn-cli</a></p>
 ]]></content>
       <categories>
         <category>Oracle</category>
