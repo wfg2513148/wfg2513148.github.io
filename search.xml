@@ -32660,10 +32660,10 @@ dtype: float64
 <p>安装完成后，<code>apexcn</code> 会成为本机可用的全局命令。第一次配置 API Key 时，用户只需打开一次终端，完成保存和检查；</p>
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905115358040.png?x-oss-process=image/format,jpg/quality,q_60"></p>
 <p>API Key 在社区账号菜单中的 <strong>API Key 管理</strong> 页面获取。复制后按 README 的步骤配置本机 CLI；不要把完整 Key 发到普通聊天、帖子或截图中。</p>
+<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_mtfibKoM.png" alt="APEX 中文社区 API Key 管理页面"></p>
 <span id="more"></span>
 
 <p>之后就可以回到AI工具里正常提问了：</p>
-<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_mtfibKoM.png" alt="APEX 中文社区 API Key 管理页面"></p>
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20260905_XVcDj16b.png" alt="AI 从官方仓库安装 apexcn-cli，并查询最近更新的话题"></p>
 <p>这张图里最值得看的不是版本号，而是后半段：安装验证结束后，用户直接让 AI 查询最近 7 天更新的话题。AI 给出的是可继续打开的社区内容，而不是一段脱离来源的摘要。</p>
 <h2 id="它把什么带进了-AI-对话"><a href="#它把什么带进了-AI-对话" class="headerlink" title="它把什么带进了 AI 对话"></a>它把什么带进了 AI 对话</h2><p>最常见的场景，是让 AI 先帮你把资料找准。</p>
