@@ -32709,7 +32709,8 @@ dtype: float64
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/articles/apex-hermes-agent-20260913/architecture-ebecc0c695ce.png" alt="APEX 与 Hermes 的职责和调用关系"></p>
 <p>APEX 仍然掌握用户身份、任务入口、参数校验和页面展示。Hermes 在受限工具范围内完成搜索分析。模型密钥留在服务端，浏览器接触不到它。</p>
 <p>这里也需要交代一个背景：APEX 本身已有 AI Agents 和 AI Tools 能力。选择 Hermes，是在探索接入独立 Agent 运行时的路线，便于利用它的工具与执行机制，也便于让同一套能力被不同应用调用。项目应根据已有能力选择实现方式。<a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/managing-ai-agents-and-ai-tools.html">Oracle APEX AI Agents 与 AI Tools 文档</a></p>
-<p>&lt;– more –&gt;</p>
+<span id="more"></span>
+
 <h2 id="从一次点击，看懂整个调用过程"><a href="#从一次点击，看懂整个调用过程" class="headerlink" title="从一次点击，看懂整个调用过程"></a>从一次点击，看懂整个调用过程</h2><p>这个 Demo 每次点击都是一个独立任务，没有连续对话，也不保存搜索记录。为了方便观察，使用一次同步请求：页面显示处理中，服务端完成搜索与校验后，一次性返回结果。</p>
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/articles/apex-hermes-agent-20260913/sequence-df3cb2266396.png" alt="从页面提交到 Agent 工具执行与结果返回的时序"></p>
 <p>前端做的事情很少。取得查询主题以后，调用 APEX 的 Ajax Callback：</p>
@@ -32775,7 +32776,8 @@ dtype: float64
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/articles/apex-hermes-agent-20260913/architecture-en-a8adfe24b1b6.png" alt="Responsibilities and calls across APEX and Hermes"></p>
 <p>APEX remains responsible for user identity, the task entry point, parameter validation, and presentation. Hermes performs the research using a restricted set of tools. Model credentials stay on the server, beyond the browser’s reach.</p>
 <p>One point deserves context: APEX already has native AI Agents and AI Tools capabilities. Choosing Hermes explores a route through an independent agent runtime, making use of its tools and execution model and potentially sharing those capabilities across applications. The right implementation depends on what a project already has and needs. <a href="https://docs.oracle.com/en/database/oracle/apex/26.1/htmdb/managing-ai-agents-and-ai-tools.html">Oracle APEX AI Agents and AI Tools documentation</a></p>
-<p>&lt;– more –&gt;</p>
+<span id="more"></span>
+
 <h2 id="Follow-one-button-click"><a href="#Follow-one-button-click" class="headerlink" title="Follow one button click"></a>Follow one button click</h2><p>Each click starts an independent task. There is no ongoing conversation and no saved search history. For this demo, a single synchronous request keeps the behavior easy to follow: the page shows that work is in progress, then receives the complete result after the server finishes research and validation.</p>
 <p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/articles/apex-hermes-agent-20260913/sequence-en-fa7a83a1b957.png" alt="From page submission to agent tool execution and the returned result"></p>
 <p>The browser has very little to do. Once it has the topic, it calls an APEX Ajax Callback:</p>
