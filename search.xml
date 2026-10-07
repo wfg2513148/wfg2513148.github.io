@@ -32827,4 +32827,119 @@ dtype: float64
         <tag>AI</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Oracle APEX 26.2 全新发布</title>
+    <url>/Oracle/Oracle-APEX/apex-26.2-new-features/</url>
+    <content><![CDATA[<h1 id="Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全"><a href="#Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全" class="headerlink" title="Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全"></a>Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全</h1><p>企业应用正在迎来新的期待：开发者希望更快响应变化，业务人员希望更轻松地使用数据，管理者希望在引入 AI 的同时，保持对权限和运行方式的掌控。</p>
+<p><strong>Oracle APEX 26.2，为这些需求带来了新进展。</strong></p>
+<p>2026 年 10 月 6 日，Oracle 正式宣布 <strong>Oracle APEX AI Application Generator 26.2</strong> 面向本地部署全面可用。Oracle Autonomous AI Database、OCI 及多云环境的推出将随后进行，具体时间以官方安排为准。[1]</p>
+<p>**先解释一下这个新名称。**Oracle APEX 是运行在 Oracle Database 上的企业应用开发平台，支持通过可视化方式构建报表、表单和业务流程。官方此次使用的 <strong>Oracle APEX AI Application Generator 26.2，与本文简称的 Oracle APEX 26.2，指向同一 APEX 平台及其 26.2 版本</strong>；“AI Application Generator”强调它以 AI 辅助生成应用的产品定位，并不是另一个需要单独安装的“AI 插件”。[1][7]</p>
+<p>开发者仍可使用 App Builder，也可以让 AI 编码助手结合 APEXlang 生成、修改应用定义，再由 APEX 平台执行。<strong>名称突出了 AI，APEX 原有的可视化开发与应用运行能力仍是基础。</strong>[8]</p>
+<p>这次升级值得关注的，是三个方向：<strong>让开发迭代更精细，让 AI 融入日常操作，让数据访问更可控。</strong></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/01-official-overview-373be96958.png" alt="Oracle 官网展示的 APEX 应用、报表与助手界面"></p>
+<p><em>图 1｜Oracle 官方界面组合图：应用构建、交互报表与助手体验。来源：Oracle APEX 26.2 新特性官网。[2]</em></p>
+<h2 id="01-改一个页面，可以只导入这个页面"><a href="#01-改一个页面，可以只导入这个页面" class="headerlink" title="01 改一个页面，可以只导入这个页面"></a>01 改一个页面，可以只导入这个页面</h2><p>开发者经常遇到这样的情况：只调整了一个页面，却需要重新导入整个应用。</p>
+<p>在 26.1 引入 APEXlang 之后，<strong>26.2 新增文件级导入</strong>：开发者可通过 SQL Developer for VS Code 的 Import File 按钮，或 SQLcl 的 <code>-files</code> 参数，将指定页面、受支持的共享组件文件导入已有应用。[3]</p>
+<p>这让“修改—导入—验证”的循环更聚焦，也让 App Builder 与本地编辑器并行工作的团队更容易协作。导入前结合差异比较和拉取变更，可以减少覆盖他人修改的风险。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/04-official-apexlang-diff-a7771083d2.jpg" alt="Oracle 官方截图：APEXlang 远端与本地代码差异比较"></p>
+<p><em>图 2｜APEXlang 的 Remote ↔ Local 差异比较：同一页面文件的变化并排展示，便于导入前检查。来源：APEX 26.2 Developer’s Companion。[14]</em></p>
+<p>对正在采用源码管理和 AI 辅助开发的团队而言，这意味着日常小步迭代有了更合适的更新粒度。</p>
+<p>**使用边界也很明确：**文件级导入主要服务于开发和测试；生产发布仍应遵循组织既有的完整应用部署流程。[3]</p>
+<h2 id="02-报表多一列指标，试着用一句话完成"><a href="#02-报表多一列指标，试着用一句话完成" class="headerlink" title="02 报表多一列指标，试着用一句话完成"></a>02 报表多一列指标，试着用一句话完成</h2><p>业务分析中，临时增加一个计算指标，是再常见不过的需求。</p>
+<p>APEX 26.2 的 AI 交互报表支持<strong>用自然语言创建计算列</strong>。例如，在官方演示中，用户描述“用金额乘以概率再除以 100，创建加权商机金额”，APEX 将其转换为标准交互报表计算。[4]</p>
+<p><strong>加权商机金额 &#x3D; 金额 × 概率 ÷ 100</strong></p>
+<p>新增计算可以查看、修改、保存或移除，无需改变底层 SQL 查询和数据源。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/02-official-ai-report-edb53362ad.jpg" alt="Oracle 官方 CRM 报表截图：输入自然语言创建计算列"></p>
+<p><em>图 3｜官网中的 CRM 商机报表截图。输入栏展示了创建 Weighted Pipeline 计算列的自然语言请求，图中尚未展示新列结果。来源：Oracle 新特性官网。[2]</em></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/05-official-computed-column-30f3fcf439.png" alt="Oracle 官方文档截图：Available Budget 计算列结果"></p>
+<p><em>图 4｜标准交互报表中的计算列结果示例：右侧 Available Budget（可用预算）列。它是独立的官方示例，并非上图 AI 请求的执行结果。来源：APEX 26.2 End User’s Guide。[15]</em></p>
+<p>与此同时，报表界面也迎来更新，包括列头多选筛选、数字范围与日期筛选、拖拽调整列顺序等，让日常分析更顺手。[4]</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/06-official-column-menu-fd133aab7a.png" alt="Oracle 官方文档截图：交互报表列头菜单"></p>
+<p><em>图 5｜官方 26.2 用户指南中的列头菜单示意，展示排序与筛选入口；本图未展示新增多选筛选状态。来源：APEX 26.2 End User’s Guide。[16]</em></p>
+<p>还有一个实用变化：**符合预设关键短语模板的常见操作，可直接处理，无需 AI 解释。**对于启用 AI 的报表，更复杂或存在歧义的请求仍进入 AI 处理流程。[4]</p>
+<h2 id="03-AI-智能体，开始有了更细致的“调节旋钮”"><a href="#03-AI-智能体，开始有了更细致的“调节旋钮”" class="headerlink" title="03 AI 智能体，开始有了更细致的“调节旋钮”"></a>03 AI 智能体，开始有了更细致的“调节旋钮”</h2><p>面对简单查询和复杂分析，应用需要的 AI 处理方式往往不同。</p>
+<p>APEX 26.2 扩展了生成式 AI 服务的接口选择，包括 OpenAI Responses、Google Gemini Interactions，以及受支持的 OCI Generative AI 模型接口；相应端点与请求、响应格式由 APEX 处理。[5]</p>
+<p>新增的 <strong>Reasoning Effort（推理强度）</strong>，让开发者可以按智能体或具体请求调整模型的推理投入。较低强度可能减少响应时间和 Token 消耗，复杂任务则可按需选择较高强度；可用选项取决于服务商、接口和模型的支持情况。[5]</p>
+<p>智能体还可以引导用户前往相关应用页面：开发者定义允许访问的目标和参数，最终 APEX URL 与校验信息由可信应用代码构建。[1]</p>
+<p>这为企业提供了更实际的 AI 应用方式：既关注回答能力，也关注响应速度、使用成本和用户接下来的操作。</p>
+<h2 id="04-AI-走近业务数据，权限也要跟得上"><a href="#04-AI-走近业务数据，权限也要跟得上" class="headerlink" title="04 AI 走近业务数据，权限也要跟得上"></a>04 AI 走近业务数据，权限也要跟得上</h2><p>当数据同时通过报表、表单和 AI 智能体被访问，企业需要一致的权限规则。</p>
+<p>APEX 26.2 新增对 <strong>Oracle Deep Data Security</strong> 的集成，将已验证的用户和应用身份传递给数据库，由数据库按安全上下文执行细粒度的数据授权，覆盖行、列及具体值级别。[1][2]</p>
+<p>在支持的 AI Agent 工具中，SQL 以请求用户的安全上下文执行。<strong>向智能体多问一句，并不会因此获得更多数据权限。</strong>[1]</p>
+<p>APEX 应用授权与数据库数据授权各有职责：前者管理用户能在应用中访问什么、执行什么操作；后者约束 SQL 能读取或修改哪些数据。该能力需要相应 Oracle AI Database 功能与配置支持。</p>
+<h2 id="05-连接-OCI-服务，凭据管理更省心"><a href="#05-连接-OCI-服务，凭据管理更省心" class="headerlink" title="05 连接 OCI 服务，凭据管理更省心"></a>05 连接 OCI 服务，凭据管理更省心</h2><p>应用读取 OCI 对象存储、调用生成式 AI 服务时，也需要管理连接身份。</p>
+<p>26.2 支持在 OCI Native Authentication 中，通过 APEX Web Credential 引用 <strong>DBMS_CLOUD 数据库凭据</strong>，使用 Resource Principal 或 Database Tools Identity。[6]</p>
+<p>这样，应用可以在满足相关配置条件后访问 OCI 服务，无需在 APEX Web Credential 中保存某个用户的 API 私钥。资源访问权限继续由 OCI IAM 策略决定，托管身份负责相应凭据的管理与轮换。</p>
+<p>对于需要持续集成云服务的应用，这减少了围绕个人密钥开展维护的工作。</p>
+<h2 id="06-日常开发与运行体验，也在持续打磨"><a href="#06-日常开发与运行体验，也在持续打磨" class="headerlink" title="06 日常开发与运行体验，也在持续打磨"></a>06 日常开发与运行体验，也在持续打磨</h2><p>除了 AI 和开发流程，26.2 还带来了工作流与界面方面的实用更新。[2]</p>
+<ul>
+<li>**工作流更灵活：**支持草稿活动、自定义任务结果，以及运行中工作流实例向新模型版本迁移。</li>
+<li>**流程更易沟通：**工作流图可导出为 PNG 或 SVG，用于文档和评审。</li>
+<li>**界面更精细：**Universal Theme 增强 Iris 外观、导航辨识度与样式控制。</li>
+<li>**运维更清晰：**邮件队列报告提供更丰富的投递与失败情况信息。</li>
+</ul>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/07-official-workflow-instance-8152fb63fd.png" alt="Oracle 官方文档截图：员工评估工作流运行图"></p>
+<p><em>图 6｜员工评估工作流的运行图，显示流程连接与节点状态，用于理解工作流界面。来源：APEX 26.2 End User’s Guide。[17]</em></p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/03-official-builder-674b25de46.png" alt="Oracle 官网展示的 App Builder 与页面设计器界面"></p>
+<p><em>图 7｜Oracle 官方 App Builder 与页面设计器组合截图，用于展示开发环境。来源：Oracle APEX 26.2 新特性官网。[2]</em></p>
+<h2 id="07-准备升级？先把平台、工具与-Skills-一起对齐"><a href="#07-准备升级？先把平台、工具与-Skills-一起对齐" class="headerlink" title="07 准备升级？先把平台、工具与 Skills 一起对齐"></a>07 准备升级？先把平台、工具与 Skills 一起对齐</h2><p>APEX 26.2 的升级，涉及数据库中的 APEX 引擎、Web 访问服务、开发工具以及 AI 辅助开发资料。对自主管理的环境，建议按下面几项逐一检查。</p>
+<h3 id="第一步：核对最低版本，别沿用-26-1-的清单"><a href="#第一步：核对最低版本，别沿用-26-1-的清单" class="headerlink" title="第一步：核对最低版本，别沿用 26.1 的清单"></a>第一步：核对最低版本，别沿用 26.1 的清单</h3><p>根据 <strong>APEX 26.2 安装指南</strong>，本次版本要求如下。[9]</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>官方要求或功能条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Oracle Database 19c</td>
+<td>RU <strong>19.18（2023 年 1 月）或更新版本</strong></td>
+</tr>
+<tr>
+<td>Oracle AI Database 26ai</td>
+<td>数据库版本 <strong>23.26.0（2025 年 10 月）或更新版本</strong></td>
+</tr>
+<tr>
+<td>ORDS</td>
+<td><strong>26.3.0 或更高版本</strong></td>
+</tr>
+<tr>
+<td>SQLcl</td>
+<td><strong>26.3.0 或更高版本</strong></td>
+</tr>
+<tr>
+<td>SQL Developer for VS Code</td>
+<td>比较并拉取 APEXlang 变更需 <strong>26.3 或更高版本</strong>；文件级导入还要求目标 APEX 与导出应用均为 <strong>26.2 或更高版本</strong>。[3]</td>
+</tr>
+</tbody></table>
+<p>**注意版本号并不一一对应：APEX 升级到 26.2，配套的 ORDS、SQLcl 要达到 26.3.0。**同时应按所选工具版本核对 Java 环境，不能只替换 APEX 安装包。</p>
+<h3 id="第二步：同步静态资源，先完成升级演练"><a href="#第二步：同步静态资源，先完成升级演练" class="headerlink" title="第二步：同步静态资源，先完成升级演练"></a>第二步：同步静态资源，先完成升级演练</h3><p>建议先备份数据库、应用导出文件和 ORDS 配置，在测试环境完成升级与关键业务回归，再安排生产切换。</p>
+<p>APEX 的 JavaScript、CSS 等静态资源也要与数据库中的版本匹配：使用本地资源时同步更新 <code>images</code> 目录及其服务映射；使用 Oracle CDN 时核对对应补丁版本。官方当前列出的 26.2.0 CDN 地址为：[10]</p>
+<p><code>https://static.oracle.com/cdn/apex/26.2.0/</code></p>
+<p>升级后重点验证登录、报表、表单、文件上传、REST 接口和自定义插件。已有生成式 AI 服务还应检查 Provider API、自定义请求头及附加参数是否适配新接口。[5]</p>
+<h3 id="第三步：把-GitHub-Oracle-Skills-更新纳入升级计划"><a href="#第三步：把-GitHub-Oracle-Skills-更新纳入升级计划" class="headerlink" title="第三步：把 GitHub Oracle Skills 更新纳入升级计划"></a>第三步：把 GitHub Oracle Skills 更新纳入升级计划</h3><p>**使用 Codex、Claude 等工具开展 APEXlang 开发的团队，还要同步关注 <a href="https://github.com/oracle/skills">GitHub 官方仓库 oracle&#x2F;skills</a>。**其中 <code>apex/apexlang</code> 提供 APEXlang 开发指导、模板、工作流和校验工具；<code>db</code> 目录提供数据库与 SQLcl 等配套指导。[11]</p>
+<p>这些 Skills 为 AI 助手提供开发依据，需要独立安装和更新。升级数据库中的 APEX，并不会自动刷新开发电脑或团队环境中的 Skills。</p>
+<p>Oracle 官网给出的同步方式是：[8]</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 在终端启动 SQLcl</span><br><span class="line">sql /nolog</span><br><span class="line"></span><br><span class="line"># 进入 SQLcl 后执行</span><br><span class="line">skills sync</span><br></pre></td></tr></table></figure>
+
+<p>SQLcl 26.3 还增加了用于安装、更新 AI Skills 的 <code>skills_sync</code> MCP 工具，以及面向 APEXlang 文件的 CodeScan 规则。[12]</p>
+<p>建议团队将 <strong>APEX 版本、SQLcl 版本、Skills 来源与更新记录</strong> 一并纳入项目维护，并在更新后确认 AI 工具实际加载了新内容，再用一个小应用完成生成、校验与导入验证。</p>
+<p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/08-official-apexlang-validation-426dd981a6.jpg" alt="Oracle 官方截图：VS Code 中的 APEXlang 属性值校验"></p>
+<p><em>图 8｜VS Code 中的 APEXlang 校验示例：编辑器指出无效的模板选项，并给出可用值。图中绿色标注来自 Oracle 原图。来源：APEX 26.2 Developer’s Companion。[14]</em></p>
+<p>**版本判断要以 26.2 文档为准。**本次核对的官方 Skills README 仍包含 26.1 的基线说明，不能将其中 SQLcl 26.1.2 的要求直接套用于 APEX 26.2；Skills 的具体适配状态应结合仓库最新内容检查。[9][11]</p>
+<h3 id="第四步：检查已知问题，再使用文件级导入"><a href="#第四步：检查已知问题，再使用文件级导入" class="headerlink" title="第四步：检查已知问题，再使用文件级导入"></a>第四步：检查已知问题，再使用文件级导入</h3><p>截至 2026 年 10 月 7 日，官方已知问题页列出 <strong>Bug 40091133</strong>：单独部署 <code>application.apx</code> 可能意外改变应用别名，并移除应用当前主题；官方给出的恢复方式是执行完整 APEXlang 导入。[13]</p>
+<p>因此，试用单文件导入前应先查看最新 Known Issues 与补丁说明。尤其要区分“导入一个页面文件”与“导入应用级定义文件”；生产发布仍按完整应用的验证、部署和恢复流程执行。[3]</p>
+<p><strong>把配套版本、静态资源、Skills 和已知问题一起检查到位，才能把 26.2 的新能力稳妥用进日常开发。</strong></p>
+<hr>
+<p>[1] <a href="https://blogs.oracle.com/apex/announcing-oracle-apex-262">Oracle APEX 26.2 正式发布公告</a>（2026-10-06）<br>[2] <a href="https://www.oracle.com/apex/whats-new/">Oracle APEX 26.2 新特性官网</a><br>[3] <a href="https://blogs.oracle.com/apex/introducing-file-level-import-with-apexlang-in-oracle-apex">APEXlang 文件级导入详解</a><br>[4] <a href="https://blogs.oracle.com/apex/whats-new-in-interactive-reports-and-ai-interactive-reports">交互报表与 AI 交互报表更新</a><br>[5] <a href="https://blogs.oracle.com/apex/working-with-generative-ai-provider-apis-and-reasoning-effort">生成式 AI 接口与推理强度</a><br>[6] <a href="https://blogs.oracle.com/apex/using-dbms_cloud-credentials-with-resource-principal-and-dbtools-identity">DBMS_CLOUD 凭据与 OCI 托管身份</a><br>[7] <a href="https://www.oracle.com/apex/">Oracle APEX 产品官网与产品定位</a><br>[8] <a href="https://www.oracle.com/apex/ai-application-generator/">Oracle APEX AI Application Generator：APEXlang 与 Skills 入门</a><br>[9] <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/htmig/apex-installation-requirements.html">Oracle APEX 26.2 安装要求</a><br>[10] <a href="https://www.oracle.com/tools/downloads/apex-downloads/">Oracle APEX 下载与静态资源版本</a><br>[11] <a href="https://github.com/oracle/skills/blob/main/apex/apexlang/README.md">Oracle 官方 GitHub APEXlang Skills 与要求说明</a><br>[12] <a href="https://www.oracle.com/tools/sqlcl/sqlcl-changelog.html">SQLcl 官方更新记录</a><br>[13] <a href="https://www.oracle.com/tools/downloads/apex-downloads/apex-262-known-issues/">Oracle APEX 26.2 已知问题</a><br>[14] <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/apxdc/editing-apexlang-visual-studio-code.html">APEX 26.2 官方文档：在 VS Code 中编辑与比较 APEXlang</a><br>[15] <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/aeeug/computing-columns.html">APEX 26.2 官方文档：交互报表计算列</a><br>[16] <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/aeeug/using-the-column-heading-menu.html">APEX 26.2 官方文档：交互报表列头菜单</a><br>[17] <a href="https://docs.oracle.com/en/database/oracle/apex/26.2/aeeug/about-workflows.html">APEX 26.2 官方文档：工作流运行图与状态</a></p>
+]]></content>
+      <categories>
+        <category>Oracle</category>
+        <category>Oracle APEX</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>APEX</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
 </search>
