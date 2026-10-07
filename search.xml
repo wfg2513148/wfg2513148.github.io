@@ -32830,10 +32830,11 @@ dtype: float64
   <entry>
     <title>Oracle APEX 26.2 全新发布</title>
     <url>/Oracle/Oracle-APEX/apex-26.2-new-features/</url>
-    <content><![CDATA[<h1 id="Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全"><a href="#Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全" class="headerlink" title="Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全"></a>Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全</h1><p>企业应用正在迎来新的期待：开发者希望更快响应变化，业务人员希望更轻松地使用数据，管理者希望在引入 AI 的同时，保持对权限和运行方式的掌控。</p>
+    <content><![CDATA[<p><img src="https://cn-oracle-apex.oss-cn-shanghai.aliyuncs.com/file_storage/20261007101934256.png?x-oss-process=image/format,jpg/quality,q_60"></p>
+<h1 id="Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全"><a href="#Oracle-APEX-26-2-正式发布：开发更敏捷，AI-更实用，数据更安全" class="headerlink" title="Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全"></a>Oracle APEX 26.2 正式发布：开发更敏捷，AI 更实用，数据更安全</h1><p>企业应用正在迎来新的期待：开发者希望更快响应变化，业务人员希望更轻松地使用数据，管理者希望在引入 AI 的同时，保持对权限和运行方式的掌控。</p>
 <p><strong>Oracle APEX 26.2，为这些需求带来了新进展。</strong></p>
 <p>2026 年 10 月 6 日，Oracle 正式宣布 <strong>Oracle APEX AI Application Generator 26.2</strong> 面向本地部署全面可用。Oracle Autonomous AI Database、OCI 及多云环境的推出将随后进行，具体时间以官方安排为准。[1]</p>
-<p>**先解释一下这个新名称。**Oracle APEX 是运行在 Oracle Database 上的企业应用开发平台，支持通过可视化方式构建报表、表单和业务流程。官方此次使用的 <strong>Oracle APEX AI Application Generator 26.2，与本文简称的 Oracle APEX 26.2，指向同一 APEX 平台及其 26.2 版本</strong>；“AI Application Generator”强调它以 AI 辅助生成应用的产品定位，并不是另一个需要单独安装的“AI 插件”。[1][7]</p>
+<p><strong>先解释一下这个新名称。</strong> Oracle APEX 是运行在 Oracle Database 上的企业应用开发平台，支持通过可视化方式构建报表、表单和业务流程。官方此次使用的 <strong>Oracle APEX AI Application Generator 26.2，与本文简称的 Oracle APEX 26.2，指向同一 APEX 平台及其 26.2 版本</strong> ；“AI Application Generator”强调它以 AI 辅助生成应用的产品定位，并不是另一个需要单独安装的“AI 插件”。[1][7]</p>
 <p>开发者仍可使用 App Builder，也可以让 AI 编码助手结合 APEXlang 生成、修改应用定义，再由 APEX 平台执行。<strong>名称突出了 AI，APEX 原有的可视化开发与应用运行能力仍是基础。</strong>[8]</p>
 <p>这次升级值得关注的，是三个方向：<strong>让开发迭代更精细，让 AI 融入日常操作，让数据访问更可控。</strong></p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/01-official-overview-373be96958.png" alt="Oracle 官网展示的 APEX 应用、报表与助手界面"></p>
@@ -32874,10 +32875,10 @@ dtype: float64
 <p>对于需要持续集成云服务的应用，这减少了围绕个人密钥开展维护的工作。</p>
 <h2 id="06-日常开发与运行体验，也在持续打磨"><a href="#06-日常开发与运行体验，也在持续打磨" class="headerlink" title="06 日常开发与运行体验，也在持续打磨"></a>06 日常开发与运行体验，也在持续打磨</h2><p>除了 AI 和开发流程，26.2 还带来了工作流与界面方面的实用更新。[2]</p>
 <ul>
-<li>**工作流更灵活：**支持草稿活动、自定义任务结果，以及运行中工作流实例向新模型版本迁移。</li>
-<li>**流程更易沟通：**工作流图可导出为 PNG 或 SVG，用于文档和评审。</li>
-<li>**界面更精细：**Universal Theme 增强 Iris 外观、导航辨识度与样式控制。</li>
-<li>**运维更清晰：**邮件队列报告提供更丰富的投递与失败情况信息。</li>
+<li><strong>工作流更灵活：</strong> 支持草稿活动、自定义任务结果，以及运行中工作流实例向新模型版本迁移。</li>
+<li><strong>流程更易沟通：</strong> 工作流图可导出为 PNG 或 SVG，用于文档和评审。</li>
+<li><strong>界面更精细：</strong> Universal Theme 增强 Iris 外观、导航辨识度与样式控制。</li>
+<li><strong>运维更清晰：</strong> 邮件队列报告提供更丰富的投递与失败情况信息。</li>
 </ul>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/07-official-workflow-instance-8152fb63fd.png" alt="Oracle 官方文档截图：员工评估工作流运行图"></p>
 <p><em>图 6｜员工评估工作流的运行图，显示流程连接与节点状态，用于理解工作流界面。来源：APEX 26.2 End User’s Guide。[17]</em></p>
@@ -32918,7 +32919,7 @@ dtype: float64
 <p>APEX 的 JavaScript、CSS 等静态资源也要与数据库中的版本匹配：使用本地资源时同步更新 <code>images</code> 目录及其服务映射；使用 Oracle CDN 时核对对应补丁版本。官方当前列出的 26.2.0 CDN 地址为：[10]</p>
 <p><code>https://static.oracle.com/cdn/apex/26.2.0/</code></p>
 <p>升级后重点验证登录、报表、表单、文件上传、REST 接口和自定义插件。已有生成式 AI 服务还应检查 Provider API、自定义请求头及附加参数是否适配新接口。[5]</p>
-<h3 id="第三步：把-GitHub-Oracle-Skills-更新纳入升级计划"><a href="#第三步：把-GitHub-Oracle-Skills-更新纳入升级计划" class="headerlink" title="第三步：把 GitHub Oracle Skills 更新纳入升级计划"></a>第三步：把 GitHub Oracle Skills 更新纳入升级计划</h3><p>**使用 Codex、Claude 等工具开展 APEXlang 开发的团队，还要同步关注 <a href="https://github.com/oracle/skills">GitHub 官方仓库 oracle&#x2F;skills</a>。**其中 <code>apex/apexlang</code> 提供 APEXlang 开发指导、模板、工作流和校验工具；<code>db</code> 目录提供数据库与 SQLcl 等配套指导。[11]</p>
+<h3 id="第三步：把-GitHub-Oracle-Skills-更新纳入升级计划"><a href="#第三步：把-GitHub-Oracle-Skills-更新纳入升级计划" class="headerlink" title="第三步：把 GitHub Oracle Skills 更新纳入升级计划"></a>第三步：把 GitHub Oracle Skills 更新纳入升级计划</h3><p><strong>使用 Codex、Claude 等工具开展 APEXlang 开发的团队，还要同步关注 <a href="https://github.com/oracle/skills">GitHub 官方仓库 oracle&#x2F;skills</a>。</strong> 其中 <code>apex/apexlang</code> 提供 APEXlang 开发指导、模板、工作流和校验工具；<code>db</code> 目录提供数据库与 SQLcl 等配套指导。[11]</p>
 <p>这些 Skills 为 AI 助手提供开发依据，需要独立安装和更新。升级数据库中的 APEX，并不会自动刷新开发电脑或团队环境中的 Skills。</p>
 <p>Oracle 官网给出的同步方式是：[8]</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line"># 在终端启动 SQLcl</span><br><span class="line">sql /nolog</span><br><span class="line"></span><br><span class="line"># 进入 SQLcl 后执行</span><br><span class="line">skills sync</span><br></pre></td></tr></table></figure>
