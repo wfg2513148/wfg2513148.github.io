@@ -32838,6 +32838,8 @@ dtype: float64
 <p>这次升级值得关注的，是三个方向：<strong>让开发迭代更精细，让 AI 融入日常操作，让数据访问更可控。</strong></p>
 <p><img src="https://wangfanggang.oss-cn-shanghai.aliyuncs.com/images/2026-10-07-apex-26-2-release/01-official-overview-373be96958.png" alt="Oracle 官网展示的 APEX 应用、报表与助手界面"></p>
 <p><em>图 1｜Oracle 官方界面组合图：应用构建、交互报表与助手体验。来源：Oracle APEX 26.2 新特性官网。[2]</em></p>
+<span id="more"></span>
+
 <h2 id="01-改一个页面，可以只导入这个页面"><a href="#01-改一个页面，可以只导入这个页面" class="headerlink" title="01 改一个页面，可以只导入这个页面"></a>01 改一个页面，可以只导入这个页面</h2><p>开发者经常遇到这样的情况：只调整了一个页面，却需要重新导入整个应用。</p>
 <p>在 26.1 引入 APEXlang 之后，<strong>26.2 新增文件级导入</strong>：开发者可通过 SQL Developer for VS Code 的 Import File 按钮，或 SQLcl 的 <code>-files</code> 参数，将指定页面、受支持的共享组件文件导入已有应用。[3]</p>
 <p>这让“修改—导入—验证”的循环更聚焦，也让 App Builder 与本地编辑器并行工作的团队更容易协作。导入前结合差异比较和拉取变更，可以减少覆盖他人修改的风险。</p>
